@@ -50,7 +50,7 @@
     .app {
       height: 100dvh;
       display: grid;
-      grid-template-rows: auto auto 1fr auto;
+      grid-template-rows: auto auto auto 1fr auto;
       padding-top: var(--safe-t);
     }
     /* ---------- header ---------- */
@@ -219,9 +219,11 @@
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       grid-template-areas:
+        "board board"
         "equity desk"
         "positions died"
         "history history"
+        "who who"
         "logger logger";
       gap: 12px;
       align-content: start;
@@ -252,7 +254,37 @@
     .logger { grid-area: logger; }
     .died { grid-area: died; }
     .positions { grid-area: positions; }
+    .board { grid-area: board; }
     .history { grid-area: history; }
+    .who { grid-area: who; }
+    #who { max-height: 260px; overflow: auto; }
+    tr.on td { background: rgba(0,255,136,.05); }
+    .desknav {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 6px 16px;
+      border-bottom: 1px solid var(--line);
+      background: #0c0c0c;
+    }
+    .desknav a { text-decoration: none; }
+    .desknav a.on { color: #d9ffe8; border-color: rgba(0,255,136,.4); background: rgba(0,255,136,.08); }
+    .banner {
+      margin: 0 0 10px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,176,32,.45);
+      background: rgba(255,176,32,.08);
+      color: #ffd48a;
+      font-size: 12px;
+    }
+    .banner.lag {
+      border-color: var(--line-2);
+      background: #101010;
+      color: var(--muted);
+    }
+    [hidden] { display: none !important; }
     .hist-summary {
       display: flex;
       flex-wrap: wrap;
@@ -463,12 +495,14 @@
       main {
         grid-template-columns: 1fr;
         grid-template-areas:
+          "board"
           "equity"
           "desk"
           "logger"
           "died"
           "positions"
-          "history";
+          "history"
+          "who";
         padding: 10px 10px 12px;
         gap: 10px;
       }
@@ -527,7 +561,19 @@
       <div class="ticker-track" id="ticker"><div class="tick flat">Waiting for live prices…</div></div>
     </div>
 
+    <nav class="desknav" id="desknav" aria-label="Desks">
+      <a class="pill" id="nav-main" href="./">Main</a>
+      <a class="pill" id="nav-copy" href="copy/">Copy</a>
+      <a class="pill" id="nav-meme" href="meme/">Meme</a>
+    </nav>
+
     <main>
+      <section class="panel board">
+        <h2>Leaderboard <span class="meta">paper equity</span></h2>
+        <div class="banner" id="sandbox" hidden></div>
+        <div class="banner lag" id="lag" hidden></div>
+        <div class="table-wrap" id="board"></div>
+      </section>
       <section class="panel equity">
         <div class="eq-kicker" id="eq-kicker">Equity — paper desk</div>
         <div class="eq-row">
@@ -568,6 +614,11 @@
         <div class="hist-summary" id="hist-summary"></div>
         <div class="table-wrap" id="hist"></div>
       </section>
+
+      <section class="panel who" id="who-panel" hidden>
+        <h2>Who we copy <span class="meta" id="who-meta"></span></h2>
+        <div id="who"></div>
+      </section>
     </main>
 
     <footer class="target">
@@ -576,7 +627,8 @@
         <span id="tgt-label">—</span>
       </div>
       <div class="track"><i id="tgt-fill"></i></div>
-      <div class="disc">Paper money only. Screening is a working assumption, not a fatwa. Debt/mcap is not re-checked when no real ratio is available.</div>
+      <div class="disc" id="rules"></div>
+      <div class="disc" id="fineprint">Paper money only. Screening is a working assumption, not a fatwa. Debt/mcap is not re-checked when no real ratio is available.</div>
     </footer>
   </div>
   <div id="toasts"></div>
@@ -735,7 +787,11 @@
     }
     if (a.role === "Analyst") return [`${t.passed_filter || 0} scored`];
     if (a.role === "Executor") return ["size ≤ 8%"];
-    if (a.role === "Risk") return ["−6%", "trail +12%"];
+    if (a.role === "Risk") {
+      const rules = data.risk_rules || {};
+      const pts = (frac) => (frac == null || Number.isNaN(Number(frac))) ? "—" : Math.round(Number(frac) * 100) + "%";
+      return ["Fast", "−" + pts(rules.stop_loss_pct), "TP +" + pts(rules.take_profit_pct), "trail +" + pts(rules.trailing_activate_pct)];
+    }
     if (a.role === "Logger") {
       const n = (data.why_they_died || []).length;
       return [`${n} reason${n === 1 ? "" : "s"}`];
@@ -815,9 +871,122 @@
     document.getElementById("pos").innerHTML = `<table>
       <thead><tr>
         <th>Name</th><th>Agent</th><th class="num">Qty</th><th class="num">Entry</th>
-        <th class="num">Last</th><th class="num">P&amp;L</th><th class="num">Stop</th><th class="num">Trail +12%</th>
+        <th class="num">Last</th><th class="num">P&amp;L</th><th class="num">Stop</th><th class="num">Trail arm</th>
       </tr></thead>
       <tbody>${rows}</tbody></table>`;
+  }
+
+  function deskId() {
+    const path = window.location.pathname || "";
+    if (path.includes("/meme")) return "meme";
+    if (path.includes("/copy")) return "copy";
+    return "main";
+  }
+
+  function wireNav() {
+    const desk = deskId();
+    const prefix = desk === "main" ? "" : "../";
+    const links = {
+      main: prefix + "./",
+      copy: prefix + "copy/",
+      meme: prefix + "meme/",
+    };
+    if (desk === "copy") links.copy = "./";
+    if (desk === "meme") links.meme = "./";
+    document.getElementById("nav-main").href = links.main;
+    document.getElementById("nav-copy").href = links.copy;
+    document.getElementById("nav-meme").href = links.meme;
+    document.getElementById("nav-" + desk).classList.add("on");
+    const titles = {
+      main: ["Halal Paper Trader", "Halal stocks + crypto · strict RM · paper"],
+      copy: ["Halal Copy Trader", "Late public disclosures · paper · same halal screen"],
+      meme: ["Crypto + Meme", "NOT halal-screened · speculative sandbox · paper"],
+    };
+    const pair = titles[desk];
+    document.querySelector(".brand h1").textContent = pair[0];
+    document.querySelector(".brand p").textContent = pair[1];
+    document.title = pair[0];
+  }
+  wireNav();
+
+  function renderBoard(data) {
+    const rows = data.leaderboard || [];
+    const here = (data.desk || deskId());
+    if (!rows.length) {
+      document.getElementById("board").innerHTML = '<div class="empty">Leaderboard appears once the books are loaded.</div>';
+      return;
+    }
+    const body = rows.map(row => {
+      const ret = row.return_pct;
+      const win = row.win_rate;
+      const retStr = ret == null ? "—" : ((ret * 100 >= 0 ? "+" : "") + (ret * 100).toFixed(2) + "%");
+      const winStr = win == null ? "—" : Math.round(win * 100) + "%";
+      return `<tr class="${row.id === here ? "on" : ""}">
+        <td class="sym">${escapeHtml(row.name || "")}</td>
+        <td class="num">${row.equity == null ? "—" : fmtMoney(row.equity)}</td>
+        <td class="num ${ret == null ? "flat" : clsPnL(ret)}">${retStr}</td>
+        <td class="num">${row.closed_trades ?? 0}</td>
+        <td class="num">${winStr}</td>
+        <td class="num ${row.realized_pnl == null ? "flat" : clsPnL(row.realized_pnl)}">${row.realized_pnl == null ? "—" : fmtMoney(row.realized_pnl)}</td>
+      </tr>`;
+    }).join("");
+    document.getElementById("board").innerHTML = `<table>
+      <thead><tr>
+        <th>Book</th><th class="num">Equity</th><th class="num">Return</th>
+        <th class="num">Closed</th><th class="num">Win rate</th><th class="num">Realised</th>
+      </tr></thead><tbody>${body}</tbody></table>`;
+  }
+
+  function renderWho(data) {
+    const panel = document.getElementById("who-panel");
+    const info = data.who_we_copy;
+    if (deskId() !== "copy" && !info) {
+      panel.hidden = true;
+      return;
+    }
+    panel.hidden = false;
+    const people = (info && info.people) || [];
+    const sources = (info && info.sources) || [];
+    const passed = info && info.passed_halal != null ? info.passed_halal : people.length;
+    document.getElementById("who-meta").textContent = `${passed} on the halal screen`;
+    const sourceHtml = sources.map(s =>
+      `<div class="died-row"><span>${escapeHtml(s.name || "")}${s.ok === false ? " · failed" : ""}</span><span class="n">${s.rows ?? ""}</span></div>`
+    ).join("");
+    const peopleHtml = people.length
+      ? `<table><thead><tr><th>Who</th><th>Ticker</th><th>Bought</th><th>Disclosed</th></tr></thead><tbody>`
+        + people.map(p => `<tr>
+            <td>${escapeHtml(p.name || "")}</td>
+            <td class="sym">${escapeHtml(p.ticker || "")}</td>
+            <td class="mono">${escapeHtml(p.bought || "")}</td>
+            <td class="mono">${escapeHtml(p.disclosed || "")}</td>
+          </tr>`).join("")
+        + `</tbody></table>`
+      : '<div class="empty">No halal copy candidates this tick.</div>';
+    const extra = (info && info.crypto_note) ? `<div class="empty">${escapeHtml(info.crypto_note)}</div>` : "";
+    document.getElementById("who").innerHTML = sourceHtml + peopleHtml + extra;
+  }
+
+  function renderNotices(data) {
+    const rules = data.risk_rules || {};
+    document.getElementById("rules").textContent = rules.label || "Fast mode";
+    const sandbox = document.getElementById("sandbox");
+    const lag = document.getElementById("lag");
+    if (deskId() === "meme" || data.sandbox_note) {
+      sandbox.hidden = false;
+      sandbox.textContent = data.sandbox_note || "This bot is NOT halal-screened. Speculative comparison sandbox. Paper money only.";
+    } else {
+      sandbox.hidden = true;
+    }
+    if (deskId() === "copy") {
+      lag.hidden = false;
+      lag.textContent = data.lag_note || "Copies follow disclosures that are already days or weeks old. Paper money only.";
+    } else {
+      lag.hidden = true;
+    }
+    const fine = document.getElementById("fineprint");
+    if (deskId() === "meme") {
+      fine.textContent = "Paper money only. This page is not a halal screen and not a fatwa. It is a speculative sandbox.";
+    }
   }
 
   function renderHistory(data) {
@@ -989,12 +1158,15 @@
       const data = await r.json();
       if (!data || data.ok === false) throw new Error((data && data.error) || "state unavailable");
       lastState = data;
+      renderNotices(data);
+      renderBoard(data);
       renderEquity(data);
       renderAgents(data);
       renderLog(data);
       renderDied(data);
       renderPositions(data);
       renderHistory(data);
+      renderWho(data);
       renderTicker(tickerFromState(data));
       maybeToasts(data);
       document.body.classList.add("ready");

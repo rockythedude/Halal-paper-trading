@@ -301,13 +301,45 @@ def ensure_fills(state: dict) -> None:
         append_fill(state, row)
 
 
+def apply_risk_levels(state: dict, cfg: dict) -> None:
+    """Rewrite stop, trail-arm and take-profit prices from the current rules.
+
+    Existing positions pick this up on the next tick. Nothing is sold here.
+    """
+    sl = float(cfg["stop_loss_pct"])
+    arm = float(cfg["trailing_activate_pct"])
+    raw_tp = cfg.get("take_profit_pct")
+    tp = float(raw_tp) if raw_tp else None
+    for pos in state.get("positions") or []:
+        entry = float(pos["entry_price"])
+        pos["hard_stop"] = entry * (1.0 - sl)
+        pos["trail_activate"] = entry * (1.0 + arm)
+        pos["take_profit"] = entry * (1.0 + tp) if tp else None
+
+
+def fast_mode_text(cfg: dict) -> str:
+    sl = float(cfg["stop_loss_pct"]) * 100
+    arm = float(cfg["trailing_activate_pct"]) * 100
+    trail = float(cfg["trailing_stop_pct"]) * 100
+    raw_tp = cfg.get("take_profit_pct")
+    tp = float(raw_tp) * 100 if raw_tp else None
+    tp_bit = f" Take profit at +{tp:.0f}%." if tp is not None else ""
+    return (
+        f"Fast mode. Hard stop −{sl:.0f}%. Trail arms at +{arm:.0f}% "
+        f"and sells {trail:.0f}% off the peak.{tp_bit}"
+    )
+
+
 def manage_exits(state: dict, quotes: dict[str, Quote], cfg: dict, session_open: bool) -> list[dict]:
-    """Risk: hard stop at -6%; trailing take-profit arms at +12%. No averaging down."""
+    """Fast-mode risk. No averaging down. Levels come from config, not from the fill."""
+    apply_risk_levels(state, cfg)
     closed: list[dict] = []
     keep: list[dict] = []
     sl = float(cfg["stop_loss_pct"])
     trail = float(cfg["trailing_stop_pct"])
     activate = float(cfg["trailing_activate_pct"])
+    raw_tp = cfg.get("take_profit_pct")
+    tp_pct = float(raw_tp) if raw_tp else None
 
     for pos in state["positions"]:
         q = quotes.get(pos["symbol"])
@@ -321,16 +353,21 @@ def manage_exits(state: dict, quotes: dict[str, Quote], cfg: dict, session_open:
         high = max(pos.get("high_water", pos["entry_price"]), price)
         pos["high_water"] = high
         change = price / pos["entry_price"] - 1.0
+        if change >= activate:
+            pos["trail_armed"] = True
         reason = None
         tag = "SOLD"
         if change <= -sl:
             reason = f"hard stop hit ({change*100:.1f}% <= -{sl*100:.0f}%)"
             tag = "LOSS"
-        elif change >= activate and price <= high * (1.0 - trail):
+        elif tp_pct is not None and change >= tp_pct:
+            reason = f"take profit hit ({change*100:.1f}% >= +{tp_pct*100:.0f}%)"
+            tag = "BIG"
+        elif pos.get("trail_armed") and high >= pos["entry_price"] * (1.0 + activate) and price <= high * (1.0 - trail):
             drop = price / high - 1.0
             reason = (
                 f"trailing take-profit from high {_money(high)} "
-                f"({drop*100:.1f}%; armed at +{activate*100:.0f}%)"
+                f"({drop*100:.1f}%; armed at +{activate*100:.0f}%, trail {trail*100:.0f}%)"
             )
             tag = "BIG" if change >= activate else "SOLD"
         if not reason:
@@ -429,6 +466,78 @@ def _slot_block(state: dict, cfg: dict, asset_class: str) -> str | None:
     return None
 
 
+def paper_buy(
+    state: dict,
+    cfg: dict,
+    *,
+    symbol: str,
+    name: str,
+    asset_class: str,
+    price: float,
+    source: str,
+    reason: str,
+    action: str = "bought",
+    extra: dict | None = None,
+) -> dict | None:
+    """Buy one paper position at 8% of equity, or skip when cash cannot cover it."""
+    budget = _position_budget(state, cfg)
+    if budget < 5:
+        log(
+            state,
+            "RISK",
+            "blocked",
+            f"position budget only {_money(budget)} after 8% cap and cash reserve",
+            symbol=symbol,
+        )
+        return None
+    fill, fee_bps = _fill_price(price, "buy", cfg)
+    qty = budget / (fill * (1.0 + fee_bps))
+    notional = fill * qty
+    fee = notional * fee_bps
+    cost = notional + fee
+    if cost > state["cash"] + 1e-9 or qty <= 0 or price <= 0:
+        log(state, "RISK", "blocked", "insufficient cash — no margin", symbol=symbol)
+        return None
+    state["cash"] -= cost
+    sl = float(cfg["stop_loss_pct"])
+    arm = float(cfg["trailing_activate_pct"])
+    raw_tp = cfg.get("take_profit_pct")
+    pos = {
+        "symbol": symbol,
+        "name": name or symbol,
+        "asset_class": asset_class,
+        "agent": "MIRAX",
+        "qty": qty,
+        "entry_price": fill,
+        "raw_price": price,
+        "entry_fee": fee,
+        "cost_basis": cost,
+        "opened_at": iso(now_utc()),
+        "opened_at_london": format_london(),
+        "high_water": fill,
+        "last_price": price,
+        "last_source": source,
+        "reason": reason,
+        "hard_stop": fill * (1.0 - sl),
+        "trail_activate": fill * (1.0 + arm),
+        "take_profit": fill * (1.0 + float(raw_tp)) if raw_tp else None,
+        "trail_armed": False,
+    }
+    if extra:
+        pos.update(extra)
+    state["positions"].append(pos)
+    append_fill(state, _buy_fill(pos))
+    log(state, "EXECUTOR", action, reason, symbol=symbol)
+    log(
+        state,
+        "RISK",
+        "stop set",
+        fast_mode_text(cfg),
+        symbol=symbol,
+    )
+    return pos
+
+
 def execute_buys(
     state: dict,
     scores: list,
@@ -494,6 +603,8 @@ def execute_buys(
         asset = assets.get(sc.symbol)
         stop_px = fill * (1.0 - float(cfg["stop_loss_pct"]))
         arm_px = fill * (1.0 + float(cfg["trailing_activate_pct"]))
+        raw_tp = cfg.get("take_profit_pct")
+        tp_px = fill * (1.0 + float(raw_tp)) if raw_tp else None
         pos = {
             "symbol": sc.symbol,
             "name": asset.name if asset else (sc.name or sc.symbol),
@@ -513,6 +624,8 @@ def execute_buys(
             "score": sc.score,
             "hard_stop": stop_px,
             "trail_activate": arm_px,
+            "take_profit": tp_px,
+            "trail_armed": False,
         }
         state["positions"].append(pos)
         held.add(sc.symbol)
@@ -528,7 +641,12 @@ def execute_buys(
             state,
             "RISK",
             "stop set",
-            f"-{cfg['stop_loss_pct']*100:.0f}% hard at {stop_px:.4g}; trailing take-profit arms at +{cfg['trailing_activate_pct']*100:.0f}% ({arm_px:.4g})",
+            (
+                f"Fast mode −{cfg['stop_loss_pct']*100:.0f}% hard at {stop_px:.4g}; "
+                f"trail arms +{cfg['trailing_activate_pct']*100:.0f}% ({arm_px:.4g}); "
+                f"take profit +{float(cfg['take_profit_pct'])*100:.0f}%"
+                + (f" ({tp_px:.4g})" if tp_px else "")
+            ),
             symbol=sc.symbol,
         )
         fills.append(pos)
@@ -693,6 +811,7 @@ def run_tick(state_path: Path | None = None) -> dict:
 
     # Mark + Risk review of open positions (hard stop / trailing TP) before new buys.
     mark_positions(state, quotes)
+    state["agents"]["DUSKA"]["blurb"] = fast_mode_text(cfg)
     exits = manage_exits(state, quotes, cfg, session_open)
     mark_positions(state, quotes)
 
@@ -717,7 +836,7 @@ def run_tick(state_path: Path | None = None) -> dict:
         state,
         "BRAVA",
         f"Scored {len(scores)}; killed {len(an_kills)} below {min_score:.1f}; {len(passed_an)} passed",
-        f"{len(passed_an)} ≥ {min_score:.1f}",
+        f"{len(passed_an)} ≥ {min_score:.2f}",
         "passed",
     )
 
@@ -742,10 +861,11 @@ def run_tick(state_path: Path | None = None) -> dict:
         risk_bits.append(f"stops set on {len(fills)} fills (−{cfg['stop_loss_pct']*100:.0f}% hard)")
     if exits:
         risk_bits.append(f"{len(exits)} exits")
+    idle = "no new stops or exits this tick"
     set_activity(
         state,
         "DUSKA",
-        "; ".join(risk_bits) if risk_bits else "No new stops or exits this tick",
+        "Fast mode · " + ("; ".join(risk_bits) if risk_bits else idle),
         f"{len(fills)} stops" if fills else f"{len(exits)} exits",
         "stops",
     )

@@ -44,10 +44,12 @@ Edit `config.json` and push to `main`. The next tick reads it. Nothing in this r
 | `max_open_positions` | Book cap (default `12`) |
 | `max_stock_positions` | Stock sleeve (default `8`). A full sleeve blocks new stock buys only. |
 | `max_crypto_positions` | Crypto sleeve (default `4`). Crypto can fill at any hour. |
-| `stop_loss_pct` | Hard stop (default `0.06`, shown as −6%) |
-| `trailing_activate_pct` | Arm the trail after this gain (default `0.12`) |
-| `trailing_stop_pct` | Trail distance once armed (default `0.05`) |
-| `analyst_min_score` | Analyst kill line (default `0.6`) |
+| `mode` | `fast` is the default risk pack |
+| `stop_loss_pct` | Hard stop (default `0.02`, shown as −2%). Applied to open positions on the next tick |
+| `trailing_activate_pct` | Arm the trail after this gain (default `0.03`) |
+| `trailing_stop_pct` | Once armed, sell this far off the peak (default `0.01`) |
+| `take_profit_pct` | Sell outright at this gain (default `0.05`) |
+| `analyst_min_score` | Analyst kill line on the main book (default `0.55`) |
 | `min_stock_adv_usd` / `min_crypto_volume_usd` | Liquidity floors |
 | `crypto_universe` | Coins Filter is allowed to pass |
 | `crypto_meme` / `crypto_lending_yield` | Hard rejects |
@@ -80,3 +82,27 @@ python3 -m http.server 8765 -d web
 ```
 
 Open `http://127.0.0.1:8765/`. `tick.py` takes an exclusive `tick.lock` so a second run skips instead of overlapping.
+
+## Three paper desks
+
+All three use fast-mode risk (stop −2%, trail arms at +3% and sells 1% off the peak, take profit +5%), size at most 8% of equity, and never spend cash they do not have.
+
+| Desk | URL | Book |
+| --- | --- | --- |
+| Main halal book | https://rockythedude.github.io/Halal-paper-trading/ | `state.json` · 12 slots, 8 stocks and 4 crypto |
+| Copy | https://rockythedude.github.io/Halal-paper-trading/copy/ | `copy/state.json` · 10 slots |
+| Crypto + Meme | https://rockythedude.github.io/Halal-paper-trading/meme/ | `meme/state.json` · 10 slots |
+
+The main page leaderboard reads all three books. Each page links to the others.
+
+### Copy desk
+
+The old House and Senate Stock Watcher S3 feeds return Access Denied. The copy desk reads the public Capitol Stock Watch CSV (House and Senate STOCK Act disclosures, no key). If that download fails, it uses the OptimistFi House JSON and says so. A purchase is eligible only when the filing date is within the last 45 days, the row is a stock purchase with a real ticker, and that ticker is on the current SPUS list. The log line names the member and both dates, for example `copied $NVDA - Rep. X bought 2026-10-20, disclosed 2026-11-05`.
+
+Those filings are already late. The page says the copy happens days or weeks after the original trade.
+
+A short 13F watch list (Berkshire, Pershing Square, Duquesne, Third Point) is checked on SEC EDGAR. A report inside the 45-day window is logged and not traded: the form publishes CUSIPs, and this bot will not guess a ticker. There is no free keyless feed of a known crypto wallet's recent buys, so the copy desk does not copy crypto.
+
+### Crypto + Meme
+
+This page is **not** halal-screened. It is a speculative sandbox. The universe is CoinGecko's public meme-token list (DOGE, SHIB, PEPE, BONK, WIF, FLOKI and the other liquid names on that list). Stablecoins and leveraged tokens are dropped. A buy requires a positive 24h change of at most 80%, at least $10 million of reported 24h volume, and a market cap of at least $50 million when CoinGecko publishes one. Larger 24h prints are ignored rather than traded. If CoinGecko is down, Binance public 24h tickers are used for the named meme list only. The desk is labelled **momentum**, not copy, because no keyless wallet-buy feed was available.

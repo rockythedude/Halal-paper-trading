@@ -28,7 +28,7 @@ AGENTS = [
     {
         "id": "BRAVA",
         "role": "Analyst",
-        "blurb": "Scores survivors 0–1 on momentum, trend, RSI and volume; kills scores below 0.6.",
+        "blurb": "Scores survivors 0–1 on momentum, trend, RSI and volume; kills scores below 0.55.",
         "color": "#FF6B4A",
     },
     {
@@ -40,7 +40,7 @@ AGENTS = [
     {
         "id": "DUSKA",
         "role": "Risk",
-        "blurb": "Hard stop at −6%, no averaging down, trailing take-profit armed at +12%.",
+        "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
         "color": "#A78BFA",
     },
     {
@@ -327,7 +327,7 @@ def run_analyst(
                     a.name,
                     a.asset_class,
                     REASON_SCORE,
-                    f"score {value:.2f} < {min_score:.1f}",
+                    f"score {value:.2f} < {min_score:.2f}",
                     "ANALYST",
                 )
             )

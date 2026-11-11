@@ -8,6 +8,7 @@ quotes and it does not invent numbers.
 
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -398,12 +399,81 @@ def page_payload(state: dict) -> dict:
     return data
 
 
-def export_page(state: dict | None = None, dest: Path | None = None) -> Path:
+DESKS = (
+    ("main", "Halal book", ROOT / "state.json"),
+    ("copy", "Copy desk", ROOT / "copy" / "state.json"),
+    ("meme", "Crypto + Meme", ROOT / "meme" / "state.json"),
+)
+
+
+def risk_from_config() -> dict:
+    cfg = json.loads((ROOT / "config.json").read_text())
+    sl = float(cfg["stop_loss_pct"])
+    arm = float(cfg["trailing_activate_pct"])
+    trail = float(cfg["trailing_stop_pct"])
+    tp = float(cfg["take_profit_pct"]) if cfg.get("take_profit_pct") else None
+    label = (
+        f"Fast mode · hard stop −{sl*100:.0f}% · trail arms at +{arm*100:.0f}% "
+        f"and sells {trail*100:.0f}% off the peak · take profit +{tp*100:.0f}%"
+        if tp is not None
+        else f"Fast mode · hard stop −{sl*100:.0f}%"
+    )
+    return {
+        "mode": cfg.get("mode") or "fast",
+        "stop_loss_pct": sl,
+        "take_profit_pct": tp,
+        "trailing_activate_pct": arm,
+        "trailing_stop_pct": trail,
+        "max_position_pct": float(cfg.get("max_position_pct") or 0.08),
+        "label": label,
+    }
+
+
+def _board_row(desk_id: str, name: str, path: Path) -> dict:
+    if not path.exists():
+        return {
+            "id": desk_id,
+            "name": name,
+            "equity": None,
+            "return_pct": None,
+            "closed_trades": 0,
+            "win_rate": None,
+            "realized_pnl": None,
+        }
+    state = json.loads(path.read_text())
+    start = float(state.get("starting_capital") or 0)
+    equity = float(state.get("equity") or 0)
+    closed = state.get("closed_trades") or []
+    wins = sum(1 for trade in closed if (trade.get("pnl") or 0) >= 0)
+    realized = sum(float(trade.get("pnl") or 0) for trade in closed)
+    return {
+        "id": desk_id,
+        "name": name,
+        "equity": round(equity, 2),
+        "return_pct": ((equity - start) / start) if start else None,
+        "closed_trades": len(closed),
+        "win_rate": (wins / len(closed)) if closed else None,
+        "realized_pnl": round(realized, 2),
+    }
+
+
+def build_leaderboard() -> list[dict]:
+    return [_board_row(desk_id, name, path) for desk_id, name, path in DESKS]
+
+
+def export_page(state: dict | None = None, dest: Path | None = None, desk: str = "main") -> Path:
     if state is None:
         if not STATE_PATH.exists():
             raise SystemExit("state.json not found; run python tick.py first")
         state = json.loads(STATE_PATH.read_text())
     payload = page_payload(state)
+    payload["desk"] = desk
+    payload["risk_rules"] = risk_from_config()
+    payload["leaderboard"] = build_leaderboard()
+    payload["signal_mode"] = state.get("signal_mode") or ("momentum" if desk == "meme" else "screen")
+    payload["sandbox_note"] = state.get("sandbox_note") or ""
+    payload["lag_note"] = state.get("lag_note") or ""
+    payload["who_we_copy"] = state.get("who_we_copy")
     dest = dest or OUT_PATH
     dest.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
@@ -413,8 +483,15 @@ def export_page(state: dict | None = None, dest: Path | None = None) -> Path:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Write a static dashboard payload")
+    parser.add_argument("--state", default=None)
+    parser.add_argument("--out", default=None)
+    parser.add_argument("--desk", default="main", choices=["main", "copy", "meme"])
+    args = parser.parse_args()
     try:
-        export_page()
+        state = json.loads(Path(args.state).read_text()) if args.state else None
+        dest = Path(args.out) if args.out else None
+        export_page(state, dest, desk=args.desk)
     except SystemExit as exc:
         print(exc, file=sys.stderr)
         return 1
