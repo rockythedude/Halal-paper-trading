@@ -14,29 +14,34 @@
   "closed_trades": 0,
   "biggest_win": 0.0,
   "biggest_trade": null,
-  "ticks": 0,
+  "ticks": 1,
   "open_count": 0,
-  "last_updated_london": "11 Nov 2026, 21:54 GMT",
-  "last_updated": "2026-11-11T21:54:40.906400+00:00",
+  "last_updated_london": "11 Nov 2026, 21:59 GMT",
+  "last_updated": "2026-11-11T21:59:34.025569+00:00",
   "session_status": "afterhours",
-  "session_asof_ny": "11 Nov 2026, 16:54 EST",
+  "session_asof_ny": "11 Nov 2026, 16:59 EST",
   "session_open": false,
-  "screening_method": "",
-  "stock_note": "",
+  "screening_method": "SPUS official holdings",
+  "stock_note": "Stock universe is the current official holdings of SPUS (SP Funds S&P 500 Sharia Industry Exclusions ETF), downloaded from the fund's public daily holdings file. Holdings date on the file: 11/11/2026. 215 equity names after dropping cash and non-tickers. SPUS applies an AAOIFI-style industry exclusion screen at the fund level; this bot does not re-screen those names and does not issue a fatwa.",
   "crypto_note": "",
   "holdings_asof": "",
   "data_sources": [],
-  "scanned": 0,
-  "killed": 0,
+  "scanned": 111,
+  "killed": 80,
   "traded": 0,
-  "why_they_died": [],
+  "why_they_died": [
+    {
+      "reason": "not on Shariah screen",
+      "count": 80
+    }
+  ],
   "totals": {
-    "scanned": 0,
-    "killed": 0,
+    "scanned": 111,
+    "killed": 80,
     "traded": 0,
-    "filter_killed": 0,
+    "filter_killed": 80,
     "analyst_killed": 0,
-    "passed_filter": 0,
+    "passed_filter": 31,
     "passed_analyst": 0,
     "exits": 0
   },
@@ -53,10 +58,415 @@
     {
       "label": "11 Nov 2026, 21:54 GMT",
       "value": 100.0
+    },
+    {
+      "label": "11 Nov 2026, 21:59 GMT",
+      "value": 100.0
     }
   ],
   "annotations": [],
-  "activity": [],
+  "activity": [
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "21:59 LOGGER: tick complete - passed halal screen 31, copied 0, equity $100.00",
+      "message": "21:59 LOGGER: tick complete - passed halal screen 31, copied 0, equity $100.00",
+      "symbol": null,
+      "action": "tick complete"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $AAPL - Rep. Cleo Fields bought 2026-09-08, disclosed 2026-10-01; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $AAPL - Rep. Cleo Fields bought 2026-09-08, disclosed 2026-10-01; US cash session is closed",
+      "symbol": "AAPL",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $IBM - Rep. Lloyd Doggett bought 2026-09-10, disclosed 2026-10-05; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $IBM - Rep. Lloyd Doggett bought 2026-09-10, disclosed 2026-10-05; US cash session is closed",
+      "symbol": "IBM",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $PPG - Rep. Lloyd Doggett bought 2026-09-11, disclosed 2026-10-05; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $PPG - Rep. Lloyd Doggett bought 2026-09-11, disclosed 2026-10-05; US cash session is closed",
+      "symbol": "PPG",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $OKTA - Rep. Maria Elvira Salazar bought 2026-09-04, disclosed 2026-10-07; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $OKTA - Rep. Maria Elvira Salazar bought 2026-09-04, disclosed 2026-10-07; US cash session is closed",
+      "symbol": "OKTA",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $HD - Rep. Rohit Khanna bought 2026-09-04, disclosed 2026-10-07; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $HD - Rep. Rohit Khanna bought 2026-09-04, disclosed 2026-10-07; US cash session is closed",
+      "symbol": "HD",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $LIN - Rep. Rohit Khanna bought 2026-09-04, disclosed 2026-10-07; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $LIN - Rep. Rohit Khanna bought 2026-09-04, disclosed 2026-10-07; US cash session is closed",
+      "symbol": "LIN",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $AMD - Rep. Rohit Khanna bought 2026-09-04, disclosed 2026-10-07; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $AMD - Rep. Rohit Khanna bought 2026-09-04, disclosed 2026-10-07; US cash session is closed",
+      "symbol": "AMD",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $GLW - Rep. Maria Elvira Salazar bought 2026-09-08, disclosed 2026-10-07; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $GLW - Rep. Maria Elvira Salazar bought 2026-09-08, disclosed 2026-10-07; US cash session is closed",
+      "symbol": "GLW",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $PEP - Rep. Rohit Khanna bought 2026-09-25, disclosed 2026-10-07; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $PEP - Rep. Rohit Khanna bought 2026-09-25, disclosed 2026-10-07; US cash session is closed",
+      "symbol": "PEP",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $JNJ - Rep. Rohit Khanna bought 2026-09-25, disclosed 2026-10-07; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $JNJ - Rep. Rohit Khanna bought 2026-09-25, disclosed 2026-10-07; US cash session is closed",
+      "symbol": "JNJ",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $TSLA - Rep. Rohit Khanna bought 2026-09-25, disclosed 2026-10-07; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $TSLA - Rep. Rohit Khanna bought 2026-09-25, disclosed 2026-10-07; US cash session is closed",
+      "symbol": "TSLA",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $NXPI - Rep. Gilbert Cisneros bought 2026-09-17, disclosed 2026-10-12; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $NXPI - Rep. Gilbert Cisneros bought 2026-09-17, disclosed 2026-10-12; US cash session is closed",
+      "symbol": "NXPI",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $ABT - Rep. Gilbert Cisneros bought 2026-09-18, disclosed 2026-10-12; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $ABT - Rep. Gilbert Cisneros bought 2026-09-18, disclosed 2026-10-12; US cash session is closed",
+      "symbol": "ABT",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $MSFT - Rep. Lisa McClain bought 2026-09-30, disclosed 2026-10-12; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $MSFT - Rep. Lisa McClain bought 2026-09-30, disclosed 2026-10-12; US cash session is closed",
+      "symbol": "MSFT",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $ADI - Rep. Rick Larsen bought 2026-10-08, disclosed 2026-10-12; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $ADI - Rep. Rick Larsen bought 2026-10-08, disclosed 2026-10-12; US cash session is closed",
+      "symbol": "ADI",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $WSM - Rep. Rick Larsen bought 2026-10-08, disclosed 2026-10-12; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $WSM - Rep. Rick Larsen bought 2026-10-08, disclosed 2026-10-12; US cash session is closed",
+      "symbol": "WSM",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $EL - Rep. Jonathan Jackson bought 2026-09-28, disclosed 2026-10-19; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $EL - Rep. Jonathan Jackson bought 2026-09-28, disclosed 2026-10-19; US cash session is closed",
+      "symbol": "EL",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $LRCX - Rep. David J. Taylor bought 2026-10-15, disclosed 2026-10-29; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $LRCX - Rep. David J. Taylor bought 2026-10-15, disclosed 2026-10-29; US cash session is closed",
+      "symbol": "LRCX",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $TXN - Rep. Thomas H. Kean bought 2026-09-17, disclosed 2026-10-30; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $TXN - Rep. Thomas H. Kean bought 2026-09-17, disclosed 2026-10-30; US cash session is closed",
+      "symbol": "TXN",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $MU - Rep. John J McGuire III bought 2026-10-01, disclosed 2026-11-01; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $MU - Rep. John J McGuire III bought 2026-10-01, disclosed 2026-11-01; US cash session is closed",
+      "symbol": "MU",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $PG - Rep. Maria Elvira Salazar bought 2026-10-23, disclosed 2026-11-05; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $PG - Rep. Maria Elvira Salazar bought 2026-10-23, disclosed 2026-11-05; US cash session is closed",
+      "symbol": "PG",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $NVDA - Rep. Maria Elvira Salazar bought 2026-10-23, disclosed 2026-11-05; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $NVDA - Rep. Maria Elvira Salazar bought 2026-10-23, disclosed 2026-11-05; US cash session is closed",
+      "symbol": "NVDA",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $AMAT - Rep. Josh Gottheimer bought 2026-10-26, disclosed 2026-11-05; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $AMAT - Rep. Josh Gottheimer bought 2026-10-26, disclosed 2026-11-05; US cash session is closed",
+      "symbol": "AMAT",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $COO - Rep. Gilbert Cisneros bought 2026-10-14, disclosed 2026-11-10; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $COO - Rep. Gilbert Cisneros bought 2026-10-14, disclosed 2026-11-10; US cash session is closed",
+      "symbol": "COO",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $ON - Rep. Gilbert Cisneros bought 2026-10-14, disclosed 2026-11-10; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $ON - Rep. Gilbert Cisneros bought 2026-10-14, disclosed 2026-11-10; US cash session is closed",
+      "symbol": "ON",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $LITE - Rep. Gilbert Cisneros bought 2026-10-20, disclosed 2026-11-10; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $LITE - Rep. Gilbert Cisneros bought 2026-10-20, disclosed 2026-11-10; US cash session is closed",
+      "symbol": "LITE",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $PODD - Rep. Gilbert Cisneros bought 2026-10-20, disclosed 2026-11-10; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $PODD - Rep. Gilbert Cisneros bought 2026-10-20, disclosed 2026-11-10; US cash session is closed",
+      "symbol": "PODD",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $LLY - Rep. Gilbert Cisneros bought 2026-10-20, disclosed 2026-11-10; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $LLY - Rep. Gilbert Cisneros bought 2026-10-20, disclosed 2026-11-10; US cash session is closed",
+      "symbol": "LLY",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $CSCO - Rep. Gilbert Cisneros bought 2026-10-20, disclosed 2026-11-10; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $CSCO - Rep. Gilbert Cisneros bought 2026-10-20, disclosed 2026-11-10; US cash session is closed",
+      "symbol": "CSCO",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $CF - Rep. Gilbert Cisneros bought 2026-10-20, disclosed 2026-11-10; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $CF - Rep. Gilbert Cisneros bought 2026-10-20, disclosed 2026-11-10; US cash session is closed",
+      "symbol": "CF",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:59 EXECUTOR: held back $NOW - Rep. Gilbert Cisneros bought 2026-10-21, disclosed 2026-11-10; US cash session is closed",
+      "message": "21:59 EXECUTOR: held back $NOW - Rep. Gilbert Cisneros bought 2026-10-21, disclosed 2026-11-10; US cash session is closed",
+      "symbol": "NOW",
+      "action": "held back"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "FILTER",
+      "agent": "FILTER",
+      "line": "21:59 FILTER: summary - 31 of 111 recent purchases are on the SPUS list; 80 are not on the Shariah screen",
+      "message": "21:59 FILTER: summary - 31 of 111 recent purchases are on the SPUS list; 80 are not on the Shariah screen",
+      "symbol": null,
+      "action": "summary"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "SCOUT",
+      "agent": "SCOUT",
+      "line": "21:59 SCOUT: crypto - No free keyless source publishes a known wallet's recent crypto buys, so this desk does not copy crypto whales.",
+      "message": "21:59 SCOUT: crypto - No free keyless source publishes a known wallet's recent crypto buys, so this desk does not copy crypto whales.",
+      "symbol": null,
+      "action": "crypto"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "SCOUT",
+      "agent": "SCOUT",
+      "line": "21:59 SCOUT: 13F - Third Point: no 13F in the last 45 days",
+      "message": "21:59 SCOUT: 13F - Third Point: no 13F in the last 45 days",
+      "symbol": null,
+      "action": "13F"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "SCOUT",
+      "agent": "SCOUT",
+      "line": "21:59 SCOUT: 13F - Duquesne Family Office: no 13F in the last 45 days",
+      "message": "21:59 SCOUT: 13F - Duquesne Family Office: no 13F in the last 45 days",
+      "symbol": null,
+      "action": "13F"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "SCOUT",
+      "agent": "SCOUT",
+      "line": "21:59 SCOUT: 13F - Pershing Square Capital Management: no 13F in the last 45 days",
+      "message": "21:59 SCOUT: 13F - Pershing Square Capital Management: no 13F in the last 45 days",
+      "symbol": null,
+      "action": "13F"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "SCOUT",
+      "agent": "SCOUT",
+      "line": "21:59 SCOUT: 13F - Berkshire Hathaway: no 13F in the last 45 days",
+      "message": "21:59 SCOUT: 13F - Berkshire Hathaway: no 13F in the last 45 days",
+      "symbol": null,
+      "action": "13F"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "SCOUT",
+      "agent": "SCOUT",
+      "line": "21:59 SCOUT: scanned - Capitol Stock Watch: 111 recent stock purchases",
+      "message": "21:59 SCOUT: scanned - Capitol Stock Watch: 111 recent stock purchases",
+      "symbol": null,
+      "action": "scanned"
+    },
+    {
+      "ts": "11 Nov 2026, 21:59 GMT",
+      "hhmm": "21:59",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "21:59 LOGGER: tick started - copy desk, US session afterhours",
+      "message": "21:59 LOGGER: tick started - copy desk, US session afterhours",
+      "symbol": null,
+      "action": "tick started"
+    }
+  ],
   "agents": [
     {
       "id": "KESTO",
@@ -64,9 +474,9 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "Idle — waiting for the first tick",
-      "badge": "—",
-      "badge_label": "metric",
+      "activity": "Read 111 recent congressional purchases",
+      "badge": "111 filings",
+      "badge_label": "scanned",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
       "pnl": 0.0,
@@ -82,9 +492,9 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "Idle — waiting for the first tick",
-      "badge": "—",
-      "badge_label": "metric",
+      "activity": "31 on the SPUS list, 80 not on the Shariah screen",
+      "badge": "31 passed",
+      "badge_label": "passed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
       "pnl": 0.0,
@@ -100,9 +510,9 @@
       "strategy": "Analyst",
       "blurb": "Scores survivors 0–1 on momentum, trend, RSI and volume; kills scores below 0.55.",
       "color": "#FF6B4A",
-      "activity": "Idle — waiting for the first tick",
-      "badge": "—",
-      "badge_label": "metric",
+      "activity": "Copy desk does not rescore disclosures. The halal screen is the SPUS list.",
+      "badge": "screen only",
+      "badge_label": "screen",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
       "pnl": 0.0,
@@ -118,9 +528,9 @@
       "strategy": "Executor",
       "blurb": "Buys passing names, with size capped at 8% of equity. Never averages down.",
       "color": "#5B8DEF",
-      "activity": "Idle — waiting for the first tick",
-      "badge": "—",
-      "badge_label": "metric",
+      "activity": "No copies filled this tick",
+      "badge": "0 copies",
+      "badge_label": "fills",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
       "pnl": 0.0,
@@ -134,11 +544,11 @@
       "id": "DUSKA",
       "role": "Risk",
       "strategy": "Risk",
-      "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
+      "blurb": "Fast mode. Hard stop −2%. Trail arms at +3% and sells 1% off the peak. Take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "Idle — waiting for the first tick",
-      "badge": "—",
-      "badge_label": "metric",
+      "activity": "Fast mode · Fast mode. Hard stop −2%. Trail arms at +3% and sells 1% off the peak. Take profit at +5%.",
+      "badge": "fast",
+      "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
       "pnl": 0.0,
@@ -154,9 +564,9 @@
       "strategy": "Logger",
       "blurb": "Records every rejection, buy and stop with its reason.",
       "color": "#3DDC97",
-      "activity": "Idle — waiting for the first tick",
-      "badge": "—",
-      "badge_label": "metric",
+      "activity": "Passed halal screen: 31. Filled 0.",
+      "badge": "40 lines",
+      "badge_label": "log",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
       "pnl": 0.0,
@@ -206,8 +616,8 @@
     {
       "id": "main",
       "name": "Halal book",
-      "equity": 99.98,
-      "return_pct": -0.00015150000000005548,
+      "equity": 98.72,
+      "return_pct": -0.012834519999999969,
       "closed_trades": 0,
       "win_rate": null,
       "realized_pnl": 0
@@ -224,8 +634,8 @@
     {
       "id": "meme",
       "name": "Crypto + Meme",
-      "equity": 100.0,
-      "return_pct": 0.0,
+      "equity": 99.87,
+      "return_pct": -0.0013477100000000063,
       "closed_trades": 0,
       "win_rate": null,
       "realized_pnl": 0
@@ -234,5 +644,306 @@
   "signal_mode": "copy",
   "sandbox_note": "",
   "lag_note": "Copies follow the public filing, which lands days or weeks after the original trade. This is not the member's fill.",
-  "who_we_copy": null
+  "who_we_copy": {
+    "lag_note": "Copies follow the public filing, which lands days or weeks after the original trade. This is not the member's fill.",
+    "crypto_note": "No free keyless source publishes a known wallet's recent crypto buys, so this desk does not copy crypto whales.",
+    "sources": [
+      {
+        "name": "Capitol Stock Watch",
+        "detail": "House and Senate STOCK Act disclosures, public CSV, no key",
+        "url": "https://www.capitolstockwatch.com/data/open-data/congress_trades_latest.csv",
+        "ok": true,
+        "rows": 111
+      }
+    ],
+    "f13": [
+      "Berkshire Hathaway: no 13F in the last 45 days",
+      "Pershing Square Capital Management: no 13F in the last 45 days",
+      "Duquesne Family Office: no 13F in the last 45 days",
+      "Third Point: no 13F in the last 45 days"
+    ],
+    "people": [
+      {
+        "name": "Rep. Gilbert Cisneros",
+        "filer": "Gilbert Cisneros",
+        "chamber": "house",
+        "ticker": "NOW",
+        "bought": "2026-10-21",
+        "disclosed": "2026-11-10",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Gilbert Cisneros",
+        "filer": "Gilbert Cisneros",
+        "chamber": "house",
+        "ticker": "CF",
+        "bought": "2026-10-20",
+        "disclosed": "2026-11-10",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Gilbert Cisneros",
+        "filer": "Gilbert Cisneros",
+        "chamber": "house",
+        "ticker": "CSCO",
+        "bought": "2026-10-20",
+        "disclosed": "2026-11-10",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Gilbert Cisneros",
+        "filer": "Gilbert Cisneros",
+        "chamber": "house",
+        "ticker": "LLY",
+        "bought": "2026-10-20",
+        "disclosed": "2026-11-10",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Gilbert Cisneros",
+        "filer": "Gilbert Cisneros",
+        "chamber": "house",
+        "ticker": "PODD",
+        "bought": "2026-10-20",
+        "disclosed": "2026-11-10",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Gilbert Cisneros",
+        "filer": "Gilbert Cisneros",
+        "chamber": "house",
+        "ticker": "LITE",
+        "bought": "2026-10-20",
+        "disclosed": "2026-11-10",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Gilbert Cisneros",
+        "filer": "Gilbert Cisneros",
+        "chamber": "house",
+        "ticker": "ON",
+        "bought": "2026-10-14",
+        "disclosed": "2026-11-10",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Gilbert Cisneros",
+        "filer": "Gilbert Cisneros",
+        "chamber": "house",
+        "ticker": "COO",
+        "bought": "2026-10-14",
+        "disclosed": "2026-11-10",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Josh Gottheimer",
+        "filer": "Josh Gottheimer",
+        "chamber": "house",
+        "ticker": "AMAT",
+        "bought": "2026-10-26",
+        "disclosed": "2026-11-05",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Maria Elvira Salazar",
+        "filer": "Maria Elvira Salazar",
+        "chamber": "house",
+        "ticker": "NVDA",
+        "bought": "2026-10-23",
+        "disclosed": "2026-11-05",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Maria Elvira Salazar",
+        "filer": "Maria Elvira Salazar",
+        "chamber": "house",
+        "ticker": "PG",
+        "bought": "2026-10-23",
+        "disclosed": "2026-11-05",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. John J McGuire III",
+        "filer": "John J McGuire III",
+        "chamber": "house",
+        "ticker": "MU",
+        "bought": "2026-10-01",
+        "disclosed": "2026-11-01",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Thomas H. Kean",
+        "filer": "Thomas H. Kean",
+        "chamber": "house",
+        "ticker": "TXN",
+        "bought": "2026-09-17",
+        "disclosed": "2026-10-30",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. David J. Taylor",
+        "filer": "David J. Taylor",
+        "chamber": "house",
+        "ticker": "LRCX",
+        "bought": "2026-10-15",
+        "disclosed": "2026-10-29",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Jonathan Jackson",
+        "filer": "Jonathan Jackson",
+        "chamber": "house",
+        "ticker": "EL",
+        "bought": "2026-09-28",
+        "disclosed": "2026-10-19",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Rick Larsen",
+        "filer": "Rick Larsen",
+        "chamber": "house",
+        "ticker": "WSM",
+        "bought": "2026-10-08",
+        "disclosed": "2026-10-12",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Rick Larsen",
+        "filer": "Rick Larsen",
+        "chamber": "house",
+        "ticker": "ADI",
+        "bought": "2026-10-08",
+        "disclosed": "2026-10-12",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Lisa McClain",
+        "filer": "Lisa McClain",
+        "chamber": "house",
+        "ticker": "MSFT",
+        "bought": "2026-09-30",
+        "disclosed": "2026-10-12",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Gilbert Cisneros",
+        "filer": "Gilbert Cisneros",
+        "chamber": "house",
+        "ticker": "ABT",
+        "bought": "2026-09-18",
+        "disclosed": "2026-10-12",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Gilbert Cisneros",
+        "filer": "Gilbert Cisneros",
+        "chamber": "house",
+        "ticker": "NXPI",
+        "bought": "2026-09-17",
+        "disclosed": "2026-10-12",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Rohit Khanna",
+        "filer": "Rohit Khanna",
+        "chamber": "house",
+        "ticker": "TSLA",
+        "bought": "2026-09-25",
+        "disclosed": "2026-10-07",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Rohit Khanna",
+        "filer": "Rohit Khanna",
+        "chamber": "house",
+        "ticker": "JNJ",
+        "bought": "2026-09-25",
+        "disclosed": "2026-10-07",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Rohit Khanna",
+        "filer": "Rohit Khanna",
+        "chamber": "house",
+        "ticker": "PEP",
+        "bought": "2026-09-25",
+        "disclosed": "2026-10-07",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Maria Elvira Salazar",
+        "filer": "Maria Elvira Salazar",
+        "chamber": "house",
+        "ticker": "GLW",
+        "bought": "2026-09-08",
+        "disclosed": "2026-10-07",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Rohit Khanna",
+        "filer": "Rohit Khanna",
+        "chamber": "house",
+        "ticker": "AMD",
+        "bought": "2026-09-04",
+        "disclosed": "2026-10-07",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Rohit Khanna",
+        "filer": "Rohit Khanna",
+        "chamber": "house",
+        "ticker": "LIN",
+        "bought": "2026-09-04",
+        "disclosed": "2026-10-07",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Rohit Khanna",
+        "filer": "Rohit Khanna",
+        "chamber": "house",
+        "ticker": "HD",
+        "bought": "2026-09-04",
+        "disclosed": "2026-10-07",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Maria Elvira Salazar",
+        "filer": "Maria Elvira Salazar",
+        "chamber": "house",
+        "ticker": "OKTA",
+        "bought": "2026-09-04",
+        "disclosed": "2026-10-07",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Lloyd Doggett",
+        "filer": "Lloyd Doggett",
+        "chamber": "house",
+        "ticker": "PPG",
+        "bought": "2026-09-11",
+        "disclosed": "2026-10-05",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Lloyd Doggett",
+        "filer": "Lloyd Doggett",
+        "chamber": "house",
+        "ticker": "IBM",
+        "bought": "2026-09-10",
+        "disclosed": "2026-10-05",
+        "source": "Capitol Stock Watch"
+      },
+      {
+        "name": "Rep. Cleo Fields",
+        "filer": "Cleo Fields",
+        "chamber": "house",
+        "ticker": "AAPL",
+        "bought": "2026-09-08",
+        "disclosed": "2026-10-01",
+        "source": "Capitol Stock Watch"
+      }
+    ],
+    "passed_halal": 31,
+    "scanned_purchases": 111
+  }
 }
