@@ -24,6 +24,8 @@ A concurrency group keeps two ticks from running at once. GitHub sometimes start
 
 Pages is published by this workflow (`build_type: workflow`), not by a `docs/` branch.
 
+The first deploy needs Pages switched on by hand: **Settings → Pages → Build and deployment → Source: GitHub Actions**. Then run **Actions → Paper tick → Run workflow** once. After that, the schedule keeps going. The paper book is committed even if that deploy step cannot run yet.
+
 ## The paper book
 
 `config.json` holds the starting capital (`100`), the night target (`6000`), the crypto allow-list, and the rules. `state.json` is the live ledger (cash, open positions, equity, log). The bot keeps trading from that file.
