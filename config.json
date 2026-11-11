@@ -1,0 +1,232 @@
+{
+  "starting_capital": 100.0,
+  "target": 6000.0,
+  "fee_bps": 10,
+  "slippage_bps": 5,
+  "max_position_pct": 0.08,
+  "max_open_positions": 8,
+  "min_cash_pct": 0.08,
+  "take_profit_pct": null,
+  "stop_loss_pct": 0.06,
+  "trailing_stop_pct": 0.05,
+  "trailing_activate_pct": 0.12,
+  "min_stock_adv_usd": 20000000,
+  "min_crypto_volume_usd": 50000000,
+  "stock_universe_limit": 250,
+  "lookback_bars": 80,
+  "preferred_timeframe": "1h",
+  "stock_holdings_url": "https://www.sp-funds.com/wp-content/uploads/data/TidalFG_Holdings_SPUS.csv",
+  "hlal_holdings_url": "https://www.wahed.com/hlal-holdings.csv",
+  "sp500_constituents_url": "https://raw.githubusercontent.com/datasets/s-and-p-500-companies/master/data/constituents.csv",
+  "crypto_universe": [
+    {
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "coingecko_id": "bitcoin",
+      "binance_symbol": "BTCUSDT",
+      "yahoo_symbol": "BTC-USD",
+      "why": "Largest public settlement and monetary-commodity network. Included as a large-cap utility/settlement asset, not because every scholar treats it as halal."
+    },
+    {
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "coingecko_id": "ethereum",
+      "binance_symbol": "ETHUSDT",
+      "yahoo_symbol": "ETH-USD",
+      "why": "Largest smart-contract settlement layer. This list only allows holding the coin itself \u2014 not staking, lending, or yield. Some scholars still object to ETH for those reasons."
+    },
+    {
+      "symbol": "SOL",
+      "name": "Solana",
+      "coingecko_id": "solana",
+      "binance_symbol": "SOLUSDT",
+      "yahoo_symbol": "SOL-USD",
+      "why": "Major high-throughput smart-contract network with real usage. Same caveat as ETH: no staking or yield products."
+    },
+    {
+      "symbol": "ADA",
+      "name": "Cardano",
+      "coingecko_id": "cardano",
+      "binance_symbol": "ADAUSDT",
+      "yahoo_symbol": "ADA-USD",
+      "why": "Established proof-of-stake smart-contract platform with a long public history and large market cap."
+    },
+    {
+      "symbol": "XRP",
+      "name": "XRP",
+      "coingecko_id": "ripple",
+      "binance_symbol": "XRPUSDT",
+      "yahoo_symbol": "XRP-USD",
+      "why": "Payments-focused large-cap token used for cross-border settlement. Some scholars and regulators treat it differently from BTC; included only as a large utility coin."
+    },
+    {
+      "symbol": "LINK",
+      "name": "Chainlink",
+      "coingecko_id": "chainlink",
+      "binance_symbol": "LINKUSDT",
+      "yahoo_symbol": "LINK-USD",
+      "why": "Leading oracle network that supplies real-world data to smart contracts \u2014 a clear utility, not a meme coin."
+    },
+    {
+      "symbol": "DOT",
+      "name": "Polkadot",
+      "coingecko_id": "polkadot",
+      "binance_symbol": "DOTUSDT",
+      "yahoo_symbol": "DOT-USD",
+      "why": "Interoperability / parachain protocol with a large, long-listed market cap."
+    },
+    {
+      "symbol": "AVAX",
+      "name": "Avalanche",
+      "coingecko_id": "avalanche-2",
+      "binance_symbol": "AVAXUSDT",
+      "yahoo_symbol": "AVAX-USD",
+      "why": "Major smart-contract platform with substantial daily usage and liquidity."
+    }
+  ],
+  "crypto_screening_note": "This crypto list is a screening assumption for paper trading, not a fatwa and not investment advice. It is limited to large, liquid, utility-network coins. Meme coins, lending/interest or yield tokens, leveraged tokens, futures, and shorting are out of scope. Many scholars disagree on whether any cryptocurrency is permissible, and some specifically object to proof-of-stake coins because of staking rewards that resemble interest. This bot never stakes, lends, or earns yield; it only paper-trades the coins at spot.",
+  "analyst_min_score": 0.6,
+  "coingecko_markets_url": "https://api.coingecko.com/api/v3/coins/markets",
+  "crypto_meme": [
+    {
+      "symbol": "DOGE",
+      "name": "Dogecoin",
+      "coingecko_id": "dogecoin"
+    },
+    {
+      "symbol": "SHIB",
+      "name": "Shiba Inu",
+      "coingecko_id": "shiba-inu"
+    },
+    {
+      "symbol": "PEPE",
+      "name": "Pepe",
+      "coingecko_id": "pepe"
+    },
+    {
+      "symbol": "BONK",
+      "name": "Bonk",
+      "coingecko_id": "bonk"
+    },
+    {
+      "symbol": "WIF",
+      "name": "dogwifhat",
+      "coingecko_id": "dogwifcoin"
+    },
+    {
+      "symbol": "FLOKI",
+      "name": "FLOKI",
+      "coingecko_id": "floki"
+    },
+    {
+      "symbol": "TRUMP",
+      "name": "Official Trump",
+      "coingecko_id": "official-trump"
+    },
+    {
+      "symbol": "BRETT",
+      "name": "Brett",
+      "coingecko_id": "based-brett"
+    },
+    {
+      "symbol": "POPCAT",
+      "name": "Popcat",
+      "coingecko_id": "popcat"
+    },
+    {
+      "symbol": "MEME",
+      "name": "Memecoin",
+      "coingecko_id": "memecoin"
+    }
+  ],
+  "crypto_lending_yield": [
+    {
+      "symbol": "AAVE",
+      "name": "Aave",
+      "coingecko_id": "aave",
+      "kind": "lending"
+    },
+    {
+      "symbol": "COMP",
+      "name": "Compound",
+      "coingecko_id": "compound-governance-token",
+      "kind": "lending"
+    },
+    {
+      "symbol": "MKR",
+      "name": "Maker",
+      "coingecko_id": "maker",
+      "kind": "lending"
+    },
+    {
+      "symbol": "SKY",
+      "name": "Sky (Maker successor)",
+      "coingecko_id": "sky",
+      "kind": "lending"
+    },
+    {
+      "symbol": "CRV",
+      "name": "Curve DAO",
+      "coingecko_id": "curve-dao-token",
+      "kind": "yield"
+    },
+    {
+      "symbol": "LDO",
+      "name": "Lido DAO",
+      "coingecko_id": "lido-dao",
+      "kind": "yield"
+    },
+    {
+      "symbol": "RPL",
+      "name": "Rocket Pool",
+      "coingecko_id": "rocket-pool",
+      "kind": "yield"
+    },
+    {
+      "symbol": "PENDLE",
+      "name": "Pendle",
+      "coingecko_id": "pendle",
+      "kind": "yield"
+    },
+    {
+      "symbol": "ENA",
+      "name": "Ethena",
+      "coingecko_id": "ethena",
+      "kind": "yield"
+    },
+    {
+      "symbol": "SNX",
+      "name": "Synthetix",
+      "coingecko_id": "havven",
+      "kind": "yield"
+    }
+  ],
+  "crypto_meme_keywords": [
+    "doge",
+    "shib",
+    "pepe",
+    "inu",
+    "bonk",
+    "floki",
+    "meme",
+    "wif",
+    "popcat",
+    "brett",
+    "mog",
+    "fartcoin",
+    "baby"
+  ],
+  "crypto_yield_keywords": [
+    "lido",
+    "staked",
+    "aave",
+    "compound",
+    "maker",
+    "pendle",
+    "ethena",
+    "rocket-pool",
+    "curve-dao",
+    "synthetix",
+    "lending"
+  ]
+}

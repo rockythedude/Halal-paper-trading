@@ -1,0 +1,76 @@
+# Paper tick every 5 minutes, then publish the static dashboard.
+# Pages is deployed from this workflow (upload-pages-artifact + deploy-pages),
+# not from a docs/ branch. The site root is the web/ directory.
+
+name: Paper tick
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: halal-paper-tick
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Run one paper tick
+        run: python tick.py
+
+      - name: Regenerate static dashboard data
+        run: python export_page.py
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - name: Commit state and dashboard data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- state.json web/data.json
+          if git diff --cached --quiet; then
+            echo "No changes in state.json or web/data.json."
+          else
+            git commit -m "tick: update paper book [skip ci]"
+            if ! git push origin HEAD:main; then
+              git pull --rebase origin main
+              git push origin HEAD:main
+            fi
+          fi
+
+  deploy:
+    needs: tick
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
