@@ -92,6 +92,7 @@ All three use fast-mode risk (stop −2%, trail arms at +3% and sells 1% off the
 | Main halal book | https://rockythedude.github.io/Halal-paper-trading/ | `state.json` · 12 slots, 8 stocks and 4 crypto |
 | Copy | https://rockythedude.github.io/Halal-paper-trading/copy/ | `copy/state.json` · 10 slots |
 | Crypto + Meme | https://rockythedude.github.io/Halal-paper-trading/meme/ | `meme/state.json` · 10 slots |
+| BTC Scalper | https://rockythedude.github.io/Halal-paper-trading/btc/ | `btc/state.json` · BTC spot, up to 4 lots |
 
 The main page leaderboard reads all three books. Each page links to the others.
 
@@ -106,3 +107,7 @@ A short 13F watch list (Berkshire, Pershing Square, Duquesne, Third Point) is ch
 ### Crypto + Meme
 
 This page is **not** halal-screened. It is a speculative sandbox. The universe is CoinGecko's public meme-token list (DOGE, SHIB, PEPE, BONK, WIF, FLOKI and the other liquid names on that list). Stablecoins and leveraged tokens are dropped. A buy requires a positive 24h change of at most 80%, at least $10 million of reported 24h volume, and a market cap of at least $50 million when CoinGecko publishes one. Larger 24h prints are ignored rather than traded. If CoinGecko is down, Binance public 24h tickers are used for the named meme list only. The desk is labelled **momentum**, not copy, because no keyless wallet-buy feed was available.
+
+### BTC Scalper
+
+https://rockythedude.github.io/Halal-paper-trading/btc/ trades only spot BTC, with no leverage, short, or margin. Each entry is 20% of equity, and at most four entries are open (80% invested). A 0.1% taker fee is charged on each side. Prices are Binance public BTCUSDT 1-minute and 5-minute candles, with CoinGecko as the fallback. It buys when a 5-minute EMA9 crosses above EMA21, when 5-minute RSI(14) is below 35 and turning up, or when price breaks the prior 30-minute high on rising volume. Each lot takes profit at +0.8%, stops at −0.6%, or trails 0.4% once it is up 0.5%. A 5-minute EMA cross down closes every lot. After a hard stop the next evaluation does not enter. Inside each workflow run the scalper checks about once a minute for roughly four minutes, while the other desks tick, so the job stays near the five-minute schedule. The page says this is BTC spot only, inside the crypto allow-list assumption, and not a fatwa.

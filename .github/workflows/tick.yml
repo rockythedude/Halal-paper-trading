@@ -8,6 +8,8 @@ on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
 
 concurrency:
   group: halal-paper-tick
@@ -38,29 +40,43 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Run one paper tick
-        run: python tick.py
-
-      - name: Run the copy desk
-        run: python copy_tick.py
-
-      - name: Run the meme sandbox
-        run: python meme_tick.py
+      - name: Run the four paper desks
+        run: |
+          # BTC evaluates every 60s for about 4 minutes while the other desks tick,
+          # so this job stays near the 5-minute cron instead of stacking another run.
+          python btc_tick.py --loop-seconds 250 &
+          btc_pid=$!
+          set +e
+          python tick.py
+          s1=$?
+          python copy_tick.py
+          s2=$?
+          python meme_tick.py
+          s3=$?
+          wait "$btc_pid"
+          s4=$?
+          set -e
+          if [ "$s1" -ne 0 ] || [ "$s2" -ne 0 ] || [ "$s3" -ne 0 ] || [ "$s4" -ne 0 ]; then
+            echo "desk failed main=$s1 copy=$s2 meme=$s3 btc=$s4"
+            exit 1
+          fi
 
       - name: Regenerate static dashboards
         run: |
-          mkdir -p web/copy web/meme
+          mkdir -p web/copy web/meme web/btc
           cp web/index.html web/copy/index.html
           cp web/index.html web/meme/index.html
+          cp web/index.html web/btc/index.html
           python export_page.py --desk main
           python export_page.py --state copy/state.json --out web/copy/data.json --desk copy
           python export_page.py --state meme/state.json --out web/meme/data.json --desk meme
+          python export_page.py --state btc/state.json --out web/btc/data.json --desk btc
 
       - name: Commit state and dashboard data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- state.json web/data.json copy/state.json web/copy/data.json meme/state.json web/meme/data.json
+          git add -- state.json web/data.json copy/state.json web/copy/data.json meme/state.json web/meme/data.json btc/state.json web/btc/data.json
           if git diff --cached --quiet; then
             echo "No changes in state.json or web/data.json."
           else

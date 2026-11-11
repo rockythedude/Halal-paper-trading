@@ -565,6 +565,7 @@
       <a class="pill" id="nav-main" href="./">Main</a>
       <a class="pill" id="nav-copy" href="copy/">Copy</a>
       <a class="pill" id="nav-meme" href="meme/">Meme</a>
+      <a class="pill" id="nav-btc" href="btc/">BTC</a>
     </nav>
 
     <main>
@@ -587,6 +588,7 @@
           </div>
         </div>
         <div class="chart-wrap"><canvas id="chart"></canvas></div>
+        <div class="chart-wrap" id="btc-wrap" hidden><canvas id="btcchart"></canvas></div>
       </section>
 
       <section class="panel desk">
@@ -786,9 +788,12 @@
       return [`killed ${pct}%`];
     }
     if (a.role === "Analyst") return [`${t.passed_filter || 0} scored`];
-    if (a.role === "Executor") return ["size ≤ 8%"];
+    if (a.role === "Executor") {
+      return [(data.risk_rules && data.risk_rules.mode === "scalp") ? "20% × 4" : "size ≤ 8%"];
+    }
     if (a.role === "Risk") {
       const rules = data.risk_rules || {};
+      if (Array.isArray(rules.chips) && rules.chips.length) return rules.chips;
       const pts = (frac) => (frac == null || Number.isNaN(Number(frac))) ? "—" : Math.round(Number(frac) * 100) + "%";
       return ["Fast", "−" + pts(rules.stop_loss_pct), "TP +" + pts(rules.take_profit_pct), "trail +" + pts(rules.trailing_activate_pct)];
     }
@@ -878,6 +883,7 @@
 
   function deskId() {
     const path = window.location.pathname || "";
+    if (path.includes("/btc")) return "btc";
     if (path.includes("/meme")) return "meme";
     if (path.includes("/copy")) return "copy";
     return "main";
@@ -887,20 +893,21 @@
     const desk = deskId();
     const prefix = desk === "main" ? "" : "../";
     const links = {
-      main: prefix + "./",
-      copy: prefix + "copy/",
-      meme: prefix + "meme/",
+      main: desk === "main" ? "./" : "../",
+      copy: desk === "copy" ? "./" : prefix + "copy/",
+      meme: desk === "meme" ? "./" : prefix + "meme/",
+      btc: desk === "btc" ? "./" : prefix + "btc/",
     };
-    if (desk === "copy") links.copy = "./";
-    if (desk === "meme") links.meme = "./";
     document.getElementById("nav-main").href = links.main;
     document.getElementById("nav-copy").href = links.copy;
     document.getElementById("nav-meme").href = links.meme;
+    document.getElementById("nav-btc").href = links.btc;
     document.getElementById("nav-" + desk).classList.add("on");
     const titles = {
       main: ["Halal Paper Trader", "Halal stocks + crypto · strict RM · paper"],
       copy: ["Halal Copy Trader", "Late public disclosures · paper · same halal screen"],
       meme: ["Crypto + Meme", "NOT halal-screened · speculative sandbox · paper"],
+      btc: ["BTC Scalper", "BTC spot only · no leverage · paper"],
     };
     const pair = titles[desk];
     document.querySelector(".brand h1").textContent = pair[0];
@@ -977,7 +984,10 @@
     } else {
       sandbox.hidden = true;
     }
-    if (deskId() === "copy") {
+    if (deskId() === "btc") {
+      lag.hidden = false;
+      lag.textContent = data.btc_note || data.lag_note || "BTC spot only, no leverage/interest: within the halal crypto allow-list assumption, not a fatwa.";
+    } else if (deskId() === "copy") {
       lag.hidden = false;
       lag.textContent = data.lag_note || "Copies follow disclosures that are already days or weeks old. Paper money only.";
     } else {
@@ -986,7 +996,63 @@
     const fine = document.getElementById("fineprint");
     if (deskId() === "meme") {
       fine.textContent = "Paper money only. This page is not a halal screen and not a fatwa. It is a speculative sandbox.";
+    } else if (deskId() === "btc") {
+      fine.textContent = "Paper money only. BTC spot, no leverage and no margin. Within the crypto allow-list assumption, not a fatwa.";
     }
+  }
+
+  let lastBtc = [];
+  let lastMarks = [];
+  function drawBtc(points, markers) {
+    const wrap = document.getElementById("btc-wrap");
+    const c = document.getElementById("btcchart");
+    if (!wrap || !c) return;
+    if (!points || points.length < 2) {
+      wrap.hidden = true;
+      return;
+    }
+    wrap.hidden = false;
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+    const w = wrap.clientWidth, h = wrap.clientHeight;
+    if (w < 10 || h < 10) return;
+    c.width = Math.floor(w * dpr);
+    c.height = Math.floor(h * dpr);
+    const ctx = c.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    const vals = points.map(p => Number(p.value)).filter(v => Number.isFinite(v));
+    const min = Math.min(...vals), max = Math.max(...vals);
+    const pad = (max - min) === 0 ? Math.abs(max) * 0.002 || 1 : (max - min) * 0.12;
+    const lo = min - pad, hi = max + pad;
+    const left = 2, right = w - 2, top = 8, bot = h - 16;
+    const xAt = (i) => left + (i / (vals.length - 1)) * (right - left);
+    const yAt = (v) => bot - ((v - lo) / (hi - lo)) * (bot - top);
+    ctx.strokeStyle = "#1c1c1c";
+    ctx.lineWidth = 1;
+    for (let i = 0; i < 4; i++) {
+      const y = top + ((bot - top) * i) / 3;
+      ctx.beginPath(); ctx.moveTo(left, y); ctx.lineTo(right, y); ctx.stroke();
+    }
+    ctx.beginPath();
+    vals.forEach((v, i) => { const x = xAt(i), y = yAt(v); if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); });
+    ctx.strokeStyle = "#4da3ff";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    const tsOf = points.map(p => String(p.ts || ""));
+    (markers || []).forEach(m => {
+      let idx = tsOf.findIndex(t => t && m.ts && t >= m.ts);
+      if (idx < 0) idx = vals.length - 1;
+      const y = yAt(Number(m.price) || vals[idx]);
+      const x = xAt(idx);
+      ctx.beginPath();
+      ctx.arc(x, y, 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = (m.side === "sell") ? "#ff4d4d" : "#00ff88";
+      ctx.fill();
+    });
+    ctx.font = "10px IBM Plex Mono";
+    ctx.fillStyle = "#6a6a6a";
+    ctx.textAlign = "left";
+    ctx.fillText("BTC", 2, 12);
   }
 
   function renderHistory(data) {
@@ -1033,8 +1099,9 @@
 
   function renderEquity(data) {
     const start = data.starting_capital || 100;
+    const sizePct = Math.round((((data.risk_rules || {}).max_position_pct) || 0.08) * 100);
     document.getElementById("eq-kicker").textContent =
-      `Equity — ${fmtMoney(start, 0)} at start — 8% max size`;
+      `Equity — ${fmtMoney(start, 0)} at start — ${sizePct}% max size`;
     setEquity(Number(data.equity) || 0);
     const profit = data.profit;
     const pct = start ? (profit / start) * 100 : 0;
@@ -1050,6 +1117,13 @@
     document.getElementById("wl").textContent = `${data.wins || 0}W ${data.losses || 0}L`;
     lastCurve = data.equity_curve || [];
     drawChart(lastCurve);
+    lastBtc = data.btc_chart || [];
+    lastMarks = data.btc_markers || [];
+    if (deskId() === "btc") drawBtc(lastBtc, lastMarks);
+    else {
+      const wrap = document.getElementById("btc-wrap");
+      if (wrap) wrap.hidden = true;
+    }
     const target = data.target || 6000;
     document.querySelector(".tgt-head b").textContent = fmtMoney(target, 0);
     const eq = Number(data.equity) || 0;
@@ -1177,7 +1251,10 @@
     }
   }
 
-  window.addEventListener("resize", () => drawChart(lastCurve));
+  window.addEventListener("resize", () => {
+    drawChart(lastCurve);
+    if (deskId() === "btc") drawBtc(lastBtc, lastMarks);
+  });
   pollState();
   setInterval(pollState, 45000);
   </script>
