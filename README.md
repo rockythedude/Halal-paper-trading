@@ -40,8 +40,10 @@ Edit `config.json` and push to `main`. The next tick reads it. Nothing in this r
 | --- | --- |
 | `starting_capital` | Paper cash used only when `state.json` is missing |
 | `target` | Night-target bar (default `$6,000`) |
-| `max_position_pct` | Size cap per buy (default `0.08`) |
-| `max_open_positions` | Book cap (default `8`) |
+| `max_position_pct` | Size cap per buy (default `0.08`). Buys that cost more than cash are skipped. No margin. |
+| `max_open_positions` | Book cap (default `12`) |
+| `max_stock_positions` | Stock sleeve (default `8`). A full sleeve blocks new stock buys only. |
+| `max_crypto_positions` | Crypto sleeve (default `4`). Crypto can fill at any hour. |
 | `stop_loss_pct` | Hard stop (default `0.06`, shown as −6%) |
 | `trailing_activate_pct` | Arm the trail after this gain (default `0.12`) |
 | `trailing_stop_pct` | Trail distance once armed (default `0.05`) |

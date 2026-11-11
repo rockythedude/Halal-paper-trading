@@ -78,6 +78,7 @@ def new_state(cfg: dict) -> dict[str, Any]:
         "totals": {"scanned": 0, "killed": 0, "traded": 0},
         "totals_cumulative": {"scanned": 0, "killed": 0, "traded": 0},
         "paper_money": True,
+        "fills": [],
     }
 
 
@@ -99,6 +100,7 @@ def load_state(cfg: dict) -> dict[str, Any]:
     state.setdefault("kills_by_reason_cumulative", {})
     state.setdefault("totals", {"scanned": 0, "killed": 0, "traded": 0})
     state.setdefault("totals_cumulative", {"scanned": 0, "killed": 0, "traded": 0})
+    ensure_fills(state)
     return state
 
 
@@ -213,6 +215,92 @@ def _can_trade(asset_class: str, session_open: bool) -> bool:
     return session_open
 
 
+def _fill_id(state: dict) -> str:
+    return f"f{len(state.get('fills') or []) + 1:04d}"
+
+
+def append_fill(state: dict, fill: dict) -> dict:
+    """Append one real fill. Buys carry no realised P&L; sells do."""
+    state.setdefault("fills", [])
+    row = dict(fill)
+    row["id"] = _fill_id(state)
+    state["fills"].append(row)
+    return row
+
+
+def _buy_fill(pos: dict, ts: str | None = None, london: str | None = None) -> dict:
+    qty = float(pos["qty"])
+    price = float(pos["entry_price"])
+    return {
+        "ts": ts or pos.get("opened_at") or "",
+        "london": london or pos.get("opened_at_london") or "",
+        "side": "buy",
+        "symbol": pos["symbol"],
+        "name": pos.get("name") or pos["symbol"],
+        "asset_class": pos.get("asset_class") or "stock",
+        "qty": qty,
+        "price": price,
+        "value": qty * price,
+        "pnl": None,
+        "pnl_pct": None,
+    }
+
+
+def ensure_fills(state: dict) -> None:
+    """Create the fills ledger once, from the book that already exists.
+
+    Open positions become their original buys. Closed trades become a buy
+    and a sell. Later ticks only append. Nothing is invented.
+    """
+    if "fills" in state:
+        return
+    rows: list[dict] = []
+    for trade in state.get("closed_trades") or []:
+        qty = float(trade["qty"])
+        entry = float(trade["entry_price"])
+        exit_px = float(trade["exit_price"])
+        rows.append(
+            {
+                "ts": trade.get("opened_at") or "",
+                "london": trade.get("opened_at_london") or "",
+                "side": "buy",
+                "symbol": trade["symbol"],
+                "name": trade.get("name") or trade["symbol"],
+                "asset_class": trade.get("asset_class") or "stock",
+                "qty": qty,
+                "price": entry,
+                "value": qty * entry,
+                "pnl": None,
+                "pnl_pct": None,
+            }
+        )
+        rows.append(
+            {
+                "ts": trade.get("closed_at") or "",
+                "london": trade.get("closed_at_london") or "",
+                "side": "sell",
+                "symbol": trade["symbol"],
+                "name": trade.get("name") or trade["symbol"],
+                "asset_class": trade.get("asset_class") or "stock",
+                "qty": qty,
+                "price": exit_px,
+                "value": qty * exit_px,
+                "pnl": float(trade.get("pnl") or 0),
+                "pnl_pct": float(trade.get("pnl_pct") or 0),
+            }
+        )
+    seeded_buys = {(r["symbol"], r["ts"]) for r in rows if r["side"] == "buy"}
+    for pos in state.get("positions") or []:
+        key = (pos.get("symbol"), pos.get("opened_at"))
+        if key in seeded_buys:
+            continue
+        rows.append(_buy_fill(pos))
+    rows.sort(key=lambda r: (r.get("ts") or "", 0 if r.get("side") == "buy" else 1))
+    state["fills"] = []
+    for row in rows:
+        append_fill(state, row)
+
+
 def manage_exits(state: dict, quotes: dict[str, Quote], cfg: dict, session_open: bool) -> list[dict]:
     """Risk: hard stop at -6%; trailing take-profit arms at +12%. No averaging down."""
     closed: list[dict] = []
@@ -278,6 +366,22 @@ def manage_exits(state: dict, quotes: dict[str, Quote], cfg: dict, session_open:
             "source": q.source,
         }
         state["closed_trades"].append(trade)
+        append_fill(
+            state,
+            {
+                "ts": trade["closed_at"],
+                "london": trade["closed_at_london"],
+                "side": "sell",
+                "symbol": trade["symbol"],
+                "name": trade.get("name") or trade["symbol"],
+                "asset_class": trade["asset_class"],
+                "qty": pos["qty"],
+                "price": fill,
+                "value": notional,
+                "pnl": pnl,
+                "pnl_pct": trade["pnl_pct"],
+            },
+        )
         # P&L is attributed to Risk for the exit, and also counted on Executor
         # (who opened the book) so win/loss reflects completed trades.
         for aid in ("DUSKA", pos.get("agent") or "MIRAX"):
@@ -308,6 +412,23 @@ def _position_budget(state: dict, cfg: dict) -> float:
     return max(0.0, min(cap, available))
 
 
+def _slot_block(state: dict, cfg: dict, asset_class: str) -> str | None:
+    """Which cap, if any, refuses another open position. Never closes one."""
+    positions = state["positions"]
+    n_crypto = sum(1 for p in positions if p.get("asset_class") == "crypto")
+    n_stock = len(positions) - n_crypto
+    max_open = int(cfg.get("max_open_positions") or 12)
+    max_stock = int(cfg.get("max_stock_positions") or max_open)
+    max_crypto = int(cfg.get("max_crypto_positions") or max_open)
+    if asset_class == "crypto" and n_crypto >= max_crypto:
+        return f"already at max {max_crypto} crypto positions"
+    if asset_class != "crypto" and n_stock >= max_stock:
+        return f"already at max {max_stock} stock positions"
+    if len(positions) >= max_open:
+        return f"already at max {max_open} open positions"
+    return None
+
+
 def execute_buys(
     state: dict,
     scores: list,
@@ -316,9 +437,13 @@ def execute_buys(
     cfg: dict,
     session_open: bool,
 ) -> list[dict]:
-    """Executor: buy Analyst survivors, 8% equity cap, no averaging down."""
+    """Executor: buy Analyst survivors, 8% equity cap, no averaging down.
+
+    Slots are 8 stocks and 4 crypto, 12 open in total. A full sleeve blocks
+    new buys in that sleeve only. Existing positions are never force-sold.
+    Cash that is not in the account is never spent.
+    """
     fills: list[dict] = []
-    max_open = int(cfg["max_open_positions"])
     held = {p["symbol"] for p in state["positions"]}
     size_pct = float(cfg["max_position_pct"])
 
@@ -332,21 +457,16 @@ def execute_buys(
                 symbol=sc.symbol,
             )
             continue
+        slot_reason = _slot_block(state, cfg, sc.asset_class)
+        if slot_reason:
+            log(state, "RISK", "blocked", slot_reason, symbol=sc.symbol)
+            continue
         if not _can_trade(sc.asset_class, session_open):
             log(
                 state,
                 "EXECUTOR",
                 "held back",
                 "US cash session is closed; stocks trade only during market hours",
-                symbol=sc.symbol,
-            )
-            continue
-        if len(state["positions"]) >= max_open:
-            log(
-                state,
-                "RISK",
-                "blocked",
-                f"already at max {max_open} open positions",
                 symbol=sc.symbol,
             )
             continue
@@ -366,8 +486,8 @@ def execute_buys(
         notional = fill * qty
         fee = notional * fee_bps
         cost = notional + fee
-        if cost > state["cash"] or qty <= 0:
-            log(state, "RISK", "blocked", "insufficient cash", symbol=sc.symbol)
+        if cost > state["cash"] + 1e-9 or qty <= 0:
+            log(state, "RISK", "blocked", "insufficient cash — no margin", symbol=sc.symbol)
             continue
 
         state["cash"] -= cost
@@ -396,6 +516,7 @@ def execute_buys(
         }
         state["positions"].append(pos)
         held.add(sc.symbol)
+        append_fill(state, _buy_fill(pos))
         log(
             state,
             "EXECUTOR",

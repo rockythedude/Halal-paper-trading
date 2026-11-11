@@ -273,6 +273,61 @@ def build_data(state: dict) -> dict:
         "activity": activity,
         "agents": agents,
         "positions": positions,
+        "fills": _fills_for_page(state),
+        "history_summary": _history_summary(state, positions),
+    }
+
+
+def _fills_for_page(state: dict) -> list[dict]:
+    rows = []
+    for f in state.get("fills") or []:
+        try:
+            qty = float(f["qty"])
+            price = float(f["price"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        if qty != qty or price != price:
+            continue
+        value = f.get("value")
+        try:
+            value_f = float(value) if value is not None else qty * price
+        except (TypeError, ValueError):
+            value_f = qty * price
+        pnl = f.get("pnl")
+        pnl_pct = f.get("pnl_pct")
+        side = (f.get("side") or "").lower()
+        rows.append(
+            {
+                "id": f.get("id") or "",
+                "time": f.get("london") or f.get("ts") or "",
+                "ts": f.get("ts") or "",
+                "side": side,
+                "symbol": f.get("symbol") or "",
+                "name": f.get("name") or f.get("symbol") or "",
+                "asset_class": f.get("asset_class") or "",
+                "qty": qty,
+                "qty_display": _qty(qty),
+                "price": price,
+                "value": round(value_f, 2),
+                "pnl": None if pnl is None or side == "buy" else round(float(pnl), 2),
+                "pnl_pct": None if pnl_pct is None or side == "buy" else float(pnl_pct),
+            }
+        )
+    rows.sort(key=lambda r: (r["ts"], r["id"]), reverse=True)
+    return rows
+
+
+def _history_summary(state: dict, positions: list[dict]) -> dict:
+    closed = state.get("closed_trades") or []
+    wins = [t for t in closed if (t.get("pnl") or 0) >= 0]
+    realized = sum(float(t.get("pnl") or 0) for t in closed)
+    unrealized = sum(float(p.get("unrealized_pnl") or 0) for p in state.get("positions") or [])
+    return {
+        "closed_trades": len(closed),
+        "win_rate": (len(wins) / len(closed)) if closed else None,
+        "realized_pnl": round(realized, 2),
+        "unrealized_pnl": round(unrealized, 2),
+        "fills": len(state.get("fills") or []),
     }
 
 

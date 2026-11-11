@@ -221,6 +221,7 @@
       grid-template-areas:
         "equity desk"
         "positions died"
+        "history history"
         "logger logger";
       gap: 12px;
       align-content: start;
@@ -251,6 +252,19 @@
     .logger { grid-area: logger; }
     .died { grid-area: died; }
     .positions { grid-area: positions; }
+    .history { grid-area: history; }
+    .hist-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      font-size: 12px;
+      color: var(--muted);
+      margin: -2px 0 8px;
+    }
+    .hist-summary b { color: var(--text); font-weight: 600; font-family: "IBM Plex Mono", monospace; }
+    .side-buy { color: var(--neon); font-weight: 700; letter-spacing: 0.06em; font-size: 11px; }
+    .side-sell { color: var(--red); font-weight: 700; letter-spacing: 0.06em; font-size: 11px; }
+    .history .table-wrap { max-height: 280px; overflow: auto; }
     .eq-kicker {
       color: var(--muted);
       font-size: 12px;
@@ -424,7 +438,7 @@
       .chart-wrap { height: 112px; }
       #agents { display: grid; grid-template-columns: 1fr 1fr; column-gap: 14px; }
       .agent { padding: 7px 0; }
-      .positions .table-wrap { max-height: 250px; overflow: auto; }
+      .positions .table-wrap, .history .table-wrap { max-height: 250px; overflow: auto; }
       .log-list { max-height: 128px; }
     }
     /* phone */
@@ -453,7 +467,8 @@
           "desk"
           "logger"
           "died"
-          "positions";
+          "positions"
+          "history";
         padding: 10px 10px 12px;
         gap: 10px;
       }
@@ -546,6 +561,12 @@
       <section class="panel positions">
         <h2>Open positions <span class="meta" id="pos-meta"></span></h2>
         <div class="table-wrap" id="pos"></div>
+      </section>
+
+      <section class="panel history">
+        <h2>Trade history <span class="meta" id="hist-meta"></span></h2>
+        <div class="hist-summary" id="hist-summary"></div>
+        <div class="table-wrap" id="hist"></div>
       </section>
     </main>
 
@@ -799,6 +820,48 @@
       <tbody>${rows}</tbody></table>`;
   }
 
+  function renderHistory(data) {
+    const fills = data.fills || [];
+    const sum = data.history_summary || {};
+    const closed = sum.closed_trades || 0;
+    const win = sum.win_rate;
+    const winStr = (win == null || closed === 0) ? "—" : (win * 100).toFixed(0) + "%";
+    const realized = Number(sum.realized_pnl) || 0;
+    const unrealized = Number(sum.unrealized_pnl) || 0;
+    document.getElementById("hist-meta").textContent = `${fills.length} fill${fills.length === 1 ? "" : "s"}`;
+    document.getElementById("hist-summary").innerHTML =
+      `<span>Closed <b>${closed}</b></span>` +
+      `<span>Win rate <b>${winStr}</b></span>` +
+      `<span>Realised <b class="${clsPnL(realized)}">${fmtMoney(realized)}</b></span>` +
+      `<span>Unrealised <b class="${clsPnL(unrealized)}">${fmtMoney(unrealized)}</b></span>`;
+    if (!fills.length) {
+      document.getElementById("hist").innerHTML = '<div class="empty">No paper fills yet.</div>';
+      return;
+    }
+    const rows = fills.map(f => {
+      const sell = (f.side || "").toLowerCase() === "sell";
+      const pnl = f.pnl;
+      const pct = f.pnl_pct;
+      const pnlHtml = (pnl == null) ? "—" : `${fmtMoney(pnl)} <span>${pct == null ? "" : asPct(pct)}</span>`;
+      return `<tr>
+        <td class="mono">${escapeHtml(f.time || "")}</td>
+        <td class="${sell ? "side-sell" : "side-buy"}">${sell ? "SELL" : "BUY"}</td>
+        <td class="sym">${escapeHtml(f.symbol)}<span class="name">${escapeHtml(f.name || "")}</span></td>
+        <td>${escapeHtml(f.asset_class || "")}</td>
+        <td class="num">${escapeHtml(f.qty_display || String(f.qty ?? ""))}</td>
+        <td class="num">${fmtMoney(f.price)}</td>
+        <td class="num">${fmtMoney(f.value)}</td>
+        <td class="num ${pnl == null ? "flat" : clsPnL(pnl)}">${pnlHtml}</td>
+      </tr>`;
+    }).join("");
+    document.getElementById("hist").innerHTML = `<table>
+      <thead><tr>
+        <th>Time</th><th>Side</th><th>Symbol</th><th>Class</th>
+        <th class="num">Qty</th><th class="num">Price</th><th class="num">Value</th><th class="num">Realised</th>
+      </tr></thead>
+      <tbody>${rows}</tbody></table>`;
+  }
+
   function renderEquity(data) {
     const start = data.starting_capital || 100;
     document.getElementById("eq-kicker").textContent =
@@ -931,6 +994,7 @@
       renderLog(data);
       renderDied(data);
       renderPositions(data);
+      renderHistory(data);
       renderTicker(tickerFromState(data));
       maybeToasts(data);
       document.body.classList.add("ready");
