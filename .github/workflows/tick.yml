@@ -1,6 +1,10 @@
-# Paper tick every 5 minutes, then publish the static dashboard.
+# Paper desks, then the static dashboard.
 # Pages is deployed from this workflow (upload-pages-artifact + deploy-pages),
 # not from a docs/ branch. The site root is the web/ directory.
+#
+# GitHub's scheduler has not delivered a single schedule event for this repo.
+# The cron below stays as a backup. The chain job re-dispatches this workflow
+# with GITHUB_TOKEN so the bots keep running when cron does not.
 
 name: Paper tick
 
@@ -8,6 +12,9 @@ on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
+  # One-shot starter so this push begins the chain. Removed once a second run is queued.
+  push:
+    branches: [main]
 
 concurrency:
   group: halal-paper-tick
@@ -17,6 +24,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  actions: write
 
 jobs:
   tick:
@@ -100,3 +108,20 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  chain:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Queue the next tick
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          queued=$(gh run list --workflow tick.yml --status queued --limit 10 --json databaseId --jq 'length')
+          echo "queued runs: ${queued}"
+          if [ "${queued}" != "0" ]; then
+            echo "A tick is already queued. Not adding another."
+            exit 0
+          fi
+          gh workflow run tick.yml --ref main
