@@ -86,7 +86,8 @@ jobs:
           python export_page.py --state copy/state.json --out web/copy/data.json --desk copy
           python export_page.py --state meme/state.json --out web/meme/data.json --desk meme
           python export_page.py --state btc/state.json --out web/btc/data.json --desk btc
-          python export_page.py --state wallets/state.json --out web/wallets/data.json --desk wallets
+          # web/wallets/data.json is written by copy-live.yml. Regenerating it here
+          # leaves an unstaged file that breaks the rebase below.
           python export_page.py --state scalp/state.json --out web/scalp/data.json --desk axiom
 
       - name: Commit state and dashboard data
@@ -100,6 +101,7 @@ jobs:
           else
             git commit -m "tick: update paper book [skip ci]"
             if ! git push origin HEAD:main; then
+              git checkout -- wallets/state.json web/wallets/data.json || true
               git pull --rebase origin main
               git push origin HEAD:main
             fi
