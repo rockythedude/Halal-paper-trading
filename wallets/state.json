@@ -1,8 +1,8 @@
 {
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 38.60186206161859,
-  "equity": 92.167293,
+  "cash": 41.181830060726575,
+  "equity": 90.369014,
   "positions": [
     {
       "symbol": "jeff",
@@ -123,33 +123,6 @@
       "market_value": 9.340511460055756,
       "unrealized_pnl": -0.22032448194424498,
       "unrealized_pct": -0.01327492366918892
-    },
-    {
-      "symbol": "AI",
-      "name": "AI",
-      "mint": "8XWd1xEKcQXTzvYJbCyvuStDfZzKv3j5FWvEoandpump",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "copied_wallet": "8oQoMhfBQnRspn7QtNAq2aPThRE4q94kLSTwaaFQvRgs",
-      "qty": 180041.31769749735,
-      "entry_price": 2.5800696525698508e-05,
-      "raw_price": 2.5800696525698508e-05,
-      "entry_fee": 0.09290382800000002,
-      "fee_rate": 0.02,
-      "cost_basis": 4.738095228000001,
-      "opened_at": "2026-11-12T03:07:00.251414+00:00",
-      "opened_at_london": "12 Nov 2026, 3:07 GMT",
-      "high_water": 2.5800696525698508e-05,
-      "last_price": 2.4318011512823633e-05,
-      "last_source": "pump.fun curve",
-      "venue": "pump",
-      "tag": "pump.fun curve",
-      "reason": "COPY BUY $AI after big bags bobby 8oQo\u2026gs (30d +298.59 SOL) \u00b7 pump.fun curve",
-      "hard_stop": 1.935052239427388e-05,
-      "take_profit": 5.1601393051397015e-05,
-      "market_value": 4.378246836551678,
-      "unrealized_pnl": -0.35984839144832326,
-      "unrealized_pct": -0.05746685991202072
     }
   ],
   "closed_trades": [
@@ -470,6 +443,22 @@
       "closed_at": "2026-11-12T03:02:05.284463+00:00",
       "closed_at_london": "12 Nov 2026, 3:02 GMT",
       "opened_at": "2026-11-12T02:59:02.133414+00:00"
+    },
+    {
+      "symbol": "AI",
+      "name": "AI",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 180041.31769749735,
+      "entry_price": 2.5800696525698508e-05,
+      "exit_price": 1.4622312483161964e-05,
+      "pnl": -2.1581272288920172,
+      "pnl_pct": -0.455484139731608,
+      "reason": "SELL stop \u221225% $AI \u00b7 pump.fun curve",
+      "copied_wallet": "8oQoMhfBQnRspn7QtNAq2aPThRE4q94kLSTwaaFQvRgs",
+      "closed_at": "2026-11-12T03:10:34.721587+00:00",
+      "closed_at_london": "12 Nov 2026, 3:10 GMT",
+      "opened_at": "2026-11-12T03:07:00.251414+00:00"
     }
   ],
   "equity_curve": [
@@ -574,6 +563,12 @@
       "label": "12 Nov 2026, 3:06 GMT",
       "equity": 92.907863,
       "cash": 43.339957
+    },
+    {
+      "ts": "2026-11-12T03:10:59.489283+00:00",
+      "label": "12 Nov 2026, 3:10 GMT",
+      "equity": 90.369014,
+      "cash": 41.18183
     }
   ],
   "activity": [
@@ -6648,6 +6643,30 @@
       "line": "03:09 EXECUTOR: skip $AI \u2014 already in the book",
       "tag": "EXECUTOR",
       "message": "03:09 EXECUTOR: skip $AI \u2014 already in the book"
+    },
+    {
+      "ts": "2026-11-12T03:10:34.721654+00:00",
+      "london": "12 Nov 2026, 3:10 GMT",
+      "hhmm": "03:10",
+      "agent": "RISK",
+      "action": "SELL stop \u221225% $AI \u00b7 pump.fun curve",
+      "symbol": null,
+      "reason": "SELL stop \u221225% $AI \u00b7 pump.fun curve",
+      "line": "03:10 RISK: SELL stop \u221225% $AI \u00b7 pump.fun curve",
+      "tag": "RISK",
+      "message": "03:10 RISK: SELL stop \u221225% $AI \u00b7 pump.fun curve"
+    },
+    {
+      "ts": "2026-11-12T03:10:59.489307+00:00",
+      "london": "12 Nov 2026, 3:10 GMT",
+      "hhmm": "03:10",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 21 polls, 10 wallets, equity $90.37",
+      "symbol": null,
+      "reason": "run complete \u2014 21 polls, 10 wallets, equity $90.37",
+      "line": "03:10 LOGGER: run complete \u2014 21 polls, 10 wallets, equity $90.37",
+      "tag": "LOGGER",
+      "message": "03:10 LOGGER: run complete \u2014 21 polls, 10 wallets, equity $90.37"
     }
   ],
   "agents": {
@@ -6656,7 +6675,7 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "Pinned 10 leaderboard wallets \u00b7 0 new swaps \u00b7 checked 12 Nov 2026, 3:10 GMT",
+      "activity": "Pinned 10 leaderboard wallets \u00b7 1 new swaps \u00b7 checked 12 Nov 2026, 3:10 GMT",
       "badge": "10 pinned",
       "badge_label": "wallets",
       "realized_pnl": 0.0,
@@ -6704,8 +6723,8 @@
       "role": "Executor",
       "blurb": "Buys passing names, with size capped at 8% of equity. Never averages down.",
       "color": "#5B8DEF",
-      "activity": "6 open copies \u00b7 10% of equity each",
-      "badge": "6/8",
+      "activity": "5 open copies \u00b7 10% of equity each",
+      "badge": "5/8",
       "badge_label": "open",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -6736,8 +6755,8 @@
       "role": "Logger",
       "blurb": "Records every rejection, buy and stop with its reason.",
       "color": "#3DDC97",
-      "activity": "10 wallets \u00b7 45 fills \u00b7 21 polls",
-      "badge": "45 fills",
+      "activity": "10 wallets \u00b7 47 fills \u00b7 21 polls",
+      "badge": "47 fills",
       "badge_label": "log",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -6748,7 +6767,7 @@
       "open_positions": 0
     }
   },
-  "ticks": 313,
+  "ticks": 334,
   "last_updated": "2026-11-12T01:45:34.300691+00:00",
   "last_updated_london": "12 Nov 2026, 1:45 GMT",
   "screening_method": "",
@@ -6772,12 +6791,12 @@
   "totals": {
     "scanned": 10,
     "killed": 0,
-    "traded": 25
+    "traded": 26
   },
   "totals_cumulative": {
-    "scanned": 313,
+    "scanned": 334,
     "killed": 0,
-    "traded": 25
+    "traded": 26
   },
   "paper_money": true,
   "fills": [
@@ -7438,6 +7457,21 @@
       "pnl_pct": null,
       "tag": "pump.fun curve",
       "id": "f0046"
+    },
+    {
+      "ts": "2026-11-12T03:10:34.721587+00:00",
+      "london": "12 Nov 2026, 3:10 GMT",
+      "side": "sell",
+      "symbol": "AI",
+      "name": "AI",
+      "asset_class": "crypto",
+      "qty": 180041.31769749735,
+      "price": 1.4622312483161964e-05,
+      "value": 2.6326204072530444,
+      "pnl": -2.1581272288920172,
+      "pnl_pct": -0.455484139731608,
+      "tag": "pump.fun curve",
+      "id": "f0047"
     }
   ],
   "desk": "wallets",
@@ -7689,6 +7723,7 @@
       "2TEcwkeSxL42jKPgiqbnvavnryGnm6rvEMgE72ZXWEjaiadbp25mitipFKd5X2iN2FQm3ksq44ZRhr6fdvECbW82",
       "Jf27CEQvBkmk8bJUhD8NPrt95FGqw2JfaXRoCXVCHjEr7Yda9N22Bu1GNbpj2qHLpsGxEg169BeQGe2yFaK5tJY",
       "RGrLMGuvksdjha4obBuG9sUrtiXVbAx4WHECANUNFaHZFkUwWD98tm5iGzadakAy9kLSgVT8nhQ6aw1mcT8kXja",
+      "LFn4zMnXqdmKn57pP1jwpGRnwQfHEJSTW6pmyGEwiuhJ68BaUHDXRjZx5Nd6KtfCLUDdDbF4ZWB6KtK6jDhDcQ4",
       "62e6Q4C44PAxubfSP6Y4x5KVjnvJ4w3bACcNQokcsZJxwDVDCEcq7MHe7JfUMe9fjuz15UwQkF69T9Jcq8RFq2fi",
       "2G4oM9fyzBAsTWdaiGMCAVvK8L41xUY66aq7yqEF4uy3Ap6Vd2wL2aPTiQ9agsVVhkwZrSWGwQfAHxVrm2aGYDjg",
       "3bRyU9QxgGPu5bu7GkP9C8SwcKPSSCu93QHkLRWqe7dnZGKJvHy7iRjvqKeCJue57bdeEyRNyD1nJM7gHrpwsNAy",
@@ -7709,8 +7744,7 @@
       "3nJn9CFsUK7fDWby3GMRdWMupN2KYNhN4SPJ4WUPj9nfxFweaDjgeQJhuQEhqkjMUAgEJzrWYg5JWodU7ipujS1K",
       "hSasvGgozSJYvNud7oJnTirF5QBBhTm6qry5paC7VWXB8PPVpjJxPQFTrM1fFCJ5uBi2wA3W5gwWQi1F8mmFLKL",
       "2b5rjaEAZvfASSkuoqjbVpEEkjMyQGL4YzVh14er1RhGGPXuuCKd85VQFojW56tHBKHpx84RhMqrCbsR3jbhZwUL",
-      "3BZs5rswcJDbdvqbhD2zJdGvEwi8qMA2brLhpvybBGPJtcJmKPBcPaEFRh9Tigkw4SBRSMgCe5bGVd3dzJaPBFMx",
-      "spDjnzUqU2m2YgtgZ1aQSUdpQrU133yquad7mZVfrWrFweqoiww6kmXD8DQ62tR5xWJs5JstPdpFQwLQZvDxtyo"
+      "3BZs5rswcJDbdvqbhD2zJdGvEwi8qMA2brLhpvybBGPJtcJmKPBcPaEFRh9Tigkw4SBRSMgCe5bGVd3dzJaPBFMx"
     ],
     "B3uJaZEqebtC8VQXs6qTmF8Np5KcVBHrFwhXjFBUqVNG": [
       "27zHiHVp9rDJLhx4okofeB3Vt5WaiSkm63bAjRKNMEin4AiPtciYTY6BC6dfEpxnLmRHoxbphYFHMz75RcAaiG5f",
@@ -7914,8 +7948,8 @@
       "MXyMAPK9JfAEHMrqA2CNq2XLJTD6QvUD5F2zfVpt7Y5BLNcAusFbdUqq4EnE3DiRdcgXkWjivKVbJ2Qr7Wi1dwL"
     ],
     "c6LPGHm9EadZJ9nFLH7qy7d4kFZBEfcEMLhSok1aUam": [
-      "2xvtFvc1boUkZQeN3c7XbrSmdhMNitr7MXEuAVHaL1BH1vXKNobLLyY8fShD4kZEFaNsPUk7mn2p6d6hPxwosoVF",
       "JSA8cfaVjf8gyMkGsM9Md9Y8oob5mxknKdquGU4pSANEf4TTcEJFG9nARJVMN6hnnqa5XPSQgf65yLAmgAZsz4a",
+      "2xvtFvc1boUkZQeN3c7XbrSmdhMNitr7MXEuAVHaL1BH1vXKNobLLyY8fShD4kZEFaNsPUk7mn2p6d6hPxwosoVF",
       "2Wy9vB6PvxUcZ1N2y7s9YKabaMzGAJjy1VnPhiDQBsPxfYYhLokEDCiZftGHkRngQiSZPFqH71J8xT2tgeD9FWXv",
       "2h2QsjNMYVjKUP2qxmLXtSEP6ia4q2UXZsRa15gb2JGkzSNTMC81CxcVWCyADYi296U9arYxNACgKqcd83Hg9dde",
       "5i653FsrCFBUsvVRZxXmak88CtBYQqjvz6x59ygGZ7tCQWbA1Kngy5qWbA3kGGdPFY1sWbCf7N4kfRnCPwSEBK9v",
@@ -7980,8 +8014,8 @@
       "2bcWTxkY2h5wuYBAy9TXvWcLZQvdpVwsr14TirhXrwTp65CqETqgL3XhfT1SppLoscRLzGvSQEFDkpcaNXjob9S"
     ],
     "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC": [
-      "UxqYYaGMCQ7f4GZGH7Mt3Q5EJvV4ANhNzrzSiZNqGaEfKnMPLwh8bdKYyBEekRMCZnNneSuxHcgxvMyYSJ2bre3",
       "2GA8bbHRGoRBfxm7NphAPANW7hxuGxaiouJPeJzCFFipeGTqyQZhy1WvjK7LrjjcthiKzywDURUFdnpKExsYdpFv",
+      "UxqYYaGMCQ7f4GZGH7Mt3Q5EJvV4ANhNzrzSiZNqGaEfKnMPLwh8bdKYyBEekRMCZnNneSuxHcgxvMyYSJ2bre3",
       "4L8aPAfGMXuoM4VFcZMrNM2vW7o56zWir4di7PXXNx3ntmo2UKVpwRejDDjLcVZ3auDqqJH5eopC2eXrH28cP28J",
       "2focrvatWoeRGZhx7i6oVctamteXa4qdEAj4XT8bgL4sfA7vGL4BYo3zTRfpDbWz5x98i5C1Rg3PuLJ43XsZXW3M",
       "63j8STTZ78R9wSoYqEmfk2Hw53JTxUx5deqFnB5QWsEZDL63r2a9ZnH99fKqcXWEkhHaEb8gVUFzA2HYHLqcfNFD",
@@ -8000,6 +8034,7 @@
       "4VixJ6PEcx8rxxgrtyCTpVRvbieyhSCWBZFkf1jRv8qpCPDHr3kaYBJ2fw4G9m2Y4bUs72DApLGtJcE17Juiuwqe",
       "29F3hd78HnHWeksmkvnychGrFVUCHWAhCJjzD8EUwhCb7w4tiisgECEB8XZwYS3gv5A59tYAUmeT5qURyE1VdkZZ",
       "3CwARyuPuxXRdWoz45x6iHjWg6y7Kj199AxXWq9gEaEVfwhUJw2mRAYKtZdu2AY6vAKAZqagtRvjSShujDzMxNWG",
+      "32VkaBnJYVNx58ANrkZkRvtgwvVWYLutFsRozt8EwUqvapNcA2wvWey7VVumCwT3Wv5wik5HULQk1wC94otimWCX",
       "5vorziU4b71HBT9ToKrD85fKj1REJaENFNGe85rZ8APdaVrNcuBgmArxNXfPy8vazmhbTnsKbxygzQoPFgWVXPRw",
       "3dNSgNEhNUoWmmikSabwrxKXZxEEQVnpba2CpeEteLH8b4PjzmxyC2pj2q2bpS2V2sXBnmGRk8moRLtMZHBm4jfL",
       "3dpKYJApY5tyyqVcFZyqaXErgxda8GaQQopjMRYviqBHKqEMp1A89LpXbg81MHBsfiF928tKk98FA3sKCjfrgwLw",
@@ -8028,7 +8063,7 @@
       "3yJSfcbCt8UMgLyKj7ALquPCkmDhFivYRtg2ZZfBDRkPGzSGRvxZkFnModz6Lu8pH5nTLXRhLco21h5rixF9Djfc"
     ]
   },
-  "checked_at": "2026-11-12T03:10:25.642851+00:00",
+  "checked_at": "2026-11-12T03:10:59.489063+00:00",
   "checked_at_london": "12 Nov 2026, 3:10 GMT",
   "sol_usd": 83.2,
   "retired_watchlist": [
@@ -8560,11 +8595,11 @@
       "leaderboard_stat": "30d +298.59 SOL",
       "copy_buys": true,
       "parse_error": null,
-      "our_realized": -2.63,
-      "our_unrealized": -0.36,
-      "open_copies": 1,
-      "closed_copies": 6,
-      "our_total": -2.99
+      "our_realized": -4.79,
+      "our_unrealized": 0.0,
+      "open_copies": 0,
+      "closed_copies": 7,
+      "our_total": -4.79
     },
     {
       "address": "Dvbv5TdAyPpJk16X9mUxWFVicYtCUxTLhuof8TGuUaRv",
