@@ -11,8 +11,10 @@ from __future__ import annotations
 import json
 import os
 import time
+import urllib.error
 import urllib.request
 from bisect import bisect_left
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -76,7 +78,7 @@ def kolscan_30d(limit: int = 20) -> tuple[list[dict], str]:
     rows = []
     for part in html.split('wallet_address\\":\\"')[1:]:
         addr = part.split('\\"', 1)[0]
-        if not (32 <= len(addr) <= 44):
+        if not (32 <= len(addr) <= 44) or any(ch not in "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz" for ch in addr):
             continue
 
         def grab(key: str) -> str | None:
@@ -146,12 +148,24 @@ def _helius_page(addr: str, before: str | None, key: str) -> list:
     url = f"https://api.helius.xyz/v0/addresses/{addr}/transactions?api-key={key}&type=SWAP&limit=100"
     if before:
         url += f"&before={before}"
-    req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "halal-paper-trader/1.0"})
-    with urllib.request.urlopen(req, timeout=40) as resp:
-        data = json.loads(resp.read().decode())
-    if isinstance(data, dict) and data.get("error"):
-        raise RuntimeError("Helius error")
-    return data if isinstance(data, list) else []
+    last = "Helius page failed"
+    for attempt in range(4):
+        req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "halal-paper-trader/1.0"})
+        try:
+            with urllib.request.urlopen(req, timeout=25) as resp:
+                data = json.loads(resp.read().decode())
+        except urllib.error.HTTPError as exc:
+            last = f"HTTP {exc.code}"
+            time.sleep(0.4 * (attempt + 1) if exc.code == 429 else 0.2)
+            continue
+        except Exception as exc:
+            last = type(exc).__name__
+            time.sleep(0.2)
+            continue
+        if isinstance(data, dict) and data.get("error"):
+            raise RuntimeError("Helius error")
+        return data if isinstance(data, list) else []
+    raise RuntimeError(last)
 
 
 def _swap_from_helius(tx: dict, wallet: str, sol_usd: float | None) -> dict | None:
@@ -254,7 +268,7 @@ def fetch_swaps(addr: str, cutoff: int, sol_series, key: str) -> tuple[list[dict
             if not stop and len(batch) < 100:
                 reached = True
             break
-        time.sleep(0.12)
+        time.sleep(0.02)
     if pages >= 250 and not reached:
         note = "Stopped at 250 Helius pages before 30 days."
     swaps.sort(key=lambda s: s["time"])
@@ -285,6 +299,7 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
     holds = []
     copies = 0
     skipped = 0
+    path: list[tuple[int, float]] = []
 
     def n_open() -> int:
         return sum(len(v) for v in lots.values())
@@ -298,6 +313,19 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
 
     def equity() -> float:
         return cash + mark_value()
+
+    def worth_open() -> float:
+        total = 0.0
+        for mint, held in lots.items():
+            for lot in held:
+                if lot.get("closed"):
+                    continue
+                fee = FEE_CURVE if lot["pump"] else FEE
+                total += lot["qty"] * lot["mark"] * (1.0 - fee)
+        return total
+
+    def snap(when: int) -> None:
+        path.append((int(when), round(cash + worth_open(), 2)))
 
     def close_lot(lot: dict, price: float, when: int, reason: str) -> None:
         nonlocal cash
@@ -331,6 +359,7 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
 
     for swap in swaps:
         scan_stops(swap["time"])
+        snap(swap["time"])
         later = _later(index, swap["mint"], swap["time"]) if swap.get("price") else None
         if swap["side"] == "buy":
             if not later:
@@ -358,6 +387,7 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
                 "pump": pump,
             })
             copies += 1
+            snap(later[0])
         else:
             held = lots.get(swap["mint"]) or []
             if not held:
@@ -368,8 +398,10 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
             for lot in held:
                 close_lot(lot, later[1], later[0], "sell")
             lots[swap["mint"]] = []
+            snap(later[0])
 
     scan_stops(int(time.time()))
+    snap(int(time.time()))
     unrealized = 0.0
     open_n = 0
     for mint, held in lots.items():
@@ -384,6 +416,7 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
             lot["mark"] = price
             open_n += 1
             del cash_mark
+    snap(int(time.time()))
     realized = sum(closed)
     wins = sum(1 for pnl in closed if pnl > 0)
     ending = cash + sum(
@@ -407,6 +440,7 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
         "ending_equity": round(ending, 2),
         "profit": round(ending - START, 2),
         "skipped": skipped,
+        "path": path,
     }
 
 
@@ -421,6 +455,30 @@ def _now_prices(mints: list[str]) -> dict[str, float]:
             if quote.get("price"):
                 out[mint] = float(quote["price"])
     return out
+
+
+def _combined_days(pinned: list[dict], paths: dict[str, list[tuple[int, float]]]) -> list[dict]:
+    """Sum of each pinned $100 book at the end of each day. Cash before the first trade is $100."""
+    if not pinned:
+        return []
+    start = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(days=WINDOW_DAYS)
+    end = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    days = []
+    cursor = start
+    while cursor <= end:
+        stamp = int(cursor.replace(hour=23, minute=59, second=59).timestamp())
+        total = 0.0
+        for row in pinned:
+            equity = START
+            for ts, value in paths.get(row["address"]) or []:
+                if ts <= stamp:
+                    equity = value
+                else:
+                    break
+            total += equity
+        days.append({"date": cursor.strftime("%Y-%m-%d"), "equity": round(total, 2)})
+        cursor += timedelta(days=1)
+    return days
 
 
 def _row(meta_wallet: dict, stats: dict, coverage: dict) -> dict:
@@ -461,18 +519,25 @@ def build_rank() -> dict:
     all_swaps = []
     coverage = {}
     by_wallet = {}
-    for row in wallets:
+
+    def _load(row: dict) -> tuple[dict, list[dict], dict]:
         swaps, meta = fetch_swaps(row["address"], cutoff, sol_series, key)
         for swap in swaps:
             swap["wallet"] = row["address"]
-        by_wallet[row["address"]] = swaps
-        all_swaps.extend(swaps)
-        coverage[row["address"]] = meta
         print(
             f"{(row.get('name') or _short(row['address'])):24} swaps {len(swaps):5} "
             f"30d {meta['reached_30d']} {meta.get('note') or ''}",
             flush=True,
         )
+        return row, swaps, meta
+
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        futures = [pool.submit(_load, row) for row in wallets]
+        for future in as_completed(futures):
+            row, swaps, meta = future.result()
+            by_wallet[row["address"]] = swaps
+            coverage[row["address"]] = meta
+            all_swaps.extend(swaps)
     index: dict[str, list[tuple[int, float]]] = {}
     for swap in all_swaps:
         if swap.get("price"):
@@ -482,8 +547,10 @@ def build_rank() -> dict:
     open_mints = sorted({s["mint"] for s in all_swaps})
     now_prices = _now_prices(open_mints[:400])
     sims = []
+    paths = {}
     for row in wallets:
         stats = simulate(by_wallet[row["address"]], index, now_prices)
+        paths[row["address"]] = sorted(stats.pop("path", []))
         sims.append(_row(row, stats, coverage[row["address"]]))
     sims.sort(key=lambda r: r["profit"], reverse=True)
     for i, row in enumerate(sims, 1):
@@ -492,14 +559,7 @@ def build_rank() -> dict:
     pinned_ranked = sorted(pinned, key=lambda r: r["profit"], reverse=True)
     for i, row in enumerate(pinned_ranked, 1):
         row["pinned_rank"] = i
-    days = []
-    if all_swaps:
-        start = datetime.fromtimestamp(min(s["time"] for s in all_swaps), timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
-        end = datetime.now(timezone.utc)
-        cursor = start
-        while cursor <= end:
-            days.append({"date": cursor.strftime("%Y-%m-%d"), "equity": round(sum(r["ending_equity"] for r in pinned), 2)})
-            cursor += timedelta(days=1)
+    days = _combined_days(pinned, paths)
     ending = round(sum(r["ending_equity"] for r in pinned), 2)
     return {
         "label": "Backtest replay, paper money, includes fees and delay",

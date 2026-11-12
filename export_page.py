@@ -317,6 +317,9 @@ def _fills_for_page(state: dict) -> list[dict]:
                 "pnl_pct": None if pnl_pct is None or side == "buy" else float(pnl_pct),
                 "tag": f.get("tag") or "",
                 "delay_s": f.get("delay_s"),
+                "notify_lag_s": f.get("notify_lag_s"),
+                "fetch_s": f.get("fetch_s"),
+                "quote_s": f.get("quote_s"),
             }
         )
     rows.sort(key=lambda r: (r["ts"], r["id"]), reverse=True)

@@ -11,6 +11,10 @@ on:
       - .github/workflows/wallet-rank.yml
       - wallet_rank.py
 
+concurrency:
+  group: wallet-rank
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
