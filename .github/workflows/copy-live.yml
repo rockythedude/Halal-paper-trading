@@ -1,0 +1,70 @@
+# Long-running paper copy of the pinned Solana wallets.
+# Separate from the 5-minute tick so a websocket can stay open.
+# The job stops short of GitHub's 6-hour limit and starts the next one.
+
+name: Wallet copy live
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/copy-live.yml
+      - copy_live.py
+
+concurrency:
+  group: wallet-copy-live
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Follow the pinned wallets
+        env:
+          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+        run: |
+          set +e
+          if [ -z "$HELIUS_API_KEY" ]; then
+            echo "HELIUS_API_KEY is not set."
+            python copy_live.py --fallback-only --loop-seconds 20880
+          else
+            echo "HELIUS_API_KEY is set. Opening the websocket."
+            python copy_live.py --loop-seconds 20880
+          fi
+          echo "copy-live loop finished with status $?"
+
+      - name: Queue the next live copy
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          live=$(gh run list --workflow copy-live.yml --limit 10 --json databaseId,status \
+            --jq "[.[] | select(.databaseId != ${{ github.run_id }} and (.status == \"queued\" or .status == \"in_progress\" or .status == \"waiting\" or .status == \"pending\"))] | length")
+          echo "other copy-live runs: ${live}"
+          if [ "${live}" != "0" ]; then
+            echo "Another copy-live run is already queued or running."
+            exit 0
+          fi
+          gh workflow run copy-live.yml --ref main

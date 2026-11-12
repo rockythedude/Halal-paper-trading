@@ -53,9 +53,7 @@ jobs:
           # so this job stays near the 5-minute cron instead of stacking another run.
           python btc_tick.py --loop-seconds 250 &
           btc_pid=$!
-          # Wallet copy polls about every 12s and checkpoints its page about once a minute.
-          python wallet_tick.py --loop-seconds 240 --interval 12 --commit &
-          wal_pid=$!
+          # Wallet copy is owned by copy-live.yml so this job does not poll those wallets.
           # Axiom scalper polls about every 8s and checkpoints about every 35s.
           python scalp_tick.py --loop-seconds 230 --interval 8 --commit &
           scalp_pid=$!
@@ -68,13 +66,11 @@ jobs:
           s3=$?
           wait "$btc_pid"
           s4=$?
-          wait "$wal_pid"
-          s5=$?
           wait "$scalp_pid"
-          s6=$?
+          s5=$?
           set -e
-          if [ "$s1" -ne 0 ] || [ "$s2" -ne 0 ] || [ "$s3" -ne 0 ] || [ "$s4" -ne 0 ] || [ "$s5" -ne 0 ] || [ "$s6" -ne 0 ]; then
-            echo "desk failed main=$s1 copy=$s2 meme=$s3 btc=$s4 wallets=$s5 scalp=$s6"
+          if [ "$s1" -ne 0 ] || [ "$s2" -ne 0 ] || [ "$s3" -ne 0 ] || [ "$s4" -ne 0 ] || [ "$s5" -ne 0 ]; then
+            echo "desk failed main=$s1 copy=$s2 meme=$s3 btc=$s4 scalp=$s5"
             exit 1
           fi
 
@@ -97,7 +93,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- state.json web/data.json copy/state.json web/copy/data.json meme/state.json web/meme/data.json btc/state.json web/btc/data.json wallets/state.json web/wallets/data.json web/wallets/replay.json scalp/state.json web/scalp/data.json
+          # wallets/state.json and web/wallets/data.json belong to copy-live.yml.
+          git add -- state.json web/data.json copy/state.json web/copy/data.json meme/state.json web/meme/data.json btc/state.json web/btc/data.json web/wallets/replay.json scalp/state.json web/scalp/data.json
           if git diff --cached --quiet; then
             echo "No changes in state.json or web/data.json."
           else

@@ -316,6 +316,7 @@ def _fills_for_page(state: dict) -> list[dict]:
                 "pnl": None if pnl is None or side == "buy" else round(float(pnl), 2),
                 "pnl_pct": None if pnl_pct is None or side == "buy" else float(pnl_pct),
                 "tag": f.get("tag") or "",
+                "delay_s": f.get("delay_s"),
             }
         )
     rows.sort(key=lambda r: (r["ts"], r["id"]), reverse=True)
@@ -563,6 +564,11 @@ def export_page(state: dict | None = None, dest: Path | None = None, desk: str =
     payload["watchlist"] = state.get("watchlist") or []
     payload["wallet_scoreboard"] = state.get("wallet_scoreboard") or []
     payload["near_misses"] = state.get("near_misses") or []
+    payload["helius_status"] = state.get("helius_status") or ""
+    payload["avg_copy_delay_s"] = state.get("avg_copy_delay_s")
+    payload["last_copy_delay_s"] = state.get("last_copy_delay_s")
+    payload["last_event_at"] = state.get("last_event_at") or ""
+    payload["last_event_london"] = state.get("last_event_london") or ""
     payload["checked_at"] = state.get("checked_at") or state.get("last_updated") or ""
     payload["checked_at_london"] = state.get("checked_at_london") or state.get("last_updated_london") or ""
     payload["who_we_copy"] = state.get("who_we_copy")

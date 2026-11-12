@@ -575,7 +575,7 @@
       </div>
       <div class="right-tools">
         <span class="pill">6 agents</span>
-        <div class="live"><span class="dot"></span> Live</div>
+        <div class="live" id="live-flag"><span class="dot"></span> <span id="live-flag-text">Live</span></div>
       </div>
     </header>
 
@@ -1244,7 +1244,7 @@
       const pct = f.pnl_pct;
       const pnlHtml = (pnl == null) ? "—" : `${fmtMoney(pnl)} <span>${pct == null ? "" : asPct(pct)}</span>`;
       return `<tr>
-        <td class="mono">${escapeHtml(f.time || "")}</td>
+        <td class="mono">${escapeHtml(f.time || "")}${f.delay_s != null ? ` · ${Number(f.delay_s).toFixed(1)}s` : ""}</td>
         <td class="${sell ? "side-sell" : "side-buy"}">${sell ? "SELL" : "BUY"}</td>
         <td class="sym">${escapeHtml(f.symbol)}${f.tag ? ` <span class="chip">${escapeHtml(f.tag)}</span>` : ""}<span class="name">${escapeHtml(f.name || "")}</span></td>
         <td>${escapeHtml(f.asset_class || "")}</td>
@@ -1265,7 +1265,8 @@
   function renderEquity(data) {
     const start = data.starting_capital || 100;
     const sizePct = Math.round((((data.risk_rules || {}).max_position_pct) || 0.08) * 100);
-    document.getElementById("eq-kicker").textContent = deskId() === "axiom"
+    const liveBook = deskId() === "axiom" || (deskId() === "wallets" && data.helius_status === "live");
+    document.getElementById("eq-kicker").textContent = liveBook
       ? `Live P&L — ${fmtMoney(start, 0)} book — ${sizePct}% size`
       : `Equity — ${fmtMoney(start, 0)} at start — ${sizePct}% max size`;
     setEquity(Number(data.equity) || 0);
@@ -1603,6 +1604,7 @@
       renderDied(data);
       renderNear(data);
       renderPositions(data);
+      renderLiveFlag(data);
       renderHistory(data);
       renderWho(data);
       renderWatch(data);
@@ -1625,9 +1627,25 @@
     drawChart(lastCurve);
     if (deskId() === "btc") drawBtc(lastBtc, lastMarks);
   });
+  function renderLiveFlag(data) {
+    const text = document.getElementById("live-flag-text");
+    if (!text) return;
+    if (deskId() !== "wallets") {
+      text.textContent = "Live";
+      return;
+    }
+    if (!data || data.helius_status !== "live") {
+      text.textContent = "waiting for Helius key";
+      return;
+    }
+    const when = data.last_event_london || data.checked_at_london || "no copy yet";
+    const delay = data.avg_copy_delay_s == null ? "—" : `${data.avg_copy_delay_s}s avg`;
+    text.textContent = `LIVE · ${when} · ${delay}`;
+  }
+
   function pollEvery() {
     if (deskId() === "axiom") return 8000;
-    return deskId() === "wallets" ? 20000 : 30000;
+    return deskId() === "wallets" ? 5000 : 30000;
   }
   async function pollLoop() {
     if (deskId() === "wallets") {

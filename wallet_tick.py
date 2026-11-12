@@ -1298,7 +1298,7 @@ def _parse_wallet_tx(tx: dict | None, wallet: str) -> dict | None:
         sol_flow = wsol if abs(wsol) >= abs(native) else native
         if abs(sol_flow) < 1e-5 and abs(usdc) < 0.01:
             return None
-    return {"mint": meme, "side": "buy" if delta > 0 else "sell"}
+    return {"mint": meme, "side": "buy" if delta > 0 else "sell", "amount": abs(delta)}
 
 
 def checkpoint(state: dict, commit: bool) -> None:
@@ -1330,7 +1330,7 @@ def checkpoint(state: dict, commit: bool) -> None:
         print(f"wallet checkpoint skipped: {exc}", flush=True)
 
 
-def run_wallets(loop_seconds: int = 0, interval: int = 12, commit: bool = False) -> dict:
+def run_wallets(loop_seconds: int = 0, interval: int = 12, commit: bool = False, commit_every: int = 60) -> dict:
     from universe import load_config
 
     cfg = load_config()
@@ -1352,7 +1352,7 @@ def run_wallets(loop_seconds: int = 0, interval: int = 12, commit: bool = False)
         except Exception as exc:
             _say(state, "SCOUT", f"poll failed: {exc}")
         now = time.time()
-        if commit and now - last_commit >= 60:
+        if commit and now - last_commit >= commit_every:
             checkpoint(state, commit=True)
             last_commit = now
         if loop_seconds <= 0 or now - start >= loop_seconds:
