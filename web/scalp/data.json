@@ -2,12 +2,12 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 68.84,
-  "equity": 98.67,
-  "equity_multiple": 0.9867,
-  "profit": -1.33,
-  "goal_pct": -0.0002221786666666669,
-  "progress": 0.016444488,
+  "cash": 58.86,
+  "equity": 98.61,
+  "equity_multiple": 0.9861,
+  "profit": -1.39,
+  "goal_pct": -0.00023181399999999997,
+  "progress": 0.016434852666666666,
   "win_rate": 0.5,
   "wins": 3,
   "losses": 3,
@@ -19,10 +19,10 @@
     "pnl": 0.89,
     "pnl_pct": 0.08734515427667504
   },
-  "ticks": 87,
-  "open_count": 3,
-  "last_updated_london": "12 Nov 2026, 16:15 GMT",
-  "last_updated": "2026-11-12T16:15:40.815325+00:00",
+  "ticks": 116,
+  "open_count": 4,
+  "last_updated_london": "12 Nov 2026, 16:16 GMT",
+  "last_updated": "2026-11-12T16:16:04.710089+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 2,
+  "traded": 10,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 2,
+    "traded": 10,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -166,10 +166,34 @@
     {
       "label": "12 Nov 2026, 16:15 GMT",
       "value": 98.67
+    },
+    {
+      "label": "12 Nov 2026, 16:16 GMT",
+      "value": 98.61
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "12 Nov 2026, 16:16 GMT",
+      "hhmm": "16:16",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "16:16 LOGGER: run complete — 29 polls, 4 open, equity $98.61",
+      "message": "16:16 LOGGER: run complete — 29 polls, 4 open, equity $98.61",
+      "symbol": null,
+      "action": "run complete — 29 polls, 4 open, equity $98.61"
+    },
+    {
+      "ts": "12 Nov 2026, 16:16 GMT",
+      "hhmm": "16:16",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "16:16 EXECUTOR: BUY 10% $AMD @ 0.000107635 — 5m +33.4% vol $113,804 buys 1763/sells 1379",
+      "message": "16:16 EXECUTOR: BUY 10% $AMD @ 0.000107635 — 5m +33.4% vol $113,804 buys 1763/sells 1379",
+      "symbol": null,
+      "action": "BUY 10% $AMD @ 0.000107635 — 5m +33.4% vol $113,804 buys 1763/sells 1379"
+    },
     {
       "ts": "12 Nov 2026, 16:15 GMT",
       "hhmm": "16:15",
@@ -376,8 +400,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "59 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "59 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -430,8 +454,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "3/6",
+      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "4/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -492,11 +516,11 @@
       "qty": 662.8820177186677,
       "qty_display": "662.88",
       "entry_price": 0.015162568196661686,
-      "current_price": 0.015381111534198992,
+      "current_price": 0.01574471808974571,
       "change_pct": null,
       "price_source": "geckoterminal",
-      "unrealized_pnl": -0.11,
-      "unrealized_pct": 0.01441334572763342,
+      "unrealized_pnl": 0.13,
+      "unrealized_pct": 0.038393884567140324,
       "hard_stop": 0.014404439786828602,
       "trail_activate": 0.015769070924528155,
       "opened_at": "12 Nov 2026, 16:13 GMT",
@@ -527,9 +551,47 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/8AAVuQpJcqpvCuutxyBTVvgBEXZJSkZoNv1sExpBpump?chain=sol"
+    },
+    {
+      "symbol": "AMD",
+      "name": "AMD",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 91888.22739709483,
+      "qty_display": "91,888.23",
+      "entry_price": 0.00010763549999999999,
+      "current_price": 0.0001071,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": -0.3,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.00010225372499999999,
+      "trail_activate": 0.00011194092,
+      "opened_at": "12 Nov 2026, 16:16 GMT",
+      "reason": "BUY 10% $AMD @ 0.000107635 — 5m +33.4% vol $113,804 buys 1763/sells 1379",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/2Er3UtbQGWyNgeKMyUs218i11Z6v4gtfgwmqoSNPpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f0016",
+      "time": "12 Nov 2026, 16:16 GMT",
+      "ts": "2026-11-12T16:16:04.709979+00:00",
+      "side": "buy",
+      "symbol": "AMD",
+      "name": "AMD",
+      "asset_class": "crypto",
+      "qty": 91888.22739709483,
+      "qty_display": "91,888.23",
+      "price": 0.00010763549999999999,
+      "value": 9.89,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": ""
+    },
     {
       "id": "f0015",
       "time": "12 Nov 2026, 16:15 GMT",
@@ -775,14 +837,14 @@
     "closed_trades": 6,
     "win_rate": 0.5,
     "realized_pnl": -0.75,
-    "unrealized_pnl": -0.58,
-    "fills": 15
+    "unrealized_pnl": -0.64,
+    "fills": 16
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 87,
+    "scanned": 116,
     "killed": 0,
-    "traded": 2
+    "traded": 10
   },
   "events": [
     {
@@ -835,7 +897,7 @@
     {
       "symbol": "mihao",
       "name": "mihao",
-      "price": 0.015381111534198992,
+      "price": 0.01574471808974571,
       "change_pct": null,
       "source": "geckoterminal"
     },
@@ -843,6 +905,13 @@
       "symbol": "NOBUSHIBA",
       "name": "NOBUSHIBA",
       "price": 0.001148,
+      "change_pct": null,
+      "source": "dexscreener"
+    },
+    {
+      "symbol": "AMD",
+      "name": "AMD",
+      "price": 0.0001071,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -912,8 +981,8 @@
     {
       "id": "axiom",
       "name": "Axiom scalper",
-      "equity": 98.67,
-      "return_pct": -0.013330720000000013,
+      "equity": 98.61,
+      "return_pct": -0.013908839999999999,
       "closed_trades": 6,
       "win_rate": 0.5,
       "realized_pnl": -0.75
@@ -989,7 +1058,7 @@
       "score": 2.88
     }
   ],
-  "checked_at": "2026-11-12T16:15:40.815325+00:00",
-  "checked_at_london": "12 Nov 2026, 16:15 GMT",
+  "checked_at": "2026-11-12T16:16:04.710089+00:00",
+  "checked_at_london": "12 Nov 2026, 16:16 GMT",
   "who_we_copy": null
 }
