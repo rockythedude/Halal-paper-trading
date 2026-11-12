@@ -42,6 +42,16 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
+      - name: Check that the Helius key is present
+        env:
+          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+        run: |
+          if [ -n "$HELIUS_API_KEY" ]; then
+            echo "HELIUS_API_KEY is set."
+          else
+            echo "HELIUS_API_KEY is not set."
+          fi
+
       - name: Follow the pinned wallets
         env:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
