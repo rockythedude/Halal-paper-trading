@@ -1,23 +1,24 @@
 #!/usr/bin/env python3
 """Paper-copy Solana meme wallets. No keys, no invented trades or prices.
 
-Watchlist: DexScreener's public boosted and latest Solana token profiles,
-then Solana's public RPC on the liquid pool to see which signer wallets
-bought and sold. Wallets that look like bots (several swaps in the same
-second) or like deployers (tokens received with no SOL/USDC spent) are
-dropped. The list refreshes when it is older than 20 hours.
-
-Copies: poll those wallets about every 12 seconds. A new buy opens a 10%
-paper position if DexScreener liquidity is at least $20k. A sell by that
-wallet closes our copy. Fills use the DexScreener price at detection time.
-A 1% fee is charged each side. Hard stop −25%, take profit +100%.
+The watchlist is a pinned list of public leaderboard wallets. It is not
+replaced by an auto scan. Poll about every 12 seconds. A DEX buy with at
+least $20k of DexScreener liquidity opens 10% of equity at a 1% fee. A
+Pump.fun token that is still on its bonding curve, and has no such pool,
+opens 5% at a 2% fee, priced from the curve account's virtual reserves
+and a public SOL/USD price. If neither price is available the buy is
+skipped. A sell by that wallet closes the copy. Hard stop −25%, take
+profit +100%.
 """
 
 from __future__ import annotations
 
 import argparse
+import base64
+import hashlib
 import json
 import os
+import struct
 import subprocess
 import sys
 import time
@@ -54,8 +55,17 @@ RPCS = [
 ]
 FEE = 0.01
 SLOT = 0.10
+FEE_CURVE = 0.02
+SLOT_CURVE = 0.05
 MAX_OPEN = 8
 MIN_LIQ = 20_000
+PUMP = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
+CURVE_TAG = "pump.fun curve"
+# Anchor account discriminator: sha256("account:BondingCurve")[:8]
+_CURVE_DISC = bytes.fromhex("17b7f83760d8ac60")
+_ED_P = 2**255 - 19
+_ED_D = (-121665 * pow(121666, _ED_P - 2, _ED_P)) % _ED_P
+_ED_I = pow(2, (_ED_P - 1) // 4, _ED_P)
 WATCH_HOURS = 20
 # Pinned from public leaderboards. Not replaced by the auto scan.
 PINNED_WALLETS = [
@@ -318,7 +328,235 @@ def _sol_price() -> float | None:
             continue
         if px > 0 and (best is None or liq > best[0]):
             best = (liq, px)
-    return best[1] if best else None
+    if best:
+        return best[1]
+    try:
+        row = _http("https://data-api.binance.vision/api/v3/ticker/price?symbol=SOLUSDT", timeout=15)
+        px = float((row or {}).get("price") or 0)
+    except Exception:
+        return None
+    return px if px > 0 else None
+
+
+def _b58decode(addr: str) -> bytes:
+    n = 0
+    for ch in addr:
+        i = B58_ALPHABET.find(ch)
+        if i < 0:
+            raise ValueError("bad base58")
+        n = n * 58 + i
+    raw = n.to_bytes((n.bit_length() + 7) // 8, "big") if n else b""
+    pad = 0
+    for ch in addr:
+        if ch != "1":
+            break
+        pad += 1
+    raw = b"\x00" * pad + raw
+    if len(raw) != 32:
+        raise ValueError("not a 32-byte key")
+    return raw
+
+
+def _b58encode(raw: bytes) -> str:
+    n = int.from_bytes(raw, "big")
+    chars = []
+    while n:
+        n, r = divmod(n, 58)
+        chars.append(B58_ALPHABET[r])
+    pad = 0
+    for byte in raw:
+        if byte != 0:
+            break
+        pad += 1
+    return ("1" * pad) + "".join(reversed(chars or ["1"]))
+
+
+def _on_curve(data: bytes) -> bool:
+    if len(data) != 32:
+        return False
+    y = int.from_bytes(data, "little")
+    sign = (y >> 255) & 1
+    y &= (1 << 255) - 1
+    if y >= _ED_P:
+        return False
+    y2 = (y * y) % _ED_P
+    u = (y2 - 1) % _ED_P
+    v = (_ED_D * y2 + 1) % _ED_P
+    x2 = (u * pow(v, _ED_P - 2, _ED_P)) % _ED_P
+    if x2 == 0:
+        return sign == 0
+    x = pow(x2, (_ED_P + 3) // 8, _ED_P)
+    if (x * x - x2) % _ED_P != 0:
+        x = (x * _ED_I) % _ED_P
+    if (x * x - x2) % _ED_P != 0:
+        return False
+    if (x & 1) != sign:
+        x = _ED_P - x
+    return True
+
+
+def _bonding_curve(mint: str) -> str:
+    mint_b = _b58decode(mint)
+    program = _b58decode(PUMP)
+    for bump in range(255, -1, -1):
+        digest = hashlib.sha256(b"bonding-curve" + mint_b + bytes([bump]) + program + b"ProgramDerivedAddress").digest()
+        if not _on_curve(digest):
+            return _b58encode(digest)
+    raise RuntimeError("no bonding-curve address")
+
+
+def _accounts(addrs: list[str]) -> dict[str, tuple[str, bytes] | None]:
+    out: dict[str, tuple[str, bytes] | None] = {}
+    for i in range(0, len(addrs), 20):
+        chunk = addrs[i : i + 20]
+        try:
+            res = _rpc("getMultipleAccounts", [chunk, {"encoding": "base64", "commitment": "confirmed"}])
+        except Exception:
+            continue
+        values = (res or {}).get("value") if isinstance(res, dict) else None
+        if not isinstance(values, list):
+            continue
+        for addr, val in zip(chunk, values):
+            if not isinstance(val, dict) or not val.get("data"):
+                out[addr] = None
+                continue
+            data = val.get("data")
+            blob = data[0] if isinstance(data, list) and data else ""
+            try:
+                raw = base64.b64decode(blob)
+            except Exception:
+                out[addr] = None
+                continue
+            out[addr] = (val.get("owner") or "", raw)
+    return out
+
+
+def _curve_quote(mint: str, sol_usd: float, symbol: str, accounts: dict, curve: str | None) -> dict | None:
+    """Spot price from virtual reserves. None unless the curve is still open."""
+    if not curve or not sol_usd or sol_usd <= 0:
+        return None
+    found = accounts.get(curve)
+    mint_acc = accounts.get(mint)
+    if not found or not mint_acc:
+        return None
+    owner, raw = found
+    if owner != PUMP or len(raw) < 49 or raw[:8] != _CURVE_DISC:
+        return None
+    virtual_token, virtual_sol, _real_token, _real_sol, _supply = struct.unpack_from("<QQQQQ", raw, 8)
+    complete = raw[48] != 0
+    # real_token == 0 means the curve has no tokens left to buy.
+    if complete or virtual_token == 0 or virtual_sol == 0 or _real_token == 0:
+        return None
+    _mint_owner, mint_raw = mint_acc
+    if len(mint_raw) < 45:
+        return None
+    decimals = mint_raw[44]
+    if not isinstance(decimals, int) or decimals > 18:
+        return None
+    price = (virtual_sol / 1e9) / (virtual_token / 10**decimals) * sol_usd
+    if price <= 0:
+        return None
+    return {
+        "price": price,
+        "liq": 0.0,
+        "symbol": symbol,
+        "venue": "pump",
+        "fee": FEE_CURVE,
+        "slot": SLOT_CURVE,
+        "source": CURVE_TAG,
+    }
+
+
+def _quotes(mints: list[str]) -> dict[str, dict]:
+    """DEX quote when liquidity is at least $20k, otherwise an open Pump.fun curve."""
+    dex = _prices(mints)
+    sol_usd = None
+    need = []
+    out: dict[str, dict] = {}
+    for mint in dict.fromkeys(m for m in mints if m):
+        row = dex.get(mint) or {}
+        price = float(row.get("price") or 0)
+        liq = float(row.get("liq") or 0)
+        symbol = row.get("symbol") or mint[:4]
+        if price > 0 and liq >= MIN_LIQ:
+            out[mint] = {
+                "price": price,
+                "liq": liq,
+                "symbol": symbol,
+                "venue": "dex",
+                "fee": FEE,
+                "slot": SLOT,
+                "source": "dexscreener",
+            }
+        else:
+            need.append((mint, symbol, price, liq))
+    if need:
+        sol_usd = _sol_price()
+        curves = {}
+        lookup = []
+        for mint, _symbol, _price, _liq in need:
+            try:
+                curve = _bonding_curve(mint)
+            except Exception:
+                curve = None
+            curves[mint] = curve
+            lookup.append(mint)
+            if curve:
+                lookup.append(curve)
+        accounts = _accounts(lookup) if sol_usd else {}
+        for mint, symbol, price, liq in need:
+            curve_addr = curves.get(mint)
+            # A missing SOL price or a failed account read is not proof that the mint is off-curve.
+            unread = (not sol_usd) or bool(curve_addr and curve_addr not in accounts) or _curve_unpriced(accounts, curve_addr)
+            curve = _curve_quote(mint, sol_usd or 0, symbol, accounts, curve_addr)
+            if curve:
+                out[mint] = curve
+            elif price > 0:
+                # Migrated, or a thin pool. Usable for a mark or an exit, not a new DEX buy.
+                out[mint] = {
+                    "price": price,
+                    "liq": liq,
+                    "symbol": symbol,
+                    "venue": "dex",
+                    "fee": FEE,
+                    "slot": SLOT,
+                    "source": "dexscreener",
+                    "curve_unread": unread,
+                }
+            elif unread:
+                out[mint] = {
+                    "price": 0.0,
+                    "liq": 0.0,
+                    "symbol": symbol,
+                    "venue": "dex",
+                    "fee": FEE,
+                    "slot": SLOT,
+                    "source": "dexscreener",
+                    "curve_unread": True,
+                }
+    return out
+
+
+def _curve_unpriced(accounts: dict, curve: str | None) -> bool:
+    """True when the account is an open curve but decimals or reserves did not yield a price."""
+    if not curve or curve not in accounts:
+        return False
+    found = accounts.get(curve)
+    if not found:
+        return False
+    owner, raw = found
+    if owner != PUMP or len(raw) < 49 or raw[:8] != _CURVE_DISC:
+        return False
+    virtual_token, virtual_sol, real_token, _real_sol, _supply = struct.unpack_from("<QQQQQ", raw, 8)
+    complete = raw[48] != 0
+    return (not complete) and virtual_token > 0 and virtual_sol > 0 and real_token > 0
+
+
+def _with_tag(pos: dict, reason: str, quote: dict | None = None) -> str:
+    curve = (pos.get("venue") == "pump") or (pos.get("tag") == CURVE_TAG) or ((quote or {}).get("venue") == "pump")
+    if curve and CURVE_TAG not in reason:
+        return f"{reason} · {CURVE_TAG}"
+    return reason
 
 
 def _parse_swap(tx: dict, pair: str) -> dict | None:
@@ -649,12 +887,12 @@ def _mark(state: dict, prices: dict[str, dict]) -> None:
     equity = float(state["cash"])
     for pos in state["positions"]:
         quote = prices.get(pos.get("mint") or "")
-        if not quote:
+        if not quote or not quote.get("price"):
             equity += float(pos.get("market_value") or 0)
             continue
         price = quote["price"]
         pos["last_price"] = price
-        pos["last_source"] = "dexscreener"
+        pos["last_source"] = quote.get("source") or "dexscreener"
         pos["market_value"] = price * pos["qty"]
         pos["unrealized_pnl"] = (price - pos["entry_price"]) * pos["qty"] - pos.get("entry_fee", 0.0)
         pos["unrealized_pct"] = (price / pos["entry_price"] - 1.0) if pos["entry_price"] else 0.0
@@ -662,7 +900,8 @@ def _mark(state: dict, prices: dict[str, dict]) -> None:
     state["equity"] = round(equity, 6)
 
 
-def _buy(state: dict, mint: str, symbol: str, price: float, wallet: dict) -> None:
+def _buy(state: dict, mint: str, symbol: str, quote: dict, wallet: dict) -> None:
+    price = float(quote.get("price") or 0)
     if any(p.get("mint") == mint for p in state["positions"]):
         _say(state, "EXECUTOR", f"skip ${symbol} — already in the book")
         return
@@ -670,10 +909,13 @@ def _buy(state: dict, mint: str, symbol: str, price: float, wallet: dict) -> Non
         _say(state, "RISK", f"blocked ${symbol} — already {MAX_OPEN} open")
         return
     equity = float(state["equity"]) or 0
-    notional = equity * SLOT
-    fee = notional * FEE
+    slot = float(quote.get("slot") or SLOT)
+    fee_rate = float(quote.get("fee") if quote.get("fee") is not None else FEE)
+    notional = equity * slot
+    fee = notional * fee_rate
+    pct = int(round(slot * 100))
     if notional + fee > float(state["cash"]) + 1e-9 or price <= 0:
-        _say(state, "RISK", f"blocked ${symbol} — cash cannot cover 10%, no margin")
+        _say(state, "RISK", f"blocked ${symbol} — cash cannot cover {pct}%, no margin")
         return
     qty = notional / price
     state["cash"] = float(state["cash"]) - notional - fee
@@ -682,7 +924,10 @@ def _buy(state: dict, mint: str, symbol: str, price: float, wallet: dict) -> Non
     if not stat:
         realized = wallet.get("realized_usd")
         stat = "no realized sample" if realized is None else f"{realized:+,.2f} USD realized"
+    curve = quote.get("venue") == "pump"
     reason = f"COPY BUY ${symbol} after {who} ({stat})"
+    if curve:
+        reason = f"{reason} · {CURVE_TAG}"
     pos = {
         "symbol": symbol,
         "name": symbol,
@@ -694,24 +939,32 @@ def _buy(state: dict, mint: str, symbol: str, price: float, wallet: dict) -> Non
         "entry_price": price,
         "raw_price": price,
         "entry_fee": fee,
+        "fee_rate": fee_rate,
         "cost_basis": notional + fee,
         "opened_at": iso(now_utc()),
         "opened_at_london": format_london(),
         "high_water": price,
         "last_price": price,
-        "last_source": "dexscreener",
+        "last_source": quote.get("source") or "dexscreener",
+        "venue": "pump" if curve else "dex",
+        "tag": CURVE_TAG if curve else "",
         "reason": reason,
         "hard_stop": price * 0.75,
         "take_profit": price * 2.0,
     }
     state["positions"].append(pos)
-    engine.append_fill(state, engine._buy_fill(pos))
+    fill = engine._buy_fill(pos)
+    if curve:
+        fill["tag"] = CURVE_TAG
+    engine.append_fill(state, fill)
     _say(state, "EXECUTOR", reason)
 
 
-def _sell(state: dict, pos: dict, price: float, reason: str) -> None:
+def _sell(state: dict, pos: dict, price: float, reason: str, fee_rate: float | None = None) -> None:
+    reason = _with_tag(pos, reason)
     notional = pos["qty"] * price
-    fee = notional * FEE
+    rate = FEE if fee_rate is None else fee_rate
+    fee = notional * rate
     proceeds = notional - fee
     state["cash"] = float(state["cash"]) + proceeds
     pnl = proceeds - pos["cost_basis"]
@@ -749,6 +1002,7 @@ def _sell(state: dict, pos: dict, price: float, reason: str) -> None:
             "value": notional,
             "pnl": pnl,
             "pnl_pct": pnl_pct,
+            "tag": pos.get("tag") or "",
         },
     )
     _say(state, "RISK" if "stop" in reason.lower() or "take profit" in reason.lower() else "EXECUTOR", reason)
@@ -758,15 +1012,15 @@ def _risk(state: dict, prices: dict[str, dict]) -> None:
     keep = []
     for pos in state["positions"]:
         quote = prices.get(pos.get("mint") or "")
-        if not quote:
+        if not quote or not quote.get("price"):
             keep.append(pos)
             continue
         price = quote["price"]
         change = price / pos["entry_price"] - 1.0 if pos["entry_price"] else 0
         if change <= -0.25:
-            _sell(state, pos, price, f"SELL stop −25% ${pos['symbol']}")
+            _sell(state, pos, price, f"SELL stop −25% ${pos['symbol']}", fee_rate=quote.get("fee"))
         elif change >= 1.0:
-            _sell(state, pos, price, f"SELL take profit +100% ${pos['symbol']}")
+            _sell(state, pos, price, f"SELL take profit +100% ${pos['symbol']}", fee_rate=quote.get("fee"))
         else:
             keep.append(pos)
     state["positions"] = keep
@@ -866,7 +1120,7 @@ def poll(state: dict) -> None:
             if swap:
                 swaps.append((row, swap))
     mints = [swap["mint"] for _row, swap in swaps] + [p.get("mint") for p in state["positions"]]
-    prices = _prices([m for m in mints if m])
+    prices = _quotes([m for m in mints if m])
     _mark(state, prices)
     _risk(state, prices)
     by_wallet = _wallet_map(state)
@@ -874,26 +1128,39 @@ def poll(state: dict) -> None:
         quote = prices.get(swap["mint"])
         symbol = (quote or {}).get("symbol") or swap["mint"][:4]
         if swap["side"] == "sell":
-            if not quote:
-                _say(state, "EXECUTOR", f"wallet {row['short']} sold ${symbol} but DexScreener had no price")
+            if not quote or not quote.get("price"):
+                _say(state, "EXECUTOR", f"wallet {row['short']} sold ${symbol} but there was no DexScreener or Pump.fun curve price")
                 continue
             kept = []
             for pos in state["positions"]:
                 if pos.get("mint") == swap["mint"] and pos.get("copied_wallet") == row["address"]:
-                    _sell(state, pos, quote["price"], f"COPY SELL ${symbol} after wallet {row['short']}")
+                    _sell(
+                        state,
+                        pos,
+                        quote["price"],
+                        f"COPY SELL ${symbol} after wallet {row['short']}",
+                        fee_rate=quote.get("fee"),
+                    )
                 else:
                     kept.append(pos)
             state["positions"] = kept
         elif swap["side"] == "buy":
             if not row.get("copy_buys", True):
                 continue
-            if not quote:
-                _say(state, "FILTER", f"skip ${symbol} — DexScreener had no price")
+            if quote and quote.get("curve_unread") and quote.get("venue") != "pump" and quote.get("liq", 0) < MIN_LIQ:
+                _say(state, "FILTER", f"skip ${symbol} — Pump.fun curve price was unavailable")
                 continue
-            if quote["liq"] < MIN_LIQ:
-                _say(state, "FILTER", f"skip ${symbol} — liquidity ${quote['liq']:,.0f} is under $20k")
+            if not quote or not quote.get("price"):
+                _say(state, "FILTER", f"skip ${symbol} — no DexScreener price and no Pump.fun curve price")
                 continue
-            _buy(state, swap["mint"], symbol, quote["price"], by_wallet.get(row["address"], row))
+            if quote.get("venue") != "pump" and quote["liq"] < MIN_LIQ:
+                _say(
+                    state,
+                    "FILTER",
+                    f"skip ${symbol} — liquidity ${quote['liq']:,.0f} is under $20k and it is not on a Pump.fun curve",
+                )
+                continue
+            _buy(state, swap["mint"], symbol, quote, by_wallet.get(row["address"], row))
     _mark(state, prices)
     now = now_utc()
     state["checked_at"] = iso(now)
@@ -909,8 +1176,8 @@ def poll(state: dict) -> None:
     engine.set_activity(
         state,
         "DRVEN",
-        "New buys only from the pinned list, and only with DexScreener liquidity of at least $20k.",
-        "liq ≥ $20k",
+        "New buys only from the pinned list. DEX liquidity at least $20k, or a Pump.fun bonding curve with a reserve price.",
+        "liq ≥ $20k or curve",
         "liq",
     )
     engine.set_activity(

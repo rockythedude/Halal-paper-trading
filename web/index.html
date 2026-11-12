@@ -798,7 +798,7 @@
     if (a.role === "Executor") {
       const mode = data.risk_rules && data.risk_rules.mode;
       if (mode === "scalp") return ["20% × 4"];
-      if (mode === "wallets") return ["10%"];
+      if (mode === "wallets") return ["10% / 5%"];
       return ["size ≤ 8%"];
     }
     if (a.role === "Risk") {
@@ -872,8 +872,9 @@
       const pnl = p.unrealized_pnl;
       const pct = p.unrealized_pct;
       const pctStr = (pct == null) ? "—" : asPct(pct);
+      const tag = p.tag ? ` <span class="chip">${escapeHtml(p.tag)}</span>` : "";
       return `<tr>
-        <td class="sym">${escapeHtml(p.symbol)}<span class="name">${escapeHtml(p.name || "")} · ${escapeHtml(p.asset_class || "")}</span></td>
+        <td class="sym">${escapeHtml(p.symbol)}${tag}<span class="name">${escapeHtml(p.name || "")} · ${escapeHtml(p.asset_class || "")}</span></td>
         <td>${escapeHtml(p.agent || "")}</td>
         <td class="num">${escapeHtml(p.qty_display || String(p.qty ?? ""))}</td>
         <td class="num">${fmtMoney(p.entry_price)}</td>
@@ -1146,7 +1147,7 @@
       return `<tr>
         <td class="mono">${escapeHtml(f.time || "")}</td>
         <td class="${sell ? "side-sell" : "side-buy"}">${sell ? "SELL" : "BUY"}</td>
-        <td class="sym">${escapeHtml(f.symbol)}<span class="name">${escapeHtml(f.name || "")}</span></td>
+        <td class="sym">${escapeHtml(f.symbol)}${f.tag ? ` <span class="chip">${escapeHtml(f.tag)}</span>` : ""}<span class="name">${escapeHtml(f.name || "")}</span></td>
         <td>${escapeHtml(f.asset_class || "")}</td>
         <td class="num">${escapeHtml(f.qty_display || String(f.qty ?? ""))}</td>
         <td class="num">${fmtMoney(f.price)}</td>

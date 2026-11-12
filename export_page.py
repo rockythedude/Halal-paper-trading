@@ -206,6 +206,8 @@ def build_data(state: dict) -> dict:
                 "opened_at": p.get("opened_at_london") or p.get("opened_at"),
                 "reason": p.get("reason") or "",
                 "score": p.get("score"),
+                "tag": p.get("tag") or "",
+                "venue": p.get("venue") or "",
             }
         )
 
@@ -312,6 +314,7 @@ def _fills_for_page(state: dict) -> list[dict]:
                 "value": round(value_f, 2),
                 "pnl": None if pnl is None or side == "buy" else round(float(pnl), 2),
                 "pnl_pct": None if pnl_pct is None or side == "buy" else float(pnl_pct),
+                "tag": f.get("tag") or "",
             }
         )
     rows.sort(key=lambda r: (r["ts"], r["id"]), reverse=True)
@@ -492,8 +495,8 @@ def wallet_rules() -> dict:
         "max_position_pct": 0.10,
         "stop_loss_pct": 0.25,
         "take_profit_pct": 1.0,
-        "chips": ["10%", "−25%", "TP +100%", "fee 1%"],
-        "label": "Wallet copy · 10% of equity · max 8 · stop −25% · take profit +100% · 1% fee each side",
+        "chips": ["10% DEX", "5% curve", "−25%", "TP +100%"],
+        "label": "Wallet copy · DEX 10% when liquidity is at least $20k, fee 1% · Pump.fun curve 5%, fee 2% · max 8 · stop −25% · take profit +100%",
     }
 
 
