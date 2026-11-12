@@ -14,6 +14,7 @@ import base64
 import calendar
 import json
 import os
+import queue
 import subprocess
 import threading
 import time
@@ -450,7 +451,7 @@ def _handle_tx(state: dict, tx: dict, signature: str, slot, detected: float, fet
             _patch_delay(state, bt)
 
 
-def _ingest(state: dict, message: str) -> None:
+def _ingest(state: dict, message: str, detected: float | None = None) -> None:
     try:
         data = json.loads(message)
     except json.JSONDecodeError:
@@ -460,7 +461,8 @@ def _ingest(state: dict, message: str) -> None:
         return
     method = data.get("method")
     result = (data.get("params") or {}).get("result") or {}
-    detected = time.time()
+    if detected is None:
+        detected = time.time()
     if method == "transactionNotification":
         signature = result.get("signature") or ""
         tx = _normalize_tx(result)
@@ -641,7 +643,6 @@ def run_helius(loop_seconds: int) -> None:
     addresses = [row["address"] for row in _watched(state)]
     last_mark = 0.0
     last_push = 0.0
-    last_ping = 0.0
     snap = (round(float(state.get("equity") or 0), 2), len(state.get("fills") or []), len(state.get("positions") or []))
     key = _key()
     # Atlas serves transactionSubscribe. The standard socket rejected it and
@@ -660,20 +661,57 @@ def run_helius(loop_seconds: int) -> None:
             print(f"helius subscribed via {mode}", flush=True)
             w._say(state, "SCOUT", f"Helius {mode} subscription is up")
             _status(state, "live")
-            # Short reads so a price mark cannot hold a trade in the socket buffer.
-            ws.settimeout(0.25)
-            while time.time() < deadline:
+            # Earlier copies (87s, 127s) sat unread while this thread ran git.
+            # The reader thread only receives. Marks and pushes stay off it.
+            state["copy_delays"] = []
+            state["avg_copy_delay_s"] = None
+            state["last_copy_delay_s"] = None
+            inbox: queue.Queue = queue.Queue()
+            stop_read = threading.Event()
+
+            def _read_socket() -> None:
+                ws.settimeout(0.5)
+                ping_at = time.time()
+                while not stop_read.is_set():
+                    try:
+                        message = ws.recv()
+                    except websocket.WebSocketTimeoutException:
+                        message = ""
+                    except Exception as exc:
+                        inbox.put(("dead", time.time(), exc))
+                        return
+                    now = time.time()
+                    if message:
+                        inbox.put(("msg", now, message))
+                    if now - ping_at >= 15:
+                        try:
+                            ws.ping()
+                        except Exception as exc:
+                            inbox.put(("dead", now, exc))
+                            return
+                        ping_at = now
+
+            reader = threading.Thread(target=_read_socket, name="helius-read", daemon=True)
+            reader.start()
+            dead = False
+            while time.time() < deadline and not dead:
                 try:
-                    message = ws.recv()
-                except websocket.WebSocketTimeoutException:
-                    message = ""
-                except Exception as exc:
-                    w._say(state, "SCOUT", "Helius socket dropped: " + _safe(exc))
+                    kind, stamp, payload = inbox.get(timeout=0.25)
+                except queue.Empty:
+                    kind = stamp = payload = None
+                while kind == "msg":
+                    _ingest(state, payload, stamp)
+                    try:
+                        kind, stamp, payload = inbox.get_nowait()
+                    except queue.Empty:
+                        kind = None
+                        break
+                if kind == "dead":
+                    w._say(state, "SCOUT", "Helius socket dropped: " + _safe(payload))
+                    dead = True
                     break
-                if message:
-                    _ingest(state, message)
                 now = time.time()
-                if not message and now - last_mark >= MARK_EVERY:
+                if kind is None and now - last_mark >= MARK_EVERY:
                     _mark_open(state)
                     last_mark = time.time()
                     now = last_mark
@@ -683,12 +721,7 @@ def run_helius(loop_seconds: int) -> None:
                     _push(state)
                     snap = fresh
                     last_push = now
-                if now - last_ping >= 15:
-                    try:
-                        ws.ping()
-                    except Exception:
-                        break
-                    last_ping = now
+            stop_read.set()
         except Exception as exc:
             w._say(state, "SCOUT", "Helius connect failed, retrying: " + _safe(exc))
             time.sleep(3)

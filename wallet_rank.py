@@ -25,9 +25,10 @@ from wallet_replay import (
     OUT,
     WINDOW_DAYS,
     _day,
-    _later,
+    _parse,
     _sol_at,
     _sol_hours,
+    _usd,
 )
 from wallet_tick import (
     FEE,
@@ -163,30 +164,65 @@ def _pace() -> None:
         _RATE_NEXT = time.time() + 0.5
 
 
-def _helius_page(addr: str, before: str | None, key: str) -> list:
-    url = f"https://api.helius.xyz/v0/addresses/{addr}/transactions?api-key={key}&type=SWAP&limit=100"
-    if before:
-        url += f"&before={before}"
-    last = "Helius page failed"
-    for attempt in range(6):
-        _pace()
-        req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "halal-paper-trader/1.0"})
+def _ui_amount(obj: dict) -> float:
+    """UI amount. rawTokenAmount wins, because tokenAmount is sometimes the raw integer."""
+    raw = obj.get("rawTokenAmount") if isinstance(obj, dict) else None
+    if isinstance(raw, dict) and raw.get("tokenAmount") not in (None, ""):
         try:
-            with urllib.request.urlopen(req, timeout=25) as resp:
-                data = json.loads(resp.read().decode())
-        except urllib.error.HTTPError as exc:
-            if exc.code == 404:
-                raise _NoSwaps("no parsed swaps")
-            last = f"HTTP {exc.code}"
-            time.sleep(2.0 * (2 ** attempt) if exc.code == 429 else 0.4)
-            continue
-        except Exception as exc:
-            last = type(exc).__name__
-            time.sleep(0.5)
-            continue
-        if isinstance(data, dict) and data.get("error"):
-            raise RuntimeError("Helius error")
-        return data if isinstance(data, list) else []
+            decimals = int(raw.get("decimals") or 0)
+            return int(str(raw.get("tokenAmount"))) / (10 ** decimals)
+        except (TypeError, ValueError, OverflowError):
+            pass
+    try:
+        return float(obj.get("tokenAmount") or 0)
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def _helius_page(addr: str, before: str | None, key: str, cutoff: int) -> list:
+    """One page of enhanced history.
+
+    The working call is on mainnet.helius-rpc.com, paged with before-signature,
+    and not limited to type=SWAP. The old api.helius.xyz?before=&type=SWAP
+    query 404'd Jijo and returned an empty page for Wugi.
+    """
+    hosts = (
+        "https://mainnet.helius-rpc.com/v0/addresses/{addr}/transactions",
+        "https://api.helius.xyz/v0/addresses/{addr}/transactions",
+    )
+    last = "Helius page failed"
+    for host in hosts:
+        query = f"api-key={key}&limit=100&sort-order=desc&gte-time={cutoff}&token-accounts=balanceChanged"
+        if before:
+            query += f"&before-signature={before}"
+        url = host.format(addr=addr) + "?" + query
+        for attempt in range(5):
+            _pace()
+            req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "halal-paper-trader/1.0"})
+            try:
+                with urllib.request.urlopen(req, timeout=25) as resp:
+                    data = json.loads(resp.read().decode())
+            except urllib.error.HTTPError as exc:
+                last = f"HTTP {exc.code}"
+                if exc.code in (400, 404) and "token-accounts" in url:
+                    url = url.replace("&token-accounts=balanceChanged", "")
+                    continue
+                if exc.code == 404:
+                    break
+                time.sleep(2.0 * (2 ** attempt) if exc.code == 429 else 0.4)
+                continue
+            except Exception as exc:
+                last = type(exc).__name__
+                time.sleep(0.5)
+                continue
+            if isinstance(data, dict):
+                if data.get("error"):
+                    raise RuntimeError("Helius error")
+                data = data.get("data") or data.get("transactions") or []
+            if isinstance(data, list):
+                return data
+            last = "Helius page was not a list"
+        # This host failed. Try the other one before giving up.
     raise RuntimeError(last)
 
 
@@ -194,15 +230,17 @@ def _swap_from_helius(tx: dict, wallet: str, sol_usd: float | None) -> dict | No
     ts = tx.get("timestamp")
     if not isinstance(ts, int):
         return None
+    source = (tx.get("source") or "").upper()
+    pump = source in {"PUMP_FUN", "PUMPFUN", "PUMP_AMM"}
+    event = _swap_from_event(tx, wallet, sol_usd, ts, pump)
+    if event:
+        return event
     bought = []
     sold = []
     usdc_out = usdc_in = 0.0
     for transfer in tx.get("tokenTransfers") or []:
         mint = transfer.get("mint")
-        try:
-            amt = float(transfer.get("tokenAmount") or 0)
-        except (TypeError, ValueError):
-            continue
+        amt = abs(_ui_amount(transfer))
         if amt <= 0 or not mint:
             continue
         if mint == USDC:
@@ -217,6 +255,26 @@ def _swap_from_helius(tx: dict, wallet: str, sol_usd: float | None) -> dict | No
             bought.append((mint, amt))
         elif transfer.get("fromUserAccount") == wallet:
             sold.append((mint, amt))
+    # Balance changes carry decimals. Prefer them when the transfer list is scaled wrong.
+    if not bought and not sold:
+        for acc in tx.get("accountData") or []:
+            for change in acc.get("tokenBalanceChanges") or []:
+                if change.get("userAccount") != wallet:
+                    continue
+                mint = change.get("mint")
+                amt = _ui_amount(change)
+                if not mint or amt == 0 or mint in QUOTES:
+                    continue
+                if mint == USDC:
+                    if amt < 0:
+                        usdc_out += -amt
+                    else:
+                        usdc_in += amt
+                    continue
+                if amt > 0:
+                    bought.append((mint, amt))
+                else:
+                    sold.append((mint, -amt))
     sol_out = sol_in = 0
     for transfer in tx.get("nativeTransfers") or []:
         amt = int(transfer.get("amount") or 0)
@@ -224,27 +282,101 @@ def _swap_from_helius(tx: dict, wallet: str, sol_usd: float | None) -> dict | No
             sol_out += amt
         elif transfer.get("toUserAccount") == wallet:
             sol_in += amt
-    source = (tx.get("source") or "").upper()
-    pump = source in {"PUMP_FUN", "PUMPFUN"}
     sol_px = sol_usd or 0
 
     def usd(sol_lamports: int, usdc: float) -> float:
         if usdc >= 1:
             return usdc
-        if sol_lamports >= 20_000_000 and sol_px:  # at least 0.02 SOL
+        if sol_lamports >= 20_000_000 and sol_px:
+            return (sol_lamports / 1e9) * sol_px
+        return 0.0
+
+    def pick(rows: list[tuple[str, float]], quote: float, side: str) -> dict | None:
+        if quote < 1 or not rows:
+            return None
+        # Drop a raw-integer amount that survived without decimals. A real UI
+        # amount priced with at least $1 does not run past a million dollars a token.
+        usable = []
+        for mint, amt in rows:
+            if amt <= 0:
+                continue
+            price = quote / amt
+            if price <= 0 or price > 1_000_000:
+                continue
+            usable.append((mint, amt, price))
+        if not usable:
+            return None
+        mint, amt, price = max(usable, key=lambda item: item[1])
+        return {
+            "mint": mint, "side": side, "amount": amt, "price": price, "time": ts,
+            "pump": pump, "signature": tx.get("signature"),
+        }
+
+    if bought:
+        found = pick(bought, usd(sol_out, usdc_out), "buy")
+        if found:
+            return found
+    if sold:
+        return pick(sold, usd(sol_in, usdc_in), "sell")
+    return None
+
+
+def _swap_from_event(tx: dict, wallet: str, sol_usd: float | None, ts: int, pump: bool) -> dict | None:
+    """Helius parsed swap event. This is the mint the wallet actually traded."""
+    swap = (tx.get("events") or {}).get("swap") if isinstance(tx.get("events"), dict) else None
+    if not isinstance(swap, dict):
+        return None
+    native_in = swap.get("nativeInput") or {}
+    native_out = swap.get("nativeOutput") or {}
+    sol_out = int(native_in.get("amount") or 0) if native_in.get("account") == wallet else 0
+    sol_in = int(native_out.get("amount") or 0) if native_out.get("account") == wallet else 0
+    usdc_out = usdc_in = 0.0
+    bought = []
+    sold = []
+
+    def take(rows, incoming: bool) -> None:
+        nonlocal usdc_in, usdc_out
+        for row in rows or []:
+            if not isinstance(row, dict) or row.get("userAccount") not in (None, wallet):
+                continue
+            mint = row.get("mint")
+            amt = abs(_ui_amount(row))
+            if not mint or amt <= 0:
+                continue
+            if mint == USDC:
+                if incoming:
+                    usdc_in += amt
+                else:
+                    usdc_out += amt
+                continue
+            if mint in QUOTES:
+                continue
+            if incoming:
+                bought.append((mint, amt))
+            else:
+                sold.append((mint, amt))
+
+    take(swap.get("tokenOutputs"), True)
+    take(swap.get("tokenInputs"), False)
+    sol_px = sol_usd or 0
+
+    def quote(sol_lamports: int, usdc: float) -> float:
+        if usdc >= 1:
+            return usdc
+        if sol_lamports >= 20_000_000 and sol_px:
             return (sol_lamports / 1e9) * sol_px
         return 0.0
 
     if bought:
-        quote = usd(sol_out, usdc_out)
+        usd = quote(sol_out, usdc_out)
         mint, amt = max(bought, key=lambda item: item[1])
-        if quote >= 1 and amt > 0:
-            return {"mint": mint, "side": "buy", "amount": amt, "price": quote / amt, "time": ts, "pump": pump, "signature": tx.get("signature")}
+        if usd >= 1 and amt > 0:
+            return {"mint": mint, "side": "buy", "amount": amt, "price": usd / amt, "time": ts, "pump": pump, "signature": tx.get("signature")}
     if sold:
-        quote = usd(sol_in, usdc_in)
+        usd = quote(sol_in, usdc_in)
         mint, amt = max(sold, key=lambda item: item[1])
-        if quote >= 1 and amt > 0:
-            return {"mint": mint, "side": "sell", "amount": amt, "price": quote / amt, "time": ts, "pump": pump, "signature": tx.get("signature")}
+        if usd >= 1 and amt > 0:
+            return {"mint": mint, "side": "sell", "amount": amt, "price": usd / amt, "time": ts, "pump": pump, "signature": tx.get("signature")}
     return None
 
 
@@ -259,11 +391,7 @@ def fetch_swaps(addr: str, cutoff: int, sol_series, key: str) -> tuple[list[dict
     seen = set()
     while pages < 250:
         try:
-            batch = _helius_page(addr, before, key)
-        except _NoSwaps:
-            reached = True
-            note = "Helius returned no parsed swaps for this address."
-            break
+            batch = _helius_page(addr, before, key, cutoff)
         except Exception as exc:
             note = f"Helius stopped after {pages} pages: {exc}".replace(key, "***")
             break
@@ -272,6 +400,7 @@ def fetch_swaps(addr: str, cutoff: int, sol_series, key: str) -> tuple[list[dict
             reached = True
             break
         stop = False
+        fresh = False
         for tx in batch:
             ts = tx.get("timestamp")
             if isinstance(ts, int):
@@ -286,17 +415,31 @@ def fetch_swaps(addr: str, cutoff: int, sol_series, key: str) -> tuple[list[dict
                 continue
             if sig:
                 seen.add(sig)
+                fresh = True
             swap = _swap_from_helius(tx, addr, _sol_at(sol_series, ts or 0))
             if swap:
                 swaps.append(swap)
-        before = batch[-1].get("signature")
-        if stop or not before:
-            if not stop and len(batch) < 100:
-                reached = True
+        last_sig = batch[-1].get("signature")
+        if stop:
+            break
+        if not last_sig or last_sig == before or (pages > 1 and not fresh):
+            note = "Helius pagination did not advance."
+            break
+        before = last_sig
+        if len(batch) < 100:
+            reached = True
             break
         time.sleep(0.02)
     if pages >= 250 and not reached:
         note = "Stopped at 250 Helius pages before 30 days."
+    if not swaps:
+        rpc_swaps, rpc_meta = _fetch_rpc(addr, cutoff, sol_series, key)
+        if rpc_swaps:
+            extra = note or "Enhanced history returned no priced swaps."
+            rpc_meta["note"] = extra + " " + (rpc_meta.get("note") or "")
+            return rpc_swaps, rpc_meta
+        if rpc_meta.get("note"):
+            note = (note + " " + rpc_meta["note"]).strip()
     swaps.sort(key=lambda s: s["time"])
     return swaps, {
         "pages": pages,
@@ -306,6 +449,150 @@ def fetch_swaps(addr: str, cutoff: int, sol_series, key: str) -> tuple[list[dict
         "newest": newest,
         "note": note,
     }
+
+
+def _helius_rpc(method: str, params: list, key: str):
+    _pace()
+    url = f"https://mainnet.helius-rpc.com/?api-key={key}"
+    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}).encode()
+    req = urllib.request.Request(
+        url,
+        data=body,
+        headers={"Content-Type": "application/json", "Accept": "application/json", "User-Agent": "halal-paper-trader/1.0"},
+    )
+    with urllib.request.urlopen(req, timeout=25) as resp:
+        data = json.loads(resp.read().decode())
+    if isinstance(data, dict) and data.get("error"):
+        raise RuntimeError("Helius RPC error")
+    return data.get("result") if isinstance(data, dict) else None
+
+
+def _fetch_rpc(addr: str, cutoff: int, sol_series, key: str) -> tuple[list[dict], dict]:
+    """Signature list plus parsed transactions, for wallets the enhanced feed missed."""
+    sigs = []
+    before = None
+    reached = False
+    pages = 0
+    note = "Loaded from Helius getSignaturesForAddress."
+    while pages < 20:
+        pages += 1
+        opts = {"limit": 1000, "commitment": "confirmed"}
+        if before:
+            opts["before"] = before
+        try:
+            rows = _helius_rpc("getSignaturesForAddress", [addr, opts], key) or []
+        except Exception as exc:
+            return [], {"pages": pages, "swaps": 0, "reached_30d": False, "oldest": None, "newest": None, "note": f"RPC signature list failed: {type(exc).__name__}"}
+        if not isinstance(rows, list) or not rows:
+            reached = True
+            break
+        stop = False
+        for row in rows:
+            if not isinstance(row, dict) or row.get("err") or not row.get("signature"):
+                continue
+            bt = row.get("blockTime")
+            if isinstance(bt, int) and bt < cutoff:
+                stop = True
+                reached = True
+                break
+            sigs.append(row["signature"])
+        before = rows[-1].get("signature") if isinstance(rows[-1], dict) else None
+        if stop or len(rows) < 1000 or not before:
+            if not stop:
+                reached = True
+            break
+    if len(sigs) > 400:
+        sigs = sigs[:400]
+        reached = False
+        note += " Capped at 400 signatures."
+    swaps = []
+    opts = {"encoding": "jsonParsed", "commitment": "confirmed", "maxSupportedTransactionVersion": 1}
+    for i in range(0, len(sigs), 8):
+        chunk = sigs[i : i + 8]
+        payload = [
+            {"jsonrpc": "2.0", "id": n, "method": "getTransaction", "params": [sig, opts]}
+            for n, sig in enumerate(chunk)
+        ]
+        _pace()
+        url = f"https://mainnet.helius-rpc.com/?api-key={key}"
+        req = urllib.request.Request(
+            url,
+            data=json.dumps(payload).encode(),
+            headers={"Content-Type": "application/json", "Accept": "application/json", "User-Agent": "halal-paper-trader/1.0"},
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=25) as resp:
+                data = json.loads(resp.read().decode())
+        except Exception:
+            continue
+        if isinstance(data, dict):
+            data = [data]
+        by_id = {}
+        for item in data or []:
+            if isinstance(item, dict) and "id" in item and not item.get("error"):
+                by_id[item["id"]] = item.get("result")
+        for n, sig in enumerate(chunk):
+            parsed = _parse(by_id.get(n), addr)
+            if not parsed:
+                continue
+            price = _usd(parsed, _sol_at(sol_series, parsed["time"]))
+            if not price:
+                continue
+            swaps.append({
+                "mint": parsed["mint"],
+                "side": parsed["side"],
+                "amount": abs(float(parsed["token_delta"])),
+                "price": price,
+                "time": parsed["time"],
+                "pump": bool(parsed.get("pump")),
+                "signature": sig,
+            })
+    swaps.sort(key=lambda s: s["time"])
+    oldest = swaps[0]["time"] if swaps else None
+    newest = swaps[-1]["time"] if swaps else None
+    return swaps, {
+        "pages": pages,
+        "swaps": len(swaps),
+        "reached_30d": reached,
+        "oldest": oldest,
+        "newest": newest,
+        "note": note,
+    }
+
+
+def _confirmed(rows: list[tuple[int, float]], ts: int, price: float) -> bool:
+    """Another real print within 15 minutes agrees within 2x."""
+    for other_ts, other in rows:
+        if other_ts == ts or other <= 0:
+            continue
+        if abs(other_ts - ts) <= 900 and 0.5 <= price / other <= 2.0:
+            return True
+    return False
+
+
+def _acceptable(own: float, price: float, rows: list[tuple[int, float]], ts: int) -> bool:
+    """Reject a lone print that is dozens of times the wallet's own price.
+
+    That was the GsbH book: one bad decimals print closed a copy up about 400x.
+    A real jump still counts when a second print agrees with it.
+    """
+    if own <= 0 or price <= 0:
+        return False
+    ratio = price / own
+    if 1.0 / 25.0 <= ratio <= 25.0:
+        return True
+    return _confirmed(rows, ts, price)
+
+
+def _later_ok(index: dict, mint: str, ts: int, own: float) -> tuple[int, float] | None:
+    rows = index.get(mint) or []
+    i = bisect_left(rows, (ts + DELAY_S, 0.0))
+    while i < len(rows):
+        stamp, price = rows[i]
+        if _acceptable(own, price, rows, stamp):
+            return stamp, price
+        i += 1
+    return None
 
 
 def _prints_until(index: dict, mint: str, start: int, end: int) -> list[tuple[int, float]]:
@@ -326,6 +613,7 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
     copies = 0
     skipped = 0
     path: list[tuple[int, float]] = []
+    closes: list[dict] = []
 
     def n_open() -> int:
         return sum(len(v) for v in lots.values())
@@ -362,13 +650,24 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
         closed.append(pnl)
         holds.append(max(0, when - lot["entry_time"]))
         lot["closed"] = True
+        closes.append({
+            "mint": lot.get("mint", ""),
+            "entry": round(lot["entry"], 8),
+            "exit": round(price, 8),
+            "multiple": round(price / lot["entry"], 2) if lot["entry"] else None,
+            "pnl": round(pnl, 2),
+            "reason": reason,
+        })
 
     def scan_stops(until: int) -> None:
         for mint, held in list(lots.items()):
             still = []
             for lot in held:
                 hit = None
+                rows = index.get(mint) or []
                 for ts, price in _prints_until(index, mint, lot["entry_time"] + DELAY_S, until):
+                    if not _acceptable(lot["entry"], price, rows, ts):
+                        continue
                     change = price / lot["entry"] - 1.0 if lot["entry"] else 0
                     if change <= -STOP:
                         hit = (ts, price, "stop")
@@ -386,7 +685,7 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
     for swap in swaps:
         scan_stops(swap["time"])
         snap(swap["time"])
-        later = _later(index, swap["mint"], swap["time"]) if swap.get("price") else None
+        later = _later_ok(index, swap["mint"], swap["time"], float(swap.get("price") or 0)) if swap.get("price") else None
         if swap["side"] == "buy":
             if not later:
                 skipped += 1
@@ -411,6 +710,7 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
                 "mark": later[1],
                 "entry_time": later[0],
                 "pump": pump,
+                "mint": swap["mint"],
             })
             copies += 1
             snap(later[0])
@@ -466,6 +766,7 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
         "ending_equity": round(ending, 2),
         "profit": round(ending - START, 2),
         "largest_close": round(max(closed), 2) if closed else 0.0,
+        "largest_closes": sorted(closes, key=lambda row: row["pnl"], reverse=True)[:5],
         "skipped": skipped,
         "path": path,
     }
