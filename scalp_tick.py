@@ -39,19 +39,19 @@ SLOT = 0.10
 MAX_OPEN = 6
 FEE = 0.01
 SLIP = 0.005
-MIN_LIQ = 50_000
-MIN_MCAP = 300_000
-MAX_MCAP = 50_000_000
-MIN_VOL_M5 = 20_000
-MIN_AGE_S = 30 * 60
+MIN_LIQ = 25_000
+MIN_MCAP = 100_000
+MAX_MCAP = 100_000_000
+MIN_VOL_M5 = 5_000
+MIN_AGE_S = 10 * 60
 TP = 0.08
 STOP = 0.05
 TRAIL_ARM = 0.04
 TRAIL = 0.025
 TIME_STOP_S = 20 * 60
-CHG_MIN = 2.0
-CHG_MAX = 25.0
-BUY_SELL = 1.2
+CHG_MIN = 1.0
+CHG_MAX = 40.0
+BUY_SELL = 1.05
 
 
 def _http(url: str, timeout: int = 20):
@@ -280,43 +280,91 @@ def scan() -> tuple[list[dict], str]:
     return list(by_mint.values()), " · ".join(notes)
 
 
-def _ratio_ok(row: dict) -> bool:
-    buys, sells = row["buys"], row["sells"]
-    if buys <= sells:
-        return False
+def _ratio(row: dict) -> float | None:
+    buys, sells = int(row.get("buys") or 0), int(row.get("sells") or 0)
     if sells <= 0:
-        return buys > 0
-    return (buys / sells) >= BUY_SELL
+        return None if buys <= 0 else 99.0
+    return buys / sells
 
 
-def _rising(row: dict) -> bool:
+def _pace(row: dict) -> float | None:
+    """5-minute volume versus the hourly pace. Ranking only, not a gate."""
     m5, h1 = row.get("vol_m5"), row.get("vol_h1")
-    if m5 is None or m5 < MIN_VOL_M5:
-        return False
-    if h1 is None:
-        return False
-    if h1 <= 0:
-        return True
-    return m5 * 12 > h1
+    if m5 is None or h1 is None or h1 <= 0:
+        return None
+    return (m5 * 12.0) / h1
+
+
+def _momentum(row: dict) -> float:
+    chg = row.get("chg_m5") or 0.0
+    ratio = _ratio(row) or 0.0
+    pace = _pace(row)
+    pace_bonus = min(pace, 3.0) if pace is not None else 1.0
+    return float(chg) * min(ratio, 3.0) * max(pace_bonus, 0.25)
+
+
+def _fails(row: dict) -> list[str]:
+    reasons = []
+    if row.get("price") is None or row["price"] <= 0:
+        reasons.append("no price")
+    liq = row.get("liq")
+    if liq is None or liq < MIN_LIQ:
+        shown = 0 if liq is None else liq
+        reasons.append(f"liquidity ${shown:,.0f} under $25k")
+    mcap = row.get("mcap")
+    if mcap is None or not (MIN_MCAP <= mcap <= MAX_MCAP):
+        if mcap is None:
+            reasons.append("no market cap")
+        else:
+            reasons.append(f"market cap ${mcap:,.0f} outside $100k–$100M")
+    age = row.get("age_s")
+    if age is None or age < MIN_AGE_S:
+        if age is None:
+            reasons.append("no pair age")
+        else:
+            reasons.append(f"age {age / 60:.0f}m under 10m")
+    vol = row.get("vol_m5")
+    if vol is None or vol < MIN_VOL_M5:
+        shown = 0 if vol is None else vol
+        reasons.append(f"5m volume ${shown:,.0f} under $5k")
+    ratio = _ratio(row)
+    if ratio is None or ratio < BUY_SELL:
+        reasons.append(f"buy/sell {int(row.get('buys') or 0)}/{int(row.get('sells') or 0)} under 1.05")
+    chg = row.get("chg_m5")
+    if chg is None or not (CHG_MIN <= chg <= CHG_MAX):
+        if chg is None:
+            reasons.append("no 5m change")
+        else:
+            reasons.append(f"5m {chg:+.1f}% outside +1% to +40%")
+    return reasons
 
 
 def _passes(row: dict) -> str | None:
-    if row.get("price") is None or row["price"] <= 0:
-        return "no price"
-    if row.get("liq") is None or row["liq"] < MIN_LIQ:
-        return "liquidity"
-    if row.get("mcap") is None or not (MIN_MCAP <= row["mcap"] <= MAX_MCAP):
-        return "market cap"
-    if row.get("age_s") is None or row["age_s"] < MIN_AGE_S:
-        return "pair age"
-    if not _rising(row):
-        return "5m volume"
-    if not _ratio_ok(row):
-        return "buy/sell"
-    chg = row.get("chg_m5")
-    if chg is None or not (CHG_MIN <= chg <= CHG_MAX):
-        return "5m change"
-    return None
+    failed = _fails(row)
+    return failed[0] if failed else None
+
+
+def _near_misses(rows: list[dict], held: set[str]) -> list[dict]:
+    """Pairs that missed by one gate, closest first."""
+    misses = []
+    for row in rows:
+        if row.get("mint") in held:
+            continue
+        failed = _fails(row)
+        if not failed or len(failed) > 2:
+            continue
+        misses.append({
+            "symbol": row.get("symbol") or "",
+            "mint": row.get("mint") or "",
+            "link": f"https://axiom.trade/meme/{row['mint']}?chain=sol" if row.get("mint") else "",
+            "reason": failed[0] if len(failed) == 1 else " · ".join(failed[:2]),
+            "gates": len(failed),
+            "chg_m5": row.get("chg_m5"),
+            "vol_m5": None if row.get("vol_m5") is None else round(float(row["vol_m5"]), 0),
+            "score": round(_momentum(row), 2),
+        })
+    misses.sort(key=lambda item: (item["gates"], -item["score"]))
+    return misses[:6]
 
 
 def _mark(state: dict, quotes: dict[str, dict]) -> None:
@@ -491,11 +539,12 @@ def poll(state: dict) -> None:
             rows.append(extra)
     _mark(state, quotes)
     _exit(state, quotes)
-    passed = []
-    for row in rows:
-        if _passes(row) is None:
-            passed.append(row)
-    passed.sort(key=lambda row: (row.get("chg_m5") or 0, row.get("vol_m5") or 0), reverse=True)
+    held = {p.get("mint") for p in state["positions"]}
+    passed = [row for row in rows if _passes(row) is None and row.get("mint") not in held]
+    for row in passed:
+        row["score"] = _momentum(row)
+    passed.sort(key=lambda row: row["score"], reverse=True)
+    state["near_misses"] = _near_misses(rows, held)
     for row in passed:
         if len(state["positions"]) >= MAX_OPEN:
             break

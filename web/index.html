@@ -224,6 +224,7 @@
         "equity desk"
         "positions died"
         "history history"
+        "near near"
         "who who"
         "logger logger";
       gap: 12px;
@@ -237,6 +238,7 @@
       padding: 14px 16px;
       min-width: 0;
     }
+    .near { grid-area: near; }
     .promo { grid-area: promo; display: flex; flex-direction: column; gap: 14px; }
     .promo[hidden] { display: none; }
     .promo-title { font-size: 28px; letter-spacing: -0.03em; line-height: 1.1; }
@@ -521,6 +523,7 @@
           "died"
           "positions"
           "history"
+          "near"
           "who";
         padding: 10px 10px 12px;
         gap: 10px;
@@ -660,6 +663,10 @@
         <div id="died"></div>
       </section>
 
+      <section class="panel near" id="near-panel" hidden>
+        <h2>Closest candidates <span class="meta" id="near-meta"></span></h2>
+        <div id="near"></div>
+      </section>
       <section class="panel positions">
         <h2>Open positions <span class="meta" id="pos-meta"></span></h2>
         <div class="table-wrap" id="pos"></div>
@@ -911,6 +918,31 @@
     document.getElementById("died").innerHTML = rows.length
       ? rows.map(r => `<div class="died-row"><span>${escapeHtml(r.reason)}</span><span class="n">${r.count}</span><div class="bar"><i style="width:${((r.count||0)/max)*100}%"></i></div></div>`).join("")
       : '<div class="empty">No kills recorded this tick.</div>';
+  }
+
+  function renderNear(data) {
+    const panel = document.getElementById("near-panel");
+    if (!panel) return;
+    if (deskId() !== "axiom") {
+      panel.hidden = true;
+      return;
+    }
+    panel.hidden = false;
+    const rows = data.near_misses || [];
+    document.getElementById("near-meta").textContent = rows.length ? `${rows.length} near misses` : "";
+    if (!rows.length) {
+      document.getElementById("near").innerHTML = '<div class="empty">No near misses this poll.</div>';
+      return;
+    }
+    document.getElementById("near").innerHTML = `<table><thead><tr><th>Coin</th><th>Why it stayed out</th><th class="num">5m</th></tr></thead><tbody>`
+      + rows.map(r => {
+          const name = r.link
+            ? `<a href="${escapeHtml(r.link)}" target="_blank" rel="noopener">${escapeHtml(r.symbol || "")}</a>`
+            : escapeHtml(r.symbol || "");
+          const chg = r.chg_m5 == null ? "—" : ((r.chg_m5 >= 0 ? "+" : "") + Number(r.chg_m5).toFixed(1) + "%");
+          return `<tr><td class="sym">${name}</td><td>${escapeHtml(r.reason || "")}</td><td class="num">${chg}</td></tr>`;
+        }).join("")
+      + `</tbody></table>`;
   }
 
   function renderPositions(data) {
@@ -1569,6 +1601,7 @@
       renderAgents(data);
       renderLog(data);
       renderDied(data);
+      renderNear(data);
       renderPositions(data);
       renderHistory(data);
       renderWho(data);
