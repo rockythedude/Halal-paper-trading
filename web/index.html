@@ -586,6 +586,7 @@
       <a class="pill" id="nav-meme" href="meme/">Meme</a>
       <a class="pill" id="nav-btc" href="btc/">BTC</a>
       <a class="pill" id="nav-wallets" href="wallets/">Wallets</a>
+      <a class="pill" id="nav-axiom" href="scalp/">Scalp</a>
     </nav>
 
     <main>
@@ -924,8 +925,11 @@
       const pct = p.unrealized_pct;
       const pctStr = (pct == null) ? "—" : asPct(pct);
       const tag = p.tag ? ` <span class="chip">${escapeHtml(p.tag)}</span>` : "";
+      const sym = p.link
+        ? `<a href="${escapeHtml(p.link)}" target="_blank" rel="noopener">${escapeHtml(p.symbol)}</a>`
+        : escapeHtml(p.symbol);
       return `<tr>
-        <td class="sym">${escapeHtml(p.symbol)}${tag}<span class="name">${escapeHtml(p.name || "")} · ${escapeHtml(p.asset_class || "")}</span></td>
+        <td class="sym">${sym}${tag}<span class="name">${escapeHtml(p.name || "")} · ${escapeHtml(p.asset_class || "")}</span></td>
         <td>${escapeHtml(p.agent || "")}</td>
         <td class="num">${escapeHtml(p.qty_display || String(p.qty ?? ""))}</td>
         <td class="num">${fmtMoney(p.entry_price)}</td>
@@ -945,6 +949,7 @@
 
   function deskId() {
     const path = window.location.pathname || "";
+    if (path.includes("/scalp")) return "axiom";
     if (path.includes("/wallets")) return "wallets";
     if (path.includes("/btc")) return "btc";
     if (path.includes("/meme")) return "meme";
@@ -961,12 +966,14 @@
       meme: desk === "meme" ? "./" : prefix + "meme/",
       btc: desk === "btc" ? "./" : prefix + "btc/",
       wallets: desk === "wallets" ? "./" : prefix + "wallets/",
+      axiom: desk === "axiom" ? "./" : prefix + "scalp/",
     };
     document.getElementById("nav-main").href = links.main;
     document.getElementById("nav-copy").href = links.copy;
     document.getElementById("nav-meme").href = links.meme;
     document.getElementById("nav-btc").href = links.btc;
     document.getElementById("nav-wallets").href = links.wallets;
+    document.getElementById("nav-axiom").href = links.axiom;
     document.getElementById("nav-" + desk).classList.add("on");
     const titles = {
       main: ["Halal Paper Trader", "Halal stocks + crypto · strict RM · paper"],
@@ -974,6 +981,7 @@
       meme: ["Crypto + Meme", "NOT halal-screened · speculative sandbox · paper"],
       btc: ["BTC Scalper", "BTC spot only · no leverage · paper"],
       wallets: ["Wallet Copy", "Solana meme wallets · not halal-screened · paper"],
+      axiom: ["Axiom Scalper", "Not halal-screened, speculative, paper only"],
     };
     const pair = titles[desk];
     document.querySelector(".brand h1").textContent = pair[0];
@@ -1119,6 +1127,10 @@
       sandbox.hidden = false;
       sandbox.textContent = data.sandbox_note || "Meme coins: not halal-screened, speculative; paper only.";
       fine.textContent = "Paper money only. Meme coins are not halal-screened. Speculative sandbox, not a fatwa.";
+    } else if (deskId() === "axiom") {
+      sandbox.hidden = false;
+      sandbox.textContent = data.sandbox_note || "Not halal-screened, speculative, paper only.";
+      fine.textContent = "Paper money only. Not halal-screened, speculative, paper only.";
     }
   }
 
@@ -1221,8 +1233,9 @@
   function renderEquity(data) {
     const start = data.starting_capital || 100;
     const sizePct = Math.round((((data.risk_rules || {}).max_position_pct) || 0.08) * 100);
-    document.getElementById("eq-kicker").textContent =
-      `Equity — ${fmtMoney(start, 0)} at start — ${sizePct}% max size`;
+    document.getElementById("eq-kicker").textContent = deskId() === "axiom"
+      ? `Live P&L — ${fmtMoney(start, 0)} book — ${sizePct}% size`
+      : `Equity — ${fmtMoney(start, 0)} at start — ${sizePct}% max size`;
     setEquity(Number(data.equity) || 0);
     const profit = data.profit;
     const pct = start ? (profit / start) * 100 : 0;
@@ -1537,6 +1550,9 @@
       if (deskId() === "wallets") {
         jobs.push(readJson("https://raw.githubusercontent.com/rockythedude/Halal-paper-trading/main/web/wallets/data.json?t=" + bust));
       }
+      if (deskId() === "axiom") {
+        jobs.push(readJson("https://raw.githubusercontent.com/rockythedude/Halal-paper-trading/main/web/scalp/data.json?t=" + bust));
+      }
       const settled = await Promise.allSettled(jobs);
       let data = null;
       for (const item of settled) {
@@ -1577,6 +1593,7 @@
     if (deskId() === "btc") drawBtc(lastBtc, lastMarks);
   });
   function pollEvery() {
+    if (deskId() === "axiom") return 8000;
     return deskId() === "wallets" ? 20000 : 30000;
   }
   async function pollLoop() {

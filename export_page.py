@@ -208,6 +208,7 @@ def build_data(state: dict) -> dict:
                 "score": p.get("score"),
                 "tag": p.get("tag") or "",
                 "venue": p.get("venue") or "",
+                "link": p.get("link") or "",
             }
         )
 
@@ -408,6 +409,7 @@ DESKS = (
     ("meme", "Crypto + Meme", ROOT / "meme" / "state.json"),
     ("btc", "BTC Scalper", ROOT / "btc" / "state.json"),
     ("wallets", "Wallet copy", ROOT / "wallets" / "state.json"),
+    ("axiom", "Axiom scalper", ROOT / "scalp" / "state.json"),
 )
 
 
@@ -489,6 +491,23 @@ def scalp_rules() -> dict:
     }
 
 
+def axiom_rules() -> dict:
+    return {
+        "mode": "axiom",
+        "max_position_pct": 0.10,
+        "stop_loss_pct": 0.05,
+        "take_profit_pct": 0.08,
+        "trailing_activate_pct": 0.04,
+        "trailing_stop_pct": 0.025,
+        "chips": ["10%", "TP +8%", "−5%", "trail 2.5%"],
+        "label": (
+            "Axiom scalper · 10% · max 6 · TP +8% · stop −5% · "
+            "trail 2.5% after +4% · time stop 20m · fee 1% + slippage 0.5% a side · "
+            "Not halal-screened, speculative, paper only"
+        ),
+    }
+
+
 def wallet_rules() -> dict:
     return {
         "mode": "wallets",
@@ -513,6 +532,8 @@ def export_page(state: dict | None = None, dest: Path | None = None, desk: str =
     payload["desk"] = desk
     if desk == "btc":
         payload["risk_rules"] = scalp_rules()
+    elif desk == "axiom":
+        payload["risk_rules"] = axiom_rules()
     elif desk == "wallets":
         payload["risk_rules"] = wallet_rules()
     elif desk == "copy":
@@ -556,7 +577,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Write a static dashboard payload")
     parser.add_argument("--state", default=None)
     parser.add_argument("--out", default=None)
-    parser.add_argument("--desk", default="main", choices=["main", "copy", "meme", "btc", "wallets"])
+    parser.add_argument("--desk", default="main", choices=["main", "copy", "meme", "btc", "wallets", "axiom"])
     args = parser.parse_args()
     try:
         state = json.loads(Path(args.state).read_text()) if args.state else None
