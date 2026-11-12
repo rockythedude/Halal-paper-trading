@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import os
+import threading
 import time
 import urllib.error
 import urllib.request
@@ -144,23 +145,44 @@ def gmgn_30d(limit: int = 20) -> tuple[list[dict], str]:
     return out, f"GMGN returned {len(out)} wallets"
 
 
+class _NoSwaps(RuntimeError):
+    """Helius has no parsed swap history for this address."""
+
+
+_RATE_LOCK = threading.Lock()
+_RATE_NEXT = 0.0
+
+
+def _pace() -> None:
+    """Stay near two enhanced-history calls a second so a full run does not get 429s."""
+    global _RATE_NEXT
+    with _RATE_LOCK:
+        wait = _RATE_NEXT - time.time()
+        if wait > 0:
+            time.sleep(wait)
+        _RATE_NEXT = time.time() + 0.5
+
+
 def _helius_page(addr: str, before: str | None, key: str) -> list:
     url = f"https://api.helius.xyz/v0/addresses/{addr}/transactions?api-key={key}&type=SWAP&limit=100"
     if before:
         url += f"&before={before}"
     last = "Helius page failed"
-    for attempt in range(4):
+    for attempt in range(6):
+        _pace()
         req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "halal-paper-trader/1.0"})
         try:
             with urllib.request.urlopen(req, timeout=25) as resp:
                 data = json.loads(resp.read().decode())
         except urllib.error.HTTPError as exc:
+            if exc.code == 404:
+                raise _NoSwaps("no parsed swaps")
             last = f"HTTP {exc.code}"
-            time.sleep(0.4 * (attempt + 1) if exc.code == 429 else 0.2)
+            time.sleep(2.0 * (2 ** attempt) if exc.code == 429 else 0.4)
             continue
         except Exception as exc:
             last = type(exc).__name__
-            time.sleep(0.2)
+            time.sleep(0.5)
             continue
         if isinstance(data, dict) and data.get("error"):
             raise RuntimeError("Helius error")
@@ -238,6 +260,10 @@ def fetch_swaps(addr: str, cutoff: int, sol_series, key: str) -> tuple[list[dict
     while pages < 250:
         try:
             batch = _helius_page(addr, before, key)
+        except _NoSwaps:
+            reached = True
+            note = "Helius returned no parsed swaps for this address."
+            break
         except Exception as exc:
             note = f"Helius stopped after {pages} pages: {exc}".replace(key, "***")
             break
@@ -439,6 +465,7 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
         "median_hold_hours": None if median is None else round(median, 2),
         "ending_equity": round(ending, 2),
         "profit": round(ending - START, 2),
+        "largest_close": round(max(closed), 2) if closed else 0.0,
         "skipped": skipped,
         "path": path,
     }
@@ -531,7 +558,7 @@ def build_rank() -> dict:
         )
         return row, swaps, meta
 
-    with ThreadPoolExecutor(max_workers=6) as pool:
+    with ThreadPoolExecutor(max_workers=2) as pool:
         futures = [pool.submit(_load, row) for row in wallets]
         for future in as_completed(futures):
             row, swaps, meta = future.result()
