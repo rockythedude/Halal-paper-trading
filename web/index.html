@@ -978,7 +978,8 @@
     const rows = (data.wallet_scoreboard && data.wallet_scoreboard.length)
       ? data.wallet_scoreboard
       : (data.watchlist || []);
-    document.getElementById("watch-meta").textContent = `${(data.watchlist || rows).length} pinned`;
+    const pausedN = rows.filter(r => r.paused).length;
+    document.getElementById("watch-meta").textContent = `${(data.watchlist || rows).length} pinned${pausedN ? ` · ${pausedN} paused` : ""}`;
     if (!rows.length) {
       document.getElementById("watch").innerHTML = '<div class="empty">The pinned leaderboard list appears after the next tick.</div>';
       return;
@@ -988,22 +989,25 @@
     board.forEach(row => { if (row.address) byAddr[row.address] = row; });
     const money = (n) => (n == null || Number.isNaN(Number(n))) ? "—" : ((Number(n) >= 0 ? "+" : "−") + fmtMoney(Math.abs(Number(n))));
     const body = rows.map(row => {
-      const score = byAddr[row.address] || {};
+      const score = byAddr[row.address] || row;
       const href = row.solscan || ("https://solscan.io/account/" + (row.address || ""));
       const label = row.name ? `${row.name} · ${row.short || ""}` : (row.short || row.address || "");
       const broken = row.parse_error ? ` · ${row.parse_error}` : "";
+      const realized = score.realized_pnl != null ? score.realized_pnl : score.our_realized;
+      const paused = (score.paused || row.paused) ? ` <span class="chip">paused</span>` : "";
       return `<tr>
-        <td><a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>${broken ? `<span class="name">${escapeHtml(broken)}</span>` : ""}</td>
+        <td><a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>${paused}${broken ? `<span class="name">${escapeHtml(broken)}</span>` : ""}</td>
         <td>${escapeHtml(row.source || "")}<span class="name">${escapeHtml(row.leaderboard_stat || "")}</span></td>
-        <td class="num ${clsPnL(score.our_realized || 0)}">${money(score.our_realized || 0)}</td>
+        <td class="num ${clsPnL(realized || 0)}">${money(realized || 0)}</td>
+        <td class="num">${score.wins ?? 0}</td>
+        <td class="num">${score.losses ?? 0}</td>
         <td class="num ${clsPnL(score.our_unrealized || 0)}">${money(score.our_unrealized || 0)}</td>
-        <td class="num ${clsPnL(score.our_total || 0)}">${money(score.our_total || 0)}</td>
       </tr>`;
     }).join("");
     document.getElementById("watch").innerHTML = `<table>
-      <thead><tr><th>Wallet</th><th>Source</th><th class="num">Our realized</th><th class="num">Our open</th><th class="num">Our total</th></tr></thead>
+      <thead><tr><th>Wallet</th><th>Source</th><th class="num">Realized</th><th class="num">Wins</th><th class="num">Losses</th><th class="num">Open</th></tr></thead>
       <tbody>${body}</tbody></table>
-      <div class="empty">Pinned leaderboard list. Our P&amp;L is this paper book only.</div>`;
+      <div class="empty">Copied P&amp;L is this paper book only. A wallet with 5 or more closed copies and negative realized P&amp;L is paused.</div>`;
   }
 
   function renderWho(data) {

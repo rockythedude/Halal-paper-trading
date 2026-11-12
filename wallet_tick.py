@@ -1046,29 +1046,65 @@ def _scoreboard(state: dict) -> list[dict]:
             "copy_buys": bool(row.get("copy_buys", True)),
             "parse_error": row.get("parse_error"),
             "our_realized": 0.0,
+            "realized_pnl": 0.0,
             "our_unrealized": 0.0,
             "open_copies": 0,
             "closed_copies": 0,
+            "wins": 0,
+            "losses": 0,
+            "paused": False,
         }
     for pos in state.get("positions") or []:
         addr = pos.get("copied_wallet")
-        if addr not in rows:
+        if not addr:
             continue
+        rows.setdefault(addr, _score_stub(addr))
         rows[addr]["our_unrealized"] += float(pos.get("unrealized_pnl") or 0)
         rows[addr]["open_copies"] += 1
     for trade in state.get("closed_trades") or []:
         addr = trade.get("copied_wallet")
-        if addr not in rows:
+        if not addr:
             continue
-        rows[addr]["our_realized"] += float(trade.get("pnl") or 0)
+        rows.setdefault(addr, _score_stub(addr))
+        pnl = float(trade.get("pnl") or 0)
+        rows[addr]["our_realized"] += pnl
         rows[addr]["closed_copies"] += 1
+        if pnl > 0:
+            rows[addr]["wins"] += 1
+        elif pnl < 0:
+            rows[addr]["losses"] += 1
     out = []
     for row in rows.values():
         row["our_realized"] = round(row["our_realized"], 2)
+        row["realized_pnl"] = row["our_realized"]
         row["our_unrealized"] = round(row["our_unrealized"], 2)
         row["our_total"] = round(row["our_realized"] + row["our_unrealized"], 2)
+        row["paused"] = row["closed_copies"] >= 5 and row["our_realized"] < 0
+        if row["paused"]:
+            row["copy_buys"] = False
         out.append(row)
     return out
+
+
+def _score_stub(addr: str) -> dict:
+    return {
+        "address": addr,
+        "name": "",
+        "short": _short(addr),
+        "solscan": f"https://solscan.io/account/{addr}",
+        "source": "copied earlier",
+        "leaderboard_stat": "",
+        "copy_buys": False,
+        "parse_error": None,
+        "our_realized": 0.0,
+        "realized_pnl": 0.0,
+        "our_unrealized": 0.0,
+        "open_copies": 0,
+        "closed_copies": 0,
+        "wins": 0,
+        "losses": 0,
+        "paused": False,
+    }
 
 
 def poll(state: dict) -> None:
@@ -1147,6 +1183,15 @@ def poll(state: dict) -> None:
         elif swap["side"] == "buy":
             if not row.get("copy_buys", True):
                 continue
+            mine = next((r for r in _scoreboard(state) if r.get("address") == row["address"]), None)
+            if mine and mine.get("paused"):
+                who = f"{row['name']} {row['short']}" if row.get("name") else row["short"]
+                _say(
+                    state,
+                    "FILTER",
+                    f"paused {who} — {mine['closed_copies']} closed, realized {mine['realized_pnl']:+.2f}",
+                )
+                continue
             if quote and quote.get("curve_unread") and quote.get("venue") != "pump" and quote.get("liq", 0) < MIN_LIQ:
                 _say(state, "FILTER", f"skip ${symbol} — Pump.fun curve price was unavailable")
                 continue
@@ -1166,6 +1211,16 @@ def poll(state: dict) -> None:
     state["checked_at"] = iso(now)
     state["checked_at_london"] = format_london(now)
     state["wallet_scoreboard"] = _scoreboard(state)
+    paused = [r for r in state["wallet_scoreboard"] if r.get("paused")]
+    paused_key = ",".join(sorted(r["address"] for r in paused))
+    if paused_key != state.get("paused_wallets_key"):
+        state["paused_wallets_key"] = paused_key
+        if paused:
+            names = ", ".join(
+                f"{(r.get('name') or r.get('short'))} ({r['closed_copies']} closed, {r['realized_pnl']:+.2f})"
+                for r in paused
+            )
+            _say(state, "FILTER", f"Paused new copies — 5 or more closed and negative P&L: {names}")
     engine.set_activity(
         state,
         "KESTO",

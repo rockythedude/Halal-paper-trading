@@ -1,0 +1,43 @@
+# If the self-dispatch chain in tick.yml dies, this starts it again.
+# GitHub's own cron is only a backstop: the chain is what keeps the desks ticking.
+
+name: Tick watchdog
+
+on:
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  poke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch a tick when the chain is idle
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          rows=$(gh run list --workflow tick.yml --limit 5 --json databaseId,status,event,updatedAt)
+          echo "$rows"
+          ROWS="$rows" python3 - << 'PY'
+          import json, os, subprocess
+          from datetime import datetime, timezone
+          rows = json.loads(os.environ["ROWS"])
+          live = [r for r in rows if r.get("status") in ("queued", "in_progress", "waiting", "pending", "requested")]
+          if live:
+              print("tick already active", [(r.get("databaseId"), r.get("status"), r.get("event")) for r in live])
+              raise SystemExit(0)
+          if rows:
+              newest = datetime.fromisoformat(rows[0]["updatedAt"].replace("Z", "+00:00"))
+              age = (datetime.now(timezone.utc) - newest).total_seconds()
+              print(f"newest tick age {age:.0f}s")
+              if age < 12 * 60:
+                  print("last tick is recent enough")
+                  raise SystemExit(0)
+          print("chain is idle — dispatching tick.yml")
+          subprocess.run(["gh", "workflow", "run", "tick.yml", "--ref", "main"], check=True)
+          PY

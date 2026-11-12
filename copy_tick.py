@@ -272,6 +272,8 @@ def load_copy(cfg: dict) -> dict:
 def run_copy() -> dict:
     root = load_config()
     cfg = dict(root)
+    # Main and meme use the wider stop in config.json. This desk stays at −2%.
+    cfg["stop_loss_pct"] = 0.02
     cfg["max_open_positions"] = MAX_OPEN
     cfg["max_stock_positions"] = MAX_OPEN
     cfg["max_crypto_positions"] = 0

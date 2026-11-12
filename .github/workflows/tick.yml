@@ -113,8 +113,13 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+  # Always run, including when tick or deploy fails or is skipped.
+  # On 12 Nov 2026 the chain died twice (08:59 and 11:20 UTC) because
+  # `gh run list --status queued` counted 1 and this job refused to dispatch.
+  # That queued run never started. A pending schedule is not a substitute.
   chain:
-    needs: deploy
+    needs: [tick, deploy]
+    if: always()
     runs-on: ubuntu-latest
     steps:
       - name: Queue the next tick
@@ -122,10 +127,12 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
         run: |
-          queued=$(gh run list --workflow tick.yml --status queued --limit 10 --json databaseId --jq 'length')
-          echo "queued runs: ${queued}"
-          if [ "${queued}" != "0" ]; then
-            echo "A tick is already queued. Not adding another."
+          echo "tick=${{ needs.tick.result }} deploy=${{ needs.deploy.result }}"
+          live=$(gh run list --workflow tick.yml --limit 30 --json databaseId,status,event \
+            --jq "[.[] | select(.databaseId != ${{ github.run_id }} and .event == \"workflow_dispatch\" and (.status == \"queued\" or .status == \"in_progress\" or .status == \"waiting\" or .status == \"pending\" or .status == \"requested\"))] | length")
+          echo "other live workflow_dispatch runs: ${live}"
+          if [ "${live}" != "0" ]; then
+            echo "A workflow_dispatch tick is already queued or running. Not adding another."
             exit 0
           fi
           gh workflow run tick.yml --ref main

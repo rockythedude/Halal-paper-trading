@@ -406,10 +406,6 @@ def _exit_lots(state: dict, price: float, source: str, snap: dict) -> bool:
         else:
             keep.append(pos)
     state["positions"] = keep
-    if snap.get("cross_down") and state["positions"]:
-        for pos in list(state["positions"]):
-            _sell(state, pos, price, source, "ema", "EMA9<EMA21 (5m)")
-        state["positions"] = []
     return stopped
 
 

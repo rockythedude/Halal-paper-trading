@@ -411,9 +411,9 @@ DESKS = (
 )
 
 
-def risk_from_config() -> dict:
+def risk_from_config(stop_loss_pct: float | None = None) -> dict:
     cfg = json.loads((ROOT / "config.json").read_text())
-    sl = float(cfg["stop_loss_pct"])
+    sl = float(cfg["stop_loss_pct"] if stop_loss_pct is None else stop_loss_pct)
     arm = float(cfg["trailing_activate_pct"])
     trail = float(cfg["trailing_stop_pct"])
     tp = float(cfg["take_profit_pct"]) if cfg.get("take_profit_pct") else None
@@ -483,7 +483,7 @@ def scalp_rules() -> dict:
         "max_position_pct": 0.20,
         "chips": ["20%×4", "TP +0.8%", "−0.6%", "trail 0.4%"],
         "label": (
-            "BTC scalper · 20% × 4 · TP +0.8% · stop −0.6% · "
+            "BTC scalper · 20% × 4 · exits only TP +0.8%, stop −0.6%, "
             "trail 0.4% after +0.5% · fee 0.1% a side"
         ),
     }
@@ -515,6 +515,8 @@ def export_page(state: dict | None = None, dest: Path | None = None, desk: str =
         payload["risk_rules"] = scalp_rules()
     elif desk == "wallets":
         payload["risk_rules"] = wallet_rules()
+    elif desk == "copy":
+        payload["risk_rules"] = risk_from_config(stop_loss_pct=0.02)
     else:
         payload["risk_rules"] = risk_from_config()
     payload["leaderboard"] = build_leaderboard()
