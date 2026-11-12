@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Check that the Helius key is present
         env:
-          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+          HELIUS_API_KEY: ${{ secrets.HELIUS_KEY }}
         run: |
           if [ -n "$HELIUS_API_KEY" ]; then
             echo "HELIUS_API_KEY is set."
@@ -58,7 +58,7 @@ jobs:
 
       - name: Follow the pinned wallets
         env:
-          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+          HELIUS_API_KEY: ${{ secrets.HELIUS_KEY }}
         run: |
           set +e
           if [ -z "$HELIUS_API_KEY" ]; then

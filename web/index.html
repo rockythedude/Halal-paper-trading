@@ -623,6 +623,7 @@
           <div class="chart-wrap replay-chart"><canvas id="replay-chart"></canvas></div>
           <div id="replay-recap" hidden></div>
           <div class="disc" id="replay-skips"></div>
+          <div id="rank"></div>
         </div>
       </section>
       <section class="panel board">
@@ -1493,6 +1494,35 @@
     skips.textContent = [parts.join(" · "), cov.join(" ")].filter(Boolean).join(" ");
   }
 
+  function renderRank(replay) {
+    const box = document.getElementById("rank");
+    if (!box) return;
+    const pinned = (replay && replay.wallet_sims) || [];
+    const cand = (replay && replay.candidate_sims) || [];
+    const rows = pinned.concat(cand);
+    if (!rows.length) {
+      box.innerHTML = "";
+      return;
+    }
+    const money = (n) => (n == null || Number.isNaN(Number(n))) ? "—" : ((Number(n) >= 0 ? "+" : "−") + fmtMoney(Math.abs(Number(n))));
+    const body = rows.map(r => `<tr>
+      <td class="num">${r.rank ?? ""}</td>
+      <td>${escapeHtml(r.name || r.short || "")}<span class="name">${escapeHtml(r.group || "")}${r.pinned ? " · copied now" : ""}</span></td>
+      <td class="num">${r.copies ?? 0}</td>
+      <td class="num">${r.closed ?? 0}</td>
+      <td class="num">${r.win_rate == null ? "—" : Math.round(r.win_rate * 100) + "%"}</td>
+      <td class="num ${clsPnL(r.realized || 0)}">${money(r.realized || 0)}</td>
+      <td class="num ${clsPnL(r.unrealized || 0)}">${money(r.unrealized || 0)}</td>
+      <td class="num">${r.median_hold_hours == null ? "—" : Number(r.median_hold_hours).toFixed(1) + "h"}</td>
+      <td class="num ${clsPnL(r.profit || 0)}">${money(r.profit || 0)}</td>
+    </tr>`).join("");
+    box.innerHTML = `<h2>Each wallet on its own $100 book</h2>
+      <div class="disc">Full history where Helius returned it. Fees and a 15-second delay. This does not change who the live desk copies.</div>
+      <div class="table-wrap"><table>
+        <thead><tr><th class="num">#</th><th>Wallet</th><th class="num">Copies</th><th class="num">Closed</th><th class="num">Win</th><th class="num">Realized</th><th class="num">Open</th><th class="num">Hold</th><th class="num">Profit</th></tr></thead>
+        <tbody>${body}</tbody></table></div>`;
+  }
+
   function showRecap(replay) {
     const box = document.getElementById("replay-recap");
     if (!box) return;
@@ -1562,6 +1592,7 @@
       if (hist) hist.textContent = `history • ${replayBook.copies || 0} buys • ${replayBook.traders || 0} traders`;
       setCheck("hist", replayBook.generated_at ? "ok" : "bad");
       renderReplayMeta(replayBook);
+      renderRank(replayBook);
       drawReplay(replayBook.days || [], (replayBook.days || []).length);
     } catch (err) {
       setCheck("mode", "bad");

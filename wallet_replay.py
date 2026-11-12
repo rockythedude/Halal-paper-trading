@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import time
 import urllib.request
 from bisect import bisect_left
@@ -452,6 +453,14 @@ def main() -> None:
         age = time.time() - OUT.stat().st_mtime
         if age < args.max_age_hours * 3600:
             print(f"replay is {age/3600:.1f}h old, leaving it", flush=True)
+            return
+    if OUT.exists():
+        try:
+            existing = json.loads(OUT.read_text())
+        except json.JSONDecodeError:
+            existing = {}
+        if existing.get("history_source") == "helius" and not os.environ.get("HELIUS_API_KEY"):
+            print("leaving the Helius 30-day replay; this job has no key", flush=True)
             return
     OUT.parent.mkdir(parents=True, exist_ok=True)
     payload = build(args.max_seconds)
