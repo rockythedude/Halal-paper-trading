@@ -161,7 +161,7 @@ def _pace() -> None:
         wait = _RATE_NEXT - time.time()
         if wait > 0:
             time.sleep(wait)
-        _RATE_NEXT = time.time() + 0.5
+        _RATE_NEXT = time.time() + 0.25
 
 
 def _ui_amount(obj: dict) -> float:
@@ -186,17 +186,20 @@ def _helius_page(addr: str, before: str | None, key: str, cutoff: int) -> list:
     and not limited to type=SWAP. The old api.helius.xyz?before=&type=SWAP
     query 404'd Jijo and returned an empty page for Wugi.
     """
+    # api.helius.xyz is the host that already returned history. mainnet is the
+    # documented replacement and is tried if the first host 404s.
     hosts = (
-        "https://mainnet.helius-rpc.com/v0/addresses/{addr}/transactions",
         "https://api.helius.xyz/v0/addresses/{addr}/transactions",
+        "https://mainnet.helius-rpc.com/v0/addresses/{addr}/transactions",
     )
     last = "Helius page failed"
     for host in hosts:
-        query = f"api-key={key}&limit=100&sort-order=desc&gte-time={cutoff}&token-accounts=balanceChanged"
+        query = f"api-key={key}&limit=100&sort-order=desc&gte-time={cutoff}"
         if before:
-            query += f"&before-signature={before}"
+            # before-signature is the current name. before is the older alias.
+            query += f"&before-signature={before}&before={before}"
         url = host.format(addr=addr) + "?" + query
-        for attempt in range(5):
+        for attempt in range(4):
             _pace()
             req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "halal-paper-trader/1.0"})
             try:
@@ -204,12 +207,9 @@ def _helius_page(addr: str, before: str | None, key: str, cutoff: int) -> list:
                     data = json.loads(resp.read().decode())
             except urllib.error.HTTPError as exc:
                 last = f"HTTP {exc.code}"
-                if exc.code in (400, 404) and "token-accounts" in url:
-                    url = url.replace("&token-accounts=balanceChanged", "")
-                    continue
                 if exc.code == 404:
                     break
-                time.sleep(2.0 * (2 ** attempt) if exc.code == 429 else 0.4)
+                time.sleep(1.5 * (attempt + 1) if exc.code == 429 else 0.3)
                 continue
             except Exception as exc:
                 last = type(exc).__name__
@@ -389,7 +389,7 @@ def fetch_swaps(addr: str, cutoff: int, sol_series, key: str) -> tuple[list[dict
     reached = False
     note = ""
     seen = set()
-    while pages < 250:
+    while pages < 40:
         try:
             batch = _helius_page(addr, before, key, cutoff)
         except Exception as exc:
@@ -430,8 +430,8 @@ def fetch_swaps(addr: str, cutoff: int, sol_series, key: str) -> tuple[list[dict
             reached = True
             break
         time.sleep(0.02)
-    if pages >= 250 and not reached:
-        note = "Stopped at 250 Helius pages before 30 days."
+    if pages >= 40 and not reached:
+        note = "Stopped at 40 Helius pages before 30 days."
     if not swaps:
         rpc_swaps, rpc_meta = _fetch_rpc(addr, cutoff, sol_series, key)
         if rpc_swaps:
@@ -501,10 +501,10 @@ def _fetch_rpc(addr: str, cutoff: int, sol_series, key: str) -> tuple[list[dict]
             if not stop:
                 reached = True
             break
-    if len(sigs) > 400:
-        sigs = sigs[:400]
+    if len(sigs) > 200:
+        sigs = sigs[:200]
         reached = False
-        note += " Capped at 400 signatures."
+        note += " Capped at 200 signatures."
     swaps = []
     opts = {"encoding": "jsonParsed", "commitment": "confirmed", "maxSupportedTransactionVersion": 1}
     for i in range(0, len(sigs), 8):
