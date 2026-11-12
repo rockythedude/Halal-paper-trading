@@ -57,6 +57,100 @@ SLOT = 0.10
 MAX_OPEN = 8
 MIN_LIQ = 20_000
 WATCH_HOURS = 20
+# Pinned from public leaderboards. Not replaced by the auto scan.
+PINNED_WALLETS = [
+    {
+        "address": "c6LPGHm9EadZJ9nFLH7qy7d4kFZBEfcEMLhSok1aUam",
+        "name": "",
+        "source": "GMGN Smart Degen",
+        "source_url": "https://gmgn.ai/trade?chain=sol&tab=smart_degen",
+        "window": "7d",
+        "leaderboard_pnl": "+$2,167.8",
+        "win_rate": "56.3%",
+    },
+    {
+        "address": "GsbHhw9VTx7e91hBD4ewhNLNFdNiZAVzjBwgcgoG8NZJ",
+        "name": "",
+        "source": "GMGN Smart Degen",
+        "source_url": "https://gmgn.ai/trade?chain=sol&tab=smart_degen",
+        "window": "30d",
+        "leaderboard_pnl": "+$3,967.8",
+        "win_rate": "53.6%",
+    },
+    {
+        "address": "8xiSugaCSFAMd1Cfosz82wiUKvHDmzKYPTjE4sAVaftH",
+        "name": "",
+        "source": "GMGN Smart Degen",
+        "source_url": "https://gmgn.ai/trade?chain=sol&tab=smart_degen",
+        "window": "30d",
+        "leaderboard_pnl": "+$11.1K",
+        "win_rate": "73.7%",
+    },
+    {
+        "address": "8pYLN2Zm9ECVRXHRcU7a4tYpSPMaJME3Qt7JKa9LirEG",
+        "name": "",
+        "source": "GMGN Smart Degen",
+        "source_url": "https://gmgn.ai/trade?chain=sol&tab=smart_degen",
+        "window": "30d",
+        "leaderboard_pnl": "+$1,971.3",
+        "win_rate": "72%",
+    },
+    {
+        "address": "J23qr98GjGJJqKq9CBEnyRhHbmkaVxtTJNNxKu597wsA",
+        "name": "gr3g",
+        "source": "Kolscan leaderboard",
+        "source_url": "https://kolscan.io/leaderboard",
+        "window": "30d",
+        "leaderboard_pnl": "+1,421.57 SOL",
+        "win_rate": None,
+    },
+    {
+        "address": "862TYSvRYoiHAK3F3WwTRYAfuGiQaGdxedN9AGvRGWo2",
+        "name": "Wugi",
+        "source": "Kolscan leaderboard",
+        "source_url": "https://kolscan.io/leaderboard",
+        "window": "30d",
+        "leaderboard_pnl": "+994.91 SOL",
+        "win_rate": None,
+    },
+    {
+        "address": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC",
+        "name": "clukz",
+        "source": "Kolscan leaderboard",
+        "source_url": "https://kolscan.io/leaderboard",
+        "window": "30d",
+        "leaderboard_pnl": "+273.34 SOL",
+        "win_rate": None,
+    },
+    {
+        "address": "4BdKaxN8G6ka4GYtQQWk4G4dZRUTX2vQH9GcXdBREFUk",
+        "name": "Jijo",
+        "source": "Kolscan leaderboard",
+        "source_url": "https://kolscan.io/leaderboard",
+        "window": "30d",
+        "leaderboard_pnl": "+347.61 SOL",
+        "win_rate": None,
+    },
+    {
+        "address": "8oQoMhfBQnRspn7QtNAq2aPThRE4q94kLSTwaaFQvRgs",
+        "name": "big bags bobby",
+        "source": "Kolscan leaderboard",
+        "source_url": "https://kolscan.io/leaderboard",
+        "window": "30d",
+        "leaderboard_pnl": "+298.59 SOL",
+        "win_rate": None,
+    },
+    {
+        "address": "Dvbv5TdAyPpJk16X9mUxWFVicYtCUxTLhuof8TGuUaRv",
+        "name": "CookDoc",
+        "source": "Kolscan leaderboard",
+        "source_url": "https://kolscan.io/leaderboard",
+        "window": "30d",
+        "leaderboard_pnl": "+113.14 SOL",
+        "win_rate": None,
+    },
+]
+B58_ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 
 
 def _http(url: str, payload: dict | list | None = None, timeout: int = 25):
@@ -372,10 +466,15 @@ def _evidence(w: dict, realized_usd: float | None) -> str:
 
 
 def _seed_cursors(state: dict) -> None:
-    calls = [
-        ("getSignaturesForAddress", [row["address"], {"limit": 5}])
-        for row in state.get("watchlist") or []
+    """Mark signatures already on chain for wallets we have not watched yet.
+
+    Existing cursors are left alone so a later run still sees new swaps.
+    """
+    rows = [
+        row for row in (state.get("watchlist") or [])
+        if row.get("address") and not row.get("parse_error") and not (state.get("seen_sigs") or {}).get(row["address"])
     ]
+    calls = [("getSignaturesForAddress", [row["address"], {"limit": 5}]) for row in rows]
     seen = state.setdefault("seen_sigs", {})
     for i in range(0, len(calls), 5):
         try:
@@ -383,9 +482,125 @@ def _seed_cursors(state: dict) -> None:
         except Exception as exc:
             _say(state, "SCOUT", f"RPC throttled while seeding cursors: {exc}")
             return
-        for row, sigs in zip(state["watchlist"][i : i + 5], chunk):
+        for row, sigs in zip(rows[i : i + 5], chunk):
             sigs = sigs or []
-            seen[row["address"]] = [s.get("signature") for s in sigs if s and s.get("signature")][:20]
+            if not isinstance(sigs, list):
+                row["parse_error"] = "RPC did not return a signature list"
+                continue
+            seen[row["address"]] = [s.get("signature") for s in sigs if isinstance(s, dict) and s.get("signature")][:20]
+
+
+def _valid_address(addr: str) -> bool:
+    n = 0
+    for ch in addr:
+        i = B58_ALPHABET.find(ch)
+        if i < 0:
+            return False
+        n = n * 58 + i
+    raw = n.to_bytes((n.bit_length() + 7) // 8, "big") if n else b""
+    pad = 0
+    for ch in addr:
+        if ch != "1":
+            break
+        pad += 1
+    raw = b"\x00" * pad + raw
+    return len(raw) == 32
+
+
+def _pinned_rows() -> list[dict]:
+    rows = []
+    for src in PINNED_WALLETS:
+        row = dict(src)
+        row["short"] = _short(src["address"])
+        row["solscan"] = f"https://solscan.io/account/{src['address']}"
+        row["pinned"] = True
+        row["copy_buys"] = True
+        row["parse_error"] = None if _valid_address(src["address"]) else "not a 32-byte Solana address"
+        stat = f"{src['window']} {src['leaderboard_pnl']}"
+        if src.get("win_rate"):
+            stat += f", WR {src['win_rate']}"
+        row["leaderboard_stat"] = stat
+        row["evidence"] = f"{src['source']} · {stat}"
+        rows.append(row)
+    return rows
+
+
+def _attribute_closed(state: dict) -> None:
+    shorts = {}
+    for row in (state.get("retired_watchlist") or []) + (state.get("legacy_wallets") or []) + (state.get("watchlist") or []):
+        if row.get("short") and row.get("address"):
+            shorts[row["short"]] = row["address"]
+    for trade in state.get("closed_trades") or []:
+        if trade.get("copied_wallet"):
+            continue
+        reason = trade.get("reason") or ""
+        marker = "after wallet "
+        if marker not in reason:
+            continue
+        short = reason.split(marker, 1)[1].split()[0]
+        if short in shorts:
+            trade["copied_wallet"] = shorts[short]
+
+
+def apply_pinned_watchlist(state: dict) -> list[str]:
+    """Install the leaderboard list. Open copies from older wallets stay sell-only."""
+    previous = [row.get("address") for row in (state.get("watchlist") or [])]
+    if not state.get("retired_watchlist"):
+        state["retired_watchlist"] = list(state.get("watchlist") or [])
+    pinned = _pinned_rows()
+    pinned_addrs = {row["address"] for row in pinned if not row.get("parse_error")}
+    old_by_addr = {row.get("address"): row for row in (state.get("watchlist") or []) + (state.get("legacy_wallets") or [])}
+    legacy = []
+    seen_legacy = set()
+    for pos in state.get("positions") or []:
+        addr = pos.get("copied_wallet")
+        if not addr or addr in pinned_addrs or addr in seen_legacy:
+            continue
+        seen_legacy.add(addr)
+        prev = dict(old_by_addr.get(addr) or {})
+        prev["address"] = addr
+        prev["short"] = prev.get("short") or _short(addr)
+        prev["solscan"] = prev.get("solscan") or f"https://solscan.io/account/{addr}"
+        prev["source"] = "previous auto watchlist"
+        prev["source_url"] = ""
+        prev["pinned"] = False
+        prev["copy_buys"] = False
+        prev["leaderboard_stat"] = "sell only until the open copy closes"
+        prev["parse_error"] = None
+        legacy.append(prev)
+    state["legacy_wallets"] = legacy
+    state["watchlist"] = pinned
+    state["watchlist_pinned"] = True
+    state["watchlist_built_at"] = iso(now_utc())
+    _attribute_closed(state)
+    unparsed = [row["address"] for row in pinned if row.get("parse_error")]
+    # A bad public key is a parse failure. A rate limit is not: the address stays on the list.
+    for row in pinned:
+        if row.get("parse_error"):
+            continue
+        try:
+            sigs = _rpc("getSignaturesForAddress", [row["address"], {"limit": 1}])
+            if not isinstance(sigs, list):
+                row["parse_error"] = "RPC did not return a signature list"
+        except Exception as exc:
+            text = str(exc).lower()
+            if "invalid" in text:
+                row["parse_error"] = str(exc)
+            else:
+                _say(state, "SCOUT", f"{row['short']} RPC check failed, will retry: {exc}")
+        if row.get("parse_error"):
+            unparsed.append(row["address"])
+    _seed_cursors(state)
+    state["wallet_scoreboard"] = _scoreboard(state)
+    changed = previous != [row["address"] for row in pinned]
+    if changed:
+        names = ", ".join(row["name"] or row["short"] for row in pinned)
+        _say(state, "SCOUT", f"Pinned {len(pinned)} leaderboard wallets ({names}). Auto-refresh is off.")
+        if legacy:
+            _say(state, "SCOUT", f"{len(legacy)} older wallets are sell-only until their copies close")
+    if unparsed:
+        _say(state, "SCOUT", "Could not parse: " + ", ".join(_short(a) for a in unparsed))
+    return unparsed
 
 
 def _stale(state: dict) -> bool:
@@ -462,9 +677,12 @@ def _buy(state: dict, mint: str, symbol: str, price: float, wallet: dict) -> Non
         return
     qty = notional / price
     state["cash"] = float(state["cash"]) - notional - fee
-    realized = wallet.get("realized_usd")
-    realized_txt = "no realized sample" if realized is None else f"{realized:+,.2f} USD realized"
-    reason = f"COPY BUY ${symbol} after wallet {wallet['short']} ({realized_txt})"
+    who = f"{wallet['name']} {wallet['short']}" if wallet.get("name") else wallet["short"]
+    stat = wallet.get("leaderboard_stat")
+    if not stat:
+        realized = wallet.get("realized_usd")
+        stat = "no realized sample" if realized is None else f"{realized:+,.2f} USD realized"
+    reason = f"COPY BUY ${symbol} after {who} ({stat})"
     pos = {
         "symbol": symbol,
         "name": symbol,
@@ -511,6 +729,7 @@ def _sell(state: dict, pos: dict, price: float, reason: str) -> None:
             "pnl": pnl,
             "pnl_pct": pnl_pct,
             "reason": reason,
+            "copied_wallet": pos.get("copied_wallet"),
             "closed_at": closed_at,
             "closed_at_london": format_london(),
             "opened_at": pos.get("opened_at"),
@@ -557,8 +776,55 @@ def _wallet_map(state: dict) -> dict[str, dict]:
     return {row["address"]: row for row in state.get("watchlist") or []}
 
 
+def _scoreboard(state: dict) -> list[dict]:
+    rows = {}
+    for row in (state.get("watchlist") or []) + (state.get("legacy_wallets") or []):
+        addr = row.get("address")
+        if not addr:
+            continue
+        rows[addr] = {
+            "address": addr,
+            "name": row.get("name") or "",
+            "short": row.get("short") or _short(addr),
+            "solscan": row.get("solscan") or f"https://solscan.io/account/{addr}",
+            "source": row.get("source") or "",
+            "leaderboard_stat": row.get("leaderboard_stat") or "",
+            "copy_buys": bool(row.get("copy_buys", True)),
+            "parse_error": row.get("parse_error"),
+            "our_realized": 0.0,
+            "our_unrealized": 0.0,
+            "open_copies": 0,
+            "closed_copies": 0,
+        }
+    for pos in state.get("positions") or []:
+        addr = pos.get("copied_wallet")
+        if addr not in rows:
+            continue
+        rows[addr]["our_unrealized"] += float(pos.get("unrealized_pnl") or 0)
+        rows[addr]["open_copies"] += 1
+    for trade in state.get("closed_trades") or []:
+        addr = trade.get("copied_wallet")
+        if addr not in rows:
+            continue
+        rows[addr]["our_realized"] += float(trade.get("pnl") or 0)
+        rows[addr]["closed_copies"] += 1
+    out = []
+    for row in rows.values():
+        row["our_realized"] = round(row["our_realized"], 2)
+        row["our_unrealized"] = round(row["our_unrealized"], 2)
+        row["our_total"] = round(row["our_realized"] + row["our_unrealized"], 2)
+        out.append(row)
+    return out
+
+
 def poll(state: dict) -> None:
-    wallets = state.get("watchlist") or []
+    pinned = [row for row in (state.get("watchlist") or []) if not row.get("parse_error")]
+    legacy = []
+    open_from = {p.get("copied_wallet") for p in state.get("positions") or []}
+    for row in state.get("legacy_wallets") or []:
+        if row.get("address") in open_from:
+            legacy.append(row)
+    wallets = pinned + legacy
     calls = [("getSignaturesForAddress", [row["address"], {"limit": 6}]) for row in wallets]
     fresh = []
     for i in range(0, len(calls), 5):
@@ -568,9 +834,13 @@ def poll(state: dict) -> None:
             _say(state, "SCOUT", f"RPC throttled polling wallets: {exc}")
             chunk = [None] * len(calls[i : i + 5])
         for row, sigs in zip(wallets[i : i + 5], chunk):
+            if not isinstance(sigs, list):
+                continue
             known = set(state.setdefault("seen_sigs", {}).get(row["address"]) or [])
             first = not known
-            for sig in sigs or []:
+            for sig in sigs:
+                if not isinstance(sig, dict):
+                    continue
                 signature = sig.get("signature")
                 if not signature or sig.get("err"):
                     continue
@@ -609,12 +879,14 @@ def poll(state: dict) -> None:
                 continue
             kept = []
             for pos in state["positions"]:
-                if pos.get("mint") == swap["mint"]:
+                if pos.get("mint") == swap["mint"] and pos.get("copied_wallet") == row["address"]:
                     _sell(state, pos, quote["price"], f"COPY SELL ${symbol} after wallet {row['short']}")
                 else:
                     kept.append(pos)
             state["positions"] = kept
         elif swap["side"] == "buy":
+            if not row.get("copy_buys", True):
+                continue
             if not quote:
                 _say(state, "FILTER", f"skip ${symbol} — DexScreener had no price")
                 continue
@@ -626,17 +898,18 @@ def poll(state: dict) -> None:
     now = now_utc()
     state["checked_at"] = iso(now)
     state["checked_at_london"] = format_london(now)
+    state["wallet_scoreboard"] = _scoreboard(state)
     engine.set_activity(
         state,
         "KESTO",
-        f"Polled {len(wallets)} wallets · {len(swaps)} new swaps · checked {state['checked_at_london']}",
-        f"{len(wallets)} wallets",
+        f"Pinned {len(pinned)} leaderboard wallets · {len(swaps)} new swaps · checked {state['checked_at_london']}",
+        f"{len(pinned)} pinned",
         "wallets",
     )
     engine.set_activity(
         state,
         "DRVEN",
-        "Buys need DexScreener liquidity of at least $20k. Bots and deployer transfers were excluded from the watchlist.",
+        "New buys only from the pinned list, and only with DexScreener liquidity of at least $20k.",
         "liq ≥ $20k",
         "liq",
     )
@@ -740,13 +1013,12 @@ def run_wallets(loop_seconds: int = 0, interval: int = 12, commit: bool = False)
 
     cfg = load_config()
     state = load_state(cfg)
-    if _stale(state):
-        try:
-            build_watchlist(state)
-        except Exception as exc:
-            _say(state, "SCOUT", f"watchlist refresh failed: {exc}")
-    else:
-        _say(state, "SCOUT", f"Watchlist still fresh ({len(state.get('watchlist') or [])} wallets)")
+    try:
+        unparsed = apply_pinned_watchlist(state)
+        if unparsed:
+            print("Unparsed wallets: " + ", ".join(unparsed), flush=True)
+    except Exception as exc:
+        _say(state, "SCOUT", f"pinned watchlist failed: {exc}")
     start = time.time()
     last_commit = 0.0
     polls = 0

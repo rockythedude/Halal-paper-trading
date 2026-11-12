@@ -620,7 +620,7 @@
       </section>
 
       <section class="panel who" id="watch-panel" hidden>
-        <h2>Watchlist <span class="meta" id="watch-meta"></span></h2>
+        <h2>Wallet scoreboard <span class="meta" id="watch-meta"></span></h2>
         <div id="watch"></div>
       </section>
 
@@ -974,27 +974,35 @@
       return;
     }
     panel.hidden = false;
-    const rows = data.watchlist || [];
-    document.getElementById("watch-meta").textContent = `${rows.length} wallets`;
+    const rows = (data.wallet_scoreboard && data.wallet_scoreboard.length)
+      ? data.wallet_scoreboard
+      : (data.watchlist || []);
+    document.getElementById("watch-meta").textContent = `${(data.watchlist || rows).length} pinned`;
     if (!rows.length) {
-      document.getElementById("watch").innerHTML = '<div class="empty">Watchlist appears after the first scan of DexScreener and Solana.</div>';
+      document.getElementById("watch").innerHTML = '<div class="empty">The pinned leaderboard list appears after the next tick.</div>';
       return;
     }
+    const board = data.wallet_scoreboard || [];
+    const byAddr = {};
+    board.forEach(row => { if (row.address) byAddr[row.address] = row; });
+    const money = (n) => (n == null || Number.isNaN(Number(n))) ? "—" : ((Number(n) >= 0 ? "+" : "−") + fmtMoney(Math.abs(Number(n))));
     const body = rows.map(row => {
-      const realized = row.realized_usd == null ? "—" : ((row.realized_usd >= 0 ? "+" : "−") + fmtMoney(Math.abs(row.realized_usd)));
+      const score = byAddr[row.address] || {};
       const href = row.solscan || ("https://solscan.io/account/" + (row.address || ""));
+      const label = row.name ? `${row.name} · ${row.short || ""}` : (row.short || row.address || "");
+      const broken = row.parse_error ? ` · ${row.parse_error}` : "";
       return `<tr>
-        <td><a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(row.short || row.address || "")}</a></td>
-        <td>${escapeHtml((row.tokens || []).join(", "))}</td>
-        <td class="num">${row.buys ?? 0}</td>
-        <td class="num">${row.sells ?? 0}</td>
-        <td class="num ${row.realized_usd > 0 ? "up" : row.realized_usd < 0 ? "down" : "flat"}">${realized}</td>
+        <td><a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>${broken ? `<span class="name">${escapeHtml(broken)}</span>` : ""}</td>
+        <td>${escapeHtml(row.source || "")}<span class="name">${escapeHtml(row.leaderboard_stat || "")}</span></td>
+        <td class="num ${clsPnL(score.our_realized || 0)}">${money(score.our_realized || 0)}</td>
+        <td class="num ${clsPnL(score.our_unrealized || 0)}">${money(score.our_unrealized || 0)}</td>
+        <td class="num ${clsPnL(score.our_total || 0)}">${money(score.our_total || 0)}</td>
       </tr>`;
     }).join("");
     document.getElementById("watch").innerHTML = `<table>
-      <thead><tr><th>Wallet</th><th>Tokens</th><th class="num">Buys</th><th class="num">Sells</th><th class="num">Realized sample</th></tr></thead>
+      <thead><tr><th>Wallet</th><th>Source</th><th class="num">Our realized</th><th class="num">Our open</th><th class="num">Our total</th></tr></thead>
       <tbody>${body}</tbody></table>
-      <div class="empty">${escapeHtml((rows[0] && rows[0].source) || "")}</div>`;
+      <div class="empty">Pinned leaderboard list. Our P&amp;L is this paper book only.</div>`;
   }
 
   function renderWho(data) {

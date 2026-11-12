@@ -535,6 +535,7 @@ def export_page(state: dict | None = None, dest: Path | None = None, desk: str =
     payload["lag_note"] = state.get("lag_note") or ""
     payload["btc_note"] = state.get("btc_note") or ""
     payload["watchlist"] = state.get("watchlist") or []
+    payload["wallet_scoreboard"] = state.get("wallet_scoreboard") or []
     payload["checked_at"] = state.get("checked_at") or state.get("last_updated") or ""
     payload["checked_at_london"] = state.get("checked_at_london") or state.get("last_updated_london") or ""
     payload["who_we_copy"] = state.get("who_we_copy")
