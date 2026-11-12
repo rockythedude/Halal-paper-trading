@@ -2,12 +2,12 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 64.63,
-  "equity": 80.65,
-  "equity_multiple": 0.8065,
-  "profit": -19.35,
-  "goal_pct": -0.0032256730000000005,
-  "progress": 0.013440993666666666,
+  "cash": 56.5,
+  "equity": 80.26,
+  "equity_multiple": 0.8026,
+  "profit": -19.74,
+  "goal_pct": -0.0032896421666666668,
+  "progress": 0.0133770245,
   "win_rate": 0.3888888888888889,
   "wins": 28,
   "losses": 44,
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 406,
-  "open_count": 2,
+  "open_count": 3,
   "last_updated_london": "12 Nov 2026, 17:15 GMT",
-  "last_updated": "2026-11-12T17:15:19.597626+00:00",
+  "last_updated": "2026-11-12T17:15:59.448612+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -518,10 +518,24 @@
     {
       "label": "12 Nov 2026, 17:15 GMT",
       "value": 80.65
+    },
+    {
+      "label": "12 Nov 2026, 17:15 GMT",
+      "value": 80.26
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "12 Nov 2026, 17:15 GMT",
+      "hhmm": "17:15",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "17:15 EXECUTOR: BUY 10% $Huang @ 0.000202809 — 5m +11.2% vol $34,537 buys 447/sells 364",
+      "message": "17:15 EXECUTOR: BUY 10% $Huang @ 0.000202809 — 5m +11.2% vol $34,537 buys 447/sells 364",
+      "symbol": null,
+      "action": "BUY 10% $Huang @ 0.000202809 — 5m +11.2% vol $34,537 buys 447/sells 364"
+    },
     {
       "ts": "12 Nov 2026, 17:15 GMT",
       "hhmm": "17:15",
@@ -911,16 +925,6 @@
       "message": "16:53 LOGGER: run complete — 29 polls, 2 open, equity $85.63",
       "symbol": null,
       "action": "run complete — 29 polls, 2 open, equity $85.63"
-    },
-    {
-      "ts": "12 Nov 2026, 16:53 GMT",
-      "hhmm": "16:53",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "16:53 EXECUTOR: BUY 10% $Huang @ 0.000473556 — 5m +10.5% vol $16,713 buys 279/sells 216",
-      "message": "16:53 EXECUTOR: BUY 10% $Huang @ 0.000473556 — 5m +10.5% vol $16,713 buys 279/sells 216",
-      "symbol": null,
-      "action": "BUY 10% $Huang @ 0.000473556 — 5m +10.5% vol $16,713 buys 279/sells 216"
     }
   ],
   "agents": [
@@ -930,8 +934,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "58 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "41 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -948,7 +952,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "58 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "41 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -1002,8 +1006,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "2/6",
+      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "3/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -1042,11 +1046,11 @@
       "qty": 578.0434761440195,
       "qty_display": "578.04",
       "entry_price": 0.014081562608920408,
-      "current_price": 0.014139341425941837,
+      "current_price": 0.01409,
       "change_pct": null,
-      "price_source": "geckoterminal",
-      "unrealized_pnl": -0.17,
-      "unrealized_pct": 0.004103153792380132,
+      "price_source": "dexscreener",
+      "unrealized_pnl": -0.2,
+      "unrealized_pct": 0.0005991800280920057,
       "hard_stop": 0.013377484478474387,
       "trail_activate": 0.014644825113277225,
       "opened_at": "12 Nov 2026, 17:12 GMT",
@@ -1064,11 +1068,11 @@
       "qty": 2278.5925265827946,
       "qty_display": "2,278.59",
       "entry_price": 0.0035635192362266184,
-      "current_price": 0.0035494203012025024,
+      "current_price": 0.003498,
       "change_pct": null,
-      "price_source": "geckoterminal",
-      "unrealized_pnl": -0.23,
-      "unrealized_pct": -0.003956463846409686,
+      "price_source": "dexscreener",
+      "unrealized_pnl": -0.35,
+      "unrealized_pct": -0.018386104264725756,
       "hard_stop": 0.0033853432744152872,
       "trail_activate": 0.003706060005675683,
       "opened_at": "12 Nov 2026, 17:13 GMT",
@@ -1077,9 +1081,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr?chain=sol"
+    },
+    {
+      "symbol": "Huang",
+      "name": "Huang",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 39693.72808899014,
+      "qty_display": "39,693.73",
+      "entry_price": 0.00020280899999999998,
+      "current_price": 0.0002018,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": -0.24,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.00019266854999999998,
+      "trail_activate": 0.00021092135999999998,
+      "opened_at": "12 Nov 2026, 17:15 GMT",
+      "reason": "BUY 10% $Huang @ 0.000202809 — 5m +11.2% vol $34,537 buys 447/sells 364",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/4FP2GRQS3WYPsZSE2dwaVzqkajrBpHcXyVSTVt83pump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f0147",
+      "time": "12 Nov 2026, 17:15 GMT",
+      "ts": "2026-11-12T17:15:43.676127+00:00",
+      "side": "buy",
+      "symbol": "Huang",
+      "name": "Huang",
+      "asset_class": "crypto",
+      "qty": 39693.72808899014,
+      "qty_display": "39,693.73",
+      "price": 0.00020280899999999998,
+      "value": 8.05,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f0146",
       "time": "12 Nov 2026, 17:15 GMT",
@@ -4005,8 +4051,8 @@
     "closed_trades": 72,
     "win_rate": 0.3888888888888889,
     "realized_pnl": -18.95,
-    "unrealized_pnl": -0.4,
-    "fills": 146
+    "unrealized_pnl": -0.79,
+    "fills": 147
   },
   "ok": true,
   "totals_cumulative": {
@@ -4148,16 +4194,23 @@
     {
       "symbol": "mihao",
       "name": "mihao",
-      "price": 0.014139341425941837,
+      "price": 0.01409,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "FLOAT",
       "name": "FLOAT",
-      "price": 0.0035494203012025024,
+      "price": 0.003498,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
+    },
+    {
+      "symbol": "Huang",
+      "name": "Huang",
+      "price": 0.0002018,
+      "change_pct": null,
+      "source": "dexscreener"
     }
   ],
   "desk": "axiom",
@@ -4180,8 +4233,8 @@
     {
       "id": "main",
       "name": "Halal book",
-      "equity": 99.22,
-      "return_pct": -0.007819319999999977,
+      "equity": 99.11,
+      "return_pct": -0.008891770000000037,
       "closed_trades": 1,
       "win_rate": 0.0,
       "realized_pnl": -0.18
@@ -4189,8 +4242,8 @@
     {
       "id": "copy",
       "name": "Copy desk",
-      "equity": 101.17,
-      "return_pct": 0.011659949999999952,
+      "equity": 101.16,
+      "return_pct": 0.01162817000000004,
       "closed_trades": 0,
       "win_rate": null,
       "realized_pnl": 0
@@ -4198,8 +4251,8 @@
     {
       "id": "meme",
       "name": "Crypto + Meme",
-      "equity": 98.17,
-      "return_pct": -0.018334640000000065,
+      "equity": 98.14,
+      "return_pct": -0.018575440000000044,
       "closed_trades": 7,
       "win_rate": 0.0,
       "realized_pnl": -1.31
@@ -4207,8 +4260,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 96.23,
-      "return_pct": -0.03770450999999994,
+      "equity": 96.27,
+      "return_pct": -0.03733951000000005,
       "closed_trades": 37,
       "win_rate": 0.10810810810810811,
       "realized_pnl": -3.52
@@ -4225,8 +4278,8 @@
     {
       "id": "axiom",
       "name": "Axiom scalper",
-      "equity": 80.65,
-      "return_pct": -0.19354038000000004,
+      "equity": 80.26,
+      "return_pct": -0.19737853000000002,
       "closed_trades": 72,
       "win_rate": 0.3888888888888889,
       "realized_pnl": -18.95
@@ -4242,64 +4295,64 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "BALLS",
-      "mint": "5ZA32FxzsxcSXZuYDbrxa9QVVvzkiLbisDb5VKmNpump",
-      "link": "https://axiom.trade/meme/5ZA32FxzsxcSXZuYDbrxa9QVVvzkiLbisDb5VKmNpump?chain=sol",
-      "reason": "buy/sell 607/585 under 1.05",
-      "gates": 1,
-      "chg_m5": 33.06,
-      "vol_m5": 24583.0,
-      "score": 36.09
-    },
-    {
       "symbol": "LuckyCoin",
       "mint": "89iRVoDVPd8tuRrMyhgPfe58eDneasPsdEVu5AUMpump",
       "link": "https://axiom.trade/meme/89iRVoDVPd8tuRrMyhgPfe58eDneasPsdEVu5AUMpump?chain=sol",
-      "reason": "5m volume $2,022 under $5k",
+      "reason": "5m volume $1,879 under $5k",
       "gates": 1,
-      "chg_m5": 16.51,
-      "vol_m5": 2022.0,
-      "score": 14.86
-    },
-    {
-      "symbol": "Max",
-      "mint": "5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump",
-      "link": "https://axiom.trade/meme/5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump?chain=sol",
-      "reason": "buy/sell 41/63 under 1.05",
-      "gates": 1,
-      "chg_m5": 2.523,
-      "vol_m5": 12145.0,
-      "score": 2.16
+      "chg_m5": 20.76,
+      "vol_m5": 1879.0,
+      "score": 25.18
     },
     {
       "symbol": "inuhao",
       "mint": "FyHakvZH3L4UABSQYK7e9ECEzWV37u7GTkmAbHXspump",
       "link": "https://axiom.trade/meme/FyHakvZH3L4UABSQYK7e9ECEzWV37u7GTkmAbHXspump?chain=sol",
-      "reason": "5m volume $3,820 under $5k",
+      "reason": "5m volume $4,098 under $5k",
       "gates": 1,
-      "chg_m5": 2.87,
-      "vol_m5": 3820.0,
-      "score": 2.12
+      "chg_m5": 3.07,
+      "vol_m5": 4098.0,
+      "score": 2.42
     },
     {
-      "symbol": "GTA6",
-      "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
-      "link": "https://axiom.trade/meme/4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz?chain=sol",
-      "reason": "5m -3.2% outside +1% to +40%",
+      "symbol": "Leonida",
+      "mint": "BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump",
+      "link": "https://axiom.trade/meme/BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump?chain=sol",
+      "reason": "5m volume $677 under $5k",
       "gates": 1,
-      "chg_m5": -3.238,
-      "vol_m5": 5569.0,
-      "score": -3.02
+      "chg_m5": 1.06,
+      "vol_m5": 677.0,
+      "score": 1.59
     },
     {
-      "symbol": "Huang",
-      "mint": "4FP2GRQS3WYPsZSE2dwaVzqkajrBpHcXyVSTVt83pump",
-      "link": "https://axiom.trade/meme/4FP2GRQS3WYPsZSE2dwaVzqkajrBpHcXyVSTVt83pump?chain=sol",
-      "reason": "5m -28.0% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -28.03,
-      "vol_m5": 73302.0,
-      "score": -60.87
+      "symbol": "GATO",
+      "mint": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
+      "link": "https://axiom.trade/meme/HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump?chain=sol",
+      "reason": "5m volume $689 under $5k · 5m +0.2% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.24,
+      "vol_m5": 689.0,
+      "score": 0.14
+    },
+    {
+      "symbol": "BALLS",
+      "mint": "5ZA32FxzsxcSXZuYDbrxa9QVVvzkiLbisDb5VKmNpump",
+      "link": "https://axiom.trade/meme/5ZA32FxzsxcSXZuYDbrxa9QVVvzkiLbisDb5VKmNpump?chain=sol",
+      "reason": "buy/sell 683/654 under 1.05 · 5m -0.4% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -0.38,
+      "vol_m5": 33399.0,
+      "score": -0.55
+    },
+    {
+      "symbol": "CBUCKS",
+      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
+      "reason": "5m volume $3,252 under $5k · 5m -1.9% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -1.89,
+      "vol_m5": 3252.0,
+      "score": -3.85
     }
   ],
   "helius_status": "",
@@ -4307,7 +4360,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-12T17:15:19.597626+00:00",
+  "checked_at": "2026-11-12T17:15:59.448612+00:00",
   "checked_at_london": "12 Nov 2026, 17:15 GMT",
   "who_we_copy": null
 }
