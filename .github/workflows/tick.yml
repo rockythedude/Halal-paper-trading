@@ -12,9 +12,6 @@ on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
-  # One-shot starter so this push begins the chain. Removed once a second run is queued.
-  push:
-    branches: [main]
 
 concurrency:
   group: halal-paper-tick
