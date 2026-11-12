@@ -657,7 +657,9 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
                 rows = index.get(mint) or []
                 anchor = float(lot.get("own") or lot["entry"] or 0)
                 for ts, price in _prints_until(index, mint, lot["entry_time"] + DELAY_S, until):
-                    if not _acceptable(anchor, price, rows, ts):
+                    # Within 25x of the wallet's trade and of our fill. Checking
+                    # only the wallet price still allowed an 88x gap versus the fill.
+                    if not _acceptable(anchor, price, rows, ts) or not _acceptable(lot["entry"], price):
                         continue
                     change = price / lot["entry"] - 1.0 if lot["entry"] else 0
                     if change <= -STOP:
@@ -713,13 +715,15 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
             if not later:
                 skipped += 1
                 continue
-            anchor = float(held[0].get("own") or held[0].get("entry") or 0)
-            if not _acceptable(anchor, later[1]):
-                skipped += 1
-                continue
+            still = []
             for lot in held:
-                close_lot(lot, later[1], later[0], "sell")
-            lots[swap["mint"]] = []
+                anchor = float(lot.get("own") or lot.get("entry") or 0)
+                if _acceptable(anchor, later[1]) and _acceptable(lot["entry"], later[1]):
+                    close_lot(lot, later[1], later[0], "sell")
+                else:
+                    still.append(lot)
+                    skipped += 1
+            lots[swap["mint"]] = still
             snap(later[0])
 
     scan_stops(int(time.time()))
