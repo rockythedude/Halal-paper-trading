@@ -560,28 +560,18 @@ def _fetch_rpc(addr: str, cutoff: int, sol_series, key: str) -> tuple[list[dict]
     }
 
 
-def _confirmed(rows: list[tuple[int, float]], ts: int, price: float) -> bool:
-    """Another real print within 15 minutes agrees within 2x."""
-    for other_ts, other in rows:
-        if other_ts == ts or other <= 0:
-            continue
-        if abs(other_ts - ts) <= 900 and 0.5 <= price / other <= 2.0:
-            return True
-    return False
+def _acceptable(own: float, price: float, rows: list[tuple[int, float]] | None = None, ts: int = 0) -> bool:
+    """Keep a print only when it is within 25x of the wallet's own trade.
 
-
-def _acceptable(own: float, price: float, rows: list[tuple[int, float]], ts: int) -> bool:
-    """Reject a lone print that is dozens of times the wallet's own price.
-
-    That was the GsbH book: one bad decimals print closed a copy up about 400x.
-    A real jump still counts when a second print agrees with it.
+    A second print at the same wild price is not confirmation. That is how one
+    decimals mismatch showed up twice and booked an 80x close. Rows and ts are
+    unused; callers still pass the print list.
     """
+    del rows, ts
     if own <= 0 or price <= 0:
         return False
     ratio = price / own
-    if 1.0 / 25.0 <= ratio <= 25.0:
-        return True
-    return _confirmed(rows, ts, price)
+    return (1.0 / 25.0) <= ratio <= 25.0
 
 
 def _later_ok(index: dict, mint: str, ts: int, own: float) -> tuple[int, float] | None:
@@ -665,8 +655,9 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
             for lot in held:
                 hit = None
                 rows = index.get(mint) or []
+                anchor = float(lot.get("own") or lot["entry"] or 0)
                 for ts, price in _prints_until(index, mint, lot["entry_time"] + DELAY_S, until):
-                    if not _acceptable(lot["entry"], price, rows, ts):
+                    if not _acceptable(anchor, price, rows, ts):
                         continue
                     change = price / lot["entry"] - 1.0 if lot["entry"] else 0
                     if change <= -STOP:
@@ -711,6 +702,7 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
                 "entry_time": later[0],
                 "pump": pump,
                 "mint": swap["mint"],
+                "own": float(swap.get("price") or later[1]),
             })
             copies += 1
             snap(later[0])
@@ -719,6 +711,10 @@ def simulate(swaps: list[dict], index: dict, now_prices: dict[str, float]) -> di
             if not held:
                 continue
             if not later:
+                skipped += 1
+                continue
+            anchor = float(held[0].get("own") or held[0].get("entry") or 0)
+            if not _acceptable(anchor, later[1]):
                 skipped += 1
                 continue
             for lot in held:
@@ -914,7 +910,7 @@ def build_rank() -> dict:
         "leaderboard_notes": [kolscan_note, gmgn_note],
         "days": days,
         "skipped": [],
-        "price_rule": "Each wallet has its own $100 book. The fill is the next real swap print for that mint at least 15 seconds later. Stop −25% and take profit +100% fire on a later print. A wallet sell closes the copy.",
+        "price_rule": "Each wallet has its own $100 book. The fill is the next real swap print for that mint at least 15 seconds later, and only if that print is within 25x of the wallet's own trade. Prints further away are skipped as bad decimals. Stop −25% and take profit +100% fire on a later accepted print. A wallet sell closes the copy.",
     }
 
 
