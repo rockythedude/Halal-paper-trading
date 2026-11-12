@@ -2,12 +2,12 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 100.0,
-  "equity": 100.0,
-  "equity_multiple": 1.0,
-  "profit": 0.0,
-  "goal_pct": 0.0,
-  "progress": 0.016666666666666666,
+  "cash": 89.9,
+  "equity": 99.7,
+  "equity_multiple": 0.997,
+  "profit": -0.3,
+  "goal_pct": -4.975116666666679e-05,
+  "progress": 0.0166169155,
   "win_rate": 0.0,
   "wins": 0,
   "losses": 0,
@@ -15,9 +15,9 @@
   "biggest_win": 0.0,
   "biggest_trade": null,
   "ticks": 58,
-  "open_count": 0,
-  "last_updated_london": "12 Nov 2026, 16:08 GMT",
-  "last_updated": "2026-11-12T16:08:38.408147+00:00",
+  "open_count": 1,
+  "last_updated_london": "12 Nov 2026, 16:09 GMT",
+  "last_updated": "2026-11-12T16:09:18.230891+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -121,10 +121,24 @@
     {
       "label": "12 Nov 2026, 16:08 GMT",
       "value": 100.0
+    },
+    {
+      "label": "12 Nov 2026, 16:09 GMT",
+      "value": 99.7
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "12 Nov 2026, 16:09 GMT",
+      "hhmm": "16:09",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "16:09 EXECUTOR: BUY 10% $NOBUSHIBA @ 0.000939775 — 5m +4.9% vol $42,746 buys 178/sells 84",
+      "message": "16:09 EXECUTOR: BUY 10% $NOBUSHIBA @ 0.000939775 — 5m +4.9% vol $42,746 buys 178/sells 84",
+      "symbol": null,
+      "action": "BUY 10% $NOBUSHIBA @ 0.000939775 — 5m +4.9% vol $42,746 buys 178/sells 84"
+    },
     {
       "ts": "12 Nov 2026, 16:05 GMT",
       "hhmm": "16:05",
@@ -171,8 +185,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "59 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "59 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -225,8 +239,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "0/6",
+      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -256,14 +270,54 @@
       "open_positions": 0
     }
   ],
-  "positions": [],
-  "fills": [],
+  "positions": [
+    {
+      "symbol": "NOBUSHIBA",
+      "name": "NOBUSHIBA",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 10640.839221707738,
+      "qty_display": "10,640.84",
+      "entry_price": 0.0009397755,
+      "current_price": 0.0009351,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": -0.3,
+      "unrealized_pct": -0.00497512437810943,
+      "hard_stop": 0.0008927867249999999,
+      "trail_activate": 0.00097736652,
+      "opened_at": "12 Nov 2026, 16:09 GMT",
+      "reason": "BUY 10% $NOBUSHIBA @ 0.000939775 — 5m +4.9% vol $42,746 buys 178/sells 84",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/8AAVuQpJcqpvCuutxyBTVvgBEXZJSkZoNv1sExpBpump?chain=sol"
+    }
+  ],
+  "fills": [
+    {
+      "id": "f0001",
+      "time": "12 Nov 2026, 16:09 GMT",
+      "ts": "2026-11-12T16:09:10.428864+00:00",
+      "side": "buy",
+      "symbol": "NOBUSHIBA",
+      "name": "NOBUSHIBA",
+      "asset_class": "crypto",
+      "qty": 10640.839221707738,
+      "qty_display": "10,640.84",
+      "price": 0.0009397755,
+      "value": 10.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": ""
+    }
+  ],
   "history_summary": {
     "closed_trades": 0,
     "win_rate": null,
     "realized_pnl": 0,
-    "unrealized_pnl": 0,
-    "fills": 0
+    "unrealized_pnl": -0.3,
+    "fills": 1
   },
   "ok": true,
   "totals_cumulative": {
@@ -280,7 +334,15 @@
     "Risk": "#FF4D4D",
     "Logger": "#22D3EE"
   },
-  "ticker": [],
+  "ticker": [
+    {
+      "symbol": "NOBUSHIBA",
+      "name": "NOBUSHIBA",
+      "price": 0.0009351,
+      "change_pct": null,
+      "source": "dexscreener"
+    }
+  ],
   "desk": "axiom",
   "risk_rules": {
     "mode": "axiom",
@@ -346,8 +408,8 @@
     {
       "id": "axiom",
       "name": "Axiom scalper",
-      "equity": 100.0,
-      "return_pct": 0.0,
+      "equity": 99.7,
+      "return_pct": -0.0029850700000000076,
       "closed_trades": 0,
       "win_rate": null,
       "realized_pnl": 0
@@ -361,7 +423,7 @@
   "btc_note": "",
   "watchlist": [],
   "wallet_scoreboard": [],
-  "checked_at": "2026-11-12T16:08:38.408147+00:00",
-  "checked_at_london": "12 Nov 2026, 16:08 GMT",
+  "checked_at": "2026-11-12T16:09:18.230891+00:00",
+  "checked_at_london": "12 Nov 2026, 16:09 GMT",
   "who_we_copy": null
 }
