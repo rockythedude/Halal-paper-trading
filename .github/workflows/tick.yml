@@ -12,10 +12,6 @@ on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
-  # One push starts the chain after it has died. Tick commits include
-  # [skip ci], so they do not start another run. Removed after the kick.
-  push:
-    branches: [main]
 
 concurrency:
   group: halal-paper-tick
