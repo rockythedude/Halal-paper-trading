@@ -2,7 +2,7 @@
   "starting_capital": 100.0,
   "target": 6000.0,
   "cash": 42.43688533492553,
-  "equity": 70.750218,
+  "equity": 70.989221,
   "positions": [
     {
       "symbol": "mihao",
@@ -104,17 +104,17 @@
       "cost_basis": 7.154656079,
       "opened_at": "2026-11-12T18:03:26.975813+00:00",
       "opened_at_london": "12 Nov 2026, 18:03 GMT",
-      "high_water": 0.0002378,
-      "trail_armed": false,
-      "last_price": 0.0002346,
+      "high_water": 0.0002425,
+      "trail_armed": true,
+      "last_price": 0.0002425,
       "last_source": "dexscreener",
       "reason": "BUY 10% $GTA @ 0.000230647 \u2014 5m +7.0% vol $19,674 buys 282/sells 86",
       "hard_stop": 0.00021911512499999997,
       "take_profit": 0.0002490993,
       "trail_activate": 0.00023987339999999999,
-      "market_value": 7.09749213554826,
-      "unrealized_pnl": -0.05716394345173992,
-      "unrealized_pct": 0.01713653952459926
+      "market_value": 7.3364954939064475,
+      "unrealized_pnl": 0.18183941490644795,
+      "unrealized_pct": 0.0513879404719324
     }
   ],
   "closed_trades": [
@@ -3190,6 +3190,12 @@
       "ts": "2026-11-12T18:04:30.972760+00:00",
       "label": "12 Nov 2026, 18:04 GMT",
       "equity": 70.750218,
+      "cash": 42.436885
+    },
+    {
+      "ts": "2026-11-12T18:04:54.992252+00:00",
+      "label": "12 Nov 2026, 18:04 GMT",
+      "equity": 70.989221,
       "cash": 42.436885
     }
   ],
@@ -6649,6 +6655,18 @@
       "line": "18:03 EXECUTOR: BUY 10% $GTA @ 0.000230647 \u2014 5m +7.0% vol $19,674 buys 282/sells 86",
       "tag": "EXECUTOR",
       "message": "18:03 EXECUTOR: BUY 10% $GTA @ 0.000230647 \u2014 5m +7.0% vol $19,674 buys 282/sells 86"
+    },
+    {
+      "ts": "2026-11-12T18:04:54.992164+00:00",
+      "london": "12 Nov 2026, 18:04 GMT",
+      "hhmm": "18:04",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 4 open, equity $70.99",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 4 open, equity $70.99",
+      "line": "18:04 LOGGER: run complete \u2014 29 polls, 4 open, equity $70.99",
+      "tag": "LOGGER",
+      "message": "18:04 LOGGER: run complete \u2014 29 polls, 4 open, equity $70.99"
     }
   ],
   "agents": {
@@ -6749,8 +6767,8 @@
       "open_positions": 0
     }
   },
-  "ticks": 696,
-  "last_updated": "2026-11-12T18:04:30.972647+00:00",
+  "ticks": 725,
+  "last_updated": "2026-11-12T18:04:54.992054+00:00",
   "last_updated_london": "12 Nov 2026, 18:04 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -6769,12 +6787,12 @@
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 131
+    "traded": 134
   },
   "totals_cumulative": {
-    "scanned": 696,
+    "scanned": 725,
     "killed": 0,
-    "traded": 131
+    "traded": 134
   },
   "paper_money": true,
   "fills": [
@@ -10478,38 +10496,48 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-12T18:04:30.972647+00:00",
+  "checked_at": "2026-11-12T18:04:54.992054+00:00",
   "checked_at_london": "12 Nov 2026, 18:04 GMT",
   "near_misses": [
+    {
+      "symbol": "HENSEN",
+      "mint": "J9t2LsAZLrNHocuvoyEKoiyS7RKXLJv2u9bnFJTCpump",
+      "link": "https://axiom.trade/meme/J9t2LsAZLrNHocuvoyEKoiyS7RKXLJv2u9bnFJTCpump?chain=sol",
+      "reason": "liquidity $23,250 under $25k",
+      "gates": 1,
+      "chg_m5": 39.83,
+      "vol_m5": 29255.0,
+      "score": 128.06
+    },
     {
       "symbol": "DESSA",
       "mint": "npz2FhoufQ7pKqhGpaipYWacrAkidyW2yDpVWSvpump",
       "link": "https://axiom.trade/meme/npz2FhoufQ7pKqhGpaipYWacrAkidyW2yDpVWSvpump?chain=sol",
-      "reason": "buy/sell 114/141 under 1.05",
+      "reason": "buy/sell 127/156 under 1.05",
       "gates": 1,
-      "chg_m5": 6.51,
-      "vol_m5": 51069.0,
-      "score": 15.79
+      "chg_m5": 6.32,
+      "vol_m5": 55571.0,
+      "score": 15.44
     },
     {
       "symbol": "RAMBO",
       "mint": "KMifrkYmDdAKtVXAVBEPEQxJ7qP2iLgUcfZjUZipump",
       "link": "https://axiom.trade/meme/KMifrkYmDdAKtVXAVBEPEQxJ7qP2iLgUcfZjUZipump?chain=sol",
-      "reason": "5m volume $2,519 under $5k",
+      "reason": "5m volume $2,529 under $5k",
       "gates": 1,
-      "chg_m5": 3.19,
-      "vol_m5": 2519.0,
-      "score": 2.39
+      "chg_m5": 3.2,
+      "vol_m5": 2529.0,
+      "score": 2.4
     },
     {
       "symbol": "NOBUSHIBA",
       "mint": "8AAVuQpJcqpvCuutxyBTVvgBEXZJSkZoNv1sExpBpump",
       "link": "https://axiom.trade/meme/8AAVuQpJcqpvCuutxyBTVvgBEXZJSkZoNv1sExpBpump?chain=sol",
-      "reason": "5m volume $1,782 under $5k",
+      "reason": "5m volume $1,798 under $5k",
       "gates": 1,
-      "chg_m5": 4.1,
-      "vol_m5": 1782.0,
-      "score": 1.75
+      "chg_m5": 4.05,
+      "vol_m5": 1798.0,
+      "score": 1.72
     },
     {
       "symbol": "HUNG",
@@ -10522,20 +10550,10 @@
       "score": 1.52
     },
     {
-      "symbol": "HENSEN",
-      "mint": "J9t2LsAZLrNHocuvoyEKoiyS7RKXLJv2u9bnFJTCpump",
-      "link": "https://axiom.trade/meme/J9t2LsAZLrNHocuvoyEKoiyS7RKXLJv2u9bnFJTCpump?chain=sol",
-      "reason": "liquidity $22,830 under $25k \u00b7 market cap $99,243 outside $100k\u2013$100M",
-      "gates": 2,
-      "chg_m5": 38.34,
-      "vol_m5": 21343.0,
-      "score": 90.24
-    },
-    {
       "symbol": "LISA",
       "mint": "E3oQKAWxNpWfg4eTScorTQQTTr2pkruye6MPNhGZY52R",
       "link": "https://axiom.trade/meme/E3oQKAWxNpWfg4eTScorTQQTTr2pkruye6MPNhGZY52R?chain=sol",
-      "reason": "market cap $15,336 outside $100k\u2013$100M \u00b7 age 2m under 10m",
+      "reason": "market cap $15,336 outside $100k\u2013$100M \u00b7 age 3m under 10m",
       "gates": 2,
       "chg_m5": 13.157,
       "vol_m5": 6000.0,
