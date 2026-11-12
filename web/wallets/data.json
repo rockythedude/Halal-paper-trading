@@ -2,12 +2,12 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 55.3,
-  "equity": 90.63,
-  "equity_multiple": 0.9063,
-  "profit": -9.37,
-  "goal_pct": -0.0015611336666666678,
-  "progress": 0.015105532999999999,
+  "cash": 50.68,
+  "equity": 90.54,
+  "equity_multiple": 0.9054,
+  "profit": -9.46,
+  "goal_pct": -0.0015772649999999994,
+  "progress": 0.015089401666666667,
   "win_rate": 0.2702702702702703,
   "wins": 10,
   "losses": 27,
@@ -20,9 +20,9 @@
     "pnl_pct": 1.4489512825896707
   },
   "ticks": 3227,
-  "open_count": 5,
+  "open_count": 6,
   "last_updated_london": "12 Nov 2026, 16:56 GMT",
-  "last_updated": "2026-11-12T16:56:22.658721+00:00",
+  "last_updated": "2026-11-12T16:56:42.537283+00:00",
   "session_status": "afterhours",
   "session_asof_ny": "11 Nov 2026, 20:45 EST",
   "session_open": false,
@@ -703,6 +703,26 @@
   ],
   "activity": [
     {
+      "ts": "12 Nov 2026, 16:56 GMT",
+      "hhmm": "16:56",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "16:56 EXECUTOR: filled $COFFEE wallet amount 2.9e+07 · delay 87.8s",
+      "message": "16:56 EXECUTOR: filled $COFFEE wallet amount 2.9e+07 · delay 87.8s",
+      "symbol": null,
+      "action": "filled $COFFEE wallet amount 2.9e+07 · delay 87.8s"
+    },
+    {
+      "ts": "12 Nov 2026, 16:56 GMT",
+      "hhmm": "16:56",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "16:56 EXECUTOR: COPY BUY $COFFEE after Jijo 4BdK…Uk (30d +347.61 SOL) · pump.fun curve",
+      "message": "16:56 EXECUTOR: COPY BUY $COFFEE after Jijo 4BdK…Uk (30d +347.61 SOL) · pump.fun curve",
+      "symbol": null,
+      "action": "COPY BUY $COFFEE after Jijo 4BdK…Uk (30d +347.61 SOL) · pump.fun curve"
+    },
+    {
       "ts": "12 Nov 2026, 16:54 GMT",
       "hhmm": "16:54",
       "tag": "SCOUT",
@@ -1081,26 +1101,6 @@
       "message": "14:33 EXECUTOR: COPY BUY $CLAUDIA after GsbH…ZJ (30d +$3,967.8, WR 53.6%)",
       "symbol": null,
       "action": "COPY BUY $CLAUDIA after GsbH…ZJ (30d +$3,967.8, WR 53.6%)"
-    },
-    {
-      "ts": "12 Nov 2026, 14:31 GMT",
-      "hhmm": "14:31",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "14:31 RISK: SELL stop −25% $LEEROY",
-      "message": "14:31 RISK: SELL stop −25% $LEEROY",
-      "symbol": null,
-      "action": "SELL stop −25% $LEEROY"
-    },
-    {
-      "ts": "12 Nov 2026, 14:31 GMT",
-      "hhmm": "14:31",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "14:31 LOGGER: run complete — 21 polls, 10 wallets, equity $91.77",
-      "message": "14:31 LOGGER: run complete — 21 polls, 10 wallets, equity $91.77",
-      "symbol": null,
-      "action": "run complete — 21 polls, 10 wallets, equity $91.77"
     }
   ],
   "agents": [
@@ -1323,9 +1323,48 @@
       "tag": "",
       "venue": "dex",
       "link": ""
+    },
+    {
+      "symbol": "COFFEE",
+      "name": "COFFEE",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 1730678.0883691646,
+      "qty_display": "1,730,678.09",
+      "entry_price": 2.618430273344611e-06,
+      "current_price": 2.614874215325226e-06,
+      "change_pct": null,
+      "price_source": "pump.fun curve",
+      "unrealized_pnl": -0.1,
+      "unrealized_pct": -0.0013580877274393943,
+      "hard_stop": 1.9638227050084583e-06,
+      "trail_activate": null,
+      "opened_at": "12 Nov 2026, 16:56 GMT",
+      "reason": "COPY BUY $COFFEE after Jijo 4BdK…Uk (30d +347.61 SOL) · pump.fun curve",
+      "score": null,
+      "tag": "pump.fun curve",
+      "venue": "pump",
+      "link": ""
     }
   ],
   "fills": [
+    {
+      "id": "f0080",
+      "time": "12 Nov 2026, 16:56 GMT",
+      "ts": "2026-11-12T16:56:41.830635+00:00",
+      "side": "buy",
+      "symbol": "COFFEE",
+      "name": "COFFEE",
+      "asset_class": "crypto",
+      "qty": 1730678.0883691646,
+      "qty_display": "1,730,678.09",
+      "price": 2.618430273344611e-06,
+      "value": 4.53,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "pump.fun curve",
+      "delay_s": 87.83
+    },
     {
       "id": "f0079",
       "time": "12 Nov 2026, 14:49 GMT",
@@ -2674,8 +2713,8 @@
     "closed_trades": 37,
     "win_rate": 0.2702702702702703,
     "realized_pnl": -7.02,
-    "unrealized_pnl": -2.35,
-    "fills": 79
+    "unrealized_pnl": -2.44,
+    "fills": 80
   },
   "ok": true,
   "totals_cumulative": {
@@ -2768,6 +2807,13 @@
       "price": 0.01305,
       "change_pct": null,
       "source": "dexscreener"
+    },
+    {
+      "symbol": "COFFEE",
+      "name": "COFFEE",
+      "price": 2.614874215325226e-06,
+      "change_pct": null,
+      "source": "pump.fun curve"
     }
   ],
   "desk": "wallets",
@@ -2824,8 +2870,8 @@
     {
       "id": "wallets",
       "name": "Wallet copy",
-      "equity": 90.63,
-      "return_pct": -0.09366802000000007,
+      "equity": 90.54,
+      "return_pct": -0.09463589999999997,
       "closed_trades": 37,
       "win_rate": 0.2702702702702703,
       "realized_pnl": -7.02
@@ -3153,13 +3199,13 @@
       "parse_error": null,
       "our_realized": 0.0,
       "realized_pnl": 0.0,
-      "our_unrealized": 0.0,
-      "open_copies": 0,
+      "our_unrealized": -0.1,
+      "open_copies": 1,
       "closed_copies": 0,
       "wins": 0,
       "losses": 0,
       "paused": false,
-      "our_total": 0.0
+      "our_total": -0.1
     },
     {
       "address": "8oQoMhfBQnRspn7QtNAq2aPThRE4q94kLSTwaaFQvRgs",
@@ -3316,11 +3362,11 @@
   ],
   "near_misses": [],
   "helius_status": "live",
-  "avg_copy_delay_s": null,
-  "last_copy_delay_s": null,
-  "last_event_at": "",
-  "last_event_london": "",
-  "checked_at": "2026-11-12T16:56:22.658721+00:00",
+  "avg_copy_delay_s": 87.83,
+  "last_copy_delay_s": 87.83,
+  "last_event_at": "2026-11-12T16:56:41Z",
+  "last_event_london": "12 Nov 2026, 16:56 GMT",
+  "checked_at": "2026-11-12T16:56:42.537283+00:00",
   "checked_at_london": "12 Nov 2026, 16:56 GMT",
   "who_we_copy": null
 }
