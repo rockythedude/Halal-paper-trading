@@ -17,10 +17,13 @@ import time
 import urllib.request
 
 import wallet_tick as w
-from market import format_london
+from market import format_london, iso, now_utc
 
-COMMIT_EVERY = 18
-MARK_EVERY = 5
+# A git push is the fastest free publish path. Two seconds is about as tight
+# as GitHub will take a commit-and-push without the next one overlapping it.
+# Fills push immediately.
+COMMIT_EVERY = 2
+MARK_EVERY = 2
 
 
 def _key() -> str:
@@ -290,7 +293,16 @@ def _mark_open(state: dict) -> None:
     state["wallet_scoreboard"] = w._scoreboard(state)
 
 
+def _touch(state: dict) -> None:
+    now = now_utc()
+    state["checked_at"] = iso(now)
+    state["checked_at_london"] = format_london(now)
+    state["last_updated"] = state["checked_at"]
+    state["last_updated_london"] = state["checked_at_london"]
+
+
 def _push(state: dict) -> None:
+    _touch(state)
     w.checkpoint(state, commit=True)
 
 

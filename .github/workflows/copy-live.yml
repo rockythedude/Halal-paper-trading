@@ -14,7 +14,9 @@ on:
 
 concurrency:
   group: wallet-copy-live
-  cancel-in-progress: false
+  # A new run replaces the one already open, so a key added after startup
+  # is picked up instead of waiting out the rest of the six-hour job.
+  cancel-in-progress: true
 
 permissions:
   contents: write
