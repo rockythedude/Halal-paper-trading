@@ -14,6 +14,8 @@ import base64
 import calendar
 import json
 import os
+import subprocess
+import threading
 import time
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
@@ -519,9 +521,60 @@ def _touch(state: dict) -> None:
     state["last_updated_london"] = state["checked_at_london"]
 
 
+_git_lock = threading.Lock()
+_git_again = False
+_git_thread: threading.Thread | None = None
+
+
+def _git_once() -> None:
+    """Publish the files already written. Must not run on the socket thread."""
+    subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
+    subprocess.run(
+        ["git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"],
+        check=True,
+    )
+    subprocess.run(["git", "add", "--", "wallets/state.json", "web/wallets/data.json"], check=True)
+    dirty = subprocess.run(["git", "diff", "--cached", "--quiet"])
+    if dirty.returncode == 0:
+        return
+    subprocess.run(["git", "commit", "-m", "wallets: checkpoint [skip ci]"], check=True)
+    subprocess.run(["git", "pull", "--rebase", "--autostash", "origin", "main"], check=True)
+    subprocess.run(["git", "push", "origin", "HEAD:main"], check=True)
+    print("wallet checkpoint pushed", flush=True)
+
+
+def _git_loop() -> None:
+    global _git_again
+    while True:
+        with _git_lock:
+            _git_again = False
+        try:
+            _git_once()
+        except Exception as exc:
+            print("wallet checkpoint skipped: " + _safe(exc), flush=True)
+        with _git_lock:
+            if not _git_again:
+                return
+
+
+def _schedule_git() -> None:
+    global _git_thread, _git_again
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return
+    with _git_lock:
+        _git_again = True
+        if _git_thread is not None and _git_thread.is_alive():
+            return
+        _git_thread = threading.Thread(target=_git_loop, name="wallet-git", daemon=True)
+        _git_thread.start()
+
+
 def _push(state: dict) -> None:
     _touch(state)
-    w.checkpoint(state, commit=True)
+    # Writing the JSON is fast. Git rebase was holding the socket closed for
+    # the whole notify lag (the Despair copy waited 126s, then fetched in 0.8s).
+    w.checkpoint(state, commit=False)
+    _schedule_git()
 
 
 def _subscribe(ws, addresses: list[str]) -> str:
@@ -647,6 +700,8 @@ def run_helius(loop_seconds: int) -> None:
                     pass
     _mark_open(state)
     _push(state)
+    if _git_thread is not None:
+        _git_thread.join(timeout=90)
     print(
         f"copy live stopped | fills {len(state.get('fills') or [])} | "
         f"avg delay {state.get('avg_copy_delay_s')} | equity {state.get('equity')}",
