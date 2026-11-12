@@ -93,6 +93,7 @@ All three use fast-mode risk (stop −2%, trail arms at +3% and sells 1% off the
 | Copy | https://rockythedude.github.io/Halal-paper-trading/copy/ | `copy/state.json` · 10 slots |
 | Crypto + Meme | https://rockythedude.github.io/Halal-paper-trading/meme/ | `meme/state.json` · 10 slots |
 | BTC Scalper | https://rockythedude.github.io/Halal-paper-trading/btc/ | `btc/state.json` · BTC spot, up to 4 lots |
+| Wallet copy | https://rockythedude.github.io/Halal-paper-trading/wallets/ | `wallets/state.json` · Solana meme wallets, 10% slots, max 8 |
 
 The main page leaderboard reads all three books. Each page links to the others.
 
@@ -111,3 +112,9 @@ This page is **not** halal-screened. It is a speculative sandbox. The universe i
 ### BTC Scalper
 
 https://rockythedude.github.io/Halal-paper-trading/btc/ trades only spot BTC, with no leverage, short, or margin. Each entry is 20% of equity, and at most four entries are open (80% invested). A 0.1% taker fee is charged on each side. Prices are Binance public BTCUSDT 1-minute and 5-minute candles, with CoinGecko as the fallback. It buys when a 5-minute EMA9 crosses above EMA21, when 5-minute RSI(14) is below 35 and turning up, or when price breaks the prior 30-minute high on rising volume. Each lot takes profit at +0.8%, stops at −0.6%, or trails 0.4% once it is up 0.5%. A 5-minute EMA cross down closes every lot. After a hard stop the next evaluation does not enter. Inside each workflow run the scalper checks about once a minute for roughly four minutes, while the other desks tick, so the job stays near the five-minute schedule. The page says this is BTC spot only, inside the crypto allow-list assumption, and not a fatwa.
+
+### Wallet copy (Solana memes)
+
+https://rockythedude.github.io/Halal-paper-trading/wallets/ is **not** halal-screened. It paper-copies buys and sells from a watchlist of Solana wallets found in DexScreener's public boosted and latest token lists, then confirmed with Solana's public RPC (`getSignaturesForAddress` / `getTransaction`). There is no keyless wallet leaderboard. Bots (several swaps in the same second) and deployer-style transfers (tokens received with no SOL or USDC spent) are left out. The list refreshes when it is older than 20 hours, and each wallet's tokens and realized sample are stored in `wallets/state.json`.
+
+A copy buy is 10% of equity, at most 8 positions, and only if DexScreener liquidity is at least $20,000. The fill is the DexScreener price when the bot notices the swap, not the wallet's price. The wallet's own sell closes the copy. A −25% stop and a +100% take profit are backstops. Each side pays a 1% fee. Inside a workflow run the bot polls about every 12 seconds and commits its page about once a minute. The page reloads that JSON every 20 seconds.

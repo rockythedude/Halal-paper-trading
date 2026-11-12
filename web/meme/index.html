@@ -566,6 +566,7 @@
       <a class="pill" id="nav-copy" href="copy/">Copy</a>
       <a class="pill" id="nav-meme" href="meme/">Meme</a>
       <a class="pill" id="nav-btc" href="btc/">BTC</a>
+      <a class="pill" id="nav-wallets" href="wallets/">Wallets</a>
     </nav>
 
     <main>
@@ -574,6 +575,7 @@
         <div class="banner" id="sandbox" hidden></div>
         <div class="banner lag" id="lag" hidden></div>
         <div class="table-wrap" id="board"></div>
+        <div class="disc" id="checked"></div>
       </section>
       <section class="panel equity">
         <div class="eq-kicker" id="eq-kicker">Equity — paper desk</div>
@@ -615,6 +617,11 @@
         <h2>Trade history <span class="meta" id="hist-meta"></span></h2>
         <div class="hist-summary" id="hist-summary"></div>
         <div class="table-wrap" id="hist"></div>
+      </section>
+
+      <section class="panel who" id="watch-panel" hidden>
+        <h2>Watchlist <span class="meta" id="watch-meta"></span></h2>
+        <div id="watch"></div>
       </section>
 
       <section class="panel who" id="who-panel" hidden>
@@ -789,7 +796,10 @@
     }
     if (a.role === "Analyst") return [`${t.passed_filter || 0} scored`];
     if (a.role === "Executor") {
-      return [(data.risk_rules && data.risk_rules.mode === "scalp") ? "20% × 4" : "size ≤ 8%"];
+      const mode = data.risk_rules && data.risk_rules.mode;
+      if (mode === "scalp") return ["20% × 4"];
+      if (mode === "wallets") return ["10%"];
+      return ["size ≤ 8%"];
     }
     if (a.role === "Risk") {
       const rules = data.risk_rules || {};
@@ -883,6 +893,7 @@
 
   function deskId() {
     const path = window.location.pathname || "";
+    if (path.includes("/wallets")) return "wallets";
     if (path.includes("/btc")) return "btc";
     if (path.includes("/meme")) return "meme";
     if (path.includes("/copy")) return "copy";
@@ -897,17 +908,20 @@
       copy: desk === "copy" ? "./" : prefix + "copy/",
       meme: desk === "meme" ? "./" : prefix + "meme/",
       btc: desk === "btc" ? "./" : prefix + "btc/",
+      wallets: desk === "wallets" ? "./" : prefix + "wallets/",
     };
     document.getElementById("nav-main").href = links.main;
     document.getElementById("nav-copy").href = links.copy;
     document.getElementById("nav-meme").href = links.meme;
     document.getElementById("nav-btc").href = links.btc;
+    document.getElementById("nav-wallets").href = links.wallets;
     document.getElementById("nav-" + desk).classList.add("on");
     const titles = {
       main: ["Halal Paper Trader", "Halal stocks + crypto · strict RM · paper"],
       copy: ["Halal Copy Trader", "Late public disclosures · paper · same halal screen"],
       meme: ["Crypto + Meme", "NOT halal-screened · speculative sandbox · paper"],
       btc: ["BTC Scalper", "BTC spot only · no leverage · paper"],
+      wallets: ["Wallet Copy", "Solana meme wallets · not halal-screened · paper"],
     };
     const pair = titles[desk];
     document.querySelector(".brand h1").textContent = pair[0];
@@ -942,6 +956,45 @@
         <th>Book</th><th class="num">Equity</th><th class="num">Return</th>
         <th class="num">Closed</th><th class="num">Win rate</th><th class="num">Realised</th>
       </tr></thead><tbody>${body}</tbody></table>`;
+    const stamp = data.checked_at_london || data.last_updated_london;
+    const checked = document.getElementById("checked");
+    if (checked) {
+      checked.textContent = stamp ? `Last checked ${stamp}` : "";
+    }
+  }
+
+  function renderWatch(data) {
+    const panel = document.getElementById("watch-panel");
+    if (!panel) return;
+    if (deskId() !== "wallets" && !(data.watchlist || []).length) {
+      panel.hidden = deskId() !== "wallets";
+    }
+    if (deskId() !== "wallets") {
+      panel.hidden = true;
+      return;
+    }
+    panel.hidden = false;
+    const rows = data.watchlist || [];
+    document.getElementById("watch-meta").textContent = `${rows.length} wallets`;
+    if (!rows.length) {
+      document.getElementById("watch").innerHTML = '<div class="empty">Watchlist appears after the first scan of DexScreener and Solana.</div>';
+      return;
+    }
+    const body = rows.map(row => {
+      const realized = row.realized_usd == null ? "—" : ((row.realized_usd >= 0 ? "+" : "−") + fmtMoney(Math.abs(row.realized_usd)));
+      const href = row.solscan || ("https://solscan.io/account/" + (row.address || ""));
+      return `<tr>
+        <td><a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(row.short || row.address || "")}</a></td>
+        <td>${escapeHtml((row.tokens || []).join(", "))}</td>
+        <td class="num">${row.buys ?? 0}</td>
+        <td class="num">${row.sells ?? 0}</td>
+        <td class="num ${row.realized_usd > 0 ? "up" : row.realized_usd < 0 ? "down" : "flat"}">${realized}</td>
+      </tr>`;
+    }).join("");
+    document.getElementById("watch").innerHTML = `<table>
+      <thead><tr><th>Wallet</th><th>Tokens</th><th class="num">Buys</th><th class="num">Sells</th><th class="num">Realized sample</th></tr></thead>
+      <tbody>${body}</tbody></table>
+      <div class="empty">${escapeHtml((rows[0] && rows[0].source) || "")}</div>`;
   }
 
   function renderWho(data) {
@@ -998,6 +1051,10 @@
       fine.textContent = "Paper money only. This page is not a halal screen and not a fatwa. It is a speculative sandbox.";
     } else if (deskId() === "btc") {
       fine.textContent = "Paper money only. BTC spot, no leverage and no margin. Within the crypto allow-list assumption, not a fatwa.";
+    } else if (deskId() === "wallets") {
+      sandbox.hidden = false;
+      sandbox.textContent = data.sandbox_note || "Meme coins: not halal-screened, speculative; paper only.";
+      fine.textContent = "Paper money only. Meme coins are not halal-screened. Speculative sandbox, not a fatwa.";
     }
   }
 
@@ -1223,14 +1280,29 @@
   }
 
   let lastState = null;
+  async function readJson(url) {
+    const r = await fetch(url, { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    return r.json();
+  }
   async function pollState() {
     try {
-      const url = new URL("data.json", pageBase());
-      url.searchParams.set("t", String(Date.now()));
-      const r = await fetch(url.href, { cache: "no-store" });
-      if (!r.ok) throw new Error("data.json " + r.status);
-      const data = await r.json();
-      if (!data || data.ok === false) throw new Error((data && data.error) || "state unavailable");
+      const bust = String(Date.now());
+      const local = new URL("data.json", pageBase());
+      local.searchParams.set("t", bust);
+      const jobs = [readJson(local.href)];
+      if (deskId() === "wallets") {
+        jobs.push(readJson("https://raw.githubusercontent.com/rockythedude/Halal-paper-trading/main/web/wallets/data.json?t=" + bust));
+      }
+      const settled = await Promise.allSettled(jobs);
+      let data = null;
+      for (const item of settled) {
+        if (item.status !== "fulfilled" || !item.value || item.value.ok === false) continue;
+        const stamp = item.value.checked_at || item.value.last_updated || "";
+        const prev = data ? (data.checked_at || data.last_updated || "") : "";
+        if (!data || stamp > prev) data = item.value;
+      }
+      if (!data) throw new Error("data.json unavailable");
       lastState = data;
       renderNotices(data);
       renderBoard(data);
@@ -1241,6 +1313,7 @@
       renderPositions(data);
       renderHistory(data);
       renderWho(data);
+      renderWatch(data);
       renderTicker(tickerFromState(data));
       maybeToasts(data);
       document.body.classList.add("ready");
@@ -1255,8 +1328,14 @@
     drawChart(lastCurve);
     if (deskId() === "btc") drawBtc(lastBtc, lastMarks);
   });
-  pollState();
-  setInterval(pollState, 45000);
+  function pollEvery() {
+    return deskId() === "wallets" ? 20000 : 30000;
+  }
+  async function pollLoop() {
+    await pollState();
+    setTimeout(pollLoop, pollEvery());
+  }
+  pollLoop();
   </script>
 </body>
 </html>

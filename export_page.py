@@ -404,6 +404,7 @@ DESKS = (
     ("copy", "Copy desk", ROOT / "copy" / "state.json"),
     ("meme", "Crypto + Meme", ROOT / "meme" / "state.json"),
     ("btc", "BTC Scalper", ROOT / "btc" / "state.json"),
+    ("wallets", "Wallet copy", ROOT / "wallets" / "state.json"),
 )
 
 
@@ -441,7 +442,18 @@ def _board_row(desk_id: str, name: str, path: Path) -> dict:
             "win_rate": None,
             "realized_pnl": None,
         }
-    state = json.loads(path.read_text())
+    try:
+        state = json.loads(path.read_text())
+    except (OSError, json.JSONDecodeError):
+        return {
+            "id": desk_id,
+            "name": name,
+            "equity": None,
+            "return_pct": None,
+            "closed_trades": 0,
+            "win_rate": None,
+            "realized_pnl": None,
+        }
     start = float(state.get("starting_capital") or 0)
     equity = float(state.get("equity") or 0)
     closed = state.get("closed_trades") or []
@@ -474,6 +486,17 @@ def scalp_rules() -> dict:
     }
 
 
+def wallet_rules() -> dict:
+    return {
+        "mode": "wallets",
+        "max_position_pct": 0.10,
+        "stop_loss_pct": 0.25,
+        "take_profit_pct": 1.0,
+        "chips": ["10%", "−25%", "TP +100%", "fee 1%"],
+        "label": "Wallet copy · 10% of equity · max 8 · stop −25% · take profit +100% · 1% fee each side",
+    }
+
+
 def build_leaderboard() -> list[dict]:
     return [_board_row(desk_id, name, path) for desk_id, name, path in DESKS]
 
@@ -485,7 +508,12 @@ def export_page(state: dict | None = None, dest: Path | None = None, desk: str =
         state = json.loads(STATE_PATH.read_text())
     payload = page_payload(state)
     payload["desk"] = desk
-    payload["risk_rules"] = scalp_rules() if desk == "btc" else risk_from_config()
+    if desk == "btc":
+        payload["risk_rules"] = scalp_rules()
+    elif desk == "wallets":
+        payload["risk_rules"] = wallet_rules()
+    else:
+        payload["risk_rules"] = risk_from_config()
     payload["leaderboard"] = build_leaderboard()
     payload["btc_chart"] = state.get("btc_chart") or []
     payload["btc_markers"] = state.get("btc_markers") or []
@@ -506,6 +534,9 @@ def export_page(state: dict | None = None, dest: Path | None = None, desk: str =
     payload["sandbox_note"] = state.get("sandbox_note") or ""
     payload["lag_note"] = state.get("lag_note") or ""
     payload["btc_note"] = state.get("btc_note") or ""
+    payload["watchlist"] = state.get("watchlist") or []
+    payload["checked_at"] = state.get("checked_at") or state.get("last_updated") or ""
+    payload["checked_at_london"] = state.get("checked_at_london") or state.get("last_updated_london") or ""
     payload["who_we_copy"] = state.get("who_we_copy")
     dest = dest or OUT_PATH
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -519,7 +550,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Write a static dashboard payload")
     parser.add_argument("--state", default=None)
     parser.add_argument("--out", default=None)
-    parser.add_argument("--desk", default="main", choices=["main", "copy", "meme", "btc"])
+    parser.add_argument("--desk", default="main", choices=["main", "copy", "meme", "btc", "wallets"])
     args = parser.parse_args()
     try:
         state = json.loads(Path(args.state).read_text()) if args.state else None

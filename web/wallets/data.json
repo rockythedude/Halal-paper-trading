@@ -1,0 +1,604 @@
+{
+  "paper_money": true,
+  "starting_capital": 100.0,
+  "target": 6000.0,
+  "cash": 100.0,
+  "equity": 100.0,
+  "equity_multiple": 1.0,
+  "profit": 0.0,
+  "goal_pct": 0.0,
+  "progress": 0.016666666666666666,
+  "win_rate": 0.0,
+  "wins": 0,
+  "losses": 0,
+  "closed_trades": 0,
+  "biggest_win": 0.0,
+  "biggest_trade": null,
+  "ticks": 0,
+  "open_count": 0,
+  "last_updated_london": "12 Nov 2026, 1:45 GMT",
+  "last_updated": "2026-11-12T01:45:34.300691+00:00",
+  "session_status": "afterhours",
+  "session_asof_ny": "11 Nov 2026, 20:45 EST",
+  "session_open": false,
+  "screening_method": "",
+  "stock_note": "",
+  "crypto_note": "",
+  "holdings_asof": "",
+  "data_sources": [],
+  "scanned": 0,
+  "killed": 0,
+  "traded": 0,
+  "why_they_died": [],
+  "totals": {
+    "scanned": 0,
+    "killed": 0,
+    "traded": 0,
+    "filter_killed": 0,
+    "analyst_killed": 0,
+    "passed_filter": 0,
+    "passed_analyst": 0,
+    "exits": 0
+  },
+  "last_tick": {
+    "scanned": 0,
+    "passed": 0,
+    "rejected": 0,
+    "proposals": 0,
+    "fills": 0,
+    "exits": 0,
+    "killed": 0
+  },
+  "equity_curve": [
+    {
+      "label": "12 Nov 2026, 1:45 GMT",
+      "value": 100.0
+    }
+  ],
+  "annotations": [],
+  "activity": [
+    {
+      "ts": "12 Nov 2026, 1:45 GMT",
+      "hhmm": "01:45",
+      "tag": "SCOUT",
+      "agent": "SCOUT",
+      "line": "01:45 SCOUT: Watchlist has 18 wallets from DexScreener pools and Solana RPC",
+      "message": "01:45 SCOUT: Watchlist has 18 wallets from DexScreener pools and Solana RPC",
+      "symbol": null,
+      "action": "Watchlist has 18 wallets from DexScreener pools and Solana RPC"
+    },
+    {
+      "ts": "12 Nov 2026, 1:45 GMT",
+      "hhmm": "01:45",
+      "tag": "SCOUT",
+      "agent": "SCOUT",
+      "line": "01:45 SCOUT: Read swaps on 10 pools with at least $20k liquidity",
+      "message": "01:45 SCOUT: Read swaps on 10 pools with at least $20k liquidity",
+      "symbol": null,
+      "action": "Read swaps on 10 pools with at least $20k liquidity"
+    },
+    {
+      "ts": "12 Nov 2026, 1:45 GMT",
+      "hhmm": "01:45",
+      "tag": "SCOUT",
+      "agent": "SCOUT",
+      "line": "01:45 SCOUT: DexScreener listed 12 Solana tokens to inspect",
+      "message": "01:45 SCOUT: DexScreener listed 12 Solana tokens to inspect",
+      "symbol": null,
+      "action": "DexScreener listed 12 Solana tokens to inspect"
+    }
+  ],
+  "agents": [
+    {
+      "id": "KESTO",
+      "role": "Scout",
+      "strategy": "Scout",
+      "blurb": "Scans the stock and crypto universe before any filters run.",
+      "color": "#2EC4B6",
+      "activity": "Idle — waiting for the first tick",
+      "badge": "—",
+      "badge_label": "metric",
+      "realized_pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "pnl": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": 0.0,
+      "open_positions": 0
+    },
+    {
+      "id": "DRVEN",
+      "role": "Filter",
+      "strategy": "Filter",
+      "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
+      "color": "#F5A623",
+      "activity": "Idle — waiting for the first tick",
+      "badge": "—",
+      "badge_label": "metric",
+      "realized_pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "pnl": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": 0.0,
+      "open_positions": 0
+    },
+    {
+      "id": "BRAVA",
+      "role": "Analyst",
+      "strategy": "Analyst",
+      "blurb": "Scores survivors 0–1 on momentum, trend, RSI and volume; kills scores below 0.55.",
+      "color": "#FF6B4A",
+      "activity": "Idle — waiting for the first tick",
+      "badge": "—",
+      "badge_label": "metric",
+      "realized_pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "pnl": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": 0.0,
+      "open_positions": 0
+    },
+    {
+      "id": "MIRAX",
+      "role": "Executor",
+      "strategy": "Executor",
+      "blurb": "Buys passing names, with size capped at 8% of equity. Never averages down.",
+      "color": "#5B8DEF",
+      "activity": "Idle — waiting for the first tick",
+      "badge": "—",
+      "badge_label": "metric",
+      "realized_pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "pnl": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": 0.0,
+      "open_positions": 0
+    },
+    {
+      "id": "DUSKA",
+      "role": "Risk",
+      "strategy": "Risk",
+      "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
+      "color": "#A78BFA",
+      "activity": "Idle — waiting for the first tick",
+      "badge": "—",
+      "badge_label": "metric",
+      "realized_pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "pnl": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": 0.0,
+      "open_positions": 0
+    },
+    {
+      "id": "NOVIA",
+      "role": "Logger",
+      "strategy": "Logger",
+      "blurb": "Records every rejection, buy and stop with its reason.",
+      "color": "#3DDC97",
+      "activity": "Idle — waiting for the first tick",
+      "badge": "—",
+      "badge_label": "metric",
+      "realized_pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "pnl": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": 0.0,
+      "open_positions": 0
+    }
+  ],
+  "positions": [],
+  "fills": [],
+  "history_summary": {
+    "closed_trades": 0,
+    "win_rate": null,
+    "realized_pnl": 0,
+    "unrealized_pnl": 0,
+    "fills": 0
+  },
+  "ok": true,
+  "totals_cumulative": {
+    "scanned": 0,
+    "killed": 0,
+    "traded": 0
+  },
+  "events": [],
+  "role_colors": {
+    "Scout": "#4DA3FF",
+    "Filter": "#FF8A3D",
+    "Analyst": "#C084FC",
+    "Executor": "#00E676",
+    "Risk": "#FF4D4D",
+    "Logger": "#22D3EE"
+  },
+  "ticker": [],
+  "desk": "wallets",
+  "risk_rules": {
+    "mode": "wallets",
+    "max_position_pct": 0.1,
+    "stop_loss_pct": 0.25,
+    "take_profit_pct": 1.0,
+    "chips": [
+      "10%",
+      "−25%",
+      "TP +100%",
+      "fee 1%"
+    ],
+    "label": "Wallet copy · 10% of equity · max 8 · stop −25% · take profit +100% · 1% fee each side"
+  },
+  "leaderboard": [
+    {
+      "id": "main",
+      "name": "Halal book",
+      "equity": 99.8,
+      "return_pct": -0.002034139999999951,
+      "closed_trades": 0,
+      "win_rate": null,
+      "realized_pnl": 0
+    },
+    {
+      "id": "copy",
+      "name": "Copy desk",
+      "equity": 100.0,
+      "return_pct": 0.0,
+      "closed_trades": 0,
+      "win_rate": null,
+      "realized_pnl": 0
+    },
+    {
+      "id": "meme",
+      "name": "Crypto + Meme",
+      "equity": 99.17,
+      "return_pct": -0.008283430000000038,
+      "closed_trades": 1,
+      "win_rate": 0.0,
+      "realized_pnl": -0.19
+    },
+    {
+      "id": "btc",
+      "name": "BTC Scalper",
+      "equity": 100.0,
+      "return_pct": -4.3550000000038836e-05,
+      "closed_trades": 0,
+      "win_rate": null,
+      "realized_pnl": 0
+    },
+    {
+      "id": "wallets",
+      "name": "Wallet copy",
+      "equity": 100.0,
+      "return_pct": 0.0,
+      "closed_trades": 0,
+      "win_rate": null,
+      "realized_pnl": 0
+    }
+  ],
+  "btc_chart": [],
+  "btc_markers": [],
+  "signal_mode": "wallets",
+  "sandbox_note": "Meme coins: not halal-screened, speculative; paper only.",
+  "lag_note": "",
+  "btc_note": "",
+  "watchlist": [
+    {
+      "address": "DbEaA3UdXGXN9aDF1fa5dX2o815pp6W6jAoK7vzSXH5H",
+      "short": "DbEa…5H",
+      "solscan": "https://solscan.io/account/DbEaA3UdXGXN9aDF1fa5dX2o815pp6W6jAoK7vzSXH5H",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "Mustache"
+      ],
+      "mints": [
+        "7r3Hcmzzko9UrCvbCAN3QhUfojs2RqpnzH8tfeyRpump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 1.195705,
+      "realized_usd": 99.48,
+      "evidence": "0 buys, 1 sells of Mustache; realized sample +99.48 USD"
+    },
+    {
+      "address": "EJuJDXakj9uhLMNnBZZDjo7Uia3nVfk4sbtbUaDRsD96",
+      "short": "EJuJ…96",
+      "solscan": "https://solscan.io/account/EJuJDXakj9uhLMNnBZZDjo7Uia3nVfk4sbtbUaDRsD96",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "VI"
+      ],
+      "mints": [
+        "8DwAf1oQ11Ch86SNGcbBppFqf1RZJ74T7mdNuNBtpump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.926574,
+      "realized_usd": 77.09,
+      "evidence": "0 buys, 1 sells of VI; realized sample +77.09 USD"
+    },
+    {
+      "address": "sssssv2ivFNk1ogpBnEkcijSHzvib5vKfhiJMhRT2NT",
+      "short": "ssss…NT",
+      "solscan": "https://solscan.io/account/sssssv2ivFNk1ogpBnEkcijSHzvib5vKfhiJMhRT2NT",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "VI"
+      ],
+      "mints": [
+        "8DwAf1oQ11Ch86SNGcbBppFqf1RZJ74T7mdNuNBtpump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.366384,
+      "realized_usd": 30.48,
+      "evidence": "0 buys, 1 sells of VI; realized sample +30.48 USD"
+    },
+    {
+      "address": "29KXh3docJFNMMc7b717EE9ym9Cg5KxJ5NcZzH4JHBcu",
+      "short": "29KX…cu",
+      "solscan": "https://solscan.io/account/29KXh3docJFNMMc7b717EE9ym9Cg5KxJ5NcZzH4JHBcu",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "Impeach"
+      ],
+      "mints": [
+        "F2xQeTCTqnczXxXQaBWAfDpUnpxn4wQHRPSqvUYJpump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.337223,
+      "realized_usd": 28.06,
+      "evidence": "0 buys, 1 sells of Impeach; realized sample +28.06 USD"
+    },
+    {
+      "address": "8EY6ggq1ma2cfzWTRtj2hqHLJ5i7sYNVo8eRVtCL98Aa",
+      "short": "8EY6…Aa",
+      "solscan": "https://solscan.io/account/8EY6ggq1ma2cfzWTRtj2hqHLJ5i7sYNVo8eRVtCL98Aa",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "SANTA"
+      ],
+      "mints": [
+        "J8uZpXLyrmaPawRFdu81byzRSLqnurTvhQ9nd2ZLVQvE"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.332646,
+      "realized_usd": 27.68,
+      "evidence": "0 buys, 1 sells of SANTA; realized sample +27.68 USD"
+    },
+    {
+      "address": "BG6BS3Vz7KDg1rhF1QDpM1ZaFeZDhQm5BKMTSH3SD3zZ",
+      "short": "BG6B…zZ",
+      "solscan": "https://solscan.io/account/BG6BS3Vz7KDg1rhF1QDpM1ZaFeZDhQm5BKMTSH3SD3zZ",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "SANTA"
+      ],
+      "mints": [
+        "J8uZpXLyrmaPawRFdu81byzRSLqnurTvhQ9nd2ZLVQvE"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.232193,
+      "realized_usd": 19.32,
+      "evidence": "0 buys, 1 sells of SANTA; realized sample +19.32 USD"
+    },
+    {
+      "address": "B3uJaZEqebtC8VQXs6qTmF8Np5KcVBHrFwhXjFBUqVNG",
+      "short": "B3uJ…NG",
+      "solscan": "https://solscan.io/account/B3uJaZEqebtC8VQXs6qTmF8Np5KcVBHrFwhXjFBUqVNG",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "Mustache"
+      ],
+      "mints": [
+        "7r3Hcmzzko9UrCvbCAN3QhUfojs2RqpnzH8tfeyRpump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.229579,
+      "realized_usd": 19.1,
+      "evidence": "0 buys, 1 sells of Mustache; realized sample +19.10 USD"
+    },
+    {
+      "address": "93mHHYnW8JtSvxkj5nx6x3knNE9E6Qir9yQVPjXqBYU",
+      "short": "93mH…YU",
+      "solscan": "https://solscan.io/account/93mHHYnW8JtSvxkj5nx6x3knNE9E6Qir9yQVPjXqBYU",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "SANTA"
+      ],
+      "mints": [
+        "J8uZpXLyrmaPawRFdu81byzRSLqnurTvhQ9nd2ZLVQvE"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.184148,
+      "realized_usd": 15.32,
+      "evidence": "0 buys, 1 sells of SANTA; realized sample +15.32 USD"
+    },
+    {
+      "address": "7e19V9QZFxsxFg8QXBfM2Lvr7MLd2EWzBr2iUFyFu9ZC",
+      "short": "7e19…ZC",
+      "solscan": "https://solscan.io/account/7e19V9QZFxsxFg8QXBfM2Lvr7MLd2EWzBr2iUFyFu9ZC",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "Vicemas"
+      ],
+      "mints": [
+        "GWxceEVSTHLvhFi9z6pbwgUNYRgXBMrwCXTXcS1Upump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.173782,
+      "realized_usd": 14.46,
+      "evidence": "0 buys, 1 sells of Vicemas; realized sample +14.46 USD"
+    },
+    {
+      "address": "Gcx7HPVzj1SvTa6qCxjdtsH4cqizcJKQMLfFC6mRYvqT",
+      "short": "Gcx7…qT",
+      "solscan": "https://solscan.io/account/Gcx7HPVzj1SvTa6qCxjdtsH4cqizcJKQMLfFC6mRYvqT",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "Vicemas"
+      ],
+      "mints": [
+        "GWxceEVSTHLvhFi9z6pbwgUNYRgXBMrwCXTXcS1Upump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.14067,
+      "realized_usd": 11.7,
+      "evidence": "0 buys, 1 sells of Vicemas; realized sample +11.70 USD"
+    },
+    {
+      "address": "GkDjFz2RmuSeHFjuWucx3VfJB9X3jCkpevydGNdXS1Zb",
+      "short": "GkDj…Zb",
+      "solscan": "https://solscan.io/account/GkDjFz2RmuSeHFjuWucx3VfJB9X3jCkpevydGNdXS1Zb",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "Mustache"
+      ],
+      "mints": [
+        "7r3Hcmzzko9UrCvbCAN3QhUfojs2RqpnzH8tfeyRpump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.070301,
+      "realized_usd": 5.85,
+      "evidence": "0 buys, 1 sells of Mustache; realized sample +5.85 USD"
+    },
+    {
+      "address": "AqjcUL5qitNAsm7KKhBHjcDJSEvmayT1aFSuBr1F2e2Y",
+      "short": "Aqjc…2Y",
+      "solscan": "https://solscan.io/account/AqjcUL5qitNAsm7KKhBHjcDJSEvmayT1aFSuBr1F2e2Y",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "jeff"
+      ],
+      "mints": [
+        "HAsTKXYvv65zM7J6Cu5o5PcZsiKMQYo5oz4WPjgqwP6k"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.036786,
+      "realized_usd": 3.06,
+      "evidence": "0 buys, 1 sells of jeff; realized sample +3.06 USD"
+    },
+    {
+      "address": "7w7e8Km8f5MnKgKCQbrixCW9SieBrJ9gt44XavH6WGRF",
+      "short": "7w7e…RF",
+      "solscan": "https://solscan.io/account/7w7e8Km8f5MnKgKCQbrixCW9SieBrJ9gt44XavH6WGRF",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "Mustache"
+      ],
+      "mints": [
+        "7r3Hcmzzko9UrCvbCAN3QhUfojs2RqpnzH8tfeyRpump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.036421,
+      "realized_usd": 3.03,
+      "evidence": "0 buys, 1 sells of Mustache; realized sample +3.03 USD"
+    },
+    {
+      "address": "3f9D43YePyJfQAf1KiDnVbyBkbR4xao1o8FrUaksVzEX",
+      "short": "3f9D…EX",
+      "solscan": "https://solscan.io/account/3f9D43YePyJfQAf1KiDnVbyBkbR4xao1o8FrUaksVzEX",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "Impeach"
+      ],
+      "mints": [
+        "F2xQeTCTqnczXxXQaBWAfDpUnpxn4wQHRPSqvUYJpump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.033145,
+      "realized_usd": 2.76,
+      "evidence": "0 buys, 1 sells of Impeach; realized sample +2.76 USD"
+    },
+    {
+      "address": "8GP5tEbCiHuiwoCV1KLeaLa7mxMXQsxV3mTUK54KoxzQ",
+      "short": "8GP5…zQ",
+      "solscan": "https://solscan.io/account/8GP5tEbCiHuiwoCV1KLeaLa7mxMXQsxV3mTUK54KoxzQ",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "Vicemas"
+      ],
+      "mints": [
+        "GWxceEVSTHLvhFi9z6pbwgUNYRgXBMrwCXTXcS1Upump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.026451,
+      "realized_usd": 2.2,
+      "evidence": "0 buys, 1 sells of Vicemas; realized sample +2.20 USD"
+    },
+    {
+      "address": "9pnN6uQ4Dmih7DgEipZv2UPJjiKLw3nB3SzjcR8s8y8g",
+      "short": "9pnN…8g",
+      "solscan": "https://solscan.io/account/9pnN6uQ4Dmih7DgEipZv2UPJjiKLw3nB3SzjcR8s8y8g",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "Vicemas"
+      ],
+      "mints": [
+        "GWxceEVSTHLvhFi9z6pbwgUNYRgXBMrwCXTXcS1Upump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.023845,
+      "realized_usd": 1.98,
+      "evidence": "0 buys, 1 sells of Vicemas; realized sample +1.98 USD"
+    },
+    {
+      "address": "8q94QXNJum33Q5jXxjDGHYdrP1HesjoAUyV6ivsc3eyD",
+      "short": "8q94…yD",
+      "solscan": "https://solscan.io/account/8q94QXNJum33Q5jXxjDGHYdrP1HesjoAUyV6ivsc3eyD",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "Impeach"
+      ],
+      "mints": [
+        "F2xQeTCTqnczXxXQaBWAfDpUnpxn4wQHRPSqvUYJpump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.019508,
+      "realized_usd": 1.62,
+      "evidence": "0 buys, 1 sells of Impeach; realized sample +1.62 USD"
+    },
+    {
+      "address": "FqYarB2q5WTvoCnYQoaZwWc6vSbp67J5fkRSxf3vgYr3",
+      "short": "FqYa…r3",
+      "solscan": "https://solscan.io/account/FqYarB2q5WTvoCnYQoaZwWc6vSbp67J5fkRSxf3vgYr3",
+      "source": "DexScreener boosted/latest Solana tokens + Solana public RPC swaps",
+      "tokens": [
+        "GATO"
+      ],
+      "mints": [
+        "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump"
+      ],
+      "buys": 0,
+      "sells": 1,
+      "realized_sol": 0.015253,
+      "realized_usd": 1.27,
+      "evidence": "0 buys, 1 sells of GATO; realized sample +1.27 USD"
+    }
+  ],
+  "checked_at": "2026-11-12T01:45:34.300691+00:00",
+  "checked_at_london": "12 Nov 2026, 1:45 GMT",
+  "who_we_copy": null
+}
