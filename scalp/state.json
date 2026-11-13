@@ -1,38 +1,9 @@
 {
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 0.6054606368419138,
+  "cash": 0.6716928366643277,
   "equity": 0.671693,
-  "positions": [
-    {
-      "symbol": "inuhao",
-      "name": "inuhao",
-      "mint": "FyHakvZH3L4UABSQYK7e9ECEzWV37u7GTkmAbHXspump",
-      "pair": "AQFC3QfATJggPQEuQGS65RuAQq5u2Pin6MYjz1eu4s31",
-      "link": "https://axiom.trade/meme/FyHakvZH3L4UABSQYK7e9ECEzWV37u7GTkmAbHXspump?chain=sol",
-      "dex_url": "https://www.geckoterminal.com/solana/pools/AQFC3QfATJggPQEuQGS65RuAQq5u2Pin6MYjz1eu4s31",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 156.9116209369172,
-      "entry_price": 0.0004308036562006858,
-      "raw_price": 0.00042866035442854313,
-      "entry_fee": 0.0006759810000000001,
-      "cost_basis": 0.06827408100000001,
-      "opened_at": "2026-11-13T23:48:59.636005+00:00",
-      "opened_at_london": "13 Nov 2026, 23:48 GMT",
-      "high_water": 0.0004395,
-      "trail_armed": false,
-      "last_price": 0.0004285049031744186,
-      "last_source": "geckoterminal",
-      "reason": "BUY 10% $inuhao @ 0.000430804 \u2014 5m +2.9% vol $5,698 buys 166/sells 42",
-      "hard_stop": 0.0004092634733906515,
-      "take_profit": 0.0004652679486967407,
-      "trail_activate": 0.0004480358024487133,
-      "market_value": 0.06623219982241388,
-      "unrealized_pnl": -0.0020418811775861356,
-      "unrealized_pct": -0.005335964523932257
-    }
-  ],
+  "positions": [],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -22698,15 +22669,24 @@
       "closed_at": "2026-11-13T23:51:07.642184+00:00",
       "closed_at_london": "13 Nov 2026, 23:51 GMT",
       "opened_at": "2026-11-13T23:40:53.193076+00:00"
+    },
+    {
+      "symbol": "inuhao",
+      "name": "inuhao",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 156.9116209369172,
+      "entry_price": 0.0004308036562006858,
+      "exit_price": 0.00042636237865854653,
+      "pnl": -0.0020418811775861356,
+      "pnl_pct": -0.029907120647821465,
+      "reason": "SELL trail 2.5% $inuhao",
+      "closed_at": "2026-11-13T23:55:06.452650+00:00",
+      "closed_at_london": "13 Nov 2026, 23:55 GMT",
+      "opened_at": "2026-11-13T23:48:59.636005+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-13T18:09:03.256430+00:00",
-      "label": "13 Nov 2026, 18:09 GMT",
-      "equity": 1.769348,
-      "cash": 1.061154
-    },
     {
       "ts": "2026-11-13T18:10:09.493877+00:00",
       "label": "13 Nov 2026, 18:10 GMT",
@@ -25706,21 +25686,15 @@
       "label": "13 Nov 2026, 23:54 GMT",
       "equity": 0.671693,
       "cash": 0.605461
+    },
+    {
+      "ts": "2026-11-13T23:55:30.466673+00:00",
+      "label": "13 Nov 2026, 23:55 GMT",
+      "equity": 0.671693,
+      "cash": 0.671693
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-13T20:27:50.529824+00:00",
-      "london": "13 Nov 2026, 20:27 GMT",
-      "hhmm": "20:27",
-      "agent": "EXECUTOR",
-      "action": "SELL trail 2.5% $FOOD",
-      "symbol": null,
-      "reason": "SELL trail 2.5% $FOOD",
-      "line": "20:27 EXECUTOR: SELL trail 2.5% $FOOD",
-      "tag": "EXECUTOR",
-      "message": "20:27 EXECUTOR: SELL trail 2.5% $FOOD"
-    },
     {
       "ts": "2026-11-13T20:27:58.617085+00:00",
       "london": "13 Nov 2026, 20:27 GMT",
@@ -30508,6 +30482,18 @@
       "line": "23:52 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.67",
       "tag": "LOGGER",
       "message": "23:52 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.67"
+    },
+    {
+      "ts": "2026-11-13T23:55:06.452708+00:00",
+      "london": "13 Nov 2026, 23:55 GMT",
+      "hhmm": "23:55",
+      "agent": "EXECUTOR",
+      "action": "SELL trail 2.5% $inuhao",
+      "symbol": null,
+      "reason": "SELL trail 2.5% $inuhao",
+      "line": "23:55 EXECUTOR: SELL trail 2.5% $inuhao",
+      "tag": "EXECUTOR",
+      "message": "23:55 EXECUTOR: SELL trail 2.5% $inuhao"
     }
   ],
   "agents": {
@@ -30580,8 +30566,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "1/6",
+      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "0/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -30609,8 +30595,8 @@
     }
   },
   "ticks": 11165,
-  "last_updated": "2026-11-13T23:54:50.443465+00:00",
-  "last_updated_london": "13 Nov 2026, 23:54 GMT",
+  "last_updated": "2026-11-13T23:55:30.466559+00:00",
+  "last_updated_london": "13 Nov 2026, 23:55 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -72958,43 +72944,37 @@
       "pnl": -0.005616422276348038,
       "pnl_pct": -0.0801748324648718,
       "id": "f3023"
+    },
+    {
+      "ts": "2026-11-13T23:55:06.452650+00:00",
+      "london": "13 Nov 2026, 23:55 GMT",
+      "side": "sell",
+      "symbol": "inuhao",
+      "name": "inuhao",
+      "asset_class": "crypto",
+      "qty": 156.9116209369172,
+      "price": 0.00042636237865854653,
+      "value": 0.0669012119418322,
+      "pnl": -0.0020418811775861356,
+      "pnl_pct": -0.029907120647821465,
+      "id": "f3024"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-13T23:54:50.443465+00:00",
-  "checked_at_london": "13 Nov 2026, 23:54 GMT",
+  "checked_at": "2026-11-13T23:55:30.466559+00:00",
+  "checked_at_london": "13 Nov 2026, 23:55 GMT",
   "near_misses": [
-    {
-      "symbol": "PIRATE",
-      "mint": "6mXFCoZ515w37YfmwXGJMPfQfiK5tr9WkihW3oN9pump",
-      "link": "https://axiom.trade/meme/6mXFCoZ515w37YfmwXGJMPfQfiK5tr9WkihW3oN9pump?chain=sol",
-      "reason": "5m volume $1,014 under $5k",
-      "gates": 1,
-      "chg_m5": 7.56,
-      "vol_m5": 1014.0,
-      "score": 19.41
-    },
     {
       "symbol": "PEACEFROG",
       "mint": "m7SihqeaWimE1zpBzjHBwKJbbhuaczX5fHvGoNupump",
       "link": "https://axiom.trade/meme/m7SihqeaWimE1zpBzjHBwKJbbhuaczX5fHvGoNupump?chain=sol",
-      "reason": "5m volume $3,253 under $5k",
+      "reason": "5m volume $3,838 under $5k",
       "gates": 1,
-      "chg_m5": 8.52,
-      "vol_m5": 3253.0,
-      "score": 11.04
-    },
-    {
-      "symbol": "Leonida",
-      "mint": "BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump",
-      "link": "https://axiom.trade/meme/BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump?chain=sol",
-      "reason": "5m volume $711 under $5k",
-      "gates": 1,
-      "chg_m5": 2.68,
-      "vol_m5": 711.0,
-      "score": 7.12
+      "chg_m5": 10.04,
+      "vol_m5": 3838.0,
+      "score": 14.57
     },
     {
       "symbol": "Speed",
@@ -73007,6 +72987,16 @@
       "score": 6.88
     },
     {
+      "symbol": "PIRATE",
+      "mint": "6mXFCoZ515w37YfmwXGJMPfQfiK5tr9WkihW3oN9pump",
+      "link": "https://axiom.trade/meme/6mXFCoZ515w37YfmwXGJMPfQfiK5tr9WkihW3oN9pump?chain=sol",
+      "reason": "5m volume $1,109 under $5k",
+      "gates": 1,
+      "chg_m5": 5.56,
+      "vol_m5": 1109.0,
+      "score": 6.76
+    },
+    {
       "symbol": "Punch",
       "mint": "NV2RYH954cTJ3ckFUpvfqaQXU4ARqqDH3562nFSpump",
       "link": "https://axiom.trade/meme/NV2RYH954cTJ3ckFUpvfqaQXU4ARqqDH3562nFSpump?chain=sol",
@@ -73017,14 +73007,24 @@
       "score": 4.08
     },
     {
-      "symbol": "Gato",
-      "mint": "55A3VxMBfzw6uSe64zms5iMPw9k6kx9WzzusbCU6pump",
-      "link": "https://axiom.trade/meme/55A3VxMBfzw6uSe64zms5iMPw9k6kx9WzzusbCU6pump?chain=sol",
-      "reason": "5m volume $58 under $5k",
+      "symbol": "Leonida",
+      "mint": "BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump",
+      "link": "https://axiom.trade/meme/BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump?chain=sol",
+      "reason": "5m volume $416 under $5k",
       "gates": 1,
-      "chg_m5": 1.32,
-      "vol_m5": 58.0,
-      "score": 1.65
+      "chg_m5": 1.95,
+      "vol_m5": 416.0,
+      "score": 3.05
+    },
+    {
+      "symbol": "https",
+      "mint": "7sGdNQSvUGpahh6qyXB3g5gsdK9FAzZM299KyCXspump",
+      "link": "https://axiom.trade/meme/7sGdNQSvUGpahh6qyXB3g5gsdK9FAzZM299KyCXspump?chain=sol",
+      "reason": "5m volume $0 under $5k",
+      "gates": 1,
+      "chg_m5": 2.02,
+      "vol_m5": 0.0,
+      "score": 1.52
     }
   ]
 }
