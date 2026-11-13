@@ -2,24 +2,24 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 12.13,
-  "equity": 98.45,
-  "equity_multiple": 0.9845,
-  "profit": -1.55,
-  "goal_pct": -0.00025835483333333303,
-  "progress": 0.016408311833333335,
+  "cash": 11.74,
+  "equity": 98.34,
+  "equity_multiple": 0.9834,
+  "profit": -1.66,
+  "goal_pct": -0.00027629616666666597,
+  "progress": 0.0163903705,
   "win_rate": 0.0,
   "wins": 0,
-  "losses": 1,
-  "closed_trades": 1,
+  "losses": 2,
+  "closed_trades": 2,
   "biggest_win": 0.0,
   "biggest_trade": null,
-  "ticks": 267,
+  "ticks": 268,
   "open_count": 11,
-  "last_updated_london": "13 Nov 2026, 2:05 GMT",
-  "last_updated": "2026-11-13T02:05:39.288723+00:00",
+  "last_updated_london": "13 Nov 2026, 2:24 GMT",
+  "last_updated": "2026-11-13T02:24:01.595454+00:00",
   "session_status": "afterhours",
-  "session_asof_ny": "12 Nov 2026, 21:03 EST",
+  "session_asof_ny": "12 Nov 2026, 21:22 EST",
   "session_open": false,
   "screening_method": "SPUS official holdings (SP Funds public daily CSV)",
   "stock_note": "Stock universe is the current official holdings of SPUS (SP Funds S&P 500 Sharia Industry Exclusions ETF), downloaded from the fund's public daily holdings file. Holdings date on the file: 11/12/2026. 215 equity names after dropping cash and non-tickers. SPUS applies an AAOIFI-style industry exclusion screen at the fund level; this bot does not re-screen those names and does not issue a fatwa.",
@@ -31,8 +31,8 @@
     "Binance Vision public klines for crypto hourly history (Coinbase candles if Binance is blocked)"
   ],
   "scanned": 569,
-  "killed": 426,
-  "traded": 0,
+  "killed": 427,
+  "traded": 1,
   "why_they_died": [
     {
       "reason": "not on Shariah screen",
@@ -40,7 +40,7 @@
     },
     {
       "reason": "score < 0.6",
-      "count": 80
+      "count": 81
     },
     {
       "reason": "impermissible sector",
@@ -61,22 +61,22 @@
   ],
   "totals": {
     "scanned": 569,
-    "killed": 426,
-    "traded": 0,
+    "killed": 427,
+    "traded": 1,
     "filter_killed": 346,
-    "analyst_killed": 80,
+    "analyst_killed": 81,
     "passed_filter": 223,
-    "passed_analyst": 143,
-    "exits": 0
+    "passed_analyst": 142,
+    "exits": 1
   },
   "last_tick": {
     "scanned": 569,
-    "passed": 143,
+    "passed": 142,
     "rejected": 0,
-    "proposals": 143,
-    "fills": 0,
-    "exits": 0,
-    "killed": 426
+    "proposals": 142,
+    "fills": 1,
+    "exits": 1,
+    "killed": 427
   },
   "equity_curve": [
     {
@@ -1150,10 +1150,164 @@
     {
       "label": "13 Nov 2026, 2:05 GMT",
       "value": 98.45
+    },
+    {
+      "label": "13 Nov 2026, 2:24 GMT",
+      "value": 98.34
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "13 Nov 2026, 2:24 GMT",
+      "hhmm": "02:24",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "02:24 LOGGER: tick complete - scanned 569, killed 427, traded 1; equity $98.34",
+      "message": "02:24 LOGGER: tick complete - scanned 569, killed 427, traded 1; equity $98.34",
+      "symbol": null,
+      "action": "tick complete"
+    },
+    {
+      "ts": "13 Nov 2026, 2:24 GMT",
+      "hhmm": "02:24",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "02:24 RISK: stop set $ADA - Fast mode −5% hard at 0.1644; trail arms +3% (0.1782); take profit +5% (0.1817)",
+      "message": "02:24 RISK: stop set $ADA - Fast mode −5% hard at 0.1644; trail arms +3% (0.1782); take profit +5% (0.1817)",
+      "symbol": "ADA",
+      "action": "stop set"
+    },
+    {
+      "ts": "13 Nov 2026, 2:24 GMT",
+      "hhmm": "02:24",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "02:24 EXECUTOR: bought $ADA - 8% of stack @ 0.1731 (score 0.75, fee $0.01)",
+      "message": "02:24 EXECUTOR: bought $ADA - 8% of stack @ 0.1731 (score 0.75, fee $0.01)",
+      "symbol": "ADA",
+      "action": "bought"
+    },
+    {
+      "ts": "13 Nov 2026, 2:24 GMT",
+      "hhmm": "02:24",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "02:24 EXECUTOR: skipped $ACN - already held — no averaging down",
+      "message": "02:24 EXECUTOR: skipped $ACN - already held — no averaging down",
+      "symbol": "ACN",
+      "action": "skipped"
+    },
+    {
+      "ts": "13 Nov 2026, 2:24 GMT",
+      "hhmm": "02:24",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "02:24 EXECUTOR: skipped $SHW - already held — no averaging down",
+      "message": "02:24 EXECUTOR: skipped $SHW - already held — no averaging down",
+      "symbol": "SHW",
+      "action": "skipped"
+    },
+    {
+      "ts": "13 Nov 2026, 2:24 GMT",
+      "hhmm": "02:24",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "02:24 EXECUTOR: skipped $TXN - already held — no averaging down",
+      "message": "02:24 EXECUTOR: skipped $TXN - already held — no averaging down",
+      "symbol": "TXN",
+      "action": "skipped"
+    },
+    {
+      "ts": "13 Nov 2026, 2:24 GMT",
+      "hhmm": "02:24",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "02:24 EXECUTOR: skipped $ADSK - already held — no averaging down",
+      "message": "02:24 EXECUTOR: skipped $ADSK - already held — no averaging down",
+      "symbol": "ADSK",
+      "action": "skipped"
+    },
+    {
+      "ts": "13 Nov 2026, 2:24 GMT",
+      "hhmm": "02:24",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "02:24 EXECUTOR: skipped $COO - already held — no averaging down",
+      "message": "02:24 EXECUTOR: skipped $COO - already held — no averaging down",
+      "symbol": "COO",
+      "action": "skipped"
+    },
+    {
+      "ts": "13 Nov 2026, 2:24 GMT",
+      "hhmm": "02:24",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "02:24 EXECUTOR: skipped $AOS - already held — no averaging down",
+      "message": "02:24 EXECUTOR: skipped $AOS - already held — no averaging down",
+      "symbol": "AOS",
+      "action": "skipped"
+    },
+    {
+      "ts": "13 Nov 2026, 2:24 GMT",
+      "hhmm": "02:24",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "02:24 EXECUTOR: skipped $OTIS - already held — no averaging down",
+      "message": "02:24 EXECUTOR: skipped $OTIS - already held — no averaging down",
+      "symbol": "OTIS",
+      "action": "skipped"
+    },
+    {
+      "ts": "13 Nov 2026, 2:24 GMT",
+      "hhmm": "02:24",
+      "tag": "ANALYST",
+      "agent": "ANALYST",
+      "line": "02:24 ANALYST: summary - scored 223 names — 81 killed with score < 0.6, 142 passed",
+      "message": "02:24 ANALYST: summary - scored 223 names — 81 killed with score < 0.6, 142 passed",
+      "symbol": null,
+      "action": "summary"
+    },
+    {
+      "ts": "13 Nov 2026, 2:24 GMT",
+      "hhmm": "02:24",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "02:24 RISK: stopped $BTC - hard stop hit (-5.1% <= -5%)",
+      "message": "02:24 RISK: stopped $BTC - hard stop hit (-5.1% <= -5%)",
+      "symbol": "BTC",
+      "action": "stopped"
+    },
+    {
+      "ts": "13 Nov 2026, 2:24 GMT",
+      "hhmm": "02:24",
+      "tag": "FILTER",
+      "agent": "FILTER",
+      "line": "02:24 FILTER: summary - killed 346 of 569 — 217 not on Shariah screen, 71 impermissible sector, 36 not on utility crypto screen, 11 meme token, 11 yield or lending token; 223 survivors",
+      "message": "02:24 FILTER: summary - killed 346 of 569 — 217 not on Shariah screen, 71 impermissible sector, 36 not on utility crypto screen, 11 meme token, 11 yield or lending token; 223 survivors",
+      "symbol": null,
+      "action": "summary"
+    },
+    {
+      "ts": "13 Nov 2026, 2:22 GMT",
+      "hhmm": "02:22",
+      "tag": "SCOUT",
+      "agent": "SCOUT",
+      "line": "02:22 SCOUT: scanned - 569 names — 503 stocks (S&P 500 ∪ SPUS) + 66 coins (CoinGecko top 50 ∪ utility list ∪ reject list); SPUS holdings as-of 11/12/2026",
+      "message": "02:22 SCOUT: scanned - 569 names — 503 stocks (S&P 500 ∪ SPUS) + 66 coins (CoinGecko top 50 ∪ utility list ∪ reject list); SPUS holdings as-of 11/12/2026",
+      "symbol": null,
+      "action": "scanned"
+    },
+    {
+      "ts": "13 Nov 2026, 2:22 GMT",
+      "hhmm": "02:22",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "02:22 LOGGER: tick started - paper cash $12.13, equity $98.45, US session afterhours (12 Nov 2026, 21:22 EST)",
+      "message": "02:22 LOGGER: tick started - paper cash $12.13, equity $98.45, US session afterhours (12 Nov 2026, 21:22 EST)",
+      "symbol": null,
+      "action": "tick started"
+    },
     {
       "ts": "13 Nov 2026, 2:05 GMT",
       "hhmm": "02:05",
@@ -1367,6 +1521,26 @@
     {
       "ts": "13 Nov 2026, 1:56 GMT",
       "hhmm": "01:56",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "01:56 RISK: blocked $EFX - already at max 8 stock positions",
+      "message": "01:56 RISK: blocked $EFX - already at max 8 stock positions",
+      "symbol": "EFX",
+      "action": "blocked"
+    },
+    {
+      "ts": "13 Nov 2026, 1:56 GMT",
+      "hhmm": "01:56",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "01:56 RISK: blocked $ALGN - already at max 8 stock positions",
+      "message": "01:56 RISK: blocked $ALGN - already at max 8 stock positions",
+      "symbol": "ALGN",
+      "action": "blocked"
+    },
+    {
+      "ts": "13 Nov 2026, 1:56 GMT",
+      "hhmm": "01:56",
       "tag": "EXECUTOR",
       "agent": "EXECUTOR",
       "line": "01:56 EXECUTOR: skipped $OTIS - already held — no averaging down",
@@ -1377,182 +1551,12 @@
     {
       "ts": "13 Nov 2026, 1:56 GMT",
       "hhmm": "01:56",
-      "tag": "ANALYST",
-      "agent": "ANALYST",
-      "line": "01:56 ANALYST: summary - scored 223 names — 76 killed with score < 0.6, 147 passed",
-      "message": "01:56 ANALYST: summary - scored 223 names — 76 killed with score < 0.6, 147 passed",
-      "symbol": null,
-      "action": "summary"
-    },
-    {
-      "ts": "13 Nov 2026, 1:56 GMT",
-      "hhmm": "01:56",
-      "tag": "FILTER",
-      "agent": "FILTER",
-      "line": "01:56 FILTER: summary - killed 346 of 569 — 217 not on Shariah screen, 71 impermissible sector, 36 not on utility crypto screen, 11 meme token, 11 yield or lending token; 223 survivors",
-      "message": "01:56 FILTER: summary - killed 346 of 569 — 217 not on Shariah screen, 71 impermissible sector, 36 not on utility crypto screen, 11 meme token, 11 yield or lending token; 223 survivors",
-      "symbol": null,
-      "action": "summary"
-    },
-    {
-      "ts": "13 Nov 2026, 1:54 GMT",
-      "hhmm": "01:54",
-      "tag": "SCOUT",
-      "agent": "SCOUT",
-      "line": "01:54 SCOUT: scanned - 569 names — 503 stocks (S&P 500 ∪ SPUS) + 66 coins (CoinGecko top 50 ∪ utility list ∪ reject list); SPUS holdings as-of 11/12/2026",
-      "message": "01:54 SCOUT: scanned - 569 names — 503 stocks (S&P 500 ∪ SPUS) + 66 coins (CoinGecko top 50 ∪ utility list ∪ reject list); SPUS holdings as-of 11/12/2026",
-      "symbol": null,
-      "action": "scanned"
-    },
-    {
-      "ts": "13 Nov 2026, 1:54 GMT",
-      "hhmm": "01:54",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "01:54 LOGGER: tick started - paper cash $12.13, equity $98.39, US session afterhours (12 Nov 2026, 20:54 EST)",
-      "message": "01:54 LOGGER: tick started - paper cash $12.13, equity $98.39, US session afterhours (12 Nov 2026, 20:54 EST)",
-      "symbol": null,
-      "action": "tick started"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "01:47 LOGGER: tick complete - scanned 569, killed 420, traded 0; equity $98.39",
-      "message": "01:47 LOGGER: tick complete - scanned 569, killed 420, traded 0; equity $98.39",
-      "symbol": null,
-      "action": "tick complete"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "01:47 EXECUTOR: skipped $LINK - already held — no averaging down",
-      "message": "01:47 EXECUTOR: skipped $LINK - already held — no averaging down",
-      "symbol": "LINK",
-      "action": "skipped"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "01:47 EXECUTOR: skipped $ACN - already held — no averaging down",
-      "message": "01:47 EXECUTOR: skipped $ACN - already held — no averaging down",
-      "symbol": "ACN",
-      "action": "skipped"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "01:47 EXECUTOR: skipped $SHW - already held — no averaging down",
-      "message": "01:47 EXECUTOR: skipped $SHW - already held — no averaging down",
-      "symbol": "SHW",
-      "action": "skipped"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "01:47 EXECUTOR: skipped $AOS - already held — no averaging down",
-      "message": "01:47 EXECUTOR: skipped $AOS - already held — no averaging down",
-      "symbol": "AOS",
-      "action": "skipped"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "01:47 EXECUTOR: skipped $ADSK - already held — no averaging down",
-      "message": "01:47 EXECUTOR: skipped $ADSK - already held — no averaging down",
-      "symbol": "ADSK",
-      "action": "skipped"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "01:47 EXECUTOR: skipped $COO - already held — no averaging down",
-      "message": "01:47 EXECUTOR: skipped $COO - already held — no averaging down",
-      "symbol": "COO",
-      "action": "skipped"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "01:47 EXECUTOR: skipped $TXN - already held — no averaging down",
-      "message": "01:47 EXECUTOR: skipped $TXN - already held — no averaging down",
-      "symbol": "TXN",
-      "action": "skipped"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
       "tag": "RISK",
       "agent": "RISK",
-      "line": "01:47 RISK: blocked $EFX - already at max 8 stock positions",
-      "message": "01:47 RISK: blocked $EFX - already at max 8 stock positions",
-      "symbol": "EFX",
-      "action": "blocked"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "01:47 RISK: blocked $ALGN - already at max 8 stock positions",
-      "message": "01:47 RISK: blocked $ALGN - already at max 8 stock positions",
-      "symbol": "ALGN",
-      "action": "blocked"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "01:47 EXECUTOR: skipped $OTIS - already held — no averaging down",
-      "message": "01:47 EXECUTOR: skipped $OTIS - already held — no averaging down",
-      "symbol": "OTIS",
-      "action": "skipped"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "01:47 RISK: blocked $BBY - already at max 8 stock positions",
-      "message": "01:47 RISK: blocked $BBY - already at max 8 stock positions",
+      "line": "01:56 RISK: blocked $BBY - already at max 8 stock positions",
+      "message": "01:56 RISK: blocked $BBY - already at max 8 stock positions",
       "symbol": "BBY",
       "action": "blocked"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
-      "tag": "ANALYST",
-      "agent": "ANALYST",
-      "line": "01:47 ANALYST: summary - scored 223 names — 74 killed with score < 0.6, 149 passed",
-      "message": "01:47 ANALYST: summary - scored 223 names — 74 killed with score < 0.6, 149 passed",
-      "symbol": null,
-      "action": "summary"
-    },
-    {
-      "ts": "13 Nov 2026, 1:47 GMT",
-      "hhmm": "01:47",
-      "tag": "ANALYST",
-      "agent": "ANALYST",
-      "line": "01:47 ANALYST: passed $EFX - score 0.99 (momentum 1.00, trend 1.00, RSI 0.95, volume 1.00)",
-      "message": "01:47 ANALYST: passed $EFX - score 0.99 (momentum 1.00, trend 1.00, RSI 0.95, volume 1.00)",
-      "symbol": "EFX",
-      "action": "passed"
     }
   ],
   "agents": [
@@ -1598,8 +1602,8 @@
       "strategy": "Analyst",
       "blurb": "Scores survivors 0–1 on momentum, trend, RSI and volume; kills scores below 0.55.",
       "color": "#FF6B4A",
-      "activity": "Scored 223; killed 80 below 0.6; 143 passed",
-      "badge": "143 ≥ 0.55",
+      "activity": "Scored 223; killed 81 below 0.6; 142 passed",
+      "badge": "142 ≥ 0.55",
       "badge_label": "passed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -1616,15 +1620,15 @@
       "strategy": "Executor",
       "blurb": "Buys passing names, with size capped at 8% of equity. Never averages down.",
       "color": "#5B8DEF",
-      "activity": "No fills this tick (no passing names, session closed, or size cap)",
-      "badge": "0 fills",
+      "activity": "Bought ADA — 8% of stack each",
+      "badge": "1 fills",
       "badge_label": "fills",
-      "realized_pnl": -0.18,
-      "unrealized_pnl": -1.37,
-      "pnl": -1.55,
-      "trades": 1,
+      "realized_pnl": -0.6,
+      "unrealized_pnl": -1.05,
+      "pnl": -1.66,
+      "trades": 2,
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "win_rate": 0.0,
       "open_positions": 11
     },
@@ -1634,12 +1638,12 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop −5%. Trail arms at +3% and sells 1% off the peak. Take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "Fast mode · no new stops or exits this tick",
-      "badge": "0 exits",
+      "activity": "Fast mode · stops set on 1 fills (−5% hard); 1 exits",
+      "badge": "1 stops",
       "badge_label": "stops",
-      "realized_pnl": -0.18,
+      "realized_pnl": -0.6,
       "unrealized_pnl": 0.0,
-      "pnl": -0.18,
+      "pnl": -0.6,
       "trades": 0,
       "wins": 0,
       "losses": 0,
@@ -1652,7 +1656,7 @@
       "strategy": "Logger",
       "blurb": "Records every rejection, buy and stop with its reason.",
       "color": "#3DDC97",
-      "activity": "Recorded 2000 lines; this tick 426 kills, 0 buys, 0 stops",
+      "activity": "Recorded 2000 lines; this tick 427 kills, 1 buys, 1 stops",
       "badge": "2000 lines",
       "badge_label": "log",
       "realized_pnl": 0.0,
@@ -1850,38 +1854,16 @@
       "qty": 0.9161821281824002,
       "qty_display": "0.91618213",
       "entry_price": 8.614304999999998,
-      "current_price": 8.35,
-      "change_pct": -2.1604,
+      "current_price": 8.31,
+      "change_pct": -3.4797,
       "price_source": "binance_vision+coingecko",
-      "unrealized_pnl": -0.25,
-      "unrealized_pct": -0.030682103779701153,
+      "unrealized_pnl": -0.29,
+      "unrealized_pct": -0.035325542803510857,
       "hard_stop": 8.183589749999998,
       "trail_activate": 8.872734149999998,
       "opened_at": "11 Nov 2026, 21:59 GMT",
       "reason": "score 0.82 (momentum 0.63, trend 1.00, RSI 0.99, volume 0.58)",
       "score": 0.8238103415220652,
-      "tag": "",
-      "venue": "",
-      "link": ""
-    },
-    {
-      "symbol": "BTC",
-      "name": "Bitcoin",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.00010609436361699031,
-      "qty_display": "0.00010609",
-      "entry_price": 74389.17599999999,
-      "current_price": 70827.0,
-      "change_pct": -3.8016,
-      "price_source": "binance_vision+coingecko",
-      "unrealized_pnl": -0.39,
-      "unrealized_pct": -0.04788567627096707,
-      "hard_stop": 70669.71719999998,
-      "trail_activate": 76620.85127999999,
-      "opened_at": "11 Nov 2026, 21:59 GMT",
-      "reason": "score 0.77 (momentum 0.57, trend 1.00, RSI 0.87, volume 0.57)",
-      "score": 0.7728121711950215,
       "tag": "",
       "venue": "",
       "link": ""
@@ -1894,11 +1876,11 @@
       "qty": 0.7824334580995974,
       "qty_display": "0.78243346",
       "entry_price": 10.075035,
-      "current_price": 10.07,
-      "change_pct": -0.5567,
+      "current_price": 10.04,
+      "change_pct": -1.2241,
       "price_source": "binance_vision+coingecko",
-      "unrealized_pnl": -0.01,
-      "unrealized_pct": -0.0004997501249375258,
+      "unrealized_pnl": -0.04,
+      "unrealized_pct": -0.0034774072745157314,
       "hard_stop": 9.571283249999999,
       "trail_activate": 10.37728605,
       "opened_at": "12 Nov 2026, 20:47 GMT",
@@ -1907,9 +1889,71 @@
       "tag": "",
       "venue": "",
       "link": ""
+    },
+    {
+      "symbol": "ADA",
+      "name": "Cardano",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 45.42135765383481,
+      "qty_display": "45.4214",
+      "entry_price": 0.173056485,
+      "current_price": 0.17297,
+      "change_pct": -0.6048,
+      "price_source": "binance_vision+coingecko",
+      "unrealized_pnl": -0.01,
+      "unrealized_pct": -0.0004997501249375258,
+      "hard_stop": 0.16440366075,
+      "trail_activate": 0.17824817955000002,
+      "opened_at": "13 Nov 2026, 2:24 GMT",
+      "reason": "score 0.75 (momentum 0.53, trend 1.00, RSI 0.69, volume 0.79)",
+      "score": 0.7502289808721287,
+      "tag": "",
+      "venue": "",
+      "link": ""
     }
   ],
   "fills": [
+    {
+      "id": "f0015",
+      "time": "13 Nov 2026, 2:24 GMT",
+      "ts": "2026-11-13T02:24:01.594854+00:00",
+      "side": "buy",
+      "symbol": "ADA",
+      "name": "Cardano",
+      "asset_class": "crypto",
+      "qty": 45.42135765383481,
+      "qty_display": "45.4214",
+      "price": 0.173056485,
+      "value": 7.86,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f0014",
+      "time": "13 Nov 2026, 2:24 GMT",
+      "ts": "2026-11-13T02:24:01.567821+00:00",
+      "side": "sell",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "asset_class": "crypto",
+      "qty": 0.00010609436361699031,
+      "qty_display": "0.00010609",
+      "price": 70560.702,
+      "value": 7.49,
+      "pnl": -0.42,
+      "pnl_pct": -0.05336064515053116,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f0013",
       "time": "12 Nov 2026, 20:47 GMT",
@@ -2172,19 +2216,50 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 1,
+    "closed_trades": 2,
     "win_rate": 0.0,
-    "realized_pnl": -0.18,
-    "unrealized_pnl": -1.37,
-    "fills": 13
+    "realized_pnl": -0.6,
+    "unrealized_pnl": -1.05,
+    "fills": 15
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 151923,
-    "killed": 113279,
-    "traded": 12
+    "scanned": 152492,
+    "killed": 113706,
+    "traded": 13
   },
-  "events": [],
+  "events": [
+    {
+      "hhmm": "02:24",
+      "ts": "2026-11-13T02:24:01.567837+00:00",
+      "london": "13 Nov 2026, 2:24 GMT",
+      "agent": "RISK",
+      "action": "stopped",
+      "symbol": "BTC",
+      "reason": "hard stop hit (-5.1% <= -5%)",
+      "line": "02:24 RISK: stopped $BTC - hard stop hit (-5.1% <= -5%)"
+    },
+    {
+      "hhmm": "02:24",
+      "ts": "2026-11-13T02:24:01.594876+00:00",
+      "london": "13 Nov 2026, 2:24 GMT",
+      "agent": "EXECUTOR",
+      "action": "bought",
+      "symbol": "ADA",
+      "reason": "8% of stack @ 0.1731 (score 0.75, fee $0.01)",
+      "line": "02:24 EXECUTOR: bought $ADA - 8% of stack @ 0.1731 (score 0.75, fee $0.01)"
+    },
+    {
+      "hhmm": "02:24",
+      "ts": "2026-11-13T02:24:01.594892+00:00",
+      "london": "13 Nov 2026, 2:24 GMT",
+      "agent": "RISK",
+      "action": "stop set",
+      "symbol": "ADA",
+      "reason": "Fast mode −5% hard at 0.1644; trail arms +3% (0.1782); take profit +5% (0.1817)",
+      "line": "02:24 RISK: stop set $ADA - Fast mode −5% hard at 0.1644; trail arms +3% (0.1782); take profit +5% (0.1817)"
+    }
+  ],
   "role_colors": {
     "Scout": "#4DA3FF",
     "Filter": "#FF8A3D",
@@ -2253,22 +2328,22 @@
     {
       "symbol": "AVAX",
       "name": "Avalanche",
-      "price": 8.35,
-      "change_pct": -2.1604,
-      "source": "binance_vision+coingecko"
-    },
-    {
-      "symbol": "BTC",
-      "name": "Bitcoin",
-      "price": 70827.0,
-      "change_pct": -3.8016,
+      "price": 8.31,
+      "change_pct": -3.4797,
       "source": "binance_vision+coingecko"
     },
     {
       "symbol": "LINK",
       "name": "Chainlink",
-      "price": 10.07,
-      "change_pct": -0.5567,
+      "price": 10.04,
+      "change_pct": -1.2241,
+      "source": "binance_vision+coingecko"
+    },
+    {
+      "symbol": "ADA",
+      "name": "Cardano",
+      "price": 0.17297,
+      "change_pct": -0.6048,
       "source": "binance_vision+coingecko"
     }
   ],
@@ -2286,11 +2361,11 @@
     {
       "id": "main",
       "name": "Halal book",
-      "equity": 98.45,
-      "return_pct": -0.015501289999999984,
-      "closed_trades": 1,
+      "equity": 98.34,
+      "return_pct": -0.016577769999999957,
+      "closed_trades": 2,
       "win_rate": 0.0,
-      "realized_pnl": -0.18
+      "realized_pnl": -0.6
     },
     {
       "id": "copy",
@@ -2304,8 +2379,8 @@
     {
       "id": "meme",
       "name": "Crypto + Meme",
-      "equity": 98.52,
-      "return_pct": -0.014776729999999958,
+      "equity": 98.5,
+      "return_pct": -0.015019340000000056,
       "closed_trades": 7,
       "win_rate": 0.0,
       "realized_pnl": -1.31
@@ -2313,29 +2388,29 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 94.78,
-      "return_pct": -0.05215806999999998,
-      "closed_trades": 46,
-      "win_rate": 0.08695652173913043,
-      "realized_pnl": -5.01
+      "equity": 94.46,
+      "return_pct": -0.05544031000000004,
+      "closed_trades": 48,
+      "win_rate": 0.08333333333333333,
+      "realized_pnl": -5.33
     },
     {
       "id": "wallets",
       "name": "Wallet copy",
-      "equity": 8078.06,
-      "return_pct": 79.7806032,
-      "closed_trades": 47,
-      "win_rate": 0.2553191489361702,
-      "realized_pnl": 7709.62
+      "equity": 8242.38,
+      "return_pct": 81.42375985000001,
+      "closed_trades": 48,
+      "win_rate": 0.2708333333333333,
+      "realized_pnl": 8229.89
     },
     {
       "id": "axiom",
       "name": "Axiom scalper",
-      "equity": 22.24,
-      "return_pct": -0.77756399,
-      "closed_trades": 540,
-      "win_rate": 0.36666666666666664,
-      "realized_pnl": -77.65
+      "equity": 22.34,
+      "return_pct": -0.77663026,
+      "closed_trades": 542,
+      "win_rate": 0.36531365313653136,
+      "realized_pnl": -77.74
     }
   ],
   "btc_chart": [],
@@ -2352,7 +2427,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-13T02:05:39.288723+00:00",
-  "checked_at_london": "13 Nov 2026, 2:05 GMT",
+  "checked_at": "2026-11-13T02:24:01.595454+00:00",
+  "checked_at_london": "13 Nov 2026, 2:24 GMT",
   "who_we_copy": null
 }
