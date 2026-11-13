@@ -2,16 +2,16 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 2.12,
-  "equity": 3.67,
-  "equity_multiple": 0.0367,
-  "profit": -96.33,
-  "goal_pct": -0.016054597666666667,
-  "progress": 0.000612069,
-  "win_rate": 0.3373015873015873,
+  "cash": 2.1,
+  "equity": 3.63,
+  "equity_multiple": 0.0363,
+  "profit": -96.37,
+  "goal_pct": -0.016061737833333336,
+  "progress": 0.0006049288333333333,
+  "win_rate": 0.33696729435084244,
   "wins": 340,
-  "losses": 668,
-  "closed_trades": 1008,
+  "losses": 669,
+  "closed_trades": 1009,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -21,8 +21,8 @@
   },
   "ticks": 8265,
   "open_count": 4,
-  "last_updated_london": "13 Nov 2026, 15:45 GMT",
-  "last_updated": "2026-11-13T15:45:01.311337+00:00",
+  "last_updated_london": "13 Nov 2026, 15:46 GMT",
+  "last_updated": "2026-11-13T15:46:06.087927+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "13 Nov 2026, 10:00 GMT",
-      "value": 11.05
-    },
     {
       "label": "13 Nov 2026, 10:01 GMT",
       "value": 11.06
@@ -2058,10 +2054,34 @@
     {
       "label": "13 Nov 2026, 15:45 GMT",
       "value": 3.67
+    },
+    {
+      "label": "13 Nov 2026, 15:46 GMT",
+      "value": 3.63
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "13 Nov 2026, 15:46 GMT",
+      "hhmm": "15:46",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "15:46 EXECUTOR: BUY 10% $JENSLA @ 0.000198789 — 5m +16.0% vol $23,218 buys 277/sells 110",
+      "message": "15:46 EXECUTOR: BUY 10% $JENSLA @ 0.000198789 — 5m +16.0% vol $23,218 buys 277/sells 110",
+      "symbol": null,
+      "action": "BUY 10% $JENSLA @ 0.000198789 — 5m +16.0% vol $23,218 buys 277/sells 110"
+    },
+    {
+      "ts": "13 Nov 2026, 15:46 GMT",
+      "hhmm": "15:46",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "15:46 RISK: SELL stop −5% $JENSLA",
+      "message": "15:46 RISK: SELL stop −5% $JENSLA",
+      "symbol": null,
+      "action": "SELL stop −5% $JENSLA"
+    },
     {
       "ts": "13 Nov 2026, 15:45 GMT",
       "hhmm": "15:45",
@@ -2441,26 +2461,6 @@
       "message": "15:35 EXECUTOR: SELL take profit +8% $JENSEN",
       "symbol": null,
       "action": "SELL take profit +8% $JENSEN"
-    },
-    {
-      "ts": "13 Nov 2026, 15:34 GMT",
-      "hhmm": "15:34",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "15:34 EXECUTOR: BUY 10% $FOOD @ 0.00132607 — 5m +8.4% vol $42,663 buys 431/sells 178",
-      "message": "15:34 EXECUTOR: BUY 10% $FOOD @ 0.00132607 — 5m +8.4% vol $42,663 buys 431/sells 178",
-      "symbol": null,
-      "action": "BUY 10% $FOOD @ 0.00132607 — 5m +8.4% vol $42,663 buys 431/sells 178"
-    },
-    {
-      "ts": "13 Nov 2026, 15:34 GMT",
-      "hhmm": "15:34",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "15:34 EXECUTOR: SELL trail 2.5% $FOOD",
-      "message": "15:34 EXECUTOR: SELL trail 2.5% $FOOD",
-      "symbol": null,
-      "action": "SELL trail 2.5% $FOOD"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "56 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
+      "badge": "76 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "56 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "76 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2575,28 +2575,6 @@
   ],
   "positions": [
     {
-      "symbol": "JENSLA",
-      "name": "JENSLA",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 1780.4255189494352,
-      "qty_display": "1,780.43",
-      "entry_price": 0.00022974299999999997,
-      "current_price": 0.0002297,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": -0.01,
-      "unrealized_pct": -0.00018716565901888416,
-      "hard_stop": 0.00021825584999999995,
-      "trail_activate": 0.00023893272,
-      "opened_at": "13 Nov 2026, 15:43 GMT",
-      "reason": "BUY 10% $JENSLA @ 0.000229743 — 5m +32.7% vol $24,702 buys 322/sells 137",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/9RZH5NbSW27KewwfAcbhQXixMRUaMc7zNppCRnfUpump?chain=sol"
-    },
-    {
       "symbol": "GATO",
       "name": "GATO",
       "asset_class": "crypto",
@@ -2604,11 +2582,11 @@
       "qty": 64.01463876273249,
       "qty_display": "64.0146",
       "entry_price": 0.006328624324532657,
-      "current_price": 0.006343008782796418,
+      "current_price": 0.006688,
       "change_pct": null,
-      "price_source": "geckoterminal",
-      "unrealized_pnl": -0.01,
-      "unrealized_pct": 0.002272920231336739,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.01,
+      "unrealized_pct": 0.056785749483381,
       "hard_stop": 0.006012193108306025,
       "trail_activate": 0.006581769297513964,
       "opened_at": "13 Nov 2026, 15:43 GMT",
@@ -2626,11 +2604,11 @@
       "qty": 622.5671301029103,
       "qty_display": "622.57",
       "entry_price": 0.0005869199999999999,
-      "current_price": 0.00063,
+      "current_price": 0.0006309,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.02,
-      "unrealized_pct": 0.07340012267429996,
+      "unrealized_pct": 0.07493355142097746,
       "hard_stop": 0.0005575739999999999,
       "trail_activate": 0.0006103967999999999,
       "opened_at": "13 Nov 2026, 15:44 GMT",
@@ -2648,11 +2626,11 @@
       "qty": 46.37476590658454,
       "qty_display": "46.3748",
       "entry_price": 0.007942701009897734,
-      "current_price": 0.007903185084475357,
+      "current_price": 0.007939654124903937,
       "change_pct": null,
       "price_source": "geckoterminal",
       "unrealized_pnl": -0.01,
-      "unrealized_pct": -0.00497512437810943,
+      "unrealized_pct": -0.0003836081693116,
       "hard_stop": 0.007545565959402847,
       "trail_activate": 0.008260409050293644,
       "opened_at": "13 Nov 2026, 15:44 GMT",
@@ -2661,9 +2639,71 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz?chain=sol"
+    },
+    {
+      "symbol": "JENSLA",
+      "name": "JENSLA",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 1831.3080703660667,
+      "qty_display": "1,831.31",
+      "entry_price": 0.000198789,
+      "current_price": 0.0001978,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": -0.01,
+      "unrealized_pct": -0.00497512437810943,
+      "hard_stop": 0.00018884955,
+      "trail_activate": 0.00020674056,
+      "opened_at": "13 Nov 2026, 15:46 GMT",
+      "reason": "BUY 10% $JENSLA @ 0.000198789 — 5m +16.0% vol $23,218 buys 277/sells 110",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/9RZH5NbSW27KewwfAcbhQXixMRUaMc7zNppCRnfUpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f2022",
+      "time": "13 Nov 2026, 15:46 GMT",
+      "ts": "2026-11-13T15:46:06.087868+00:00",
+      "side": "buy",
+      "symbol": "JENSLA",
+      "name": "JENSLA",
+      "asset_class": "crypto",
+      "qty": 1831.3080703660667,
+      "qty_display": "1,831.31",
+      "price": 0.000198789,
+      "value": 0.36,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f2021",
+      "time": "13 Nov 2026, 15:46 GMT",
+      "ts": "2026-11-13T15:46:06.087182+00:00",
+      "side": "sell",
+      "symbol": "JENSLA",
+      "name": "JENSLA",
+      "asset_class": "crypto",
+      "qty": 1780.4255189494352,
+      "qty_display": "1,780.43",
+      "price": 0.000196811,
+      "value": 0.35,
+      "pnl": -0.07,
+      "pnl_pct": -0.1603062880033449,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f2020",
       "time": "13 Nov 2026, 15:44 GMT",
@@ -43066,11 +43106,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 1008,
-    "win_rate": 0.3373015873015873,
-    "realized_pnl": -96.31,
-    "unrealized_pnl": -0.01,
-    "fills": 2020
+    "closed_trades": 1009,
+    "win_rate": 0.33696729435084244,
+    "realized_pnl": -96.38,
+    "unrealized_pnl": 0.01,
+    "fills": 2022
   },
   "ok": true,
   "totals_cumulative": {
@@ -43210,32 +43250,32 @@
   },
   "ticker": [
     {
-      "symbol": "JENSLA",
-      "name": "JENSLA",
-      "price": 0.0002297,
+      "symbol": "GATO",
+      "name": "GATO",
+      "price": 0.006688,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
-      "symbol": "GATO",
-      "name": "GATO",
-      "price": 0.006343008782796418,
-      "change_pct": null,
-      "source": "geckoterminal"
-    },
-    {
       "symbol": "JENSEN",
       "name": "JENSEN",
-      "price": 0.00063,
+      "price": 0.0006309,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
       "symbol": "GTA6",
       "name": "GTA6",
-      "price": 0.007903185084475357,
+      "price": 0.007939654124903937,
       "change_pct": null,
       "source": "geckoterminal"
+    },
+    {
+      "symbol": "JENSLA",
+      "name": "JENSLA",
+      "price": 0.0001978,
+      "change_pct": null,
+      "source": "dexscreener"
     }
   ],
   "desk": "axiom",
@@ -43294,8 +43334,8 @@
     {
       "id": "wallets",
       "name": "Wallet copy",
-      "equity": 28122.22,
-      "return_pct": 280.22216106,
+      "equity": 28066.03,
+      "return_pct": 279.66025548,
       "closed_trades": 65,
       "win_rate": 0.27692307692307694,
       "realized_pnl": 28149.3
@@ -43303,11 +43343,11 @@
     {
       "id": "axiom",
       "name": "Axiom scalper",
-      "equity": 3.67,
-      "return_pct": -0.96327586,
-      "closed_trades": 1008,
-      "win_rate": 0.3373015873015873,
-      "realized_pnl": -96.31
+      "equity": 3.63,
+      "return_pct": -0.96370427,
+      "closed_trades": 1009,
+      "win_rate": 0.33696729435084244,
+      "realized_pnl": -96.38
     }
   ],
   "btc_chart": [],
@@ -43323,21 +43363,31 @@
       "symbol": "Max",
       "mint": "5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump",
       "link": "https://axiom.trade/meme/5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump?chain=sol",
-      "reason": "buy/sell 19/23 under 1.05",
+      "reason": "buy/sell 24/24 under 1.05",
       "gates": 1,
-      "chg_m5": 6.387,
-      "vol_m5": 7474.0,
-      "score": 13.81
+      "chg_m5": 6.582,
+      "vol_m5": 7632.0,
+      "score": 17.52
     },
     {
       "symbol": "Huang",
       "mint": "4FP2GRQS3WYPsZSE2dwaVzqkajrBpHcXyVSTVt83pump",
       "link": "https://axiom.trade/meme/4FP2GRQS3WYPsZSE2dwaVzqkajrBpHcXyVSTVt83pump?chain=sol",
-      "reason": "5m volume $520 under $5k",
+      "reason": "5m volume $1,016 under $5k",
       "gates": 1,
-      "chg_m5": 7.37,
-      "vol_m5": 520.0,
-      "score": 3.69
+      "chg_m5": 9.98,
+      "vol_m5": 1016.0,
+      "score": 6.75
+    },
+    {
+      "symbol": "DICKBUTT",
+      "mint": "2jj2M89bjusTbdu7CAPW4tWFgmF95dXDACzaPkcNpump",
+      "link": "https://axiom.trade/meme/2jj2M89bjusTbdu7CAPW4tWFgmF95dXDACzaPkcNpump?chain=sol",
+      "reason": "5m volume $1,043 under $5k",
+      "gates": 1,
+      "chg_m5": 8.09,
+      "vol_m5": 1043.0,
+      "score": 3.11
     },
     {
       "symbol": "mihao",
@@ -43345,9 +43395,9 @@
       "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
       "reason": "5m +0.5% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 0.464,
-      "vol_m5": 21956.0,
-      "score": 2.4
+      "chg_m5": 0.534,
+      "vol_m5": 22551.0,
+      "score": 2.82
     },
     {
       "symbol": "CLOUD",
@@ -43368,16 +43418,6 @@
       "chg_m5": 1.86,
       "vol_m5": 22.0,
       "score": 1.4
-    },
-    {
-      "symbol": "Dacity",
-      "mint": "nxPqZ4F7ux8Vph5NFu25rEP6Kx9Gr1U6Fmj36Rjpump",
-      "link": "https://axiom.trade/meme/nxPqZ4F7ux8Vph5NFu25rEP6Kx9Gr1U6Fmj36Rjpump?chain=sol",
-      "reason": "5m volume $2,275 under $5k",
-      "gates": 1,
-      "chg_m5": 1.735,
-      "vol_m5": 2275.0,
-      "score": 1.38
     }
   ],
   "helius_status": "",
@@ -43385,7 +43425,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-13T15:45:01.311337+00:00",
-  "checked_at_london": "13 Nov 2026, 15:45 GMT",
+  "checked_at": "2026-11-13T15:46:06.087927+00:00",
+  "checked_at_london": "13 Nov 2026, 15:46 GMT",
   "who_we_copy": null
 }
