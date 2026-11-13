@@ -1,0 +1,72 @@
+# Halal stock scanner. Separate from the 5-minute tick so its push only
+# touches stocks/state.json and web/stocks/data.json.
+
+name: Halal stock scanner
+
+on:
+  schedule:
+    # UTC. The script itself only trades 14:30–21:00 London on an NYSE day.
+    - cron: "*/5 13-21 * * 1-5"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/stocks.yml
+      - stocks_tick.py
+
+concurrency:
+  group: halal-stock-scanner
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Scan
+        run: python stocks_tick.py
+
+      - name: Commit this desk only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- stocks/state.json web/stocks/data.json
+          if git diff --cached --quiet; then
+            echo "No stock scanner change."
+            exit 0
+          fi
+          git commit -m "stocks: scanner checkpoint [skip ci]"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "stocks push ok"
+              exit 0
+            fi
+            echo "stocks push rejected, rebase attempt ${attempt}"
+            git checkout -- . || true
+            if ! git pull --rebase origin main; then
+              git rebase --abort || true
+              echo "stocks rebase failed"
+              exit 1
+            fi
+            sleep $((attempt * 2))
+          done
+          echo "stocks push failed after retries"
+          exit 1

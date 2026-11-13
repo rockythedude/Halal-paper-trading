@@ -224,6 +224,8 @@
         "equity desk"
         "positions died"
         "history history"
+        "scan scan"
+        "watchbox watchbox"
         "near near"
         "who who"
         "logger logger";
@@ -239,6 +241,8 @@
       min-width: 0;
     }
     .near { grid-area: near; }
+    .scan { grid-area: scan; }
+    .watchbox { grid-area: watchbox; }
     .promo { grid-area: promo; display: flex; flex-direction: column; gap: 14px; }
     .promo[hidden] { display: none; }
     .promo-title { font-size: 28px; letter-spacing: -0.03em; line-height: 1.1; }
@@ -523,6 +527,8 @@
           "died"
           "positions"
           "history"
+          "scan"
+          "watchbox"
           "near"
           "who";
         padding: 10px 10px 12px;
@@ -590,6 +596,7 @@
       <a class="pill" id="nav-btc" href="btc/">BTC</a>
       <a class="pill" id="nav-wallets" href="wallets/">Wallets</a>
       <a class="pill" id="nav-axiom" href="scalp/">Scalp</a>
+      <a class="pill" id="nav-stocks" href="stocks/">Stocks</a>
     </nav>
 
     <main>
@@ -664,6 +671,14 @@
         <div id="died"></div>
       </section>
 
+      <section class="panel scan" id="scan-panel" hidden>
+        <h2>Today's signals <span class="meta" id="scan-meta"></span></h2>
+        <div class="table-wrap" id="scan"></div>
+      </section>
+      <section class="panel watchbox" id="trend-panel" hidden>
+        <h2>Watching <span class="meta" id="trend-meta"></span></h2>
+        <div class="table-wrap" id="trend"></div>
+      </section>
       <section class="panel near" id="near-panel" hidden>
         <h2>Closest candidates <span class="meta" id="near-meta"></span></h2>
         <div id="near"></div>
@@ -692,7 +707,7 @@
 
     <footer class="target">
       <div class="tgt-head">
-        <span>Night target <b>$6,000</b></span>
+        <span id="tgt-name">Night target <b id="tgt-amt">$6,000</b></span>
         <span id="tgt-label">—</span>
       </div>
       <div class="track"><i id="tgt-fill"></i></div>
@@ -859,6 +874,7 @@
       const mode = data.risk_rules && data.risk_rules.mode;
       if (mode === "scalp") return ["20% × 4"];
       if (mode === "wallets") return ["10% / 5%"];
+      if (mode === "stocks") return ["50% × 2"];
       return ["size ≤ 8%"];
     }
     if (a.role === "Risk") {
@@ -983,6 +999,7 @@
   function deskId() {
     const path = window.location.pathname || "";
     if (path.includes("/scalp")) return "axiom";
+    if (path.includes("/stocks")) return "stocks";
     if (path.includes("/wallets")) return "wallets";
     if (path.includes("/btc")) return "btc";
     if (path.includes("/meme")) return "meme";
@@ -1000,6 +1017,7 @@
       btc: desk === "btc" ? "./" : prefix + "btc/",
       wallets: desk === "wallets" ? "./" : prefix + "wallets/",
       axiom: desk === "axiom" ? "./" : prefix + "scalp/",
+      stocks: desk === "stocks" ? "./" : prefix + "stocks/",
     };
     document.getElementById("nav-main").href = links.main;
     document.getElementById("nav-copy").href = links.copy;
@@ -1007,6 +1025,8 @@
     document.getElementById("nav-btc").href = links.btc;
     document.getElementById("nav-wallets").href = links.wallets;
     document.getElementById("nav-axiom").href = links.axiom;
+    const navStocks = document.getElementById("nav-stocks");
+    if (navStocks) navStocks.href = links.stocks;
     document.getElementById("nav-" + desk).classList.add("on");
     const titles = {
       main: ["Halal Paper Trader", "Halal stocks + crypto · strict RM · paper"],
@@ -1015,6 +1035,7 @@
       btc: ["BTC Scalper", "BTC spot only · no leverage · paper"],
       wallets: ["Wallet Copy", "Solana meme wallets · not halal-screened · paper"],
       axiom: ["Axiom Scalper", "Not halal-screened, speculative, paper only"],
+      stocks: ["Halal Stock Scanner", "SPUS screen · long only · paper · flat before the close"],
     };
     const pair = titles[desk];
     document.querySelector(".brand h1").textContent = pair[0];
@@ -1164,6 +1185,16 @@
       sandbox.hidden = false;
       sandbox.textContent = data.sandbox_note || "Not halal-screened, speculative, paper only.";
       fine.textContent = "Paper money only. Not halal-screened, speculative, paper only.";
+    } else if (deskId() === "stocks") {
+      sandbox.hidden = false;
+      sandbox.textContent = data.sandbox_note || "Paper money only. Long stocks from the SPUS screen. Not a fatwa.";
+      lag.hidden = false;
+      lag.textContent = data.lag_note || "Scans 14:30–21:00 London on NYSE days. Flat 10 minutes before the close.";
+      fine.textContent = "Paper money only. A name from the suggested list is dropped when it is not in the current SPUS holdings. SPUS and HLAL are the halal ETFs. Not a fatwa.";
+      const dropped = data.screen_dropped || [];
+      if (dropped.length) {
+        lag.textContent += " Dropped: " + dropped.map(d => d.symbol).join(", ") + ".";
+      }
     }
   }
 
@@ -1235,6 +1266,23 @@
       `<span>Win rate <b>${winStr}</b></span>` +
       `<span>Realised <b class="${clsPnL(realized)}">${fmtMoney(realized)}</b></span>` +
       `<span>Unrealised <b class="${clsPnL(unrealized)}">${fmtMoney(unrealized)}</b></span>`;
+    if (deskId() === "stocks" && (data.closed_log || []).length) {
+      const rows = data.closed_log.map(t => `<tr>
+        <td class="sym">${escapeHtml(t.symbol)}</td>
+        <td class="mono">${escapeHtml(t.entry_london || "")}</td>
+        <td class="mono">${escapeHtml(t.exit_london || "")}</td>
+        <td class="num">${fmtMoney(t.entry_price)}</td>
+        <td class="num">${fmtMoney(t.exit_price)}</td>
+        <td class="num ${clsPnL(t.pnl)}">${fmtMoney(t.pnl)}</td>
+        <td>${escapeHtml(t.reason || "")}</td>
+      </tr>`).join("");
+      document.getElementById("hist").innerHTML = `<table>
+        <thead><tr>
+          <th>Ticker</th><th>Entry (UK)</th><th>Exit (UK)</th>
+          <th class="num">Entry</th><th class="num">Exit</th><th class="num">P&amp;L</th><th>Reason</th>
+        </tr></thead><tbody>${rows}</tbody></table>`;
+      return;
+    }
     if (!fills.length) {
       document.getElementById("hist").innerHTML = '<div class="empty">No paper fills yet.</div>';
       return;
@@ -1293,7 +1341,10 @@
       if (wrap) wrap.hidden = true;
     }
     const target = data.target || 6000;
-    document.querySelector(".tgt-head b").textContent = fmtMoney(target, 0);
+    const tgtAmt = document.getElementById("tgt-amt") || document.querySelector(".tgt-head b");
+    if (tgtAmt) tgtAmt.textContent = fmtMoney(target, 0);
+    const tgtName = document.getElementById("tgt-name");
+    if (tgtName && deskId() === "stocks") tgtName.firstChild.textContent = "Paper book ";
     const eq = Number(data.equity) || 0;
     const prog = target ? (eq / target) * 100 : 0;
     document.getElementById("tgt-fill").style.width = Math.max(0.4, Math.min(100, prog)).toFixed(2) + "%";
@@ -1605,6 +1656,50 @@
     if (!r.ok) throw new Error("HTTP " + r.status);
     return r.json();
   }
+  function trendCell(flag) {
+    const text = flag || "—";
+    const cls = text === "up" ? "up" : text === "down" ? "down" : "flat";
+    return `<td class="${cls}">${escapeHtml(text)}</td>`;
+  }
+  function renderStocks(data) {
+    const scan = document.getElementById("scan-panel");
+    const trend = document.getElementById("trend-panel");
+    if (!scan || !trend) return;
+    if (deskId() !== "stocks") {
+      scan.hidden = true;
+      trend.hidden = true;
+      return;
+    }
+    scan.hidden = false;
+    trend.hidden = false;
+    const signals = data.signals_today || [];
+    document.getElementById("scan-meta").textContent = signals.length ? `${signals.length} today` : "none yet";
+    document.getElementById("scan").innerHTML = signals.length
+      ? `<table><thead><tr><th>Time (UK)</th><th>Ticker</th><th class="num">Close</th><th class="num">Vol ×</th><th>Result</th></tr></thead><tbody>`
+        + signals.map(s => `<tr>
+            <td class="mono">${escapeHtml(s.time || "")}</td>
+            <td class="sym">${escapeHtml(s.symbol || "")}</td>
+            <td class="num">${fmtMoney(s.close)}</td>
+            <td class="num">${s.volume_ratio == null ? "—" : Number(s.volume_ratio).toFixed(2)}</td>
+            <td>${escapeHtml(s.result || "")}</td>
+          </tr>`).join("")
+        + `</tbody></table>`
+      : '<div class="empty">No LONG signal on a closed 5m bar yet today.</div>';
+    const rows = data.watching || [];
+    const up = rows.filter(r => r.trend_1m === "up" && r.trend_5m === "up" && r.trend_15m === "up").length;
+    document.getElementById("trend-meta").textContent = rows.length ? `${rows.length} names · ${up} up on all three` : "";
+    document.getElementById("trend").innerHTML = rows.length
+      ? `<table><thead><tr><th>Ticker</th><th class="num">Last</th><th>1m</th><th>5m</th><th>15m</th><th class="num">Vol ×</th></tr></thead><tbody>`
+        + rows.map(r => `<tr>
+            <td class="sym">${escapeHtml(r.symbol || "")}<span class="name">${escapeHtml(r.name || "")}</span></td>
+            <td class="num">${r.last == null ? "—" : fmtMoney(r.last)}</td>
+            ${trendCell(r.trend_1m)}${trendCell(r.trend_5m)}${trendCell(r.trend_15m)}
+            <td class="num">${r.volume_ratio == null ? "—" : Number(r.volume_ratio).toFixed(2)}</td>
+          </tr>`).join("")
+        + `</tbody></table>`
+      : '<div class="empty">The trend box fills on the next scan during NYSE hours.</div>';
+  }
+
   async function pollState() {
     try {
       const bust = String(Date.now());
@@ -1616,6 +1711,9 @@
       }
       if (deskId() === "axiom") {
         jobs.push(readJson("https://raw.githubusercontent.com/rockythedude/Halal-paper-trading/main/web/scalp/data.json?t=" + bust));
+      }
+      if (deskId() === "stocks") {
+        jobs.push(readJson("https://raw.githubusercontent.com/rockythedude/Halal-paper-trading/main/web/stocks/data.json?t=" + bust));
       }
       const settled = await Promise.allSettled(jobs);
       let data = null;
@@ -1639,6 +1737,7 @@
       renderHistory(data);
       renderWho(data);
       renderWatch(data);
+      renderStocks(data);
       if (deskId() === "wallets") {
         renderLeaderTape(data);
         renderPromo(data);
@@ -1676,6 +1775,7 @@
 
   function pollEvery() {
     if (deskId() === "axiom") return 8000;
+    if (deskId() === "stocks") return 15000;
     return deskId() === "wallets" ? 2000 : 30000;
   }
   async function pollLoop() {

@@ -1,0 +1,676 @@
+{
+  "ok": true,
+  "paper_money": true,
+  "desk": "stocks",
+  "sandbox_note": "Paper money only. Long stocks from the SPUS screen. Not a fatwa.",
+  "lag_note": "NYSE open. London 13 Nov 2026, 19:30 GMT.",
+  "screening_method": "SPUS official holdings, plus the SPUS and HLAL ETFs",
+  "screen_dropped": [
+    {
+      "symbol": "META",
+      "reason": "not in the current SPUS holdings"
+    },
+    {
+      "symbol": "AMZN",
+      "reason": "not in the current SPUS holdings"
+    },
+    {
+      "symbol": "ASML",
+      "reason": "not in the current SPUS holdings"
+    },
+    {
+      "symbol": "COST",
+      "reason": "not in the current SPUS holdings"
+    }
+  ],
+  "starting_capital": 200.0,
+  "target": 200.0,
+  "cash": 200.0,
+  "equity": 200.0,
+  "profit": 0.0,
+  "equity_multiple": 1.0,
+  "wins": 0,
+  "losses": 0,
+  "win_rate": null,
+  "checked_at": "2026-11-13T19:30:18.848245+00:00",
+  "checked_at_london": "13 Nov 2026, 19:30 GMT",
+  "last_updated": "2026-11-13T19:30:18.848250+00:00",
+  "last_updated_london": "13 Nov 2026, 19:30 GMT",
+  "scanned": 36,
+  "totals": {
+    "scanned": 36,
+    "traded": 0
+  },
+  "totals_cumulative": {
+    "traded": 0
+  },
+  "risk_rules": {
+    "mode": "stocks",
+    "max_position_pct": 0.5,
+    "stop_loss_pct": 0.0125,
+    "take_profit_pct": 0.025,
+    "chips": [
+      "50% \u00d7 2",
+      "\u22121.25%",
+      "TP +2.5%",
+      "flat 15:50 NY"
+    ],
+    "label": "Long only. Closed 5m bar: 1m, 5m and 15m each close above EMA20 with EMA20 above EMA50, volume at least 2\u00d7 the prior 20-bar average, green close above the prior high. Stop 1.25% under the fill, take profit 2.5% over the fill, flat 10 minutes before the NYSE close. $200 start, 50% of equity, max 2, $0.01 per share and 0.05% slippage each side. No short, no leverage."
+  },
+  "role_colors": {
+    "Scout": "#4DA3FF",
+    "Filter": "#FF8A3D",
+    "Analyst": "#C084FC",
+    "Executor": "#00E676",
+    "Risk": "#FF4D4D",
+    "Logger": "#22D3EE"
+  },
+  "agents": [
+    {
+      "role": "Scout",
+      "name": "Scout"
+    },
+    {
+      "role": "Filter",
+      "name": "Filter"
+    },
+    {
+      "role": "Analyst",
+      "name": "Analyst"
+    },
+    {
+      "role": "Executor",
+      "name": "Executor"
+    },
+    {
+      "role": "Risk",
+      "name": "Risk"
+    },
+    {
+      "role": "Logger",
+      "name": "Logger"
+    }
+  ],
+  "why_they_died": [
+    {
+      "reason": "5m trend is not up",
+      "count": 19
+    },
+    {
+      "reason": "volume under 2x",
+      "count": 15
+    },
+    {
+      "reason": "close was not above the prior high",
+      "count": 1
+    },
+    {
+      "reason": "not enough 5m bars",
+      "count": 1
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-11-13T19:30:18.848214+00:00",
+      "london": "13 Nov 2026, 19:30 GMT",
+      "hhmm": "19:30",
+      "agent": "LOGGER",
+      "tag": "LOGGER",
+      "action": "equity 200.00 \u00b7 open 0",
+      "symbol": null,
+      "line": "19:30 LOGGER: equity 200.00 \u00b7 open 0"
+    },
+    {
+      "ts": "2026-11-13T19:30:18.834199+00:00",
+      "london": "13 Nov 2026, 19:30 GMT",
+      "hhmm": "19:30",
+      "agent": "SCOUT",
+      "tag": "SCOUT",
+      "action": "Yahoo 1m bars for 36 of 36 names",
+      "symbol": null,
+      "line": "19:30 SCOUT: Yahoo 1m bars for 36 of 36 names"
+    }
+  ],
+  "positions": [],
+  "fills": [],
+  "closed_log": [],
+  "signals_today": [],
+  "watching": [
+    {
+      "symbol": "NVDA",
+      "last": 162.67010498046875,
+      "trend_1m": "up",
+      "trend_5m": "up",
+      "trend_15m": "down",
+      "volume_ratio": 0.04,
+      "name": "NVIDIA Corp"
+    },
+    {
+      "symbol": "TSLA",
+      "last": 391.75,
+      "trend_1m": "up",
+      "trend_5m": "up",
+      "trend_15m": "up",
+      "volume_ratio": 0.87,
+      "name": "Tesla Inc"
+    },
+    {
+      "symbol": "AMD",
+      "last": 534.114013671875,
+      "trend_1m": "up",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 0.96,
+      "name": "Advanced Micro Devices Inc"
+    },
+    {
+      "symbol": "AAPL",
+      "last": 357.9764099121094,
+      "trend_1m": "down",
+      "trend_5m": "down",
+      "trend_15m": "up",
+      "volume_ratio": 0.75,
+      "name": "Apple Inc"
+    },
+    {
+      "symbol": "MSFT",
+      "last": 524.8900146484375,
+      "trend_1m": "up",
+      "trend_5m": "up",
+      "trend_15m": "down",
+      "volume_ratio": 2.16,
+      "name": "Microsoft Corp"
+    },
+    {
+      "symbol": "AVGO",
+      "last": 346.4599914550781,
+      "trend_1m": "down",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 0.1,
+      "name": "Broadcom Inc"
+    },
+    {
+      "symbol": "CRM",
+      "last": 217.97999572753906,
+      "trend_1m": "down",
+      "trend_5m": "up",
+      "trend_15m": "up",
+      "volume_ratio": 0.53,
+      "name": "Salesforce Inc"
+    },
+    {
+      "symbol": "ADBE",
+      "last": 242.82000732421875,
+      "trend_1m": "down",
+      "trend_5m": "up",
+      "trend_15m": "up",
+      "volume_ratio": 0.53,
+      "name": "Adobe Inc"
+    },
+    {
+      "symbol": "ORCL",
+      "last": 125.44999694824219,
+      "trend_1m": "down",
+      "trend_5m": "up",
+      "trend_15m": "down",
+      "volume_ratio": 0.7,
+      "name": "Oracle Corp"
+    },
+    {
+      "symbol": "QCOM",
+      "last": 173.02000427246094,
+      "trend_1m": "up",
+      "trend_5m": "up",
+      "trend_15m": "down",
+      "volume_ratio": 0.75,
+      "name": "QUALCOMM Inc"
+    },
+    {
+      "symbol": "TXN",
+      "last": 303.3500061035156,
+      "trend_1m": "up",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 0.83,
+      "name": "Texas Instruments Inc"
+    },
+    {
+      "symbol": "AMAT",
+      "last": 369.989990234375,
+      "trend_1m": "up",
+      "trend_5m": "up",
+      "trend_15m": "down",
+      "volume_ratio": 0.36,
+      "name": "Applied Materials Inc"
+    },
+    {
+      "symbol": "LRCX",
+      "last": 225.78500366210938,
+      "trend_1m": "up",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 1.02,
+      "name": "Lam Research Corp"
+    },
+    {
+      "symbol": "MU",
+      "last": 771.0900268554688,
+      "trend_1m": "up",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 1.21,
+      "name": "Micron Technology Inc"
+    },
+    {
+      "symbol": "JNJ",
+      "last": 286.2550048828125,
+      "trend_1m": "down",
+      "trend_5m": "down",
+      "trend_15m": "up",
+      "volume_ratio": 0.84,
+      "name": "Johnson & Johnson"
+    },
+    {
+      "symbol": "PG",
+      "last": 169.92999267578125,
+      "trend_1m": "down",
+      "trend_5m": "down",
+      "trend_15m": "up",
+      "volume_ratio": 0.82,
+      "name": "Procter & Gamble Co/The"
+    },
+    {
+      "symbol": "HD",
+      "last": 348.6099853515625,
+      "trend_1m": "down",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 0.76,
+      "name": "Home Depot Inc/The"
+    },
+    {
+      "symbol": "LLY",
+      "last": 1446.93994140625,
+      "trend_1m": "down",
+      "trend_5m": "up",
+      "trend_15m": "up",
+      "volume_ratio": 0.59,
+      "name": "Eli Lilly & Co"
+    },
+    {
+      "symbol": "ABBV",
+      "last": 295.6000061035156,
+      "trend_1m": "up",
+      "trend_5m": "up",
+      "trend_15m": "up",
+      "volume_ratio": 1.15,
+      "name": "AbbVie Inc"
+    },
+    {
+      "symbol": "NKE",
+      "last": 38.05390167236328,
+      "trend_1m": "up",
+      "trend_5m": "up",
+      "trend_15m": "down",
+      "volume_ratio": 1.11,
+      "name": "NIKE Inc"
+    },
+    {
+      "symbol": "SPUS",
+      "last": 56.81999969482422,
+      "trend_1m": "up",
+      "trend_5m": "down",
+      "trend_15m": "\u2014",
+      "volume_ratio": 0.24,
+      "name": "SP Funds S&P 500 Sharia ETF"
+    },
+    {
+      "symbol": "HLAL",
+      "last": 69.01000213623047,
+      "trend_1m": "down",
+      "trend_5m": "\u2014",
+      "trend_15m": "\u2014",
+      "volume_ratio": null,
+      "name": "Wahed FTSE USA Shariah ETF"
+    },
+    {
+      "symbol": "GOOGL",
+      "last": 295.3949890136719,
+      "trend_1m": "down",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 1.16,
+      "name": "Alphabet Inc"
+    },
+    {
+      "symbol": "XOM",
+      "last": 169.80140686035156,
+      "trend_1m": "down",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 0.83,
+      "name": "ExxonMobil Holdings Corp"
+    },
+    {
+      "symbol": "CSCO",
+      "last": 95.93000030517578,
+      "trend_1m": "up",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 0.95,
+      "name": "Cisco Systems Inc"
+    },
+    {
+      "symbol": "MRK",
+      "last": 147.22999572753906,
+      "trend_1m": "up",
+      "trend_5m": "up",
+      "trend_15m": "down",
+      "volume_ratio": 1.08,
+      "name": "Merck & Co Inc"
+    },
+    {
+      "symbol": "TMO",
+      "last": 699.7249755859375,
+      "trend_1m": "up",
+      "trend_5m": "up",
+      "trend_15m": "down",
+      "volume_ratio": 0.18,
+      "name": "Thermo Fisher Scientific Inc"
+    },
+    {
+      "symbol": "PANW",
+      "last": 322.80999755859375,
+      "trend_1m": "up",
+      "trend_5m": "up",
+      "trend_15m": "down",
+      "volume_ratio": 1.19,
+      "name": "Palo Alto Networks Inc"
+    },
+    {
+      "symbol": "LIN",
+      "last": 525.2899780273438,
+      "trend_1m": "down",
+      "trend_5m": "down",
+      "trend_15m": "up",
+      "volume_ratio": 0.87,
+      "name": "Linde PLC"
+    },
+    {
+      "symbol": "IBM",
+      "last": 247.14500427246094,
+      "trend_1m": "down",
+      "trend_5m": "up",
+      "trend_15m": "up",
+      "volume_ratio": 0.65,
+      "name": "International Business Machines Corp"
+    },
+    {
+      "symbol": "CRWD",
+      "last": 227.58999633789062,
+      "trend_1m": "up",
+      "trend_5m": "up",
+      "trend_15m": "down",
+      "volume_ratio": 1.0,
+      "name": "Crowdstrike Holdings Inc"
+    },
+    {
+      "symbol": "GEV",
+      "last": 796.2249755859375,
+      "trend_1m": "up",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 0.89,
+      "name": "GE Vernova Inc"
+    },
+    {
+      "symbol": "ANET",
+      "last": 197.2050018310547,
+      "trend_1m": "down",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 0.94,
+      "name": "Arista Networks Inc"
+    },
+    {
+      "symbol": "GILD",
+      "last": 168.35000610351562,
+      "trend_1m": "down",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 1.06,
+      "name": "Gilead Sciences Inc"
+    },
+    {
+      "symbol": "KLAC",
+      "last": 151.98500061035156,
+      "trend_1m": "up",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 0.81,
+      "name": "KLA CORP"
+    },
+    {
+      "symbol": "ADI",
+      "last": 398.95001220703125,
+      "trend_1m": "up",
+      "trend_5m": "down",
+      "trend_15m": "down",
+      "volume_ratio": 0.65,
+      "name": "Analog Devices Inc"
+    }
+  ],
+  "equity_curve": [
+    {
+      "label": "13 Nov 2026, 19:30 GMT",
+      "value": 200.0,
+      "ts": "2026-11-13T19:30:12.259200+00:00"
+    },
+    {
+      "label": "13 Nov 2026, 19:30 GMT",
+      "value": 200.0,
+      "ts": "2026-11-13T19:30:12.259148+00:00"
+    }
+  ],
+  "leaderboard": [
+    {
+      "id": "stocks",
+      "name": "Halal stock scanner",
+      "equity": 200.0,
+      "return_pct": 0.0,
+      "closed_trades": 0,
+      "win_rate": null,
+      "realized_pnl": 0
+    }
+  ],
+  "history_summary": {
+    "closed_trades": 0,
+    "win_rate": null,
+    "realized_pnl": 0,
+    "unrealized_pnl": 0
+  },
+  "ticker": [
+    {
+      "symbol": "NVDA",
+      "price": 162.67010498046875,
+      "change": null
+    },
+    {
+      "symbol": "TSLA",
+      "price": 391.75,
+      "change": null
+    },
+    {
+      "symbol": "AMD",
+      "price": 534.114013671875,
+      "change": null
+    },
+    {
+      "symbol": "AAPL",
+      "price": 357.9764099121094,
+      "change": null
+    },
+    {
+      "symbol": "MSFT",
+      "price": 524.8900146484375,
+      "change": null
+    },
+    {
+      "symbol": "AVGO",
+      "price": 346.4599914550781,
+      "change": null
+    },
+    {
+      "symbol": "CRM",
+      "price": 217.97999572753906,
+      "change": null
+    },
+    {
+      "symbol": "ADBE",
+      "price": 242.82000732421875,
+      "change": null
+    },
+    {
+      "symbol": "ORCL",
+      "price": 125.44999694824219,
+      "change": null
+    },
+    {
+      "symbol": "QCOM",
+      "price": 173.02000427246094,
+      "change": null
+    },
+    {
+      "symbol": "TXN",
+      "price": 303.3500061035156,
+      "change": null
+    },
+    {
+      "symbol": "AMAT",
+      "price": 369.989990234375,
+      "change": null
+    },
+    {
+      "symbol": "LRCX",
+      "price": 225.78500366210938,
+      "change": null
+    },
+    {
+      "symbol": "MU",
+      "price": 771.0900268554688,
+      "change": null
+    },
+    {
+      "symbol": "JNJ",
+      "price": 286.2550048828125,
+      "change": null
+    },
+    {
+      "symbol": "PG",
+      "price": 169.92999267578125,
+      "change": null
+    },
+    {
+      "symbol": "HD",
+      "price": 348.6099853515625,
+      "change": null
+    },
+    {
+      "symbol": "LLY",
+      "price": 1446.93994140625,
+      "change": null
+    },
+    {
+      "symbol": "ABBV",
+      "price": 295.6000061035156,
+      "change": null
+    },
+    {
+      "symbol": "NKE",
+      "price": 38.05390167236328,
+      "change": null
+    },
+    {
+      "symbol": "SPUS",
+      "price": 56.81999969482422,
+      "change": null
+    },
+    {
+      "symbol": "HLAL",
+      "price": 69.01000213623047,
+      "change": null
+    },
+    {
+      "symbol": "GOOGL",
+      "price": 295.3949890136719,
+      "change": null
+    },
+    {
+      "symbol": "XOM",
+      "price": 169.80140686035156,
+      "change": null
+    },
+    {
+      "symbol": "CSCO",
+      "price": 95.93000030517578,
+      "change": null
+    },
+    {
+      "symbol": "MRK",
+      "price": 147.22999572753906,
+      "change": null
+    },
+    {
+      "symbol": "TMO",
+      "price": 699.7249755859375,
+      "change": null
+    },
+    {
+      "symbol": "PANW",
+      "price": 322.80999755859375,
+      "change": null
+    },
+    {
+      "symbol": "LIN",
+      "price": 525.2899780273438,
+      "change": null
+    },
+    {
+      "symbol": "IBM",
+      "price": 247.14500427246094,
+      "change": null
+    },
+    {
+      "symbol": "CRWD",
+      "price": 227.58999633789062,
+      "change": null
+    },
+    {
+      "symbol": "GEV",
+      "price": 796.2249755859375,
+      "change": null
+    },
+    {
+      "symbol": "ANET",
+      "price": 197.2050018310547,
+      "change": null
+    },
+    {
+      "symbol": "GILD",
+      "price": 168.35000610351562,
+      "change": null
+    },
+    {
+      "symbol": "KLAC",
+      "price": 151.98500061035156,
+      "change": null
+    },
+    {
+      "symbol": "ADI",
+      "price": 398.95001220703125,
+      "change": null
+    }
+  ],
+  "screen_note": "Stock universe is the current official holdings of SPUS (SP Funds S&P 500 Sharia Industry Exclusions ETF), downloaded from the fund's public daily holdings file. Holdings date on the file: 11/13/2026. 215 equity names after dropping cash and non-tickers. SPUS applies an AAOIFI-style industry exclusion screen at the fund level; this bot does not re-screen those names and does not issue a fatwa. Scanner keeps a name from the suggested list only when that ticker is in those holdings. SPUS and HLAL stay in as the halal ETFs themselves. Holdings date 11/13/2026."
+}

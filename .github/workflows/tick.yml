@@ -76,12 +76,13 @@ jobs:
 
       - name: Regenerate static dashboards
         run: |
-          mkdir -p web/copy web/meme web/btc web/wallets web/scalp
+          mkdir -p web/copy web/meme web/btc web/wallets web/scalp web/stocks
           cp web/index.html web/copy/index.html
           cp web/index.html web/meme/index.html
           cp web/index.html web/btc/index.html
           cp web/index.html web/wallets/index.html
           cp web/index.html web/scalp/index.html
+          cp web/index.html web/stocks/index.html
           python export_page.py --desk main
           python export_page.py --state copy/state.json --out web/copy/data.json --desk copy
           python export_page.py --state meme/state.json --out web/meme/data.json --desk meme
@@ -95,17 +96,41 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # wallets/state.json and web/wallets/data.json belong to copy-live.yml.
-          git add -- state.json web/data.json copy/state.json web/copy/data.json meme/state.json web/meme/data.json btc/state.json web/btc/data.json web/wallets/replay.json scalp/state.json web/scalp/data.json
+          # Desk index copies are part of this commit so they are not left
+          # unstaged. stocks/ and wallets/ belong to their own workflows.
+          git add -- \
+            state.json web/data.json \
+            copy/state.json web/copy/data.json web/copy/index.html \
+            meme/state.json web/meme/data.json web/meme/index.html \
+            btc/state.json web/btc/data.json web/btc/index.html \
+            web/wallets/replay.json web/wallets/index.html \
+            scalp/state.json web/scalp/data.json web/scalp/index.html \
+            web/stocks/index.html
           if git diff --cached --quiet; then
             echo "No changes in state.json or web/data.json."
           else
             git commit -m "tick: update paper book [skip ci]"
-            if ! git push origin HEAD:main; then
-              git checkout -- wallets/state.json web/wallets/data.json || true
-              git pull --rebase origin main
-              git push origin HEAD:main
-            fi
           fi
+          # Drop unstaged edits (a wallet or stock file this job does not own)
+          # before rebase. Commit already happened, so this does not undo it.
+          git checkout -- . || true
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "tick push ok"
+              exit 0
+            fi
+            echo "tick push rejected, rebase attempt ${attempt}"
+            git checkout -- wallets/state.json web/wallets/data.json stocks/state.json web/stocks/data.json || true
+            git checkout -- . || true
+            if ! git pull --rebase origin main; then
+              git rebase --abort || true
+              echo "tick rebase failed"
+              exit 1
+            fi
+            sleep $((attempt * 2))
+          done
+          echo "tick push failed after retries"
+          exit 1
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
