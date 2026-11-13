@@ -7072,12 +7072,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-12T18:19:23.941466+00:00",
-      "label": "12 Nov 2026, 18:19 GMT",
-      "equity": 66.415959,
-      "cash": 53.090445
-    },
-    {
       "ts": "2026-11-12T18:20:30.757904+00:00",
       "label": "12 Nov 2026, 18:20 GMT",
       "equity": 66.34649,
@@ -10076,21 +10070,15 @@
       "label": "13 Nov 2026, 0:06 GMT",
       "equity": 25.40378,
       "cash": 22.955222
+    },
+    {
+      "ts": "2026-11-13T00:07:16.894178+00:00",
+      "label": "13 Nov 2026, 0:07 GMT",
+      "equity": 25.40378,
+      "cash": 22.955222
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-12T20:08:47.187198+00:00",
-      "london": "12 Nov 2026, 20:08 GMT",
-      "hhmm": "20:08",
-      "agent": "EXECUTOR",
-      "action": "SELL take profit +8% $Max",
-      "symbol": null,
-      "reason": "SELL take profit +8% $Max",
-      "line": "20:08 EXECUTOR: SELL take profit +8% $Max",
-      "tag": "EXECUTOR",
-      "message": "20:08 EXECUTOR: SELL take profit +8% $Max"
-    },
     {
       "ts": "2026-11-12T20:09:59.120768+00:00",
       "london": "12 Nov 2026, 20:09 GMT",
@@ -14878,6 +14866,18 @@
       "line": "00:04 RISK: SELL stop \u22125% $mihao",
       "tag": "RISK",
       "message": "00:04 RISK: SELL stop \u22125% $mihao"
+    },
+    {
+      "ts": "2026-11-13T00:07:16.894112+00:00",
+      "london": "13 Nov 2026, 0:07 GMT",
+      "hhmm": "00:07",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 1 open, equity $25.40",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 1 open, equity $25.40",
+      "line": "00:07 LOGGER: run complete \u2014 29 polls, 1 open, equity $25.40",
+      "tag": "LOGGER",
+      "message": "00:07 LOGGER: run complete \u2014 29 polls, 1 open, equity $25.40"
     }
   ],
   "agents": {
@@ -14886,8 +14886,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 40 pools",
-      "badge": "75 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 20 pools",
+      "badge": "55 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -14902,7 +14902,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "75 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "55 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -14978,9 +14978,9 @@
       "open_positions": 0
     }
   },
-  "ticks": 2784,
-  "last_updated": "2026-11-13T00:06:52.870001+00:00",
-  "last_updated_london": "13 Nov 2026, 0:06 GMT",
+  "ticks": 2813,
+  "last_updated": "2026-11-13T00:07:16.893956+00:00",
+  "last_updated_london": "13 Nov 2026, 0:07 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -15001,7 +15001,7 @@
     "traded": 470
   },
   "totals_cumulative": {
-    "scanned": 2784,
+    "scanned": 2813,
     "killed": 0,
     "traded": 470
   },
@@ -28157,28 +28157,38 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-13T00:06:52.870001+00:00",
-  "checked_at_london": "13 Nov 2026, 0:06 GMT",
+  "checked_at": "2026-11-13T00:07:16.893956+00:00",
+  "checked_at_london": "13 Nov 2026, 0:07 GMT",
   "near_misses": [
     {
       "symbol": "Christmax",
       "mint": "D7MyAD7k3AqJpg4uxjUcmL51EDHrEsJxkjUynsxcpump",
       "link": "https://axiom.trade/meme/D7MyAD7k3AqJpg4uxjUcmL51EDHrEsJxkjUynsxcpump?chain=sol",
-      "reason": "5m volume $1,971 under $5k",
+      "reason": "5m volume $2,394 under $5k",
       "gates": 1,
-      "chg_m5": 10.61,
-      "vol_m5": 1971.0,
-      "score": 13.25
+      "chg_m5": 12.72,
+      "vol_m5": 2394.0,
+      "score": 19.75
     },
     {
       "symbol": "DOGGLE",
       "mint": "E8qaeXz7CF2auJebXaQkLZyrFPfRQft3KrGgvRvwpump",
       "link": "https://axiom.trade/meme/E8qaeXz7CF2auJebXaQkLZyrFPfRQft3KrGgvRvwpump?chain=sol",
-      "reason": "5m volume $617 under $5k",
+      "reason": "5m volume $634 under $5k",
       "gates": 1,
-      "chg_m5": 3.33,
-      "vol_m5": 617.0,
-      "score": 5.55
+      "chg_m5": 3.88,
+      "vol_m5": 634.0,
+      "score": 4.97
+    },
+    {
+      "symbol": "NOBUSHIBA",
+      "mint": "8AAVuQpJcqpvCuutxyBTVvgBEXZJSkZoNv1sExpBpump",
+      "link": "https://axiom.trade/meme/8AAVuQpJcqpvCuutxyBTVvgBEXZJSkZoNv1sExpBpump?chain=sol",
+      "reason": "5m volume $1,324 under $5k",
+      "gates": 1,
+      "chg_m5": 2.9,
+      "vol_m5": 1324.0,
+      "score": 2.04
     },
     {
       "symbol": "Dacity",
@@ -28209,16 +28219,6 @@
       "chg_m5": -0.538,
       "vol_m5": 15067.0,
       "score": -0.47
-    },
-    {
-      "symbol": "mihao",
-      "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
-      "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
-      "reason": "5m -3.3% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -3.311,
-      "vol_m5": 34941.0,
-      "score": -8.43
     }
   ]
 }
