@@ -2,16 +2,16 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 15812.41,
+  "cash": 18549.07,
   "equity": 29107.45,
   "equity_multiple": 291.0745,
   "profit": 29007.45,
   "goal_pct": 4.834574970333333,
   "progress": 4.851241637,
-  "win_rate": 0.28125,
+  "win_rate": 0.27692307692307694,
   "wins": 18,
-  "losses": 46,
-  "closed_trades": 64,
+  "losses": 47,
+  "closed_trades": 65,
   "biggest_win": 23246.82,
   "biggest_trade": {
     "symbol": "TRUMPCARE",
@@ -20,9 +20,9 @@
     "pnl_pct": 58.38672167504063
   },
   "ticks": 3227,
-  "open_count": 7,
+  "open_count": 6,
   "last_updated_london": "13 Nov 2026, 13:58 GMT",
-  "last_updated": "2026-11-13T13:58:29.543554+00:00",
+  "last_updated": "2026-11-13T13:58:30.732829+00:00",
   "session_status": "afterhours",
   "session_asof_ny": "11 Nov 2026, 20:45 EST",
   "session_open": false,
@@ -738,6 +738,26 @@
   ],
   "activity": [
     {
+      "ts": "13 Nov 2026, 13:58 GMT",
+      "hhmm": "13:58",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "13:58 EXECUTOR: filled $FOOD sell 1.7s after the wallet trade (notify 1.1s, fetch 0.6s, quote 0.1s)",
+      "message": "13:58 EXECUTOR: filled $FOOD sell 1.7s after the wallet trade (notify 1.1s, fetch 0.6s, quote 0.1s)",
+      "symbol": null,
+      "action": "filled $FOOD sell 1.7s after the wallet trade (notify 1.1s, fetch 0.6s, quote 0.1s)"
+    },
+    {
+      "ts": "13 Nov 2026, 13:58 GMT",
+      "hhmm": "13:58",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "13:58 EXECUTOR: COPY SELL $FOOD after wallet 8pYL…EG",
+      "message": "13:58 EXECUTOR: COPY SELL $FOOD after wallet 8pYL…EG",
+      "symbol": null,
+      "action": "COPY SELL $FOOD after wallet 8pYL…EG"
+    },
+    {
       "ts": "13 Nov 2026, 13:38 GMT",
       "hhmm": "13:38",
       "tag": "FILTER",
@@ -1116,26 +1136,6 @@
       "message": "08:02 EXECUTOR: filled $WIT sell 1.4s after the wallet trade (notify 0.4s, fetch 0.7s, quote 0.2s)",
       "symbol": null,
       "action": "filled $WIT sell 1.4s after the wallet trade (notify 0.4s, fetch 0.7s, quote 0.2s)"
-    },
-    {
-      "ts": "13 Nov 2026, 8:02 GMT",
-      "hhmm": "08:02",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "08:02 EXECUTOR: COPY SELL $WIT after wallet G6fU…ZC",
-      "message": "08:02 EXECUTOR: COPY SELL $WIT after wallet G6fU…ZC",
-      "symbol": null,
-      "action": "COPY SELL $WIT after wallet G6fU…ZC"
-    },
-    {
-      "ts": "13 Nov 2026, 8:01 GMT",
-      "hhmm": "08:01",
-      "tag": "SCOUT",
-      "agent": "SCOUT",
-      "line": "08:01 SCOUT: no processed transaction yet for a live log (1.3s)",
-      "message": "08:01 SCOUT: no processed transaction yet for a live log (1.3s)",
-      "symbol": null,
-      "action": "no processed transaction yet for a live log (1.3s)"
     }
   ],
   "agents": [
@@ -1380,31 +1380,29 @@
       "tag": "",
       "venue": "dex",
       "link": ""
-    },
-    {
-      "symbol": "FOOD",
-      "name": "FOOD",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 2992647.7444628445,
-      "qty_display": "2,992,647.74",
-      "entry_price": 0.0009662,
-      "current_price": 0.000934,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": -125.28,
-      "unrealized_pct": -0.03332643345063124,
-      "hard_stop": 0.00072465,
-      "trail_activate": null,
-      "opened_at": "13 Nov 2026, 13:25 GMT",
-      "reason": "COPY BUY $FOOD after 8pYL…EG (30d +$1,971.3, WR 72%)",
-      "score": null,
-      "tag": "",
-      "venue": "dex",
-      "link": ""
     }
   ],
   "fills": [
+    {
+      "id": "f0136",
+      "time": "13 Nov 2026, 13:58 GMT",
+      "ts": "2026-11-13T13:58:30.732451+00:00",
+      "side": "sell",
+      "symbol": "FOOD",
+      "name": "FOOD",
+      "asset_class": "crypto",
+      "qty": 2992647.7444628445,
+      "qty_display": "2,992,647.74",
+      "price": 0.0009237,
+      "value": 2764.31,
+      "pnl": -183.75,
+      "pnl_pct": -0.06291770762669313,
+      "tag": "",
+      "delay_s": 1.73,
+      "notify_lag_s": 1.06,
+      "fetch_s": 0.62,
+      "quote_s": 0.05
+    },
     {
       "id": "f0135",
       "time": "13 Nov 2026, 13:25 GMT",
@@ -4107,11 +4105,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 64,
-    "win_rate": 0.28125,
-    "realized_pnl": 28333.05,
-    "unrealized_pnl": 674.4,
-    "fills": 135
+    "closed_trades": 65,
+    "win_rate": 0.27692307692307694,
+    "realized_pnl": 28149.3,
+    "unrealized_pnl": 799.68,
+    "fills": 136
   },
   "ok": true,
   "totals_cumulative": {
@@ -4251,13 +4249,6 @@
       "price": 3.787e-06,
       "change_pct": null,
       "source": "dexscreener"
-    },
-    {
-      "symbol": "FOOD",
-      "name": "FOOD",
-      "price": 0.000934,
-      "change_pct": null,
-      "source": "dexscreener"
     }
   ],
   "desk": "wallets",
@@ -4316,15 +4307,15 @@
       "name": "Wallet copy",
       "equity": 29107.45,
       "return_pct": 290.07449822,
-      "closed_trades": 64,
-      "win_rate": 0.28125,
-      "realized_pnl": 28333.05
+      "closed_trades": 65,
+      "win_rate": 0.27692307692307694,
+      "realized_pnl": 28149.3
     },
     {
       "id": "axiom",
       "name": "Axiom scalper",
-      "equity": 7.41,
-      "return_pct": -0.92591829,
+      "equity": 7.38,
+      "return_pct": -0.92620836,
       "closed_trades": 859,
       "win_rate": 0.3352735739231665,
       "realized_pnl": -92.53
@@ -4806,11 +4797,11 @@
   ],
   "near_misses": [],
   "helius_status": "live",
-  "avg_copy_delay_s": 1.8,
-  "last_copy_delay_s": 1.42,
-  "last_event_at": "2026-11-13T13:38:19Z",
-  "last_event_london": "13 Nov 2026, 13:38 GMT",
-  "checked_at": "2026-11-13T13:58:29.543554+00:00",
+  "avg_copy_delay_s": 1.78,
+  "last_copy_delay_s": 1.73,
+  "last_event_at": "2026-11-13T13:58:30Z",
+  "last_event_london": "13 Nov 2026, 13:58 GMT",
+  "checked_at": "2026-11-13T13:58:30.732829+00:00",
   "checked_at_london": "13 Nov 2026, 13:58 GMT",
   "who_we_copy": null
 }
