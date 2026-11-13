@@ -2,12 +2,12 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 15.03,
-  "equity": 21.55,
-  "equity_multiple": 0.2155,
-  "profit": -78.45,
-  "goal_pct": -0.0130746555,
-  "progress": 0.003592011166666667,
+  "cash": 12.84,
+  "equity": 21.62,
+  "equity_multiple": 0.2162,
+  "profit": -78.38,
+  "goal_pct": -0.013062853333333334,
+  "progress": 0.003603813333333333,
   "win_rate": 0.36589698046181174,
   "wins": 206,
   "losses": 357,
@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 3973,
-  "open_count": 3,
-  "last_updated_london": "13 Nov 2026, 3:35 GMT",
-  "last_updated": "2026-11-13T03:35:47.308439+00:00",
+  "ticks": 4002,
+  "open_count": 4,
+  "last_updated_london": "13 Nov 2026, 3:36 GMT",
+  "last_updated": "2026-11-13T03:36:11.305279+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 562,
+  "traded": 567,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 562,
+    "traded": 567,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "12 Nov 2026, 21:53 GMT",
-      "value": 29.98
-    },
     {
       "label": "12 Nov 2026, 21:54 GMT",
       "value": 29.69
@@ -2058,10 +2054,34 @@
     {
       "label": "13 Nov 2026, 3:35 GMT",
       "value": 21.55
+    },
+    {
+      "label": "13 Nov 2026, 3:36 GMT",
+      "value": 21.62
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "13 Nov 2026, 3:36 GMT",
+      "hhmm": "03:36",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "03:36 LOGGER: run complete — 29 polls, 4 open, equity $21.62",
+      "message": "03:36 LOGGER: run complete — 29 polls, 4 open, equity $21.62",
+      "symbol": null,
+      "action": "run complete — 29 polls, 4 open, equity $21.62"
+    },
+    {
+      "ts": "13 Nov 2026, 3:36 GMT",
+      "hhmm": "03:36",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "03:36 EXECUTOR: BUY 10% $JENSWAN @ 0.000123012 — 5m +20.9% vol $32,929 buys 473/sells 306",
+      "message": "03:36 EXECUTOR: BUY 10% $JENSWAN @ 0.000123012 — 5m +20.9% vol $32,929 buys 473/sells 306",
+      "symbol": null,
+      "action": "BUY 10% $JENSWAN @ 0.000123012 — 5m +20.9% vol $32,929 buys 473/sells 306"
+    },
     {
       "ts": "13 Nov 2026, 3:35 GMT",
       "hhmm": "03:35",
@@ -2441,26 +2461,6 @@
       "message": "03:02 EXECUTOR: SELL take profit +8% $AMD",
       "symbol": null,
       "action": "SELL take profit +8% $AMD"
-    },
-    {
-      "ts": "13 Nov 2026, 3:02 GMT",
-      "hhmm": "03:02",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "03:02 RISK: SELL stop −5% $Max",
-      "message": "03:02 RISK: SELL stop −5% $Max",
-      "symbol": null,
-      "action": "SELL stop −5% $Max"
-    },
-    {
-      "ts": "13 Nov 2026, 3:01 GMT",
-      "hhmm": "03:01",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "03:01 EXECUTOR: BUY 10% $AMD @ 0.00063928 — 5m +31.2% vol $19,964 buys 642/sells 503",
-      "message": "03:01 EXECUTOR: BUY 10% $AMD @ 0.00063928 — 5m +31.2% vol $19,964 buys 642/sells 503",
-      "symbol": null,
-      "action": "BUY 10% $AMD @ 0.00063928 — 5m +31.2% vol $19,964 buys 642/sells 503"
     }
   ],
   "agents": [
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "40 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "40 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "3/6",
+      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "4/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2626,11 +2626,11 @@
       "qty": 2255.888482117714,
       "qty_display": "2,255.89",
       "entry_price": 0.0009587699999999998,
-      "current_price": 0.000954,
+      "current_price": 0.001015,
       "change_pct": null,
       "price_source": "dexscreener",
-      "unrealized_pnl": -0.06,
-      "unrealized_pct": -0.004975124378109319,
+      "unrealized_pnl": 0.07,
+      "unrealized_pct": 0.0586480594928922,
       "hard_stop": 0.0009108314999999998,
       "trail_activate": 0.0009971207999999998,
       "opened_at": "13 Nov 2026, 3:35 GMT",
@@ -2639,9 +2639,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/H2SQUiRy8bvAv2yARwajptdLKi9BTYDoWLvu5cbpump?chain=sol"
+    },
+    {
+      "symbol": "JENSWAN",
+      "name": "JENSWAN",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 17630.490521249965,
+      "qty_display": "17,630.49",
+      "entry_price": 0.00012301199999999998,
+      "current_price": 0.0001224,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": -0.06,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.00011686139999999998,
+      "trail_activate": 0.00012793248,
+      "opened_at": "13 Nov 2026, 3:36 GMT",
+      "reason": "BUY 10% $JENSWAN @ 0.000123012 — 5m +20.9% vol $32,929 buys 473/sells 306",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/EMNsQjn55DFugZ13nFja49CVGJv9r3qPyehqRVFqpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f1130",
+      "time": "13 Nov 2026, 3:36 GMT",
+      "ts": "2026-11-13T03:36:11.305192+00:00",
+      "side": "buy",
+      "symbol": "JENSWAN",
+      "name": "JENSWAN",
+      "asset_class": "crypto",
+      "qty": 17630.490521249965,
+      "qty_display": "17,630.49",
+      "price": 0.00012301199999999998,
+      "value": 2.17,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f1129",
       "time": "13 Nov 2026, 3:35 GMT",
@@ -25227,14 +25269,14 @@
     "closed_trades": 563,
     "win_rate": 0.36589698046181174,
     "realized_pnl": -78.42,
-    "unrealized_pnl": -0.03,
-    "fills": 1129
+    "unrealized_pnl": 0.04,
+    "fills": 1130
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 3973,
+    "scanned": 4002,
     "killed": 0,
-    "traded": 562
+    "traded": 567
   },
   "events": [
     {
@@ -25384,7 +25426,14 @@
     {
       "symbol": "AMD",
       "name": "AMD",
-      "price": 0.000954,
+      "price": 0.001015,
+      "change_pct": null,
+      "source": "dexscreener"
+    },
+    {
+      "symbol": "JENSWAN",
+      "name": "JENSWAN",
+      "price": 0.0001224,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -25454,8 +25503,8 @@
     {
       "id": "axiom",
       "name": "Axiom scalper",
-      "equity": 21.55,
-      "return_pct": -0.78447933,
+      "equity": 21.62,
+      "return_pct": -0.7837712,
       "closed_trades": 563,
       "win_rate": 0.36589698046181174,
       "realized_pnl": -78.42
@@ -25471,24 +25520,14 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "JENSWAN",
-      "mint": "EMNsQjn55DFugZ13nFja49CVGJv9r3qPyehqRVFqpump",
-      "link": "https://axiom.trade/meme/EMNsQjn55DFugZ13nFja49CVGJv9r3qPyehqRVFqpump?chain=sol",
-      "reason": "liquidity $24,797 under $25k",
-      "gates": 1,
-      "chg_m5": 15.18,
-      "vol_m5": 26903.0,
-      "score": 37.66
-    },
-    {
       "symbol": "DOGGLE",
       "mint": "E8qaeXz7CF2auJebXaQkLZyrFPfRQft3KrGgvRvwpump",
       "link": "https://axiom.trade/meme/E8qaeXz7CF2auJebXaQkLZyrFPfRQft3KrGgvRvwpump?chain=sol",
-      "reason": "5m volume $327 under $5k",
+      "reason": "5m volume $332 under $5k",
       "gates": 1,
-      "chg_m5": 3.75,
-      "vol_m5": 327.0,
-      "score": 2.85
+      "chg_m5": 2.63,
+      "vol_m5": 332.0,
+      "score": 1.69
     },
     {
       "symbol": "CHARITY",
@@ -25529,6 +25568,16 @@
       "chg_m5": 1.31,
       "vol_m5": 146.0,
       "score": 0.19
+    },
+    {
+      "symbol": "CHOP",
+      "mint": "GH37DfLYgT9wPNzzE1TSvBKH4cCRndJwT1M2pRrPpump",
+      "link": "https://axiom.trade/meme/GH37DfLYgT9wPNzzE1TSvBKH4cCRndJwT1M2pRrPpump?chain=sol",
+      "reason": "5m volume $0 under $5k · 5m -0.5% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -0.46,
+      "vol_m5": 0.0,
+      "score": -0.23
     }
   ],
   "helius_status": "",
@@ -25536,7 +25585,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-13T03:35:47.308439+00:00",
-  "checked_at_london": "13 Nov 2026, 3:35 GMT",
+  "checked_at": "2026-11-13T03:36:11.305279+00:00",
+  "checked_at_london": "13 Nov 2026, 3:36 GMT",
   "who_we_copy": null
 }
