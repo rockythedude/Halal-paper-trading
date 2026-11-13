@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 5046,
+  "ticks": 5075,
   "open_count": 5,
-  "last_updated_london": "13 Nov 2026, 6:35 GMT",
-  "last_updated": "2026-11-13T06:35:48.923966+00:00",
+  "last_updated_london": "13 Nov 2026, 6:36 GMT",
+  "last_updated": "2026-11-13T06:36:12.848402+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "13 Nov 2026, 0:57 GMT",
-      "value": 23.83
-    },
     {
       "label": "13 Nov 2026, 0:58 GMT",
       "value": 23.61
@@ -2058,10 +2054,24 @@
     {
       "label": "13 Nov 2026, 6:35 GMT",
       "value": 13.9
+    },
+    {
+      "label": "13 Nov 2026, 6:36 GMT",
+      "value": 13.9
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "13 Nov 2026, 6:36 GMT",
+      "hhmm": "06:36",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "06:36 LOGGER: run complete — 29 polls, 5 open, equity $13.90",
+      "message": "06:36 LOGGER: run complete — 29 polls, 5 open, equity $13.90",
+      "symbol": null,
+      "action": "run complete — 29 polls, 5 open, equity $13.90"
+    },
     {
       "ts": "13 Nov 2026, 6:31 GMT",
       "hhmm": "06:31",
@@ -2451,16 +2461,6 @@
       "message": "05:36 RISK: SELL stop −5% $ODDME",
       "symbol": null,
       "action": "SELL stop −5% $ODDME"
-    },
-    {
-      "ts": "13 Nov 2026, 5:36 GMT",
-      "hhmm": "05:36",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "05:36 EXECUTOR: BUY 10% $ODDME @ 0.000187935 — 5m +8.2% vol $23,270 buys 192/sells 77",
-      "message": "05:36 EXECUTOR: BUY 10% $ODDME @ 0.000187935 — 5m +8.2% vol $23,270 buys 192/sells 77",
-      "symbol": null,
-      "action": "BUY 10% $ODDME @ 0.000187935 — 5m +8.2% vol $23,270 buys 192/sells 77"
     }
   ],
   "agents": [
@@ -29156,7 +29156,7 @@
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 5046,
+    "scanned": 5075,
     "killed": 0,
     "traded": 664
   },
@@ -29383,8 +29383,8 @@
     {
       "id": "wallets",
       "name": "Wallet copy",
-      "equity": 32023.91,
-      "return_pct": 319.23905244,
+      "equity": 32004.08,
+      "return_pct": 319.04077918999997,
       "closed_trades": 56,
       "win_rate": 0.30357142857142855,
       "realized_pnl": 32007.18
@@ -29412,11 +29412,31 @@
       "symbol": "NETWORK",
       "mint": "8THZ69JP2ErZuHVj4G5rcwkFfsQafp5mQsaoQReApump",
       "link": "https://axiom.trade/meme/8THZ69JP2ErZuHVj4G5rcwkFfsQafp5mQsaoQReApump?chain=sol",
-      "reason": "5m volume $13 under $5k · buy/sell 1/1 under 1.05",
+      "reason": "5m volume $6 under $5k",
+      "gates": 1,
+      "chg_m5": 2.5,
+      "vol_m5": 6.0,
+      "score": 2.69
+    },
+    {
+      "symbol": "TrumpWars",
+      "mint": "31HzUsjzTt7FBCGnDy68cBnELayVsnd3zYEBtsXXpump",
+      "link": "https://axiom.trade/meme/31HzUsjzTt7FBCGnDy68cBnELayVsnd3zYEBtsXXpump?chain=sol",
+      "reason": "5m volume $706 under $5k · no 5m change",
       "gates": 2,
-      "chg_m5": 3.38,
-      "vol_m5": 13.0,
-      "score": 2.59
+      "chg_m5": null,
+      "vol_m5": 706.0,
+      "score": 0.0
+    },
+    {
+      "symbol": "Shitcoin",
+      "mint": "8p7GCo3fWJ55LFQbhkBd8hCpw3ACk98PgK7Lsd6Upump",
+      "link": "https://axiom.trade/meme/8p7GCo3fWJ55LFQbhkBd8hCpw3ACk98PgK7Lsd6Upump?chain=sol",
+      "reason": "5m volume $624 under $5k · 5m -2.7% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -2.67,
+      "vol_m5": 624.0,
+      "score": -3.61
     },
     {
       "symbol": "Christmax",
@@ -29426,27 +29446,7 @@
       "gates": 2,
       "chg_m5": -2.95,
       "vol_m5": 1012.0,
-      "score": -4.18
-    },
-    {
-      "symbol": "Shitcoin",
-      "mint": "8p7GCo3fWJ55LFQbhkBd8hCpw3ACk98PgK7Lsd6Upump",
-      "link": "https://axiom.trade/meme/8p7GCo3fWJ55LFQbhkBd8hCpw3ACk98PgK7Lsd6Upump?chain=sol",
-      "reason": "5m volume $703 under $5k · 5m -2.6% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": -2.64,
-      "vol_m5": 703.0,
-      "score": -6.2
-    },
-    {
-      "symbol": "TrumpWars",
-      "mint": "31HzUsjzTt7FBCGnDy68cBnELayVsnd3zYEBtsXXpump",
-      "link": "https://axiom.trade/meme/31HzUsjzTt7FBCGnDy68cBnELayVsnd3zYEBtsXXpump?chain=sol",
-      "reason": "5m volume $710 under $5k · 5m -1.3% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": -1.27,
-      "vol_m5": 710.0,
-      "score": -6.62
+      "score": -4.21
     }
   ],
   "helius_status": "",
@@ -29454,7 +29454,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-13T06:35:48.923966+00:00",
-  "checked_at_london": "13 Nov 2026, 6:35 GMT",
+  "checked_at": "2026-11-13T06:36:12.848402+00:00",
+  "checked_at_london": "13 Nov 2026, 6:36 GMT",
   "who_we_copy": null
 }
