@@ -2,16 +2,16 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 0.63,
-  "equity": 1.27,
-  "equity_multiple": 0.0127,
-  "profit": -98.73,
-  "goal_pct": -0.016454778166666666,
-  "progress": 0.0002118885,
-  "win_rate": 0.32945736434108525,
-  "wins": 425,
-  "losses": 865,
-  "closed_trades": 1290,
+  "cash": 0.78,
+  "equity": 1.3,
+  "equity_multiple": 0.013,
+  "profit": -98.7,
+  "goal_pct": -0.016450708666666668,
+  "progress": 0.00021595799999999998,
+  "win_rate": 0.32972136222910214,
+  "wins": 426,
+  "losses": 866,
+  "closed_trades": 1292,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 9628,
-  "open_count": 5,
-  "last_updated_london": "13 Nov 2026, 19:35 GMT",
-  "last_updated": "2026-11-13T19:35:39.008501+00:00",
+  "open_count": 4,
+  "last_updated_london": "13 Nov 2026, 19:36 GMT",
+  "last_updated": "2026-11-13T19:36:55.333368+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "13 Nov 2026, 13:54 GMT",
-      "value": 7.1
-    },
     {
       "label": "13 Nov 2026, 13:54 GMT",
       "value": 7.34
@@ -2058,10 +2054,44 @@
     {
       "label": "13 Nov 2026, 19:35 GMT",
       "value": 1.27
+    },
+    {
+      "label": "13 Nov 2026, 19:36 GMT",
+      "value": 1.3
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "13 Nov 2026, 19:36 GMT",
+      "hhmm": "19:36",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "19:36 EXECUTOR: BUY 10% $AMC @ 0.00109846 — 5m +39.0% vol $26,808 buys 724/sells 385",
+      "message": "19:36 EXECUTOR: BUY 10% $AMC @ 0.00109846 — 5m +39.0% vol $26,808 buys 724/sells 385",
+      "symbol": null,
+      "action": "BUY 10% $AMC @ 0.00109846 — 5m +39.0% vol $26,808 buys 724/sells 385"
+    },
+    {
+      "ts": "13 Nov 2026, 19:36 GMT",
+      "hhmm": "19:36",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "19:36 EXECUTOR: SELL take profit +8% $AMC",
+      "message": "19:36 EXECUTOR: SELL take profit +8% $AMC",
+      "symbol": null,
+      "action": "SELL take profit +8% $AMC"
+    },
+    {
+      "ts": "13 Nov 2026, 19:36 GMT",
+      "hhmm": "19:36",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "19:36 RISK: SELL stop −5% $FOOD",
+      "message": "19:36 RISK: SELL stop −5% $FOOD",
+      "symbol": null,
+      "action": "SELL stop −5% $FOOD"
+    },
     {
       "ts": "13 Nov 2026, 19:35 GMT",
       "hhmm": "19:35",
@@ -2431,36 +2461,6 @@
       "message": "19:22 RISK: SELL stop −5% $LUCIA",
       "symbol": null,
       "action": "SELL stop −5% $LUCIA"
-    },
-    {
-      "ts": "13 Nov 2026, 19:22 GMT",
-      "hhmm": "19:22",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "19:22 EXECUTOR: SELL trail 2.5% $GATO",
-      "message": "19:22 EXECUTOR: SELL trail 2.5% $GATO",
-      "symbol": null,
-      "action": "SELL trail 2.5% $GATO"
-    },
-    {
-      "ts": "13 Nov 2026, 19:21 GMT",
-      "hhmm": "19:21",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "19:21 LOGGER: run complete — 29 polls, 4 open, equity $1.32",
-      "message": "19:21 LOGGER: run complete — 29 polls, 4 open, equity $1.32",
-      "symbol": null,
-      "action": "run complete — 29 polls, 4 open, equity $1.32"
-    },
-    {
-      "ts": "13 Nov 2026, 19:21 GMT",
-      "hhmm": "19:21",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "19:21 EXECUTOR: SELL trail 2.5% $Sakura",
-      "message": "19:21 EXECUTOR: SELL trail 2.5% $Sakura",
-      "symbol": null,
-      "action": "SELL trail 2.5% $Sakura"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "57 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
+      "badge": "75 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "57 pairs · 1 passed liquidity, age, and 5m momentum",
+      "activity": "75 pairs · 1 passed liquidity, age, and 5m momentum",
       "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "5 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "5/6",
+      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "4/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2575,28 +2575,6 @@
   ],
   "positions": [
     {
-      "symbol": "FOOD",
-      "name": "FOOD",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 98.8834680287863,
-      "qty_display": "98.8835",
-      "entry_price": 0.0013013853838797194,
-      "current_price": 0.0012566030834054252,
-      "change_pct": null,
-      "price_source": "geckoterminal",
-      "unrealized_pnl": -0.01,
-      "unrealized_pct": -0.03441125206185136,
-      "hard_stop": 0.0012363161146857335,
-      "trail_activate": 0.0013534407992349083,
-      "opened_at": "13 Nov 2026, 19:26 GMT",
-      "reason": "BUY 10% $FOOD @ 0.00130139 — 5m +3.5% vol $7,106 buys 108/sells 84",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/FTu55MyigXns96jz4nTCDDiTCjYJjyrHSceCgG9Upump?chain=sol"
-    },
-    {
       "symbol": "mihao",
       "name": "mihao",
       "asset_class": "crypto",
@@ -2604,11 +2582,11 @@
       "qty": 7.012229973476094,
       "qty_display": "7.0122",
       "entry_price": 0.01838439419237902,
-      "current_price": 0.019290334471218806,
+      "current_price": 0.019316636624475306,
       "change_pct": null,
       "price_source": "geckoterminal",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.049277679175054434,
+      "unrealized_pct": 0.050708357443876695,
       "hard_stop": 0.017465174482760068,
       "trail_activate": 0.01911976996007418,
       "opened_at": "13 Nov 2026, 19:27 GMT",
@@ -2626,11 +2604,11 @@
       "qty": 256.0246957981179,
       "qty_display": "256.02",
       "entry_price": 0.0005004899999999999,
-      "current_price": 0.0004883,
+      "current_price": 0.0004826,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": -0.01,
-      "unrealized_pct": -0.024356130991628033,
+      "unrealized_pct": -0.03574496992946896,
       "hard_stop": 0.0004754654999999999,
       "trail_activate": 0.0005205095999999999,
       "opened_at": "13 Nov 2026, 19:27 GMT",
@@ -2648,11 +2626,11 @@
       "qty": 689.2616658088866,
       "qty_display": "689.26",
       "entry_price": 0.000186528,
-      "current_price": 0.0001955,
+      "current_price": 0.0001918,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.048100017155601416,
+      "unrealized_pct": 0.02826385314805302,
       "hard_stop": 0.00017720159999999997,
       "trail_activate": 0.00019398912,
       "opened_at": "13 Nov 2026, 19:35 GMT",
@@ -2667,18 +2645,18 @@
       "name": "AMC",
       "asset_class": "crypto",
       "agent": "MIRAX",
-      "qty": 147.99883702913175,
-      "qty_display": "148.00",
-      "entry_price": 0.0008615864999999999,
-      "current_price": 0.0008573,
+      "qty": 118.31310055395487,
+      "qty_display": "118.31",
+      "entry_price": 0.0010984649999999999,
+      "current_price": 0.001093,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": -0.0,
       "unrealized_pct": -0.004975124378109319,
-      "hard_stop": 0.0008185071749999998,
-      "trail_activate": 0.0008960499599999998,
-      "opened_at": "13 Nov 2026, 19:35 GMT",
-      "reason": "BUY 10% $AMC @ 0.000861586 — 5m +6.1% vol $18,904 buys 478/sells 315",
+      "hard_stop": 0.0010435417499999999,
+      "trail_activate": 0.0011424036,
+      "opened_at": "13 Nov 2026, 19:36 GMT",
+      "reason": "BUY 10% $AMC @ 0.00109846 — 5m +39.0% vol $26,808 buys 724/sells 385",
       "score": null,
       "tag": "",
       "venue": "",
@@ -2686,6 +2664,66 @@
     }
   ],
   "fills": [
+    {
+      "id": "f2588",
+      "time": "13 Nov 2026, 19:36 GMT",
+      "ts": "2026-11-13T19:36:55.333314+00:00",
+      "side": "buy",
+      "symbol": "AMC",
+      "name": "AMC",
+      "asset_class": "crypto",
+      "qty": 118.31310055395487,
+      "qty_display": "118.31",
+      "price": 0.0010984649999999999,
+      "value": 0.13,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f2587",
+      "time": "13 Nov 2026, 19:36 GMT",
+      "ts": "2026-11-13T19:36:55.332719+00:00",
+      "side": "sell",
+      "symbol": "AMC",
+      "name": "AMC",
+      "asset_class": "crypto",
+      "qty": 147.99883702913175,
+      "qty_display": "148.00",
+      "price": 0.001087535,
+      "value": 0.16,
+      "pnl": 0.03,
+      "pnl_pct": 0.23725203849566653,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f2586",
+      "time": "13 Nov 2026, 19:36 GMT",
+      "ts": "2026-11-13T19:36:55.332628+00:00",
+      "side": "sell",
+      "symbol": "FOOD",
+      "name": "FOOD",
+      "asset_class": "crypto",
+      "qty": 98.8834680287863,
+      "qty_display": "98.8835",
+      "price": 0.001226852523157333,
+      "value": 0.12,
+      "pnl": -0.01,
+      "pnl_pct": -0.07593981868554049,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f2585",
       "time": "13 Nov 2026, 19:35 GMT",
@@ -54388,11 +54426,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 1290,
-    "win_rate": 0.32945736434108525,
-    "realized_pnl": -98.72,
+    "closed_trades": 1292,
+    "win_rate": 0.32972136222910214,
+    "realized_pnl": -98.7,
     "unrealized_pnl": -0.01,
-    "fills": 2585
+    "fills": 2588
   },
   "ok": true,
   "totals_cumulative": {
@@ -54401,16 +54439,6 @@
     "traded": 1295
   },
   "events": [
-    {
-      "hhmm": "18:41",
-      "ts": "2026-11-13T18:41:59.153584+00:00",
-      "london": "13 Nov 2026, 18:41 GMT",
-      "agent": "EXECUTOR",
-      "action": "SELL take profit +8% $BAWSAQ",
-      "symbol": "",
-      "reason": "SELL take profit +8% $BAWSAQ",
-      "line": "18:41 EXECUTOR: SELL take profit +8% $BAWSAQ"
-    },
     {
       "hhmm": "18:42",
       "ts": "2026-11-13T18:42:15.057563+00:00",
@@ -54520,6 +54548,16 @@
       "symbol": "",
       "reason": "SELL take profit +8% $AMC",
       "line": "19:35 EXECUTOR: SELL take profit +8% $AMC"
+    },
+    {
+      "hhmm": "19:36",
+      "ts": "2026-11-13T19:36:55.332741+00:00",
+      "london": "13 Nov 2026, 19:36 GMT",
+      "agent": "EXECUTOR",
+      "action": "SELL take profit +8% $AMC",
+      "symbol": "",
+      "reason": "SELL take profit +8% $AMC",
+      "line": "19:36 EXECUTOR: SELL take profit +8% $AMC"
     }
   ],
   "role_colors": {
@@ -54532,37 +54570,30 @@
   },
   "ticker": [
     {
-      "symbol": "FOOD",
-      "name": "FOOD",
-      "price": 0.0012566030834054252,
-      "change_pct": null,
-      "source": "geckoterminal"
-    },
-    {
       "symbol": "mihao",
       "name": "mihao",
-      "price": 0.019290334471218806,
+      "price": 0.019316636624475306,
       "change_pct": null,
       "source": "geckoterminal"
     },
     {
       "symbol": "WANTED",
       "name": "WANTED",
-      "price": 0.0004883,
+      "price": 0.0004826,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
       "symbol": "C@T",
       "name": "C@T",
-      "price": 0.0001955,
+      "price": 0.0001918,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
       "symbol": "AMC",
       "name": "AMC",
-      "price": 0.0008573,
+      "price": 0.001093,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -54632,11 +54663,11 @@
     {
       "id": "axiom",
       "name": "Axiom scalper",
-      "equity": 1.27,
-      "return_pct": -0.9872866899999999,
-      "closed_trades": 1290,
-      "win_rate": 0.32945736434108525,
-      "realized_pnl": -98.72
+      "equity": 1.3,
+      "return_pct": -0.9870425199999999,
+      "closed_trades": 1292,
+      "win_rate": 0.32972136222910214,
+      "realized_pnl": -98.7
     }
   ],
   "btc_chart": [],
@@ -54649,64 +54680,64 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "Nigghao",
-      "mint": "9J41toneswGA3hZJyfYiWkC9jMm8doMDP3QEBYM1pump",
-      "link": "https://axiom.trade/meme/9J41toneswGA3hZJyfYiWkC9jMm8doMDP3QEBYM1pump?chain=sol",
-      "reason": "5m volume $968 under $5k",
-      "gates": 1,
-      "chg_m5": 10.74,
-      "vol_m5": 968.0,
-      "score": 11.11
-    },
-    {
       "symbol": "CATE",
       "mint": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
       "link": "https://axiom.trade/meme/Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump?chain=sol",
-      "reason": "5m +0.9% outside +1% to +40%",
+      "reason": "5m +0.5% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 0.949,
-      "vol_m5": 5781.0,
-      "score": 3.49
+      "chg_m5": 0.475,
+      "vol_m5": 6591.0,
+      "score": 1.96
+    },
+    {
+      "symbol": "Nigghao",
+      "mint": "9J41toneswGA3hZJyfYiWkC9jMm8doMDP3QEBYM1pump",
+      "link": "https://axiom.trade/meme/9J41toneswGA3hZJyfYiWkC9jMm8doMDP3QEBYM1pump?chain=sol",
+      "reason": "5m volume $1,582 under $5k",
+      "gates": 1,
+      "chg_m5": 1.31,
+      "vol_m5": 1582.0,
+      "score": 1.5
     },
     {
       "symbol": "STONK",
       "mint": "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
       "link": "https://axiom.trade/meme/6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx?chain=sol",
-      "reason": "5m +0.5% outside +1% to +40%",
+      "reason": "5m +0.3% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 0.482,
-      "vol_m5": 51947.0,
-      "score": 1.88
-    },
-    {
-      "symbol": "CHILL",
-      "mint": "9RZeokzHNXoRyJkWDFdvcQTAzUhKpXm7RrqkUM3Fpump",
-      "link": "https://axiom.trade/meme/9RZeokzHNXoRyJkWDFdvcQTAzUhKpXm7RrqkUM3Fpump?chain=sol",
-      "reason": "5m volume $427 under $5k",
-      "gates": 1,
-      "chg_m5": 1.99,
-      "vol_m5": 427.0,
-      "score": 1.53
+      "chg_m5": 0.27,
+      "vol_m5": 68607.0,
+      "score": 0.98
     },
     {
       "symbol": "Sakura",
       "mint": "9sFGCTjEsBk78uC2bCdxtwuUM1aartbBhe8WQXwRpump",
       "link": "https://axiom.trade/meme/9sFGCTjEsBk78uC2bCdxtwuUM1aartbBhe8WQXwRpump?chain=sol",
-      "reason": "5m -2.7% outside +1% to +40%",
+      "reason": "5m -2.0% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -2.66,
-      "vol_m5": 7643.0,
-      "score": -2.21
+      "chg_m5": -2.015,
+      "vol_m5": 8018.0,
+      "score": -1.65
     },
     {
-      "symbol": "Leonida",
-      "mint": "BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump",
-      "link": "https://axiom.trade/meme/BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump?chain=sol",
-      "reason": "5m -12.1% outside +1% to +40%",
+      "symbol": "FOOD",
+      "mint": "FTu55MyigXns96jz4nTCDDiTCjYJjyrHSceCgG9Upump",
+      "link": "https://axiom.trade/meme/FTu55MyigXns96jz4nTCDDiTCjYJjyrHSceCgG9Upump?chain=sol",
+      "reason": "5m -1.1% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -12.13,
-      "vol_m5": 14815.0,
-      "score": -84.19
+      "chg_m5": -1.057,
+      "vol_m5": 22629.0,
+      "score": -2.18
+    },
+    {
+      "symbol": "Sakura",
+      "mint": "ANYq8tELPCSTvEjWVpxzgvtHu2K5vXFZZEmnNJfQpump",
+      "link": "https://axiom.trade/meme/ANYq8tELPCSTvEjWVpxzgvtHu2K5vXFZZEmnNJfQpump?chain=sol",
+      "reason": "liquidity $17,722 under $25k · market cap $57,661 outside $100k–$100M",
+      "gates": 2,
+      "chg_m5": 15.92,
+      "vol_m5": 7498.0,
+      "score": 5.21
     }
   ],
   "helius_status": "",
@@ -54714,7 +54745,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-13T19:35:39.008501+00:00",
-  "checked_at_london": "13 Nov 2026, 19:35 GMT",
+  "checked_at": "2026-11-13T19:36:55.333368+00:00",
+  "checked_at_london": "13 Nov 2026, 19:36 GMT",
   "who_we_copy": null
 }
