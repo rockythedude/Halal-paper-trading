@@ -8168,12 +8168,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-12T21:01:49.732973+00:00",
-      "label": "12 Nov 2026, 21:01 GMT",
-      "equity": 35.355973,
-      "cash": 28.27326
-    },
-    {
       "ts": "2026-11-12T21:02:29.695793+00:00",
       "label": "12 Nov 2026, 21:02 GMT",
       "equity": 35.630237,
@@ -11172,21 +11166,15 @@
       "label": "13 Nov 2026, 2:43 GMT",
       "equity": 22.251164,
       "cash": 22.251164
+    },
+    {
+      "ts": "2026-11-13T02:44:17.062012+00:00",
+      "label": "13 Nov 2026, 2:44 GMT",
+      "equity": 22.251164,
+      "cash": 22.251164
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-12T21:28:56.321196+00:00",
-      "london": "12 Nov 2026, 21:28 GMT",
-      "hhmm": "21:28",
-      "agent": "RISK",
-      "action": "SELL stop \u22125% $JensenHao",
-      "symbol": null,
-      "reason": "SELL stop \u22125% $JensenHao",
-      "line": "21:28 RISK: SELL stop \u22125% $JensenHao",
-      "tag": "RISK",
-      "message": "21:28 RISK: SELL stop \u22125% $JensenHao"
-    },
     {
       "ts": "2026-11-12T21:29:04.165899+00:00",
       "london": "12 Nov 2026, 21:29 GMT",
@@ -15974,6 +15962,18 @@
       "line": "02:41 EXECUTOR: SELL trail 2.5% $Max",
       "tag": "EXECUTOR",
       "message": "02:41 EXECUTOR: SELL trail 2.5% $Max"
+    },
+    {
+      "ts": "2026-11-13T02:44:17.061936+00:00",
+      "london": "13 Nov 2026, 2:44 GMT",
+      "hhmm": "02:44",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 0 open, equity $22.25",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 0 open, equity $22.25",
+      "line": "02:44 LOGGER: run complete \u2014 29 polls, 0 open, equity $22.25",
+      "tag": "LOGGER",
+      "message": "02:44 LOGGER: run complete \u2014 29 polls, 0 open, equity $22.25"
     }
   ],
   "agents": {
@@ -16074,9 +16074,9 @@
       "open_positions": 0
     }
   },
-  "ticks": 3683,
-  "last_updated": "2026-11-13T02:43:53.118097+00:00",
-  "last_updated_london": "13 Nov 2026, 2:43 GMT",
+  "ticks": 3712,
+  "last_updated": "2026-11-13T02:44:17.061755+00:00",
+  "last_updated_london": "13 Nov 2026, 2:44 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -16097,7 +16097,7 @@
     "traded": 544
   },
   "totals_cumulative": {
-    "scanned": 3683,
+    "scanned": 3712,
     "killed": 0,
     "traded": 544
   },
@@ -31339,8 +31339,8 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-13T02:43:53.118097+00:00",
-  "checked_at_london": "13 Nov 2026, 2:43 GMT",
+  "checked_at": "2026-11-13T02:44:17.061755+00:00",
+  "checked_at_london": "13 Nov 2026, 2:44 GMT",
   "near_misses": [
     {
       "symbol": "TrumpWars",
@@ -31363,14 +31363,34 @@
       "score": 9.98
     },
     {
+      "symbol": "updog",
+      "mint": "77HqxiDCgYfXUsDXDD6YVefPhTTz1Z2n8jX4gTxipump",
+      "link": "https://axiom.trade/meme/77HqxiDCgYfXUsDXDD6YVefPhTTz1Z2n8jX4gTxipump?chain=sol",
+      "reason": "buy/sell 10/121 under 1.05",
+      "gates": 1,
+      "chg_m5": 36.627,
+      "vol_m5": 6256.0,
+      "score": 9.08
+    },
+    {
       "symbol": "mihao",
       "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
       "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
-      "reason": "buy/sell 175/263 under 1.05",
+      "reason": "buy/sell 335/379 under 1.05",
       "gates": 1,
-      "chg_m5": 6.269,
-      "vol_m5": 70677.0,
-      "score": 8.19
+      "chg_m5": 2.696,
+      "vol_m5": 107399.0,
+      "score": 6.55
+    },
+    {
+      "symbol": "paws",
+      "mint": "Fp4JkqEcKYKBKhb9iMu9NSDeo71HWgq2q9QtXaaKpump",
+      "link": "https://axiom.trade/meme/Fp4JkqEcKYKBKhb9iMu9NSDeo71HWgq2q9QtXaaKpump?chain=sol",
+      "reason": "5m volume $803 under $5k",
+      "gates": 1,
+      "chg_m5": 1.378,
+      "vol_m5": 803.0,
+      "score": 4.96
     },
     {
       "symbol": "CBUCKS",
@@ -31381,26 +31401,6 @@
       "chg_m5": 1.9,
       "vol_m5": 814.0,
       "score": 1.89
-    },
-    {
-      "symbol": "CHARITY",
-      "mint": "G9E8zzhdqCGpGqrHSgL2CKW1MuAbCVTQPFUhFk72pump",
-      "link": "https://axiom.trade/meme/G9E8zzhdqCGpGqrHSgL2CKW1MuAbCVTQPFUhFk72pump?chain=sol",
-      "reason": "liquidity $10,575 under $25k \u00b7 market cap $23,484 outside $100k\u2013$100M",
-      "gates": 2,
-      "chg_m5": 12.16,
-      "vol_m5": 6436.0,
-      "score": 6.68
-    },
-    {
-      "symbol": "swordcat",
-      "mint": "5tCju6YNxHq5zrA6tGndr6F7TK42mpUFmeE31cSFpump",
-      "link": "https://axiom.trade/meme/5tCju6YNxHq5zrA6tGndr6F7TK42mpUFmeE31cSFpump?chain=sol",
-      "reason": "5m volume $324 under $5k \u00b7 5m +0.7% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.665,
-      "vol_m5": 324.0,
-      "score": 5.63
     }
   ]
 }
