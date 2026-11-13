@@ -2,7 +2,7 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 18549.07,
+  "cash": 15665.97,
   "equity": 28545.55,
   "equity_multiple": 285.4555,
   "profit": 28445.55,
@@ -20,9 +20,9 @@
     "pnl_pct": 58.38672167504063
   },
   "ticks": 3227,
-  "open_count": 6,
+  "open_count": 7,
   "last_updated_london": "13 Nov 2026, 15:07 GMT",
-  "last_updated": "2026-11-13T15:07:09.659414+00:00",
+  "last_updated": "2026-11-13T15:07:17.560208+00:00",
   "session_status": "afterhours",
   "session_asof_ny": "11 Nov 2026, 20:45 EST",
   "session_open": false,
@@ -738,6 +738,26 @@
   ],
   "activity": [
     {
+      "ts": "13 Nov 2026, 15:07 GMT",
+      "hhmm": "15:07",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "15:07 EXECUTOR: filled $Rocco wallet amount 2.511e+05 · delay 1.6s (notify 0.8s, fetch 0.6s, quote 0.1s)",
+      "message": "15:07 EXECUTOR: filled $Rocco wallet amount 2.511e+05 · delay 1.6s (notify 0.8s, fetch 0.6s, quote 0.1s)",
+      "symbol": null,
+      "action": "filled $Rocco wallet amount 2.511e+05 · delay 1.6s (notify 0.8s, fetch 0.6s, quote 0.1s)"
+    },
+    {
+      "ts": "13 Nov 2026, 15:07 GMT",
+      "hhmm": "15:07",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "15:07 EXECUTOR: COPY BUY $Rocco after 8pYL…EG (30d +$1,971.3, WR 72%)",
+      "message": "15:07 EXECUTOR: COPY BUY $Rocco after 8pYL…EG (30d +$1,971.3, WR 72%)",
+      "symbol": null,
+      "action": "COPY BUY $Rocco after 8pYL…EG (30d +$1,971.3, WR 72%)"
+    },
+    {
       "ts": "13 Nov 2026, 14:54 GMT",
       "hhmm": "14:54",
       "tag": "SCOUT",
@@ -1116,26 +1136,6 @@
       "message": "08:13 RISK: SELL stop −25% $FOTF",
       "symbol": null,
       "action": "SELL stop −25% $FOTF"
-    },
-    {
-      "ts": "13 Nov 2026, 8:12 GMT",
-      "hhmm": "08:12",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "08:12 EXECUTOR: filled $FOTF wallet amount 2.924e+07 · delay 1.7s (notify 0.9s, fetch 0.7s, quote 0.1s)",
-      "message": "08:12 EXECUTOR: filled $FOTF wallet amount 2.924e+07 · delay 1.7s (notify 0.9s, fetch 0.7s, quote 0.1s)",
-      "symbol": null,
-      "action": "filled $FOTF wallet amount 2.924e+07 · delay 1.7s (notify 0.9s, fetch 0.7s, quote 0.1s)"
-    },
-    {
-      "ts": "13 Nov 2026, 8:12 GMT",
-      "hhmm": "08:12",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "08:12 EXECUTOR: COPY BUY $FOTF after 8xiS…tH (30d +$11.1K, WR 73.7%)",
-      "message": "08:12 EXECUTOR: COPY BUY $FOTF after 8xiS…tH (30d +$11.1K, WR 73.7%)",
-      "symbol": null,
-      "action": "COPY BUY $FOTF after 8xiS…tH (30d +$11.1K, WR 73.7%)"
     }
   ],
   "agents": [
@@ -1380,9 +1380,51 @@
       "tag": "",
       "venue": "dex",
       "link": ""
+    },
+    {
+      "symbol": "Rocco",
+      "name": "Rocco",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 4432538.206521739,
+      "qty_display": "4,432,538.21",
+      "entry_price": 0.000644,
+      "current_price": 0.000644,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": 0.0,
+      "hard_stop": 0.00048300000000000003,
+      "trail_activate": null,
+      "opened_at": "13 Nov 2026, 15:07 GMT",
+      "reason": "COPY BUY $Rocco after 8pYL…EG (30d +$1,971.3, WR 72%)",
+      "score": null,
+      "tag": "",
+      "venue": "dex",
+      "link": ""
     }
   ],
   "fills": [
+    {
+      "id": "f0137",
+      "time": "13 Nov 2026, 15:07 GMT",
+      "ts": "2026-11-13T15:07:17.559831+00:00",
+      "side": "buy",
+      "symbol": "Rocco",
+      "name": "Rocco",
+      "asset_class": "crypto",
+      "qty": 4432538.206521739,
+      "qty_display": "4,432,538.21",
+      "price": 0.000644,
+      "value": 2854.55,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": 1.56,
+      "notify_lag_s": 0.82,
+      "fetch_s": 0.63,
+      "quote_s": 0.11
+    },
     {
       "id": "f0136",
       "time": "13 Nov 2026, 13:58 GMT",
@@ -4109,7 +4151,7 @@
     "win_rate": 0.27692307692307694,
     "realized_pnl": 28149.3,
     "unrealized_pnl": 296.24,
-    "fills": 136
+    "fills": 137
   },
   "ok": true,
   "totals_cumulative": {
@@ -4247,6 +4289,13 @@
       "symbol": "XTO",
       "name": "XTO",
       "price": 3.868e-06,
+      "change_pct": null,
+      "source": "dexscreener"
+    },
+    {
+      "symbol": "Rocco",
+      "name": "Rocco",
+      "price": 0.000644,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -4797,11 +4846,11 @@
   ],
   "near_misses": [],
   "helius_status": "live",
-  "avg_copy_delay_s": null,
-  "last_copy_delay_s": null,
-  "last_event_at": "2026-11-13T13:58:30Z",
-  "last_event_london": "13 Nov 2026, 13:58 GMT",
-  "checked_at": "2026-11-13T15:07:09.659414+00:00",
+  "avg_copy_delay_s": 1.56,
+  "last_copy_delay_s": 1.56,
+  "last_event_at": "2026-11-13T15:07:16Z",
+  "last_event_london": "13 Nov 2026, 15:07 GMT",
+  "checked_at": "2026-11-13T15:07:17.560208+00:00",
   "checked_at_london": "13 Nov 2026, 15:07 GMT",
   "who_we_copy": null
 }
