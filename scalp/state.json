@@ -1,38 +1,9 @@
 {
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 10.042618753097576,
+  "cash": 11.195058426249192,
   "equity": 11.195058,
-  "positions": [
-    {
-      "symbol": "GATO",
-      "name": "GATO",
-      "mint": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
-      "pair": "5E3dXLXGwmTDCokA51WYYaKttjFZBwqCoyUHBUi5gt2m",
-      "link": "https://axiom.trade/meme/HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/5e3dxlxgwmtdcoka51wyyakttjfzbwqcoyuhbui5gt2m",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 230.62058535974535,
-      "entry_price": 0.005190825,
-      "raw_price": 0.005165,
-      "entry_fee": 0.011971111000000001,
-      "cost_basis": 1.2090822110000001,
-      "opened_at": "2026-11-13T09:28:57.718083+00:00",
-      "opened_at_london": "13 Nov 2026, 9:28 GMT",
-      "high_water": 0.005190825,
-      "trail_armed": false,
-      "last_price": 0.005072964873230278,
-      "last_source": "geckoterminal",
-      "reason": "BUY 10% $GATO @ 0.00519082 \u2014 5m +1.2% vol $5,376 buys 97/sells 43",
-      "hard_stop": 0.0049312837499999995,
-      "take_profit": 0.005606091,
-      "trail_activate": 0.005398458,
-      "market_value": 1.1524396731516149,
-      "unrealized_pnl": -0.056642537848385244,
-      "unrealized_pct": -0.02270547105127252
-    }
-  ],
+  "positions": [],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -10938,15 +10909,24 @@
       "closed_at": "2026-11-13T09:47:05.428666+00:00",
       "closed_at_london": "13 Nov 2026, 9:47 GMT",
       "opened_at": "2026-11-13T09:37:53.628901+00:00"
+    },
+    {
+      "symbol": "GATO",
+      "name": "GATO",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 230.62058535974535,
+      "entry_price": 0.005190825,
+      "exit_price": 0.0050476000488641265,
+      "pnl": -0.056642537848385244,
+      "pnl_pct": -0.0468475487713426,
+      "reason": "SELL time stop 20m $GATO",
+      "closed_at": "2026-11-13T09:49:05.352176+00:00",
+      "closed_at_london": "13 Nov 2026, 9:49 GMT",
+      "opened_at": "2026-11-13T09:28:57.718083+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-13T04:05:39.924701+00:00",
-      "label": "13 Nov 2026, 4:05 GMT",
-      "equity": 20.830909,
-      "cash": 14.685754
-    },
     {
       "ts": "2026-11-13T04:06:19.848850+00:00",
       "label": "13 Nov 2026, 4:06 GMT",
@@ -13946,21 +13926,15 @@
       "label": "13 Nov 2026, 9:48 GMT",
       "equity": 11.195058,
       "cash": 10.042619
+    },
+    {
+      "ts": "2026-11-13T09:49:13.350708+00:00",
+      "label": "13 Nov 2026, 9:49 GMT",
+      "equity": 11.195058,
+      "cash": 11.195058
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-13T03:37:10.494340+00:00",
-      "london": "13 Nov 2026, 3:37 GMT",
-      "hhmm": "03:37",
-      "agent": "EXECUTOR",
-      "action": "SELL take profit +8% $JENSWAN",
-      "symbol": null,
-      "reason": "SELL take profit +8% $JENSWAN",
-      "line": "03:37 EXECUTOR: SELL take profit +8% $JENSWAN",
-      "tag": "EXECUTOR",
-      "message": "03:37 EXECUTOR: SELL take profit +8% $JENSWAN"
-    },
     {
       "ts": "2026-11-13T03:37:10.494818+00:00",
       "london": "13 Nov 2026, 3:37 GMT",
@@ -18748,6 +18722,18 @@
       "line": "09:47 RISK: SELL stop \u22125% $Sakura",
       "tag": "RISK",
       "message": "09:47 RISK: SELL stop \u22125% $Sakura"
+    },
+    {
+      "ts": "2026-11-13T09:49:05.352233+00:00",
+      "london": "13 Nov 2026, 9:49 GMT",
+      "hhmm": "09:49",
+      "agent": "RISK",
+      "action": "SELL time stop 20m $GATO",
+      "symbol": null,
+      "reason": "SELL time stop 20m $GATO",
+      "line": "09:49 RISK: SELL time stop 20m $GATO",
+      "tag": "RISK",
+      "message": "09:49 RISK: SELL time stop 20m $GATO"
     }
   ],
   "agents": {
@@ -18820,8 +18806,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "1/6",
+      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "0/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -18849,8 +18835,8 @@
     }
   },
   "ticks": 6177,
-  "last_updated": "2026-11-13T09:48:33.349668+00:00",
-  "last_updated_london": "13 Nov 2026, 9:48 GMT",
+  "last_updated": "2026-11-13T09:49:13.350588+00:00",
+  "last_updated_london": "13 Nov 2026, 9:49 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -39246,13 +39232,27 @@
       "pnl": -0.2574733457477495,
       "pnl_pct": -0.2225741145380344,
       "id": "f1455"
+    },
+    {
+      "ts": "2026-11-13T09:49:05.352176+00:00",
+      "london": "13 Nov 2026, 9:49 GMT",
+      "side": "sell",
+      "symbol": "GATO",
+      "name": "GATO",
+      "asset_class": "crypto",
+      "qty": 230.62058535974535,
+      "price": 0.0050476000488641265,
+      "value": 1.1640804779309242,
+      "pnl": -0.056642537848385244,
+      "pnl_pct": -0.0468475487713426,
+      "id": "f1456"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-13T09:48:33.349668+00:00",
-  "checked_at_london": "13 Nov 2026, 9:48 GMT",
+  "checked_at": "2026-11-13T09:49:13.350588+00:00",
+  "checked_at_london": "13 Nov 2026, 9:49 GMT",
   "near_misses": [
     {
       "symbol": "WEALTH",
@@ -39275,14 +39275,14 @@
       "score": 2.0
     },
     {
-      "symbol": "Shitcoin",
-      "mint": "8p7GCo3fWJ55LFQbhkBd8hCpw3ACk98PgK7Lsd6Upump",
-      "link": "https://axiom.trade/meme/8p7GCo3fWJ55LFQbhkBd8hCpw3ACk98PgK7Lsd6Upump?chain=sol",
-      "reason": "5m volume $654 under $5k",
+      "symbol": "Sakura",
+      "mint": "9sFGCTjEsBk78uC2bCdxtwuUM1aartbBhe8WQXwRpump",
+      "link": "https://axiom.trade/meme/9sFGCTjEsBk78uC2bCdxtwuUM1aartbBhe8WQXwRpump?chain=sol",
+      "reason": "5m -1.6% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 1.98,
-      "vol_m5": 654.0,
-      "score": 0.59
+      "chg_m5": -1.56,
+      "vol_m5": 30231.0,
+      "score": -0.92
     },
     {
       "symbol": "FOOD",
@@ -39295,16 +39295,6 @@
       "score": -0.99
     },
     {
-      "symbol": "Sakura",
-      "mint": "9sFGCTjEsBk78uC2bCdxtwuUM1aartbBhe8WQXwRpump",
-      "link": "https://axiom.trade/meme/9sFGCTjEsBk78uC2bCdxtwuUM1aartbBhe8WQXwRpump?chain=sol",
-      "reason": "5m -6.9% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -6.91,
-      "vol_m5": 28008.0,
-      "score": -3.8
-    },
-    {
       "symbol": "jeff",
       "mint": "HAsTKXYvv65zM7J6Cu5o5PcZsiKMQYo5oz4WPjgqwP6k",
       "link": "https://axiom.trade/meme/HAsTKXYvv65zM7J6Cu5o5PcZsiKMQYo5oz4WPjgqwP6k?chain=sol",
@@ -39313,6 +39303,16 @@
       "chg_m5": 0.33,
       "vol_m5": 4.0,
       "score": 0.25
+    },
+    {
+      "symbol": "GATO",
+      "mint": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
+      "link": "https://axiom.trade/meme/HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump?chain=sol",
+      "reason": "5m volume $3,196 under $5k \u00b7 5m +0.1% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.098,
+      "vol_m5": 3196.0,
+      "score": 0.12
     }
   ]
 }
