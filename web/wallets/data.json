@@ -2,7 +2,7 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 7884.34,
+  "cash": 7480.46,
   "equity": 7919.13,
   "equity_multiple": 79.1913,
   "profit": 7819.13,
@@ -20,9 +20,9 @@
     "pnl_pct": 2607.9276961046544
   },
   "ticks": 3227,
-  "open_count": 5,
+  "open_count": 6,
   "last_updated_london": "13 Nov 2026, 1:50 GMT",
-  "last_updated": "2026-11-13T01:50:02.256977+00:00",
+  "last_updated": "2026-11-13T01:50:10.236793+00:00",
   "session_status": "afterhours",
   "session_asof_ny": "11 Nov 2026, 20:45 EST",
   "session_open": false,
@@ -713,6 +713,26 @@
   ],
   "activity": [
     {
+      "ts": "13 Nov 2026, 1:50 GMT",
+      "hhmm": "01:50",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "01:50 EXECUTOR: filled $93sx wallet amount 1.703e+07 · delay 1.2s (notify 0.4s, fetch 0.7s, quote 0.1s)",
+      "message": "01:50 EXECUTOR: filled $93sx wallet amount 1.703e+07 · delay 1.2s (notify 0.4s, fetch 0.7s, quote 0.1s)",
+      "symbol": null,
+      "action": "filled $93sx wallet amount 1.703e+07 · delay 1.2s (notify 0.4s, fetch 0.7s, quote 0.1s)"
+    },
+    {
+      "ts": "13 Nov 2026, 1:50 GMT",
+      "hhmm": "01:50",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "01:50 EXECUTOR: COPY BUY $93sx after Jijo 4BdK…Uk (30d +347.61 SOL) · pump.fun curve",
+      "message": "01:50 EXECUTOR: COPY BUY $93sx after Jijo 4BdK…Uk (30d +347.61 SOL) · pump.fun curve",
+      "symbol": null,
+      "action": "COPY BUY $93sx after Jijo 4BdK…Uk (30d +347.61 SOL) · pump.fun curve"
+    },
+    {
       "ts": "12 Nov 2026, 23:56 GMT",
       "hhmm": "23:56",
       "tag": "RISK",
@@ -1091,26 +1111,6 @@
       "message": "20:57 RISK: blocked $RAM — already 8 open",
       "symbol": null,
       "action": "blocked $RAM — already 8 open"
-    },
-    {
-      "ts": "12 Nov 2026, 20:56 GMT",
-      "hhmm": "20:56",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "20:56 RISK: blocked $FrRs — already 8 open",
-      "message": "20:56 RISK: blocked $FrRs — already 8 open",
-      "symbol": null,
-      "action": "blocked $FrRs — already 8 open"
-    },
-    {
-      "ts": "12 Nov 2026, 20:54 GMT",
-      "hhmm": "20:54",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "20:54 RISK: blocked $FrRs — already 8 open",
-      "message": "20:54 RISK: blocked $FrRs — already 8 open",
-      "symbol": null,
-      "action": "blocked $FrRs — already 8 open"
     }
   ],
   "agents": [
@@ -1333,9 +1333,51 @@
       "tag": "pump.fun curve",
       "venue": "pump",
       "link": ""
+    },
+    {
+      "symbol": "93sx",
+      "name": "93sx",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 903346814.0347328,
+      "qty_display": "903,346,814.03",
+      "entry_price": 4.3832195492170723e-07,
+      "current_price": 4.3832195492170723e-07,
+      "change_pct": null,
+      "price_source": "pump.fun curve",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": 0.0,
+      "hard_stop": 3.287414661912804e-07,
+      "trail_activate": null,
+      "opened_at": "13 Nov 2026, 1:50 GMT",
+      "reason": "COPY BUY $93sx after Jijo 4BdK…Uk (30d +347.61 SOL) · pump.fun curve",
+      "score": null,
+      "tag": "pump.fun curve",
+      "venue": "pump",
+      "link": ""
     }
   ],
   "fills": [
+    {
+      "id": "f0098",
+      "time": "13 Nov 2026, 1:50 GMT",
+      "ts": "2026-11-13T01:50:10.236214+00:00",
+      "side": "buy",
+      "symbol": "93sx",
+      "name": "93sx",
+      "asset_class": "crypto",
+      "qty": 903346814.0347328,
+      "qty_display": "903,346,814.03",
+      "price": 4.3832195492170723e-07,
+      "value": 395.96,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "pump.fun curve",
+      "delay_s": 1.24,
+      "notify_lag_s": 0.4,
+      "fetch_s": 0.7,
+      "quote_s": 0.13
+    },
     {
       "id": "f0097",
       "time": "12 Nov 2026, 23:56 GMT",
@@ -3282,7 +3324,7 @@
     "win_rate": 0.2608695652173913,
     "realized_pnl": 7821.74,
     "unrealized_pnl": -2.61,
-    "fills": 97
+    "fills": 98
   },
   "ok": true,
   "totals_cumulative": {
@@ -3395,6 +3437,13 @@
       "price": 2.2736896226515197e-06,
       "change_pct": null,
       "source": "pump.fun curve"
+    },
+    {
+      "symbol": "93sx",
+      "name": "93sx",
+      "price": 4.3832195492170723e-07,
+      "change_pct": null,
+      "source": "pump.fun curve"
     }
   ],
   "desk": "wallets",
@@ -3461,7 +3510,7 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 22.68,
-      "return_pct": -0.77323719,
+      "return_pct": -0.77315866,
       "closed_trades": 535,
       "win_rate": 0.36822429906542054,
       "realized_pnl": -77.14
@@ -3943,11 +3992,11 @@
   ],
   "near_misses": [],
   "helius_status": "live",
-  "avg_copy_delay_s": 5.03,
-  "last_copy_delay_s": 5.03,
-  "last_event_at": "2026-11-13T01:35:41Z",
-  "last_event_london": "13 Nov 2026, 1:35 GMT",
-  "checked_at": "2026-11-13T01:50:02.256977+00:00",
+  "avg_copy_delay_s": 3.14,
+  "last_copy_delay_s": 1.24,
+  "last_event_at": "2026-11-13T01:50:09Z",
+  "last_event_london": "13 Nov 2026, 1:50 GMT",
+  "checked_at": "2026-11-13T01:50:10.236793+00:00",
   "checked_at_london": "13 Nov 2026, 1:50 GMT",
   "who_we_copy": null
 }
