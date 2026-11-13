@@ -2,16 +2,16 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 1.05,
+  "cash": 0.89,
   "equity": 1.74,
   "equity_multiple": 0.0174,
   "profit": -98.26,
-  "goal_pct": -0.016376081166666664,
-  "progress": 0.0002905855,
-  "win_rate": 0.33029045643153526,
-  "wins": 398,
+  "goal_pct": -0.016375990833333333,
+  "progress": 0.00029067583333333333,
+  "win_rate": 0.3308457711442786,
+  "wins": 399,
   "losses": 807,
-  "closed_trades": 1205,
+  "closed_trades": 1206,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 9135,
-  "open_count": 4,
-  "last_updated_london": "13 Nov 2026, 18:16 GMT",
-  "last_updated": "2026-11-13T18:16:39.887826+00:00",
+  "open_count": 5,
+  "last_updated_london": "13 Nov 2026, 18:17 GMT",
+  "last_updated": "2026-11-13T18:17:19.782648+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "13 Nov 2026, 12:31 GMT",
-      "value": 8.98
-    },
     {
       "label": "13 Nov 2026, 12:31 GMT",
       "value": 8.99
@@ -2058,10 +2054,44 @@
     {
       "label": "13 Nov 2026, 18:16 GMT",
       "value": 1.74
+    },
+    {
+      "label": "13 Nov 2026, 18:17 GMT",
+      "value": 1.74
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "13 Nov 2026, 18:17 GMT",
+      "hhmm": "18:17",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "18:17 EXECUTOR: BUY 10% $cashduck @ 0.000267933 — 5m +4.3% vol $9,297 buys 835/sells 475",
+      "message": "18:17 EXECUTOR: BUY 10% $cashduck @ 0.000267933 — 5m +4.3% vol $9,297 buys 835/sells 475",
+      "symbol": null,
+      "action": "BUY 10% $cashduck @ 0.000267933 — 5m +4.3% vol $9,297 buys 835/sells 475"
+    },
+    {
+      "ts": "13 Nov 2026, 18:17 GMT",
+      "hhmm": "18:17",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "18:17 EXECUTOR: SELL take profit +8% $cashduck",
+      "message": "18:17 EXECUTOR: SELL take profit +8% $cashduck",
+      "symbol": null,
+      "action": "SELL take profit +8% $cashduck"
+    },
+    {
+      "ts": "13 Nov 2026, 18:17 GMT",
+      "hhmm": "18:17",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "18:17 EXECUTOR: BUY 10% $Leonida @ 0.000823698 — 5m +1.6% vol $6,903 buys 64/sells 51",
+      "message": "18:17 EXECUTOR: BUY 10% $Leonida @ 0.000823698 — 5m +1.6% vol $6,903 buys 64/sells 51",
+      "symbol": null,
+      "action": "BUY 10% $Leonida @ 0.000823698 — 5m +1.6% vol $6,903 buys 64/sells 51"
+    },
     {
       "ts": "13 Nov 2026, 18:16 GMT",
       "hhmm": "18:16",
@@ -2431,36 +2461,6 @@
       "message": "17:55 RISK: SELL stop −5% $SI",
       "symbol": null,
       "action": "SELL stop −5% $SI"
-    },
-    {
-      "ts": "13 Nov 2026, 17:54 GMT",
-      "hhmm": "17:54",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "17:54 LOGGER: run complete — 29 polls, 5 open, equity $1.90",
-      "message": "17:54 LOGGER: run complete — 29 polls, 5 open, equity $1.90",
-      "symbol": null,
-      "action": "run complete — 29 polls, 5 open, equity $1.90"
-    },
-    {
-      "ts": "13 Nov 2026, 17:54 GMT",
-      "hhmm": "17:54",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "17:54 EXECUTOR: BUY 10% $Max @ 0.00191503 — 5m +2.5% vol $5,360 buys 16/sells 14",
-      "message": "17:54 EXECUTOR: BUY 10% $Max @ 0.00191503 — 5m +2.5% vol $5,360 buys 16/sells 14",
-      "symbol": null,
-      "action": "BUY 10% $Max @ 0.00191503 — 5m +2.5% vol $5,360 buys 16/sells 14"
-    },
-    {
-      "ts": "13 Nov 2026, 17:54 GMT",
-      "hhmm": "17:54",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "17:54 RISK: SELL time stop 20m $GATO",
-      "message": "17:54 RISK: SELL time stop 20m $GATO",
-      "symbol": null,
-      "action": "SELL time stop 20m $GATO"
     }
   ],
   "agents": [
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "4/6",
+      "activity": "5 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "5/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2604,11 +2604,11 @@
       "qty": 125.0625444207534,
       "qty_display": "125.06",
       "entry_price": 0.0014069999999999998,
-      "current_price": 0.001404,
+      "current_price": 0.001394,
       "change_pct": null,
       "price_source": "dexscreener",
-      "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.00213219616204674,
+      "unrealized_pnl": -0.01,
+      "unrealized_pct": -0.009239516702203132,
       "hard_stop": 0.0013366499999999998,
       "trail_activate": 0.00146328,
       "opened_at": "13 Nov 2026, 18:13 GMT",
@@ -2641,22 +2641,44 @@
       "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol"
     },
     {
+      "symbol": "Leonida",
+      "name": "Leonida",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 211.51939181593258,
+      "qty_display": "211.52",
+      "entry_price": 0.0008236979999999999,
+      "current_price": 0.0008196,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": -0.01,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.0007825130999999998,
+      "trail_activate": 0.0008566459199999999,
+      "opened_at": "13 Nov 2026, 18:17 GMT",
+      "reason": "BUY 10% $Leonida @ 0.000823698 — 5m +1.6% vol $6,903 buys 64/sells 51",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump?chain=sol"
+    },
+    {
       "symbol": "cashduck",
       "name": "cashduck",
       "asset_class": "crypto",
       "agent": "MIRAX",
-      "qty": 741.4503292735642,
-      "qty_display": "741.45",
-      "entry_price": 0.00023597399999999996,
-      "current_price": 0.0002499,
+      "qty": 652.8785181369972,
+      "qty_display": "652.88",
+      "entry_price": 0.00026793299999999993,
+      "current_price": 0.0002666,
       "change_pct": null,
       "price_source": "dexscreener",
-      "unrealized_pnl": 0.01,
-      "unrealized_pct": 0.05901497622619467,
-      "hard_stop": 0.00022417529999999995,
-      "trail_activate": 0.00024541296,
-      "opened_at": "13 Nov 2026, 18:15 GMT",
-      "reason": "BUY 10% $cashduck @ 0.000235974 — 5m +1.0% vol $8,716 buys 809/sells 471",
+      "unrealized_pnl": -0.01,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.00025453634999999993,
+      "trail_activate": 0.00027865031999999994,
+      "opened_at": "13 Nov 2026, 18:17 GMT",
+      "reason": "BUY 10% $cashduck @ 0.000267933 — 5m +4.3% vol $9,297 buys 835/sells 475",
       "score": null,
       "tag": "",
       "venue": "",
@@ -2664,6 +2686,66 @@
     }
   ],
   "fills": [
+    {
+      "id": "f2417",
+      "time": "13 Nov 2026, 18:17 GMT",
+      "ts": "2026-11-13T18:17:11.931519+00:00",
+      "side": "buy",
+      "symbol": "cashduck",
+      "name": "cashduck",
+      "asset_class": "crypto",
+      "qty": 652.8785181369972,
+      "qty_display": "652.88",
+      "price": 0.00026793299999999993,
+      "value": 0.17,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f2416",
+      "time": "13 Nov 2026, 18:17 GMT",
+      "ts": "2026-11-13T18:17:11.931199+00:00",
+      "side": "sell",
+      "symbol": "cashduck",
+      "name": "cashduck",
+      "asset_class": "crypto",
+      "qty": 741.4503292735642,
+      "qty_display": "741.45",
+      "price": 0.00026526699999999997,
+      "value": 0.2,
+      "pnl": 0.02,
+      "pnl_pct": 0.10187642756749422,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f2415",
+      "time": "13 Nov 2026, 18:17 GMT",
+      "ts": "2026-11-13T18:17:03.886896+00:00",
+      "side": "buy",
+      "symbol": "Leonida",
+      "name": "Leonida",
+      "asset_class": "crypto",
+      "qty": 211.51939181593258,
+      "qty_display": "211.52",
+      "price": 0.0008236979999999999,
+      "value": 0.17,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f2414",
       "time": "13 Nov 2026, 18:16 GMT",
@@ -50946,11 +51028,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 1205,
-    "win_rate": 0.33029045643153526,
-    "realized_pnl": -98.25,
-    "unrealized_pnl": -0.01,
-    "fills": 2414
+    "closed_trades": 1206,
+    "win_rate": 0.3308457711442786,
+    "realized_pnl": -98.23,
+    "unrealized_pnl": -0.03,
+    "fills": 2417
   },
   "ok": true,
   "totals_cumulative": {
@@ -50959,16 +51041,6 @@
     "traded": 1206
   },
   "events": [
-    {
-      "hhmm": "17:27",
-      "ts": "2026-11-13T17:27:11.865446+00:00",
-      "london": "13 Nov 2026, 17:27 GMT",
-      "agent": "EXECUTOR",
-      "action": "SELL take profit +8% $Sakura",
-      "symbol": "",
-      "reason": "SELL take profit +8% $Sakura",
-      "line": "17:27 EXECUTOR: SELL take profit +8% $Sakura"
-    },
     {
       "hhmm": "17:29",
       "ts": "2026-11-13T17:29:03.915319+00:00",
@@ -51078,6 +51150,16 @@
       "symbol": "",
       "reason": "SELL take profit +8% $cashduck",
       "line": "18:12 EXECUTOR: SELL take profit +8% $cashduck"
+    },
+    {
+      "hhmm": "18:17",
+      "ts": "2026-11-13T18:17:11.931248+00:00",
+      "london": "13 Nov 2026, 18:17 GMT",
+      "agent": "EXECUTOR",
+      "action": "SELL take profit +8% $cashduck",
+      "symbol": "",
+      "reason": "SELL take profit +8% $cashduck",
+      "line": "18:17 EXECUTOR: SELL take profit +8% $cashduck"
     }
   ],
   "role_colors": {
@@ -51099,7 +51181,7 @@
     {
       "symbol": "WASTED",
       "name": "WASTED",
-      "price": 0.001404,
+      "price": 0.001394,
       "change_pct": null,
       "source": "dexscreener"
     },
@@ -51111,9 +51193,16 @@
       "source": "geckoterminal"
     },
     {
+      "symbol": "Leonida",
+      "name": "Leonida",
+      "price": 0.0008196,
+      "change_pct": null,
+      "source": "dexscreener"
+    },
+    {
       "symbol": "cashduck",
       "name": "cashduck",
-      "price": 0.0002499,
+      "price": 0.0002666,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -51184,10 +51273,10 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 1.74,
-      "return_pct": -0.9825648699999999,
-      "closed_trades": 1205,
-      "win_rate": 0.33029045643153526,
-      "realized_pnl": -98.25
+      "return_pct": -0.98255945,
+      "closed_trades": 1206,
+      "win_rate": 0.3308457711442786,
+      "realized_pnl": -98.23
     }
   ],
   "btc_chart": [],
@@ -51203,11 +51292,11 @@
       "symbol": "CBUCKS",
       "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
       "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
-      "reason": "5m volume $2,518 under $5k",
+      "reason": "5m volume $3,100 under $5k",
       "gates": 1,
-      "chg_m5": 5.83,
-      "vol_m5": 2518.0,
-      "score": 42.35
+      "chg_m5": 5.76,
+      "vol_m5": 3100.0,
+      "score": 49.21
     },
     {
       "symbol": "Sakura",
@@ -51265,7 +51354,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-13T18:16:39.887826+00:00",
-  "checked_at_london": "13 Nov 2026, 18:16 GMT",
+  "checked_at": "2026-11-13T18:17:19.782648+00:00",
+  "checked_at_london": "13 Nov 2026, 18:17 GMT",
   "who_we_copy": null
 }
