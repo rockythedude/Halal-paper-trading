@@ -219,10 +219,14 @@
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       grid-template-areas:
+        "promo promo"
         "board board"
         "equity desk"
         "positions died"
         "history history"
+        "scan scan"
+        "watchbox watchbox"
+        "near near"
         "who who"
         "logger logger";
       gap: 12px;
@@ -236,6 +240,26 @@
       padding: 14px 16px;
       min-width: 0;
     }
+    .near { grid-area: near; }
+    .scan { grid-area: scan; }
+    .watchbox { grid-area: watchbox; }
+    .promo { grid-area: promo; display: flex; flex-direction: column; gap: 14px; }
+    .promo[hidden] { display: none; }
+    .promo-title { font-size: 28px; letter-spacing: -0.03em; line-height: 1.1; }
+    .checks { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .checks li { display: flex; align-items: center; gap: 10px; font-family: "IBM Plex Mono", monospace; font-size: 12px; color: #cfcfcf; }
+    .checks i { width: 12px; height: 12px; border-radius: 50%; border: 1px solid #444; flex: none; }
+    .checks li.ok i { background: var(--neon); border-color: var(--neon); }
+    .checks li.bad i { background: var(--red); border-color: var(--red); }
+    .promo-stats { display: flex; flex-wrap: wrap; gap: 16px 28px; }
+    .promo-stats b { display: block; font-family: "IBM Plex Mono", monospace; font-size: 20px; font-weight: 500; }
+    .promo-stats span { color: var(--muted); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .trader-list { display: flex; flex-direction: column; }
+    .trader-row { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+    .replay-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .replay-chart { height: 160px; }
+    #replay-recap { display: flex; flex-wrap: wrap; gap: 16px 28px; }
+    #replay-recap[hidden] { display: none; }
     .panel h2 {
       font-size: 11px;
       font-weight: 600;
@@ -495,6 +519,7 @@
       main {
         grid-template-columns: 1fr;
         grid-template-areas:
+          "promo"
           "board"
           "equity"
           "desk"
@@ -502,6 +527,9 @@
           "died"
           "positions"
           "history"
+          "scan"
+          "watchbox"
+          "near"
           "who";
         padding: 10px 10px 12px;
         gap: 10px;
@@ -553,7 +581,7 @@
       </div>
       <div class="right-tools">
         <span class="pill">6 agents</span>
-        <div class="live"><span class="dot"></span> Live</div>
+        <div class="live" id="live-flag"><span class="dot"></span> <span id="live-flag-text">Live</span></div>
       </div>
     </header>
 
@@ -567,9 +595,44 @@
       <a class="pill" id="nav-meme" href="meme/">Meme</a>
       <a class="pill" id="nav-btc" href="btc/">BTC</a>
       <a class="pill" id="nav-wallets" href="wallets/">Wallets</a>
+      <a class="pill" id="nav-axiom" href="scalp/">Scalp</a>
+      <a class="pill" id="nav-stocks" href="stocks/">Stocks</a>
     </nav>
 
     <main>
+      <section class="panel promo" id="promo" hidden>
+        <ol class="checks" id="checks">
+          <li data-key="feed"><i></i><span>wallet feed • connected</span></li>
+          <li data-key="board"><i></i><span>leaderboard • top 10 • last 30 days</span></li>
+          <li data-key="mode"><i></i><span>mode • copy every buy • $10</span></li>
+          <li data-key="hist"><i></i><span>history • — buys • 10 traders</span></li>
+        </ol>
+        <div>
+          <div class="promo-title">copying the top 10 traders</div>
+          <div class="disc">Live paper book. Not the backtest.</div>
+        </div>
+        <div class="promo-stats">
+          <div><span>Balance</span><b id="promo-balance">—</b></div>
+          <div><span>Put in</span><b id="promo-putin">—</b></div>
+          <div><span>Copies</span><b id="promo-copies">—</b></div>
+          <div><span>Multiplier</span><b id="promo-mult">—</b></div>
+          <div><span>Profit</span><b id="promo-profit">—</b></div>
+        </div>
+        <div class="trader-list" id="promo-traders"></div>
+        <div>
+          <div class="replay-top">
+            <div>
+              <h2>30-day replay</h2>
+              <div class="disc">Backtest replay, paper money, includes fees and delay</div>
+            </div>
+            <button class="toggle" id="replay-btn" type="button">Replay</button>
+          </div>
+          <div class="chart-wrap replay-chart"><canvas id="replay-chart"></canvas></div>
+          <div id="replay-recap" hidden></div>
+          <div class="disc" id="replay-skips"></div>
+          <div id="rank"></div>
+        </div>
+      </section>
       <section class="panel board">
         <h2>Leaderboard <span class="meta">paper equity</span></h2>
         <div class="banner" id="sandbox" hidden></div>
@@ -608,6 +671,18 @@
         <div id="died"></div>
       </section>
 
+      <section class="panel scan" id="scan-panel" hidden>
+        <h2>Today's signals <span class="meta" id="scan-meta"></span></h2>
+        <div class="table-wrap" id="scan"></div>
+      </section>
+      <section class="panel watchbox" id="trend-panel" hidden>
+        <h2>Watching <span class="meta" id="trend-meta"></span></h2>
+        <div class="table-wrap" id="trend"></div>
+      </section>
+      <section class="panel near" id="near-panel" hidden>
+        <h2>Closest candidates <span class="meta" id="near-meta"></span></h2>
+        <div id="near"></div>
+      </section>
       <section class="panel positions">
         <h2>Open positions <span class="meta" id="pos-meta"></span></h2>
         <div class="table-wrap" id="pos"></div>
@@ -620,7 +695,7 @@
       </section>
 
       <section class="panel who" id="watch-panel" hidden>
-        <h2>Watchlist <span class="meta" id="watch-meta"></span></h2>
+        <h2>Wallet scoreboard <span class="meta" id="watch-meta"></span></h2>
         <div id="watch"></div>
       </section>
 
@@ -632,7 +707,7 @@
 
     <footer class="target">
       <div class="tgt-head">
-        <span>Night target <b>$6,000</b></span>
+        <span id="tgt-name">Night target <b id="tgt-amt">$6,000</b></span>
         <span id="tgt-label">—</span>
       </div>
       <div class="track"><i id="tgt-fill"></i></div>
@@ -798,7 +873,8 @@
     if (a.role === "Executor") {
       const mode = data.risk_rules && data.risk_rules.mode;
       if (mode === "scalp") return ["20% × 4"];
-      if (mode === "wallets") return ["10%"];
+      if (mode === "wallets") return ["10% / 5%"];
+      if (mode === "stocks") return ["50% × 2"];
       return ["size ≤ 8%"];
     }
     if (a.role === "Risk") {
@@ -861,6 +937,31 @@
       : '<div class="empty">No kills recorded this tick.</div>';
   }
 
+  function renderNear(data) {
+    const panel = document.getElementById("near-panel");
+    if (!panel) return;
+    if (deskId() !== "axiom") {
+      panel.hidden = true;
+      return;
+    }
+    panel.hidden = false;
+    const rows = data.near_misses || [];
+    document.getElementById("near-meta").textContent = rows.length ? `${rows.length} near misses` : "";
+    if (!rows.length) {
+      document.getElementById("near").innerHTML = '<div class="empty">No near misses this poll.</div>';
+      return;
+    }
+    document.getElementById("near").innerHTML = `<table><thead><tr><th>Coin</th><th>Why it stayed out</th><th class="num">5m</th></tr></thead><tbody>`
+      + rows.map(r => {
+          const name = r.link
+            ? `<a href="${escapeHtml(r.link)}" target="_blank" rel="noopener">${escapeHtml(r.symbol || "")}</a>`
+            : escapeHtml(r.symbol || "");
+          const chg = r.chg_m5 == null ? "—" : ((r.chg_m5 >= 0 ? "+" : "") + Number(r.chg_m5).toFixed(1) + "%");
+          return `<tr><td class="sym">${name}</td><td>${escapeHtml(r.reason || "")}</td><td class="num">${chg}</td></tr>`;
+        }).join("")
+      + `</tbody></table>`;
+  }
+
   function renderPositions(data) {
     const pos = data.positions || [];
     document.getElementById("pos-meta").textContent = `${pos.length} open`;
@@ -872,8 +973,12 @@
       const pnl = p.unrealized_pnl;
       const pct = p.unrealized_pct;
       const pctStr = (pct == null) ? "—" : asPct(pct);
+      const tag = p.tag ? ` <span class="chip">${escapeHtml(p.tag)}</span>` : "";
+      const sym = p.link
+        ? `<a href="${escapeHtml(p.link)}" target="_blank" rel="noopener">${escapeHtml(p.symbol)}</a>`
+        : escapeHtml(p.symbol);
       return `<tr>
-        <td class="sym">${escapeHtml(p.symbol)}<span class="name">${escapeHtml(p.name || "")} · ${escapeHtml(p.asset_class || "")}</span></td>
+        <td class="sym">${sym}${tag}<span class="name">${escapeHtml(p.name || "")} · ${escapeHtml(p.asset_class || "")}</span></td>
         <td>${escapeHtml(p.agent || "")}</td>
         <td class="num">${escapeHtml(p.qty_display || String(p.qty ?? ""))}</td>
         <td class="num">${fmtMoney(p.entry_price)}</td>
@@ -893,6 +998,8 @@
 
   function deskId() {
     const path = window.location.pathname || "";
+    if (path.includes("/scalp")) return "axiom";
+    if (path.includes("/stocks")) return "stocks";
     if (path.includes("/wallets")) return "wallets";
     if (path.includes("/btc")) return "btc";
     if (path.includes("/meme")) return "meme";
@@ -909,12 +1016,17 @@
       meme: desk === "meme" ? "./" : prefix + "meme/",
       btc: desk === "btc" ? "./" : prefix + "btc/",
       wallets: desk === "wallets" ? "./" : prefix + "wallets/",
+      axiom: desk === "axiom" ? "./" : prefix + "scalp/",
+      stocks: desk === "stocks" ? "./" : prefix + "stocks/",
     };
     document.getElementById("nav-main").href = links.main;
     document.getElementById("nav-copy").href = links.copy;
     document.getElementById("nav-meme").href = links.meme;
     document.getElementById("nav-btc").href = links.btc;
     document.getElementById("nav-wallets").href = links.wallets;
+    document.getElementById("nav-axiom").href = links.axiom;
+    const navStocks = document.getElementById("nav-stocks");
+    if (navStocks) navStocks.href = links.stocks;
     document.getElementById("nav-" + desk).classList.add("on");
     const titles = {
       main: ["Halal Paper Trader", "Halal stocks + crypto · strict RM · paper"],
@@ -922,6 +1034,8 @@
       meme: ["Crypto + Meme", "NOT halal-screened · speculative sandbox · paper"],
       btc: ["BTC Scalper", "BTC spot only · no leverage · paper"],
       wallets: ["Wallet Copy", "Solana meme wallets · not halal-screened · paper"],
+      axiom: ["Axiom Scalper", "Not halal-screened, speculative, paper only"],
+      stocks: ["Halal Stock Scanner", "SPUS screen · long only · paper · flat before the close"],
     };
     const pair = titles[desk];
     document.querySelector(".brand h1").textContent = pair[0];
@@ -974,27 +1088,39 @@
       return;
     }
     panel.hidden = false;
-    const rows = data.watchlist || [];
-    document.getElementById("watch-meta").textContent = `${rows.length} wallets`;
+    const rows = (data.wallet_scoreboard && data.wallet_scoreboard.length)
+      ? data.wallet_scoreboard
+      : (data.watchlist || []);
+    const pausedN = rows.filter(r => r.paused).length;
+    document.getElementById("watch-meta").textContent = `${(data.watchlist || rows).length} pinned${pausedN ? ` · ${pausedN} paused` : ""}`;
     if (!rows.length) {
-      document.getElementById("watch").innerHTML = '<div class="empty">Watchlist appears after the first scan of DexScreener and Solana.</div>';
+      document.getElementById("watch").innerHTML = '<div class="empty">The pinned leaderboard list appears after the next tick.</div>';
       return;
     }
+    const board = data.wallet_scoreboard || [];
+    const byAddr = {};
+    board.forEach(row => { if (row.address) byAddr[row.address] = row; });
+    const money = (n) => (n == null || Number.isNaN(Number(n))) ? "—" : ((Number(n) >= 0 ? "+" : "−") + fmtMoney(Math.abs(Number(n))));
     const body = rows.map(row => {
-      const realized = row.realized_usd == null ? "—" : ((row.realized_usd >= 0 ? "+" : "−") + fmtMoney(Math.abs(row.realized_usd)));
+      const score = byAddr[row.address] || row;
       const href = row.solscan || ("https://solscan.io/account/" + (row.address || ""));
+      const label = row.name ? `${row.name} · ${row.short || ""}` : (row.short || row.address || "");
+      const broken = row.parse_error ? ` · ${row.parse_error}` : "";
+      const realized = score.realized_pnl != null ? score.realized_pnl : score.our_realized;
+      const paused = (score.paused || row.paused) ? ` <span class="chip">paused</span>` : "";
       return `<tr>
-        <td><a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(row.short || row.address || "")}</a></td>
-        <td>${escapeHtml((row.tokens || []).join(", "))}</td>
-        <td class="num">${row.buys ?? 0}</td>
-        <td class="num">${row.sells ?? 0}</td>
-        <td class="num ${row.realized_usd > 0 ? "up" : row.realized_usd < 0 ? "down" : "flat"}">${realized}</td>
+        <td><a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>${paused}${broken ? `<span class="name">${escapeHtml(broken)}</span>` : ""}</td>
+        <td>${escapeHtml(row.source || "")}<span class="name">${escapeHtml(row.leaderboard_stat || "")}</span></td>
+        <td class="num ${clsPnL(realized || 0)}">${money(realized || 0)}</td>
+        <td class="num">${score.wins ?? 0}</td>
+        <td class="num">${score.losses ?? 0}</td>
+        <td class="num ${clsPnL(score.our_unrealized || 0)}">${money(score.our_unrealized || 0)}</td>
       </tr>`;
     }).join("");
     document.getElementById("watch").innerHTML = `<table>
-      <thead><tr><th>Wallet</th><th>Tokens</th><th class="num">Buys</th><th class="num">Sells</th><th class="num">Realized sample</th></tr></thead>
+      <thead><tr><th>Wallet</th><th>Source</th><th class="num">Realized</th><th class="num">Wins</th><th class="num">Losses</th><th class="num">Open</th></tr></thead>
       <tbody>${body}</tbody></table>
-      <div class="empty">${escapeHtml((rows[0] && rows[0].source) || "")}</div>`;
+      <div class="empty">Copied P&amp;L is this paper book only. A wallet with 5 or more closed copies and negative realized P&amp;L is paused.</div>`;
   }
 
   function renderWho(data) {
@@ -1055,6 +1181,20 @@
       sandbox.hidden = false;
       sandbox.textContent = data.sandbox_note || "Meme coins: not halal-screened, speculative; paper only.";
       fine.textContent = "Paper money only. Meme coins are not halal-screened. Speculative sandbox, not a fatwa.";
+    } else if (deskId() === "axiom") {
+      sandbox.hidden = false;
+      sandbox.textContent = data.sandbox_note || "Not halal-screened, speculative, paper only.";
+      fine.textContent = "Paper money only. Not halal-screened, speculative, paper only.";
+    } else if (deskId() === "stocks") {
+      sandbox.hidden = false;
+      sandbox.textContent = data.sandbox_note || "Paper money only. Long stocks from the SPUS screen. Not a fatwa.";
+      lag.hidden = false;
+      lag.textContent = data.lag_note || "Scans 14:30–21:00 London on NYSE days. Flat 10 minutes before the close.";
+      fine.textContent = "Paper money only. A name from the suggested list is dropped when it is not in the current SPUS holdings. SPUS and HLAL are the halal ETFs. Not a fatwa.";
+      const dropped = data.screen_dropped || [];
+      if (dropped.length) {
+        lag.textContent += " Dropped: " + dropped.map(d => d.symbol).join(", ") + ".";
+      }
     }
   }
 
@@ -1126,6 +1266,23 @@
       `<span>Win rate <b>${winStr}</b></span>` +
       `<span>Realised <b class="${clsPnL(realized)}">${fmtMoney(realized)}</b></span>` +
       `<span>Unrealised <b class="${clsPnL(unrealized)}">${fmtMoney(unrealized)}</b></span>`;
+    if (deskId() === "stocks" && (data.closed_log || []).length) {
+      const rows = data.closed_log.map(t => `<tr>
+        <td class="sym">${escapeHtml(t.symbol)}</td>
+        <td class="mono">${escapeHtml(t.entry_london || "")}</td>
+        <td class="mono">${escapeHtml(t.exit_london || "")}</td>
+        <td class="num">${fmtMoney(t.entry_price)}</td>
+        <td class="num">${fmtMoney(t.exit_price)}</td>
+        <td class="num ${clsPnL(t.pnl)}">${fmtMoney(t.pnl)}</td>
+        <td>${escapeHtml(t.reason || "")}</td>
+      </tr>`).join("");
+      document.getElementById("hist").innerHTML = `<table>
+        <thead><tr>
+          <th>Ticker</th><th>Entry (UK)</th><th>Exit (UK)</th>
+          <th class="num">Entry</th><th class="num">Exit</th><th class="num">P&amp;L</th><th>Reason</th>
+        </tr></thead><tbody>${rows}</tbody></table>`;
+      return;
+    }
     if (!fills.length) {
       document.getElementById("hist").innerHTML = '<div class="empty">No paper fills yet.</div>';
       return;
@@ -1136,9 +1293,9 @@
       const pct = f.pnl_pct;
       const pnlHtml = (pnl == null) ? "—" : `${fmtMoney(pnl)} <span>${pct == null ? "" : asPct(pct)}</span>`;
       return `<tr>
-        <td class="mono">${escapeHtml(f.time || "")}</td>
+        <td class="mono">${escapeHtml(f.time || "")}${f.delay_s != null ? ` · ${Number(f.delay_s).toFixed(1)}s` : ""}</td>
         <td class="${sell ? "side-sell" : "side-buy"}">${sell ? "SELL" : "BUY"}</td>
-        <td class="sym">${escapeHtml(f.symbol)}<span class="name">${escapeHtml(f.name || "")}</span></td>
+        <td class="sym">${escapeHtml(f.symbol)}${f.tag ? ` <span class="chip">${escapeHtml(f.tag)}</span>` : ""}<span class="name">${escapeHtml(f.name || "")}</span></td>
         <td>${escapeHtml(f.asset_class || "")}</td>
         <td class="num">${escapeHtml(f.qty_display || String(f.qty ?? ""))}</td>
         <td class="num">${fmtMoney(f.price)}</td>
@@ -1157,8 +1314,10 @@
   function renderEquity(data) {
     const start = data.starting_capital || 100;
     const sizePct = Math.round((((data.risk_rules || {}).max_position_pct) || 0.08) * 100);
-    document.getElementById("eq-kicker").textContent =
-      `Equity — ${fmtMoney(start, 0)} at start — ${sizePct}% max size`;
+    const liveBook = deskId() === "axiom" || (deskId() === "wallets" && data.helius_status === "live");
+    document.getElementById("eq-kicker").textContent = liveBook
+      ? `Live P&L — ${fmtMoney(start, 0)} book — ${sizePct}% size`
+      : `Equity — ${fmtMoney(start, 0)} at start — ${sizePct}% max size`;
     setEquity(Number(data.equity) || 0);
     const profit = data.profit;
     const pct = start ? (profit / start) * 100 : 0;
@@ -1182,7 +1341,10 @@
       if (wrap) wrap.hidden = true;
     }
     const target = data.target || 6000;
-    document.querySelector(".tgt-head b").textContent = fmtMoney(target, 0);
+    const tgtAmt = document.getElementById("tgt-amt") || document.querySelector(".tgt-head b");
+    if (tgtAmt) tgtAmt.textContent = fmtMoney(target, 0);
+    const tgtName = document.getElementById("tgt-name");
+    if (tgtName && deskId() === "stocks") tgtName.firstChild.textContent = "Paper book ";
     const eq = Number(data.equity) || 0;
     const prog = target ? (eq / target) * 100 : 0;
     document.getElementById("tgt-fill").style.width = Math.max(0.4, Math.min(100, prog)).toFixed(2) + "%";
@@ -1280,11 +1442,264 @@
   }
 
   let lastState = null;
+  let replayBook = null;
+  let checksStarted = false;
+
+  function setCheck(key, state) {
+    const li = document.querySelector(`#checks li[data-key="${key}"]`);
+    if (!li) return;
+    li.classList.remove("ok", "bad", "wait");
+    if (state) li.classList.add(state);
+  }
+
+  async function rpcReachable() {
+    const body = JSON.stringify({ jsonrpc: "2.0", id: 1, method: "getHealth" });
+    const urls = ["https://solana-rpc.publicnode.com", "https://api.mainnet-beta.solana.com"];
+    for (const url of urls) {
+      try {
+        const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body });
+        if (!r.ok) continue;
+        const data = await r.json();
+        if (data && data.result === "ok") return true;
+      } catch (err) { /* try the next RPC */ }
+    }
+    return false;
+  }
+
+  function renderLeaderTape(data) {
+    const rows = data.watchlist || [];
+    const track = document.getElementById("ticker");
+    if (!rows.length) return;
+    const bit = rows.map(r => {
+      const name = r.name || r.short || r.address || "";
+      const stat = r.leaderboard_stat || "";
+      return `<div class="tick"><span class="sym">${escapeHtml(name)}</span><span class="px">${escapeHtml(stat)}</span></div>`;
+    }).join("");
+    track.innerHTML = bit + bit;
+  }
+
+  function renderPromo(data) {
+    const promo = document.getElementById("promo");
+    if (!promo || deskId() !== "wallets") return;
+    promo.hidden = false;
+    const start = Number(data.starting_capital) || 0;
+    const equity = Number(data.equity);
+    const buys = (data.fills || []).filter(f => (f.side || "") === "buy").length;
+    const profit = Number.isFinite(equity) ? equity - start : null;
+    const mult = start && Number.isFinite(equity) ? equity / start : null;
+    document.getElementById("promo-balance").textContent = Number.isFinite(equity) ? fmtMoney(equity) : "—";
+    document.getElementById("promo-putin").textContent = start ? fmtMoney(start) : "—";
+    document.getElementById("promo-copies").textContent = String(buys);
+    document.getElementById("promo-mult").textContent = mult == null ? "—" : mult.toFixed(2) + "×";
+    const profitEl = document.getElementById("promo-profit");
+    profitEl.textContent = profit == null ? "—" : ((profit >= 0 ? "+" : "−") + fmtMoney(Math.abs(profit)));
+    profitEl.className = profit == null ? "" : clsPnL(profit);
+    const board = {};
+    (data.wallet_scoreboard || []).forEach(r => { if (r.address) board[r.address] = r; });
+    const rows = data.watchlist || [];
+    document.getElementById("promo-traders").innerHTML = rows.map(r => {
+      const score = board[r.address] || r;
+      const pnl = score.our_total != null ? score.our_total : (score.realized_pnl || 0);
+      const name = r.name ? `${r.name} · ${r.short || ""}` : (r.short || "");
+      const paused = score.paused ? ` <span class="chip">paused</span>` : "";
+      return `<div class="trader-row"><span>${escapeHtml(name)}${paused}</span><span class="mono ${clsPnL(pnl)}">${(pnl >= 0 ? "+" : "−") + fmtMoney(Math.abs(pnl))}</span></div>`;
+    }).join("");
+  }
+
+  function drawReplay(days, count) {
+    const c = document.getElementById("replay-chart");
+    if (!c) return;
+    const wrap = c.parentElement;
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+    const w = wrap.clientWidth, h = wrap.clientHeight;
+    if (w < 10 || h < 10) return;
+    c.width = Math.floor(w * dpr);
+    c.height = Math.floor(h * dpr);
+    const ctx = c.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    const pts = (days || []).slice(0, Math.max(1, count));
+    if (pts.length < 2) return;
+    const vals = pts.map(p => Number(p.equity) || 0);
+    const min = Math.min(...vals), max = Math.max(...vals);
+    const span = max - min || 1;
+    const xAt = i => 8 + (i / (pts.length - 1)) * (w - 16);
+    const yAt = v => h - 16 - ((v - min) / span) * (h - 28);
+    ctx.beginPath();
+    vals.forEach((v, i) => { const x = xAt(i), y = yAt(v); if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); });
+    ctx.strokeStyle = "#00ff88";
+    ctx.lineWidth = 1.6;
+    ctx.stroke();
+    ctx.font = "10px IBM Plex Mono";
+    ctx.fillStyle = "#9a9a9a";
+    ctx.fillText(pts[0].date || "", 8, 12);
+    ctx.textAlign = "right";
+    ctx.fillText(pts[pts.length - 1].date || "", w - 8, 12);
+  }
+
+  function renderReplayMeta(replay) {
+    const skips = document.getElementById("replay-skips");
+    if (!skips) return;
+    const parts = (replay.skipped || []).map(s => `${s.count} ${s.reason}`);
+    const cov = (replay.coverage || []).filter(c => c.note).map(c => `${c.name || c.short}: ${c.note}`);
+    skips.textContent = [parts.join(" · "), cov.join(" ")].filter(Boolean).join(" ");
+  }
+
+  function renderRank(replay) {
+    const box = document.getElementById("rank");
+    if (!box) return;
+    const pinned = (replay && replay.wallet_sims) || [];
+    const cand = (replay && replay.candidate_sims) || [];
+    const rows = pinned.concat(cand);
+    if (!rows.length) {
+      box.innerHTML = "";
+      return;
+    }
+    const money = (n) => (n == null || Number.isNaN(Number(n))) ? "—" : ((Number(n) >= 0 ? "+" : "−") + fmtMoney(Math.abs(Number(n))));
+    const body = rows.map(r => `<tr>
+      <td class="num">${r.rank ?? ""}</td>
+      <td>${escapeHtml(r.name || r.short || "")}<span class="name">${escapeHtml(r.group || "")}${r.pinned ? " · copied now" : ""}</span></td>
+      <td class="num">${r.copies ?? 0}</td>
+      <td class="num">${r.closed ?? 0}</td>
+      <td class="num">${r.win_rate == null ? "—" : Math.round(r.win_rate * 100) + "%"}</td>
+      <td class="num ${clsPnL(r.realized || 0)}">${money(r.realized || 0)}</td>
+      <td class="num ${clsPnL(r.unrealized || 0)}">${money(r.unrealized || 0)}</td>
+      <td class="num">${r.median_hold_hours == null ? "—" : Number(r.median_hold_hours).toFixed(1) + "h"}</td>
+      <td class="num ${clsPnL(r.profit || 0)}">${money(r.profit || 0)}</td>
+    </tr>`).join("");
+    box.innerHTML = `<h2>Each wallet on its own $100 book</h2>
+      <div class="disc">Full history where Helius returned it. Fees and a 15-second delay. This does not change who the live desk copies.</div>
+      <div class="table-wrap"><table>
+        <thead><tr><th class="num">#</th><th>Wallet</th><th class="num">Copies</th><th class="num">Closed</th><th class="num">Win</th><th class="num">Realized</th><th class="num">Open</th><th class="num">Hold</th><th class="num">Profit</th></tr></thead>
+        <tbody>${body}</tbody></table></div>`;
+  }
+
+  function showRecap(replay) {
+    const box = document.getElementById("replay-recap");
+    if (!box) return;
+    const cells = [
+      ["Put in", fmtMoney(replay.put_in || 0)],
+      ["Now worth", fmtMoney(replay.now_worth || 0)],
+      ["Copies", String(replay.copies || 0)],
+      ["Coins", String(replay.coins || 0)],
+      ["Traders", String(replay.traders || 0)],
+    ];
+    box.hidden = false;
+    box.innerHTML = cells.map(([k, v]) => `<div><span>${k}</span><b>${v}</b></div>`).join("");
+    box.className = "promo-stats";
+  }
+
+  function playReplay() {
+    const replay = replayBook;
+    if (!replay || !(replay.days || []).length) return;
+    const days = replay.days;
+    const btn = document.getElementById("replay-btn");
+    if (btn) btn.disabled = true;
+    const recap = document.getElementById("replay-recap");
+    if (recap) recap.hidden = true;
+    const t0 = performance.now();
+    const step = (now) => {
+      const t = Math.min(1, (now - t0) / 20000);
+      const n = Math.max(1, Math.round(t * (days.length - 1)) + 1);
+      drawReplay(days, n);
+      if (t < 1) requestAnimationFrame(step);
+      else {
+        if (btn) btn.disabled = false;
+        showRecap(replay);
+      }
+    };
+    requestAnimationFrame(step);
+  }
+
+  async function openChecks() {
+    if (checksStarted || deskId() !== "wallets") return;
+    checksStarted = true;
+    const promo = document.getElementById("promo");
+    if (promo) promo.hidden = false;
+    ["feed", "board", "mode", "hist"].forEach(k => setCheck(k, "wait"));
+    setCheck("feed", (await rpcReachable()) ? "ok" : "bad");
+    try {
+      const local = new URL("data.json", pageBase());
+      local.searchParams.set("t", String(Date.now()));
+      const data = await readJson(local.href);
+      const rows = (data.watchlist || []).filter(r => r.leaderboard_stat);
+      const thirty = rows.filter(r => String(r.window || "").includes("30") || String(r.leaderboard_stat || "").includes("30d")).length;
+      const label = document.querySelector('#checks li[data-key="board"] span');
+      if (label && rows.length && thirty !== rows.length) {
+        label.textContent = `leaderboard • top ${rows.length} • ${thirty}×30d, ${rows.length - thirty}×7d`;
+      }
+      setCheck("board", rows.length >= 10 ? "ok" : "bad");
+      renderPromo(data);
+      renderLeaderTape(data);
+    } catch (err) {
+      setCheck("board", "bad");
+    }
+    try {
+      const local = new URL("replay.json", pageBase());
+      local.searchParams.set("t", String(Date.now()));
+      replayBook = await readJson(local.href);
+      setCheck("mode", Number(replayBook.copy_usd) === 10 ? "ok" : "bad");
+      const hist = document.querySelector('#checks li[data-key="hist"] span');
+      if (hist) hist.textContent = `history • ${replayBook.copies || 0} buys • ${replayBook.traders || 0} traders`;
+      setCheck("hist", replayBook.generated_at ? "ok" : "bad");
+      renderReplayMeta(replayBook);
+      renderRank(replayBook);
+      drawReplay(replayBook.days || [], (replayBook.days || []).length);
+    } catch (err) {
+      setCheck("mode", "bad");
+      setCheck("hist", "bad");
+    }
+  }
+
   async function readJson(url) {
     const r = await fetch(url, { cache: "no-store" });
     if (!r.ok) throw new Error("HTTP " + r.status);
     return r.json();
   }
+  function trendCell(flag) {
+    const text = flag || "—";
+    const cls = text === "up" ? "up" : text === "down" ? "down" : "flat";
+    return `<td class="${cls}">${escapeHtml(text)}</td>`;
+  }
+  function renderStocks(data) {
+    const scan = document.getElementById("scan-panel");
+    const trend = document.getElementById("trend-panel");
+    if (!scan || !trend) return;
+    if (deskId() !== "stocks") {
+      scan.hidden = true;
+      trend.hidden = true;
+      return;
+    }
+    scan.hidden = false;
+    trend.hidden = false;
+    const signals = data.signals_today || [];
+    document.getElementById("scan-meta").textContent = signals.length ? `${signals.length} today` : "none yet";
+    document.getElementById("scan").innerHTML = signals.length
+      ? `<table><thead><tr><th>Time (UK)</th><th>Ticker</th><th class="num">Close</th><th class="num">Vol ×</th><th>Result</th></tr></thead><tbody>`
+        + signals.map(s => `<tr>
+            <td class="mono">${escapeHtml(s.time || "")}</td>
+            <td class="sym">${escapeHtml(s.symbol || "")}</td>
+            <td class="num">${fmtMoney(s.close)}</td>
+            <td class="num">${s.volume_ratio == null ? "—" : Number(s.volume_ratio).toFixed(2)}</td>
+            <td>${escapeHtml(s.result || "")}</td>
+          </tr>`).join("")
+        + `</tbody></table>`
+      : '<div class="empty">No LONG signal on a closed 5m bar yet today.</div>';
+    const rows = data.watching || [];
+    const up = rows.filter(r => r.trend_1m === "up" && r.trend_5m === "up" && r.trend_15m === "up").length;
+    document.getElementById("trend-meta").textContent = rows.length ? `${rows.length} names · ${up} up on all three` : "";
+    document.getElementById("trend").innerHTML = rows.length
+      ? `<table><thead><tr><th>Ticker</th><th class="num">Last</th><th>1m</th><th>5m</th><th>15m</th><th class="num">Vol ×</th></tr></thead><tbody>`
+        + rows.map(r => `<tr>
+            <td class="sym">${escapeHtml(r.symbol || "")}<span class="name">${escapeHtml(r.name || "")}</span></td>
+            <td class="num">${r.last == null ? "—" : fmtMoney(r.last)}</td>
+            ${trendCell(r.trend_1m)}${trendCell(r.trend_5m)}${trendCell(r.trend_15m)}
+            <td class="num">${r.volume_ratio == null ? "—" : Number(r.volume_ratio).toFixed(2)}</td>
+          </tr>`).join("")
+        + `</tbody></table>`
+      : '<div class="empty">The trend box fills on the next scan during NYSE hours.</div>';
+  }
+
   async function pollState() {
     try {
       const bust = String(Date.now());
@@ -1293,6 +1708,12 @@
       const jobs = [readJson(local.href)];
       if (deskId() === "wallets") {
         jobs.push(readJson("https://raw.githubusercontent.com/rockythedude/Halal-paper-trading/main/web/wallets/data.json?t=" + bust));
+      }
+      if (deskId() === "axiom") {
+        jobs.push(readJson("https://raw.githubusercontent.com/rockythedude/Halal-paper-trading/main/web/scalp/data.json?t=" + bust));
+      }
+      if (deskId() === "stocks") {
+        jobs.push(readJson("https://raw.githubusercontent.com/rockythedude/Halal-paper-trading/main/web/stocks/data.json?t=" + bust));
       }
       const settled = await Promise.allSettled(jobs);
       let data = null;
@@ -1310,11 +1731,19 @@
       renderAgents(data);
       renderLog(data);
       renderDied(data);
+      renderNear(data);
       renderPositions(data);
+      renderLiveFlag(data);
       renderHistory(data);
       renderWho(data);
       renderWatch(data);
-      renderTicker(tickerFromState(data));
+      renderStocks(data);
+      if (deskId() === "wallets") {
+        renderLeaderTape(data);
+        renderPromo(data);
+      } else {
+        renderTicker(tickerFromState(data));
+      }
       maybeToasts(data);
       document.body.classList.add("ready");
     } catch (err) {
@@ -1328,10 +1757,36 @@
     drawChart(lastCurve);
     if (deskId() === "btc") drawBtc(lastBtc, lastMarks);
   });
+  function renderLiveFlag(data) {
+    const text = document.getElementById("live-flag-text");
+    if (!text) return;
+    if (deskId() !== "wallets") {
+      text.textContent = "Live";
+      return;
+    }
+    if (!data || data.helius_status !== "live") {
+      text.textContent = "waiting for Helius key";
+      return;
+    }
+    const when = data.last_event_london || data.checked_at_london || "no copy yet";
+    const delay = data.avg_copy_delay_s == null ? "—" : `${data.avg_copy_delay_s}s avg`;
+    text.textContent = `LIVE · ${when} · ${delay}`;
+  }
+
   function pollEvery() {
-    return deskId() === "wallets" ? 20000 : 30000;
+    if (deskId() === "axiom") return 8000;
+    if (deskId() === "stocks") return 15000;
+    return deskId() === "wallets" ? 2000 : 30000;
   }
   async function pollLoop() {
+    if (deskId() === "wallets") {
+      const btn = document.getElementById("replay-btn");
+      if (btn && !btn.dataset.bound) {
+        btn.dataset.bound = "1";
+        btn.addEventListener("click", playReplay);
+      }
+      openChecks();
+    }
     await pollState();
     setTimeout(pollLoop, pollEvery());
   }
