@@ -13906,12 +13906,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-13T09:05:10.942202+00:00",
-      "label": "13 Nov 2026, 9:05 GMT",
-      "equity": 13.00328,
-      "cash": 9.184655
-    },
-    {
       "ts": "2026-11-13T09:05:50.897836+00:00",
       "label": "13 Nov 2026, 9:05 GMT",
       "equity": 12.972638,
@@ -16910,21 +16904,15 @@
       "label": "13 Nov 2026, 14:56 GMT",
       "equity": 5.652092,
       "cash": 3.305009
+    },
+    {
+      "ts": "2026-11-13T14:57:14.485396+00:00",
+      "label": "13 Nov 2026, 14:57 GMT",
+      "equity": 5.652092,
+      "cash": 3.305009
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-13T10:40:00.045162+00:00",
-      "london": "13 Nov 2026, 10:40 GMT",
-      "hhmm": "10:40",
-      "agent": "EXECUTOR",
-      "action": "SELL trail 2.5% $Sakura",
-      "symbol": null,
-      "reason": "SELL trail 2.5% $Sakura",
-      "line": "10:40 EXECUTOR: SELL trail 2.5% $Sakura",
-      "tag": "EXECUTOR",
-      "message": "10:40 EXECUTOR: SELL trail 2.5% $Sakura"
-    },
     {
       "ts": "2026-11-13T10:40:00.045605+00:00",
       "london": "13 Nov 2026, 10:40 GMT",
@@ -21712,6 +21700,18 @@
       "line": "14:56 EXECUTOR: BUY 10% $UwU @ 0.000146428 \u2014 5m +39.4% vol $73,928 buys 557/sells 360",
       "tag": "EXECUTOR",
       "message": "14:56 EXECUTOR: BUY 10% $UwU @ 0.000146428 \u2014 5m +39.4% vol $73,928 buys 557/sells 360"
+    },
+    {
+      "ts": "2026-11-13T14:57:14.485323+00:00",
+      "london": "13 Nov 2026, 14:57 GMT",
+      "hhmm": "14:57",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 4 open, equity $5.65",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 4 open, equity $5.65",
+      "line": "14:57 LOGGER: run complete \u2014 29 polls, 4 open, equity $5.65",
+      "tag": "LOGGER",
+      "message": "14:57 LOGGER: run complete \u2014 29 polls, 4 open, equity $5.65"
     }
   ],
   "agents": {
@@ -21720,8 +21720,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 20 pools",
-      "badge": "56 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 40 pools",
+      "badge": "76 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -21736,7 +21736,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "56 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "76 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -21812,9 +21812,9 @@
       "open_positions": 0
     }
   },
-  "ticks": 7946,
-  "last_updated": "2026-11-13T14:56:50.443402+00:00",
-  "last_updated_london": "13 Nov 2026, 14:56 GMT",
+  "ticks": 7975,
+  "last_updated": "2026-11-13T14:57:14.485109+00:00",
+  "last_updated_london": "13 Nov 2026, 14:57 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -21832,12 +21832,12 @@
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 916
+    "traded": 923
   },
   "totals_cumulative": {
-    "scanned": 7946,
+    "scanned": 7975,
     "killed": 0,
-    "traded": 916
+    "traded": 923
   },
   "paper_money": true,
   "fills": [
@@ -47633,8 +47633,8 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-13T14:56:50.443402+00:00",
-  "checked_at_london": "13 Nov 2026, 14:56 GMT",
+  "checked_at": "2026-11-13T14:57:14.485109+00:00",
+  "checked_at_london": "13 Nov 2026, 14:57 GMT",
   "near_misses": [
     {
       "symbol": "WASTED",
@@ -47658,13 +47658,33 @@
     },
     {
       "symbol": "Speed",
+      "mint": "HPMha7L36iZvacktJWU32Kfft1q2sQHAXXmcL6xkpump",
+      "link": "https://axiom.trade/meme/HPMha7L36iZvacktJWU32Kfft1q2sQHAXXmcL6xkpump?chain=sol",
+      "reason": "liquidity $24,547 under $25k",
+      "gates": 1,
+      "chg_m5": 3.23,
+      "vol_m5": 45954.0,
+      "score": 5.87
+    },
+    {
+      "symbol": "Speed",
       "mint": "4cPQ6skqbj4qLGddcaJDxZSHoyB94sA3kfNKCptepump",
       "link": "https://axiom.trade/meme/4cPQ6skqbj4qLGddcaJDxZSHoyB94sA3kfNKCptepump?chain=sol",
-      "reason": "5m -22.2% outside +1% to +40%",
+      "reason": "5m -9.6% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -22.21,
-      "vol_m5": 51038.0,
-      "score": -12.78
+      "chg_m5": -9.6,
+      "vol_m5": 61349.0,
+      "score": -6.32
+    },
+    {
+      "symbol": "PARANOID",
+      "mint": "12m4AufHNA6fxGF6z5dH1quWKrGHMEmVRKiuhRLepump",
+      "link": "https://axiom.trade/meme/12m4AufHNA6fxGF6z5dH1quWKrGHMEmVRKiuhRLepump?chain=sol",
+      "reason": "5m -23.2% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -23.2,
+      "vol_m5": 5678.0,
+      "score": -21.31
     },
     {
       "symbol": "PaperInu",
@@ -47675,26 +47695,6 @@
       "chg_m5": -6.3,
       "vol_m5": 33404.0,
       "score": -39.33
-    },
-    {
-      "symbol": "Speed",
-      "mint": "7SCM2wDUPiqYbVDtNE3h6KSYu9wPu8D4NGW4NrWspump",
-      "link": "https://axiom.trade/meme/7SCM2wDUPiqYbVDtNE3h6KSYu9wPu8D4NGW4NrWspump?chain=sol",
-      "reason": "5m -19.4% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -19.37,
-      "vol_m5": 30271.0,
-      "score": -47.74
-    },
-    {
-      "symbol": "CBUCKS",
-      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
-      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
-      "reason": "5m volume $475 under $5k \u00b7 5m +0.9% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.91,
-      "vol_m5": 475.0,
-      "score": 1.44
     }
   ]
 }
