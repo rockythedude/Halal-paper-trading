@@ -2,7 +2,7 @@
   "starting_capital": 100.0,
   "target": 6000.0,
   "cash": 2.1352620086566065,
-  "equity": 5.157027,
+  "equity": 5.142223,
   "positions": [
     {
       "symbol": "mihao",
@@ -162,15 +162,15 @@
       "opened_at_london": "13 Nov 2026, 15:23 GMT",
       "high_water": 0.0002999,
       "trail_armed": false,
-      "last_price": 0.0002999,
+      "last_price": 0.0002914,
       "last_source": "dexscreener",
       "reason": "BUY 10% $Speed @ 0.000288837 \u2014 5m +1.4% vol $24,388 buys 399/sells 234",
       "hard_stop": 0.00027439515,
       "take_profit": 0.00031194396,
       "trail_activate": 0.00030039047999999997,
-      "market_value": 0.5223241663915809,
-      "unrealized_pnl": 0.006526256391580887,
-      "unrealized_pct": 0.038301879606837286
+      "market_value": 0.507520046970679,
+      "unrealized_pnl": -0.008277863029320986,
+      "unrealized_pct": 0.008873516897073497
     }
   ],
   "closed_trades": [
@@ -14652,12 +14652,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-13T09:36:19.253730+00:00",
-      "label": "13 Nov 2026, 9:36 GMT",
-      "equity": 11.617178,
-      "cash": 9.205336
-    },
-    {
       "ts": "2026-11-13T09:37:05.757359+00:00",
       "label": "13 Nov 2026, 9:37 GMT",
       "equity": 11.624729,
@@ -17656,21 +17650,15 @@
       "label": "13 Nov 2026, 15:24 GMT",
       "equity": 5.157027,
       "cash": 2.135262
+    },
+    {
+      "ts": "2026-11-13T15:24:59.106605+00:00",
+      "label": "13 Nov 2026, 15:24 GMT",
+      "equity": 5.142223,
+      "cash": 2.135262
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-13T12:15:50.594506+00:00",
-      "london": "13 Nov 2026, 12:15 GMT",
-      "hhmm": "12:15",
-      "agent": "RISK",
-      "action": "SELL time stop 20m $Max",
-      "symbol": null,
-      "reason": "SELL time stop 20m $Max",
-      "line": "12:15 RISK: SELL time stop 20m $Max",
-      "tag": "RISK",
-      "message": "12:15 RISK: SELL time stop 20m $Max"
-    },
     {
       "ts": "2026-11-13T12:17:10.701592+00:00",
       "london": "13 Nov 2026, 12:17 GMT",
@@ -22458,6 +22446,18 @@
       "line": "15:23 EXECUTOR: BUY 10% $Speed @ 0.000288837 \u2014 5m +1.4% vol $24,388 buys 399/sells 234",
       "tag": "EXECUTOR",
       "message": "15:23 EXECUTOR: BUY 10% $Speed @ 0.000288837 \u2014 5m +1.4% vol $24,388 buys 399/sells 234"
+    },
+    {
+      "ts": "2026-11-13T15:24:59.106491+00:00",
+      "london": "13 Nov 2026, 15:24 GMT",
+      "hhmm": "15:24",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 6 open, equity $5.14",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 6 open, equity $5.14",
+      "line": "15:24 LOGGER: run complete \u2014 29 polls, 6 open, equity $5.14",
+      "tag": "LOGGER",
+      "message": "15:24 LOGGER: run complete \u2014 29 polls, 6 open, equity $5.14"
     }
   ],
   "agents": {
@@ -22558,8 +22558,8 @@
       "open_positions": 0
     }
   },
-  "ticks": 8120,
-  "last_updated": "2026-11-13T15:24:35.146770+00:00",
+  "ticks": 8149,
+  "last_updated": "2026-11-13T15:24:59.106131+00:00",
   "last_updated_london": "13 Nov 2026, 15:24 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -22578,12 +22578,12 @@
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 964
+    "traded": 971
   },
   "totals_cumulative": {
-    "scanned": 8120,
+    "scanned": 8149,
     "killed": 0,
-    "traded": 964
+    "traded": 971
   },
   "paper_money": true,
   "fills": [
@@ -49695,9 +49695,19 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-13T15:24:35.146770+00:00",
+  "checked_at": "2026-11-13T15:24:59.106131+00:00",
   "checked_at_london": "13 Nov 2026, 15:24 GMT",
   "near_misses": [
+    {
+      "symbol": "Speed",
+      "mint": "HPMha7L36iZvacktJWU32Kfft1q2sQHAXXmcL6xkpump",
+      "link": "https://axiom.trade/meme/HPMha7L36iZvacktJWU32Kfft1q2sQHAXXmcL6xkpump?chain=sol",
+      "reason": "5m +85.5% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": 85.52,
+      "vol_m5": 83039.0,
+      "score": 228.77
+    },
     {
       "symbol": "GTA",
       "mint": "5Byw32aMp2q9rLEdDqNhpbaSjoNQC2hVCZF7R5nxpump",
@@ -49707,26 +49717,6 @@
       "chg_m5": 46.82,
       "vol_m5": 22755.0,
       "score": 53.38
-    },
-    {
-      "symbol": "PaperInu",
-      "mint": "Ej8JSHqEz3Z3eSLsZJjEv2Hd2c4iEMAENWbDcdQbpump",
-      "link": "https://axiom.trade/meme/Ej8JSHqEz3Z3eSLsZJjEv2Hd2c4iEMAENWbDcdQbpump?chain=sol",
-      "reason": "liquidity $23,182 under $25k",
-      "gates": 1,
-      "chg_m5": 25.11,
-      "vol_m5": 15016.0,
-      "score": 34.77
-    },
-    {
-      "symbol": "WANTED",
-      "mint": "BeLVQE2tK7fVvg6EpVgUzUWhSi95XpL7mqJM3nANpump",
-      "link": "https://axiom.trade/meme/BeLVQE2tK7fVvg6EpVgUzUWhSi95XpL7mqJM3nANpump?chain=sol",
-      "reason": "5m volume $4,276 under $5k",
-      "gates": 1,
-      "chg_m5": 5.43,
-      "vol_m5": 4276.0,
-      "score": 8.09
     },
     {
       "symbol": "FASTMOON",
@@ -49747,6 +49737,16 @@
       "chg_m5": 1.56,
       "vol_m5": 81.0,
       "score": 1.17
+    },
+    {
+      "symbol": "PaperInu",
+      "mint": "Ej8JSHqEz3Z3eSLsZJjEv2Hd2c4iEMAENWbDcdQbpump",
+      "link": "https://axiom.trade/meme/Ej8JSHqEz3Z3eSLsZJjEv2Hd2c4iEMAENWbDcdQbpump?chain=sol",
+      "reason": "liquidity $20,915 under $25k \u00b7 market cap $83,398 outside $100k\u2013$100M",
+      "gates": 2,
+      "chg_m5": 3.03,
+      "vol_m5": 16878.0,
+      "score": 4.69
     },
     {
       "symbol": "SHARKBUX",
