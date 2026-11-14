@@ -2,7 +2,7 @@
   "starting_capital": 100.0,
   "target": 6000.0,
   "cash": 0.4725071039368177,
-  "equity": 0.589766,
+  "equity": 0.589562,
   "positions": [
     {
       "symbol": "mihao",
@@ -22,15 +22,15 @@
       "opened_at_london": "14 Nov 2026, 1:24 GMT",
       "high_water": 0.015656105268535777,
       "trail_armed": true,
-      "last_price": 0.015365977021656934,
-      "last_source": "geckoterminal",
+      "last_price": 0.01529,
+      "last_source": "dexscreener",
       "reason": "BUY 10% $mihao @ 0.0150043 \u2014 5m +3.1% vol $16,484 buys 101/sells 77",
       "hard_stop": 0.014254077318973317,
       "take_profit": 0.01620463526788546,
       "trail_activate": 0.015604463591297107,
-      "market_value": 0.06049945774931857,
-      "unrealized_pnl": -7.22622506814305e-05,
-      "unrealized_pct": 0.024105443229454737
+      "market_value": 0.06020031838413702,
+      "unrealized_pnl": -0.00037140161586297904,
+      "unrealized_pct": 0.019041757312863394
     },
     {
       "symbol": "GATO",
@@ -50,15 +50,15 @@
       "opened_at_london": "14 Nov 2026, 1:48 GMT",
       "high_water": 0.008544509999999998,
       "trail_armed": false,
-      "last_price": 0.008355,
+      "last_price": 0.008369,
       "last_source": "dexscreener",
       "reason": "BUY 10% $GATO @ 0.00854451 \u2014 5m +4.8% vol $5,934 buys 31/sells 21",
       "hard_stop": 0.008117284499999999,
       "take_profit": 0.009228070799999998,
       "trail_activate": 0.008886290399999998,
-      "market_value": 0.05675911088238238,
-      "unrealized_pnl": -0.002757664117617624,
-      "unrealized_pct": -0.022179153631981086
+      "market_value": 0.0568542189077987,
+      "unrealized_pnl": -0.0026625560922012986,
+      "unrealized_pct": -0.020540674655421864
     }
   ],
   "closed_trades": [
@@ -23480,12 +23480,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-13T20:08:49.945655+00:00",
-      "label": "13 Nov 2026, 20:08 GMT",
-      "equity": 1.129288,
-      "cash": 0.569456
-    },
-    {
       "ts": "2026-11-13T20:09:29.848379+00:00",
       "label": "13 Nov 2026, 20:09 GMT",
       "equity": 1.131477,
@@ -26483,6 +26477,12 @@
       "ts": "2026-11-14T01:53:16.120824+00:00",
       "label": "14 Nov 2026, 1:53 GMT",
       "equity": 0.589766,
+      "cash": 0.472507
+    },
+    {
+      "ts": "2026-11-14T01:53:55.975629+00:00",
+      "label": "14 Nov 2026, 1:53 GMT",
+      "equity": 0.589562,
       "cash": 0.472507
     }
   ],
@@ -31294,8 +31294,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 40 pools",
-      "badge": "76 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal unreachable",
+      "badge": "41 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -31310,7 +31310,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "76 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "41 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -31387,7 +31387,7 @@
     }
   },
   "ticks": 11890,
-  "last_updated": "2026-11-14T01:53:16.120724+00:00",
+  "last_updated": "2026-11-14T01:53:55.975441+00:00",
   "last_updated_london": "14 Nov 2026, 1:53 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -75155,19 +75155,9 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-14T01:53:16.120724+00:00",
+  "checked_at": "2026-11-14T01:53:55.975441+00:00",
   "checked_at_london": "14 Nov 2026, 1:53 GMT",
   "near_misses": [
-    {
-      "symbol": "Max",
-      "mint": "5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump",
-      "link": "https://axiom.trade/meme/5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump?chain=sol",
-      "reason": "buy/sell 23/54 under 1.05",
-      "gates": 1,
-      "chg_m5": 6.683,
-      "vol_m5": 14697.0,
-      "score": 7.14
-    },
     {
       "symbol": "CHILL",
       "mint": "9RZeokzHNXoRyJkWDFdvcQTAzUhKpXm7RrqkUM3Fpump",
@@ -75189,34 +75179,44 @@
       "score": 6.01
     },
     {
+      "symbol": "BLACKOUT",
+      "mint": "HJWMayjf5H6EzuNTbpk4uq9Dfp4P5CLnjZCpZvKHpump",
+      "link": "https://axiom.trade/meme/HJWMayjf5H6EzuNTbpk4uq9Dfp4P5CLnjZCpZvKHpump?chain=sol",
+      "reason": "5m volume $933 under $5k",
+      "gates": 1,
+      "chg_m5": 4.24,
+      "vol_m5": 933.0,
+      "score": 3.32
+    },
+    {
       "symbol": "PEACEFROG",
       "mint": "m7SihqeaWimE1zpBzjHBwKJbbhuaczX5fHvGoNupump",
       "link": "https://axiom.trade/meme/m7SihqeaWimE1zpBzjHBwKJbbhuaczX5fHvGoNupump?chain=sol",
-      "reason": "5m volume $704 under $5k",
+      "reason": "5m volume $782 under $5k",
       "gates": 1,
-      "chg_m5": 4.23,
-      "vol_m5": 704.0,
-      "score": 1.84
-    },
-    {
-      "symbol": "FOOD",
-      "mint": "FTu55MyigXns96jz4nTCDDiTCjYJjyrHSceCgG9Upump",
-      "link": "https://axiom.trade/meme/FTu55MyigXns96jz4nTCDDiTCjYJjyrHSceCgG9Upump?chain=sol",
-      "reason": "5m volume $2,976 under $5k",
-      "gates": 1,
-      "chg_m5": 3.614,
-      "vol_m5": 2976.0,
-      "score": 1.29
+      "chg_m5": 1.65,
+      "vol_m5": 782.0,
+      "score": 0.68
     },
     {
       "symbol": "AMC",
       "mint": "HWya5CpQiQWLnJfJVRDF9o8AHaUPnPMRa3vfQRczpump",
       "link": "https://axiom.trade/meme/HWya5CpQiQWLnJfJVRDF9o8AHaUPnPMRa3vfQRczpump?chain=sol",
-      "reason": "5m -2.7% outside +1% to +40%",
+      "reason": "5m -2.2% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -2.71,
-      "vol_m5": 5327.0,
-      "score": -2.78
+      "chg_m5": -2.2,
+      "vol_m5": 5674.0,
+      "score": -2.39
+    },
+    {
+      "symbol": "CBUCKS",
+      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
+      "reason": "5m volume $189 under $5k \u00b7 5m +0.2% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.23,
+      "vol_m5": 189.0,
+      "score": 0.32
     }
   ]
 }
