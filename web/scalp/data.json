@@ -2,16 +2,16 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 0.07,
+  "cash": 0.08,
   "equity": 0.14,
   "equity_multiple": 0.0014,
   "profit": -99.86,
-  "goal_pct": -0.016643896499999998,
-  "progress": 2.2770166666666664e-05,
-  "win_rate": 0.31825355076275647,
+  "goal_pct": -0.016644152000000002,
+  "progress": 2.251466666666667e-05,
+  "win_rate": 0.3179190751445087,
   "wins": 605,
-  "losses": 1296,
-  "closed_trades": 1901,
+  "losses": 1298,
+  "closed_trades": 1903,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 16559,
-  "open_count": 5,
+  "open_count": 4,
   "last_updated_london": "14 Nov 2026, 14:47 GMT",
-  "last_updated": "2026-11-14T14:47:14.134784+00:00",
+  "last_updated": "2026-11-14T14:47:54.139056+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "14 Nov 2026, 9:05 GMT",
-      "value": 0.23
-    },
     {
       "label": "14 Nov 2026, 9:05 GMT",
       "value": 0.23
@@ -2058,10 +2054,44 @@
     {
       "label": "14 Nov 2026, 14:47 GMT",
       "value": 0.14
+    },
+    {
+      "label": "14 Nov 2026, 14:47 GMT",
+      "value": 0.14
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "14 Nov 2026, 14:47 GMT",
+      "hhmm": "14:47",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "14:47 EXECUTOR: BUY 10% $VI @ 0.000122409 — 5m +9.3% vol $17,711 buys 409/sells 287",
+      "message": "14:47 EXECUTOR: BUY 10% $VI @ 0.000122409 — 5m +9.3% vol $17,711 buys 409/sells 287",
+      "symbol": null,
+      "action": "BUY 10% $VI @ 0.000122409 — 5m +9.3% vol $17,711 buys 409/sells 287"
+    },
+    {
+      "ts": "14 Nov 2026, 14:47 GMT",
+      "hhmm": "14:47",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "14:47 RISK: SELL stop −5% $VI",
+      "message": "14:47 RISK: SELL stop −5% $VI",
+      "symbol": null,
+      "action": "SELL stop −5% $VI"
+    },
+    {
+      "ts": "14 Nov 2026, 14:47 GMT",
+      "hhmm": "14:47",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "14:47 EXECUTOR: SELL trail 2.5% $CBUCKS",
+      "message": "14:47 EXECUTOR: SELL trail 2.5% $CBUCKS",
+      "symbol": null,
+      "action": "SELL trail 2.5% $CBUCKS"
+    },
     {
       "ts": "14 Nov 2026, 14:46 GMT",
       "hhmm": "14:46",
@@ -2431,36 +2461,6 @@
       "message": "14:04 EXECUTOR: BUY 10% $JENSEN @ 0.000658978 — 5m +12.2% vol $5,444 buys 369/sells 195",
       "symbol": null,
       "action": "BUY 10% $JENSEN @ 0.000658978 — 5m +12.2% vol $5,444 buys 369/sells 195"
-    },
-    {
-      "ts": "14 Nov 2026, 14:04 GMT",
-      "hhmm": "14:04",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "14:04 EXECUTOR: BUY 10% $FOOD @ 0.000782644 — 5m +1.9% vol $5,225 buys 78/sells 60",
-      "message": "14:04 EXECUTOR: BUY 10% $FOOD @ 0.000782644 — 5m +1.9% vol $5,225 buys 78/sells 60",
-      "symbol": null,
-      "action": "BUY 10% $FOOD @ 0.000782644 — 5m +1.9% vol $5,225 buys 78/sells 60"
-    },
-    {
-      "ts": "14 Nov 2026, 14:03 GMT",
-      "hhmm": "14:03",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "14:03 RISK: SELL stop −5% $mihao",
-      "message": "14:03 RISK: SELL stop −5% $mihao",
-      "symbol": null,
-      "action": "SELL stop −5% $mihao"
-    },
-    {
-      "ts": "14 Nov 2026, 14:01 GMT",
-      "hhmm": "14:01",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "14:01 LOGGER: run complete — 29 polls, 1 open, equity $0.15",
-      "message": "14:01 LOGGER: run complete — 29 polls, 1 open, equity $0.15",
-      "symbol": null,
-      "action": "run complete — 29 polls, 1 open, equity $0.15"
     }
   ],
   "agents": [
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "5 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "5/6",
+      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "4/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2574,28 +2574,6 @@
     }
   ],
   "positions": [
-    {
-      "symbol": "CBUCKS",
-      "name": "CBUCKS",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 3.796655136335491,
-      "qty_display": "3.7967",
-      "entry_price": 0.0037466399999999994,
-      "current_price": 0.003898,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.04039886404885462,
-      "hard_stop": 0.0035593079999999993,
-      "trail_activate": 0.0038965055999999995,
-      "opened_at": "14 Nov 2026, 14:34 GMT",
-      "reason": "BUY 10% $CBUCKS @ 0.00374664 — 5m +4.8% vol $5,010 buys 6/sells 3",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol"
-    },
     {
       "symbol": "NIO",
       "name": "NIO",
@@ -2667,18 +2645,18 @@
       "name": "VI",
       "asset_class": "crypto",
       "agent": "MIRAX",
-      "qty": 105.27038971164352,
-      "qty_display": "105.27",
-      "entry_price": 0.00012954449999999997,
-      "current_price": 0.0001289,
+      "qty": 110.68793961228342,
+      "qty_display": "110.69",
+      "entry_price": 0.000122409,
+      "current_price": 0.0001218,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.004975124378109319,
-      "hard_stop": 0.00012306727499999996,
-      "trail_activate": 0.00013472627999999996,
-      "opened_at": "14 Nov 2026, 14:46 GMT",
-      "reason": "BUY 10% $VI @ 0.000129544 — 5m +19.7% vol $17,348 buys 379/sells 260",
+      "unrealized_pct": -0.00497512437810943,
+      "hard_stop": 0.00011628854999999999,
+      "trail_activate": 0.00012730536,
+      "opened_at": "14 Nov 2026, 14:47 GMT",
+      "reason": "BUY 10% $VI @ 0.000122409 — 5m +9.3% vol $17,711 buys 409/sells 287",
       "score": null,
       "tag": "",
       "venue": "",
@@ -2686,6 +2664,66 @@
     }
   ],
   "fills": [
+    {
+      "id": "f3810",
+      "time": "14 Nov 2026, 14:47 GMT",
+      "ts": "2026-11-14T14:47:30.191265+00:00",
+      "side": "buy",
+      "symbol": "VI",
+      "name": "VI",
+      "asset_class": "crypto",
+      "qty": 110.68793961228342,
+      "qty_display": "110.69",
+      "price": 0.000122409,
+      "value": 0.01,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f3809",
+      "time": "14 Nov 2026, 14:47 GMT",
+      "ts": "2026-11-14T14:47:30.190745+00:00",
+      "side": "sell",
+      "symbol": "VI",
+      "name": "VI",
+      "asset_class": "crypto",
+      "qty": 105.27038971164352,
+      "qty_display": "105.27",
+      "price": 0.000121191,
+      "value": 0.01,
+      "pnl": -0.0,
+      "pnl_pct": -0.0830087096108147,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f3808",
+      "time": "14 Nov 2026, 14:47 GMT",
+      "ts": "2026-11-14T14:47:30.190607+00:00",
+      "side": "sell",
+      "symbol": "CBUCKS",
+      "name": "CBUCKS",
+      "asset_class": "crypto",
+      "qty": 3.796655136335491,
+      "qty_display": "3.7967",
+      "price": 0.003774035,
+      "value": 0.01,
+      "pnl": -0.0,
+      "pnl_pct": -0.012634885213586989,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f3807",
       "time": "14 Nov 2026, 14:46 GMT",
@@ -78828,11 +78866,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 1901,
-    "win_rate": 0.31825355076275647,
+    "closed_trades": 1903,
+    "win_rate": 0.3179190751445087,
     "realized_pnl": -99.86,
     "unrealized_pnl": -0.0,
-    "fills": 3807
+    "fills": 3810
   },
   "ok": true,
   "totals_cumulative": {
@@ -78972,13 +79010,6 @@
   },
   "ticker": [
     {
-      "symbol": "CBUCKS",
-      "name": "CBUCKS",
-      "price": 0.003898,
-      "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
       "symbol": "NIO",
       "name": "NIO",
       "price": 0.0022951118626924126,
@@ -79002,7 +79033,7 @@
     {
       "symbol": "VI",
       "name": "VI",
-      "price": 0.0001289,
+      "price": 0.0001218,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -79045,8 +79076,8 @@
     {
       "id": "meme",
       "name": "Crypto + Meme",
-      "equity": 91.78,
-      "return_pct": -0.08224333999999998,
+      "equity": 91.79,
+      "return_pct": -0.08209860000000006,
       "closed_trades": 27,
       "win_rate": 0.14814814814814814,
       "realized_pnl": -7.17
@@ -79054,8 +79085,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 87.07,
-      "return_pct": -0.12933254000000005,
+      "equity": 87.11,
+      "return_pct": -0.12893332000000002,
       "closed_trades": 126,
       "win_rate": 0.18253968253968253,
       "realized_pnl": -12.81
@@ -79073,9 +79104,9 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 0.14,
-      "return_pct": -0.99863379,
-      "closed_trades": 1901,
-      "win_rate": 0.31825355076275647,
+      "return_pct": -0.9986491200000001,
+      "closed_trades": 1903,
+      "win_rate": 0.3179190751445087,
       "realized_pnl": -99.86
     }
   ],
@@ -79092,11 +79123,11 @@
       "symbol": "BIG",
       "mint": "34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump",
       "link": "https://axiom.trade/meme/34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump?chain=sol",
-      "reason": "5m volume $277 under $5k",
+      "reason": "5m volume $276 under $5k",
       "gates": 1,
-      "chg_m5": 6.55,
-      "vol_m5": 277.0,
-      "score": 5.18
+      "chg_m5": 5.18,
+      "vol_m5": 276.0,
+      "score": 4.28
     },
     {
       "symbol": "FOOD",
@@ -79119,24 +79150,14 @@
       "score": 0.86
     },
     {
-      "symbol": "C",
-      "mint": "EdbSgqJFTz1wEezEzdX9PiNoZUWi5H1rfXGnEyvZpump",
-      "link": "https://axiom.trade/meme/EdbSgqJFTz1wEezEzdX9PiNoZUWi5H1rfXGnEyvZpump?chain=sol",
-      "reason": "liquidity $11,032 under $25k · market cap $20,858 outside $100k–$100M",
-      "gates": 2,
-      "chg_m5": 35.49,
-      "vol_m5": 5365.0,
-      "score": 18.64
-    },
-    {
-      "symbol": "GTAFY",
-      "mint": "EcCpMnjc3wJQrCKSsyrzyJiXRwY6AZPLzSaWR2bPpump",
-      "link": "https://axiom.trade/meme/EcCpMnjc3wJQrCKSsyrzyJiXRwY6AZPLzSaWR2bPpump?chain=sol",
-      "reason": "market cap $97,283 outside $100k–$100M · 5m volume $47 under $5k",
-      "gates": 2,
-      "chg_m5": 1.46,
-      "vol_m5": 47.0,
-      "score": 0.73
+      "symbol": "AMC",
+      "mint": "HWya5CpQiQWLnJfJVRDF9o8AHaUPnPMRa3vfQRczpump",
+      "link": "https://axiom.trade/meme/HWya5CpQiQWLnJfJVRDF9o8AHaUPnPMRa3vfQRczpump?chain=sol",
+      "reason": "5m -1.9% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -1.85,
+      "vol_m5": 10947.0,
+      "score": -3.63
     },
     {
       "symbol": "Macca",
@@ -79147,6 +79168,16 @@
       "chg_m5": 1.327,
       "vol_m5": 1759.0,
       "score": 0.49
+    },
+    {
+      "symbol": "STONK",
+      "mint": "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
+      "link": "https://axiom.trade/meme/6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx?chain=sol",
+      "reason": "5m volume $3,999 under $5k · 5m +0.5% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.531,
+      "vol_m5": 3999.0,
+      "score": 0.4
     }
   ],
   "helius_status": "",
@@ -79154,7 +79185,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-14T14:47:14.134784+00:00",
+  "checked_at": "2026-11-14T14:47:54.139056+00:00",
   "checked_at_london": "14 Nov 2026, 14:47 GMT",
   "who_we_copy": null
 }
