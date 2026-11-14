@@ -1,9 +1,38 @@
 {
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 0.5510726847302212,
-  "equity": 0.551073,
-  "positions": [],
+  "cash": 0.49541431173022116,
+  "equity": 0.549428,
+  "positions": [
+    {
+      "symbol": "AMC",
+      "name": "AMC",
+      "mint": "HWya5CpQiQWLnJfJVRDF9o8AHaUPnPMRa3vfQRczpump",
+      "pair": "DxbQyPTjckQTSUWyUqJB11HpupPyLGJZ5x4z7ufHp3Gh",
+      "link": "https://axiom.trade/meme/HWya5CpQiQWLnJfJVRDF9o8AHaUPnPMRa3vfQRczpump?chain=sol",
+      "dex_url": "https://dexscreener.com/solana/dxbqyptjckqtsuwyuqjb11hpuppylgjz5x4z7ufhp3gh",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 11.894389225240394,
+      "entry_price": 0.00463305,
+      "raw_price": 0.00461,
+      "entry_fee": 0.000551073,
+      "cost_basis": 0.055658373000000004,
+      "opened_at": "2026-11-14T02:32:20.671337+00:00",
+      "opened_at_london": "14 Nov 2026, 2:32 GMT",
+      "high_water": 0.00463305,
+      "trail_armed": false,
+      "last_price": 0.00461,
+      "last_source": "dexscreener",
+      "reason": "BUY 10% $AMC @ 0.00463305 \u2014 5m +1.2% vol $17,688 buys 538/sells 459",
+      "hard_stop": 0.004401397499999999,
+      "take_profit": 0.005003694,
+      "trail_activate": 0.004818372,
+      "market_value": 0.05401337897014927,
+      "unrealized_pnl": -0.0016449940298507368,
+      "unrealized_pct": -0.004975124378109319
+    }
+  ],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -23678,12 +23707,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-13T20:48:54.212069+00:00",
-      "label": "13 Nov 2026, 20:48 GMT",
-      "equity": 1.119819,
-      "cash": 0.897011
-    },
-    {
       "ts": "2026-11-13T20:49:34.198444+00:00",
       "label": "13 Nov 2026, 20:49 GMT",
       "equity": 1.123204,
@@ -26682,21 +26705,15 @@
       "label": "14 Nov 2026, 2:32 GMT",
       "equity": 0.551073,
       "cash": 0.551073
+    },
+    {
+      "ts": "2026-11-14T02:32:44.575220+00:00",
+      "label": "14 Nov 2026, 2:32 GMT",
+      "equity": 0.549428,
+      "cash": 0.495414
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-13T21:52:31.381440+00:00",
-      "london": "13 Nov 2026, 21:52 GMT",
-      "hhmm": "21:52",
-      "agent": "LOGGER",
-      "action": "run complete \u2014 29 polls, 5 open, equity $0.97",
-      "symbol": null,
-      "reason": "run complete \u2014 29 polls, 5 open, equity $0.97",
-      "line": "21:52 LOGGER: run complete \u2014 29 polls, 5 open, equity $0.97",
-      "tag": "LOGGER",
-      "message": "21:52 LOGGER: run complete \u2014 29 polls, 5 open, equity $0.97"
-    },
     {
       "ts": "2026-11-13T21:53:37.627836+00:00",
       "london": "13 Nov 2026, 21:53 GMT",
@@ -31484,6 +31501,18 @@
       "line": "02:30 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.55",
       "tag": "LOGGER",
       "message": "02:30 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.55"
+    },
+    {
+      "ts": "2026-11-14T02:32:20.671397+00:00",
+      "london": "14 Nov 2026, 2:32 GMT",
+      "hhmm": "02:32",
+      "agent": "EXECUTOR",
+      "action": "BUY 10% $AMC @ 0.00463305 \u2014 5m +1.2% vol $17,688 buys 538/sells 459",
+      "symbol": null,
+      "reason": "BUY 10% $AMC @ 0.00463305 \u2014 5m +1.2% vol $17,688 buys 538/sells 459",
+      "line": "02:32 EXECUTOR: BUY 10% $AMC @ 0.00463305 \u2014 5m +1.2% vol $17,688 buys 538/sells 459",
+      "tag": "EXECUTOR",
+      "message": "02:32 EXECUTOR: BUY 10% $AMC @ 0.00463305 \u2014 5m +1.2% vol $17,688 buys 538/sells 459"
     }
   ],
   "agents": {
@@ -31492,8 +31521,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 40 pools",
-      "badge": "76 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal unreachable",
+      "badge": "40 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -31508,7 +31537,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "76 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "40 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -31556,8 +31585,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "0/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -31585,7 +31614,7 @@
     }
   },
   "ticks": 12122,
-  "last_updated": "2026-11-14T02:32:04.724990+00:00",
+  "last_updated": "2026-11-14T02:32:44.575094+00:00",
   "last_updated_london": "14 Nov 2026, 2:32 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -75796,73 +75825,87 @@
       "pnl": -0.004258658786716912,
       "pnl_pct": -0.07556305170578603,
       "id": "f3156"
+    },
+    {
+      "ts": "2026-11-14T02:32:20.671337+00:00",
+      "london": "14 Nov 2026, 2:32 GMT",
+      "side": "buy",
+      "symbol": "AMC",
+      "name": "AMC",
+      "asset_class": "crypto",
+      "qty": 11.894389225240394,
+      "price": 0.00463305,
+      "value": 0.055107300000000005,
+      "pnl": null,
+      "pnl_pct": null,
+      "id": "f3157"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-14T02:32:04.724990+00:00",
+  "checked_at": "2026-11-14T02:32:44.575094+00:00",
   "checked_at_london": "14 Nov 2026, 2:32 GMT",
   "near_misses": [
     {
-      "symbol": "mihao",
-      "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
-      "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
-      "reason": "buy/sell 65/95 under 1.05",
+      "symbol": "BIG",
+      "mint": "34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump",
+      "link": "https://axiom.trade/meme/34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump?chain=sol",
+      "reason": "5m volume $55 under $5k",
       "gates": 1,
-      "chg_m5": 4.008,
-      "vol_m5": 32653.0,
-      "score": 8.23
+      "chg_m5": 3.59,
+      "vol_m5": 55.0,
+      "score": 0.95
     },
     {
-      "symbol": "Sakura",
-      "mint": "9sFGCTjEsBk78uC2bCdxtwuUM1aartbBhe8WQXwRpump",
-      "link": "https://axiom.trade/meme/9sFGCTjEsBk78uC2bCdxtwuUM1aartbBhe8WQXwRpump?chain=sol",
-      "reason": "5m volume $2,265 under $5k",
+      "symbol": "GATO",
+      "mint": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
+      "link": "https://axiom.trade/meme/HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump?chain=sol",
+      "reason": "5m +0.3% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 6.003,
-      "vol_m5": 2265.0,
-      "score": 7.3
+      "chg_m5": 0.3,
+      "vol_m5": 5710.0,
+      "score": 0.76
+    },
+    {
+      "symbol": "JENSEN",
+      "mint": "B2YpP21vQBESJ2jtnuhPujEUT61KVRxZ2X5gsDcUpump",
+      "link": "https://axiom.trade/meme/B2YpP21vQBESJ2jtnuhPujEUT61KVRxZ2X5gsDcUpump?chain=sol",
+      "reason": "5m -11.6% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -11.57,
+      "vol_m5": 13731.0,
+      "score": -11.3
+    },
+    {
+      "symbol": "BLACKOUT",
+      "mint": "HJWMayjf5H6EzuNTbpk4uq9Dfp4P5CLnjZCpZvKHpump",
+      "link": "https://axiom.trade/meme/HJWMayjf5H6EzuNTbpk4uq9Dfp4P5CLnjZCpZvKHpump?chain=sol",
+      "reason": "5m volume $771 under $5k \u00b7 5m +43.1% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 43.12,
+      "vol_m5": 771.0,
+      "score": 27.06
+    },
+    {
+      "symbol": "CBUCKS",
+      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
+      "reason": "5m volume $1,248 under $5k \u00b7 5m +0.9% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.89,
+      "vol_m5": 1248.0,
+      "score": 5.95
     },
     {
       "symbol": "GLITCH",
       "mint": "8Xg89xT8Ve34sKiYqYuMs46mycREsCA2F362UscRpump",
       "link": "https://axiom.trade/meme/8Xg89xT8Ve34sKiYqYuMs46mycREsCA2F362UscRpump?chain=sol",
-      "reason": "5m volume $370 under $5k",
-      "gates": 1,
-      "chg_m5": 1.46,
-      "vol_m5": 370.0,
-      "score": 5.07
-    },
-    {
-      "symbol": "PIRATE",
-      "mint": "6mXFCoZ515w37YfmwXGJMPfQfiK5tr9WkihW3oN9pump",
-      "link": "https://axiom.trade/meme/6mXFCoZ515w37YfmwXGJMPfQfiK5tr9WkihW3oN9pump?chain=sol",
-      "reason": "5m volume $224 under $5k",
-      "gates": 1,
-      "chg_m5": 2.8,
-      "vol_m5": 224.0,
-      "score": 2.3
-    },
-    {
-      "symbol": "FOOD",
-      "mint": "FTu55MyigXns96jz4nTCDDiTCjYJjyrHSceCgG9Upump",
-      "link": "https://axiom.trade/meme/FTu55MyigXns96jz4nTCDDiTCjYJjyrHSceCgG9Upump?chain=sol",
-      "reason": "5m volume $2,272 under $5k",
-      "gates": 1,
-      "chg_m5": 2.086,
-      "vol_m5": 2272.0,
-      "score": 1.72
-    },
-    {
-      "symbol": "inuhao",
-      "mint": "FyHakvZH3L4UABSQYK7e9ECEzWV37u7GTkmAbHXspump",
-      "link": "https://axiom.trade/meme/FyHakvZH3L4UABSQYK7e9ECEzWV37u7GTkmAbHXspump?chain=sol",
-      "reason": "5m -6.2% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -6.224,
-      "vol_m5": 6353.0,
-      "score": -6.09
+      "reason": "5m volume $448 under $5k \u00b7 5m +0.8% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.78,
+      "vol_m5": 448.0,
+      "score": 3.2
     }
   ]
 }
