@@ -2,16 +2,16 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 0.19,
+  "cash": 0.2,
   "equity": 0.28,
   "equity_multiple": 0.0028,
   "profit": -99.72,
-  "goal_pct": -0.016619679000000002,
-  "progress": 4.698766666666667e-05,
-  "win_rate": 0.326221224031443,
-  "wins": 581,
+  "goal_pct": -0.016619531833333333,
+  "progress": 4.713483333333333e-05,
+  "win_rate": 0.3265993265993266,
+  "wins": 582,
   "losses": 1200,
-  "closed_trades": 1781,
+  "closed_trades": 1782,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -21,8 +21,8 @@
   },
   "ticks": 14239,
   "open_count": 3,
-  "last_updated_london": "14 Nov 2026, 8:24 GMT",
-  "last_updated": "2026-11-14T08:24:54.253600+00:00",
+  "last_updated_london": "14 Nov 2026, 8:25 GMT",
+  "last_updated": "2026-11-14T08:25:34.281578+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "14 Nov 2026, 2:42 GMT",
-      "value": 0.54
-    },
     {
       "label": "14 Nov 2026, 2:42 GMT",
       "value": 0.54
@@ -2058,10 +2054,34 @@
     {
       "label": "14 Nov 2026, 8:24 GMT",
       "value": 0.28
+    },
+    {
+      "label": "14 Nov 2026, 8:25 GMT",
+      "value": 0.28
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "14 Nov 2026, 8:25 GMT",
+      "hhmm": "08:25",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "08:25 EXECUTOR: BUY 10% $inuhao @ 0.000865257 — 5m +13.6% vol $20,785 buys 563/sells 152",
+      "message": "08:25 EXECUTOR: BUY 10% $inuhao @ 0.000865257 — 5m +13.6% vol $20,785 buys 563/sells 152",
+      "symbol": null,
+      "action": "BUY 10% $inuhao @ 0.000865257 — 5m +13.6% vol $20,785 buys 563/sells 152"
+    },
+    {
+      "ts": "14 Nov 2026, 8:25 GMT",
+      "hhmm": "08:25",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "08:25 EXECUTOR: SELL take profit +8% $inuhao",
+      "message": "08:25 EXECUTOR: SELL take profit +8% $inuhao",
+      "symbol": null,
+      "action": "SELL take profit +8% $inuhao"
+    },
     {
       "ts": "14 Nov 2026, 8:23 GMT",
       "hhmm": "08:23",
@@ -2441,26 +2461,6 @@
       "message": "08:01 LOGGER: run complete — 29 polls, 4 open, equity $0.30",
       "symbol": null,
       "action": "run complete — 29 polls, 4 open, equity $0.30"
-    },
-    {
-      "ts": "14 Nov 2026, 8:01 GMT",
-      "hhmm": "08:01",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "08:01 EXECUTOR: BUY 10% $FOOD @ 0.000933436 — 5m +3.9% vol $6,651 buys 39/sells 35",
-      "message": "08:01 EXECUTOR: BUY 10% $FOOD @ 0.000933436 — 5m +3.9% vol $6,651 buys 39/sells 35",
-      "symbol": null,
-      "action": "BUY 10% $FOOD @ 0.000933436 — 5m +3.9% vol $6,651 buys 39/sells 35"
-    },
-    {
-      "ts": "14 Nov 2026, 8:01 GMT",
-      "hhmm": "08:01",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "08:01 RISK: SELL stop −5% $WASTED",
-      "message": "08:01 RISK: SELL stop −5% $WASTED",
-      "symbol": null,
-      "action": "SELL stop −5% $WASTED"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "57 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "43 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "57 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "43 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.6014348611200173,
       "qty_display": "0.60143486",
       "entry_price": 0.0485417488863755,
-      "current_price": 0.04866782853442972,
+      "current_price": 0.04832,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": 0.002597344573417315,
+      "unrealized_pct": -0.004568209664109202,
       "hard_stop": 0.046114661442056726,
       "trail_activate": 0.050483418841830524,
       "opened_at": "14 Nov 2026, 8:06 GMT",
@@ -2604,11 +2604,11 @@
       "qty": 7.374113073355098,
       "qty_display": "7.3741",
       "entry_price": 0.003899031614241083,
-      "current_price": 0.004002030551425625,
+      "current_price": 0.004018,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.026416543227898215,
+      "unrealized_pct": 0.030512290622212168,
       "hard_stop": 0.0037040800335290287,
       "trail_activate": 0.004054992878810727,
       "opened_at": "14 Nov 2026, 8:19 GMT",
@@ -2623,18 +2623,18 @@
       "name": "inuhao",
       "asset_class": "crypto",
       "agent": "MIRAX",
-      "qty": 36.01270230141126,
-      "qty_display": "36.0127",
-      "entry_price": 0.0007797776397051862,
-      "current_price": 0.0008228163759831586,
+      "qty": 32.75523321274197,
+      "qty_display": "32.7552",
+      "entry_price": 0.000865257158021849,
+      "current_price": 0.0008754,
       "change_pct": null,
-      "price_source": "geckoterminal",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.0551936014659824,
-      "hard_stop": 0.0007407887577199269,
-      "trail_activate": 0.0008109687452933938,
-      "opened_at": "14 Nov 2026, 8:23 GMT",
-      "reason": "BUY 10% $inuhao @ 0.000779778 — 5m +3.7% vol $13,325 buys 436/sells 112",
+      "price_source": "dexscreener",
+      "unrealized_pnl": -0.0,
+      "unrealized_pct": 0.01172234391142113,
+      "hard_stop": 0.0008219943001207565,
+      "trail_activate": 0.000899867444342723,
+      "opened_at": "14 Nov 2026, 8:25 GMT",
+      "reason": "BUY 10% $inuhao @ 0.000865257 — 5m +13.6% vol $20,785 buys 563/sells 152",
       "score": null,
       "tag": "",
       "venue": "",
@@ -2642,6 +2642,46 @@
     }
   ],
   "fills": [
+    {
+      "id": "f3567",
+      "time": "14 Nov 2026, 8:25 GMT",
+      "ts": "2026-11-14T08:25:18.258644+00:00",
+      "side": "buy",
+      "symbol": "inuhao",
+      "name": "inuhao",
+      "asset_class": "crypto",
+      "qty": 32.75523321274197,
+      "qty_display": "32.7552",
+      "price": 0.000865257158021849,
+      "value": 0.03,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f3566",
+      "time": "14 Nov 2026, 8:25 GMT",
+      "ts": "2026-11-14T08:25:18.258235+00:00",
+      "side": "sell",
+      "symbol": "inuhao",
+      "name": "inuhao",
+      "asset_class": "crypto",
+      "qty": 36.01270230141126,
+      "qty_display": "36.0127",
+      "price": 0.0008566476340614327,
+      "value": 0.03,
+      "pnl": 0.0,
+      "pnl_pct": 0.07682533047822519,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f3565",
       "time": "14 Nov 2026, 8:23 GMT",
@@ -73944,11 +73984,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 1781,
-    "win_rate": 0.326221224031443,
+    "closed_trades": 1782,
+    "win_rate": 0.3265993265993266,
     "realized_pnl": -99.72,
-    "unrealized_pnl": 0.0,
-    "fills": 3565
+    "unrealized_pnl": -0.0,
+    "fills": 3567
   },
   "ok": true,
   "totals_cumulative": {
@@ -73957,16 +73997,6 @@
     "traded": 1782
   },
   "events": [
-    {
-      "hhmm": "07:00",
-      "ts": "2026-11-14T07:00:34.617708+00:00",
-      "london": "14 Nov 2026, 7:00 GMT",
-      "agent": "EXECUTOR",
-      "action": "SELL take profit +8% $ASTRALIS",
-      "symbol": "",
-      "reason": "SELL take profit +8% $ASTRALIS",
-      "line": "07:00 EXECUTOR: SELL take profit +8% $ASTRALIS"
-    },
     {
       "hhmm": "07:02",
       "ts": "2026-11-14T07:02:34.631347+00:00",
@@ -74076,6 +74106,16 @@
       "symbol": "",
       "reason": "SELL take profit +8% $ASTRALIS",
       "line": "08:20 EXECUTOR: SELL take profit +8% $ASTRALIS"
+    },
+    {
+      "hhmm": "08:25",
+      "ts": "2026-11-14T08:25:18.258292+00:00",
+      "london": "14 Nov 2026, 8:25 GMT",
+      "agent": "EXECUTOR",
+      "action": "SELL take profit +8% $inuhao",
+      "symbol": "",
+      "reason": "SELL take profit +8% $inuhao",
+      "line": "08:25 EXECUTOR: SELL take profit +8% $inuhao"
     }
   ],
   "role_colors": {
@@ -74090,23 +74130,23 @@
     {
       "symbol": "ANSEM",
       "name": "ANSEM",
-      "price": 0.04866782853442972,
+      "price": 0.04832,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "WASTED",
       "name": "WASTED",
-      "price": 0.004002030551425625,
+      "price": 0.004018,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "inuhao",
       "name": "inuhao",
-      "price": 0.0008228163759831586,
+      "price": 0.0008754,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     }
   ],
   "desk": "axiom",
@@ -74156,8 +74196,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 88.49,
-      "return_pct": -0.11509012999999996,
+      "equity": 88.48,
+      "return_pct": -0.11516604999999998,
       "closed_trades": 117,
       "win_rate": 0.19658119658119658,
       "realized_pnl": -11.45
@@ -74175,9 +74215,9 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 0.28,
-      "return_pct": -0.99718074,
-      "closed_trades": 1781,
-      "win_rate": 0.326221224031443,
+      "return_pct": -0.99717191,
+      "closed_trades": 1782,
+      "win_rate": 0.3265993265993266,
       "realized_pnl": -99.72
     }
   ],
@@ -74204,21 +74244,11 @@
       "symbol": "WISHMAS",
       "mint": "9cmXfuC26anZtH9AUWVzpUxU1UJ7PPogYxftYTepump",
       "link": "https://axiom.trade/meme/9cmXfuC26anZtH9AUWVzpUxU1UJ7PPogYxftYTepump?chain=sol",
-      "reason": "5m volume $605 under $5k",
+      "reason": "5m volume $650 under $5k",
       "gates": 1,
-      "chg_m5": 4.64,
-      "vol_m5": 605.0,
-      "score": 3.5
-    },
-    {
-      "symbol": "mihao",
-      "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
-      "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
-      "reason": "5m volume $4,463 under $5k",
-      "gates": 1,
-      "chg_m5": 3.15,
-      "vol_m5": 4463.0,
-      "score": 2.34
+      "chg_m5": 4.18,
+      "vol_m5": 650.0,
+      "score": 3.31
     },
     {
       "symbol": "Gato",
@@ -74231,24 +74261,34 @@
       "score": 1.36
     },
     {
+      "symbol": "AMC",
+      "mint": "HWya5CpQiQWLnJfJVRDF9o8AHaUPnPMRa3vfQRczpump",
+      "link": "https://axiom.trade/meme/HWya5CpQiQWLnJfJVRDF9o8AHaUPnPMRa3vfQRczpump?chain=sol",
+      "reason": "5m -3.2% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -3.17,
+      "vol_m5": 5054.0,
+      "score": -5.27
+    },
+    {
       "symbol": "JENSEN",
       "mint": "B2YpP21vQBESJ2jtnuhPujEUT61KVRxZ2X5gsDcUpump",
       "link": "https://axiom.trade/meme/B2YpP21vQBESJ2jtnuhPujEUT61KVRxZ2X5gsDcUpump?chain=sol",
-      "reason": "5m -22.8% outside +1% to +40%",
+      "reason": "5m -20.8% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -22.78,
-      "vol_m5": 21643.0,
-      "score": -120.51
+      "chg_m5": -20.77,
+      "vol_m5": 22264.0,
+      "score": -113.02
     },
     {
       "symbol": "OCC",
       "mint": "HLNfRydLB2kMF8T6e2k2xdso5G3QnfD9Df5xtbmRpump",
       "link": "https://axiom.trade/meme/HLNfRydLB2kMF8T6e2k2xdso5G3QnfD9Df5xtbmRpump?chain=sol",
-      "reason": "liquidity $0 under $25k · market cap $17,248 outside $100k–$100M",
+      "reason": "liquidity $0 under $25k · market cap $16,464 outside $100k–$100M",
       "gates": 2,
-      "chg_m5": 29.68,
-      "vol_m5": 8475.0,
-      "score": 95.95
+      "chg_m5": 19.78,
+      "vol_m5": 7804.0,
+      "score": 51.05
     }
   ],
   "helius_status": "",
@@ -74256,7 +74296,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-14T08:24:54.253600+00:00",
-  "checked_at_london": "14 Nov 2026, 8:24 GMT",
+  "checked_at": "2026-11-14T08:25:34.281578+00:00",
+  "checked_at_london": "14 Nov 2026, 8:25 GMT",
   "who_we_copy": null
 }
