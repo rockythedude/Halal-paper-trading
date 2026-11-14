@@ -2,12 +2,12 @@
   "paper_money": true,
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 0.2,
+  "cash": 0.17,
   "equity": 0.28,
   "equity_multiple": 0.0028,
   "profit": -99.72,
-  "goal_pct": -0.016619281,
-  "progress": 4.738566666666667e-05,
+  "goal_pct": -0.016619422499999998,
+  "progress": 4.724416666666667e-05,
   "win_rate": 0.3260258572231591,
   "wins": 580,
   "losses": 1199,
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 14239,
-  "open_count": 3,
-  "last_updated_london": "14 Nov 2026, 8:21 GMT",
-  "last_updated": "2026-11-14T08:21:06.564693+00:00",
+  "open_count": 4,
+  "last_updated_london": "14 Nov 2026, 8:22 GMT",
+  "last_updated": "2026-11-14T08:22:14.361721+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "14 Nov 2026, 2:38 GMT",
-      "value": 0.55
-    },
     {
       "label": "14 Nov 2026, 2:39 GMT",
       "value": 0.54
@@ -2058,10 +2054,24 @@
     {
       "label": "14 Nov 2026, 8:21 GMT",
       "value": 0.28
+    },
+    {
+      "label": "14 Nov 2026, 8:22 GMT",
+      "value": 0.28
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "14 Nov 2026, 8:22 GMT",
+      "hhmm": "08:22",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "08:22 EXECUTOR: BUY 10% $ASTRALIS @ 0.000169242 — 5m +11.2% vol $20,456 buys 96/sells 71",
+      "message": "08:22 EXECUTOR: BUY 10% $ASTRALIS @ 0.000169242 — 5m +11.2% vol $20,456 buys 96/sells 71",
+      "symbol": null,
+      "action": "BUY 10% $ASTRALIS @ 0.000169242 — 5m +11.2% vol $20,456 buys 96/sells 71"
+    },
     {
       "ts": "14 Nov 2026, 8:21 GMT",
       "hhmm": "08:21",
@@ -2451,16 +2461,6 @@
       "message": "07:57 LOGGER: run complete — 29 polls, 4 open, equity $0.30",
       "symbol": null,
       "action": "run complete — 29 polls, 4 open, equity $0.30"
-    },
-    {
-      "ts": "14 Nov 2026, 7:55 GMT",
-      "hhmm": "07:55",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "07:55 EXECUTOR: BUY 10% $mihao @ 0.0173047 — 5m +1.3% vol $5,568 buys 99/sells 47",
-      "message": "07:55 EXECUTOR: BUY 10% $mihao @ 0.0173047 — 5m +1.3% vol $5,568 buys 99/sells 47",
-      "symbol": null,
-      "action": "BUY 10% $mihao @ 0.0173047 — 5m +1.3% vol $5,568 buys 99/sells 47"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "57 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
+      "badge": "77 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "57 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "77 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "3/6",
+      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "4/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2639,9 +2639,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump?chain=sol"
+    },
+    {
+      "symbol": "ASTRALIS",
+      "name": "ASTRALIS",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 167.9925786743244,
+      "qty_display": "167.99",
+      "entry_price": 0.00016924199999999998,
+      "current_price": 0.0001684,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": -0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.00016077989999999998,
+      "trail_activate": 0.00017601167999999997,
+      "opened_at": "14 Nov 2026, 8:22 GMT",
+      "reason": "BUY 10% $ASTRALIS @ 0.000169242 — 5m +11.2% vol $20,456 buys 96/sells 71",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/DWsutTNJSjG5mkhGsPevvT8xbRtVYQBLZdxqxm2Upump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f3562",
+      "time": "14 Nov 2026, 8:22 GMT",
+      "ts": "2026-11-14T08:22:14.361615+00:00",
+      "side": "buy",
+      "symbol": "ASTRALIS",
+      "name": "ASTRALIS",
+      "asset_class": "crypto",
+      "qty": 167.9925786743244,
+      "qty_display": "167.99",
+      "price": 0.00016924199999999998,
+      "value": 0.03,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f3561",
       "time": "14 Nov 2026, 8:21 GMT",
@@ -73868,7 +73910,7 @@
     "win_rate": 0.3260258572231591,
     "realized_pnl": -99.71,
     "unrealized_pnl": -0.0,
-    "fills": 3561
+    "fills": 3562
   },
   "ok": true,
   "totals_cumulative": {
@@ -74027,6 +74069,13 @@
       "price": 0.003908506166123227,
       "change_pct": null,
       "source": "geckoterminal"
+    },
+    {
+      "symbol": "ASTRALIS",
+      "name": "ASTRALIS",
+      "price": 0.0001684,
+      "change_pct": null,
+      "source": "dexscreener"
     }
   ],
   "desk": "axiom",
@@ -74095,7 +74144,7 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 0.28,
-      "return_pct": -0.99715686,
+      "return_pct": -0.99716535,
       "closed_trades": 1779,
       "win_rate": 0.3260258572231591,
       "realized_pnl": -99.71
@@ -74111,14 +74160,14 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "chudhaos",
-      "mint": "4W7BNgGspH3YFbLsP5T7AnKAzr6REGMMBGK9xDZKpump",
-      "link": "https://axiom.trade/meme/4W7BNgGspH3YFbLsP5T7AnKAzr6REGMMBGK9xDZKpump?chain=sol",
-      "reason": "5m volume $1,481 under $5k",
+      "symbol": "SHARKBUX",
+      "mint": "ttwocSxKgj4NpQEUzBaFzLxEFzVdLytUbLsnnjGew9v",
+      "link": "https://axiom.trade/meme/ttwocSxKgj4NpQEUzBaFzLxEFzVdLytUbLsnnjGew9v?chain=sol",
+      "reason": "5m volume $1,742 under $5k",
       "gates": 1,
-      "chg_m5": 10.64,
-      "vol_m5": 1481.0,
-      "score": 95.76
+      "chg_m5": 7.29,
+      "vol_m5": 1742.0,
+      "score": 26.17
     },
     {
       "symbol": "Max",
@@ -74129,6 +74178,16 @@
       "chg_m5": 1.916,
       "vol_m5": 706.0,
       "score": 1.87
+    },
+    {
+      "symbol": "Gato",
+      "mint": "55A3VxMBfzw6uSe64zms5iMPw9k6kx9WzzusbCU6pump",
+      "link": "https://axiom.trade/meme/55A3VxMBfzw6uSe64zms5iMPw9k6kx9WzzusbCU6pump?chain=sol",
+      "reason": "5m volume $173 under $5k",
+      "gates": 1,
+      "chg_m5": 1.97,
+      "vol_m5": 173.0,
+      "score": 1.57
     },
     {
       "symbol": "RAMBO",
@@ -74151,16 +74210,6 @@
       "score": 1.18
     },
     {
-      "symbol": "ASTRALIS",
-      "mint": "DWsutTNJSjG5mkhGsPevvT8xbRtVYQBLZdxqxm2Upump",
-      "link": "https://axiom.trade/meme/DWsutTNJSjG5mkhGsPevvT8xbRtVYQBLZdxqxm2Upump?chain=sol",
-      "reason": "5m -1.1% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -1.09,
-      "vol_m5": 27366.0,
-      "score": -1.66
-    },
-    {
       "symbol": "mihao",
       "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
       "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
@@ -74176,7 +74225,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-14T08:21:06.564693+00:00",
-  "checked_at_london": "14 Nov 2026, 8:21 GMT",
+  "checked_at": "2026-11-14T08:22:14.361721+00:00",
+  "checked_at_london": "14 Nov 2026, 8:22 GMT",
   "who_we_copy": null
 }
