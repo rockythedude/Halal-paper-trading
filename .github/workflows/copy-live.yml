@@ -59,6 +59,8 @@ jobs:
       - name: Follow the pinned wallets
         env:
           HELIUS_API_KEY: ${{ secrets.HELIUS_KEY }}
+          SIGNAL_WEBHOOK_URL: ${{ secrets.SIGNAL_WEBHOOK_URL }}
+          SIGNAL_WEBHOOK_KEY: ${{ secrets.SIGNAL_WEBHOOK_KEY }}
         run: |
           set +e
           if [ -z "$HELIUS_API_KEY" ]; then

@@ -20,6 +20,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 import engine
+import signal_webhook
 from market import format_london, iso, now_utc
 from prices import PriceError, Quote, _get, binance_ticker_24h
 from universe import load_config
@@ -270,6 +271,20 @@ def run_meme() -> dict:
 
     engine.mark_positions(state, quotes)
     exits = engine.manage_exits(state, quotes, cfg, True)
+    for trade in exits:
+        if not trade.get("webhook_buy"):
+            continue
+        signal_webhook.ping_sell(
+            signal_webhook.sell_payload(
+                trade["webhook_buy"],
+                trade.get("exit_price"),
+                trade.get("pnl_pct") or 0,
+                trade.get("pnl") or 0,
+                trade.get("reason") or "",
+                signal_webhook.utc_now(),
+            ),
+            bool(trade.get("webhook_pinged")),
+        )
     engine.mark_positions(state, quotes)
 
     held = {p["symbol"] for p in state["positions"]}
@@ -299,6 +314,21 @@ def run_meme() -> dict:
             held.add(row["symbol"])
             bought += 1
             by_symbol[row["symbol"]] = row
+            payload = signal_webhook.buy_payload(
+                "meme",
+                pos["symbol"],
+                pos.get("name") or pos["symbol"],
+                None,
+                None,
+                pos["entry_price"],
+                pos.get("take_profit"),
+                pos.get("hard_stop"),
+                pos.get("cost_basis") or 0,
+                signal_webhook.utc_now(),
+            )
+            if signal_webhook.ping_buy(state, "meme", payload, pos["symbol"]):
+                pos["webhook_pinged"] = True
+                pos["webhook_buy"] = payload
 
     engine.mark_positions(state, quotes)
     engine.apply_risk_levels(state, cfg)

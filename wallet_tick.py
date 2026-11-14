@@ -33,6 +33,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 import engine
+import signal_webhook
 from market import LONDON, format_london, iso, now_utc
 
 STATE_PATH = ROOT / "wallets" / "state.json"
@@ -958,6 +959,13 @@ def _buy(state: dict, mint: str, symbol: str, quote: dict, wallet: dict) -> None
         fill["tag"] = CURVE_TAG
     engine.append_fill(state, fill)
     _say(state, "EXECUTOR", reason)
+    payload = signal_webhook.buy_payload(
+        "wallets", symbol, symbol, "solana", mint,
+        price, pos["take_profit"], pos["hard_stop"], pos["cost_basis"], signal_webhook.utc_now(),
+    )
+    if signal_webhook.ping_buy(state, "wallets", payload, mint):
+        pos["webhook_pinged"] = True
+        pos["webhook_buy"] = payload
 
 
 def _sell(state: dict, pos: dict, price: float, reason: str, fee_rate: float | None = None) -> None:
@@ -1006,6 +1014,11 @@ def _sell(state: dict, pos: dict, price: float, reason: str, fee_rate: float | N
         },
     )
     _say(state, "RISK" if "stop" in reason.lower() or "take profit" in reason.lower() else "EXECUTOR", reason)
+    if pos.get("webhook_buy"):
+        signal_webhook.ping_sell(
+            signal_webhook.sell_payload(pos["webhook_buy"], price, pnl_pct, pnl, reason, signal_webhook.utc_now()),
+            bool(pos.get("webhook_pinged")),
+        )
 
 
 def _risk(state: dict, prices: dict[str, dict]) -> None:

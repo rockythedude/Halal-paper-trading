@@ -26,6 +26,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 import engine
+import signal_webhook
 from market import format_london, iso, now_utc
 
 STATE_PATH = ROOT / "scalp" / "state.json"
@@ -431,6 +432,11 @@ def _sell(state: dict, pos: dict, price: float, reason: str) -> None:
         },
     )
     _say(state, "RISK" if "stop" in reason.lower() or "time" in reason.lower() else "EXECUTOR", reason)
+    if pos.get("webhook_buy"):
+        signal_webhook.ping_sell(
+            signal_webhook.sell_payload(pos["webhook_buy"], fill, pnl_pct, pnl, reason, signal_webhook.utc_now()),
+            bool(pos.get("webhook_pinged")),
+        )
 
 
 def _exit(state: dict, quotes: dict[str, dict]) -> None:
@@ -522,6 +528,13 @@ def _buy(state: dict, row: dict) -> None:
     state["positions"].append(pos)
     engine.append_fill(state, engine._buy_fill(pos))
     _say(state, "EXECUTOR", reason)
+    payload = signal_webhook.buy_payload(
+        "scalp", symbol, symbol, "solana", mint,
+        fill, pos["take_profit"], pos["hard_stop"], pos["cost_basis"], signal_webhook.utc_now(),
+    )
+    if signal_webhook.ping_buy(state, "scalp", payload, mint):
+        pos["webhook_pinged"] = True
+        pos["webhook_buy"] = payload
 
 
 def poll(state: dict) -> None:

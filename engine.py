@@ -402,6 +402,9 @@ def manage_exits(state: dict, quotes: dict[str, Quote], cfg: dict, session_open:
             "closed_at_london": format_london(),
             "source": q.source,
         }
+        if pos.get("webhook_pinged"):
+            trade["webhook_pinged"] = True
+            trade["webhook_buy"] = pos.get("webhook_buy")
         state["closed_trades"].append(trade)
         append_fill(
             state,

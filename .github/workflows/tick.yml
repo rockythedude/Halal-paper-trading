@@ -48,6 +48,9 @@ jobs:
           python wallet_replay.py --max-age-hours 20 --max-seconds 420 || echo "replay refresh failed; the previous file stays"
 
       - name: Run the four paper desks
+        env:
+          SIGNAL_WEBHOOK_URL: ${{ secrets.SIGNAL_WEBHOOK_URL }}
+          SIGNAL_WEBHOOK_KEY: ${{ secrets.SIGNAL_WEBHOOK_KEY }}
         run: |
           # BTC evaluates every 60s for about 4 minutes while the other desks tick,
           # so this job stays near the 5-minute cron instead of stacking another run.
