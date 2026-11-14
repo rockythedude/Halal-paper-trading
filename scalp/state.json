@@ -28505,12 +28505,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-14T08:52:18.080261+00:00",
-      "label": "14 Nov 2026, 8:52 GMT",
-      "equity": 0.238146,
-      "cash": 0.190861
-    },
-    {
       "ts": "2026-11-14T08:52:58.105084+00:00",
       "label": "14 Nov 2026, 8:52 GMT",
       "equity": 0.238387,
@@ -31509,21 +31503,15 @@
       "label": "14 Nov 2026, 14:34 GMT",
       "equity": 0.141707,
       "cash": 0.114359
+    },
+    {
+      "ts": "2026-11-14T14:34:44.621170+00:00",
+      "label": "14 Nov 2026, 14:34 GMT",
+      "equity": 0.141707,
+      "cash": 0.114359
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-14T07:16:05.564325+00:00",
-      "london": "14 Nov 2026, 7:16 GMT",
-      "hhmm": "07:16",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $ASTRALIS @ 0.000298284 \u2014 5m +13.6% vol $32,705 buys 147/sells 121",
-      "symbol": null,
-      "reason": "BUY 10% $ASTRALIS @ 0.000298284 \u2014 5m +13.6% vol $32,705 buys 147/sells 121",
-      "line": "07:16 EXECUTOR: BUY 10% $ASTRALIS @ 0.000298284 \u2014 5m +13.6% vol $32,705 buys 147/sells 121",
-      "tag": "EXECUTOR",
-      "message": "07:16 EXECUTOR: BUY 10% $ASTRALIS @ 0.000298284 \u2014 5m +13.6% vol $32,705 buys 147/sells 121"
-    },
     {
       "ts": "2026-11-14T07:18:05.540871+00:00",
       "london": "14 Nov 2026, 7:18 GMT",
@@ -36311,6 +36299,18 @@
       "line": "14:34 EXECUTOR: BUY 10% $CBUCKS @ 0.00374664 \u2014 5m +4.8% vol $5,010 buys 6/sells 3",
       "tag": "EXECUTOR",
       "message": "14:34 EXECUTOR: BUY 10% $CBUCKS @ 0.00374664 \u2014 5m +4.8% vol $5,010 buys 6/sells 3"
+    },
+    {
+      "ts": "2026-11-14T14:34:44.621062+00:00",
+      "london": "14 Nov 2026, 14:34 GMT",
+      "hhmm": "14:34",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 2 open, equity $0.14",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 2 open, equity $0.14",
+      "line": "14:34 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.14",
+      "tag": "LOGGER",
+      "message": "14:34 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.14"
     }
   ],
   "agents": {
@@ -36411,8 +36411,8 @@
       "open_positions": 0
     }
   },
-  "ticks": 16472,
-  "last_updated": "2026-11-14T14:34:20.595571+00:00",
+  "ticks": 16501,
+  "last_updated": "2026-11-14T14:34:44.620596+00:00",
   "last_updated_london": "14 Nov 2026, 14:34 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -36431,12 +36431,12 @@
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 1895
+    "traded": 1898
   },
   "totals_cumulative": {
-    "scanned": 16472,
+    "scanned": 16501,
     "killed": 0,
-    "traded": 1895
+    "traded": 1898
   },
   "paper_money": true,
   "fills": [
@@ -89560,9 +89560,29 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-14T14:34:20.595571+00:00",
+  "checked_at": "2026-11-14T14:34:44.620596+00:00",
   "checked_at_london": "14 Nov 2026, 14:34 GMT",
   "near_misses": [
+    {
+      "symbol": "VI",
+      "mint": "5wU7osGtkG6NP1Fxqv83mFL4uuDmjvggrkGwuZiYpump",
+      "link": "https://axiom.trade/meme/5wU7osGtkG6NP1Fxqv83mFL4uuDmjvggrkGwuZiYpump?chain=sol",
+      "reason": "market cap $91,638 outside $100k\u2013$100M",
+      "gates": 1,
+      "chg_m5": 28.64,
+      "vol_m5": 33166.0,
+      "score": 69.29
+    },
+    {
+      "symbol": "FLAG",
+      "mint": "FvQHUAqNV4U8X559sFmjqSm6juzprVJLxgimNrKDaray",
+      "link": "https://axiom.trade/meme/FvQHUAqNV4U8X559sFmjqSm6juzprVJLxgimNrKDaray?chain=sol",
+      "reason": "5m volume $1,104 under $5k",
+      "gates": 1,
+      "chg_m5": 7.62,
+      "vol_m5": 1104.0,
+      "score": 31.01
+    },
     {
       "symbol": "JENSEN",
       "mint": "B2YpP21vQBESJ2jtnuhPujEUT61KVRxZ2X5gsDcUpump",
@@ -89602,26 +89622,6 @@
       "chg_m5": -1.879,
       "vol_m5": 6213.0,
       "score": -3.6
-    },
-    {
-      "symbol": "Leonida",
-      "mint": "BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump",
-      "link": "https://axiom.trade/meme/BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump?chain=sol",
-      "reason": "5m -9.3% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -9.316,
-      "vol_m5": 5423.0,
-      "score": -34.94
-    },
-    {
-      "symbol": "VI",
-      "mint": "5wU7osGtkG6NP1Fxqv83mFL4uuDmjvggrkGwuZiYpump",
-      "link": "https://axiom.trade/meme/5wU7osGtkG6NP1Fxqv83mFL4uuDmjvggrkGwuZiYpump?chain=sol",
-      "reason": "liquidity $23,368 under $25k \u00b7 market cap $78,342 outside $100k\u2013$100M",
-      "gates": 2,
-      "chg_m5": 28.13,
-      "vol_m5": 39586.0,
-      "score": 85.43
     }
   ]
 }
