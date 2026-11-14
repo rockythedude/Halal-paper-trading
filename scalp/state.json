@@ -23641,12 +23641,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-13T20:33:00.777589+00:00",
-      "label": "13 Nov 2026, 20:33 GMT",
-      "equity": 1.154972,
-      "cash": 0.708505
-    },
-    {
       "ts": "2026-11-13T20:33:40.718794+00:00",
       "label": "13 Nov 2026, 20:33 GMT",
       "equity": 1.161416,
@@ -26645,21 +26639,15 @@
       "label": "14 Nov 2026, 2:16 GMT",
       "equity": 0.57718,
       "cash": 0.353062
+    },
+    {
+      "ts": "2026-11-14T02:16:33.186655+00:00",
+      "label": "14 Nov 2026, 2:16 GMT",
+      "equity": 0.57718,
+      "cash": 0.353062
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-13T21:39:03.353326+00:00",
-      "london": "13 Nov 2026, 21:39 GMT",
-      "hhmm": "21:39",
-      "agent": "EXECUTOR",
-      "action": "SELL trail 2.5% $GATO",
-      "symbol": null,
-      "reason": "SELL trail 2.5% $GATO",
-      "line": "21:39 EXECUTOR: SELL trail 2.5% $GATO",
-      "tag": "EXECUTOR",
-      "message": "21:39 EXECUTOR: SELL trail 2.5% $GATO"
-    },
     {
       "ts": "2026-11-13T21:40:47.271672+00:00",
       "london": "13 Nov 2026, 21:40 GMT",
@@ -31447,6 +31435,18 @@
       "line": "02:15 EXECUTOR: BUY 10% $JENSEN @ 0.00176679 \u2014 5m +28.2% vol $18,438 buys 665/sells 317",
       "tag": "EXECUTOR",
       "message": "02:15 EXECUTOR: BUY 10% $JENSEN @ 0.00176679 \u2014 5m +28.2% vol $18,438 buys 665/sells 317"
+    },
+    {
+      "ts": "2026-11-14T02:16:33.186571+00:00",
+      "london": "14 Nov 2026, 2:16 GMT",
+      "hhmm": "02:16",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 4 open, equity $0.58",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 4 open, equity $0.58",
+      "line": "02:16 LOGGER: run complete \u2014 29 polls, 4 open, equity $0.58",
+      "tag": "LOGGER",
+      "message": "02:16 LOGGER: run complete \u2014 29 polls, 4 open, equity $0.58"
     }
   ],
   "agents": {
@@ -31547,8 +31547,8 @@
       "open_positions": 0
     }
   },
-  "ticks": 12006,
-  "last_updated": "2026-11-14T02:16:09.169681+00:00",
+  "ticks": 12035,
+  "last_updated": "2026-11-14T02:16:33.186194+00:00",
   "last_updated_london": "14 Nov 2026, 2:16 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -31567,12 +31567,12 @@
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 1569
+    "traded": 1572
   },
   "totals_cumulative": {
-    "scanned": 12006,
+    "scanned": 12035,
     "killed": 0,
-    "traded": 1569
+    "traded": 1572
   },
   "paper_money": true,
   "fills": [
@@ -75540,19 +75540,9 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-14T02:16:09.169681+00:00",
+  "checked_at": "2026-11-14T02:16:33.186194+00:00",
   "checked_at_london": "14 Nov 2026, 2:16 GMT",
   "near_misses": [
-    {
-      "symbol": "CBUCKS",
-      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
-      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
-      "reason": "5m volume $570 under $5k",
-      "gates": 1,
-      "chg_m5": 1.04,
-      "vol_m5": 570.0,
-      "score": 2.95
-    },
     {
       "symbol": "Ansemmas",
       "mint": "HXxJdaQbrYRvwTAM8M8mUPyoRPvmyuUbPFBRkiAAMASS",
@@ -75562,6 +75552,26 @@
       "chg_m5": 2.0,
       "vol_m5": 45.0,
       "score": 1.5
+    },
+    {
+      "symbol": "PIRATE",
+      "mint": "6mXFCoZ515w37YfmwXGJMPfQfiK5tr9WkihW3oN9pump",
+      "link": "https://axiom.trade/meme/6mXFCoZ515w37YfmwXGJMPfQfiK5tr9WkihW3oN9pump?chain=sol",
+      "reason": "5m volume $87 under $5k \u00b7 buy/sell 1/2 under 1.05",
+      "gates": 2,
+      "chg_m5": 1.1,
+      "vol_m5": 87.0,
+      "score": 0.14
+    },
+    {
+      "symbol": "CBUCKS",
+      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
+      "reason": "5m volume $370 under $5k \u00b7 5m -0.9% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -0.93,
+      "vol_m5": 370.0,
+      "score": -1.14
     }
   ]
 }
