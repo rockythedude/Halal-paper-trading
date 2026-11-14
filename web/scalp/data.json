@@ -6,8 +6,8 @@
   "equity": 0.07,
   "equity_multiple": 0.0007,
   "profit": -99.93,
-  "goal_pct": -0.0166550285,
-  "progress": 1.1638166666666666e-05,
+  "goal_pct": -0.016655088,
+  "progress": 1.1578666666666668e-05,
   "win_rate": 0.31054977711738485,
   "wins": 627,
   "losses": 1392,
@@ -21,8 +21,8 @@
   },
   "ticks": 17922,
   "open_count": 3,
-  "last_updated_london": "14 Nov 2026, 21:36 GMT",
-  "last_updated": "2026-11-14T21:36:58.902008+00:00",
+  "last_updated_london": "14 Nov 2026, 21:37 GMT",
+  "last_updated": "2026-11-14T21:37:38.747243+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "14 Nov 2026, 12:50 GMT",
-      "value": 0.17
-    },
     {
       "label": "14 Nov 2026, 12:51 GMT",
       "value": 0.17
@@ -2058,6 +2054,10 @@
     {
       "label": "14 Nov 2026, 21:36 GMT",
       "value": 0.07
+    },
+    {
+      "label": "14 Nov 2026, 21:37 GMT",
+      "value": 0.07
     }
   ],
   "annotations": [],
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
-      "badge": "40 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
+      "badge": "56 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "40 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "56 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 1.4777738454762812,
       "qty_display": "1.4778",
       "entry_price": 0.004965780131015171,
-      "current_price": 0.005043,
+      "current_price": 0.004795444159853539,
       "change_pct": null,
-      "price_source": "dexscreener",
+      "price_source": "geckoterminal",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": 0.015550400329352065,
+      "unrealized_pct": -0.03430195591982654,
       "hard_stop": 0.004717491124464413,
       "trail_activate": 0.005164411336255778,
       "opened_at": "14 Nov 2026, 21:24 GMT",
@@ -2604,11 +2604,11 @@
       "qty": 0.18593895775240915,
       "qty_display": "0.18593896",
       "entry_price": 0.03857986560058071,
-      "current_price": 0.03816,
+      "current_price": 0.03817808751265872,
       "change_pct": null,
-      "price_source": "dexscreener",
+      "price_source": "geckoterminal",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.01088302393086582,
+      "unrealized_pct": -0.010414190968978887,
       "hard_stop": 0.03665087232055167,
       "trail_activate": 0.040123060224603935,
       "opened_at": "14 Nov 2026, 21:30 GMT",
@@ -83610,16 +83610,16 @@
     {
       "symbol": "WASTED",
       "name": "WASTED",
-      "price": 0.005043,
+      "price": 0.004795444159853539,
       "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     },
     {
       "symbol": "STONK",
       "name": "STONK",
-      "price": 0.03816,
+      "price": 0.03817808751265872,
       "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     },
     {
       "symbol": "bill",
@@ -83676,8 +83676,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 85.45,
-      "return_pct": -0.14547679000000002,
+      "equity": 85.52,
+      "return_pct": -0.14475651,
       "closed_trades": 143,
       "win_rate": 0.17482517482517482,
       "realized_pnl": -14.45
@@ -83695,7 +83695,7 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 0.07,
-      "return_pct": -0.99930171,
+      "return_pct": -0.99930528,
       "closed_trades": 2019,
       "win_rate": 0.31054977711738485,
       "realized_pnl": -99.93
@@ -83714,51 +83714,31 @@
       "symbol": "GLITCH",
       "mint": "8Xg89xT8Ve34sKiYqYuMs46mycREsCA2F362UscRpump",
       "link": "https://axiom.trade/meme/8Xg89xT8Ve34sKiYqYuMs46mycREsCA2F362UscRpump?chain=sol",
-      "reason": "buy/sell 7/17 under 1.05",
+      "reason": "buy/sell 8/25 under 1.05",
       "gates": 1,
-      "chg_m5": 7.19,
-      "vol_m5": 5241.0,
-      "score": 8.88
+      "chg_m5": 6.13,
+      "vol_m5": 6629.0,
+      "score": 5.88
     },
     {
       "symbol": "JENSEN",
       "mint": "B2YpP21vQBESJ2jtnuhPujEUT61KVRxZ2X5gsDcUpump",
       "link": "https://axiom.trade/meme/B2YpP21vQBESJ2jtnuhPujEUT61KVRxZ2X5gsDcUpump?chain=sol",
-      "reason": "5m -10.1% outside +1% to +40%",
+      "reason": "5m -5.2% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -10.1,
-      "vol_m5": 7912.0,
-      "score": -26.84
-    },
-    {
-      "symbol": "BIG",
-      "mint": "34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump",
-      "link": "https://axiom.trade/meme/34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump?chain=sol",
-      "reason": "5m volume $1,011 under $5k · buy/sell 73/76 under 1.05",
-      "gates": 2,
-      "chg_m5": 1.0,
-      "vol_m5": 1011.0,
-      "score": 2.88
-    },
-    {
-      "symbol": "loco",
-      "mint": "6vtfL1Zi8YQqQrsxwLqguFNFCvwmER5SnYSBYDTRpump",
-      "link": "https://axiom.trade/meme/6vtfL1Zi8YQqQrsxwLqguFNFCvwmER5SnYSBYDTRpump?chain=sol",
-      "reason": "liquidity $12,539 under $25k · market cap $33,983 outside $100k–$100M",
-      "gates": 2,
-      "chg_m5": 9.42,
-      "vol_m5": 6587.0,
-      "score": 2.77
+      "chg_m5": -5.15,
+      "vol_m5": 8341.0,
+      "score": -14.16
     },
     {
       "symbol": "Christmax",
       "mint": "D7MyAD7k3AqJpg4uxjUcmL51EDHrEsJxkjUynsxcpump",
       "link": "https://axiom.trade/meme/D7MyAD7k3AqJpg4uxjUcmL51EDHrEsJxkjUynsxcpump?chain=sol",
-      "reason": "5m volume $375 under $5k · buy/sell 267/406 under 1.05",
+      "reason": "5m volume $385 under $5k · buy/sell 293/449 under 1.05",
       "gates": 2,
-      "chg_m5": 4.02,
-      "vol_m5": 375.0,
-      "score": 1.13
+      "chg_m5": 1.41,
+      "vol_m5": 385.0,
+      "score": 0.4
     },
     {
       "symbol": "COA",
@@ -83769,6 +83749,16 @@
       "chg_m5": null,
       "vol_m5": 75.0,
       "score": 0.0
+    },
+    {
+      "symbol": "CJ",
+      "mint": "F4vEFNoH9H2oLYRabaQQ2Z6jAAi2AhRVdTdVH6Nn2J1q",
+      "link": "https://axiom.trade/meme/F4vEFNoH9H2oLYRabaQQ2Z6jAAi2AhRVdTdVH6Nn2J1q?chain=sol",
+      "reason": "5m volume $197 under $5k · 5m -4.3% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -4.31,
+      "vol_m5": 197.0,
+      "score": -1.44
     }
   ],
   "helius_status": "",
@@ -83776,7 +83766,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-14T21:36:58.902008+00:00",
-  "checked_at_london": "14 Nov 2026, 21:36 GMT",
+  "checked_at": "2026-11-14T21:37:38.747243+00:00",
+  "checked_at_london": "14 Nov 2026, 21:37 GMT",
   "who_we_copy": null
 }
