@@ -1,9 +1,38 @@
 {
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 0.02181190955607802,
-  "equity": 0.021812,
-  "positions": [],
+  "cash": 0.01960889755607802,
+  "equity": 0.021747,
+  "positions": [
+    {
+      "symbol": "Socks",
+      "name": "Socks",
+      "mint": "FS1pBmZKp2Qw1atC64GoLamHstECAos9ot8bGPgDpump",
+      "pair": "AgqoLMPxk7ETjY74TnyePqKSQQYTTsCrmMVgyQRkaJK3",
+      "link": "https://axiom.trade/meme/FS1pBmZKp2Qw1atC64GoLamHstECAos9ot8bGPgDpump?chain=sol",
+      "dex_url": "https://dexscreener.com/solana/agqolmpxk7etjy74tnyepqksqqyttscrmmvgyqrkajk3",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 16.942609357583674,
+      "entry_price": 0.00012874049999999997,
+      "raw_price": 0.0001281,
+      "entry_fee": 2.1812000000000004e-05,
+      "cost_basis": 0.0022030120000000003,
+      "opened_at": "2026-11-15T10:12:43.486475+00:00",
+      "opened_at_london": "15 Nov 2026, 10:12 GMT",
+      "high_water": 0.00012874049999999997,
+      "trail_armed": false,
+      "last_price": 0.0001281,
+      "last_source": "dexscreener",
+      "reason": "BUY 10% $Socks @ 0.00012874 \u2014 5m +21.6% vol $38,832 buys 593/sells 455",
+      "hard_stop": 0.00012230347499999996,
+      "take_profit": 0.00013903973999999998,
+      "trail_activate": 0.00013389011999999996,
+      "market_value": 0.002137901552238807,
+      "unrealized_pnl": -6.511044776119331e-05,
+      "unrealized_pct": -0.004975124378109208
+    }
+  ],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -34508,12 +34537,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-15T02:49:41.502816+00:00",
-      "label": "15 Nov 2026, 2:49 GMT",
-      "equity": 0.027693,
-      "cash": 0.019288
-    },
-    {
       "ts": "2026-11-15T02:50:05.416727+00:00",
       "label": "15 Nov 2026, 2:50 GMT",
       "equity": 0.027693,
@@ -37512,21 +37535,15 @@
       "label": "15 Nov 2026, 10:12 GMT",
       "equity": 0.021812,
       "cash": 0.021812
+    },
+    {
+      "ts": "2026-11-15T10:12:43.486671+00:00",
+      "label": "15 Nov 2026, 10:12 GMT",
+      "equity": 0.021747,
+      "cash": 0.019609
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-15T01:00:38.809033+00:00",
-      "london": "15 Nov 2026, 1:00 GMT",
-      "hhmm": "01:00",
-      "agent": "RISK",
-      "action": "SELL stop \u22125% $HYGG",
-      "symbol": null,
-      "reason": "SELL stop \u22125% $HYGG",
-      "line": "01:00 RISK: SELL stop \u22125% $HYGG",
-      "tag": "RISK",
-      "message": "01:00 RISK: SELL stop \u22125% $HYGG"
-    },
     {
       "ts": "2026-11-15T01:00:38.809819+00:00",
       "london": "15 Nov 2026, 1:00 GMT",
@@ -42314,6 +42331,18 @@
       "line": "10:10 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.02",
       "tag": "LOGGER",
       "message": "10:10 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.02"
+    },
+    {
+      "ts": "2026-11-15T10:12:43.486519+00:00",
+      "london": "15 Nov 2026, 10:12 GMT",
+      "hhmm": "10:12",
+      "agent": "EXECUTOR",
+      "action": "BUY 10% $Socks @ 0.00012874 \u2014 5m +21.6% vol $38,832 buys 593/sells 455",
+      "symbol": null,
+      "reason": "BUY 10% $Socks @ 0.00012874 \u2014 5m +21.6% vol $38,832 buys 593/sells 455",
+      "line": "10:12 EXECUTOR: BUY 10% $Socks @ 0.00012874 \u2014 5m +21.6% vol $38,832 buys 593/sells 455",
+      "tag": "EXECUTOR",
+      "message": "10:12 EXECUTOR: BUY 10% $Socks @ 0.00012874 \u2014 5m +21.6% vol $38,832 buys 593/sells 455"
     }
   ],
   "agents": {
@@ -42338,8 +42367,8 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "58 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "58 pairs \u00b7 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -42386,8 +42415,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "0/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -42415,7 +42444,7 @@
     }
   },
   "ticks": 21895,
-  "last_updated": "2026-11-15T10:12:03.447013+00:00",
+  "last_updated": "2026-11-15T10:12:43.486569+00:00",
   "last_updated_london": "15 Nov 2026, 10:12 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -106842,12 +106871,26 @@
       "pnl": -0.00012364466750899427,
       "pnl_pct": -0.05614329872973737,
       "id": "f4600"
+    },
+    {
+      "ts": "2026-11-15T10:12:43.486475+00:00",
+      "london": "15 Nov 2026, 10:12 GMT",
+      "side": "buy",
+      "symbol": "Socks",
+      "name": "Socks",
+      "asset_class": "crypto",
+      "qty": 16.942609357583674,
+      "price": 0.00012874049999999997,
+      "value": 0.0021812000000000003,
+      "pnl": null,
+      "pnl_pct": null,
+      "id": "f4601"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-15T10:12:03.447013+00:00",
+  "checked_at": "2026-11-15T10:12:43.486569+00:00",
   "checked_at_london": "15 Nov 2026, 10:12 GMT",
   "near_misses": [
     {
@@ -106861,34 +106904,14 @@
       "score": 19.08
     },
     {
-      "symbol": "BIG",
-      "mint": "34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump",
-      "link": "https://axiom.trade/meme/34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump?chain=sol",
-      "reason": "5m volume $123 under $5k",
-      "gates": 1,
-      "chg_m5": 3.02,
-      "vol_m5": 123.0,
-      "score": 2.19
-    },
-    {
       "symbol": "Max",
       "mint": "5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump",
       "link": "https://axiom.trade/meme/5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump?chain=sol",
-      "reason": "5m volume $766 under $5k",
+      "reason": "5m volume $777 under $5k",
       "gates": 1,
-      "chg_m5": 2.064,
-      "vol_m5": 766.0,
-      "score": 1.55
-    },
-    {
-      "symbol": "FUTA",
-      "mint": "8JCsa61htnPj2af7g1KSyU1UEncruHE1Ph9aNR6rpump",
-      "link": "https://axiom.trade/meme/8JCsa61htnPj2af7g1KSyU1UEncruHE1Ph9aNR6rpump?chain=sol",
-      "reason": "5m volume $163 under $5k",
-      "gates": 1,
-      "chg_m5": 3.06,
-      "vol_m5": 163.0,
-      "score": 1.53
+      "chg_m5": 3.164,
+      "vol_m5": 777.0,
+      "score": 2.37
     },
     {
       "symbol": "NIO",
@@ -106901,14 +106924,34 @@
       "score": 1.34
     },
     {
-      "symbol": "GTA6",
-      "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
-      "link": "https://axiom.trade/meme/4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz?chain=sol",
-      "reason": "5m volume $593 under $5k",
-      "gates": 1,
-      "chg_m5": 1.328,
-      "vol_m5": 593.0,
-      "score": 0.72
+      "symbol": "NCAT",
+      "mint": "CU6twK3evciYpdtf9xiiahxwV2tNd9FGoGjL6ewVpump",
+      "link": "https://axiom.trade/meme/CU6twK3evciYpdtf9xiiahxwV2tNd9FGoGjL6ewVpump?chain=sol",
+      "reason": "liquidity $0 under $25k \u00b7 market cap $12,583 outside $100k\u2013$100M",
+      "gates": 2,
+      "chg_m5": 9.33,
+      "vol_m5": 15387.0,
+      "score": 52.99
+    },
+    {
+      "symbol": "FUTA",
+      "mint": "8JCsa61htnPj2af7g1KSyU1UEncruHE1Ph9aNR6rpump",
+      "link": "https://axiom.trade/meme/8JCsa61htnPj2af7g1KSyU1UEncruHE1Ph9aNR6rpump?chain=sol",
+      "reason": "5m volume $14 under $5k \u00b7 5m +0.1% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.114,
+      "vol_m5": 14.0,
+      "score": 0.09
+    },
+    {
+      "symbol": "WASTED",
+      "mint": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
+      "link": "https://axiom.trade/meme/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump?chain=sol",
+      "reason": "5m volume $416 under $5k \u00b7 5m +0.2% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.182,
+      "vol_m5": 416.0,
+      "score": 0.06
     }
   ]
 }
