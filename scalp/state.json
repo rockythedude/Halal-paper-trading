@@ -1,8 +1,8 @@
 {
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 0.011924516537130801,
-  "equity": 0.017082,
+  "cash": 0.013409547826182212,
+  "equity": 0.016811,
   "positions": [
     {
       "symbol": "WASTED",
@@ -59,34 +59,6 @@
       "market_value": 0.001665295104214516,
       "unrealized_pnl": -6.988489578548429e-05,
       "unrealized_pct": -0.015966756434471985
-    },
-    {
-      "symbol": "gtacoin",
-      "name": "gtacoin",
-      "mint": "DSKM3d518BBaQShSKqaqZcG1XMRf81UFB6a1eavhSTNK",
-      "pair": "9ZTc73Qq2p77gRMHZzsFP4TEZMiSvkxBpVjvonnZevBe",
-      "link": "https://axiom.trade/meme/DSKM3d518BBaQShSKqaqZcG1XMRf81UFB6a1eavhSTNK?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/9ztc73qq2p77grmhzzsfp4tezmisvkxbpvjvonnzevbe",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 2.7702489018086296,
-      "entry_price": 0.0006181755,
-      "raw_price": 0.0006151,
-      "entry_fee": 1.7125000000000003e-05,
-      "cost_basis": 0.0017296250000000003,
-      "opened_at": "2026-11-15T14:45:26.285886+00:00",
-      "opened_at_london": "15 Nov 2026, 14:45 GMT",
-      "high_water": 0.0006434,
-      "trail_armed": true,
-      "last_price": 0.0006434,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $gtacoin @ 0.000618175 \u2014 5m +14.3% vol $9,184 buys 50/sells 22",
-      "hard_stop": 0.000587266725,
-      "take_profit": 0.00066762954,
-      "trail_activate": 0.00064290252,
-      "market_value": 0.0017557315901794884,
-      "unrealized_pnl": 2.6106590179488095e-05,
-      "unrealized_pct": 0.040804755283896155
     }
   ],
   "closed_trades": [
@@ -35699,15 +35671,24 @@
       "closed_at": "2026-11-15T14:47:02.259563+00:00",
       "closed_at_london": "15 Nov 2026, 14:47 GMT",
       "opened_at": "2026-11-15T14:34:55.460040+00:00"
+    },
+    {
+      "symbol": "gtacoin",
+      "name": "gtacoin",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 2.7702489018086296,
+      "entry_price": 0.0006181755,
+      "exit_price": 0.000541479,
+      "pnl": -0.0002445937109485897,
+      "pnl_pct": -0.1414143013361796,
+      "reason": "SELL stop \u22125% $gtacoin",
+      "closed_at": "2026-11-15T14:47:26.262546+00:00",
+      "closed_at_london": "15 Nov 2026, 14:47 GMT",
+      "opened_at": "2026-11-15T14:45:26.285886+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-15T09:04:34.310170+00:00",
-      "label": "15 Nov 2026, 9:04 GMT",
-      "equity": 0.022591,
-      "cash": 0.022591
-    },
     {
       "ts": "2026-11-15T09:05:14.340541+00:00",
       "label": "15 Nov 2026, 9:05 GMT",
@@ -38707,21 +38688,15 @@
       "label": "15 Nov 2026, 14:47 GMT",
       "equity": 0.017082,
       "cash": 0.011925
+    },
+    {
+      "ts": "2026-11-15T14:47:42.243259+00:00",
+      "label": "15 Nov 2026, 14:47 GMT",
+      "equity": 0.016811,
+      "cash": 0.01341
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-15T04:15:36.443230+00:00",
-      "london": "15 Nov 2026, 4:15 GMT",
-      "hhmm": "04:15",
-      "agent": "LOGGER",
-      "action": "run complete \u2014 29 polls, 2 open, equity $0.02",
-      "symbol": null,
-      "reason": "run complete \u2014 29 polls, 2 open, equity $0.02",
-      "line": "04:15 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.02",
-      "tag": "LOGGER",
-      "message": "04:15 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.02"
-    },
     {
       "ts": "2026-11-15T04:16:46.382087+00:00",
       "london": "15 Nov 2026, 4:16 GMT",
@@ -43509,6 +43484,18 @@
       "line": "14:47 RISK: SELL stop \u22125% $AURA",
       "tag": "RISK",
       "message": "14:47 RISK: SELL stop \u22125% $AURA"
+    },
+    {
+      "ts": "2026-11-15T14:47:26.262590+00:00",
+      "london": "15 Nov 2026, 14:47 GMT",
+      "hhmm": "14:47",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $gtacoin",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $gtacoin",
+      "line": "14:47 RISK: SELL stop \u22125% $gtacoin",
+      "tag": "RISK",
+      "message": "14:47 RISK: SELL stop \u22125% $gtacoin"
     }
   ],
   "agents": {
@@ -43581,8 +43568,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "3 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "3/6",
+      "activity": "2 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -43610,7 +43597,7 @@
     }
   },
   "ticks": 23548,
-  "last_updated": "2026-11-15T14:47:02.259925+00:00",
+  "last_updated": "2026-11-15T14:47:42.243150+00:00",
   "last_updated_london": "15 Nov 2026, 14:47 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -110151,33 +110138,47 @@
       "pnl": -0.00014995865311830938,
       "pnl_pct": -0.08445134746517498,
       "id": "f4751"
+    },
+    {
+      "ts": "2026-11-15T14:47:26.262546+00:00",
+      "london": "15 Nov 2026, 14:47 GMT",
+      "side": "sell",
+      "symbol": "gtacoin",
+      "name": "gtacoin",
+      "asset_class": "crypto",
+      "qty": 2.7702489018086296,
+      "price": 0.000541479,
+      "value": 0.001500031605102435,
+      "pnl": -0.0002445937109485897,
+      "pnl_pct": -0.1414143013361796,
+      "id": "f4752"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-15T14:47:02.259925+00:00",
+  "checked_at": "2026-11-15T14:47:42.243150+00:00",
   "checked_at_london": "15 Nov 2026, 14:47 GMT",
   "near_misses": [
     {
       "symbol": "DOUG",
       "mint": "8UqE9m2rMoxUzrz4kBVWx5ia3PiA2aGD6kiZUoiUpump",
       "link": "https://axiom.trade/meme/8UqE9m2rMoxUzrz4kBVWx5ia3PiA2aGD6kiZUoiUpump?chain=sol",
-      "reason": "5m volume $1,690 under $5k",
+      "reason": "5m volume $1,831 under $5k",
       "gates": 1,
-      "chg_m5": 18.76,
-      "vol_m5": 1690.0,
-      "score": 91.46
+      "chg_m5": 17.73,
+      "vol_m5": 1831.0,
+      "score": 74.47
     },
     {
-      "symbol": "BIG",
-      "mint": "34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump",
-      "link": "https://axiom.trade/meme/34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump?chain=sol",
-      "reason": "5m volume $203 under $5k",
+      "symbol": "CBUCKS",
+      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
+      "reason": "5m volume $396 under $5k",
       "gates": 1,
-      "chg_m5": 4.39,
-      "vol_m5": 203.0,
-      "score": 4.18
+      "chg_m5": 1.78,
+      "vol_m5": 396.0,
+      "score": 6.83
     },
     {
       "symbol": "Socks",
@@ -110190,6 +110191,26 @@
       "score": 1.44
     },
     {
+      "symbol": "gtacoin",
+      "mint": "DSKM3d518BBaQShSKqaqZcG1XMRf81UFB6a1eavhSTNK",
+      "link": "https://axiom.trade/meme/DSKM3d518BBaQShSKqaqZcG1XMRf81UFB6a1eavhSTNK?chain=sol",
+      "reason": "5m +0.4% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": 0.38,
+      "vol_m5": 14199.0,
+      "score": 0.77
+    },
+    {
+      "symbol": "WANTED",
+      "mint": "GUkwiQYxXzutiaF1io6i1j67BDd7UzJsgMinLRQ8pump",
+      "link": "https://axiom.trade/meme/GUkwiQYxXzutiaF1io6i1j67BDd7UzJsgMinLRQ8pump?chain=sol",
+      "reason": "liquidity $20,962 under $25k \u00b7 market cap $94,341 outside $100k\u2013$100M",
+      "gates": 2,
+      "chg_m5": 18.86,
+      "vol_m5": 10477.0,
+      "score": 43.78
+    },
+    {
       "symbol": "bill",
       "mint": "85RhcSEMy15SNhFLmSArNm7udPKXVagVgsq4YmSopump",
       "link": "https://axiom.trade/meme/85RhcSEMy15SNhFLmSArNm7udPKXVagVgsq4YmSopump?chain=sol",
@@ -110198,26 +110219,6 @@
       "chg_m5": 3.698,
       "vol_m5": 1385.0,
       "score": 1.41
-    },
-    {
-      "symbol": "FOOD",
-      "mint": "FTu55MyigXns96jz4nTCDDiTCjYJjyrHSceCgG9Upump",
-      "link": "https://axiom.trade/meme/FTu55MyigXns96jz4nTCDDiTCjYJjyrHSceCgG9Upump?chain=sol",
-      "reason": "5m volume $1,818 under $5k \u00b7 5m +0.4% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.417,
-      "vol_m5": 1818.0,
-      "score": 1.1
-    },
-    {
-      "symbol": "swordcat",
-      "mint": "5tCju6YNxHq5zrA6tGndr6F7TK42mpUFmeE31cSFpump",
-      "link": "https://axiom.trade/meme/5tCju6YNxHq5zrA6tGndr6F7TK42mpUFmeE31cSFpump?chain=sol",
-      "reason": "5m volume $105 under $5k \u00b7 5m +0.3% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.314,
-      "vol_m5": 105.0,
-      "score": 0.27
     }
   ]
 }
