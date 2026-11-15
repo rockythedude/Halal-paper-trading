@@ -2,7 +2,7 @@
   "starting_capital": 100.0,
   "target": 6000.0,
   "cash": 0.02335809584070378,
-  "equity": 0.025968,
+  "equity": 0.02603,
   "positions": [
     {
       "symbol": "JASON",
@@ -20,17 +20,17 @@
       "cost_basis": 0.002624182,
       "opened_at": "2026-11-15T03:53:56.779069+00:00",
       "opened_at_london": "15 Nov 2026, 3:53 GMT",
-      "high_water": 0.0002745,
-      "trail_armed": false,
-      "last_price": 0.0002745,
+      "high_water": 0.000281,
+      "trail_armed": true,
+      "last_price": 0.000281,
       "last_source": "dexscreener",
       "reason": "BUY 10% $JASON @ 0.000269139 \u2014 5m +6.2% vol $10,556 buys 460/sells 243",
       "hard_stop": 0.00025568205,
       "take_profit": 0.00029067012000000004,
       "trail_activate": 0.00027990456,
-      "market_value": 0.0026103369329417148,
-      "unrealized_pnl": -1.3845067058285317e-05,
-      "unrealized_pct": 0.019919075273371778
+      "market_value": 0.002672148190005908,
+      "unrealized_pnl": 4.7966190005908124e-05,
+      "unrealized_pct": 0.044070164487495234
     }
   ],
   "closed_trades": [
@@ -33337,12 +33337,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-14T21:52:15.400965+00:00",
-      "label": "14 Nov 2026, 21:52 GMT",
-      "equity": 0.069608,
-      "cash": 0.069608
-    },
-    {
       "ts": "2026-11-14T21:53:21.076596+00:00",
       "label": "14 Nov 2026, 21:53 GMT",
       "equity": 0.069608,
@@ -36340,6 +36334,12 @@
       "ts": "2026-11-15T03:54:12.692239+00:00",
       "label": "15 Nov 2026, 3:54 GMT",
       "equity": 0.025968,
+      "cash": 0.023358
+    },
+    {
+      "ts": "2026-11-15T03:54:52.677607+00:00",
+      "label": "15 Nov 2026, 3:54 GMT",
+      "equity": 0.02603,
       "cash": 0.023358
     }
   ],
@@ -41151,8 +41151,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal unreachable",
-      "badge": "38 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 20 pools",
+      "badge": "57 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -41167,7 +41167,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "38 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "57 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -41244,7 +41244,7 @@
     }
   },
   "ticks": 20097,
-  "last_updated": "2026-11-15T03:54:12.692137+00:00",
+  "last_updated": "2026-11-15T03:54:52.677489+00:00",
   "last_updated_london": "15 Nov 2026, 3:54 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -103450,48 +103450,68 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-15T03:54:12.692137+00:00",
+  "checked_at": "2026-11-15T03:54:52.677489+00:00",
   "checked_at_london": "15 Nov 2026, 3:54 GMT",
   "near_misses": [
     {
       "symbol": "GATO",
       "mint": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
       "link": "https://axiom.trade/meme/HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump?chain=sol",
-      "reason": "buy/sell 26/151 under 1.05",
+      "reason": "buy/sell 23/116 under 1.05",
       "gates": 1,
-      "chg_m5": 23.8,
-      "vol_m5": 26804.0,
-      "score": 12.29
+      "chg_m5": 23.794,
+      "vol_m5": 26762.0,
+      "score": 14.15
+    },
+    {
+      "symbol": "CBUCKS",
+      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
+      "reason": "5m volume $358 under $5k",
+      "gates": 1,
+      "chg_m5": 2.56,
+      "vol_m5": 358.0,
+      "score": 4.53
+    },
+    {
+      "symbol": "NIO",
+      "mint": "7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump",
+      "link": "https://axiom.trade/meme/7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump?chain=sol",
+      "reason": "5m volume $1,846 under $5k",
+      "gates": 1,
+      "chg_m5": 1.333,
+      "vol_m5": 1846.0,
+      "score": 0.92
+    },
+    {
+      "symbol": "greg",
+      "mint": "4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump",
+      "link": "https://axiom.trade/meme/4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump?chain=sol",
+      "reason": "5m volume $187 under $5k",
+      "gates": 1,
+      "chg_m5": 2.764,
+      "vol_m5": 187.0,
+      "score": 0.83
+    },
+    {
+      "symbol": "bill",
+      "mint": "85RhcSEMy15SNhFLmSArNm7udPKXVagVgsq4YmSopump",
+      "link": "https://axiom.trade/meme/85RhcSEMy15SNhFLmSArNm7udPKXVagVgsq4YmSopump?chain=sol",
+      "reason": "5m -0.6% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -0.599,
+      "vol_m5": 9583.0,
+      "score": -0.29
     },
     {
       "symbol": "BOWSER",
       "mint": "FThkP96RFL7NnuxTrrbhQza3keGQ4pVh5qGtHJ9Npump",
       "link": "https://axiom.trade/meme/FThkP96RFL7NnuxTrrbhQza3keGQ4pVh5qGtHJ9Npump?chain=sol",
-      "reason": "liquidity $0 under $25k \u00b7 market cap $19,896 outside $100k\u2013$100M",
+      "reason": "liquidity $0 under $25k \u00b7 market cap $20,647 outside $100k\u2013$100M",
       "gates": 2,
-      "chg_m5": 35.47,
-      "vol_m5": 9972.0,
-      "score": 319.23
-    },
-    {
-      "symbol": "BIG",
-      "mint": "34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump",
-      "link": "https://axiom.trade/meme/34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump?chain=sol",
-      "reason": "5m volume $202 under $5k \u00b7 buy/sell 78/79 under 1.05",
-      "gates": 2,
-      "chg_m5": 4.05,
-      "vol_m5": 202.0,
-      "score": 6.7
-    },
-    {
-      "symbol": "penny",
-      "mint": "5gmCPpuktJ7Svjgr4PPJBTosAFKB8K6Z45EGfSUmpump",
-      "link": "https://axiom.trade/meme/5gmCPpuktJ7Svjgr4PPJBTosAFKB8K6Z45EGfSUmpump?chain=sol",
-      "reason": "market cap $98,886 outside $100k\u2013$100M \u00b7 5m -7.2% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": -7.22,
-      "vol_m5": 13411.0,
-      "score": -7.38
+      "chg_m5": 18.03,
+      "vol_m5": 8953.0,
+      "score": 162.27
     }
   ]
 }
