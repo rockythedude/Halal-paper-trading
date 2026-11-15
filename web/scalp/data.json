@@ -6,12 +6,12 @@
   "equity": 0.02,
   "equity_multiple": 0.0002,
   "profit": -99.98,
-  "goal_pct": -0.016663413000000002,
-  "progress": 3.253666666666667e-06,
-  "win_rate": 0.3097571367703451,
+  "goal_pct": -0.016663767666666666,
+  "progress": 2.899e-06,
+  "win_rate": 0.30949340144742443,
   "wins": 727,
-  "losses": 1620,
-  "closed_trades": 2347,
+  "losses": 1622,
+  "closed_trades": 2349,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 23229,
-  "open_count": 3,
-  "last_updated_london": "15 Nov 2026, 13:51 GMT",
-  "last_updated": "2026-11-15T13:51:52.520014+00:00",
+  "open_count": 2,
+  "last_updated_london": "15 Nov 2026, 13:52 GMT",
+  "last_updated": "2026-11-15T13:52:32.477976+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "15 Nov 2026, 8:09 GMT",
-      "value": 0.02
-    },
     {
       "label": "15 Nov 2026, 8:09 GMT",
       "value": 0.02
@@ -2058,10 +2054,44 @@
     {
       "label": "15 Nov 2026, 13:51 GMT",
       "value": 0.02
+    },
+    {
+      "label": "15 Nov 2026, 13:52 GMT",
+      "value": 0.02
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "15 Nov 2026, 13:52 GMT",
+      "hhmm": "13:52",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "13:52 EXECUTOR: BUY 10% $Socks @ 0.000167096 — 5m +15.1% vol $8,799 buys 122/sells 90",
+      "message": "13:52 EXECUTOR: BUY 10% $Socks @ 0.000167096 — 5m +15.1% vol $8,799 buys 122/sells 90",
+      "symbol": null,
+      "action": "BUY 10% $Socks @ 0.000167096 — 5m +15.1% vol $8,799 buys 122/sells 90"
+    },
+    {
+      "ts": "15 Nov 2026, 13:52 GMT",
+      "hhmm": "13:52",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "13:52 RISK: SELL stop −5% $Socks",
+      "message": "13:52 RISK: SELL stop −5% $Socks",
+      "symbol": null,
+      "action": "SELL stop −5% $Socks"
+    },
+    {
+      "ts": "15 Nov 2026, 13:52 GMT",
+      "hhmm": "13:52",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "13:52 RISK: SELL stop −5% $HSI",
+      "message": "13:52 RISK: SELL stop −5% $HSI",
+      "symbol": null,
+      "action": "SELL stop −5% $HSI"
+    },
     {
       "ts": "15 Nov 2026, 13:51 GMT",
       "hhmm": "13:51",
@@ -2431,36 +2461,6 @@
       "message": "13:26 LOGGER: run complete — 29 polls, 2 open, equity $0.02",
       "symbol": null,
       "action": "run complete — 29 polls, 2 open, equity $0.02"
-    },
-    {
-      "ts": "15 Nov 2026, 13:25 GMT",
-      "hhmm": "13:25",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "13:25 RISK: SELL time stop 20m $Max",
-      "message": "13:25 RISK: SELL time stop 20m $Max",
-      "symbol": null,
-      "action": "SELL time stop 20m $Max"
-    },
-    {
-      "ts": "15 Nov 2026, 13:22 GMT",
-      "hhmm": "13:22",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "13:22 LOGGER: run complete — 29 polls, 3 open, equity $0.02",
-      "message": "13:22 LOGGER: run complete — 29 polls, 3 open, equity $0.02",
-      "symbol": null,
-      "action": "run complete — 29 polls, 3 open, equity $0.02"
-    },
-    {
-      "ts": "15 Nov 2026, 13:20 GMT",
-      "hhmm": "13:20",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "13:20 RISK: SELL stop −5% $rockstar",
-      "message": "13:20 RISK: SELL stop −5% $rockstar",
-      "symbol": null,
-      "action": "SELL stop −5% $rockstar"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
-      "badge": "77 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
+      "badge": "57 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "77 pairs · 1 passed liquidity, age, and 5m momentum",
+      "activity": "57 pairs · 1 passed liquidity, age, and 5m momentum",
       "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "3/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2601,47 +2601,85 @@
       "name": "Socks",
       "asset_class": "crypto",
       "agent": "MIRAX",
-      "qty": 11.772484419381046,
-      "qty_display": "11.7725",
-      "entry_price": 0.000168639,
+      "qty": 10.44070159625034,
+      "qty_display": "10.4407",
+      "entry_price": 0.00016709605038674348,
       "current_price": 0.0001662647267529786,
       "change_pct": null,
       "price_source": "geckoterminal",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.014079028261679616,
-      "hard_stop": 0.00016020704999999998,
-      "trail_activate": 0.00017538456,
-      "opened_at": "15 Nov 2026, 13:49 GMT",
-      "reason": "BUY 10% $Socks @ 0.000168639 — 5m +15.4% vol $8,075 buys 101/sells 82",
+      "unrealized_pct": -0.00497512437810943,
+      "hard_stop": 0.0001587412478674063,
+      "trail_activate": 0.00017377989240221323,
+      "opened_at": "15 Nov 2026, 13:52 GMT",
+      "reason": "BUY 10% $Socks @ 0.000167096 — 5m +15.1% vol $8,799 buys 122/sells 90",
       "score": null,
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/FS1pBmZKp2Qw1atC64GoLamHstECAos9ot8bGPgDpump?chain=sol"
-    },
-    {
-      "symbol": "HSI",
-      "name": "HSI",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 6.75306310734025,
-      "qty_display": "6.7531",
-      "entry_price": 0.00028994249999999996,
-      "current_price": 0.0002885,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.004975124378109208,
-      "hard_stop": 0.00027544537499999994,
-      "trail_activate": 0.00030154019999999995,
-      "opened_at": "15 Nov 2026, 13:51 GMT",
-      "reason": "BUY 10% $HSI @ 0.000289942 — 5m +9.0% vol $109,620 buys 610/sells 326",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/93hTYKGhD43KeW4eQVtpL95WKUZpdEXE2F3XCpNipump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f4700",
+      "time": "15 Nov 2026, 13:52 GMT",
+      "ts": "2026-11-15T13:52:32.477878+00:00",
+      "side": "buy",
+      "symbol": "Socks",
+      "name": "Socks",
+      "asset_class": "crypto",
+      "qty": 10.44070159625034,
+      "qty_display": "10.4407",
+      "price": 0.00016709605038674348,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f4699",
+      "time": "15 Nov 2026, 13:52 GMT",
+      "ts": "2026-11-15T13:52:16.536433+00:00",
+      "side": "sell",
+      "symbol": "Socks",
+      "name": "Socks",
+      "asset_class": "crypto",
+      "qty": 11.772484419381046,
+      "qty_display": "11.7725",
+      "price": 0.000151041,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.12208866804884444,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f4698",
+      "time": "15 Nov 2026, 13:52 GMT",
+      "ts": "2026-11-15T13:52:08.468871+00:00",
+      "side": "sell",
+      "symbol": "HSI",
+      "name": "HSI",
+      "asset_class": "crypto",
+      "qty": 6.75306310734025,
+      "qty_display": "6.7531",
+      "price": 1.7034400000000001e-06,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.9942412426089604,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f4697",
       "time": "15 Nov 2026, 13:51 GMT",
@@ -96584,11 +96622,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 2347,
-    "win_rate": 0.3097571367703451,
+    "closed_trades": 2349,
+    "win_rate": 0.30949340144742443,
     "realized_pnl": -99.98,
     "unrealized_pnl": -0.0,
-    "fills": 4697
+    "fills": 4700
   },
   "ok": true,
   "totals_cumulative": {
@@ -96740,13 +96778,6 @@
       "price": 0.0001662647267529786,
       "change_pct": null,
       "source": "geckoterminal"
-    },
-    {
-      "symbol": "HSI",
-      "name": "HSI",
-      "price": 0.0002885,
-      "change_pct": null,
-      "source": "dexscreener"
     }
   ],
   "desk": "axiom",
@@ -96815,9 +96846,9 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 0.02,
-      "return_pct": -0.9998047800000001,
-      "closed_trades": 2347,
-      "win_rate": 0.3097571367703451,
+      "return_pct": -0.9998260600000001,
+      "closed_trades": 2349,
+      "win_rate": 0.30949340144742443,
       "realized_pnl": -99.98
     }
   ],
@@ -96834,21 +96865,21 @@
       "symbol": "gtacoin",
       "mint": "DSKM3d518BBaQShSKqaqZcG1XMRf81UFB6a1eavhSTNK",
       "link": "https://axiom.trade/meme/DSKM3d518BBaQShSKqaqZcG1XMRf81UFB6a1eavhSTNK?chain=sol",
-      "reason": "buy/sell 53/66 under 1.05",
+      "reason": "buy/sell 66/76 under 1.05",
       "gates": 1,
-      "chg_m5": 29.36,
-      "vol_m5": 20946.0,
-      "score": 70.73
+      "chg_m5": 26.22,
+      "vol_m5": 23677.0,
+      "score": 68.31
     },
     {
       "symbol": "rockstar",
       "mint": "9HFUEab7sompLDPTAaTGkryMNGbtBaFMhHMVpJEBpump",
       "link": "https://axiom.trade/meme/9HFUEab7sompLDPTAaTGkryMNGbtBaFMhHMVpJEBpump?chain=sol",
-      "reason": "5m volume $3,627 under $5k",
+      "reason": "5m volume $3,810 under $5k",
       "gates": 1,
-      "chg_m5": 11.96,
-      "vol_m5": 3627.0,
-      "score": 14.44
+      "chg_m5": 13.32,
+      "vol_m5": 3810.0,
+      "score": 17.97
     },
     {
       "symbol": "swordcat",
@@ -96896,7 +96927,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-15T13:51:52.520014+00:00",
-  "checked_at_london": "15 Nov 2026, 13:51 GMT",
+  "checked_at": "2026-11-15T13:52:32.477976+00:00",
+  "checked_at_london": "15 Nov 2026, 13:52 GMT",
   "who_we_copy": null
 }
