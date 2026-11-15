@@ -6,12 +6,12 @@
   "equity": 0.05,
   "equity_multiple": 0.0005,
   "profit": -99.95,
-  "goal_pct": -0.016658209,
-  "progress": 8.457666666666667e-06,
-  "win_rate": 0.3089700996677741,
+  "goal_pct": -0.016658248166666667,
+  "progress": 8.4185e-06,
+  "win_rate": 0.3088235294117647,
   "wins": 651,
-  "losses": 1456,
-  "closed_trades": 2107,
+  "losses": 1457,
+  "closed_trades": 2108,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 18879,
-  "open_count": 1,
+  "open_count": 0,
   "last_updated_london": "15 Nov 2026, 0:15 GMT",
-  "last_updated": "2026-11-15T00:15:02.934835+00:00",
+  "last_updated": "2026-11-15T00:15:42.894004+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "14 Nov 2026, 15:28 GMT",
-      "value": 0.11
-    },
     {
       "label": "14 Nov 2026, 15:29 GMT",
       "value": 0.11
@@ -2058,10 +2054,24 @@
     {
       "label": "15 Nov 2026, 0:15 GMT",
       "value": 0.05
+    },
+    {
+      "label": "15 Nov 2026, 0:15 GMT",
+      "value": 0.05
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "15 Nov 2026, 0:15 GMT",
+      "hhmm": "00:15",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "00:15 RISK: SELL stop −5% $DOJE",
+      "message": "00:15 RISK: SELL stop −5% $DOJE",
+      "symbol": null,
+      "action": "SELL stop −5% $DOJE"
+    },
     {
       "ts": "15 Nov 2026, 0:14 GMT",
       "hhmm": "00:14",
@@ -2451,16 +2461,6 @@
       "message": "00:03 EXECUTOR: BUY 10% $RWA @ 0.000151051 — 5m +2.1% vol $12,822 buys 846/sells 75",
       "symbol": null,
       "action": "BUY 10% $RWA @ 0.000151051 — 5m +2.1% vol $12,822 buys 846/sells 75"
-    },
-    {
-      "ts": "15 Nov 2026, 0:03 GMT",
-      "hhmm": "00:03",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "00:03 EXECUTOR: BUY 10% $DOJE @ 0.000179694 — 5m +15.9% vol $12,547 buys 1132/sells 398",
-      "message": "00:03 EXECUTOR: BUY 10% $DOJE @ 0.000179694 — 5m +15.9% vol $12,547 buys 1132/sells 398",
-      "symbol": null,
-      "action": "BUY 10% $DOJE @ 0.000179694 — 5m +15.9% vol $12,547 buys 1132/sells 398"
     }
   ],
   "agents": [
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "1/6",
+      "activity": "0 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "0/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2573,31 +2573,28 @@
       "open_positions": 0
     }
   ],
-  "positions": [
+  "positions": [],
+  "fills": [
     {
+      "id": "f4216",
+      "time": "15 Nov 2026, 0:15 GMT",
+      "ts": "2026-11-15T00:15:27.047790+00:00",
+      "side": "sell",
       "symbol": "DOJE",
       "name": "DOJE",
       "asset_class": "crypto",
-      "agent": "MIRAX",
       "qty": 26.53144533741549,
       "qty_display": "26.5314",
-      "entry_price": 0.00019597499999999998,
-      "current_price": 0.0001888,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.03661181273121561,
-      "hard_stop": 0.00018617624999999998,
-      "trail_activate": 0.000203814,
-      "opened_at": "15 Nov 2026, 0:14 GMT",
-      "reason": "BUY 10% $DOJE @ 0.000195975 — 5m +4.3% vol $10,666 buys 978/sells 430",
-      "score": null,
+      "price": 0.000178901,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.10520012276773005,
       "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/7N2g5tHX2isAXyKmtUek72waREtNKSFuR6KW2xthpump?chain=sol"
-    }
-  ],
-  "fills": [
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f4215",
       "time": "15 Nov 2026, 0:14 GMT",
@@ -86900,11 +86897,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 2107,
-    "win_rate": 0.3089700996677741,
+    "closed_trades": 2108,
+    "win_rate": 0.3088235294117647,
     "realized_pnl": -99.95,
-    "unrealized_pnl": -0.0,
-    "fills": 4215
+    "unrealized_pnl": 0,
+    "fills": 4216
   },
   "ok": true,
   "totals_cumulative": {
@@ -87042,15 +87039,7 @@
     "Risk": "#FF4D4D",
     "Logger": "#22D3EE"
   },
-  "ticker": [
-    {
-      "symbol": "DOJE",
-      "name": "DOJE",
-      "price": 0.0001888,
-      "change_pct": null,
-      "source": "dexscreener"
-    }
-  ],
+  "ticker": [],
   "desk": "axiom",
   "risk_rules": {
     "mode": "axiom",
@@ -87098,8 +87087,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 84.62,
-      "return_pct": -0.15383478999999994,
+      "equity": 84.66,
+      "return_pct": -0.15343813999999995,
       "closed_trades": 162,
       "win_rate": 0.19135802469135801,
       "realized_pnl": -15.67
@@ -87117,9 +87106,9 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 0.05,
-      "return_pct": -0.99949254,
-      "closed_trades": 2107,
-      "win_rate": 0.3089700996677741,
+      "return_pct": -0.99949489,
+      "closed_trades": 2108,
+      "win_rate": 0.3088235294117647,
       "realized_pnl": -99.95
     }
   ],
@@ -87183,14 +87172,14 @@
       "score": -1.47
     },
     {
-      "symbol": "Bear",
-      "mint": "AvRSpY1rPA9iVFxYHc5D5JQW6oU5tjGQZdsW2e5upump",
-      "link": "https://axiom.trade/meme/AvRSpY1rPA9iVFxYHc5D5JQW6oU5tjGQZdsW2e5upump?chain=sol",
-      "reason": "5m -3.7% outside +1% to +40%",
+      "symbol": "DOJE",
+      "mint": "7N2g5tHX2isAXyKmtUek72waREtNKSFuR6KW2xthpump",
+      "link": "https://axiom.trade/meme/7N2g5tHX2isAXyKmtUek72waREtNKSFuR6KW2xthpump?chain=sol",
+      "reason": "5m -5.0% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -3.7,
-      "vol_m5": 40209.0,
-      "score": -6.09
+      "chg_m5": -4.98,
+      "vol_m5": 11075.0,
+      "score": -8.44
     }
   ],
   "helius_status": "",
@@ -87198,7 +87187,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-15T00:15:02.934835+00:00",
+  "checked_at": "2026-11-15T00:15:42.894004+00:00",
   "checked_at_london": "15 Nov 2026, 0:15 GMT",
   "who_we_copy": null
 }
