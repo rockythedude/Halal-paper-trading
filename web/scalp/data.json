@@ -3,15 +3,15 @@
   "starting_capital": 100.0,
   "target": 6000.0,
   "cash": 0.04,
-  "equity": 0.06,
-  "equity_multiple": 0.0006,
-  "profit": -99.94,
-  "goal_pct": -0.016657452166666666,
-  "progress": 9.214500000000001e-06,
-  "win_rate": 0.30967127203430206,
+  "equity": 0.05,
+  "equity_multiple": 0.0005,
+  "profit": -99.95,
+  "goal_pct": -0.016657535333333334,
+  "progress": 9.131333333333334e-06,
+  "win_rate": 0.30952380952380953,
   "wins": 650,
-  "losses": 1449,
-  "closed_trades": 2099,
+  "losses": 1450,
+  "closed_trades": 2100,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -21,8 +21,8 @@
   },
   "ticks": 18850,
   "open_count": 2,
-  "last_updated_london": "15 Nov 2026, 0:10 GMT",
-  "last_updated": "2026-11-15T00:10:55.998196+00:00",
+  "last_updated_london": "15 Nov 2026, 0:11 GMT",
+  "last_updated": "2026-11-15T00:11:36.018336+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "14 Nov 2026, 15:24 GMT",
-      "value": 0.11
-    },
     {
       "label": "14 Nov 2026, 15:25 GMT",
       "value": 0.11
@@ -2058,10 +2054,34 @@
     {
       "label": "15 Nov 2026, 0:10 GMT",
       "value": 0.06
+    },
+    {
+      "label": "15 Nov 2026, 0:11 GMT",
+      "value": 0.05
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "15 Nov 2026, 0:11 GMT",
+      "hhmm": "00:11",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "00:11 EXECUTOR: BUY 10% $SWIF @ 0.000159091 — 5m +1.8% vol $11,406 buys 344/sells 209",
+      "message": "00:11 EXECUTOR: BUY 10% $SWIF @ 0.000159091 — 5m +1.8% vol $11,406 buys 344/sells 209",
+      "symbol": null,
+      "action": "BUY 10% $SWIF @ 0.000159091 — 5m +1.8% vol $11,406 buys 344/sells 209"
+    },
+    {
+      "ts": "15 Nov 2026, 0:11 GMT",
+      "hhmm": "00:11",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "00:11 EXECUTOR: SELL trail 2.5% $SWIF",
+      "message": "00:11 EXECUTOR: SELL trail 2.5% $SWIF",
+      "symbol": null,
+      "action": "SELL trail 2.5% $SWIF"
+    },
     {
       "ts": "15 Nov 2026, 0:10 GMT",
       "hhmm": "00:10",
@@ -2441,26 +2461,6 @@
       "message": "23:58 EXECUTOR: BUY 10% $DOJE @ 0.000161704 — 5m +6.0% vol $19,357 buys 1391/sells 304",
       "symbol": null,
       "action": "BUY 10% $DOJE @ 0.000161704 — 5m +6.0% vol $19,357 buys 1391/sells 304"
-    },
-    {
-      "ts": "14 Nov 2026, 23:58 GMT",
-      "hhmm": "23:58",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "23:58 EXECUTOR: BUY 10% $RWA @ 0.000154368 — 5m +9.7% vol $11,290 buys 808/sells 57",
-      "message": "23:58 EXECUTOR: BUY 10% $RWA @ 0.000154368 — 5m +9.7% vol $11,290 buys 808/sells 57",
-      "symbol": null,
-      "action": "BUY 10% $RWA @ 0.000154368 — 5m +9.7% vol $11,290 buys 808/sells 57"
-    },
-    {
-      "ts": "14 Nov 2026, 23:58 GMT",
-      "hhmm": "23:58",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "23:58 RISK: SELL stop −5% $DOJE",
-      "message": "23:58 RISK: SELL stop −5% $DOJE",
-      "symbol": null,
-      "action": "SELL stop −5% $DOJE"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "57 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "39 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "57 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "39 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2575,28 +2575,6 @@
   ],
   "positions": [
     {
-      "symbol": "SWIF",
-      "name": "SWIF",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 36.36177065437948,
-      "qty_display": "36.3618",
-      "entry_price": 0.00015105149999999998,
-      "current_price": 0.0001576,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.04335276379248154,
-      "hard_stop": 0.00014349892499999998,
-      "trail_activate": 0.00015709355999999998,
-      "opened_at": "15 Nov 2026, 0:08 GMT",
-      "reason": "BUY 10% $SWIF @ 0.000151051 — 5m +13.7% vol $8,717 buys 325/sells 207",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/Hi6qQHwHBnx9uaxT3KyBxaHaUn4JTAG6ijygQbiopump?chain=sol"
-    },
-    {
       "symbol": "Bear",
       "name": "Bear",
       "asset_class": "crypto",
@@ -2604,11 +2582,11 @@
       "qty": 32.69138180067405,
       "qty_display": "32.6914",
       "entry_price": 0.00016823699999999998,
-      "current_price": 0.0001799,
+      "current_price": 0.0001774,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.06932482153153008,
+      "unrealized_pct": 0.0544648323496022,
       "hard_stop": 0.00015982514999999997,
       "trail_activate": 0.00017496647999999998,
       "opened_at": "15 Nov 2026, 0:10 GMT",
@@ -2617,9 +2595,71 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/AvRSpY1rPA9iVFxYHc5D5JQW6oU5tjGQZdsW2e5upump?chain=sol"
+    },
+    {
+      "symbol": "SWIF",
+      "name": "SWIF",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 34.54112884723571,
+      "qty_display": "34.5411",
+      "entry_price": 0.0001590915,
+      "current_price": 0.0001583,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": -0.0,
+      "unrealized_pct": -0.00497512437810943,
+      "hard_stop": 0.00015113692499999997,
+      "trail_activate": 0.00016545516,
+      "opened_at": "15 Nov 2026, 0:11 GMT",
+      "reason": "BUY 10% $SWIF @ 0.000159091 — 5m +1.8% vol $11,406 buys 344/sells 209",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/Hi6qQHwHBnx9uaxT3KyBxaHaUn4JTAG6ijygQbiopump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f4202",
+      "time": "15 Nov 2026, 0:11 GMT",
+      "ts": "2026-11-15T00:11:36.018247+00:00",
+      "side": "buy",
+      "symbol": "SWIF",
+      "name": "SWIF",
+      "asset_class": "crypto",
+      "qty": 34.54112884723571,
+      "qty_display": "34.5411",
+      "price": 0.0001590915,
+      "value": 0.01,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f4201",
+      "time": "15 Nov 2026, 0:11 GMT",
+      "ts": "2026-11-15T00:11:12.041353+00:00",
+      "side": "sell",
+      "symbol": "SWIF",
+      "name": "SWIF",
+      "asset_class": "crypto",
+      "qty": 36.36177065437948,
+      "qty_display": "36.3618",
+      "price": 0.0001497475,
+      "value": 0.01,
+      "pnl": -0.0,
+      "pnl_pct": -0.028263850605276836,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f4200",
       "time": "15 Nov 2026, 0:10 GMT",
@@ -86622,11 +86662,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 2099,
-    "win_rate": 0.30967127203430206,
+    "closed_trades": 2100,
+    "win_rate": 0.30952380952380953,
     "realized_pnl": -99.95,
-    "unrealized_pnl": 0.0,
-    "fills": 4200
+    "unrealized_pnl": -0.0,
+    "fills": 4202
   },
   "ok": true,
   "totals_cumulative": {
@@ -86766,16 +86806,16 @@
   },
   "ticker": [
     {
-      "symbol": "SWIF",
-      "name": "SWIF",
-      "price": 0.0001576,
+      "symbol": "Bear",
+      "name": "Bear",
+      "price": 0.0001774,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
-      "symbol": "Bear",
-      "name": "Bear",
-      "price": 0.0001799,
+      "symbol": "SWIF",
+      "name": "SWIF",
+      "price": 0.0001583,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -86827,8 +86867,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 84.24,
-      "return_pct": -0.15756701000000006,
+      "equity": 84.35,
+      "return_pct": -0.15652457999999997,
       "closed_trades": 162,
       "win_rate": 0.19135802469135801,
       "realized_pnl": -15.67
@@ -86845,10 +86885,10 @@
     {
       "id": "axiom",
       "name": "Axiom scalper",
-      "equity": 0.06,
-      "return_pct": -0.99944713,
-      "closed_trades": 2099,
-      "win_rate": 0.30967127203430206,
+      "equity": 0.05,
+      "return_pct": -0.9994521199999999,
+      "closed_trades": 2100,
+      "win_rate": 0.30952380952380953,
       "realized_pnl": -99.95
     }
   ],
@@ -86862,24 +86902,14 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "GTA$",
-      "mint": "6Nh9cmDoQvd2FvjNm44VmTwbyiKtxgmM7SCuhREhpump",
-      "link": "https://axiom.trade/meme/6Nh9cmDoQvd2FvjNm44VmTwbyiKtxgmM7SCuhREhpump?chain=sol",
-      "reason": "5m volume $4,297 under $5k",
-      "gates": 1,
-      "chg_m5": 21.807,
-      "vol_m5": 4297.0,
-      "score": 36.05
-    },
-    {
       "symbol": "JENSEN",
       "mint": "B2YpP21vQBESJ2jtnuhPujEUT61KVRxZ2X5gsDcUpump",
       "link": "https://axiom.trade/meme/B2YpP21vQBESJ2jtnuhPujEUT61KVRxZ2X5gsDcUpump?chain=sol",
-      "reason": "5m volume $2,003 under $5k",
+      "reason": "5m volume $2,284 under $5k",
       "gates": 1,
-      "chg_m5": 5.19,
-      "vol_m5": 2003.0,
-      "score": 7.03
+      "chg_m5": 6.72,
+      "vol_m5": 2284.0,
+      "score": 9.6
     },
     {
       "symbol": "CBUCKS",
@@ -86892,34 +86922,44 @@
       "score": 1.69
     },
     {
-      "symbol": "WASTED",
-      "mint": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
-      "link": "https://axiom.trade/meme/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump?chain=sol",
-      "reason": "5m +0.3% outside +1% to +40%",
+      "symbol": "DOJE",
+      "mint": "7N2g5tHX2isAXyKmtUek72waREtNKSFuR6KW2xthpump",
+      "link": "https://axiom.trade/meme/7N2g5tHX2isAXyKmtUek72waREtNKSFuR6KW2xthpump?chain=sol",
+      "reason": "5m -14.1% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 0.304,
-      "vol_m5": 9084.0,
-      "score": 0.47
+      "chg_m5": -14.07,
+      "vol_m5": 7119.0,
+      "score": -11.73
     },
     {
-      "symbol": "mihao",
-      "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
-      "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
-      "reason": "5m -0.8% outside +1% to +40%",
+      "symbol": "RWA",
+      "mint": "6edJUFSC85CyyLFB1QcCvYu7uzqaD4kV9o5YUPxrpump",
+      "link": "https://axiom.trade/meme/6edJUFSC85CyyLFB1QcCvYu7uzqaD4kV9o5YUPxrpump?chain=sol",
+      "reason": "5m -7.5% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -0.773,
-      "vol_m5": 5006.0,
-      "score": -0.72
+      "chg_m5": -7.48,
+      "vol_m5": 12521.0,
+      "score": -24.83
     },
     {
-      "symbol": "ANSEM",
-      "mint": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
-      "link": "https://axiom.trade/meme/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump?chain=sol",
-      "reason": "5m -0.8% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -0.781,
-      "vol_m5": 9728.0,
-      "score": -2.65
+      "symbol": "USDC",
+      "mint": "Acgs6mb4PC7tQbDm9T4EeTfNx3ZDh5fNSjHcHZQLpump",
+      "link": "https://axiom.trade/meme/Acgs6mb4PC7tQbDm9T4EeTfNx3ZDh5fNSjHcHZQLpump?chain=sol",
+      "reason": "market cap $74,175 outside $100k–$100M · age 3m under 10m",
+      "gates": 2,
+      "chg_m5": 23.97,
+      "vol_m5": 21893.0,
+      "score": 129.44
+    },
+    {
+      "symbol": "BIG",
+      "mint": "34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump",
+      "link": "https://axiom.trade/meme/34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump?chain=sol",
+      "reason": "5m volume $8 under $5k · buy/sell 81/80 under 1.05",
+      "gates": 2,
+      "chg_m5": 3.77,
+      "vol_m5": 8.0,
+      "score": 0.95
     }
   ],
   "helius_status": "",
@@ -86927,7 +86967,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-15T00:10:55.998196+00:00",
-  "checked_at_london": "15 Nov 2026, 0:10 GMT",
+  "checked_at": "2026-11-15T00:11:36.018336+00:00",
+  "checked_at_london": "15 Nov 2026, 0:11 GMT",
   "who_we_copy": null
 }
