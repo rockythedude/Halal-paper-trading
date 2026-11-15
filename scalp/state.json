@@ -2,7 +2,7 @@
   "starting_capital": 100.0,
   "target": 6000.0,
   "cash": 0.019051093363820056,
-  "equity": 0.021223,
+  "equity": 0.021258,
   "positions": [
     {
       "symbol": "mihao",
@@ -22,15 +22,15 @@
       "opened_at_london": "15 Nov 2026, 12:21 GMT",
       "high_water": 0.018675751079920686,
       "trail_armed": true,
-      "last_price": 0.01838,
-      "last_source": "dexscreener",
+      "last_price": 0.018675751079920686,
+      "last_source": "geckoterminal",
       "reason": "BUY 10% $mihao @ 0.0176686 \u2014 5m +3.3% vol $7,932 buys 51/sells 39",
       "hard_stop": 0.01678514312348696,
       "take_profit": 0.019082057445648334,
       "trail_activate": 0.01837531457729099,
-      "market_value": 0.002171469783463078,
-      "unrealized_pnl": 3.117878346307803e-05,
-      "unrealized_pct": 0.04026518401069423
+      "market_value": 0.002206410726524794,
+      "unrealized_pnl": 6.611972652479422e-05,
+      "unrealized_pct": 0.05700400618561541
     }
   ],
   "closed_trades": [
@@ -34882,12 +34882,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-15T05:22:48.695332+00:00",
-      "label": "15 Nov 2026, 5:22 GMT",
-      "equity": 0.025252,
-      "cash": 0.020127
-    },
-    {
       "ts": "2026-11-15T05:23:58.762238+00:00",
       "label": "15 Nov 2026, 5:23 GMT",
       "equity": 0.025241,
@@ -37885,6 +37879,12 @@
       "ts": "2026-11-15T12:26:45.600538+00:00",
       "label": "15 Nov 2026, 12:26 GMT",
       "equity": 0.021223,
+      "cash": 0.019051
+    },
+    {
+      "ts": "2026-11-15T12:27:25.565581+00:00",
+      "label": "15 Nov 2026, 12:27 GMT",
+      "equity": 0.021258,
       "cash": 0.019051
     }
   ],
@@ -42696,8 +42696,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal unreachable",
-      "badge": "40 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 20 pools",
+      "badge": "57 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -42712,7 +42712,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "40 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "57 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -42789,8 +42789,8 @@
     }
   },
   "ticks": 22707,
-  "last_updated": "2026-11-15T12:26:45.600438+00:00",
-  "last_updated_london": "15 Nov 2026, 12:26 GMT",
+  "last_updated": "2026-11-15T12:27:25.565480+00:00",
+  "last_updated_london": "15 Nov 2026, 12:27 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -107879,38 +107879,68 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-15T12:26:45.600438+00:00",
-  "checked_at_london": "15 Nov 2026, 12:26 GMT",
+  "checked_at": "2026-11-15T12:27:25.565480+00:00",
+  "checked_at_london": "15 Nov 2026, 12:27 GMT",
   "near_misses": [
+    {
+      "symbol": "Max",
+      "mint": "5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump",
+      "link": "https://axiom.trade/meme/5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump?chain=sol",
+      "reason": "buy/sell 50/70 under 1.05",
+      "gates": 1,
+      "chg_m5": 25.039,
+      "vol_m5": 21260.0,
+      "score": 53.66
+    },
+    {
+      "symbol": "AURA",
+      "mint": "EvbSSzACWAxqFhXdiPypjv6jMhRfHU257x65oFrjpump",
+      "link": "https://axiom.trade/meme/EvbSSzACWAxqFhXdiPypjv6jMhRfHU257x65oFrjpump?chain=sol",
+      "reason": "5m volume $1,049 under $5k",
+      "gates": 1,
+      "chg_m5": 3.759,
+      "vol_m5": 1049.0,
+      "score": 2.78
+    },
     {
       "symbol": "BIG",
       "mint": "34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump",
       "link": "https://axiom.trade/meme/34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump?chain=sol",
-      "reason": "5m volume $43 under $5k",
+      "reason": "5m volume $64 under $5k",
       "gates": 1,
-      "chg_m5": 3.53,
-      "vol_m5": 43.0,
-      "score": 1.08
+      "chg_m5": 3.99,
+      "vol_m5": 64.0,
+      "score": 1.73
     },
     {
-      "symbol": "chudhaos",
-      "mint": "4W7BNgGspH3YFbLsP5T7AnKAzr6REGMMBGK9xDZKpump",
-      "link": "https://axiom.trade/meme/4W7BNgGspH3YFbLsP5T7AnKAzr6REGMMBGK9xDZKpump?chain=sol",
-      "reason": "5m volume $103 under $5k \u00b7 buy/sell 0/2 under 1.05",
-      "gates": 2,
-      "chg_m5": 7.2,
-      "vol_m5": 103.0,
-      "score": 0.0
+      "symbol": "swordcat",
+      "mint": "5tCju6YNxHq5zrA6tGndr6F7TK42mpUFmeE31cSFpump",
+      "link": "https://axiom.trade/meme/5tCju6YNxHq5zrA6tGndr6F7TK42mpUFmeE31cSFpump?chain=sol",
+      "reason": "5m volume $258 under $5k",
+      "gates": 1,
+      "chg_m5": 1.945,
+      "vol_m5": 258.0,
+      "score": 1.22
     },
     {
-      "symbol": "DIGS",
-      "mint": "9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump",
-      "link": "https://axiom.trade/meme/9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump?chain=sol",
-      "reason": "5m volume $1,542 under $5k \u00b7 5m -2.9% outside +1% to +40%",
+      "symbol": "FLOAT",
+      "mint": "Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr",
+      "link": "https://axiom.trade/meme/Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr?chain=sol",
+      "reason": "5m volume $969 under $5k \u00b7 5m +0.7% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": -2.89,
-      "vol_m5": 1542.0,
-      "score": -7.22
+      "chg_m5": 0.722,
+      "vol_m5": 969.0,
+      "score": 2.31
+    },
+    {
+      "symbol": "WASTED",
+      "mint": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
+      "link": "https://axiom.trade/meme/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump?chain=sol",
+      "reason": "5m volume $1,053 under $5k \u00b7 5m +0.9% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.915,
+      "vol_m5": 1053.0,
+      "score": 1.4
     }
   ]
 }
