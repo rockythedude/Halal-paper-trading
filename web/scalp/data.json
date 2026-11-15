@@ -6,12 +6,12 @@
   "equity": 0.02,
   "equity_multiple": 0.0002,
   "profit": -99.98,
-  "goal_pct": -0.016662564666666668,
-  "progress": 4.102e-06,
-  "win_rate": 0.3103448275862069,
+  "goal_pct": -0.0166626115,
+  "progress": 4.055166666666666e-06,
+  "win_rate": 0.3102076889085285,
   "wins": 702,
-  "losses": 1560,
-  "closed_trades": 2262,
+  "losses": 1561,
+  "closed_trades": 2263,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 20793,
+  "ticks": 20822,
   "open_count": 1,
   "last_updated_london": "15 Nov 2026, 7:12 GMT",
-  "last_updated": "2026-11-15T07:12:11.262457+00:00",
+  "last_updated": "2026-11-15T07:12:35.314323+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 2260,
+  "traded": 2264,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 2260,
+    "traded": 2264,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "14 Nov 2026, 23:50 GMT",
-      "value": 0.06
-    },
     {
       "label": "14 Nov 2026, 23:51 GMT",
       "value": 0.06
@@ -2058,10 +2054,44 @@
     {
       "label": "15 Nov 2026, 7:12 GMT",
       "value": 0.02
+    },
+    {
+      "label": "15 Nov 2026, 7:12 GMT",
+      "value": 0.02
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "15 Nov 2026, 7:12 GMT",
+      "hhmm": "07:12",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "07:12 LOGGER: run complete — 29 polls, 1 open, equity $0.02",
+      "message": "07:12 LOGGER: run complete — 29 polls, 1 open, equity $0.02",
+      "symbol": null,
+      "action": "run complete — 29 polls, 1 open, equity $0.02"
+    },
+    {
+      "ts": "15 Nov 2026, 7:12 GMT",
+      "hhmm": "07:12",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "07:12 EXECUTOR: BUY 10% $HOGE @ 0.000153865 — 5m +3.8% vol $55,852 buys 804/sells 541",
+      "message": "07:12 EXECUTOR: BUY 10% $HOGE @ 0.000153865 — 5m +3.8% vol $55,852 buys 804/sells 541",
+      "symbol": null,
+      "action": "BUY 10% $HOGE @ 0.000153865 — 5m +3.8% vol $55,852 buys 804/sells 541"
+    },
+    {
+      "ts": "15 Nov 2026, 7:12 GMT",
+      "hhmm": "07:12",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "07:12 EXECUTOR: SELL trail 2.5% $HOGE",
+      "message": "07:12 EXECUTOR: SELL trail 2.5% $HOGE",
+      "symbol": null,
+      "action": "SELL trail 2.5% $HOGE"
+    },
     {
       "ts": "15 Nov 2026, 7:10 GMT",
       "hhmm": "07:10",
@@ -2431,36 +2461,6 @@
       "message": "04:49 LOGGER: run complete — 29 polls, 3 open, equity $0.03",
       "symbol": null,
       "action": "run complete — 29 polls, 3 open, equity $0.03"
-    },
-    {
-      "ts": "15 Nov 2026, 4:45 GMT",
-      "hhmm": "04:45",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "04:45 EXECUTOR: SELL trail 2.5% $bill",
-      "message": "04:45 EXECUTOR: SELL trail 2.5% $bill",
-      "symbol": null,
-      "action": "SELL trail 2.5% $bill"
-    },
-    {
-      "ts": "15 Nov 2026, 4:44 GMT",
-      "hhmm": "04:44",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "04:44 LOGGER: run complete — 29 polls, 4 open, equity $0.03",
-      "message": "04:44 LOGGER: run complete — 29 polls, 4 open, equity $0.03",
-      "symbol": null,
-      "action": "run complete — 29 polls, 4 open, equity $0.03"
-    },
-    {
-      "ts": "15 Nov 2026, 4:43 GMT",
-      "hhmm": "04:43",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "04:43 EXECUTOR: BUY 10% $mihao @ 0.0173619 — 5m +3.2% vol $5,307 buys 27/sells 11",
-      "message": "04:43 EXECUTOR: BUY 10% $mihao @ 0.0173619 — 5m +3.2% vol $5,307 buys 27/sells 11",
-      "symbol": null,
-      "action": "BUY 10% $mihao @ 0.0173619 — 5m +3.2% vol $5,307 buys 27/sells 11"
     }
   ],
   "agents": [
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "39 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "39 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2579,18 +2579,18 @@
       "name": "HOGE",
       "asset_class": "crypto",
       "agent": "MIRAX",
-      "qty": 15.649781879569442,
-      "qty_display": "15.6498",
-      "entry_price": 0.0001566795,
-      "current_price": 0.0001666,
+      "qty": 15.860605528854748,
+      "qty_display": "15.8606",
+      "entry_price": 0.0001538655,
+      "current_price": 0.0001531,
       "change_pct": null,
       "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.06331715380761382,
-      "hard_stop": 0.00014884552499999998,
-      "trail_activate": 0.00016294668,
-      "opened_at": "15 Nov 2026, 7:10 GMT",
-      "reason": "BUY 10% $HOGE @ 0.000156679 — 5m +25.7% vol $46,418 buys 689/sells 474",
+      "unrealized_pnl": -0.0,
+      "unrealized_pct": -0.00497512437810943,
+      "hard_stop": 0.000146172225,
+      "trail_activate": 0.00016002012,
+      "opened_at": "15 Nov 2026, 7:12 GMT",
+      "reason": "BUY 10% $HOGE @ 0.000153865 — 5m +3.8% vol $55,852 buys 804/sells 541",
       "score": null,
       "tag": "",
       "venue": "",
@@ -2598,6 +2598,46 @@
     }
   ],
   "fills": [
+    {
+      "id": "f4527",
+      "time": "15 Nov 2026, 7:12 GMT",
+      "ts": "2026-11-15T07:12:35.314275+00:00",
+      "side": "buy",
+      "symbol": "HOGE",
+      "name": "HOGE",
+      "asset_class": "crypto",
+      "qty": 15.860605528854748,
+      "qty_display": "15.8606",
+      "price": 0.0001538655,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f4526",
+      "time": "15 Nov 2026, 7:12 GMT",
+      "ts": "2026-11-15T07:12:35.313970+00:00",
+      "side": "sell",
+      "symbol": "HOGE",
+      "name": "HOGE",
+      "asset_class": "crypto",
+      "qty": 15.649781879569442,
+      "qty_display": "15.6498",
+      "price": 0.00015233450000000002,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.04698460712776852,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f4525",
       "time": "15 Nov 2026, 7:10 GMT",
@@ -93100,17 +93140,17 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 2262,
-    "win_rate": 0.3103448275862069,
+    "closed_trades": 2263,
+    "win_rate": 0.3102076889085285,
     "realized_pnl": -99.98,
-    "unrealized_pnl": 0.0,
-    "fills": 4525
+    "unrealized_pnl": -0.0,
+    "fills": 4527
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 20793,
+    "scanned": 20822,
     "killed": 0,
-    "traded": 2260
+    "traded": 2264
   },
   "events": [
     {
@@ -93246,7 +93286,7 @@
     {
       "symbol": "HOGE",
       "name": "HOGE",
-      "price": 0.0001666,
+      "price": 0.0001531,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -93317,9 +93357,9 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 0.02,
-      "return_pct": -0.99975388,
-      "closed_trades": 2262,
-      "win_rate": 0.3103448275862069,
+      "return_pct": -0.99975669,
+      "closed_trades": 2263,
+      "win_rate": 0.3102076889085285,
       "realized_pnl": -99.98
     }
   ],
@@ -93333,14 +93373,24 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
+      "symbol": "OWED",
+      "mint": "Dpgt4i8AExpDcumBwpEJ8rUzZwuj2RLMq2B9b12vpump",
+      "link": "https://axiom.trade/meme/Dpgt4i8AExpDcumBwpEJ8rUzZwuj2RLMq2B9b12vpump?chain=sol",
+      "reason": "liquidity $0 under $25k · market cap $13,859 outside $100k–$100M",
+      "gates": 2,
+      "chg_m5": 20.5,
+      "vol_m5": 10732.0,
+      "score": 93.1
+    },
+    {
       "symbol": "BabyDoge",
       "mint": "3sQ6WzsH1awpEaDj4XCyisjWmHcwfXySUx2EiDLLpump",
       "link": "https://axiom.trade/meme/3sQ6WzsH1awpEaDj4XCyisjWmHcwfXySUx2EiDLLpump?chain=sol",
-      "reason": "liquidity $0 under $25k · market cap $15,453 outside $100k–$100M",
+      "reason": "liquidity $0 under $25k · market cap $13,675 outside $100k–$100M",
       "gates": 2,
-      "chg_m5": 39.4,
-      "vol_m5": 7017.0,
-      "score": 95.54
+      "chg_m5": 5.35,
+      "vol_m5": 6609.0,
+      "score": 11.02
     },
     {
       "symbol": "DIGS",
@@ -93368,7 +93418,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-15T07:12:11.262457+00:00",
+  "checked_at": "2026-11-15T07:12:35.314323+00:00",
   "checked_at_london": "15 Nov 2026, 7:12 GMT",
   "who_we_copy": null
 }
