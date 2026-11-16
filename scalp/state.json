@@ -1,38 +1,9 @@
 {
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 0.0023648032116477783,
-  "equity": 0.002624,
-  "positions": [
-    {
-      "symbol": "BLOB",
-      "name": "BLOB",
-      "mint": "8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump",
-      "pair": "Hr9qopJXCuak38rxDpZduUFhdAK2BfjtoXbfQZVn2EwU",
-      "link": "https://axiom.trade/meme/8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/hr9qopjxcuak38rxdpzduufhdak2bfjtoxbfqzvn2ewu",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.02025448934753918,
-      "entry_price": 0.01299465,
-      "raw_price": 0.01293,
-      "entry_fee": 2.632e-06,
-      "cost_basis": 0.000265832,
-      "opened_at": "2026-11-16T07:42:25.764959+00:00",
-      "opened_at_london": "16 Nov 2026, 7:42 GMT",
-      "high_water": 0.01309,
-      "trail_armed": false,
-      "last_price": 0.01299,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $BLOB @ 0.0129946 \u2014 5m +11.2% vol $32,265 buys 132/sells 108",
-      "hard_stop": 0.0123449175,
-      "take_profit": 0.014034222,
-      "trail_activate": 0.013514436000000001,
-      "market_value": 0.0002591723846659971,
-      "unrealized_pnl": -6.6596153340029406e-06,
-      "unrealized_pct": -0.0003578395724394001
-    }
-  ],
+  "cash": 0.0025996345409409873,
+  "equity": 0.0026,
+  "positions": [],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -42978,15 +42949,24 @@
       "closed_at": "2026-11-16T07:44:09.519417+00:00",
       "closed_at_london": "16 Nov 2026, 7:44 GMT",
       "opened_at": "2026-11-16T07:40:01.583683+00:00"
+    },
+    {
+      "symbol": "BLOB",
+      "name": "BLOB",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.02025448934753918,
+      "entry_price": 0.01299465,
+      "exit_price": 0.011711149999999998,
+      "pnl": -3.1000670706790936e-05,
+      "pnl_pct": -0.11661752801314715,
+      "reason": "SELL stop \u22125% $BLOB",
+      "closed_at": "2026-11-16T07:49:01.062741+00:00",
+      "closed_at_london": "16 Nov 2026, 7:49 GMT",
+      "opened_at": "2026-11-16T07:42:25.764959+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-16T01:51:52.436404+00:00",
-      "label": "16 Nov 2026, 1:51 GMT",
-      "equity": 0.004276,
-      "cash": 0.003834
-    },
     {
       "ts": "2026-11-16T01:52:59.003711+00:00",
       "label": "16 Nov 2026, 1:52 GMT",
@@ -45986,21 +45966,15 @@
       "label": "16 Nov 2026, 7:48 GMT",
       "equity": 0.002624,
       "cash": 0.002365
+    },
+    {
+      "ts": "2026-11-16T07:49:17.061019+00:00",
+      "label": "16 Nov 2026, 7:49 GMT",
+      "equity": 0.0026,
+      "cash": 0.0026
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-16T01:24:01.479575+00:00",
-      "london": "16 Nov 2026, 1:24 GMT",
-      "hhmm": "01:24",
-      "agent": "EXECUTOR",
-      "action": "SELL take profit +8% $BAWSAQ",
-      "symbol": null,
-      "reason": "SELL take profit +8% $BAWSAQ",
-      "line": "01:24 EXECUTOR: SELL take profit +8% $BAWSAQ",
-      "tag": "EXECUTOR",
-      "message": "01:24 EXECUTOR: SELL take profit +8% $BAWSAQ"
-    },
     {
       "ts": "2026-11-16T01:24:01.480026+00:00",
       "london": "16 Nov 2026, 1:24 GMT",
@@ -50788,6 +50762,18 @@
       "line": "07:46 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00",
       "tag": "LOGGER",
       "message": "07:46 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00"
+    },
+    {
+      "ts": "2026-11-16T07:49:01.062794+00:00",
+      "london": "16 Nov 2026, 7:49 GMT",
+      "hhmm": "07:49",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $BLOB",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $BLOB",
+      "line": "07:49 RISK: SELL stop \u22125% $BLOB",
+      "tag": "RISK",
+      "message": "07:49 RISK: SELL stop \u22125% $BLOB"
     }
   ],
   "agents": {
@@ -50860,8 +50846,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "1/6",
+      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "0/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -50889,8 +50875,8 @@
     }
   },
   "ticks": 28217,
-  "last_updated": "2026-11-16T07:48:37.048571+00:00",
-  "last_updated_london": "16 Nov 2026, 7:48 GMT",
+  "last_updated": "2026-11-16T07:49:17.060906+00:00",
+  "last_updated_london": "16 Nov 2026, 7:49 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -131094,13 +131080,27 @@
       "pnl": -1.7700196028979775e-06,
       "pnl_pct": -0.006706829913259208,
       "id": "f5727"
+    },
+    {
+      "ts": "2026-11-16T07:49:01.062741+00:00",
+      "london": "16 Nov 2026, 7:49 GMT",
+      "side": "sell",
+      "symbol": "BLOB",
+      "name": "BLOB",
+      "asset_class": "crypto",
+      "qty": 0.02025448934753918,
+      "price": 0.011711149999999998,
+      "value": 0.0002372033629224334,
+      "pnl": -3.1000670706790936e-05,
+      "pnl_pct": -0.11661752801314715,
+      "id": "f5728"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-16T07:48:37.048571+00:00",
-  "checked_at_london": "16 Nov 2026, 7:48 GMT",
+  "checked_at": "2026-11-16T07:49:17.060906+00:00",
+  "checked_at_london": "16 Nov 2026, 7:49 GMT",
   "near_misses": [
     {
       "symbol": "gtacoin",
@@ -131113,54 +131113,54 @@
       "score": 6.19
     },
     {
+      "symbol": "WISHMAS",
+      "mint": "9cmXfuC26anZtH9AUWVzpUxU1UJ7PPogYxftYTepump",
+      "link": "https://axiom.trade/meme/9cmXfuC26anZtH9AUWVzpUxU1UJ7PPogYxftYTepump?chain=sol",
+      "reason": "5m volume $603 under $5k",
+      "gates": 1,
+      "chg_m5": 2.56,
+      "vol_m5": 603.0,
+      "score": 3.78
+    },
+    {
       "symbol": "Anthropig",
       "mint": "2NUaS6Gfrm5rBuPBn7svHka8t33SrSkpXGQiUvZLpump",
       "link": "https://axiom.trade/meme/2NUaS6Gfrm5rBuPBn7svHka8t33SrSkpXGQiUvZLpump?chain=sol",
-      "reason": "5m volume $3,170 under $5k",
+      "reason": "5m volume $3,807 under $5k",
       "gates": 1,
-      "chg_m5": 4.93,
-      "vol_m5": 3170.0,
-      "score": 3.62
+      "chg_m5": 2.54,
+      "vol_m5": 3807.0,
+      "score": 2.22
     },
     {
-      "symbol": "HOGE",
-      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
-      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
-      "reason": "5m volume $1,035 under $5k",
+      "symbol": "bill",
+      "mint": "85RhcSEMy15SNhFLmSArNm7udPKXVagVgsq4YmSopump",
+      "link": "https://axiom.trade/meme/85RhcSEMy15SNhFLmSArNm7udPKXVagVgsq4YmSopump?chain=sol",
+      "reason": "5m volume $280 under $5k",
       "gates": 1,
-      "chg_m5": 3.564,
-      "vol_m5": 1035.0,
-      "score": 1.11
+      "chg_m5": 1.412,
+      "vol_m5": 280.0,
+      "score": 0.97
     },
     {
-      "symbol": "EARN",
-      "mint": "32A3wyzQVbqoxkZdBoxfEmbvKzBP4tKz5MNSEjTYEARN",
-      "link": "https://axiom.trade/meme/32A3wyzQVbqoxkZdBoxfEmbvKzBP4tKz5MNSEjTYEARN?chain=sol",
-      "reason": "liquidity $0 under $25k \u00b7 market cap $12,564 outside $100k\u2013$100M",
-      "gates": 2,
-      "chg_m5": 8.33,
-      "vol_m5": 5352.0,
-      "score": 17.55
+      "symbol": "VINE",
+      "mint": "6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump",
+      "link": "https://axiom.trade/meme/6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump?chain=sol",
+      "reason": "5m -2.3% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -2.297,
+      "vol_m5": 9828.0,
+      "score": -3.99
     },
     {
-      "symbol": "BUTTHOLE",
-      "mint": "4B8CdHPZ8ng1CtMP2Jk2W8wGAwJ5nJnap1deVsz2pump",
-      "link": "https://axiom.trade/meme/4B8CdHPZ8ng1CtMP2Jk2W8wGAwJ5nJnap1deVsz2pump?chain=sol",
-      "reason": "5m volume $325 under $5k \u00b7 buy/sell 1/1 under 1.05",
-      "gates": 2,
-      "chg_m5": 1.825,
-      "vol_m5": 325.0,
-      "score": 0.61
-    },
-    {
-      "symbol": "GTA",
-      "mint": "G9ZMir6uh66Y7viPkXAy7myA9jjE4T1YgheVUmGDpump",
-      "link": "https://axiom.trade/meme/G9ZMir6uh66Y7viPkXAy7myA9jjE4T1YgheVUmGDpump?chain=sol",
-      "reason": "5m volume $74 under $5k \u00b7 5m +0.7% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.65,
-      "vol_m5": 74.0,
-      "score": 0.49
+      "symbol": "BLOB",
+      "mint": "8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump",
+      "link": "https://axiom.trade/meme/8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump?chain=sol",
+      "reason": "5m -6.2% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -6.16,
+      "vol_m5": 28503.0,
+      "score": -4.72
     }
   ]
 }
