@@ -6,12 +6,12 @@
   "equity": 0.0,
   "equity_multiple": 0.0,
   "profit": -100.0,
-  "goal_pct": -0.01666632666666667,
-  "progress": 3.4000000000000003e-07,
-  "win_rate": 0.3083504449007529,
+  "goal_pct": -0.016666328,
+  "progress": 3.386666666666667e-07,
+  "win_rate": 0.30824495381457406,
   "wins": 901,
-  "losses": 2021,
-  "closed_trades": 2922,
+  "losses": 2022,
+  "closed_trades": 2923,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -21,8 +21,8 @@
   },
   "ticks": 29000,
   "open_count": 1,
-  "last_updated_london": "16 Nov 2026, 10:22 GMT",
-  "last_updated": "2026-11-16T10:22:59.055295+00:00",
+  "last_updated_london": "16 Nov 2026, 10:23 GMT",
+  "last_updated": "2026-11-16T10:23:38.984547+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "16 Nov 2026, 4:06 GMT",
-      "value": 0.0
-    },
     {
       "label": "16 Nov 2026, 4:07 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "16 Nov 2026, 10:22 GMT",
       "value": 0.0
+    },
+    {
+      "label": "16 Nov 2026, 10:23 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "16 Nov 2026, 10:23 GMT",
+      "hhmm": "10:23",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "10:23 EXECUTOR: BUY 10% $VINE @ 0.0107065 — 5m +1.1% vol $5,951 buys 21/sells 11",
+      "message": "10:23 EXECUTOR: BUY 10% $VINE @ 0.0107065 — 5m +1.1% vol $5,951 buys 21/sells 11",
+      "symbol": null,
+      "action": "BUY 10% $VINE @ 0.0107065 — 5m +1.1% vol $5,951 buys 21/sells 11"
+    },
+    {
+      "ts": "16 Nov 2026, 10:23 GMT",
+      "hhmm": "10:23",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "10:23 RISK: SELL time stop 20m $VINE",
+      "message": "10:23 RISK: SELL time stop 20m $VINE",
+      "symbol": null,
+      "action": "SELL time stop 20m $VINE"
+    },
     {
       "ts": "16 Nov 2026, 10:21 GMT",
       "hhmm": "10:21",
@@ -2441,26 +2461,6 @@
       "message": "09:18 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
       "symbol": null,
       "action": "run complete — 29 polls, 1 open, equity $0.00"
-    },
-    {
-      "ts": "16 Nov 2026, 9:17 GMT",
-      "hhmm": "09:17",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "09:17 RISK: SELL stop −5% $BLOB",
-      "message": "09:17 RISK: SELL stop −5% $BLOB",
-      "symbol": null,
-      "action": "SELL stop −5% $BLOB"
-    },
-    {
-      "ts": "16 Nov 2026, 9:13 GMT",
-      "hhmm": "09:13",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "09:13 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
-      "message": "09:13 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 2 open, equity $0.00"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
-      "badge": "77 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
+      "badge": "57 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "77 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "57 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2579,18 +2579,18 @@
       "name": "VINE",
       "asset_class": "crypto",
       "agent": "MIRAX",
-      "qty": 0.01985126181908833,
-      "qty_display": "0.01985126",
-      "entry_price": 0.010447698584105665,
+      "qty": 0.01903519813911763,
+      "qty_display": "0.0190352",
+      "entry_price": 0.010706481672034073,
       "current_price": 0.010653215594063755,
       "change_pct": null,
       "price_source": "geckoterminal",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": 0.01967103169216111,
-      "hard_stop": 0.009925313654900382,
-      "trail_activate": 0.010865606527469892,
-      "opened_at": "16 Nov 2026, 10:03 GMT",
-      "reason": "BUY 10% $VINE @ 0.0104477 — 5m +2.0% vol $7,724 buys 14/sells 11",
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.010171157588432369,
+      "trail_activate": 0.011134740938915436,
+      "opened_at": "16 Nov 2026, 10:23 GMT",
+      "reason": "BUY 10% $VINE @ 0.0107065 — 5m +1.1% vol $5,951 buys 21/sells 11",
       "score": null,
       "tag": "",
       "venue": "",
@@ -2598,6 +2598,46 @@
     }
   ],
   "fills": [
+    {
+      "id": "f5847",
+      "time": "16 Nov 2026, 10:23 GMT",
+      "ts": "2026-11-16T10:23:38.984437+00:00",
+      "side": "buy",
+      "symbol": "VINE",
+      "name": "VINE",
+      "asset_class": "crypto",
+      "qty": 0.01903519813911763,
+      "qty_display": "0.0190352",
+      "price": 0.010706481672034073,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f5846",
+      "time": "16 Nov 2026, 10:23 GMT",
+      "ts": "2026-11-16T10:23:30.967744+00:00",
+      "side": "sell",
+      "symbol": "VINE",
+      "name": "VINE",
+      "asset_class": "crypto",
+      "qty": 0.01985126181908833,
+      "qty_display": "0.01985126",
+      "price": 0.01051715,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.013286082004360624,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f5845",
       "time": "16 Nov 2026, 10:19 GMT",
@@ -119500,11 +119540,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 2922,
-    "win_rate": 0.3083504449007529,
+    "closed_trades": 2923,
+    "win_rate": 0.30824495381457406,
     "realized_pnl": -100.0,
     "unrealized_pnl": -0.0,
-    "fills": 5845
+    "fills": 5847
   },
   "ok": true,
   "totals_cumulative": {
@@ -119699,7 +119739,7 @@
       "id": "btc",
       "name": "BTC Scalper",
       "equity": 83.82,
-      "return_pct": -0.16178554000000006,
+      "return_pct": -0.16184647,
       "closed_trades": 236,
       "win_rate": 0.2838983050847458,
       "realized_pnl": -16.33
@@ -119717,9 +119757,9 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 0.0,
-      "return_pct": -0.9999796000000001,
-      "closed_trades": 2922,
-      "win_rate": 0.3083504449007529,
+      "return_pct": -0.99997968,
+      "closed_trades": 2923,
+      "win_rate": 0.30824495381457406,
       "realized_pnl": -100.0
     }
   ],
@@ -119732,6 +119772,26 @@
   "watchlist": [],
   "wallet_scoreboard": [],
   "near_misses": [
+    {
+      "symbol": "GTA",
+      "mint": "G9ZMir6uh66Y7viPkXAy7myA9jjE4T1YgheVUmGDpump",
+      "link": "https://axiom.trade/meme/G9ZMir6uh66Y7viPkXAy7myA9jjE4T1YgheVUmGDpump?chain=sol",
+      "reason": "5m volume $1,738 under $5k",
+      "gates": 1,
+      "chg_m5": 7.24,
+      "vol_m5": 1738.0,
+      "score": 11.23
+    },
+    {
+      "symbol": "देसी",
+      "mint": "G4Q4YB4BGbpfA4jZ6LTBAU7a1arP4a8anmfU963Lpump",
+      "link": "https://axiom.trade/meme/G4Q4YB4BGbpfA4jZ6LTBAU7a1arP4a8anmfU963Lpump?chain=sol",
+      "reason": "liquidity $24,425 under $25k",
+      "gates": 1,
+      "chg_m5": 1.69,
+      "vol_m5": 27592.0,
+      "score": 4.41
+    },
     {
       "symbol": "Rocco",
       "mint": "HZbiEpF2oM658EpjNRRqxharz5L9Ddm8akpSH2R5pump",
@@ -119753,44 +119813,24 @@
       "score": 1.95
     },
     {
-      "symbol": "GTA",
-      "mint": "G9ZMir6uh66Y7viPkXAy7myA9jjE4T1YgheVUmGDpump",
-      "link": "https://axiom.trade/meme/G9ZMir6uh66Y7viPkXAy7myA9jjE4T1YgheVUmGDpump?chain=sol",
-      "reason": "5m volume $1,879 under $5k",
+      "symbol": "CBUCKS",
+      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
+      "reason": "5m volume $13 under $5k",
       "gates": 1,
-      "chg_m5": 1.45,
-      "vol_m5": 1879.0,
-      "score": 1.68
+      "chg_m5": 1.66,
+      "vol_m5": 13.0,
+      "score": 1.24
     },
     {
       "symbol": "BIG",
       "mint": "34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump",
       "link": "https://axiom.trade/meme/34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump?chain=sol",
-      "reason": "5m volume $125 under $5k · buy/sell 154/153 under 1.05",
+      "reason": "5m volume $124 under $5k · buy/sell 134/131 under 1.05",
       "gates": 2,
-      "chg_m5": 7.75,
-      "vol_m5": 125.0,
-      "score": 6.24
-    },
-    {
-      "symbol": "chudhaos",
-      "mint": "4W7BNgGspH3YFbLsP5T7AnKAzr6REGMMBGK9xDZKpump",
-      "link": "https://axiom.trade/meme/4W7BNgGspH3YFbLsP5T7AnKAzr6REGMMBGK9xDZKpump?chain=sol",
-      "reason": "5m volume $1,017 under $5k · buy/sell 3/4 under 1.05",
-      "gates": 2,
-      "chg_m5": 2.63,
-      "vol_m5": 1017.0,
-      "score": 5.92
-    },
-    {
-      "symbol": "देसी",
-      "mint": "G4Q4YB4BGbpfA4jZ6LTBAU7a1arP4a8anmfU963Lpump",
-      "link": "https://axiom.trade/meme/G4Q4YB4BGbpfA4jZ6LTBAU7a1arP4a8anmfU963Lpump?chain=sol",
-      "reason": "liquidity $23,006 under $25k · 5m +0.3% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.33,
-      "vol_m5": 35408.0,
-      "score": 1.08
+      "chg_m5": 5.49,
+      "vol_m5": 124.0,
+      "score": 6.74
     }
   ],
   "helius_status": "",
@@ -119798,7 +119838,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-16T10:22:59.055295+00:00",
-  "checked_at_london": "16 Nov 2026, 10:22 GMT",
+  "checked_at": "2026-11-16T10:23:38.984547+00:00",
+  "checked_at_london": "16 Nov 2026, 10:23 GMT",
   "who_we_copy": null
 }
