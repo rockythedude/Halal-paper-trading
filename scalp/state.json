@@ -1,37 +1,9 @@
 {
   "starting_capital": 100.0,
   "target": 6000.0,
-  "cash": 0.002976642868578442,
-  "equity": 0.003699,
+  "cash": 0.003320703056657496,
+  "equity": 0.003684,
   "positions": [
-    {
-      "symbol": "Anthropig",
-      "name": "Anthropig",
-      "mint": "2NUaS6Gfrm5rBuPBn7svHka8t33SrSkpXGQiUvZLpump",
-      "pair": "4rm7LQ7uDXMmMGV88QJK1ck22xUq3cxg9QqiyMBhKsnq",
-      "link": "https://axiom.trade/meme/2NUaS6Gfrm5rBuPBn7svHka8t33SrSkpXGQiUvZLpump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/4rm7lq7udxmmmgv88qjk1ck22xuq3cxg9qqiymbhksnq",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.2995557060725546,
-      "entry_price": 0.0012401699999999999,
-      "raw_price": 0.001234,
-      "entry_fee": 3.7150000000000004e-06,
-      "cost_basis": 0.00037521500000000003,
-      "opened_at": "2026-11-16T03:20:11.905616+00:00",
-      "opened_at_london": "16 Nov 2026, 3:20 GMT",
-      "high_water": 0.001254,
-      "trail_armed": false,
-      "last_price": 0.001215,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $Anthropig @ 0.00124017 \u2014 5m +12.9% vol $6,511 buys 192/sells 62",
-      "hard_stop": 0.0011781614999999998,
-      "take_profit": 0.0013393836,
-      "trail_activate": 0.0012897768,
-      "market_value": 0.00035851897814412543,
-      "unrealized_pnl": -1.6696021855874604e-05,
-      "unrealized_pct": -0.020295604634848363
-    },
     {
       "symbol": "GATO",
       "name": "GATO",
@@ -41311,15 +41283,24 @@
       "closed_at": "2026-11-16T03:24:37.705797+00:00",
       "closed_at_london": "16 Nov 2026, 3:24 GMT",
       "opened_at": "2026-11-16T03:03:40.104239+00:00"
+    },
+    {
+      "symbol": "Anthropig",
+      "name": "Anthropig",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.2995557060725546,
+      "entry_price": 0.0012401699999999999,
+      "exit_price": 0.0011601699999999999,
+      "pnl": -3.115481192094636e-05,
+      "pnl_pct": -0.08303189350358157,
+      "reason": "SELL stop \u22125% $Anthropig",
+      "closed_at": "2026-11-16T03:25:17.564228+00:00",
+      "closed_at_london": "16 Nov 2026, 3:25 GMT",
+      "opened_at": "2026-11-16T03:20:11.905616+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-15T21:41:22.088401+00:00",
-      "label": "15 Nov 2026, 21:41 GMT",
-      "equity": 0.00882,
-      "cash": 0.007107
-    },
     {
       "ts": "2026-11-15T21:42:02.089997+00:00",
       "label": "15 Nov 2026, 21:42 GMT",
@@ -44319,21 +44300,15 @@
       "label": "16 Nov 2026, 3:24 GMT",
       "equity": 0.003699,
       "cash": 0.002977
+    },
+    {
+      "ts": "2026-11-16T03:25:17.564726+00:00",
+      "label": "16 Nov 2026, 3:25 GMT",
+      "equity": 0.003684,
+      "cash": 0.003321
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-15T22:31:42.319619+00:00",
-      "london": "15 Nov 2026, 22:31 GMT",
-      "hhmm": "22:31",
-      "agent": "EXECUTOR",
-      "action": "SELL trail 2.5% $GATO",
-      "symbol": null,
-      "reason": "SELL trail 2.5% $GATO",
-      "line": "22:31 EXECUTOR: SELL trail 2.5% $GATO",
-      "tag": "EXECUTOR",
-      "message": "22:31 EXECUTOR: SELL trail 2.5% $GATO"
-    },
     {
       "ts": "2026-11-15T22:31:42.319676+00:00",
       "london": "15 Nov 2026, 22:31 GMT",
@@ -49121,6 +49096,18 @@
       "line": "03:24 EXECUTOR: BUY 10% $GATO @ 0.00729873 \u2014 5m +2.9% vol $6,625 buys 32/sells 27",
       "tag": "EXECUTOR",
       "message": "03:24 EXECUTOR: BUY 10% $GATO @ 0.00729873 \u2014 5m +2.9% vol $6,625 buys 32/sells 27"
+    },
+    {
+      "ts": "2026-11-16T03:25:17.564284+00:00",
+      "london": "16 Nov 2026, 3:25 GMT",
+      "hhmm": "03:25",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $Anthropig",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $Anthropig",
+      "line": "03:25 RISK: SELL stop \u22125% $Anthropig",
+      "tag": "RISK",
+      "message": "03:25 RISK: SELL stop \u22125% $Anthropig"
     }
   ],
   "agents": {
@@ -49145,8 +49132,8 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "77 pairs \u00b7 1 passed liquidity, age, and 5m momentum",
-      "badge": "1 passed",
+      "activity": "77 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -49193,8 +49180,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -49222,8 +49209,8 @@
     }
   },
   "ticks": 26709,
-  "last_updated": "2026-11-16T03:24:37.706266+00:00",
-  "last_updated_london": "16 Nov 2026, 3:24 GMT",
+  "last_updated": "2026-11-16T03:25:17.564637+00:00",
+  "last_updated_london": "16 Nov 2026, 3:25 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -126277,14 +126264,38 @@
       "pnl": null,
       "pnl_pct": null,
       "id": "f5502"
+    },
+    {
+      "ts": "2026-11-16T03:25:17.564228+00:00",
+      "london": "16 Nov 2026, 3:25 GMT",
+      "side": "sell",
+      "symbol": "Anthropig",
+      "name": "Anthropig",
+      "asset_class": "crypto",
+      "qty": 0.2995557060725546,
+      "price": 0.0011601699999999999,
+      "value": 0.0003475355435141956,
+      "pnl": -3.115481192094636e-05,
+      "pnl_pct": -0.08303189350358157,
+      "id": "f5503"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-16T03:24:37.706266+00:00",
-  "checked_at_london": "16 Nov 2026, 3:24 GMT",
+  "checked_at": "2026-11-16T03:25:17.564637+00:00",
+  "checked_at_london": "16 Nov 2026, 3:25 GMT",
   "near_misses": [
+    {
+      "symbol": "GTA6",
+      "mint": "2gVNeu8dP7XiLoaWfUvUJXUM5AdXY8418aft8xhUpump",
+      "link": "https://axiom.trade/meme/2gVNeu8dP7XiLoaWfUvUJXUM5AdXY8418aft8xhUpump?chain=sol",
+      "reason": "5m volume $747 under $5k",
+      "gates": 1,
+      "chg_m5": 6.08,
+      "vol_m5": 747.0,
+      "score": 54.72
+    },
     {
       "symbol": "AURA",
       "mint": "EvbSSzACWAxqFhXdiPypjv6jMhRfHU257x65oFrjpump",
@@ -126294,6 +126305,16 @@
       "chg_m5": 2.593,
       "vol_m5": 1239.0,
       "score": 5.59
+    },
+    {
+      "symbol": "BUTTHOLE",
+      "mint": "4B8CdHPZ8ng1CtMP2Jk2W8wGAwJ5nJnap1deVsz2pump",
+      "link": "https://axiom.trade/meme/4B8CdHPZ8ng1CtMP2Jk2W8wGAwJ5nJnap1deVsz2pump?chain=sol",
+      "reason": "5m volume $1,016 under $5k",
+      "gates": 1,
+      "chg_m5": 1.89,
+      "vol_m5": 1016.0,
+      "score": 2.71
     },
     {
       "symbol": "mihao",
@@ -126306,24 +126327,14 @@
       "score": 1.13
     },
     {
-      "symbol": "GTA6IRL",
-      "mint": "3ojK5KTAk9wnCzQ4rMidFQoitXfMfhAMV34hqxzLbomH",
-      "link": "https://axiom.trade/meme/3ojK5KTAk9wnCzQ4rMidFQoitXfMfhAMV34hqxzLbomH?chain=sol",
-      "reason": "market cap $16,664 outside $100k\u2013$100M \u00b7 age 2m under 10m",
+      "symbol": "\ud83d\udc40",
+      "mint": "CBmxECG3ZMxWtU5Why9U5DBRDJUsUbEjmimzhSJezhf3",
+      "link": "https://axiom.trade/meme/CBmxECG3ZMxWtU5Why9U5DBRDJUsUbEjmimzhSJezhf3?chain=sol",
+      "reason": "market cap $15,404 outside $100k\u2013$100M \u00b7 age 1m under 10m",
       "gates": 2,
-      "chg_m5": 22.162,
-      "vol_m5": 18754.0,
-      "score": 165.65
-    },
-    {
-      "symbol": "LMAO",
-      "mint": "FvQ2Ld7m6pV4e5m7jymJtgKEvjp8S7n6L3WTANDvpump",
-      "link": "https://axiom.trade/meme/FvQ2Ld7m6pV4e5m7jymJtgKEvjp8S7n6L3WTANDvpump?chain=sol",
-      "reason": "liquidity $19,038 under $25k \u00b7 market cap $75,228 outside $100k\u2013$100M",
-      "gates": 2,
-      "chg_m5": 1.28,
-      "vol_m5": 50668.0,
-      "score": 5.43
+      "chg_m5": 13.197,
+      "vol_m5": 7250.0,
+      "score": 84.19
     },
     {
       "symbol": "swordcat",
@@ -126334,16 +126345,6 @@
       "chg_m5": 0.812,
       "vol_m5": 245.0,
       "score": 3.97
-    },
-    {
-      "symbol": "GTA6",
-      "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
-      "link": "https://axiom.trade/meme/4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz?chain=sol",
-      "reason": "5m volume $1,147 under $5k \u00b7 5m +0.8% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.807,
-      "vol_m5": 1147.0,
-      "score": 1.13
     }
   ]
 }
