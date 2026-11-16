@@ -42968,12 +42968,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-16T01:54:18.754421+00:00",
-      "label": "16 Nov 2026, 1:54 GMT",
-      "equity": 0.004274,
-      "cash": 0.003834
-    },
-    {
       "ts": "2026-11-16T01:54:58.789229+00:00",
       "label": "16 Nov 2026, 1:54 GMT",
       "equity": 0.004276,
@@ -45972,21 +45966,15 @@
       "label": "16 Nov 2026, 7:50 GMT",
       "equity": 0.0026,
       "cash": 0.0026
+    },
+    {
+      "ts": "2026-11-16T07:51:01.060875+00:00",
+      "label": "16 Nov 2026, 7:51 GMT",
+      "equity": 0.0026,
+      "cash": 0.0026
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-16T01:24:01.480026+00:00",
-      "london": "16 Nov 2026, 1:24 GMT",
-      "hhmm": "01:24",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $BAWSAQ @ 0.00108037 \u2014 5m +8.4% vol $15,774 buys 612/sells 366",
-      "symbol": null,
-      "reason": "BUY 10% $BAWSAQ @ 0.00108037 \u2014 5m +8.4% vol $15,774 buys 612/sells 366",
-      "line": "01:24 EXECUTOR: BUY 10% $BAWSAQ @ 0.00108037 \u2014 5m +8.4% vol $15,774 buys 612/sells 366",
-      "tag": "EXECUTOR",
-      "message": "01:24 EXECUTOR: BUY 10% $BAWSAQ @ 0.00108037 \u2014 5m +8.4% vol $15,774 buys 612/sells 366"
-    },
     {
       "ts": "2026-11-16T01:24:33.319677+00:00",
       "london": "16 Nov 2026, 1:24 GMT",
@@ -50774,6 +50762,18 @@
       "line": "07:49 RISK: SELL stop \u22125% $BLOB",
       "tag": "RISK",
       "message": "07:49 RISK: SELL stop \u22125% $BLOB"
+    },
+    {
+      "ts": "2026-11-16T07:51:01.060790+00:00",
+      "london": "16 Nov 2026, 7:51 GMT",
+      "hhmm": "07:51",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 0 open, equity $0.00",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 0 open, equity $0.00",
+      "line": "07:51 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.00",
+      "tag": "LOGGER",
+      "message": "07:51 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.00"
     }
   ],
   "agents": {
@@ -50874,9 +50874,9 @@
       "open_positions": 0
     }
   },
-  "ticks": 28217,
-  "last_updated": "2026-11-16T07:50:37.049882+00:00",
-  "last_updated_london": "16 Nov 2026, 7:50 GMT",
+  "ticks": 28246,
+  "last_updated": "2026-11-16T07:51:01.060164+00:00",
+  "last_updated_london": "16 Nov 2026, 7:51 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -50897,7 +50897,7 @@
     "traded": 2864
   },
   "totals_cumulative": {
-    "scanned": 28217,
+    "scanned": 28246,
     "killed": 0,
     "traded": 2864
   },
@@ -131099,9 +131099,19 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-16T07:50:37.049882+00:00",
-  "checked_at_london": "16 Nov 2026, 7:50 GMT",
+  "checked_at": "2026-11-16T07:51:01.060164+00:00",
+  "checked_at_london": "16 Nov 2026, 7:51 GMT",
   "near_misses": [
+    {
+      "symbol": "GTA",
+      "mint": "G9ZMir6uh66Y7viPkXAy7myA9jjE4T1YgheVUmGDpump",
+      "link": "https://axiom.trade/meme/G9ZMir6uh66Y7viPkXAy7myA9jjE4T1YgheVUmGDpump?chain=sol",
+      "reason": "5m volume $666 under $5k",
+      "gates": 1,
+      "chg_m5": 2.15,
+      "vol_m5": 666.0,
+      "score": 2.33
+    },
     {
       "symbol": "bill",
       "mint": "85RhcSEMy15SNhFLmSArNm7udPKXVagVgsq4YmSopump",
@@ -131113,24 +131123,14 @@
       "score": 1.89
     },
     {
-      "symbol": "GTA",
-      "mint": "G9ZMir6uh66Y7viPkXAy7myA9jjE4T1YgheVUmGDpump",
-      "link": "https://axiom.trade/meme/G9ZMir6uh66Y7viPkXAy7myA9jjE4T1YgheVUmGDpump?chain=sol",
-      "reason": "5m volume $541 under $5k",
-      "gates": 1,
-      "chg_m5": 1.14,
-      "vol_m5": 541.0,
-      "score": 0.77
-    },
-    {
       "symbol": "BLOB",
       "mint": "8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump",
       "link": "https://axiom.trade/meme/8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump?chain=sol",
-      "reason": "5m -3.8% outside +1% to +40%",
+      "reason": "5m +0.3% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -3.81,
-      "vol_m5": 24300.0,
-      "score": -2.99
+      "chg_m5": 0.34,
+      "vol_m5": 29918.0,
+      "score": 0.29
     },
     {
       "symbol": "VINE",
