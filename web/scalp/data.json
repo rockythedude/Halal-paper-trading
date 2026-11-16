@@ -6,8 +6,8 @@
   "equity": 0.0,
   "equity_multiple": 0.0,
   "profit": -100.0,
-  "goal_pct": -0.016666486333333334,
-  "progress": 1.8033333333333335e-07,
+  "goal_pct": -0.016666486666666668,
+  "progress": 1.8e-07,
   "win_rate": 0.3048662584595553,
   "wins": 946,
   "losses": 2157,
@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 30798,
-  "open_count": 2,
-  "last_updated_london": "16 Nov 2026, 16:40 GMT",
-  "last_updated": "2026-11-16T16:40:59.323983+00:00",
+  "ticks": 30827,
+  "open_count": 3,
+  "last_updated_london": "16 Nov 2026, 16:41 GMT",
+  "last_updated": "2026-11-16T16:41:23.382295+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 3103,
+  "traded": 3106,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 3103,
+    "traded": 3106,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "16 Nov 2026, 9:21 GMT",
-      "value": 0.0
-    },
     {
       "label": "16 Nov 2026, 9:21 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "16 Nov 2026, 16:40 GMT",
       "value": 0.0
+    },
+    {
+      "label": "16 Nov 2026, 16:41 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "16 Nov 2026, 16:41 GMT",
+      "hhmm": "16:41",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "16:41 LOGGER: run complete — 29 polls, 3 open, equity $0.00",
+      "message": "16:41 LOGGER: run complete — 29 polls, 3 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 3 open, equity $0.00"
+    },
+    {
+      "ts": "16 Nov 2026, 16:41 GMT",
+      "hhmm": "16:41",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "16:41 EXECUTOR: BUY 10% $Marvin @ 0.000399118 — 5m +22.9% vol $14,019 buys 82/sells 66",
+      "message": "16:41 EXECUTOR: BUY 10% $Marvin @ 0.000399118 — 5m +22.9% vol $14,019 buys 82/sells 66",
+      "symbol": null,
+      "action": "BUY 10% $Marvin @ 0.000399118 — 5m +22.9% vol $14,019 buys 82/sells 66"
+    },
     {
       "ts": "16 Nov 2026, 16:40 GMT",
       "hhmm": "16:40",
@@ -2441,26 +2461,6 @@
       "message": "15:53 EXECUTOR: BUY 10% $WIGGLES @ 0.000287669 — 5m +6.6% vol $5,456 buys 70/sells 44",
       "symbol": null,
       "action": "BUY 10% $WIGGLES @ 0.000287669 — 5m +6.6% vol $5,456 buys 70/sells 44"
-    },
-    {
-      "ts": "16 Nov 2026, 15:53 GMT",
-      "hhmm": "15:53",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "15:53 EXECUTOR: BUY 10% $rockstar @ 0.000983319 — 5m +8.7% vol $8,648 buys 56/sells 35",
-      "message": "15:53 EXECUTOR: BUY 10% $rockstar @ 0.000983319 — 5m +8.7% vol $8,648 buys 56/sells 35",
-      "symbol": null,
-      "action": "BUY 10% $rockstar @ 0.000983319 — 5m +8.7% vol $8,648 buys 56/sells 35"
-    },
-    {
-      "ts": "16 Nov 2026, 15:52 GMT",
-      "hhmm": "15:52",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "15:52 LOGGER: run complete — 29 polls, 4 open, equity $0.00",
-      "message": "15:52 LOGGER: run complete — 29 polls, 4 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 4 open, equity $0.00"
     }
   ],
   "agents": [
@@ -2471,7 +2471,7 @@
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
       "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
-      "badge": "40 pairs",
+      "badge": "41 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "40 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "41 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "2/6",
+      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "3/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2604,11 +2604,11 @@
       "qty": 0.008979798137055368,
       "qty_display": "0.0089798",
       "entry_price": 0.012049268630383787,
-      "current_price": 0.01251,
+      "current_price": 0.01234,
       "change_pct": null,
       "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.03823728922885983,
+      "unrealized_pnl": -0.0,
+      "unrealized_pct": 0.024128549087460538,
       "hard_stop": 0.011446805198864598,
       "trail_activate": 0.012531239375599138,
       "opened_at": "16 Nov 2026, 16:40 GMT",
@@ -2617,9 +2617,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz?chain=sol"
+    },
+    {
+      "symbol": "Marvin",
+      "name": "Marvin",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.2705967978297528,
+      "qty_display": "0.2705968",
+      "entry_price": 0.00039911780503754774,
+      "current_price": 0.0004105,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": 0.028518384343643843,
+      "hard_stop": 0.0003791619147856703,
+      "trail_activate": 0.00041508251723904965,
+      "opened_at": "16 Nov 2026, 16:41 GMT",
+      "reason": "BUY 10% $Marvin @ 0.000399118 — 5m +22.9% vol $14,019 buys 82/sells 66",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/HkRQ6Qcadi5yuoNpZdA1Q7yVF3r7LdEmAw1aKkSxpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f6209",
+      "time": "16 Nov 2026, 16:41 GMT",
+      "ts": "2026-11-16T16:41:15.261173+00:00",
+      "side": "buy",
+      "symbol": "Marvin",
+      "name": "Marvin",
+      "asset_class": "crypto",
+      "qty": 0.2705967978297528,
+      "qty_display": "0.2705968",
+      "price": 0.00039911780503754774,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f6208",
       "time": "16 Nov 2026, 16:40 GMT",
@@ -126786,13 +126828,13 @@
     "win_rate": 0.3048662584595553,
     "realized_pnl": -100.0,
     "unrealized_pnl": -0.0,
-    "fills": 6208
+    "fills": 6209
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 30798,
+    "scanned": 30827,
     "killed": 0,
-    "traded": 3103
+    "traded": 3106
   },
   "events": [
     {
@@ -126935,7 +126977,14 @@
     {
       "symbol": "GTA6",
       "name": "GTA6",
-      "price": 0.01251,
+      "price": 0.01234,
+      "change_pct": null,
+      "source": "dexscreener"
+    },
+    {
+      "symbol": "Marvin",
+      "name": "Marvin",
+      "price": 0.0004105,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -127006,7 +127055,7 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 0.0,
-      "return_pct": -0.99998918,
+      "return_pct": -0.9999892,
       "closed_trades": 3103,
       "win_rate": 0.3048662584595553,
       "realized_pnl": -100.0
@@ -127087,7 +127136,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-16T16:40:59.323983+00:00",
-  "checked_at_london": "16 Nov 2026, 16:40 GMT",
+  "checked_at": "2026-11-16T16:41:23.382295+00:00",
+  "checked_at_london": "16 Nov 2026, 16:41 GMT",
   "who_we_copy": null
 }
