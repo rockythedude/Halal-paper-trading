@@ -53017,12 +53017,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-16T23:14:55.747458+00:00",
-      "label": "16 Nov 2026, 23:14 GMT",
-      "equity": 0.000383,
-      "cash": 0.000257
-    },
-    {
       "ts": "2026-11-16T23:15:35.784495+00:00",
       "label": "16 Nov 2026, 23:15 GMT",
       "equity": 0.000379,
@@ -56021,21 +56015,15 @@
       "label": "17 Nov 2026, 5:03 GMT",
       "equity": 0.000155,
       "cash": 0.00014
+    },
+    {
+      "ts": "2026-11-17T05:03:52.485584+00:00",
+      "label": "17 Nov 2026, 5:03 GMT",
+      "equity": 0.000155,
+      "cash": 0.00014
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-16T23:51:46.261333+00:00",
-      "london": "16 Nov 2026, 23:51 GMT",
-      "hhmm": "23:51",
-      "agent": "LOGGER",
-      "action": "run complete \u2014 29 polls, 3 open, equity $0.00",
-      "symbol": null,
-      "reason": "run complete \u2014 29 polls, 3 open, equity $0.00",
-      "line": "23:51 LOGGER: run complete \u2014 29 polls, 3 open, equity $0.00",
-      "tag": "LOGGER",
-      "message": "23:51 LOGGER: run complete \u2014 29 polls, 3 open, equity $0.00"
-    },
     {
       "ts": "2026-11-16T23:53:03.424684+00:00",
       "london": "16 Nov 2026, 23:53 GMT",
@@ -60823,6 +60811,18 @@
       "line": "05:03 RISK: SELL stop \u22125% $GTA6",
       "tag": "RISK",
       "message": "05:03 RISK: SELL stop \u22125% $GTA6"
+    },
+    {
+      "ts": "2026-11-17T05:03:52.485524+00:00",
+      "london": "17 Nov 2026, 5:03 GMT",
+      "hhmm": "05:03",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 1 open, equity $0.00",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 1 open, equity $0.00",
+      "line": "05:03 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00",
+      "tag": "LOGGER",
+      "message": "05:03 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00"
     }
   ],
   "agents": {
@@ -60831,8 +60831,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 20 pools",
-      "badge": "58 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 40 pools",
+      "badge": "75 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -60847,7 +60847,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "58 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "75 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -60923,8 +60923,8 @@
       "open_positions": 0
     }
   },
-  "ticks": 34539,
-  "last_updated": "2026-11-17T05:03:28.403567+00:00",
+  "ticks": 34568,
+  "last_updated": "2026-11-17T05:03:52.484798+00:00",
   "last_updated_london": "17 Nov 2026, 5:03 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -60943,12 +60943,12 @@
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 3532
+    "traded": 3533
   },
   "totals_cumulative": {
-    "scanned": 34539,
+    "scanned": 34568,
     "killed": 0,
-    "traded": 3532
+    "traded": 3533
   },
   "paper_money": true,
   "fills": [
@@ -159866,7 +159866,7 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-17T05:03:28.403567+00:00",
+  "checked_at": "2026-11-17T05:03:52.484798+00:00",
   "checked_at_london": "17 Nov 2026, 5:03 GMT",
   "near_misses": [
     {
@@ -159888,6 +159888,16 @@
       "chg_m5": -1.578,
       "vol_m5": 17111.0,
       "score": -11.09
+    },
+    {
+      "symbol": "6STAR",
+      "mint": "9ASEjk3rPt7AUmGdMzwmzoabMKg1mrqdf4q1hKPzpump",
+      "link": "https://axiom.trade/meme/9ASEjk3rPt7AUmGdMzwmzoabMKg1mrqdf4q1hKPzpump?chain=sol",
+      "reason": "liquidity $0 under $25k \u00b7 market cap $25,139 outside $100k\u2013$100M",
+      "gates": 2,
+      "chg_m5": 38.08,
+      "vol_m5": 25613.0,
+      "score": 147.9
     },
     {
       "symbol": "WIGGLES",
@@ -159918,16 +159928,6 @@
       "chg_m5": 0.36,
       "vol_m5": 3126.0,
       "score": 0.68
-    },
-    {
-      "symbol": "ETF",
-      "mint": "Gg5aWvfucyMwihDzyfCEaLgyeeNE2dkob2LTwWfHpump",
-      "link": "https://axiom.trade/meme/Gg5aWvfucyMwihDzyfCEaLgyeeNE2dkob2LTwWfHpump?chain=sol",
-      "reason": "5m volume $975 under $5k \u00b7 buy/sell 8/10 under 1.05",
-      "gates": 2,
-      "chg_m5": 1.06,
-      "vol_m5": 975.0,
-      "score": 0.34
     }
   ]
 }
