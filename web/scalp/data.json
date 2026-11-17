@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666643499999998,
   "progress": 2.3166666666666666e-08,
-  "win_rate": 0.30184977578475336,
+  "win_rate": 0.30168067226890755,
   "wins": 1077,
-  "losses": 2491,
-  "closed_trades": 3568,
+  "losses": 2493,
+  "closed_trades": 3570,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 34887,
-  "open_count": 3,
-  "last_updated_london": "17 Nov 2026, 5:57 GMT",
-  "last_updated": "2026-11-17T05:57:03.097721+00:00",
+  "open_count": 1,
+  "last_updated_london": "17 Nov 2026, 5:58 GMT",
+  "last_updated": "2026-11-17T05:58:11.818464+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "17 Nov 2026, 0:09 GMT",
-      "value": 0.0
-    },
     {
       "label": "17 Nov 2026, 0:10 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "17 Nov 2026, 5:57 GMT",
       "value": 0.0
+    },
+    {
+      "label": "17 Nov 2026, 5:58 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "17 Nov 2026, 5:58 GMT",
+      "hhmm": "05:58",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "05:58 RISK: SELL stop −5% $CHAR",
+      "message": "05:58 RISK: SELL stop −5% $CHAR",
+      "symbol": null,
+      "action": "SELL stop −5% $CHAR"
+    },
+    {
+      "ts": "17 Nov 2026, 5:58 GMT",
+      "hhmm": "05:58",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "05:58 EXECUTOR: SELL trail 2.5% $BAWSAQ",
+      "message": "05:58 EXECUTOR: SELL trail 2.5% $BAWSAQ",
+      "symbol": null,
+      "action": "SELL trail 2.5% $BAWSAQ"
+    },
     {
       "ts": "17 Nov 2026, 5:57 GMT",
       "hhmm": "05:57",
@@ -2441,26 +2461,6 @@
       "message": "05:25 EXECUTOR: BUY 10% $CHAR @ 0.000205582 — 5m +2.7% vol $6,155 buys 71/sells 47",
       "symbol": null,
       "action": "BUY 10% $CHAR @ 0.000205582 — 5m +2.7% vol $6,155 buys 71/sells 47"
-    },
-    {
-      "ts": "17 Nov 2026, 5:24 GMT",
-      "hhmm": "05:24",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "05:24 RISK: SELL stop −5% $CHAR",
-      "message": "05:24 RISK: SELL stop −5% $CHAR",
-      "symbol": null,
-      "action": "SELL stop −5% $CHAR"
-    },
-    {
-      "ts": "17 Nov 2026, 5:24 GMT",
-      "hhmm": "05:24",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "05:24 EXECUTOR: BUY 10% $STONK @ 0.0446111 — 5m +1.0% vol $6,796 buys 25/sells 4",
-      "message": "05:24 EXECUTOR: BUY 10% $STONK @ 0.0446111 — 5m +1.0% vol $6,796 buys 25/sells 4",
-      "symbol": null,
-      "action": "BUY 10% $STONK @ 0.0446111 — 5m +1.0% vol $6,796 buys 25/sells 4"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "57 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
+      "badge": "77 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "57 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "77 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "3/6",
+      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.001045774057060784,
       "qty_display": "0.00104577",
       "entry_price": 0.013578458849811235,
-      "current_price": 0.013411321185817957,
+      "current_price": 0.013399519746122817,
       "change_pct": null,
       "price_source": "geckoterminal",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.012309030490275541,
+      "unrealized_pct": -0.013178160030356212,
       "hard_stop": 0.012899535907320674,
       "trail_activate": 0.014121597203803685,
       "opened_at": "17 Nov 2026, 5:46 GMT",
@@ -2595,53 +2595,49 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol"
-    },
-    {
-      "symbol": "BAWSAQ",
-      "name": "BAWSAQ",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.01250432330326975,
-      "qty_display": "0.01250432",
-      "entry_price": 0.0011276099999999998,
-      "current_price": 0.001173,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.04025327905924936,
-      "hard_stop": 0.0010712294999999997,
-      "trail_activate": 0.0011727143999999998,
-      "opened_at": "17 Nov 2026, 5:53 GMT",
-      "reason": "BUY 10% $BAWSAQ @ 0.00112761 — 5m +10.1% vol $6,181 buys 448/sells 194",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/D9EcoQZeAytCrF1kQFSpRNpoPhibJUvJcmRHXhubpump?chain=sol"
-    },
-    {
-      "symbol": "CHAR",
-      "name": "CHAR",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.053526748722134726,
-      "qty_display": "0.05352675",
-      "entry_price": 0.00026341969831187,
-      "current_price": 0.0002536646228720716,
-      "change_pct": null,
-      "price_source": "geckoterminal",
-      "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.037032444810748744,
-      "hard_stop": 0.00025024871339627647,
-      "trail_activate": 0.0002739564862443448,
-      "opened_at": "17 Nov 2026, 5:55 GMT",
-      "reason": "BUY 10% $CHAR @ 0.00026342 — 5m +10.8% vol $13,885 buys 156/sells 105",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/9k2nqjUrSh9p2ZBnWxNE3QRWYiLocrWZfoDm3Vdxpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f7141",
+      "time": "17 Nov 2026, 5:58 GMT",
+      "ts": "2026-11-17T05:58:11.817834+00:00",
+      "side": "sell",
+      "symbol": "CHAR",
+      "name": "CHAR",
+      "asset_class": "crypto",
+      "qty": 0.053526748722134726,
+      "qty_display": "0.05352675",
+      "price": 0.000247688073433995,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.07834015199147608,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f7140",
+      "time": "17 Nov 2026, 5:58 GMT",
+      "ts": "2026-11-17T05:58:11.817745+00:00",
+      "side": "sell",
+      "symbol": "BAWSAQ",
+      "name": "BAWSAQ",
+      "asset_class": "crypto",
+      "qty": 0.01250432330326975,
+      "qty_display": "0.01250432",
+      "price": 0.0011425956448014268,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.006775402427501284,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f7139",
       "time": "17 Nov 2026, 5:56 GMT",
@@ -145424,11 +145420,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 3568,
-    "win_rate": 0.30184977578475336,
+    "closed_trades": 3570,
+    "win_rate": 0.30168067226890755,
     "realized_pnl": -100.0,
     "unrealized_pnl": -0.0,
-    "fills": 7139
+    "fills": 7141
   },
   "ok": true,
   "totals_cumulative": {
@@ -145570,21 +145566,7 @@
     {
       "symbol": "mihao",
       "name": "mihao",
-      "price": 0.013411321185817957,
-      "change_pct": null,
-      "source": "geckoterminal"
-    },
-    {
-      "symbol": "BAWSAQ",
-      "name": "BAWSAQ",
-      "price": 0.001173,
-      "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
-      "symbol": "CHAR",
-      "name": "CHAR",
-      "price": 0.0002536646228720716,
+      "price": 0.013399519746122817,
       "change_pct": null,
       "source": "geckoterminal"
     }
@@ -145656,8 +145638,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -0.99999861,
-      "closed_trades": 3568,
-      "win_rate": 0.30184977578475336,
+      "closed_trades": 3570,
+      "win_rate": 0.30168067226890755,
       "realized_pnl": -100.0
     }
   ],
@@ -145671,64 +145653,64 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "rockstar",
-      "mint": "9HFUEab7sompLDPTAaTGkryMNGbtBaFMhHMVpJEBpump",
-      "link": "https://axiom.trade/meme/9HFUEab7sompLDPTAaTGkryMNGbtBaFMhHMVpJEBpump?chain=sol",
-      "reason": "5m volume $2,922 under $5k",
+      "symbol": "DIGS",
+      "mint": "9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump",
+      "link": "https://axiom.trade/meme/9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump?chain=sol",
+      "reason": "5m volume $3,198 under $5k",
       "gates": 1,
-      "chg_m5": 6.372,
-      "vol_m5": 2922.0,
-      "score": 13.29
+      "chg_m5": 2.61,
+      "vol_m5": 3198.0,
+      "score": 4.27
     },
     {
-      "symbol": "HOGE",
-      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
-      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
-      "reason": "5m volume $2,933 under $5k",
+      "symbol": "ETF",
+      "mint": "Gg5aWvfucyMwihDzyfCEaLgyeeNE2dkob2LTwWfHpump",
+      "link": "https://axiom.trade/meme/Gg5aWvfucyMwihDzyfCEaLgyeeNE2dkob2LTwWfHpump?chain=sol",
+      "reason": "5m volume $1,524 under $5k",
       "gates": 1,
-      "chg_m5": 3.92,
-      "vol_m5": 2933.0,
-      "score": 10.72
+      "chg_m5": 2.41,
+      "vol_m5": 1524.0,
+      "score": 2.87
     },
     {
-      "symbol": "Max",
-      "mint": "5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump",
-      "link": "https://axiom.trade/meme/5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump?chain=sol",
-      "reason": "5m volume $3,372 under $5k",
+      "symbol": "BAWSAQ",
+      "mint": "4La95NEVJdYK9kr375SfKPXnLA8ef8GtsjfVfW27pump",
+      "link": "https://axiom.trade/meme/4La95NEVJdYK9kr375SfKPXnLA8ef8GtsjfVfW27pump?chain=sol",
+      "reason": "5m volume $888 under $5k",
       "gates": 1,
-      "chg_m5": 1.398,
-      "vol_m5": 3372.0,
-      "score": 2.91
+      "chg_m5": 2.017,
+      "vol_m5": 888.0,
+      "score": 0.91
     },
     {
-      "symbol": "WASTED",
-      "mint": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
-      "link": "https://axiom.trade/meme/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump?chain=sol",
-      "reason": "5m volume $3,168 under $5k",
+      "symbol": "GTA6",
+      "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
+      "link": "https://axiom.trade/meme/4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz?chain=sol",
+      "reason": "5m +0.1% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 1.798,
-      "vol_m5": 3168.0,
-      "score": 0.92
-    },
-    {
-      "symbol": "HIKIKOMORI",
-      "mint": "HyUkgbA8Ke3jMfdxHy72T5mPCMXaoM1G3QETtU8p5vYx",
-      "link": "https://axiom.trade/meme/HyUkgbA8Ke3jMfdxHy72T5mPCMXaoM1G3QETtU8p5vYx?chain=sol",
-      "reason": "5m volume $8 under $5k · 5m +0.8% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.83,
-      "vol_m5": 8.0,
-      "score": 6.23
+      "chg_m5": 0.067,
+      "vol_m5": 5329.0,
+      "score": 0.05
     },
     {
       "symbol": "iFruit",
       "mint": "9iaXwjVAtRQmDKuYuxMmT5GBKiVJ3dQ4ji1vWkEXY1Jz",
       "link": "https://axiom.trade/meme/9iaXwjVAtRQmDKuYuxMmT5GBKiVJ3dQ4ji1vWkEXY1Jz?chain=sol",
-      "reason": "liquidity $23,727 under $25k · 5m volume $369 under $5k",
+      "reason": "liquidity $23,727 under $25k · 5m volume $224 under $5k",
       "gates": 2,
-      "chg_m5": 1.0,
-      "vol_m5": 369.0,
-      "score": 4.6
+      "chg_m5": 3.46,
+      "vol_m5": 224.0,
+      "score": 9.65
+    },
+    {
+      "symbol": "HOGE",
+      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
+      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
+      "reason": "5m volume $2,195 under $5k · buy/sell 19/21 under 1.05",
+      "gates": 2,
+      "chg_m5": 3.87,
+      "vol_m5": 2195.0,
+      "score": 3.43
     }
   ],
   "helius_status": "",
@@ -145736,7 +145718,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-17T05:57:03.097721+00:00",
-  "checked_at_london": "17 Nov 2026, 5:57 GMT",
+  "checked_at": "2026-11-17T05:58:11.818464+00:00",
+  "checked_at_london": "17 Nov 2026, 5:58 GMT",
   "who_we_copy": null
 }
