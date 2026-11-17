@@ -6,8 +6,8 @@
   "equity": 0.0,
   "equity_multiple": 0.0,
   "profit": -100.0,
-  "goal_pct": -0.0166666125,
-  "progress": 5.416666666666666e-08,
+  "goal_pct": -0.016666612666666667,
+  "progress": 5.4e-08,
   "win_rate": 0.30379371665678717,
   "wins": 1025,
   "losses": 2349,
@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 32799,
-  "open_count": 5,
+  "ticks": 32828,
+  "open_count": 6,
   "last_updated_london": "17 Nov 2026, 0:11 GMT",
-  "last_updated": "2026-11-17T00:11:06.658219+00:00",
+  "last_updated": "2026-11-17T00:11:30.647482+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 3373,
+  "traded": 3380,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 3373,
+    "traded": 3380,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "16 Nov 2026, 16:29 GMT",
-      "value": 0.0
-    },
     {
       "label": "16 Nov 2026, 16:30 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "17 Nov 2026, 0:11 GMT",
       "value": 0.0
+    },
+    {
+      "label": "17 Nov 2026, 0:11 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "17 Nov 2026, 0:11 GMT",
+      "hhmm": "00:11",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "00:11 LOGGER: run complete — 29 polls, 6 open, equity $0.00",
+      "message": "00:11 LOGGER: run complete — 29 polls, 6 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 6 open, equity $0.00"
+    },
+    {
+      "ts": "17 Nov 2026, 0:11 GMT",
+      "hhmm": "00:11",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "00:11 EXECUTOR: BUY 10% $AgentPaid @ 0.000103113 — 5m +32.8% vol $10,393 buys 106/sells 77",
+      "message": "00:11 EXECUTOR: BUY 10% $AgentPaid @ 0.000103113 — 5m +32.8% vol $10,393 buys 106/sells 77",
+      "symbol": null,
+      "action": "BUY 10% $AgentPaid @ 0.000103113 — 5m +32.8% vol $10,393 buys 106/sells 77"
+    },
     {
       "ts": "17 Nov 2026, 0:11 GMT",
       "hhmm": "00:11",
@@ -2441,26 +2461,6 @@
       "message": "23:45 EXECUTOR: BUY 10% $GTA @ 0.000174669 — 5m +11.2% vol $9,345 buys 376/sells 73",
       "symbol": null,
       "action": "BUY 10% $GTA @ 0.000174669 — 5m +11.2% vol $9,345 buys 376/sells 73"
-    },
-    {
-      "ts": "16 Nov 2026, 23:45 GMT",
-      "hhmm": "23:45",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "23:45 RISK: SELL stop −5% $GTA",
-      "message": "23:45 RISK: SELL stop −5% $GTA",
-      "symbol": null,
-      "action": "SELL stop −5% $GTA"
-    },
-    {
-      "ts": "16 Nov 2026, 23:45 GMT",
-      "hhmm": "23:45",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "23:45 EXECUTOR: BUY 10% $GTA @ 0.000197482 — 5m +25.7% vol $7,447 buys 337/sells 70",
-      "message": "23:45 EXECUTOR: BUY 10% $GTA @ 0.000197482 — 5m +25.7% vol $7,447 buys 337/sells 70",
-      "symbol": null,
-      "action": "BUY 10% $GTA @ 0.000197482 — 5m +25.7% vol $7,447 buys 337/sells 70"
     }
   ],
   "agents": [
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "56 pairs · 1 passed liquidity, age, and 5m momentum",
-      "badge": "1 passed",
+      "activity": "56 pairs · 0 passed liquidity, age, and 5m momentum",
+      "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "5 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "5/6",
+      "activity": "6 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "6/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.03232122019929793,
       "qty_display": "0.03232122",
       "entry_price": 0.0010240949999999998,
-      "current_price": 0.001028,
+      "current_price": 0.001039,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": 0.003813122805989888,
+      "unrealized_pct": 0.014554313808777586,
       "hard_stop": 0.0009728902499999998,
       "trail_activate": 0.0010650587999999999,
       "opened_at": "16 Nov 2026, 23:55 GMT",
@@ -2626,11 +2626,11 @@
       "qty": 0.16260526453191318,
       "qty_display": "0.16260526",
       "entry_price": 0.0002011005,
-      "current_price": 0.0002141,
+      "current_price": 0.000209,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.06464180844900946,
+      "unrealized_pct": 0.03928135434770197,
       "hard_stop": 0.00019104547499999998,
       "trail_activate": 0.00020914451999999998,
       "opened_at": "17 Nov 2026, 0:07 GMT",
@@ -2683,9 +2683,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump?chain=sol"
+    },
+    {
+      "symbol": "AgentPaid",
+      "name": "AgentPaid",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.3151881915956281,
+      "qty_display": "0.31518819",
+      "entry_price": 0.00010311299999999999,
+      "current_price": 0.0001026,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": -0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 9.795734999999998e-05,
+      "trail_activate": 0.00010723751999999999,
+      "opened_at": "17 Nov 2026, 0:11 GMT",
+      "reason": "BUY 10% $AgentPaid @ 0.000103113 — 5m +32.8% vol $10,393 buys 106/sells 77",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/7Uyko7dmpxh95vVqeoXeGjasVRXV31JEAqcN2jEkpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f6754",
+      "time": "17 Nov 2026, 0:11 GMT",
+      "ts": "2026-11-17T00:11:14.862003+00:00",
+      "side": "buy",
+      "symbol": "AgentPaid",
+      "name": "AgentPaid",
+      "asset_class": "crypto",
+      "qty": 0.3151881915956281,
+      "qty_display": "0.31518819",
+      "price": 0.00010311299999999999,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f6753",
       "time": "17 Nov 2026, 0:11 GMT",
@@ -137752,13 +137794,13 @@
     "win_rate": 0.30379371665678717,
     "realized_pnl": -100.0,
     "unrealized_pnl": -0.0,
-    "fills": 6753
+    "fills": 6754
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 32799,
+    "scanned": 32828,
     "killed": 0,
-    "traded": 3373
+    "traded": 3380
   },
   "events": [
     {
@@ -137894,7 +137936,7 @@
     {
       "symbol": "LEOSTAR",
       "name": "LEOSTAR",
-      "price": 0.001028,
+      "price": 0.001039,
       "change_pct": null,
       "source": "dexscreener"
     },
@@ -137908,7 +137950,7 @@
     {
       "symbol": "ETF",
       "name": "ETF",
-      "price": 0.0002141,
+      "price": 0.000209,
       "change_pct": null,
       "source": "dexscreener"
     },
@@ -137925,6 +137967,13 @@
       "price": 0.00168898704261229,
       "change_pct": null,
       "source": "geckoterminal"
+    },
+    {
+      "symbol": "AgentPaid",
+      "name": "AgentPaid",
+      "price": 0.0001026,
+      "change_pct": null,
+      "source": "dexscreener"
     }
   ],
   "desk": "axiom",
@@ -137993,7 +138042,7 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 0.0,
-      "return_pct": -0.99999675,
+      "return_pct": -0.9999967599999999,
       "closed_trades": 3374,
       "win_rate": 0.30379371665678717,
       "realized_pnl": -100.0
@@ -138009,24 +138058,14 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "AgentPaid",
-      "mint": "7Uyko7dmpxh95vVqeoXeGjasVRXV31JEAqcN2jEkpump",
-      "link": "https://axiom.trade/meme/7Uyko7dmpxh95vVqeoXeGjasVRXV31JEAqcN2jEkpump?chain=sol",
-      "reason": "5m +70.8% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": 70.76,
-      "vol_m5": 13849.0,
-      "score": 123.23
-    },
-    {
       "symbol": "COGE",
       "mint": "BRf3SXRk8BdXmBZDJfKyEhbYmqBVf8843ctEMcD4pump",
       "link": "https://axiom.trade/meme/BRf3SXRk8BdXmBZDJfKyEhbYmqBVf8843ctEMcD4pump?chain=sol",
-      "reason": "5m volume $574 under $5k",
+      "reason": "5m volume $575 under $5k",
       "gates": 1,
-      "chg_m5": 4.17,
-      "vol_m5": 574.0,
-      "score": 3.81
+      "chg_m5": 6.46,
+      "vol_m5": 575.0,
+      "score": 5.91
     },
     {
       "symbol": "DSP",
@@ -138067,6 +138106,16 @@
       "chg_m5": -14.192,
       "vol_m5": 5267.0,
       "score": -22.44
+    },
+    {
+      "symbol": "HOGE",
+      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
+      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
+      "reason": "5m -11.3% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -11.263,
+      "vol_m5": 6244.0,
+      "score": -34.17
     }
   ],
   "helius_status": "",
@@ -138074,7 +138123,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-17T00:11:06.658219+00:00",
+  "checked_at": "2026-11-17T00:11:30.647482+00:00",
   "checked_at_london": "17 Nov 2026, 0:11 GMT",
   "who_we_copy": null
 }
