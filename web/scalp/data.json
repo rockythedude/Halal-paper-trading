@@ -6,12 +6,12 @@
   "equity": 0.0,
   "equity_multiple": 0.0,
   "profit": -100.0,
-  "goal_pct": -0.016666658,
-  "progress": 8.666666666666667e-09,
-  "win_rate": 0.29698747000799786,
+  "goal_pct": -0.016666658166666667,
+  "progress": 8.5e-09,
+  "win_rate": 0.29682920330402346,
   "wins": 1114,
-  "losses": 2637,
-  "closed_trades": 3751,
+  "losses": 2639,
+  "closed_trades": 3753,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 36917,
-  "open_count": 3,
+  "ticks": 36946,
+  "open_count": 1,
   "last_updated_london": "17 Nov 2026, 13:28 GMT",
-  "last_updated": "2026-11-17T13:28:30.657139+00:00",
+  "last_updated": "2026-11-17T13:28:54.630726+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 3751,
+  "traded": 3754,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 3751,
+    "traded": 3754,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "17 Nov 2026, 5:54 GMT",
-      "value": 0.0
-    },
     {
       "label": "17 Nov 2026, 5:55 GMT",
       "value": 0.0
@@ -2058,10 +2054,44 @@
     {
       "label": "17 Nov 2026, 13:28 GMT",
       "value": 0.0
+    },
+    {
+      "label": "17 Nov 2026, 13:28 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "17 Nov 2026, 13:28 GMT",
+      "hhmm": "13:28",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "13:28 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
+      "message": "13:28 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 1 open, equity $0.00"
+    },
+    {
+      "ts": "17 Nov 2026, 13:28 GMT",
+      "hhmm": "13:28",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "13:28 RISK: SELL stop −5% $GROKIA",
+      "message": "13:28 RISK: SELL stop −5% $GROKIA",
+      "symbol": null,
+      "action": "SELL stop −5% $GROKIA"
+    },
+    {
+      "ts": "17 Nov 2026, 13:28 GMT",
+      "hhmm": "13:28",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "13:28 RISK: SELL stop −5% $BLOB",
+      "message": "13:28 RISK: SELL stop −5% $BLOB",
+      "symbol": null,
+      "action": "SELL stop −5% $BLOB"
+    },
     {
       "ts": "17 Nov 2026, 13:28 GMT",
       "hhmm": "13:28",
@@ -2431,36 +2461,6 @@
       "message": "13:03 RISK: SELL stop −5% $LEOSTAR",
       "symbol": null,
       "action": "SELL stop −5% $LEOSTAR"
-    },
-    {
-      "ts": "17 Nov 2026, 13:03 GMT",
-      "hhmm": "13:03",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "13:03 EXECUTOR: SELL trail 2.5% $Leonida",
-      "message": "13:03 EXECUTOR: SELL trail 2.5% $Leonida",
-      "symbol": null,
-      "action": "SELL trail 2.5% $Leonida"
-    },
-    {
-      "ts": "17 Nov 2026, 13:03 GMT",
-      "hhmm": "13:03",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "13:03 EXECUTOR: BUY 10% $LEOSTAR @ 0.00186528 — 5m +15.6% vol $76,104 buys 1091/sells 511",
-      "message": "13:03 EXECUTOR: BUY 10% $LEOSTAR @ 0.00186528 — 5m +15.6% vol $76,104 buys 1091/sells 511",
-      "symbol": null,
-      "action": "BUY 10% $LEOSTAR @ 0.00186528 — 5m +15.6% vol $76,104 buys 1091/sells 511"
-    },
-    {
-      "ts": "17 Nov 2026, 13:03 GMT",
-      "hhmm": "13:03",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "13:03 RISK: SELL stop −5% $LEOSTAR",
-      "message": "13:03 RISK: SELL stop −5% $LEOSTAR",
-      "symbol": null,
-      "action": "SELL stop −5% $LEOSTAR"
     }
   ],
   "agents": [
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "3/6",
+      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2575,50 +2575,6 @@
   ],
   "positions": [
     {
-      "symbol": "BLOB",
-      "name": "BLOB",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.00035393502287221616,
-      "qty_display": "0.00035394",
-      "entry_price": 0.014974499999999998,
-      "current_price": 0.01453,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.029683795786169753,
-      "hard_stop": 0.014225774999999998,
-      "trail_activate": 0.015573479999999999,
-      "opened_at": "17 Nov 2026, 13:26 GMT",
-      "reason": "BUY 10% $BLOB @ 0.0149745 — 5m +1.5% vol $20,037 buys 87/sells 76",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump?chain=sol"
-    },
-    {
-      "symbol": "GROKIA",
-      "name": "GROKIA",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.013962488326174265,
-      "qty_display": "0.01396249",
-      "entry_price": 0.0003795885,
-      "current_price": 0.0003624,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.045281930300838824,
-      "hard_stop": 0.000360609075,
-      "trail_activate": 0.00039477204,
-      "opened_at": "17 Nov 2026, 13:26 GMT",
-      "reason": "BUY 10% $GROKIA @ 0.000379588 — 5m +2.9% vol $6,846 buys 36/sells 34",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/A4zQMT7ZFC2mM8fZDDQEqCs5bLFifA9XhDAJtHc3Lzbm?chain=sol"
-    },
-    {
       "symbol": "DIGS",
       "name": "DIGS",
       "asset_class": "crypto",
@@ -2626,11 +2582,11 @@
       "qty": 0.015294500009559066,
       "qty_display": "0.0152945",
       "entry_price": 0.00033999149999999994,
-      "current_price": 0.0003383,
+      "current_price": 0.0003277,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.004975124378109319,
+      "unrealized_pct": -0.03615237439759511,
       "hard_stop": 0.00032299192499999995,
       "trail_activate": 0.00035359115999999995,
       "opened_at": "17 Nov 2026, 13:28 GMT",
@@ -2642,6 +2598,46 @@
     }
   ],
   "fills": [
+    {
+      "id": "f7507",
+      "time": "17 Nov 2026, 13:28 GMT",
+      "ts": "2026-11-17T13:28:46.876573+00:00",
+      "side": "sell",
+      "symbol": "GROKIA",
+      "name": "GROKIA",
+      "asset_class": "crypto",
+      "qty": 0.013962488326174265,
+      "qty_display": "0.01396249",
+      "price": 0.000331733,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.1433775530529236,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f7506",
+      "time": "17 Nov 2026, 13:28 GMT",
+      "ts": "2026-11-17T13:28:46.876494+00:00",
+      "side": "sell",
+      "symbol": "BLOB",
+      "name": "BLOB",
+      "asset_class": "crypto",
+      "qty": 0.00035393502287221616,
+      "qty_display": "0.00035394",
+      "price": 0.01407925,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.07840308722848637,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f7505",
       "time": "17 Nov 2026, 13:28 GMT",
@@ -152744,17 +152740,17 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 3751,
-    "win_rate": 0.29698747000799786,
+    "closed_trades": 3753,
+    "win_rate": 0.29682920330402346,
     "realized_pnl": -100.0,
     "unrealized_pnl": -0.0,
-    "fills": 7505
+    "fills": 7507
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 36917,
+    "scanned": 36946,
     "killed": 0,
-    "traded": 3751
+    "traded": 3754
   },
   "events": [
     {
@@ -152888,23 +152884,9 @@
   },
   "ticker": [
     {
-      "symbol": "BLOB",
-      "name": "BLOB",
-      "price": 0.01453,
-      "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
-      "symbol": "GROKIA",
-      "name": "GROKIA",
-      "price": 0.0003624,
-      "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
       "symbol": "DIGS",
       "name": "DIGS",
-      "price": 0.0003383,
+      "price": 0.0003277,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -152975,9 +152957,9 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 0.0,
-      "return_pct": -0.99999948,
-      "closed_trades": 3751,
-      "win_rate": 0.29698747000799786,
+      "return_pct": -0.99999949,
+      "closed_trades": 3753,
+      "win_rate": 0.29682920330402346,
       "realized_pnl": -100.0
     }
   ],
@@ -153004,31 +152986,31 @@
       "symbol": "PumpMas",
       "mint": "EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump",
       "link": "https://axiom.trade/meme/EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump?chain=sol",
-      "reason": "5m volume $657 under $5k",
+      "reason": "5m volume $635 under $5k",
       "gates": 1,
-      "chg_m5": 3.1,
-      "vol_m5": 657.0,
-      "score": 21.47
-    },
-    {
-      "symbol": "BAWSAQ",
-      "mint": "D9EcoQZeAytCrF1kQFSpRNpoPhibJUvJcmRHXhubpump",
-      "link": "https://axiom.trade/meme/D9EcoQZeAytCrF1kQFSpRNpoPhibJUvJcmRHXhubpump?chain=sol",
-      "reason": "5m volume $2,978 under $5k",
-      "gates": 1,
-      "chg_m5": 6.04,
-      "vol_m5": 2978.0,
-      "score": 3.06
+      "chg_m5": 2.88,
+      "vol_m5": 635.0,
+      "score": 19.28
     },
     {
       "symbol": "GTA",
       "mint": "2NWgu4fqN2AxS5pp5v3f3SH54qArP9JepQFJm58gpump",
       "link": "https://axiom.trade/meme/2NWgu4fqN2AxS5pp5v3f3SH54qArP9JepQFJm58gpump?chain=sol",
-      "reason": "5m volume $4,762 under $5k",
+      "reason": "5m volume $3,454 under $5k",
       "gates": 1,
-      "chg_m5": 1.8,
-      "vol_m5": 4762.0,
-      "score": 2.15
+      "chg_m5": 2.28,
+      "vol_m5": 3454.0,
+      "score": 1.89
+    },
+    {
+      "symbol": "BAWSAQ",
+      "mint": "D9EcoQZeAytCrF1kQFSpRNpoPhibJUvJcmRHXhubpump",
+      "link": "https://axiom.trade/meme/D9EcoQZeAytCrF1kQFSpRNpoPhibJUvJcmRHXhubpump?chain=sol",
+      "reason": "5m volume $2,933 under $5k",
+      "gates": 1,
+      "chg_m5": 3.7,
+      "vol_m5": 2933.0,
+      "score": 1.86
     },
     {
       "symbol": "GATO",
@@ -153056,7 +153038,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-17T13:28:30.657139+00:00",
+  "checked_at": "2026-11-17T13:28:54.630726+00:00",
   "checked_at_london": "17 Nov 2026, 13:28 GMT",
   "who_we_copy": null
 }
