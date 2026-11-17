@@ -6,12 +6,12 @@
   "equity": 0.0,
   "equity_multiple": 0.0,
   "profit": -100.0,
-  "goal_pct": -0.016666619,
-  "progress": 4.766666666666667e-08,
-  "win_rate": 0.30364491475602584,
+  "goal_pct": -0.016666619833333333,
+  "progress": 4.6833333333333336e-08,
+  "win_rate": 0.30346650998824914,
   "wins": 1033,
-  "losses": 2369,
-  "closed_trades": 3402,
+  "losses": 2371,
+  "closed_trades": 3404,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 33147,
-  "open_count": 2,
-  "last_updated_london": "17 Nov 2026, 1:08 GMT",
-  "last_updated": "2026-11-17T01:08:42.453359+00:00",
+  "open_count": 1,
+  "last_updated_london": "17 Nov 2026, 1:09 GMT",
+  "last_updated": "2026-11-17T01:09:22.419638+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "16 Nov 2026, 17:27 GMT",
-      "value": 0.0
-    },
     {
       "label": "16 Nov 2026, 17:28 GMT",
       "value": 0.0
@@ -2058,10 +2054,44 @@
     {
       "label": "17 Nov 2026, 1:08 GMT",
       "value": 0.0
+    },
+    {
+      "label": "17 Nov 2026, 1:09 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "17 Nov 2026, 1:09 GMT",
+      "hhmm": "01:09",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "01:09 EXECUTOR: BUY 10% $BAWSAQ @ 0.00187604 — 5m +6.4% vol $13,778 buys 730/sells 367",
+      "message": "01:09 EXECUTOR: BUY 10% $BAWSAQ @ 0.00187604 — 5m +6.4% vol $13,778 buys 730/sells 367",
+      "symbol": null,
+      "action": "BUY 10% $BAWSAQ @ 0.00187604 — 5m +6.4% vol $13,778 buys 730/sells 367"
+    },
+    {
+      "ts": "17 Nov 2026, 1:09 GMT",
+      "hhmm": "01:09",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "01:09 RISK: SELL stop −5% $LEOSTAR",
+      "message": "01:09 RISK: SELL stop −5% $LEOSTAR",
+      "symbol": null,
+      "action": "SELL stop −5% $LEOSTAR"
+    },
+    {
+      "ts": "17 Nov 2026, 1:08 GMT",
+      "hhmm": "01:08",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "01:08 RISK: SELL stop −5% $BAWSAQ",
+      "message": "01:08 RISK: SELL stop −5% $BAWSAQ",
+      "symbol": null,
+      "action": "SELL stop −5% $BAWSAQ"
+    },
     {
       "ts": "17 Nov 2026, 1:08 GMT",
       "hhmm": "01:08",
@@ -2431,36 +2461,6 @@
       "message": "00:35 EXECUTOR: SELL trail 2.5% $PAID",
       "symbol": null,
       "action": "SELL trail 2.5% $PAID"
-    },
-    {
-      "ts": "17 Nov 2026, 0:34 GMT",
-      "hhmm": "00:34",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "00:34 EXECUTOR: BUY 10% $BAWSAQ @ 0.00147132 — 5m +12.8% vol $7,512 buys 458/sells 206",
-      "message": "00:34 EXECUTOR: BUY 10% $BAWSAQ @ 0.00147132 — 5m +12.8% vol $7,512 buys 458/sells 206",
-      "symbol": null,
-      "action": "BUY 10% $BAWSAQ @ 0.00147132 — 5m +12.8% vol $7,512 buys 458/sells 206"
-    },
-    {
-      "ts": "17 Nov 2026, 0:34 GMT",
-      "hhmm": "00:34",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "00:34 EXECUTOR: SELL take profit +8% $BAWSAQ",
-      "message": "00:34 EXECUTOR: SELL take profit +8% $BAWSAQ",
-      "symbol": null,
-      "action": "SELL take profit +8% $BAWSAQ"
-    },
-    {
-      "ts": "17 Nov 2026, 0:33 GMT",
-      "hhmm": "00:33",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "00:33 RISK: SELL stop −5% $ETF",
-      "message": "00:33 RISK: SELL stop −5% $ETF",
-      "symbol": null,
-      "action": "SELL stop −5% $ETF"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
-      "badge": "75 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
+      "badge": "55 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "75 pairs · 1 passed liquidity, age, and 5m momentum",
-      "badge": "1 passed",
+      "activity": "55 pairs · 0 passed liquidity, age, and 5m momentum",
+      "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2575,34 +2575,12 @@
   ],
   "positions": [
     {
-      "symbol": "LEOSTAR",
-      "name": "LEOSTAR",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.025241756585040173,
-      "qty_display": "0.02524176",
-      "entry_price": 0.001160775,
-      "current_price": 0.001149,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.010144084770950301,
-      "hard_stop": 0.0011027362499999999,
-      "trail_activate": 0.001207206,
-      "opened_at": "17 Nov 2026, 1:06 GMT",
-      "reason": "BUY 10% $LEOSTAR @ 0.00116077 — 5m +4.5% vol $5,299 buys 678/sells 637",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/2cMcMEX3Eqo86tUrVe5dgHp5GZNwqQ6crqm22UeZpump?chain=sol"
-    },
-    {
       "symbol": "BAWSAQ",
       "name": "BAWSAQ",
       "asset_class": "crypto",
       "agent": "MIRAX",
-      "qty": 0.015298186949679148,
-      "qty_display": "0.01529819",
+      "qty": 0.01503166801327359,
+      "qty_display": "0.01503167",
       "entry_price": 0.0018760393041609372,
       "current_price": 0.001866705775284515,
       "change_pct": null,
@@ -2611,7 +2589,7 @@
       "unrealized_pct": -0.004975124378109319,
       "hard_stop": 0.0017822373389528904,
       "trail_activate": 0.0019510808763273748,
-      "opened_at": "17 Nov 2026, 1:08 GMT",
+      "opened_at": "17 Nov 2026, 1:09 GMT",
       "reason": "BUY 10% $BAWSAQ @ 0.00187604 — 5m +6.4% vol $13,778 buys 730/sells 367",
       "score": null,
       "tag": "",
@@ -2620,6 +2598,66 @@
     }
   ],
   "fills": [
+    {
+      "id": "f6809",
+      "time": "17 Nov 2026, 1:09 GMT",
+      "ts": "2026-11-17T01:09:06.555879+00:00",
+      "side": "buy",
+      "symbol": "BAWSAQ",
+      "name": "BAWSAQ",
+      "asset_class": "crypto",
+      "qty": 0.01503166801327359,
+      "qty_display": "0.01503167",
+      "price": 0.0018760393041609372,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f6808",
+      "time": "17 Nov 2026, 1:09 GMT",
+      "ts": "2026-11-17T01:09:06.555531+00:00",
+      "side": "sell",
+      "symbol": "LEOSTAR",
+      "name": "LEOSTAR",
+      "asset_class": "crypto",
+      "qty": 0.025241756585040173,
+      "qty_display": "0.02524176",
+      "price": 0.0010646499999999999,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.1009732103274293,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f6807",
+      "time": "17 Nov 2026, 1:08 GMT",
+      "ts": "2026-11-17T01:08:58.478128+00:00",
+      "side": "sell",
+      "symbol": "BAWSAQ",
+      "name": "BAWSAQ",
+      "asset_class": "crypto",
+      "qty": 0.015298186949679148,
+      "qty_display": "0.01529819",
+      "price": 0.00171339,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.10478342248823105,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f6806",
       "time": "17 Nov 2026, 1:08 GMT",
@@ -138742,11 +138780,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 3402,
-    "win_rate": 0.30364491475602584,
+    "closed_trades": 3404,
+    "win_rate": 0.30346650998824914,
     "realized_pnl": -100.0,
     "unrealized_pnl": -0.0,
-    "fills": 6806
+    "fills": 6809
   },
   "ok": true,
   "totals_cumulative": {
@@ -138886,13 +138924,6 @@
   },
   "ticker": [
     {
-      "symbol": "LEOSTAR",
-      "name": "LEOSTAR",
-      "price": 0.001149,
-      "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
       "symbol": "BAWSAQ",
       "name": "BAWSAQ",
       "price": 0.001866705775284515,
@@ -138947,8 +138978,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 84.49,
-      "return_pct": -0.15507981999999998,
+      "equity": 84.52,
+      "return_pct": -0.15483638,
       "closed_trades": 258,
       "win_rate": 0.31007751937984496,
       "realized_pnl": -15.56
@@ -138966,9 +138997,9 @@
       "id": "axiom",
       "name": "Axiom scalper",
       "equity": 0.0,
-      "return_pct": -0.99999714,
-      "closed_trades": 3402,
-      "win_rate": 0.30364491475602584,
+      "return_pct": -0.99999719,
+      "closed_trades": 3404,
+      "win_rate": 0.30346650998824914,
       "realized_pnl": -100.0
     }
   ],
@@ -138982,24 +139013,14 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "WASTED",
-      "mint": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
-      "link": "https://axiom.trade/meme/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump?chain=sol",
-      "reason": "5m volume $2,729 under $5k",
+      "symbol": "DIGS",
+      "mint": "9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump",
+      "link": "https://axiom.trade/meme/9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump?chain=sol",
+      "reason": "5m volume $2,025 under $5k",
       "gates": 1,
-      "chg_m5": 5.398,
-      "vol_m5": 2729.0,
-      "score": 8.12
-    },
-    {
-      "symbol": "COGE",
-      "mint": "BRf3SXRk8BdXmBZDJfKyEhbYmqBVf8843ctEMcD4pump",
-      "link": "https://axiom.trade/meme/BRf3SXRk8BdXmBZDJfKyEhbYmqBVf8843ctEMcD4pump?chain=sol",
-      "reason": "5m volume $196 under $5k",
-      "gates": 1,
-      "chg_m5": 2.48,
-      "vol_m5": 196.0,
-      "score": 1.86
+      "chg_m5": 1.17,
+      "vol_m5": 2025.0,
+      "score": 1.7
     },
     {
       "symbol": "GTA6",
@@ -139022,24 +139043,34 @@
       "score": 1.42
     },
     {
-      "symbol": "HOGE",
-      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
-      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
-      "reason": "5m volume $2,356 under $5k · buy/sell 24/29 under 1.05",
-      "gates": 2,
-      "chg_m5": 3.275,
-      "vol_m5": 2356.0,
-      "score": 2.0
+      "symbol": "LEOSTAR",
+      "mint": "2cMcMEX3Eqo86tUrVe5dgHp5GZNwqQ6crqm22UeZpump",
+      "link": "https://axiom.trade/meme/2cMcMEX3Eqo86tUrVe5dgHp5GZNwqQ6crqm22UeZpump?chain=sol",
+      "reason": "5m -5.4% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -5.44,
+      "vol_m5": 11907.0,
+      "score": -9.28
     },
     {
-      "symbol": "BP",
-      "mint": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
-      "link": "https://axiom.trade/meme/BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy?chain=sol",
-      "reason": "market cap $249,460,313 outside $100k–$100M · 5m +0.3% outside +1% to +40%",
+      "symbol": "BIG",
+      "mint": "34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump",
+      "link": "https://axiom.trade/meme/34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump?chain=sol",
+      "reason": "5m volume $309 under $5k · buy/sell 128/130 under 1.05",
       "gates": 2,
-      "chg_m5": 0.297,
-      "vol_m5": 179317.0,
-      "score": 0.88
+      "chg_m5": 3.7,
+      "vol_m5": 309.0,
+      "score": 10.73
+    },
+    {
+      "symbol": "WASTED",
+      "mint": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
+      "link": "https://axiom.trade/meme/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump?chain=sol",
+      "reason": "5m volume $3,734 under $5k · buy/sell 20/27 under 1.05",
+      "gates": 2,
+      "chg_m5": 2.99,
+      "vol_m5": 3734.0,
+      "score": 2.94
     }
   ],
   "helius_status": "",
@@ -139047,7 +139078,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-17T01:08:42.453359+00:00",
-  "checked_at_london": "17 Nov 2026, 1:08 GMT",
+  "checked_at": "2026-11-17T01:09:22.419638+00:00",
+  "checked_at_london": "17 Nov 2026, 1:09 GMT",
   "who_we_copy": null
 }
