@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.0166666665,
   "progress": 1.6666666666666666e-10,
-  "win_rate": 0.2949222797927461,
-  "wins": 1423,
-  "losses": 3402,
-  "closed_trades": 4825,
+  "win_rate": 0.29500725088046403,
+  "wins": 1424,
+  "losses": 3403,
+  "closed_trades": 4827,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 46429,
-  "open_count": 4,
-  "last_updated_london": "18 Nov 2026, 16:05 GMT",
-  "last_updated": "2026-11-18T16:05:11.523089+00:00",
+  "open_count": 2,
+  "last_updated_london": "18 Nov 2026, 16:06 GMT",
+  "last_updated": "2026-11-18T16:06:26.018282+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "18 Nov 2026, 10:15 GMT",
-      "value": 0.0
-    },
     {
       "label": "18 Nov 2026, 10:16 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "18 Nov 2026, 16:05 GMT",
       "value": 0.0
+    },
+    {
+      "label": "18 Nov 2026, 16:06 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "18 Nov 2026, 16:06 GMT",
+      "hhmm": "16:06",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "16:06 RISK: SELL stop −5% $Apocrycoin",
+      "message": "16:06 RISK: SELL stop −5% $Apocrycoin",
+      "symbol": null,
+      "action": "SELL stop −5% $Apocrycoin"
+    },
+    {
+      "ts": "18 Nov 2026, 16:06 GMT",
+      "hhmm": "16:06",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "16:06 EXECUTOR: SELL take profit +8% $Leonida",
+      "message": "16:06 EXECUTOR: SELL take profit +8% $Leonida",
+      "symbol": null,
+      "action": "SELL take profit +8% $Leonida"
+    },
     {
       "ts": "18 Nov 2026, 16:05 GMT",
       "hhmm": "16:05",
@@ -2441,26 +2461,6 @@
       "message": "15:53 EXECUTOR: SELL take profit +8% $DCTY",
       "symbol": null,
       "action": "SELL take profit +8% $DCTY"
-    },
-    {
-      "ts": "18 Nov 2026, 15:53 GMT",
-      "hhmm": "15:53",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "15:53 EXECUTOR: SELL take profit +8% $GTAKID",
-      "message": "15:53 EXECUTOR: SELL take profit +8% $GTAKID",
-      "symbol": null,
-      "action": "SELL take profit +8% $GTAKID"
-    },
-    {
-      "ts": "18 Nov 2026, 15:52 GMT",
-      "hhmm": "15:52",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "15:52 EXECUTOR: BUY 10% $DCTY @ 0.000802794 — 5m +34.0% vol $135,419 buys 740/sells 544",
-      "message": "15:52 EXECUTOR: BUY 10% $DCTY @ 0.000802794 — 5m +34.0% vol $135,419 buys 740/sells 544",
-      "symbol": null,
-      "action": "BUY 10% $DCTY @ 0.000802794 — 5m +34.0% vol $135,419 buys 740/sells 544"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
-      "badge": "41 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
+      "badge": "73 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "41 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "73 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "4/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2575,28 +2575,6 @@
   ],
   "positions": [
     {
-      "symbol": "Leonida",
-      "name": "Leonida",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 6.242314150701949e-05,
-      "qty_display": "0.00006242",
-      "entry_price": 0.0016019699999999997,
-      "current_price": 0.001718,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.07242957109059489,
-      "hard_stop": 0.0015218714999999997,
-      "trail_activate": 0.0016660487999999997,
-      "opened_at": "18 Nov 2026, 15:56 GMT",
-      "reason": "BUY 10% $Leonida @ 0.00160197 — 5m +2.9% vol $5,261 buys 148/sells 63",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/9rbKkz2BDQBVgZmrHY6d7PTq2ge91gkpEyE4y9PPpump?chain=sol"
-    },
-    {
       "symbol": "pippin",
       "name": "pippin",
       "asset_class": "crypto",
@@ -2604,11 +2582,11 @@
       "qty": 5.4766754211128605e-06,
       "qty_display": "0.00000548",
       "entry_price": 0.018259252614185414,
-      "current_price": 0.01835,
+      "current_price": 0.0183935538979386,
       "change_pct": null,
-      "price_source": "dexscreener",
+      "price_source": "geckoterminal",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": 0.004969939774210008,
+      "unrealized_pct": 0.007355245397549615,
       "hard_stop": 0.01734628998347614,
       "trail_activate": 0.018989622718752833,
       "opened_at": "18 Nov 2026, 16:01 GMT",
@@ -2619,28 +2597,6 @@
       "link": "https://axiom.trade/meme/Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump?chain=sol"
     },
     {
-      "symbol": "Apocrycoin",
-      "name": "Apocrycoin",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0008468296813803324,
-      "qty_display": "0.00084683",
-      "entry_price": 0.00011808749999999999,
-      "current_price": 0.0001187,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": -0.0,
-      "unrealized_pct": 0.005186831798454694,
-      "hard_stop": 0.00011218312499999998,
-      "trail_activate": 0.000122811,
-      "opened_at": "18 Nov 2026, 16:04 GMT",
-      "reason": "BUY 10% $Apocrycoin @ 0.000118087 — 5m +5.5% vol $49,862 buys 516/sells 445",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/79rE2ac8JhN3U12QLhymgDmCTiwBN1d4maTcK1fhpump?chain=sol"
-    },
-    {
       "symbol": "HOGE",
       "name": "HOGE",
       "asset_class": "crypto",
@@ -2648,11 +2604,11 @@
       "qty": 7.370216355271624e-05,
       "qty_display": "0.0000737",
       "entry_price": 0.0013568122722540424,
-      "current_price": 0.001402,
+      "current_price": 0.001381015385279863,
       "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.033304333009081866,
+      "price_source": "geckoterminal",
+      "unrealized_pnl": -0.0,
+      "unrealized_pct": 0.017838217947139023,
       "hard_stop": 0.0012889716586413403,
       "trail_activate": 0.0014110847631442042,
       "opened_at": "18 Nov 2026, 16:04 GMT",
@@ -2664,6 +2620,46 @@
     }
   ],
   "fills": [
+    {
+      "id": "f9656",
+      "time": "18 Nov 2026, 16:06 GMT",
+      "ts": "2026-11-18T16:06:26.017824+00:00",
+      "side": "sell",
+      "symbol": "Apocrycoin",
+      "name": "Apocrycoin",
+      "asset_class": "crypto",
+      "qty": 0.0008468296813803324,
+      "qty_display": "0.00084683",
+      "price": 9.454489999999999e-05,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.21521986863659373,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f9655",
+      "time": "18 Nov 2026, 16:06 GMT",
+      "ts": "2026-11-18T16:06:26.017741+00:00",
+      "side": "sell",
+      "symbol": "Leonida",
+      "name": "Leonida",
+      "asset_class": "crypto",
+      "qty": 6.242314150701949e-05,
+      "qty_display": "0.00006242",
+      "price": 0.00173528,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.061766462419383994,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f9654",
       "time": "18 Nov 2026, 16:04 GMT",
@@ -195746,11 +195742,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 4825,
-    "win_rate": 0.2949222797927461,
+    "closed_trades": 4827,
+    "win_rate": 0.29500725088046403,
     "realized_pnl": -100.0,
-    "unrealized_pnl": 0.0,
-    "fills": 9654
+    "unrealized_pnl": -0.0,
+    "fills": 9656
   },
   "ok": true,
   "totals_cumulative": {
@@ -195759,16 +195755,6 @@
     "traded": 4829
   },
   "events": [
-    {
-      "hhmm": "15:28",
-      "ts": "2026-11-18T15:28:35.464654+00:00",
-      "london": "18 Nov 2026, 15:28 GMT",
-      "agent": "EXECUTOR",
-      "action": "SELL take profit +8% $DCTY",
-      "symbol": "",
-      "reason": "SELL take profit +8% $DCTY",
-      "line": "15:28 EXECUTOR: SELL take profit +8% $DCTY"
-    },
     {
       "hhmm": "15:37",
       "ts": "2026-11-18T15:37:34.702458+00:00",
@@ -195878,6 +195864,16 @@
       "symbol": "",
       "reason": "SELL take profit +8% $YUKON",
       "line": "15:58 EXECUTOR: SELL take profit +8% $YUKON"
+    },
+    {
+      "hhmm": "16:06",
+      "ts": "2026-11-18T16:06:26.017791+00:00",
+      "london": "18 Nov 2026, 16:06 GMT",
+      "agent": "EXECUTOR",
+      "action": "SELL take profit +8% $Leonida",
+      "symbol": "",
+      "reason": "SELL take profit +8% $Leonida",
+      "line": "16:06 EXECUTOR: SELL take profit +8% $Leonida"
     }
   ],
   "role_colors": {
@@ -195890,32 +195886,18 @@
   },
   "ticker": [
     {
-      "symbol": "Leonida",
-      "name": "Leonida",
-      "price": 0.001718,
-      "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
       "symbol": "pippin",
       "name": "pippin",
-      "price": 0.01835,
+      "price": 0.0183935538979386,
       "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
-      "symbol": "Apocrycoin",
-      "name": "Apocrycoin",
-      "price": 0.0001187,
-      "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     },
     {
       "symbol": "HOGE",
       "name": "HOGE",
-      "price": 0.001402,
+      "price": 0.001381015385279863,
       "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     }
   ],
   "desk": "axiom",
@@ -195985,8 +195967,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -0.9999999900000001,
-      "closed_trades": 4825,
-      "win_rate": 0.2949222797927461,
+      "closed_trades": 4827,
+      "win_rate": 0.29500725088046403,
       "realized_pnl": -100.0
     }
   ],
@@ -196003,61 +195985,61 @@
       "symbol": "GLITCH",
       "mint": "8Xg89xT8Ve34sKiYqYuMs46mycREsCA2F362UscRpump",
       "link": "https://axiom.trade/meme/8Xg89xT8Ve34sKiYqYuMs46mycREsCA2F362UscRpump?chain=sol",
-      "reason": "buy/sell 25/28 under 1.05",
+      "reason": "buy/sell 20/24 under 1.05",
       "gates": 1,
-      "chg_m5": 16.05,
-      "vol_m5": 6558.0,
-      "score": 31.76
+      "chg_m5": 17.53,
+      "vol_m5": 5564.0,
+      "score": 27.64
     },
     {
       "symbol": "JALU",
       "mint": "BSsmLA6UN8fzJ8qUkV4KwC5LxR7ab3TaUtcwvAyJpump",
       "link": "https://axiom.trade/meme/BSsmLA6UN8fzJ8qUkV4KwC5LxR7ab3TaUtcwvAyJpump?chain=sol",
-      "reason": "5m volume $1,713 under $5k",
+      "reason": "5m volume $2,527 under $5k",
       "gates": 1,
-      "chg_m5": 9.68,
-      "vol_m5": 1713.0,
-      "score": 8.57
+      "chg_m5": 10.47,
+      "vol_m5": 2527.0,
+      "score": 13.88
     },
     {
-      "symbol": "DIGS",
-      "mint": "9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump",
-      "link": "https://axiom.trade/meme/9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump?chain=sol",
-      "reason": "5m volume $1,787 under $5k",
+      "symbol": "WASTED",
+      "mint": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
+      "link": "https://axiom.trade/meme/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump?chain=sol",
+      "reason": "buy/sell 58/71 under 1.05",
       "gates": 1,
-      "chg_m5": 2.13,
-      "vol_m5": 1787.0,
-      "score": 1.83
+      "chg_m5": 5.171,
+      "vol_m5": 10767.0,
+      "score": 12.67
     },
     {
       "symbol": "Leonida",
-      "mint": "BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump",
-      "link": "https://axiom.trade/meme/BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump?chain=sol",
-      "reason": "5m -5.0% outside +1% to +40%",
+      "mint": "9rbKkz2BDQBVgZmrHY6d7PTq2ge91gkpEyE4y9PPpump",
+      "link": "https://axiom.trade/meme/9rbKkz2BDQBVgZmrHY6d7PTq2ge91gkpEyE4y9PPpump?chain=sol",
+      "reason": "5m volume $2,443 under $5k",
       "gates": 1,
-      "chg_m5": -4.95,
-      "vol_m5": 5538.0,
-      "score": -27.22
+      "chg_m5": 4.24,
+      "vol_m5": 2443.0,
+      "score": 5.9
     },
     {
-      "symbol": "GTAVI",
-      "mint": "6wiaCq8oQiupFfeDU4ouAuYnCKXCch581HAmpvrxpump",
-      "link": "https://axiom.trade/meme/6wiaCq8oQiupFfeDU4ouAuYnCKXCch581HAmpvrxpump?chain=sol",
-      "reason": "5m -33.7% outside +1% to +40%",
+      "symbol": "Apocrycoin",
+      "mint": "79rE2ac8JhN3U12QLhymgDmCTiwBN1d4maTcK1fhpump",
+      "link": "https://axiom.trade/meme/79rE2ac8JhN3U12QLhymgDmCTiwBN1d4maTcK1fhpump?chain=sol",
+      "reason": "market cap $94,888 outside $100k–$100M",
       "gates": 1,
-      "chg_m5": -33.74,
-      "vol_m5": 11473.0,
-      "score": -129.84
+      "chg_m5": 4.23,
+      "vol_m5": 43284.0,
+      "score": 3.14
     },
     {
-      "symbol": "DACITY",
-      "mint": "CzC7UcUzKL5MPbP4eVmNsT4i6QyeppHMwTQg9dd9pump",
-      "link": "https://axiom.trade/meme/CzC7UcUzKL5MPbP4eVmNsT4i6QyeppHMwTQg9dd9pump?chain=sol",
-      "reason": "liquidity $19,756 under $25k · market cap $85,647 outside $100k–$100M",
-      "gates": 2,
-      "chg_m5": 7.03,
-      "vol_m5": 11363.0,
-      "score": 60.58
+      "symbol": "GTA",
+      "mint": "7KBFymfGAe8MmKEuNersoM59TvpiHzZ76jP7rSLrpump",
+      "link": "https://axiom.trade/meme/7KBFymfGAe8MmKEuNersoM59TvpiHzZ76jP7rSLrpump?chain=sol",
+      "reason": "5m volume $1,041 under $5k",
+      "gates": 1,
+      "chg_m5": 2.49,
+      "vol_m5": 1041.0,
+      "score": 2.59
     }
   ],
   "helius_status": "",
@@ -196065,7 +196047,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-18T16:05:11.523089+00:00",
-  "checked_at_london": "18 Nov 2026, 16:05 GMT",
+  "checked_at": "2026-11-18T16:06:26.018282+00:00",
+  "checked_at_london": "18 Nov 2026, 16:06 GMT",
   "who_we_copy": null
 }
