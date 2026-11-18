@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 48430,
+  "ticks": 48459,
   "open_count": 2,
   "last_updated_london": "18 Nov 2026, 21:53 GMT",
-  "last_updated": "2026-11-18T21:53:30.303917+00:00",
+  "last_updated": "2026-11-18T21:53:54.263173+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 5255,
+  "traded": 5260,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 5255,
+    "traded": 5260,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "18 Nov 2026, 15:57 GMT",
-      "value": 0.0
-    },
     {
       "label": "18 Nov 2026, 15:58 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "18 Nov 2026, 21:53 GMT",
       "value": 0.0
+    },
+    {
+      "label": "18 Nov 2026, 21:53 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "18 Nov 2026, 21:53 GMT",
+      "hhmm": "21:53",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "21:53 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "message": "21:53 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 2 open, equity $0.00"
+    },
     {
       "ts": "18 Nov 2026, 21:52 GMT",
       "hhmm": "21:52",
@@ -2451,16 +2461,6 @@
       "message": "21:40 EXECUTOR: SELL take profit +8% $DCTY",
       "symbol": null,
       "action": "SELL take profit +8% $DCTY"
-    },
-    {
-      "ts": "18 Nov 2026, 21:40 GMT",
-      "hhmm": "21:40",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "21:40 EXECUTOR: BUY 10% $DCTY @ 0.0135616 — 5m +9.2% vol $78,211 buys 518/sells 321",
-      "message": "21:40 EXECUTOR: BUY 10% $DCTY @ 0.0135616 — 5m +9.2% vol $78,211 buys 518/sells 321",
-      "symbol": null,
-      "action": "BUY 10% $DCTY @ 0.0135616 — 5m +9.2% vol $78,211 buys 518/sells 321"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "53 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "39 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "53 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "39 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.01573677097387965,
-      "current_price": 0.01563649123510384,
+      "current_price": 0.01574,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.006372319896010281,
+      "unrealized_pct": 0.00020518987826090296,
       "hard_stop": 0.014949932425185667,
       "trail_activate": 0.016366241812834838,
       "opened_at": "18 Nov 2026, 21:52 GMT",
@@ -212990,9 +212990,9 @@
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 48430,
+    "scanned": 48459,
     "killed": 0,
-    "traded": 5255
+    "traded": 5260
   },
   "events": [
     {
@@ -213128,9 +213128,9 @@
     {
       "symbol": "DCTY",
       "name": "DCTY",
-      "price": 0.01563649123510384,
+      "price": 0.01574,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "CRIME",
@@ -213252,16 +213252,6 @@
       "score": 5.79
     },
     {
-      "symbol": "Max",
-      "mint": "5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump",
-      "link": "https://axiom.trade/meme/5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump?chain=sol",
-      "reason": "5m volume $738 under $5k",
-      "gates": 1,
-      "chg_m5": 1.75,
-      "vol_m5": 738.0,
-      "score": 2.67
-    },
-    {
       "symbol": "THUG",
       "mint": "HoqJaoes6yfL8YEsHGfENwVKT7LrAPy97ZDg9hmBu4Ep",
       "link": "https://axiom.trade/meme/HoqJaoes6yfL8YEsHGfENwVKT7LrAPy97ZDg9hmBu4Ep?chain=sol",
@@ -213280,6 +213270,16 @@
       "chg_m5": 4.26,
       "vol_m5": 2276.0,
       "score": 1.71
+    },
+    {
+      "symbol": "PumpMas",
+      "mint": "EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump",
+      "link": "https://axiom.trade/meme/EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump?chain=sol",
+      "reason": "5m volume $224 under $5k",
+      "gates": 1,
+      "chg_m5": 1.42,
+      "vol_m5": 224.0,
+      "score": 1.21
     }
   ],
   "helius_status": "",
@@ -213287,7 +213287,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-18T21:53:30.303917+00:00",
+  "checked_at": "2026-11-18T21:53:54.263173+00:00",
   "checked_at_london": "18 Nov 2026, 21:53 GMT",
   "who_we_copy": null
 }
