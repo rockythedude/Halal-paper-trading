@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.0166666665,
   "progress": 1.6666666666666666e-10,
-  "win_rate": 0.295641187618446,
-  "wins": 1404,
-  "losses": 3345,
-  "closed_trades": 4749,
+  "win_rate": 0.2957272153230899,
+  "wins": 1405,
+  "losses": 3346,
+  "closed_trades": 4751,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 46081,
-  "open_count": 6,
-  "last_updated_london": "18 Nov 2026, 15:06 GMT",
-  "last_updated": "2026-11-18T15:06:30.431404+00:00",
+  "open_count": 5,
+  "last_updated_london": "18 Nov 2026, 15:07 GMT",
+  "last_updated": "2026-11-18T15:07:10.605582+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "18 Nov 2026, 9:17 GMT",
-      "value": 0.0
-    },
     {
       "label": "18 Nov 2026, 9:18 GMT",
       "value": 0.0
@@ -2058,10 +2054,44 @@
     {
       "label": "18 Nov 2026, 15:06 GMT",
       "value": 0.0
+    },
+    {
+      "label": "18 Nov 2026, 15:07 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "18 Nov 2026, 15:07 GMT",
+      "hhmm": "15:07",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "15:07 EXECUTOR: BUY 10% $JALU @ 0.000316876 — 5m +4.3% vol $5,752 buys 658/sells 111",
+      "message": "15:07 EXECUTOR: BUY 10% $JALU @ 0.000316876 — 5m +4.3% vol $5,752 buys 658/sells 111",
+      "symbol": null,
+      "action": "BUY 10% $JALU @ 0.000316876 — 5m +4.3% vol $5,752 buys 658/sells 111"
+    },
+    {
+      "ts": "18 Nov 2026, 15:07 GMT",
+      "hhmm": "15:07",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "15:07 EXECUTOR: SELL take profit +8% $Leonida",
+      "message": "15:07 EXECUTOR: SELL take profit +8% $Leonida",
+      "symbol": null,
+      "action": "SELL take profit +8% $Leonida"
+    },
+    {
+      "ts": "18 Nov 2026, 15:06 GMT",
+      "hhmm": "15:06",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "15:06 RISK: SELL stop −5% $JESTER",
+      "message": "15:06 RISK: SELL stop −5% $JESTER",
+      "symbol": null,
+      "action": "SELL stop −5% $JESTER"
+    },
     {
       "ts": "18 Nov 2026, 15:05 GMT",
       "hhmm": "15:05",
@@ -2431,36 +2461,6 @@
       "message": "14:37 RISK: SELL stop −5% $pippin",
       "symbol": null,
       "action": "SELL stop −5% $pippin"
-    },
-    {
-      "ts": "18 Nov 2026, 14:35 GMT",
-      "hhmm": "14:35",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "14:35 LOGGER: run complete — 29 polls, 5 open, equity $0.00",
-      "message": "14:35 LOGGER: run complete — 29 polls, 5 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 5 open, equity $0.00"
-    },
-    {
-      "ts": "18 Nov 2026, 14:35 GMT",
-      "hhmm": "14:35",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "14:35 RISK: SELL stop −5% $DIGS",
-      "message": "14:35 RISK: SELL stop −5% $DIGS",
-      "symbol": null,
-      "action": "SELL stop −5% $DIGS"
-    },
-    {
-      "ts": "18 Nov 2026, 14:35 GMT",
-      "hhmm": "14:35",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "14:35 EXECUTOR: BUY 10% $JALU @ 0.000286827 — 5m +4.0% vol $5,101 buys 654/sells 113",
-      "message": "14:35 EXECUTOR: BUY 10% $JALU @ 0.000286827 — 5m +4.0% vol $5,101 buys 654/sells 113",
-      "symbol": null,
-      "action": "BUY 10% $JALU @ 0.000286827 — 5m +4.0% vol $5,101 buys 654/sells 113"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
-      "badge": "77 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
+      "badge": "64 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "77 pairs · 2 passed liquidity, age, and 5m momentum",
-      "badge": "2 passed",
+      "activity": "64 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "6 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "6/6",
+      "activity": "5 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "5/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 1.0677009997199269e-05,
       "qty_display": "0.00001068",
       "entry_price": 0.009365917988859373,
-      "current_price": 0.009404864036299424,
+      "current_price": 0.009426,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": 0.0041582733786882375,
+      "unrealized_pct": 0.006414962336003249,
       "hard_stop": 0.008897622089416404,
       "trail_activate": 0.009740554708413748,
       "opened_at": "18 Nov 2026, 14:49 GMT",
@@ -2597,28 +2597,6 @@
       "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol"
     },
     {
-      "symbol": "Leonida",
-      "name": "Leonida",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 6.390654307141238e-05,
-      "qty_display": "0.00006391",
-      "entry_price": 0.0015647849999999997,
-      "current_price": 0.001638,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.046789175509734715,
-      "hard_stop": 0.0014865457499999997,
-      "trail_activate": 0.0016273763999999997,
-      "opened_at": "18 Nov 2026, 14:50 GMT",
-      "reason": "BUY 10% $Leonida @ 0.00156478 — 5m +3.3% vol $5,174 buys 155/sells 51",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/9rbKkz2BDQBVgZmrHY6d7PTq2ge91gkpEyE4y9PPpump?chain=sol"
-    },
-    {
       "symbol": "GTA6",
       "name": "GTA6",
       "asset_class": "crypto",
@@ -2626,11 +2604,11 @@
       "qty": 9.665715315164859e-08,
       "qty_display": "0.0000001",
       "entry_price": 1.0345845779577918,
-      "current_price": 1.0358424630607244,
+      "current_price": 1.034,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": 0.0012158359304133004,
+      "unrealized_pct": -0.0005650364119536011,
       "hard_stop": 0.9828553490599021,
       "trail_activate": 1.0759679610761035,
       "opened_at": "18 Nov 2026, 14:51 GMT",
@@ -2648,11 +2626,11 @@
       "qty": 2.2542953037364805e-06,
       "qty_display": "0.00000225",
       "entry_price": 0.044359760602016345,
-      "current_price": 0.04411405506124707,
+      "current_price": 0.04404,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.005538928466582105,
+      "unrealized_pct": -0.007208348234453932,
       "hard_stop": 0.04214177257191552,
       "trail_activate": 0.046134151026097,
       "opened_at": "18 Nov 2026, 14:55 GMT",
@@ -2670,11 +2648,11 @@
       "qty": 7.609449946813814e-06,
       "qty_display": "0.00000761",
       "entry_price": 0.01314155434347412,
-      "current_price": 0.01283320834813606,
+      "current_price": 0.01322,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.023463434178254583,
+      "unrealized_pct": 0.005969282968786294,
       "hard_stop": 0.012484476626300414,
       "trail_activate": 0.013667216517213086,
       "opened_at": "18 Nov 2026, 15:02 GMT",
@@ -2685,29 +2663,89 @@
       "link": "https://axiom.trade/meme/4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz?chain=sol"
     },
     {
-      "symbol": "JESTER",
-      "name": "JESTER",
+      "symbol": "JALU",
+      "name": "JALU",
       "asset_class": "crypto",
       "agent": "MIRAX",
-      "qty": 0.00010367002246529387,
-      "qty_display": "0.00010367",
-      "entry_price": 0.0009645989999999999,
-      "current_price": 0.0009441,
+      "qty": 0.0003155803601718651,
+      "qty_display": "0.00031558",
+      "entry_price": 0.00031687649999999996,
+      "current_price": 0.0003153,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.02125131790516044,
-      "hard_stop": 0.0009163690499999999,
-      "trail_activate": 0.0010031829599999999,
-      "opened_at": "18 Nov 2026, 15:05 GMT",
-      "reason": "BUY 10% $JESTER @ 0.000964599 — 5m +18.6% vol $10,786 buys 39/sells 31",
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.000301032675,
+      "trail_activate": 0.00032955155999999996,
+      "opened_at": "18 Nov 2026, 15:07 GMT",
+      "reason": "BUY 10% $JALU @ 0.000316876 — 5m +4.3% vol $5,752 buys 658/sells 111",
       "score": null,
       "tag": "",
       "venue": "",
-      "link": "https://axiom.trade/meme/VAYMVikuYQpWz5sXCeCsQDeho2QcGqDSNq9rhCspump?chain=sol"
+      "link": "https://axiom.trade/meme/BSsmLA6UN8fzJ8qUkV4KwC5LxR7ab3TaUtcwvAyJpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f9507",
+      "time": "18 Nov 2026, 15:07 GMT",
+      "ts": "2026-11-18T15:07:10.605527+00:00",
+      "side": "buy",
+      "symbol": "JALU",
+      "name": "JALU",
+      "asset_class": "crypto",
+      "qty": 0.0003155803601718651,
+      "qty_display": "0.00031558",
+      "price": 0.00031687649999999996,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f9506",
+      "time": "18 Nov 2026, 15:07 GMT",
+      "ts": "2026-11-18T15:07:10.605189+00:00",
+      "side": "sell",
+      "symbol": "Leonida",
+      "name": "Leonida",
+      "asset_class": "crypto",
+      "qty": 6.390654307141238e-05,
+      "qty_display": "0.00006391",
+      "price": 0.00169349,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.06082020504699101,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f9505",
+      "time": "18 Nov 2026, 15:06 GMT",
+      "ts": "2026-11-18T15:06:46.253925+00:00",
+      "side": "sell",
+      "symbol": "JESTER",
+      "name": "JESTER",
+      "asset_class": "crypto",
+      "qty": 0.00010367002246529387,
+      "qty_display": "0.00010367",
+      "price": 0.000883958,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.1017470667208665,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f9504",
       "time": "18 Nov 2026, 15:05 GMT",
@@ -192790,11 +192828,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 4749,
-    "win_rate": 0.295641187618446,
+    "closed_trades": 4751,
+    "win_rate": 0.2957272153230899,
     "realized_pnl": -100.0,
     "unrealized_pnl": -0.0,
-    "fills": 9504
+    "fills": 9507
   },
   "ok": true,
   "totals_cumulative": {
@@ -192803,16 +192841,6 @@
     "traded": 4755
   },
   "events": [
-    {
-      "hhmm": "14:02",
-      "ts": "2026-11-18T14:02:33.252284+00:00",
-      "london": "18 Nov 2026, 14:02 GMT",
-      "agent": "EXECUTOR",
-      "action": "SELL take profit +8% $GTASZN",
-      "symbol": "",
-      "reason": "SELL take profit +8% $GTASZN",
-      "line": "14:02 EXECUTOR: SELL take profit +8% $GTASZN"
-    },
     {
       "hhmm": "14:08",
       "ts": "2026-11-18T14:08:13.862865+00:00",
@@ -192922,6 +192950,16 @@
       "symbol": "",
       "reason": "SELL take profit +8% $GTAVI",
       "line": "14:55 EXECUTOR: SELL take profit +8% $GTAVI"
+    },
+    {
+      "hhmm": "15:07",
+      "ts": "2026-11-18T15:07:10.605238+00:00",
+      "london": "18 Nov 2026, 15:07 GMT",
+      "agent": "EXECUTOR",
+      "action": "SELL take profit +8% $Leonida",
+      "symbol": "",
+      "reason": "SELL take profit +8% $Leonida",
+      "line": "15:07 EXECUTOR: SELL take profit +8% $Leonida"
     }
   ],
   "role_colors": {
@@ -192936,35 +192974,28 @@
     {
       "symbol": "mihao",
       "name": "mihao",
-      "price": 0.009404864036299424,
-      "change_pct": null,
-      "source": "geckoterminal"
-    },
-    {
-      "symbol": "Leonida",
-      "name": "Leonida",
-      "price": 0.001638,
+      "price": 0.009426,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
       "symbol": "GTA6",
       "name": "GTA6",
-      "price": 1.0358424630607244,
+      "price": 1.034,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "STONK",
       "name": "STONK",
-      "price": 0.04411405506124707,
+      "price": 0.04404,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
-      "symbol": "JESTER",
-      "name": "JESTER",
-      "price": 0.0009441,
+      "symbol": "JALU",
+      "name": "JALU",
+      "price": 0.0003153,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -193016,8 +193047,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 83.34,
-      "return_pct": -0.16663602999999994,
+      "equity": 83.23,
+      "return_pct": -0.16765026000000005,
       "closed_trades": 310,
       "win_rate": 0.32903225806451614,
       "realized_pnl": -16.78
@@ -193036,8 +193067,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -0.9999999900000001,
-      "closed_trades": 4749,
-      "win_rate": 0.295641187618446,
+      "closed_trades": 4751,
+      "win_rate": 0.2957272153230899,
       "realized_pnl": -100.0
     }
   ],
@@ -193051,44 +193082,54 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "LUNO",
-      "mint": "EVbsBwxqdbMqadwAsVZ6KP9SJiaNmLSHAAb4W2mUpump",
-      "link": "https://axiom.trade/meme/EVbsBwxqdbMqadwAsVZ6KP9SJiaNmLSHAAb4W2mUpump?chain=sol",
-      "reason": "5m volume $381 under $5k",
+      "symbol": "JESTER",
+      "mint": "VAYMVikuYQpWz5sXCeCsQDeho2QcGqDSNq9rhCspump",
+      "link": "https://axiom.trade/meme/VAYMVikuYQpWz5sXCeCsQDeho2QcGqDSNq9rhCspump?chain=sol",
+      "reason": "buy/sell 43/46 under 1.05",
       "gates": 1,
-      "chg_m5": 4.21,
-      "vol_m5": 381.0,
-      "score": 6.42
+      "chg_m5": 8.3,
+      "vol_m5": 13963.0,
+      "score": 23.28
     },
     {
-      "symbol": "Doubloon",
-      "mint": "9Xhg9eRG92jZGbBZvNdcWyEoyz7kjHtA9BP6BxniUPWL",
-      "link": "https://axiom.trade/meme/9Xhg9eRG92jZGbBZvNdcWyEoyz7kjHtA9BP6BxniUPWL?chain=sol",
-      "reason": "market cap $88,589 outside $100k–$100M",
+      "symbol": "Leonida",
+      "mint": "9rbKkz2BDQBVgZmrHY6d7PTq2ge91gkpEyE4y9PPpump",
+      "link": "https://axiom.trade/meme/9rbKkz2BDQBVgZmrHY6d7PTq2ge91gkpEyE4y9PPpump?chain=sol",
+      "reason": "5m volume $4,567 under $5k",
       "gates": 1,
-      "chg_m5": 2.37,
-      "vol_m5": 14167.0,
-      "score": 4.43
+      "chg_m5": 8.84,
+      "vol_m5": 4567.0,
+      "score": 21.6
     },
     {
-      "symbol": "CLAUDIA",
-      "mint": "2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM",
-      "link": "https://axiom.trade/meme/2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM?chain=sol",
-      "reason": "buy/sell 30/57 under 1.05",
+      "symbol": "THUG",
+      "mint": "HoqJaoes6yfL8YEsHGfENwVKT7LrAPy97ZDg9hmBu4Ep",
+      "link": "https://axiom.trade/meme/HoqJaoes6yfL8YEsHGfENwVKT7LrAPy97ZDg9hmBu4Ep?chain=sol",
+      "reason": "5m volume $330 under $5k",
       "gates": 1,
-      "chg_m5": 1.083,
-      "vol_m5": 8452.0,
-      "score": 0.57
+      "chg_m5": 1.23,
+      "vol_m5": 330.0,
+      "score": 5.38
+    },
+    {
+      "symbol": "DIGS",
+      "mint": "9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump",
+      "link": "https://axiom.trade/meme/9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump?chain=sol",
+      "reason": "5m -0.4% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -0.39,
+      "vol_m5": 5041.0,
+      "score": -0.69
     },
     {
       "symbol": "HOGE",
       "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
       "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
-      "reason": "5m -5.9% outside +1% to +40%",
+      "reason": "5m -1.4% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -5.94,
-      "vol_m5": 7007.0,
-      "score": -3.69
+      "chg_m5": -1.39,
+      "vol_m5": 7456.0,
+      "score": -0.96
     },
     {
       "symbol": "GTAVI",
@@ -193096,19 +193137,9 @@
       "link": "https://axiom.trade/meme/6wiaCq8oQiupFfeDU4ouAuYnCKXCch581HAmpvrxpump?chain=sol",
       "reason": "5m -2.3% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -2.28,
-      "vol_m5": 5962.0,
-      "score": -4.42
-    },
-    {
-      "symbol": "GTAVI",
-      "mint": "ERiM8NiCanarGEnWMnURAoxTuTvUXZbtJsPTirnHpump",
-      "link": "https://axiom.trade/meme/ERiM8NiCanarGEnWMnURAoxTuTvUXZbtJsPTirnHpump?chain=sol",
-      "reason": "5m -11.0% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -10.984,
-      "vol_m5": 6210.0,
-      "score": -23.35
+      "chg_m5": -2.26,
+      "vol_m5": 5925.0,
+      "score": -4.45
     }
   ],
   "helius_status": "",
@@ -193116,7 +193147,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-18T15:06:30.431404+00:00",
-  "checked_at_london": "18 Nov 2026, 15:06 GMT",
+  "checked_at": "2026-11-18T15:07:10.605582+00:00",
+  "checked_at_london": "18 Nov 2026, 15:07 GMT",
   "who_we_copy": null
 }
