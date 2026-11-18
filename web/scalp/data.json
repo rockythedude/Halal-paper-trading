@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.0166666665,
   "progress": 1.6666666666666666e-10,
-  "win_rate": 0.295397489539749,
+  "win_rate": 0.2952739439565036,
   "wins": 1412,
-  "losses": 3368,
-  "closed_trades": 4780,
+  "losses": 3370,
+  "closed_trades": 4782,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 46255,
-  "open_count": 6,
-  "last_updated_london": "18 Nov 2026, 15:34 GMT",
-  "last_updated": "2026-11-18T15:34:54.614198+00:00",
+  "open_count": 5,
+  "last_updated_london": "18 Nov 2026, 15:36 GMT",
+  "last_updated": "2026-11-18T15:36:22.744820+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "18 Nov 2026, 9:46 GMT",
-      "value": 0.0
-    },
     {
       "label": "18 Nov 2026, 9:46 GMT",
       "value": 0.0
@@ -2058,10 +2054,44 @@
     {
       "label": "18 Nov 2026, 15:34 GMT",
       "value": 0.0
+    },
+    {
+      "label": "18 Nov 2026, 15:36 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "18 Nov 2026, 15:36 GMT",
+      "hhmm": "15:36",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "15:36 EXECUTOR: BUY 10% $GTAVI @ 0.0019916 — 5m +4.3% vol $5,985 buys 948/sells 256",
+      "message": "15:36 EXECUTOR: BUY 10% $GTAVI @ 0.0019916 — 5m +4.3% vol $5,985 buys 948/sells 256",
+      "symbol": null,
+      "action": "BUY 10% $GTAVI @ 0.0019916 — 5m +4.3% vol $5,985 buys 948/sells 256"
+    },
+    {
+      "ts": "18 Nov 2026, 15:36 GMT",
+      "hhmm": "15:36",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "15:36 RISK: SELL stop −5% $DCTY",
+      "message": "15:36 RISK: SELL stop −5% $DCTY",
+      "symbol": null,
+      "action": "SELL stop −5% $DCTY"
+    },
+    {
+      "ts": "18 Nov 2026, 15:36 GMT",
+      "hhmm": "15:36",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "15:36 EXECUTOR: SELL trail 2.5% $GTAVI",
+      "message": "15:36 EXECUTOR: SELL trail 2.5% $GTAVI",
+      "symbol": null,
+      "action": "SELL trail 2.5% $GTAVI"
+    },
     {
       "ts": "18 Nov 2026, 15:34 GMT",
       "hhmm": "15:34",
@@ -2431,36 +2461,6 @@
       "message": "15:19 EXECUTOR: BUY 10% $JALU @ 0.000354966 — 5m +1.2% vol $7,332 buys 655/sells 144",
       "symbol": null,
       "action": "BUY 10% $JALU @ 0.000354966 — 5m +1.2% vol $7,332 buys 655/sells 144"
-    },
-    {
-      "ts": "18 Nov 2026, 15:19 GMT",
-      "hhmm": "15:19",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "15:19 EXECUTOR: SELL take profit +8% $JALU",
-      "message": "15:19 EXECUTOR: SELL take profit +8% $JALU",
-      "symbol": null,
-      "action": "SELL take profit +8% $JALU"
-    },
-    {
-      "ts": "18 Nov 2026, 15:18 GMT",
-      "hhmm": "15:18",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "15:18 EXECUTOR: BUY 10% $GTAVI @ 0.000437318 — 5m +1.1% vol $5,058 buys 67/sells 31",
-      "message": "15:18 EXECUTOR: BUY 10% $GTAVI @ 0.000437318 — 5m +1.1% vol $5,058 buys 67/sells 31",
-      "symbol": null,
-      "action": "BUY 10% $GTAVI @ 0.000437318 — 5m +1.1% vol $5,058 buys 67/sells 31"
-    },
-    {
-      "ts": "18 Nov 2026, 15:18 GMT",
-      "hhmm": "15:18",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "15:18 RISK: SELL stop −5% $DCTY",
-      "message": "15:18 RISK: SELL stop −5% $DCTY",
-      "symbol": null,
-      "action": "SELL stop −5% $DCTY"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
-      "badge": "43 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
+      "badge": "77 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "43 pairs · 1 passed liquidity, age, and 5m momentum",
+      "activity": "77 pairs · 1 passed liquidity, age, and 5m momentum",
       "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "6 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "6/6",
+      "activity": "5 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "5/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 5.522913146279036e-06,
       "qty_display": "0.00000552",
       "entry_price": 0.0181063864941228,
-      "current_price": 0.01797,
+      "current_price": 0.018210754737464564,
       "change_pct": null,
-      "price_source": "dexscreener",
+      "price_source": "geckoterminal",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.007532507613657202,
+      "unrealized_pct": 0.005764167432062761,
       "hard_stop": 0.017201067169416658,
       "trail_activate": 0.018830641953887714,
       "opened_at": "18 Nov 2026, 15:21 GMT",
@@ -2604,11 +2604,11 @@
       "qty": 4.591364683320171e-10,
       "qty_display": "0",
       "entry_price": 217.80016813582017,
-      "current_price": 216.94,
+      "current_price": 217.90421049299096,
       "change_pct": null,
-      "price_source": "dexscreener",
+      "price_source": "geckoterminal",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.0039493456005220695,
+      "unrealized_pct": 0.000477696404283412,
       "hard_stop": 206.91015972902915,
       "trail_activate": 226.512174861253,
       "opened_at": "18 Nov 2026, 15:22 GMT",
@@ -2619,28 +2619,6 @@
       "link": "https://axiom.trade/meme/TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo?chain=sol"
     },
     {
-      "symbol": "GTAVI",
-      "name": "GTAVI",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 5.131639379174268e-05,
-      "qty_display": "0.00005132",
-      "entry_price": 0.0019486949999999999,
-      "current_price": 0.00206,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.057117712109899355,
-      "hard_stop": 0.0018512602499999998,
-      "trail_activate": 0.0020266427999999998,
-      "opened_at": "18 Nov 2026, 15:26 GMT",
-      "reason": "BUY 10% $GTAVI @ 0.00194869 — 5m +1.9% vol $7,753 buys 904/sells 241",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/6wiaCq8oQiupFfeDU4ouAuYnCKXCch581HAmpvrxpump?chain=sol"
-    },
-    {
       "symbol": "DIGS",
       "name": "DIGS",
       "asset_class": "crypto",
@@ -2648,11 +2626,11 @@
       "qty": 0.0002809217604804886,
       "qty_display": "0.00028092",
       "entry_price": 0.00035597099999999996,
-      "current_price": 0.0003425,
+      "current_price": 0.00036,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.0378429703543266,
+      "unrealized_pct": 0.011318337729758987,
       "hard_stop": 0.00033817244999999996,
       "trail_activate": 0.00037020984,
       "opened_at": "18 Nov 2026, 15:29 GMT",
@@ -2670,11 +2648,11 @@
       "qty": 0.00032347789510266714,
       "qty_display": "0.00032348",
       "entry_price": 0.00030914013450057063,
-      "current_price": 0.0003166,
+      "current_price": 0.00029473549507163014,
       "change_pct": null,
-      "price_source": "dexscreener",
+      "price_source": "geckoterminal",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": 0.024131015895044072,
+      "unrealized_pct": -0.046595824421865606,
       "hard_stop": 0.0002936831277755421,
       "trail_activate": 0.00032150573988059346,
       "opened_at": "18 Nov 2026, 15:33 GMT",
@@ -2685,29 +2663,89 @@
       "link": "https://axiom.trade/meme/4La95NEVJdYK9kr375SfKPXnLA8ef8GtsjfVfW27pump?chain=sol"
     },
     {
-      "symbol": "DCTY",
-      "name": "DCTY",
+      "symbol": "GTAVI",
+      "name": "GTAVI",
       "asset_class": "crypto",
       "agent": "MIRAX",
-      "qty": 0.000686224052153028,
-      "qty_display": "0.00068622",
-      "entry_price": 0.00014572499999999998,
-      "current_price": 0.0001442,
+      "qty": 5.021085017426419e-05,
+      "qty_display": "0.00005021",
+      "entry_price": 0.0019916014099131004,
+      "current_price": 0.001981692945187165,
       "change_pct": null,
-      "price_source": "dexscreener",
+      "price_source": "geckoterminal",
       "unrealized_pnl": -0.0,
-      "unrealized_pct": -0.010464916795333457,
-      "hard_stop": 0.00013843874999999996,
-      "trail_activate": 0.00015155399999999998,
-      "opened_at": "18 Nov 2026, 15:34 GMT",
-      "reason": "BUY 10% $DCTY @ 0.000145725 — 5m +1.4% vol $23,046 buys 228/sells 135",
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.0018920213394174453,
+      "trail_activate": 0.0020712654663096247,
+      "opened_at": "18 Nov 2026, 15:36 GMT",
+      "reason": "BUY 10% $GTAVI @ 0.0019916 — 5m +4.3% vol $5,985 buys 948/sells 256",
       "score": null,
       "tag": "",
       "venue": "",
-      "link": "https://axiom.trade/meme/9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump?chain=sol"
+      "link": "https://axiom.trade/meme/6wiaCq8oQiupFfeDU4ouAuYnCKXCch581HAmpvrxpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f9569",
+      "time": "18 Nov 2026, 15:36 GMT",
+      "ts": "2026-11-18T15:36:22.744750+00:00",
+      "side": "buy",
+      "symbol": "GTAVI",
+      "name": "GTAVI",
+      "asset_class": "crypto",
+      "qty": 5.021085017426419e-05,
+      "qty_display": "0.00005021",
+      "price": 0.0019916014099131004,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f9568",
+      "time": "18 Nov 2026, 15:36 GMT",
+      "ts": "2026-11-18T15:36:22.744236+00:00",
+      "side": "sell",
+      "symbol": "DCTY",
+      "name": "DCTY",
+      "asset_class": "crypto",
+      "qty": 0.000686224052153028,
+      "qty_display": "0.00068622",
+      "price": 0.000120395,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.19018054147154279,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f9567",
+      "time": "18 Nov 2026, 15:36 GMT",
+      "ts": "2026-11-18T15:36:22.744113+00:00",
+      "side": "sell",
+      "symbol": "GTAVI",
+      "name": "GTAVI",
+      "asset_class": "crypto",
+      "qty": 5.131639379174268e-05,
+      "qty_display": "0.00005132",
+      "price": 0.001971784480461229,
+      "value": 0.0,
+      "pnl": -0.0,
+      "pnl_pct": -0.008187918979433467,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f9566",
       "time": "18 Nov 2026, 15:34 GMT",
@@ -194030,11 +194068,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 4780,
-    "win_rate": 0.295397489539749,
+    "closed_trades": 4782,
+    "win_rate": 0.2952739439565036,
     "realized_pnl": -100.0,
     "unrealized_pnl": -0.0,
-    "fills": 9566
+    "fills": 9569
   },
   "ok": true,
   "totals_cumulative": {
@@ -194176,44 +194214,37 @@
     {
       "symbol": "pippin",
       "name": "pippin",
-      "price": 0.01797,
+      "price": 0.018210754737464564,
       "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     },
     {
       "symbol": "TTWO",
       "name": "TTWO",
-      "price": 216.94,
+      "price": 217.90421049299096,
       "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
-      "symbol": "GTAVI",
-      "name": "GTAVI",
-      "price": 0.00206,
-      "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     },
     {
       "symbol": "DIGS",
       "name": "DIGS",
-      "price": 0.0003425,
+      "price": 0.00036,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
       "symbol": "BAWSAQ",
       "name": "BAWSAQ",
-      "price": 0.0003166,
+      "price": 0.00029473549507163014,
       "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     },
     {
-      "symbol": "DCTY",
-      "name": "DCTY",
-      "price": 0.0001442,
+      "symbol": "GTAVI",
+      "name": "GTAVI",
+      "price": 0.001981692945187165,
       "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     }
   ],
   "desk": "axiom",
@@ -194283,8 +194314,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -0.9999999900000001,
-      "closed_trades": 4780,
-      "win_rate": 0.295397489539749,
+      "closed_trades": 4782,
+      "win_rate": 0.2952739439565036,
       "realized_pnl": -100.0
     }
   ],
@@ -194298,64 +194329,64 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "LUNO",
-      "mint": "EVbsBwxqdbMqadwAsVZ6KP9SJiaNmLSHAAb4W2mUpump",
-      "link": "https://axiom.trade/meme/EVbsBwxqdbMqadwAsVZ6KP9SJiaNmLSHAAb4W2mUpump?chain=sol",
-      "reason": "5m volume $1,451 under $5k",
-      "gates": 1,
-      "chg_m5": 7.33,
-      "vol_m5": 1451.0,
-      "score": 31.35
-    },
-    {
       "symbol": "Leonida",
       "mint": "9rbKkz2BDQBVgZmrHY6d7PTq2ge91gkpEyE4y9PPpump",
       "link": "https://axiom.trade/meme/9rbKkz2BDQBVgZmrHY6d7PTq2ge91gkpEyE4y9PPpump?chain=sol",
-      "reason": "5m volume $3,555 under $5k",
+      "reason": "5m volume $3,939 under $5k",
       "gates": 1,
-      "chg_m5": 4.44,
-      "vol_m5": 3555.0,
-      "score": 8.36
+      "chg_m5": 3.76,
+      "vol_m5": 3939.0,
+      "score": 7.88
     },
     {
-      "symbol": "JALU",
-      "mint": "BSsmLA6UN8fzJ8qUkV4KwC5LxR7ab3TaUtcwvAyJpump",
-      "link": "https://axiom.trade/meme/BSsmLA6UN8fzJ8qUkV4KwC5LxR7ab3TaUtcwvAyJpump?chain=sol",
-      "reason": "5m -9.4% outside +1% to +40%",
+      "symbol": "GTA",
+      "mint": "7KBFymfGAe8MmKEuNersoM59TvpiHzZ76jP7rSLrpump",
+      "link": "https://axiom.trade/meme/7KBFymfGAe8MmKEuNersoM59TvpiHzZ76jP7rSLrpump?chain=sol",
+      "reason": "5m volume $2,027 under $5k",
       "gates": 1,
-      "chg_m5": -9.43,
-      "vol_m5": 5718.0,
-      "score": -25.36
+      "chg_m5": 2.36,
+      "vol_m5": 2027.0,
+      "score": 4.08
     },
     {
-      "symbol": "YUKON",
-      "mint": "9X65BD1D258zVeSJMvsANqackQQh1v4xKzBqBhfVpump",
-      "link": "https://axiom.trade/meme/9X65BD1D258zVeSJMvsANqackQQh1v4xKzBqBhfVpump?chain=sol",
-      "reason": "liquidity $11,692 under $25k · market cap $23,214 outside $100k–$100M",
-      "gates": 2,
-      "chg_m5": 6.67,
-      "vol_m5": 6663.0,
-      "score": 4.2
+      "symbol": "LUNO",
+      "mint": "EVbsBwxqdbMqadwAsVZ6KP9SJiaNmLSHAAb4W2mUpump",
+      "link": "https://axiom.trade/meme/EVbsBwxqdbMqadwAsVZ6KP9SJiaNmLSHAAb4W2mUpump?chain=sol",
+      "reason": "5m volume $220 under $5k",
+      "gates": 1,
+      "chg_m5": 1.22,
+      "vol_m5": 220.0,
+      "score": 0.45
     },
     {
-      "symbol": "GLITCH",
-      "mint": "8Xg89xT8Ve34sKiYqYuMs46mycREsCA2F362UscRpump",
-      "link": "https://axiom.trade/meme/8Xg89xT8Ve34sKiYqYuMs46mycREsCA2F362UscRpump?chain=sol",
-      "reason": "5m volume $759 under $5k · buy/sell 8/19 under 1.05",
-      "gates": 2,
-      "chg_m5": 2.94,
-      "vol_m5": 759.0,
-      "score": 0.77
+      "symbol": "DacityCoin",
+      "mint": "DKYcjobF7HPtL9RyQBRdeRQ2iWvizpfbgWwPWNXdpump",
+      "link": "https://axiom.trade/meme/DKYcjobF7HPtL9RyQBRdeRQ2iWvizpfbgWwPWNXdpump?chain=sol",
+      "reason": "5m +0.1% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": 0.078,
+      "vol_m5": 31504.0,
+      "score": 0.29
     },
     {
-      "symbol": "Altruists",
-      "mint": "DZQbBPFpTeeyGyvCwXxYQDZFGGHad2bY6sWZuviuX8MN",
-      "link": "https://axiom.trade/meme/DZQbBPFpTeeyGyvCwXxYQDZFGGHad2bY6sWZuviuX8MN?chain=sol",
-      "reason": "5m volume $29 under $5k · 5m +0.3% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.33,
-      "vol_m5": 29.0,
-      "score": 0.25
+      "symbol": "GTA6",
+      "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
+      "link": "https://axiom.trade/meme/4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz?chain=sol",
+      "reason": "5m +0.5% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": 0.483,
+      "vol_m5": 10819.0,
+      "score": 0.22
+    },
+    {
+      "symbol": "HOGE",
+      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
+      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
+      "reason": "5m -0.4% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -0.36,
+      "vol_m5": 8362.0,
+      "score": -0.37
     }
   ],
   "helius_status": "",
@@ -194363,7 +194394,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-18T15:34:54.614198+00:00",
-  "checked_at_london": "18 Nov 2026, 15:34 GMT",
+  "checked_at": "2026-11-18T15:36:22.744820+00:00",
+  "checked_at_london": "18 Nov 2026, 15:36 GMT",
   "who_we_copy": null
 }
