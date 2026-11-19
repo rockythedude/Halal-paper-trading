@@ -6,8 +6,8 @@
   "equity": 89.27,
   "equity_multiple": 0.8927,
   "profit": -10.73,
-  "goal_pct": -0.0017888856666666655,
-  "progress": 0.014877781000000001,
+  "goal_pct": -0.0017879883333333335,
+  "progress": 0.014878678333333333,
   "win_rate": 0.2653061224489796,
   "wins": 13,
   "losses": 36,
@@ -19,10 +19,10 @@
     "pnl": 0.46,
     "pnl_pct": 0.05997013641138425
   },
-  "ticks": 1793,
+  "ticks": 1794,
   "open_count": 9,
-  "last_updated_london": "19 Nov 2026, 3:54 GMT",
-  "last_updated": "2026-11-19T03:54:00.087690+00:00",
+  "last_updated_london": "19 Nov 2026, 3:58 GMT",
+  "last_updated": "2026-11-19T03:58:47.926897+00:00",
   "session_status": "afterhours",
   "session_asof_ny": "11 Nov 2026, 16:54 EST",
   "session_open": false,
@@ -35,12 +35,12 @@
   ],
   "scanned": 43,
   "killed": 0,
-  "traded": 1,
+  "traded": 0,
   "why_they_died": [],
   "totals": {
     "scanned": 43,
     "killed": 0,
-    "traded": 1,
+    "traded": 0,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 3,
@@ -52,7 +52,7 @@
     "passed": 0,
     "rejected": 0,
     "proposals": 0,
-    "fills": 1,
+    "fills": 0,
     "exits": 0,
     "killed": 0
   },
@@ -7232,6 +7232,10 @@
     {
       "label": "19 Nov 2026, 3:54 GMT",
       "value": 89.27
+    },
+    {
+      "label": "19 Nov 2026, 3:58 GMT",
+      "value": 89.27
     }
   ],
   "annotations": [
@@ -7262,6 +7266,36 @@
     }
   ],
   "activity": [
+    {
+      "ts": "19 Nov 2026, 3:58 GMT",
+      "hhmm": "03:58",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "03:58 LOGGER: tick complete - momentum movers 3, bought 0, equity $89.27",
+      "message": "03:58 LOGGER: tick complete - momentum movers 3, bought 0, equity $89.27",
+      "symbol": null,
+      "action": "tick complete"
+    },
+    {
+      "ts": "19 Nov 2026, 3:58 GMT",
+      "hhmm": "03:58",
+      "tag": "SCOUT",
+      "agent": "SCOUT",
+      "line": "03:58 SCOUT: signal - Signal: momentum. CoinGecko meme-token 24h change and volume. No wallet is being copied.",
+      "message": "03:58 SCOUT: signal - Signal: momentum. CoinGecko meme-token 24h change and volume. No wallet is being copied.",
+      "symbol": null,
+      "action": "signal"
+    },
+    {
+      "ts": "19 Nov 2026, 3:58 GMT",
+      "hhmm": "03:58",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "03:58 LOGGER: tick started - crypto + meme sandbox, momentum, not halal-screened",
+      "message": "03:58 LOGGER: tick started - crypto + meme sandbox, momentum, not halal-screened",
+      "symbol": null,
+      "action": "tick started"
+    },
     {
       "ts": "19 Nov 2026, 3:54 GMT",
       "hhmm": "03:54",
@@ -7631,36 +7665,6 @@
       "message": "03:00 SCOUT: signal - Signal: momentum. CoinGecko meme-token 24h change and volume. No wallet is being copied.",
       "symbol": null,
       "action": "signal"
-    },
-    {
-      "ts": "19 Nov 2026, 3:00 GMT",
-      "hhmm": "03:00",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "03:00 LOGGER: tick started - crypto + meme sandbox, momentum, not halal-screened",
-      "message": "03:00 LOGGER: tick started - crypto + meme sandbox, momentum, not halal-screened",
-      "symbol": null,
-      "action": "tick started"
-    },
-    {
-      "ts": "19 Nov 2026, 2:55 GMT",
-      "hhmm": "02:55",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "02:55 LOGGER: tick complete - momentum movers 1, bought 0, equity $88.82",
-      "message": "02:55 LOGGER: tick complete - momentum movers 1, bought 0, equity $88.82",
-      "symbol": null,
-      "action": "tick complete"
-    },
-    {
-      "ts": "19 Nov 2026, 2:55 GMT",
-      "hhmm": "02:55",
-      "tag": "SCOUT",
-      "agent": "SCOUT",
-      "line": "02:55 SCOUT: signal - Signal: momentum. CoinGecko meme-token 24h change and volume. No wallet is being copied.",
-      "message": "02:55 SCOUT: signal - Signal: momentum. CoinGecko meme-token 24h change and volume. No wallet is being copied.",
-      "symbol": null,
-      "action": "signal"
     }
   ],
   "agents": [
@@ -7724,8 +7728,8 @@
       "strategy": "Executor",
       "blurb": "Buys passing names, with size capped at 8% of equity. Never averages down.",
       "color": "#5B8DEF",
-      "activity": "Bought 1 momentum names",
-      "badge": "1 buys",
+      "activity": "No momentum buys this tick",
+      "badge": "0 buys",
       "badge_label": "fills",
       "realized_pnl": -10.48,
       "unrealized_pnl": -0.25,
@@ -7760,7 +7764,7 @@
       "strategy": "Logger",
       "blurb": "Records every rejection, buy and stop with its reason.",
       "color": "#3DDC97",
-      "activity": "Momentum book. 3 names were up with $10m+ volume. Filled 1.",
+      "activity": "Momentum book. 3 names were up with $10m+ volume. Filled 0.",
       "badge": "2000 lines",
       "badge_label": "log",
       "realized_pnl": 0.0,
@@ -7783,7 +7787,7 @@
       "qty_display": "2.6181",
       "entry_price": 2.7813899999999996,
       "current_price": 2.77,
-      "change_pct": 0.0036,
+      "change_pct": 0.3163,
       "price_source": "coingecko",
       "unrealized_pnl": -0.04,
       "unrealized_pct": -0.004095074764775775,
@@ -7805,7 +7809,7 @@
       "qty_display": "3,079,930.80",
       "entry_price": 2.36118e-06,
       "current_price": 2.37e-06,
-      "change_pct": -0.7899,
+      "change_pct": -0.8012,
       "price_source": "coingecko",
       "unrealized_pnl": 0.02,
       "unrealized_pct": 0.0037354204253807755,
@@ -7826,11 +7830,11 @@
       "qty": 7.431506718024615,
       "qty_display": "7.4315",
       "entry_price": 0.9773654384999999,
-      "current_price": 0.968463,
-      "change_pct": 0.4894,
+      "current_price": 0.968638,
+      "change_pct": 0.7528,
       "price_source": "coingecko",
       "unrealized_pnl": -0.07,
-      "unrealized_pct": -0.009108607844434125,
+      "unrealized_pct": -0.008929555063246553,
       "hard_stop": 0.9284971665749999,
       "trail_activate": 1.006686401655,
       "opened_at": "17 Nov 2026, 12:57 GMT",
@@ -7848,11 +7852,11 @@
       "qty": 121.86180094744519,
       "qty_display": "121.86",
       "entry_price": 0.05937767399999999,
-      "current_price": 0.058679,
-      "change_pct": -1.1717,
+      "current_price": 0.058638,
+      "change_pct": -1.162,
       "price_source": "coingecko",
-      "unrealized_pnl": -0.09,
-      "unrealized_pct": -0.011766611134009564,
+      "unrealized_pnl": -0.1,
+      "unrealized_pct": -0.012457106352801728,
       "hard_stop": 0.05640879029999999,
       "trail_activate": 0.06115900421999999,
       "opened_at": "17 Nov 2026, 14:31 GMT",
@@ -7870,11 +7874,11 @@
       "qty": 52.80513297209187,
       "qty_display": "52.8051",
       "entry_price": 0.13546269749999998,
-      "current_price": 0.134034,
-      "change_pct": -0.3311,
+      "current_price": 0.133995,
+      "change_pct": -0.2037,
       "price_source": "coingecko",
       "unrealized_pnl": -0.08,
-      "unrealized_pct": -0.010546796471404885,
+      "unrealized_pct": -0.01083469860771058,
       "hard_stop": 0.12868956262499998,
       "trail_activate": 0.139526578425,
       "opened_at": "18 Nov 2026, 1:03 GMT",
@@ -7893,7 +7897,7 @@
       "qty_display": "1,881,760.91",
       "entry_price": 3.7318649999999995e-06,
       "current_price": 3.75e-06,
-      "change_pct": -1.4028,
+      "change_pct": -1.0689,
       "price_source": "coingecko",
       "unrealized_pnl": 0.03,
       "unrealized_pct": 0.00485950054463391,
@@ -7915,7 +7919,7 @@
       "qty_display": "1,860,492.88",
       "entry_price": 3.8019e-06,
       "current_price": 3.81e-06,
-      "change_pct": -0.7006,
+      "change_pct": -0.5082,
       "price_source": "coingecko",
       "unrealized_pnl": 0.01,
       "unrealized_pct": 0.0021305136905231947,
@@ -7937,7 +7941,7 @@
       "qty_display": "4,961,469.72",
       "entry_price": 1.430715e-06,
       "current_price": 1.43e-06,
-      "change_pct": 14.6243,
+      "change_pct": 14.7331,
       "price_source": "coingecko",
       "unrealized_pnl": -0.01,
       "unrealized_pct": -0.0004997501249374148,
@@ -7958,11 +7962,11 @@
       "qty": 1501.1261690795573,
       "qty_display": "1,501.13",
       "entry_price": 0.00475313538,
-      "current_price": 0.00475076,
-      "change_pct": 0.0677,
+      "current_price": 0.00475818,
+      "change_pct": 0.3113,
       "price_source": "coingecko",
-      "unrealized_pnl": -0.01,
-      "unrealized_pct": -0.0004997501249375258,
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": 0.001061324703947264,
       "hard_stop": 0.004515478611,
       "trail_activate": 0.0048957294414,
       "opened_at": "19 Nov 2026, 3:54 GMT",
@@ -10263,63 +10267,63 @@
       "symbol": "ORDI",
       "name": "ORDI",
       "price": 2.77,
-      "change_pct": 0.0036,
+      "change_pct": 0.3163,
       "source": "coingecko"
     },
     {
       "symbol": "BONK",
       "name": "Bonk",
       "price": 2.37e-06,
-      "change_pct": -0.7899,
+      "change_pct": -0.8012,
       "source": "coingecko"
     },
     {
       "symbol": "TRUMP",
       "name": "Official Trump",
-      "price": 0.968463,
-      "change_pct": 0.4894,
+      "price": 0.968638,
+      "change_pct": 0.7528,
       "source": "coingecko"
     },
     {
       "symbol": "DOGE",
       "name": "Dogecoin",
-      "price": 0.058679,
-      "change_pct": -1.1717,
+      "price": 0.058638,
+      "change_pct": -1.162,
       "source": "coingecko"
     },
     {
       "symbol": "WIF",
       "name": "dogwifhat",
-      "price": 0.134034,
-      "change_pct": -0.3311,
+      "price": 0.133995,
+      "change_pct": -0.2037,
       "source": "coingecko"
     },
     {
       "symbol": "PEPE",
       "name": "Pepe",
       "price": 3.75e-06,
-      "change_pct": -1.4028,
+      "change_pct": -1.0689,
       "source": "coingecko"
     },
     {
       "symbol": "SHIB",
       "name": "Shiba Inu",
       "price": 3.81e-06,
-      "change_pct": -0.7006,
+      "change_pct": -0.5082,
       "source": "coingecko"
     },
     {
       "symbol": "APEPE",
       "name": "Ape and Pepe",
       "price": 1.43e-06,
-      "change_pct": 14.6243,
+      "change_pct": 14.7331,
       "source": "coingecko"
     },
     {
       "symbol": "PENGU",
       "name": "Pudgy Penguins",
-      "price": 0.00475076,
-      "change_pct": 0.0677,
+      "price": 0.00475818,
+      "change_pct": 0.3113,
       "source": "coingecko"
     }
   ],
@@ -10337,8 +10341,8 @@
     {
       "id": "main",
       "name": "Halal book",
-      "equity": 94.37,
-      "return_pct": -0.056310409999999964,
+      "equity": 94.53,
+      "return_pct": -0.05465877000000006,
       "closed_trades": 14,
       "win_rate": 0.21428571428571427,
       "realized_pnl": -4.05
@@ -10356,7 +10360,7 @@
       "id": "meme",
       "name": "Crypto + Meme",
       "equity": 89.27,
-      "return_pct": -0.10733313999999992,
+      "return_pct": -0.10727930000000001,
       "closed_trades": 49,
       "win_rate": 0.2653061224489796,
       "realized_pnl": -10.48
@@ -10364,8 +10368,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 81.57,
-      "return_pct": -0.18431790000000006,
+      "equity": 81.59,
+      "return_pct": -0.18413792999999998,
       "closed_trades": 345,
       "win_rate": 0.33043478260869563,
       "realized_pnl": -18.51
@@ -10384,8 +10388,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 5572,
-      "win_rate": 0.38334529791816224,
+      "closed_trades": 5578,
+      "win_rate": 0.3840086052348512,
       "realized_pnl": -100.0
     }
   ],
@@ -10403,7 +10407,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-19T03:54:00.087690+00:00",
-  "checked_at_london": "19 Nov 2026, 3:54 GMT",
+  "checked_at": "2026-11-19T03:58:47.926897+00:00",
+  "checked_at_london": "19 Nov 2026, 3:58 GMT",
   "who_we_copy": null
 }
