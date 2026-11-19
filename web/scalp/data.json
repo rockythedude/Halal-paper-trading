@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.35595126522961573,
-  "wins": 1899,
+  "win_rate": 0.356071964017991,
+  "wins": 1900,
   "losses": 3436,
-  "closed_trades": 5335,
+  "closed_trades": 5336,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 49242,
+  "ticks": 49271,
   "open_count": 4,
   "last_updated_london": "19 Nov 2026, 0:11 GMT",
-  "last_updated": "2026-11-19T00:11:16.034485+00:00",
+  "last_updated": "2026-11-19T00:11:40.183754+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 5337,
+  "traded": 5340,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 5337,
+    "traded": 5340,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "18 Nov 2026, 18:17 GMT",
-      "value": 0.0
-    },
     {
       "label": "18 Nov 2026, 18:18 GMT",
       "value": 0.0
@@ -2058,10 +2054,44 @@
     {
       "label": "19 Nov 2026, 0:11 GMT",
       "value": 0.0
+    },
+    {
+      "label": "19 Nov 2026, 0:11 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "19 Nov 2026, 0:11 GMT",
+      "hhmm": "00:11",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "00:11 LOGGER: run complete — 29 polls, 4 open, equity $0.00",
+      "message": "00:11 LOGGER: run complete — 29 polls, 4 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 4 open, equity $0.00"
+    },
+    {
+      "ts": "19 Nov 2026, 0:11 GMT",
+      "hhmm": "00:11",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "00:11 EXECUTOR: BUY 10% $ANT @ 0.000274767 — 5m +7.1% vol $13,805 buys 118/sells 64",
+      "message": "00:11 EXECUTOR: BUY 10% $ANT @ 0.000274767 — 5m +7.1% vol $13,805 buys 118/sells 64",
+      "symbol": null,
+      "action": "BUY 10% $ANT @ 0.000274767 — 5m +7.1% vol $13,805 buys 118/sells 64"
+    },
+    {
+      "ts": "19 Nov 2026, 0:11 GMT",
+      "hhmm": "00:11",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "00:11 RISK: SELL stop −5% $ANT",
+      "message": "00:11 RISK: SELL stop −5% $ANT",
+      "symbol": null,
+      "action": "SELL stop −5% $ANT"
+    },
     {
       "ts": "19 Nov 2026, 0:09 GMT",
       "hhmm": "00:09",
@@ -2431,36 +2461,6 @@
       "message": "23:50 EXECUTOR: BUY 10% $Founder @ 0.000457878 — 5m +18.2% vol $6,284 buys 33/sells 31",
       "symbol": null,
       "action": "BUY 10% $Founder @ 0.000457878 — 5m +18.2% vol $6,284 buys 33/sells 31"
-    },
-    {
-      "ts": "18 Nov 2026, 23:50 GMT",
-      "hhmm": "23:50",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "23:50 EXECUTOR: BUY 10% $GTAVI @ 0.000275269 — 5m +35.9% vol $10,913 buys 908/sells 152",
-      "message": "23:50 EXECUTOR: BUY 10% $GTAVI @ 0.000275269 — 5m +35.9% vol $10,913 buys 908/sells 152",
-      "symbol": null,
-      "action": "BUY 10% $GTAVI @ 0.000275269 — 5m +35.9% vol $10,913 buys 908/sells 152"
-    },
-    {
-      "ts": "18 Nov 2026, 23:50 GMT",
-      "hhmm": "23:50",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "23:50 RISK: SELL stop −5% $HOGE",
-      "message": "23:50 RISK: SELL stop −5% $HOGE",
-      "symbol": null,
-      "action": "SELL stop −5% $HOGE"
-    },
-    {
-      "ts": "18 Nov 2026, 23:50 GMT",
-      "hhmm": "23:50",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "23:50 EXECUTOR: SELL take profit +8% $GTAVI",
-      "message": "23:50 EXECUTOR: SELL take profit +8% $GTAVI",
-      "symbol": null,
-      "action": "SELL take profit +8% $GTAVI"
     }
   ],
   "agents": [
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "55 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "55 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2647,16 +2647,16 @@
       "agent": "MIRAX",
       "qty": 0.0,
       "qty_display": "0",
-      "entry_price": 0.0002959725,
-      "current_price": 0.0003041,
+      "entry_price": 0.0002747669999999999,
+      "current_price": 0.0002734,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.027460321482570382,
-      "hard_stop": 0.000281173875,
-      "trail_activate": 0.0003078114,
-      "opened_at": "19 Nov 2026, 0:09 GMT",
-      "reason": "BUY 10% $ANT @ 0.000295972 — 5m +11.9% vol $13,390 buys 106/sells 63",
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.0002610286499999999,
+      "trail_activate": 0.0002857576799999999,
+      "opened_at": "19 Nov 2026, 0:11 GMT",
+      "reason": "BUY 10% $ANT @ 0.000274767 — 5m +7.1% vol $13,805 buys 118/sells 64",
       "score": null,
       "tag": "",
       "venue": "",
@@ -2664,6 +2664,46 @@
     }
   ],
   "fills": [
+    {
+      "id": "f10676",
+      "time": "19 Nov 2026, 0:11 GMT",
+      "ts": "2026-11-19T00:11:40.183702+00:00",
+      "side": "buy",
+      "symbol": "ANT",
+      "name": "ANT",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0002747669999999999,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f10675",
+      "time": "19 Nov 2026, 0:11 GMT",
+      "ts": "2026-11-19T00:11:40.183312+00:00",
+      "side": "sell",
+      "symbol": "ANT",
+      "name": "ANT",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.000272033,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f10674",
       "time": "19 Nov 2026, 0:09 GMT",
@@ -216146,17 +216186,17 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 5335,
-    "win_rate": 0.35595126522961573,
+    "closed_trades": 5336,
+    "win_rate": 0.356071964017991,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 10674
+    "fills": 10676
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 49242,
+    "scanned": 49271,
     "killed": 0,
-    "traded": 5337
+    "traded": 5340
   },
   "events": [
     {
@@ -216313,7 +216353,7 @@
     {
       "symbol": "ANT",
       "name": "ANT",
-      "price": 0.0003041,
+      "price": 0.0002734,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -216385,8 +216425,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 5335,
-      "win_rate": 0.35595126522961573,
+      "closed_trades": 5336,
+      "win_rate": 0.356071964017991,
       "realized_pnl": -100.0
     }
   ],
@@ -216410,14 +216450,24 @@
       "score": 1.44
     },
     {
+      "symbol": "HOGE",
+      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
+      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
+      "reason": "5m volume $1,121 under $5k",
+      "gates": 1,
+      "chg_m5": 2.56,
+      "vol_m5": 1121.0,
+      "score": 1.2
+    },
+    {
       "symbol": "GTA",
       "mint": "7KBFymfGAe8MmKEuNersoM59TvpiHzZ76jP7rSLrpump",
       "link": "https://axiom.trade/meme/7KBFymfGAe8MmKEuNersoM59TvpiHzZ76jP7rSLrpump?chain=sol",
-      "reason": "5m volume $1,802 under $5k",
+      "reason": "5m volume $1,957 under $5k",
       "gates": 1,
-      "chg_m5": 3.65,
-      "vol_m5": 1802.0,
-      "score": 1.41
+      "chg_m5": 1.19,
+      "vol_m5": 1957.0,
+      "score": 0.43
     },
     {
       "symbol": "mihao",
@@ -216430,6 +216480,16 @@
       "score": 0.33
     },
     {
+      "symbol": "GTASZN",
+      "mint": "A4jXnWk1rDRDth6HmDASi45c89n1AguTHivAQPTVpump",
+      "link": "https://axiom.trade/meme/A4jXnWk1rDRDth6HmDASi45c89n1AguTHivAQPTVpump?chain=sol",
+      "reason": "5m +0.1% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": 0.11,
+      "vol_m5": 158202.0,
+      "score": 0.22
+    },
+    {
       "symbol": "CLAUDIA",
       "mint": "2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM",
       "link": "https://axiom.trade/meme/2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM?chain=sol",
@@ -216438,26 +216498,6 @@
       "chg_m5": -1.299,
       "vol_m5": 6017.0,
       "score": -4.42
-    },
-    {
-      "symbol": "DacityCoin",
-      "mint": "DKYcjobF7HPtL9RyQBRdeRQ2iWvizpfbgWwPWNXdpump",
-      "link": "https://axiom.trade/meme/DKYcjobF7HPtL9RyQBRdeRQ2iWvizpfbgWwPWNXdpump?chain=sol",
-      "reason": "5m -4.8% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -4.835,
-      "vol_m5": 9020.0,
-      "score": -11.1
-    },
-    {
-      "symbol": "GTASZN",
-      "mint": "A4jXnWk1rDRDth6HmDASi45c89n1AguTHivAQPTVpump",
-      "link": "https://axiom.trade/meme/A4jXnWk1rDRDth6HmDASi45c89n1AguTHivAQPTVpump?chain=sol",
-      "reason": "5m -6.1% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -6.06,
-      "vol_m5": 165328.0,
-      "score": -12.93
     }
   ],
   "helius_status": "",
@@ -216465,7 +216505,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-19T00:11:16.034485+00:00",
+  "checked_at": "2026-11-19T00:11:40.183754+00:00",
   "checked_at_london": "19 Nov 2026, 0:11 GMT",
   "who_we_copy": null
 }
