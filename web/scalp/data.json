@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 55448,
-  "open_count": 3,
+  "ticks": 55477,
+  "open_count": 4,
   "last_updated_london": "19 Nov 2026, 17:36 GMT",
-  "last_updated": "2026-11-19T17:36:01.557153+00:00",
+  "last_updated": "2026-11-19T17:36:25.552083+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 6425,
+  "traded": 6436,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 6425,
+    "traded": 6436,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "19 Nov 2026, 11:45 GMT",
-      "value": 0.0
-    },
     {
       "label": "19 Nov 2026, 11:46 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "19 Nov 2026, 17:36 GMT",
       "value": 0.0
+    },
+    {
+      "label": "19 Nov 2026, 17:36 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "19 Nov 2026, 17:36 GMT",
+      "hhmm": "17:36",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "17:36 LOGGER: run complete — 29 polls, 4 open, equity $0.00",
+      "message": "17:36 LOGGER: run complete — 29 polls, 4 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 4 open, equity $0.00"
+    },
+    {
+      "ts": "19 Nov 2026, 17:36 GMT",
+      "hhmm": "17:36",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "17:36 EXECUTOR: BUY 10% $KFC @ 0.000435868 — 5m +17.5% vol $21,468 buys 1052/sells 331",
+      "message": "17:36 EXECUTOR: BUY 10% $KFC @ 0.000435868 — 5m +17.5% vol $21,468 buys 1052/sells 331",
+      "symbol": null,
+      "action": "BUY 10% $KFC @ 0.000435868 — 5m +17.5% vol $21,468 buys 1052/sells 331"
+    },
     {
       "ts": "19 Nov 2026, 17:35 GMT",
       "hhmm": "17:35",
@@ -2441,26 +2461,6 @@
       "message": "17:25 EXECUTOR: SELL take profit +8% $MANDY",
       "symbol": null,
       "action": "SELL take profit +8% $MANDY"
-    },
-    {
-      "ts": "19 Nov 2026, 17:25 GMT",
-      "hhmm": "17:25",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "17:25 RISK: SELL time stop 20m $Leonida",
-      "message": "17:25 RISK: SELL time stop 20m $Leonida",
-      "symbol": null,
-      "action": "SELL time stop 20m $Leonida"
-    },
-    {
-      "ts": "19 Nov 2026, 17:25 GMT",
-      "hhmm": "17:25",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "17:25 EXECUTOR: SELL take profit +8% $GTE",
-      "message": "17:25 EXECUTOR: SELL take profit +8% $GTE",
-      "symbol": null,
-      "action": "SELL take profit +8% $GTE"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "53 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "38 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "53 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "38 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "3/6",
+      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "4/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0007318385040258795,
-      "current_price": 0.0007404907194810297,
+      "current_price": 0.0007486,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.011822574799704944,
+      "unrealized_pct": 0.022903271530419156,
       "hard_stop": 0.0006952465788245854,
       "trail_activate": 0.0007611120441869146,
       "opened_at": "19 Nov 2026, 17:24 GMT",
@@ -2604,11 +2604,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.011407527972936137,
-      "current_price": 0.011291370432846313,
+      "current_price": 0.01172,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.010182533881608946,
+      "unrealized_pct": 0.027391738841683333,
       "hard_stop": 0.01083715157428933,
       "trail_activate": 0.011863829091853583,
       "opened_at": "19 Nov 2026, 17:34 GMT",
@@ -2626,11 +2626,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0012773549999999998,
-      "current_price": 0.001271,
+      "current_price": 0.001367,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.004975124378109319,
+      "unrealized_pct": 0.07018017700639234,
       "hard_stop": 0.0012134872499999997,
       "trail_activate": 0.0013284491999999998,
       "opened_at": "19 Nov 2026, 17:35 GMT",
@@ -2639,9 +2639,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/7nqA5P4iHvxTpt4WwSeyrdfToVcqxVARCPr96xSDpump?chain=sol"
+    },
+    {
+      "symbol": "KFC",
+      "name": "KFC",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.00043586849999999996,
+      "current_price": 0.0004337,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.00041407507499999994,
+      "trail_activate": 0.00045330323999999997,
+      "opened_at": "19 Nov 2026, 17:36 GMT",
+      "reason": "BUY 10% $KFC @ 0.000435868 — 5m +17.5% vol $21,468 buys 1052/sells 331",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/7RZuBWCWMp63JYXLFUnSdvmYVWN8dGAKsSvzLbBfpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f12868",
+      "time": "19 Nov 2026, 17:36 GMT",
+      "ts": "2026-11-19T17:36:17.637669+00:00",
+      "side": "buy",
+      "symbol": "KFC",
+      "name": "KFC",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00043586849999999996,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f12867",
       "time": "19 Nov 2026, 17:35 GMT",
@@ -259988,13 +260030,13 @@
     "win_rate": 0.4657960199004975,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 12867
+    "fills": 12868
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 55448,
+    "scanned": 55477,
     "killed": 0,
-    "traded": 6425
+    "traded": 6436
   },
   "events": [
     {
@@ -260130,21 +260172,28 @@
     {
       "symbol": "Max",
       "name": "Max",
-      "price": 0.0007404907194810297,
+      "price": 0.0007486,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "DCTY",
       "name": "DCTY",
-      "price": 0.011291370432846313,
+      "price": 0.01172,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "GTE",
       "name": "GTE",
-      "price": 0.001271,
+      "price": 0.001367,
+      "change_pct": null,
+      "source": "dexscreener"
+    },
+    {
+      "symbol": "KFC",
+      "name": "KFC",
+      "price": 0.0004337,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -260241,26 +260290,6 @@
       "score": 13.15
     },
     {
-      "symbol": "KFC",
-      "mint": "7RZuBWCWMp63JYXLFUnSdvmYVWN8dGAKsSvzLbBfpump",
-      "link": "https://axiom.trade/meme/7RZuBWCWMp63JYXLFUnSdvmYVWN8dGAKsSvzLbBfpump?chain=sol",
-      "reason": "5m +0.9% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": 0.9,
-      "vol_m5": 29891.0,
-      "score": 3.45
-    },
-    {
-      "symbol": "DIGS",
-      "mint": "9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump",
-      "link": "https://axiom.trade/meme/9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump?chain=sol",
-      "reason": "5m volume $3,165 under $5k",
-      "gates": 1,
-      "chg_m5": 3.21,
-      "vol_m5": 3165.0,
-      "score": 3.24
-    },
-    {
       "symbol": "THUG",
       "mint": "HoqJaoes6yfL8YEsHGfENwVKT7LrAPy97ZDg9hmBu4Ep",
       "link": "https://axiom.trade/meme/HoqJaoes6yfL8YEsHGfENwVKT7LrAPy97ZDg9hmBu4Ep?chain=sol",
@@ -260268,27 +260297,47 @@
       "gates": 1,
       "chg_m5": 1.4,
       "vol_m5": 125.0,
-      "score": 2.68
+      "score": 2.69
     },
     {
-      "symbol": "WASTED",
-      "mint": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
-      "link": "https://axiom.trade/meme/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump?chain=sol",
-      "reason": "5m volume $618 under $5k",
+      "symbol": "DIGS",
+      "mint": "9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump",
+      "link": "https://axiom.trade/meme/9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump?chain=sol",
+      "reason": "5m volume $3,540 under $5k",
       "gates": 1,
-      "chg_m5": 1.021,
-      "vol_m5": 618.0,
-      "score": 1.1
+      "chg_m5": 2.3,
+      "vol_m5": 3540.0,
+      "score": 2.4
     },
     {
-      "symbol": "SHIT",
-      "mint": "Fn95NtGXWPaJXc4N5y9rVkUq1NwZbjBNJzPVvNRLpump",
-      "link": "https://axiom.trade/meme/Fn95NtGXWPaJXc4N5y9rVkUq1NwZbjBNJzPVvNRLpump?chain=sol",
-      "reason": "5m +0.3% outside +1% to +40%",
+      "symbol": "Mandy",
+      "mint": "2xCd5qHX5tW6pGUo7zfgHSSAnRjJwPA7Sz1Fu4fWcJjX",
+      "link": "https://axiom.trade/meme/2xCd5qHX5tW6pGUo7zfgHSSAnRjJwPA7Sz1Fu4fWcJjX?chain=sol",
+      "reason": "5m -3.2% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 0.319,
-      "vol_m5": 8661.0,
-      "score": 0.44
+      "chg_m5": -3.25,
+      "vol_m5": 5357.0,
+      "score": -3.32
+    },
+    {
+      "symbol": "jingyu",
+      "mint": "DUZrwdjEthcJ99ZiRXr31UuqTohoTg7VjTEyfGdBpump",
+      "link": "https://axiom.trade/meme/DUZrwdjEthcJ99ZiRXr31UuqTohoTg7VjTEyfGdBpump?chain=sol",
+      "reason": "liquidity $20,439 under $25k · market cap $80,576 outside $100k–$100M",
+      "gates": 2,
+      "chg_m5": 6.24,
+      "vol_m5": 7057.0,
+      "score": 12.85
+    },
+    {
+      "symbol": "PumpMas",
+      "mint": "EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump",
+      "link": "https://axiom.trade/meme/EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump?chain=sol",
+      "reason": "liquidity $23,934 under $25k · 5m volume $25 under $5k",
+      "gates": 2,
+      "chg_m5": 1.33,
+      "vol_m5": 25.0,
+      "score": 1.4
     }
   ],
   "helius_status": "",
@@ -260296,7 +260345,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-19T17:36:01.557153+00:00",
+  "checked_at": "2026-11-19T17:36:25.552083+00:00",
   "checked_at_london": "19 Nov 2026, 17:36 GMT",
   "who_we_copy": null
 }
