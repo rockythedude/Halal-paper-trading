@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.41979061127997297,
-  "wins": 2486,
+  "win_rate": 0.4199864956110736,
+  "wins": 2488,
   "losses": 3436,
-  "closed_trades": 5922,
+  "closed_trades": 5924,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 53012,
-  "open_count": 3,
+  "open_count": 2,
   "last_updated_london": "19 Nov 2026, 10:43 GMT",
-  "last_updated": "2026-11-19T10:43:13.227912+00:00",
+  "last_updated": "2026-11-19T10:43:53.198262+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "19 Nov 2026, 4:54 GMT",
-      "value": 0.0
-    },
     {
       "label": "19 Nov 2026, 4:55 GMT",
       "value": 0.0
@@ -2058,10 +2054,44 @@
     {
       "label": "19 Nov 2026, 10:43 GMT",
       "value": 0.0
+    },
+    {
+      "label": "19 Nov 2026, 10:43 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "19 Nov 2026, 10:43 GMT",
+      "hhmm": "10:43",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "10:43 EXECUTOR: SELL trail 2.5% $DCTY",
+      "message": "10:43 EXECUTOR: SELL trail 2.5% $DCTY",
+      "symbol": null,
+      "action": "SELL trail 2.5% $DCTY"
+    },
+    {
+      "ts": "19 Nov 2026, 10:43 GMT",
+      "hhmm": "10:43",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "10:43 EXECUTOR: BUY 10% $GTASZN @ 0.00107116 — 5m +2.9% vol $5,207 buys 175/sells 165",
+      "message": "10:43 EXECUTOR: BUY 10% $GTASZN @ 0.00107116 — 5m +2.9% vol $5,207 buys 175/sells 165",
+      "symbol": null,
+      "action": "BUY 10% $GTASZN @ 0.00107116 — 5m +2.9% vol $5,207 buys 175/sells 165"
+    },
+    {
+      "ts": "19 Nov 2026, 10:43 GMT",
+      "hhmm": "10:43",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "10:43 RISK: SELL stop −5% $GTASZN",
+      "message": "10:43 RISK: SELL stop −5% $GTASZN",
+      "symbol": null,
+      "action": "SELL stop −5% $GTASZN"
+    },
     {
       "ts": "19 Nov 2026, 10:43 GMT",
       "hhmm": "10:43",
@@ -2431,36 +2461,6 @@
       "message": "10:31 EXECUTOR: BUY 10% $Apocrycoin @ 0.000550658 — 5m +1.9% vol $5,440 buys 75/sells 37",
       "symbol": null,
       "action": "BUY 10% $Apocrycoin @ 0.000550658 — 5m +1.9% vol $5,440 buys 75/sells 37"
-    },
-    {
-      "ts": "19 Nov 2026, 10:31 GMT",
-      "hhmm": "10:31",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "10:31 EXECUTOR: SELL take profit +8% $Sparrow",
-      "message": "10:31 EXECUTOR: SELL take profit +8% $Sparrow",
-      "symbol": null,
-      "action": "SELL take profit +8% $Sparrow"
-    },
-    {
-      "ts": "19 Nov 2026, 10:30 GMT",
-      "hhmm": "10:30",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "10:30 LOGGER: run complete — 29 polls, 5 open, equity $0.00",
-      "message": "10:30 LOGGER: run complete — 29 polls, 5 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 5 open, equity $0.00"
-    },
-    {
-      "ts": "19 Nov 2026, 10:29 GMT",
-      "hhmm": "10:29",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "10:29 EXECUTOR: BUY 10% $Sparrow @ 0.000107434 — 5m +18.3% vol $11,916 buys 233/sells 151",
-      "message": "10:29 EXECUTOR: BUY 10% $Sparrow @ 0.000107434 — 5m +18.3% vol $11,916 buys 233/sells 151",
-      "symbol": null,
-      "action": "BUY 10% $Sparrow @ 0.000107434 — 5m +18.3% vol $11,916 buys 233/sells 151"
     }
   ],
   "agents": [
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "3/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2575,50 +2575,6 @@
   ],
   "positions": [
     {
-      "symbol": "DCTY",
-      "name": "DCTY",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.014489445118719085,
-      "current_price": 0.015090531871843086,
-      "change_pct": null,
-      "price_source": "geckoterminal",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.04148445631968678,
-      "hard_stop": 0.01376497286278313,
-      "trail_activate": 0.015069022923467849,
-      "opened_at": "19 Nov 2026, 10:38 GMT",
-      "reason": "BUY 10% $DCTY @ 0.0144894 — 5m +7.9% vol $105,181 buys 480/sells 384",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump?chain=sol"
-    },
-    {
-      "symbol": "GTASZN",
-      "name": "GTASZN",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.00115173,
-      "current_price": 0.001172,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.017599611019944117,
-      "hard_stop": 0.0010941434999999998,
-      "trail_activate": 0.0011977992,
-      "opened_at": "19 Nov 2026, 10:42 GMT",
-      "reason": "BUY 10% $GTASZN @ 0.00115173 — 5m +9.0% vol $5,590 buys 277/sells 247",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/A4jXnWk1rDRDth6HmDASi45c89n1AguTHivAQPTVpump?chain=sol"
-    },
-    {
       "symbol": "Sparrow",
       "name": "Sparrow",
       "asset_class": "crypto",
@@ -2626,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0001273335,
-      "current_price": 0.0001267,
+      "current_price": 0.0001315,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.00497512437810943,
+      "unrealized_pct": 0.03272116135973646,
       "hard_stop": 0.00012096682499999999,
       "trail_activate": 0.00013242684,
       "opened_at": "19 Nov 2026, 10:43 GMT",
@@ -2639,9 +2595,91 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/5a6mAmWbL3Na2KhwV1LmmAUSf12Gy1vd3NjqBq24pump?chain=sol"
+    },
+    {
+      "symbol": "GTASZN",
+      "name": "GTASZN",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.0010711618592211334,
+      "current_price": 0.0010658326957424214,
+      "change_pct": null,
+      "price_source": "geckoterminal",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.0010176037662600766,
+      "trail_activate": 0.0011140083335899789,
+      "opened_at": "19 Nov 2026, 10:43 GMT",
+      "reason": "BUY 10% $GTASZN @ 0.00107116 — 5m +2.9% vol $5,207 buys 175/sells 165",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/A4jXnWk1rDRDth6HmDASi45c89n1AguTHivAQPTVpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f11850",
+      "time": "19 Nov 2026, 10:43 GMT",
+      "ts": "2026-11-19T10:43:45.214636+00:00",
+      "side": "sell",
+      "symbol": "DCTY",
+      "name": "DCTY",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0140494,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f11849",
+      "time": "19 Nov 2026, 10:43 GMT",
+      "ts": "2026-11-19T10:43:37.306945+00:00",
+      "side": "buy",
+      "symbol": "GTASZN",
+      "name": "GTASZN",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0010711618592211334,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f11848",
+      "time": "19 Nov 2026, 10:43 GMT",
+      "ts": "2026-11-19T10:43:37.306626+00:00",
+      "side": "sell",
+      "symbol": "GTASZN",
+      "name": "GTASZN",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0010605035322637092,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f11847",
       "time": "19 Nov 2026, 10:43 GMT",
@@ -239584,11 +239622,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 5922,
-    "win_rate": 0.41979061127997297,
+    "closed_trades": 5924,
+    "win_rate": 0.4199864956110736,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 11847
+    "fills": 11850
   },
   "ok": true,
   "totals_cumulative": {
@@ -239728,25 +239766,18 @@
   },
   "ticker": [
     {
-      "symbol": "DCTY",
-      "name": "DCTY",
-      "price": 0.015090531871843086,
+      "symbol": "Sparrow",
+      "name": "Sparrow",
+      "price": 0.0001315,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "GTASZN",
       "name": "GTASZN",
-      "price": 0.001172,
+      "price": 0.0010658326957424214,
       "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
-      "symbol": "Sparrow",
-      "name": "Sparrow",
-      "price": 0.0001267,
-      "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     }
   ],
   "desk": "axiom",
@@ -239797,7 +239828,7 @@
       "id": "btc",
       "name": "BTC Scalper",
       "equity": 81.76,
-      "return_pct": -0.18237178999999998,
+      "return_pct": -0.18240256000000002,
       "closed_trades": 350,
       "win_rate": 0.3342857142857143,
       "realized_pnl": -18.33
@@ -239816,8 +239847,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 5922,
-      "win_rate": 0.41979061127997297,
+      "closed_trades": 5924,
+      "win_rate": 0.4199864956110736,
       "realized_pnl": -100.0
     }
   ],
@@ -239831,14 +239862,14 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "ANTS",
-      "mint": "ejrz94zR4A2ScS8LdvRaQih2xUxaE2ydreqUNKmpump",
-      "link": "https://axiom.trade/meme/ejrz94zR4A2ScS8LdvRaQih2xUxaE2ydreqUNKmpump?chain=sol",
-      "reason": "buy/sell 170/251 under 1.05",
+      "symbol": "DCTY",
+      "mint": "9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump",
+      "link": "https://axiom.trade/meme/9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump?chain=sol",
+      "reason": "buy/sell 1191/1183 under 1.05",
       "gates": 1,
-      "chg_m5": 1.52,
-      "vol_m5": 31897.0,
-      "score": 0.87
+      "chg_m5": 8.768,
+      "vol_m5": 508405.0,
+      "score": 26.47
     },
     {
       "symbol": "Max",
@@ -239896,7 +239927,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-19T10:43:13.227912+00:00",
+  "checked_at": "2026-11-19T10:43:53.198262+00:00",
   "checked_at_london": "19 Nov 2026, 10:43 GMT",
   "who_we_copy": null
 }
