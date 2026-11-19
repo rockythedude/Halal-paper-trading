@@ -61,34 +61,6 @@
       "unrealized_pct": -0.004920502142063632
     },
     {
-      "symbol": "ANTS",
-      "name": "ANTS",
-      "mint": "ejrz94zR4A2ScS8LdvRaQih2xUxaE2ydreqUNKmpump",
-      "pair": "AF5Cn9Mu1Y8Coh68xKBYpSjxXdk1LbNxgo76dPpRRoLB",
-      "link": "https://axiom.trade/meme/ejrz94zR4A2ScS8LdvRaQih2xUxaE2ydreqUNKmpump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/af5cn9mu1y8coh68xkbypsjxxdk1lbnxgo76dpprrolb",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.0125223,
-      "raw_price": 0.01246,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-19T09:05:03.816491+00:00",
-      "opened_at_london": "19 Nov 2026, 9:05 GMT",
-      "high_water": 0.013,
-      "trail_armed": false,
-      "last_price": 0.01286,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $ANTS @ 0.0125223 \u2014 5m +3.1% vol $46,202 buys 229/sells 213",
-      "hard_stop": 0.011896185,
-      "take_profit": 0.013524084,
-      "trail_activate": 0.013023192000000001,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.026967889285514524
-    },
-    {
       "symbol": "DCTY",
       "name": "DCTY",
       "mint": "9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump",
@@ -87805,15 +87777,24 @@
       "closed_at": "2026-11-19T09:06:07.793828+00:00",
       "closed_at_london": "19 Nov 2026, 9:06 GMT",
       "opened_at": "2026-11-19T09:04:31.804341+00:00"
+    },
+    {
+      "symbol": "ANTS",
+      "name": "ANTS",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.0125223,
+      "exit_price": 0.0134922,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL take profit +8% $ANTS",
+      "closed_at": "2026-11-19T09:11:57.151491+00:00",
+      "closed_at_london": "19 Nov 2026, 9:11 GMT",
+      "opened_at": "2026-11-19T09:05:03.816491+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-19T03:23:25.172150+00:00",
-      "label": "19 Nov 2026, 3:23 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-19T03:24:05.128809+00:00",
       "label": "19 Nov 2026, 3:24 GMT",
@@ -90813,21 +90794,15 @@
       "label": "19 Nov 2026, 9:11 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-19T09:11:57.151886+00:00",
+      "label": "19 Nov 2026, 9:11 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-19T05:53:58.495448+00:00",
-      "london": "19 Nov 2026, 5:53 GMT",
-      "hhmm": "05:53",
-      "agent": "RISK",
-      "action": "SELL stop \u22125% $GTA",
-      "symbol": null,
-      "reason": "SELL stop \u22125% $GTA",
-      "line": "05:53 RISK: SELL stop \u22125% $GTA",
-      "tag": "RISK",
-      "message": "05:53 RISK: SELL stop \u22125% $GTA"
-    },
     {
       "ts": "2026-11-19T05:53:58.495716+00:00",
       "london": "19 Nov 2026, 5:53 GMT",
@@ -95615,6 +95590,18 @@
       "line": "09:07 LOGGER: run complete \u2014 29 polls, 5 open, equity $0.00",
       "tag": "LOGGER",
       "message": "09:07 LOGGER: run complete \u2014 29 polls, 5 open, equity $0.00"
+    },
+    {
+      "ts": "2026-11-19T09:11:57.151549+00:00",
+      "london": "19 Nov 2026, 9:11 GMT",
+      "hhmm": "09:11",
+      "agent": "EXECUTOR",
+      "action": "SELL take profit +8% $ANTS",
+      "symbol": null,
+      "reason": "SELL take profit +8% $ANTS",
+      "line": "09:11 EXECUTOR: SELL take profit +8% $ANTS",
+      "tag": "EXECUTOR",
+      "message": "09:11 EXECUTOR: SELL take profit +8% $ANTS"
     }
   ],
   "agents": {
@@ -95687,8 +95674,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "5 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "5/6",
+      "activity": "4 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "4/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -95716,7 +95703,7 @@
     }
   },
   "ticks": 52461,
-  "last_updated": "2026-11-19T09:11:16.899157+00:00",
+  "last_updated": "2026-11-19T09:11:57.151806+00:00",
   "last_updated_london": "19 Nov 2026, 9:11 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -259445,12 +259432,26 @@
       "pnl": null,
       "pnl_pct": null,
       "id": "f11693"
+    },
+    {
+      "ts": "2026-11-19T09:11:57.151491+00:00",
+      "london": "19 Nov 2026, 9:11 GMT",
+      "side": "sell",
+      "symbol": "ANTS",
+      "name": "ANTS",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.0134922,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f11694"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-19T09:11:16.899157+00:00",
+  "checked_at": "2026-11-19T09:11:57.151806+00:00",
   "checked_at_london": "19 Nov 2026, 9:11 GMT",
   "near_misses": [
     {
@@ -259464,14 +259465,34 @@
       "score": 21.46
     },
     {
-      "symbol": "DIGS",
-      "mint": "9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump",
-      "link": "https://axiom.trade/meme/9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump?chain=sol",
-      "reason": "5m volume $3,431 under $5k",
+      "symbol": "THUG",
+      "mint": "HoqJaoes6yfL8YEsHGfENwVKT7LrAPy97ZDg9hmBu4Ep",
+      "link": "https://axiom.trade/meme/HoqJaoes6yfL8YEsHGfENwVKT7LrAPy97ZDg9hmBu4Ep?chain=sol",
+      "reason": "5m volume $424 under $5k",
       "gates": 1,
-      "chg_m5": 2.75,
-      "vol_m5": 3431.0,
-      "score": 3.02
+      "chg_m5": 2.1,
+      "vol_m5": 424.0,
+      "score": 18.9
+    },
+    {
+      "symbol": "APOCRYCOIN",
+      "mint": "6dy9DhP5wCSb5uf1m9WPaTA1xjzVNR6uskCUVQnEpump",
+      "link": "https://axiom.trade/meme/6dy9DhP5wCSb5uf1m9WPaTA1xjzVNR6uskCUVQnEpump?chain=sol",
+      "reason": "buy/sell 260/264 under 1.05",
+      "gates": 1,
+      "chg_m5": 24.03,
+      "vol_m5": 23945.0,
+      "score": 18.41
+    },
+    {
+      "symbol": "ANTS",
+      "mint": "ejrz94zR4A2ScS8LdvRaQih2xUxaE2ydreqUNKmpump",
+      "link": "https://axiom.trade/meme/ejrz94zR4A2ScS8LdvRaQih2xUxaE2ydreqUNKmpump?chain=sol",
+      "reason": "buy/sell 196/189 under 1.05",
+      "gates": 1,
+      "chg_m5": 6.27,
+      "vol_m5": 40757.0,
+      "score": 4.9
     },
     {
       "symbol": "CLAUDIA",
@@ -259487,31 +259508,11 @@
       "symbol": "GTA",
       "mint": "8CnvwZJLRpQazvn6LszkzmXJxkmMY2bTQ4Q3NN4fpump",
       "link": "https://axiom.trade/meme/8CnvwZJLRpQazvn6LszkzmXJxkmMY2bTQ4Q3NN4fpump?chain=sol",
-      "reason": "5m -5.5% outside +1% to +40%",
+      "reason": "5m -5.9% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -5.52,
-      "vol_m5": 7487.0,
-      "score": -8.49
-    },
-    {
-      "symbol": "Leonida",
-      "mint": "9rbKkz2BDQBVgZmrHY6d7PTq2ge91gkpEyE4y9PPpump",
-      "link": "https://axiom.trade/meme/9rbKkz2BDQBVgZmrHY6d7PTq2ge91gkpEyE4y9PPpump?chain=sol",
-      "reason": "5m -19.6% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -19.64,
-      "vol_m5": 8488.0,
-      "score": -85.94
-    },
-    {
-      "symbol": "Sloth",
-      "mint": "J29VvqbVQ9fpt4Md1uAzJzfETzaFdQrZLq13CPYfpump",
-      "link": "https://axiom.trade/meme/J29VvqbVQ9fpt4Md1uAzJzfETzaFdQrZLq13CPYfpump?chain=sol",
-      "reason": "liquidity $0 under $25k \u00b7 market cap $11,862 outside $100k\u2013$100M",
-      "gates": 2,
-      "chg_m5": 24.59,
-      "vol_m5": 5716.0,
-      "score": 100.6
+      "chg_m5": -5.89,
+      "vol_m5": 7495.0,
+      "score": -9.63
     }
   ]
 }
