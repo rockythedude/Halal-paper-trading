@@ -59,34 +59,6 @@
       "market_value": 0.0,
       "unrealized_pnl": 0.0,
       "unrealized_pct": 0.005384873692925396
-    },
-    {
-      "symbol": "BANDANA",
-      "name": "BANDANA",
-      "mint": "2KRbMf4itijwsTHb5dQtiBpfptyNmhpVzmpdj4qqN2yx",
-      "pair": "Fi1SEETAL1cKYUfCHZDowLxZnjPBZ7sv7hboiUrWGUHt",
-      "link": "https://axiom.trade/meme/2KRbMf4itijwsTHb5dQtiBpfptyNmhpVzmpdj4qqN2yx?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/fi1seetal1ckyufchzdowlxznjpbz7sv7hboiurwguht",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.0002722545,
-      "raw_price": 0.0002709,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-20T23:43:27.791777+00:00",
-      "opened_at_london": "20 Nov 2026, 23:43 GMT",
-      "high_water": 0.000284,
-      "trail_armed": true,
-      "last_price": 0.0002806,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $BANDANA @ 0.000272254 \u2014 5m +16.4% vol $27,592 buys 416/sells 300",
-      "hard_stop": 0.000258641775,
-      "take_profit": 0.00029403486,
-      "trail_activate": 0.00028314468,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.03065330416944434
     }
   ],
   "closed_trades": [
@@ -122624,15 +122596,24 @@
       "closed_at": "2026-11-20T23:40:31.839718+00:00",
       "closed_at_london": "20 Nov 2026, 23:40 GMT",
       "opened_at": "2026-11-20T23:38:28.865190+00:00"
+    },
+    {
+      "symbol": "BANDANA",
+      "name": "BANDANA",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.0002722545,
+      "exit_price": 0.000246163,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL stop \u22125% $BANDANA",
+      "closed_at": "2026-11-20T23:47:02.009987+00:00",
+      "closed_at_london": "20 Nov 2026, 23:47 GMT",
+      "opened_at": "2026-11-20T23:43:27.791777+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-20T17:57:08.857466+00:00",
-      "label": "20 Nov 2026, 17:57 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-20T17:58:14.453885+00:00",
       "label": "20 Nov 2026, 17:58 GMT",
@@ -125632,21 +125613,15 @@
       "label": "20 Nov 2026, 23:46 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-20T23:47:17.913693+00:00",
+      "label": "20 Nov 2026, 23:47 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-20T21:24:08.117393+00:00",
-      "london": "20 Nov 2026, 21:24 GMT",
-      "hhmm": "21:24",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $DCTY @ 0.000116379 \u2014 5m +30.0% vol $6,902 buys 78/sells 43",
-      "symbol": null,
-      "reason": "BUY 10% $DCTY @ 0.000116379 \u2014 5m +30.0% vol $6,902 buys 78/sells 43",
-      "line": "21:24 EXECUTOR: BUY 10% $DCTY @ 0.000116379 \u2014 5m +30.0% vol $6,902 buys 78/sells 43",
-      "tag": "EXECUTOR",
-      "message": "21:24 EXECUTOR: BUY 10% $DCTY @ 0.000116379 \u2014 5m +30.0% vol $6,902 buys 78/sells 43"
-    },
     {
       "ts": "2026-11-20T21:24:08.117450+00:00",
       "london": "20 Nov 2026, 21:24 GMT",
@@ -130434,6 +130409,18 @@
       "line": "23:44 LOGGER: run complete \u2014 29 polls, 3 open, equity $0.00",
       "tag": "LOGGER",
       "message": "23:44 LOGGER: run complete \u2014 29 polls, 3 open, equity $0.00"
+    },
+    {
+      "ts": "2026-11-20T23:47:02.010028+00:00",
+      "london": "20 Nov 2026, 23:47 GMT",
+      "hhmm": "23:47",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $BANDANA",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $BANDANA",
+      "line": "23:47 RISK: SELL stop \u22125% $BANDANA",
+      "tag": "RISK",
+      "message": "23:47 RISK: SELL stop \u22125% $BANDANA"
     }
   ],
   "agents": {
@@ -130506,8 +130493,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "3 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "3/6",
+      "activity": "2 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -130535,8 +130522,8 @@
     }
   },
   "ticks": 66207,
-  "last_updated": "2026-11-20T23:46:37.933097+00:00",
-  "last_updated_london": "20 Nov 2026, 23:46 GMT",
+  "last_updated": "2026-11-20T23:47:17.913615+00:00",
+  "last_updated_london": "20 Nov 2026, 23:47 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -359336,33 +359323,67 @@
       "pnl": null,
       "pnl_pct": null,
       "id": "f16341"
+    },
+    {
+      "ts": "2026-11-20T23:47:02.009987+00:00",
+      "london": "20 Nov 2026, 23:47 GMT",
+      "side": "sell",
+      "symbol": "BANDANA",
+      "name": "BANDANA",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.000246163,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f16342"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-20T23:46:37.933097+00:00",
-  "checked_at_london": "20 Nov 2026, 23:46 GMT",
+  "checked_at": "2026-11-20T23:47:17.913615+00:00",
+  "checked_at_london": "20 Nov 2026, 23:47 GMT",
   "near_misses": [
+    {
+      "symbol": "THUG",
+      "mint": "HoqJaoes6yfL8YEsHGfENwVKT7LrAPy97ZDg9hmBu4Ep",
+      "link": "https://axiom.trade/meme/HoqJaoes6yfL8YEsHGfENwVKT7LrAPy97ZDg9hmBu4Ep?chain=sol",
+      "reason": "5m volume $249 under $5k",
+      "gates": 1,
+      "chg_m5": 2.21,
+      "vol_m5": 249.0,
+      "score": 19.89
+    },
     {
       "symbol": "HUGH",
       "mint": "Fpzcd2R1y2MPdezgMRigQuBx7aCPPn5sZBXpvtP3pump",
       "link": "https://axiom.trade/meme/Fpzcd2R1y2MPdezgMRigQuBx7aCPPn5sZBXpvtP3pump?chain=sol",
-      "reason": "5m volume $845 under $5k",
+      "reason": "5m volume $1,101 under $5k",
       "gates": 1,
-      "chg_m5": 8.21,
-      "vol_m5": 845.0,
-      "score": 7.18
+      "chg_m5": 10.15,
+      "vol_m5": 1101.0,
+      "score": 14.23
+    },
+    {
+      "symbol": "LOOSY",
+      "mint": "HF2RBPrfNBk9TxggL2cYZFEKSgirzh5HKCngLENTpump",
+      "link": "https://axiom.trade/meme/HF2RBPrfNBk9TxggL2cYZFEKSgirzh5HKCngLENTpump?chain=sol",
+      "reason": "5m volume $3,083 under $5k",
+      "gates": 1,
+      "chg_m5": 3.55,
+      "vol_m5": 3083.0,
+      "score": 9.28
     },
     {
       "symbol": "BTC",
       "mint": "CUfphqswgDK3VP3FX7CiShVCTdGQneFusYRFViABpump",
       "link": "https://axiom.trade/meme/CUfphqswgDK3VP3FX7CiShVCTdGQneFusYRFViABpump?chain=sol",
-      "reason": "5m volume $3,247 under $5k",
+      "reason": "5m volume $3,601 under $5k",
       "gates": 1,
-      "chg_m5": 5.69,
-      "vol_m5": 3247.0,
-      "score": 6.0
+      "chg_m5": 7.52,
+      "vol_m5": 3601.0,
+      "score": 8.4
     },
     {
       "symbol": "pippin",
@@ -359375,16 +359396,6 @@
       "score": 2.44
     },
     {
-      "symbol": "LOOSY",
-      "mint": "HF2RBPrfNBk9TxggL2cYZFEKSgirzh5HKCngLENTpump",
-      "link": "https://axiom.trade/meme/HF2RBPrfNBk9TxggL2cYZFEKSgirzh5HKCngLENTpump?chain=sol",
-      "reason": "5m volume $344 under $5k",
-      "gates": 1,
-      "chg_m5": 2.062,
-      "vol_m5": 344.0,
-      "score": 0.94
-    },
-    {
       "symbol": "TTWO",
       "mint": "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo",
       "link": "https://axiom.trade/meme/TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo?chain=sol",
@@ -359393,16 +359404,6 @@
       "chg_m5": -0.123,
       "vol_m5": 10530.0,
       "score": -0.19
-    },
-    {
-      "symbol": "FIONA",
-      "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
-      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "reason": "5m -3.0% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -3.029,
-      "vol_m5": 7024.0,
-      "score": -7.59
     }
   ]
 }
