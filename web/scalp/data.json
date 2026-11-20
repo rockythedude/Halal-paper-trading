@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 64960,
-  "open_count": 2,
-  "last_updated_london": "20 Nov 2026, 20:16 GMT",
-  "last_updated": "2026-11-20T20:16:33.597547+00:00",
+  "open_count": 3,
+  "last_updated_london": "20 Nov 2026, 20:17 GMT",
+  "last_updated": "2026-11-20T20:17:13.633065+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "20 Nov 2026, 14:26 GMT",
-      "value": 0.0
-    },
     {
       "label": "20 Nov 2026, 14:26 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "20 Nov 2026, 20:16 GMT",
       "value": 0.0
+    },
+    {
+      "label": "20 Nov 2026, 20:17 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "20 Nov 2026, 20:16 GMT",
+      "hhmm": "20:16",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "20:16 EXECUTOR: BUY 10% $DYSON @ 0.000233059 — 5m +2.8% vol $6,902 buys 989/sells 94",
+      "message": "20:16 EXECUTOR: BUY 10% $DYSON @ 0.000233059 — 5m +2.8% vol $6,902 buys 989/sells 94",
+      "symbol": null,
+      "action": "BUY 10% $DYSON @ 0.000233059 — 5m +2.8% vol $6,902 buys 989/sells 94"
+    },
     {
       "ts": "20 Nov 2026, 20:14 GMT",
       "hhmm": "20:14",
@@ -2451,16 +2461,6 @@
       "message": "19:59 LOGGER: run complete — 29 polls, 3 open, equity $0.00",
       "symbol": null,
       "action": "run complete — 29 polls, 3 open, equity $0.00"
-    },
-    {
-      "ts": "20 Nov 2026, 19:59 GMT",
-      "hhmm": "19:59",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "19:59 EXECUTOR: BUY 10% $DYSON @ 0.000253762 — 5m +5.1% vol $7,896 buys 984/sells 129",
-      "message": "19:59 EXECUTOR: BUY 10% $DYSON @ 0.000253762 — 5m +5.1% vol $7,896 buys 984/sells 129",
-      "symbol": null,
-      "action": "BUY 10% $DYSON @ 0.000253762 — 5m +5.1% vol $7,896 buys 984/sells 129"
     }
   ],
   "agents": [
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "2/6",
+      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "3/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2617,9 +2617,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol"
+    },
+    {
+      "symbol": "DYSON",
+      "name": "DYSON",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.0002330595,
+      "current_price": 0.0002427,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": 0.04136497332226319,
+      "hard_stop": 0.000221406525,
+      "trail_activate": 0.00024238188,
+      "opened_at": "20 Nov 2026, 20:16 GMT",
+      "reason": "BUY 10% $DYSON @ 0.000233059 — 5m +2.8% vol $6,902 buys 989/sells 94",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/C2As2w55q3V3snKVCyA3nZvmQJSx2NApM5SLK5krpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f15745",
+      "time": "20 Nov 2026, 20:16 GMT",
+      "ts": "2026-11-20T20:16:41.675451+00:00",
+      "side": "buy",
+      "symbol": "DYSON",
+      "name": "DYSON",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0002330595,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f15744",
       "time": "20 Nov 2026, 20:14 GMT",
@@ -317506,7 +317548,7 @@
     "win_rate": 0.5634608054885021,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 15744
+    "fills": 15745
   },
   "ok": true,
   "totals_cumulative": {
@@ -317658,6 +317700,13 @@
       "price": 0.0014095266035068442,
       "change_pct": null,
       "source": "geckoterminal"
+    },
+    {
+      "symbol": "DYSON",
+      "name": "DYSON",
+      "price": 0.0002427,
+      "change_pct": null,
+      "source": "dexscreener"
     }
   ],
   "desk": "axiom",
@@ -317707,8 +317756,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 76.45,
-      "return_pct": -0.23553067,
+      "equity": 76.47,
+      "return_pct": -0.23525277000000003,
       "closed_trades": 444,
       "win_rate": 0.32432432432432434,
       "realized_pnl": -23.4
@@ -317752,13 +317801,13 @@
       "score": 7.83
     },
     {
-      "symbol": "BUCKME",
-      "mint": "DEgAkPNxz3dtMsesD2FDkNA2S6sch5YWfGUDT7R2pump",
-      "link": "https://axiom.trade/meme/DEgAkPNxz3dtMsesD2FDkNA2S6sch5YWfGUDT7R2pump?chain=sol",
-      "reason": "5m volume $80 under $5k",
+      "symbol": "GATO",
+      "mint": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
+      "link": "https://axiom.trade/meme/HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump?chain=sol",
+      "reason": "5m volume $377 under $5k",
       "gates": 1,
-      "chg_m5": 1.12,
-      "vol_m5": 80.0,
+      "chg_m5": 1.5,
+      "vol_m5": 377.0,
       "score": 0.86
     },
     {
@@ -317770,16 +317819,6 @@
       "chg_m5": -0.869,
       "vol_m5": 5667.0,
       "score": -0.98
-    },
-    {
-      "symbol": "DYSON",
-      "mint": "C2As2w55q3V3snKVCyA3nZvmQJSx2NApM5SLK5krpump",
-      "link": "https://axiom.trade/meme/C2As2w55q3V3snKVCyA3nZvmQJSx2NApM5SLK5krpump?chain=sol",
-      "reason": "5m -1.1% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -1.12,
-      "vol_m5": 8319.0,
-      "score": -2.04
     },
     {
       "symbol": "NIO",
@@ -317795,11 +317834,21 @@
       "symbol": "GTA",
       "mint": "3fWhdo8bQCamw5ed6yNGdvaru1qS5UVwB6dYp9znpump",
       "link": "https://axiom.trade/meme/3fWhdo8bQCamw5ed6yNGdvaru1qS5UVwB6dYp9znpump?chain=sol",
-      "reason": "5m -23.6% outside +1% to +40%",
+      "reason": "5m -21.1% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -23.59,
-      "vol_m5": 11239.0,
-      "score": -99.76
+      "chg_m5": -21.13,
+      "vol_m5": 12160.0,
+      "score": -95.76
+    },
+    {
+      "symbol": "CYBERLEEK",
+      "mint": "ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg",
+      "link": "https://axiom.trade/meme/ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg?chain=sol",
+      "reason": "5m volume $1,895 under $5k · 5m +0.6% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.624,
+      "vol_m5": 1895.0,
+      "score": 1.24
     }
   ],
   "helius_status": "",
@@ -317807,7 +317856,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-20T20:16:33.597547+00:00",
-  "checked_at_london": "20 Nov 2026, 20:16 GMT",
+  "checked_at": "2026-11-20T20:17:13.633065+00:00",
+  "checked_at_london": "20 Nov 2026, 20:17 GMT",
   "who_we_copy": null
 }
