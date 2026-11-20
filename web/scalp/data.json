@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 65801,
+  "ticks": 65830,
   "open_count": 4,
   "last_updated_london": "20 Nov 2026, 22:40 GMT",
-  "last_updated": "2026-11-20T22:40:30.789844+00:00",
+  "last_updated": "2026-11-20T22:40:54.868269+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 8109,
+  "traded": 8111,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 8109,
+    "traded": 8111,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "20 Nov 2026, 16:51 GMT",
-      "value": 0.0
-    },
     {
       "label": "20 Nov 2026, 16:52 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "20 Nov 2026, 22:40 GMT",
       "value": 0.0
+    },
+    {
+      "label": "20 Nov 2026, 22:40 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "20 Nov 2026, 22:40 GMT",
+      "hhmm": "22:40",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "22:40 LOGGER: run complete — 29 polls, 4 open, equity $0.00",
+      "message": "22:40 LOGGER: run complete — 29 polls, 4 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 4 open, equity $0.00"
+    },
     {
       "ts": "20 Nov 2026, 22:38 GMT",
       "hhmm": "22:38",
@@ -2451,16 +2461,6 @@
       "message": "22:16 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
       "symbol": null,
       "action": "run complete — 29 polls, 2 open, equity $0.00"
-    },
-    {
-      "ts": "20 Nov 2026, 22:16 GMT",
-      "hhmm": "22:16",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "22:16 EXECUTOR: BUY 10% $Trader @ 0.000192759 — 5m +8.5% vol $20,909 buys 284/sells 201",
-      "message": "22:16 EXECUTOR: BUY 10% $Trader @ 0.000192759 — 5m +8.5% vol $20,909 buys 284/sells 201",
-      "symbol": null,
-      "action": "BUY 10% $Trader @ 0.000192759 — 5m +8.5% vol $20,909 buys 284/sells 201"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "56 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "40 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "56 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "40 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2604,11 +2604,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0017586004815635704,
-      "current_price": 0.0018199145444698277,
+      "current_price": 0.001794,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.034865259932001624,
+      "unrealized_pct": 0.02012936923851849,
       "hard_stop": 0.0016706704574853918,
       "trail_activate": 0.0018289445008261133,
       "opened_at": "20 Nov 2026, 22:34 GMT",
@@ -2626,11 +2626,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0011787841963070025,
-      "current_price": 0.0011815560503154491,
+      "current_price": 0.001179,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.0023514516203477775,
+      "unrealized_pct": 0.00018307311352949718,
       "hard_stop": 0.0011198449864916523,
       "trail_activate": 0.0012259355641592827,
       "opened_at": "20 Nov 2026, 22:35 GMT",
@@ -2648,11 +2648,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.00023175299999999996,
-      "current_price": 0.0002297,
+      "current_price": 0.0002347,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.008858569252609305,
+      "unrealized_pct": 0.012716124494613013,
       "hard_stop": 0.00022016534999999996,
       "trail_activate": 0.00024102311999999997,
       "opened_at": "20 Nov 2026, 22:38 GMT",
@@ -327034,9 +327034,9 @@
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 65801,
+    "scanned": 65830,
     "killed": 0,
-    "traded": 8109
+    "traded": 8111
   },
   "events": [
     {
@@ -327179,21 +327179,21 @@
     {
       "symbol": "DCTY",
       "name": "DCTY",
-      "price": 0.0018199145444698277,
+      "price": 0.001794,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "FIONA",
       "name": "FIONA",
-      "price": 0.0011815560503154491,
+      "price": 0.001179,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "Trader",
       "name": "Trader",
-      "price": 0.0002297,
+      "price": 0.0002347,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -327310,34 +327310,14 @@
       "score": 1.73
     },
     {
-      "symbol": "mihao",
-      "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
-      "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
-      "reason": "5m -0.7% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -0.715,
-      "vol_m5": 5670.0,
-      "score": -1.28
-    },
-    {
-      "symbol": "PUMP",
-      "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
-      "link": "https://axiom.trade/meme/pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn?chain=sol",
-      "reason": "market cap $853,944,821 outside $100k–$100M · 5m +0.5% outside +1% to +40%",
+      "symbol": "THUG",
+      "mint": "HoqJaoes6yfL8YEsHGfENwVKT7LrAPy97ZDg9hmBu4Ep",
+      "link": "https://axiom.trade/meme/HoqJaoes6yfL8YEsHGfENwVKT7LrAPy97ZDg9hmBu4Ep?chain=sol",
+      "reason": "5m volume $5 under $5k · 5m +0.3% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 0.475,
-      "vol_m5": 20272.0,
-      "score": 2.56
-    },
-    {
-      "symbol": "NIO",
-      "mint": "7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump",
-      "link": "https://axiom.trade/meme/7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump?chain=sol",
-      "reason": "5m volume $1,121 under $5k · buy/sell 7/12 under 1.05",
-      "gates": 2,
-      "chg_m5": 2.356,
-      "vol_m5": 1121.0,
-      "score": 0.6
+      "chg_m5": 0.29,
+      "vol_m5": 5.0,
+      "score": 0.22
     }
   ],
   "helius_status": "",
@@ -327345,7 +327325,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-20T22:40:30.789844+00:00",
+  "checked_at": "2026-11-20T22:40:54.868269+00:00",
   "checked_at_london": "20 Nov 2026, 22:40 GMT",
   "who_we_copy": null
 }
