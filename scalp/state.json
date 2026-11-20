@@ -3,36 +3,7 @@
   "target": 6000.0,
   "cash": 4.358534103767438e-07,
   "equity": 0.0,
-  "positions": [
-    {
-      "symbol": "LOOSY",
-      "name": "LOOSY",
-      "mint": "HF2RBPrfNBk9TxggL2cYZFEKSgirzh5HKCngLENTpump",
-      "pair": "Bfiq9eaLcMjpEKcgm16GSzzGdedCpcFhRAFvivRP4QkY",
-      "link": "https://axiom.trade/meme/HF2RBPrfNBk9TxggL2cYZFEKSgirzh5HKCngLENTpump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/bfiq9ealcmjpekcgm16gszzgdedcpcfhrafvivrp4qky",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.0019929149999999996,
-      "raw_price": 0.001983,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-20T13:37:53.908166+00:00",
-      "opened_at_london": "20 Nov 2026, 13:37 GMT",
-      "high_water": 0.002003,
-      "trail_armed": false,
-      "last_price": 0.001915,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $LOOSY @ 0.00199291 \u2014 5m +8.2% vol $5,155 buys 468/sells 163",
-      "hard_stop": 0.0018932692499999996,
-      "take_profit": 0.0021523481999999997,
-      "trail_activate": 0.0020726315999999995,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.03909599757139648
-    }
-  ],
+  "positions": [],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -113598,15 +113569,24 @@
       "closed_at": "2026-11-20T13:48:00.602823+00:00",
       "closed_at_london": "20 Nov 2026, 13:48 GMT",
       "opened_at": "2026-11-20T13:44:37.740525+00:00"
+    },
+    {
+      "symbol": "LOOSY",
+      "name": "LOOSY",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.0019929149999999996,
+      "exit_price": 0.001883535,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL stop \u22125% $LOOSY",
+      "closed_at": "2026-11-20T13:48:32.496890+00:00",
+      "closed_at_london": "20 Nov 2026, 13:48 GMT",
+      "opened_at": "2026-11-20T13:37:53.908166+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-20T07:59:21.434157+00:00",
-      "label": "20 Nov 2026, 7:59 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-20T08:00:01.375675+00:00",
       "label": "20 Nov 2026, 8:00 GMT",
@@ -116606,21 +116586,15 @@
       "label": "20 Nov 2026, 13:48 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-20T13:48:40.500067+00:00",
+      "label": "20 Nov 2026, 13:48 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-20T10:21:18.315826+00:00",
-      "london": "20 Nov 2026, 10:21 GMT",
-      "hhmm": "10:21",
-      "agent": "EXECUTOR",
-      "action": "SELL trail 2.5% $FIONA",
-      "symbol": null,
-      "reason": "SELL trail 2.5% $FIONA",
-      "line": "10:21 EXECUTOR: SELL trail 2.5% $FIONA",
-      "tag": "EXECUTOR",
-      "message": "10:21 EXECUTOR: SELL trail 2.5% $FIONA"
-    },
     {
       "ts": "2026-11-20T10:21:18.316145+00:00",
       "london": "20 Nov 2026, 10:21 GMT",
@@ -121408,6 +121382,18 @@
       "line": "13:48 RISK: SELL stop \u22125% $DCTY",
       "tag": "RISK",
       "message": "13:48 RISK: SELL stop \u22125% $DCTY"
+    },
+    {
+      "ts": "2026-11-20T13:48:32.496946+00:00",
+      "london": "20 Nov 2026, 13:48 GMT",
+      "hhmm": "13:48",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $LOOSY",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $LOOSY",
+      "line": "13:48 RISK: SELL stop \u22125% $LOOSY",
+      "tag": "RISK",
+      "message": "13:48 RISK: SELL stop \u22125% $LOOSY"
     }
   ],
   "agents": {
@@ -121416,8 +121402,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 40 pools",
-      "badge": "72 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal unreachable",
+      "badge": "37 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -121432,7 +121418,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "72 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "37 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -121480,8 +121466,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "1/6",
+      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "0/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -121509,7 +121495,7 @@
     }
   },
   "ticks": 62669,
-  "last_updated": "2026-11-20T13:48:00.603406+00:00",
+  "last_updated": "2026-11-20T13:48:40.499946+00:00",
   "last_updated_london": "20 Nov 2026, 13:48 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -333538,73 +333524,87 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f15143"
+    },
+    {
+      "ts": "2026-11-20T13:48:32.496890+00:00",
+      "london": "20 Nov 2026, 13:48 GMT",
+      "side": "sell",
+      "symbol": "LOOSY",
+      "name": "LOOSY",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.001883535,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f15144"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-20T13:48:00.603406+00:00",
+  "checked_at": "2026-11-20T13:48:40.499946+00:00",
   "checked_at_london": "20 Nov 2026, 13:48 GMT",
   "near_misses": [
-    {
-      "symbol": "VINE",
-      "mint": "6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump",
-      "link": "https://axiom.trade/meme/6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump?chain=sol",
-      "reason": "buy/sell 54/94 under 1.05",
-      "gates": 1,
-      "chg_m5": 1.659,
-      "vol_m5": 20665.0,
-      "score": 2.74
-    },
     {
       "symbol": "OGTA",
       "mint": "7bCiddGLe5aM8HE2pigT9jsqkmC1HSPxyXN6GkHEpump",
       "link": "https://axiom.trade/meme/7bCiddGLe5aM8HE2pigT9jsqkmC1HSPxyXN6GkHEpump?chain=sol",
-      "reason": "5m volume $1,511 under $5k",
+      "reason": "5m -15.4% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 2.754,
-      "vol_m5": 1511.0,
-      "score": 2.07
+      "chg_m5": -15.4,
+      "vol_m5": 7280.0,
+      "score": -38.21
+    },
+    {
+      "symbol": "ASHTON",
+      "mint": "42sLnD5tfUYxSkqmjPVcgozT9irF1eC89wk68uBjpump",
+      "link": "https://axiom.trade/meme/42sLnD5tfUYxSkqmjPVcgozT9irF1eC89wk68uBjpump?chain=sol",
+      "reason": "liquidity $0 under $25k \u00b7 market cap $24,892 outside $100k\u2013$100M",
+      "gates": 2,
+      "chg_m5": 24.97,
+      "vol_m5": 6269.0,
+      "score": 32.97
+    },
+    {
+      "symbol": "SWJ",
+      "mint": "gHZhqEnFnitWCJ1MA2i9BzqTReFMhsGmbdL17xypump",
+      "link": "https://axiom.trade/meme/gHZhqEnFnitWCJ1MA2i9BzqTReFMhsGmbdL17xypump?chain=sol",
+      "reason": "5m volume $1,701 under $5k \u00b7 buy/sell 9/12 under 1.05",
+      "gates": 2,
+      "chg_m5": 2.18,
+      "vol_m5": 1701.0,
+      "score": 3.07
     },
     {
       "symbol": "WASTED",
       "mint": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
       "link": "https://axiom.trade/meme/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump?chain=sol",
-      "reason": "5m volume $27 under $5k",
-      "gates": 1,
-      "chg_m5": 1.11,
-      "vol_m5": 27.0,
-      "score": 0.83
+      "reason": "5m volume $26 under $5k \u00b7 5m -0.7% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -0.74,
+      "vol_m5": 26.0,
+      "score": -0.55
     },
     {
-      "symbol": "pippin",
-      "mint": "Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump",
-      "link": "https://axiom.trade/meme/Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump?chain=sol",
-      "reason": "5m +0.3% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": 0.304,
-      "vol_m5": 14235.0,
-      "score": 0.6
+      "symbol": "iAgent",
+      "mint": "44DZsPNJUtUyTkELAFYdwCpe82sEt12HZKrMgK1Spump",
+      "link": "https://axiom.trade/meme/44DZsPNJUtUyTkELAFYdwCpe82sEt12HZKrMgK1Spump?chain=sol",
+      "reason": "5m volume $1,153 under $5k \u00b7 5m -2.9% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -2.94,
+      "vol_m5": 1153.0,
+      "score": -1.52
     },
     {
-      "symbol": "DCTY",
-      "mint": "9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump",
-      "link": "https://axiom.trade/meme/9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump?chain=sol",
-      "reason": "5m -4.2% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -4.228,
-      "vol_m5": 5427.0,
-      "score": -2.62
-    },
-    {
-      "symbol": "FIONA",
-      "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
-      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "reason": "5m -8.1% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -8.076,
-      "vol_m5": 13877.0,
-      "score": -12.32
+      "symbol": "HOGE",
+      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
+      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
+      "reason": "5m volume $1,085 under $5k \u00b7 5m -1.1% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -1.13,
+      "vol_m5": 1085.0,
+      "score": -1.78
     }
   ]
 }
