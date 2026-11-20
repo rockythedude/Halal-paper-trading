@@ -5,34 +5,6 @@
   "equity": 0.0,
   "positions": [
     {
-      "symbol": "VINE",
-      "name": "VINE",
-      "mint": "6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump",
-      "pair": "58fzJMbX5PatnfJPqWWsqkVFPRKptkbb5r2vCw4Qq3z9",
-      "link": "https://axiom.trade/meme/6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump?chain=sol",
-      "dex_url": "https://www.geckoterminal.com/solana/pools/58fzJMbX5PatnfJPqWWsqkVFPRKptkbb5r2vCw4Qq3z9",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.010272547184568903,
-      "raw_price": 0.010221439984645676,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-20T05:43:41.476841+00:00",
-      "opened_at_london": "20 Nov 2026, 5:43 GMT",
-      "high_water": 0.01042,
-      "trail_armed": false,
-      "last_price": 0.009814726417164384,
-      "last_source": "geckoterminal",
-      "reason": "BUY 10% $VINE @ 0.0102725 \u2014 5m +2.2% vol $11,792 buys 40/sells 16",
-      "hard_stop": 0.009758919825340457,
-      "take_profit": 0.011094350959334417,
-      "trail_activate": 0.01068344907195166,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.04456740467371556
-    },
-    {
       "symbol": "TTWO",
       "name": "TTWO",
       "mint": "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo",
@@ -108466,15 +108438,24 @@
       "closed_at": "2026-11-20T05:57:38.252510+00:00",
       "closed_at_london": "20 Nov 2026, 5:57 GMT",
       "opened_at": "2026-11-20T05:55:38.311730+00:00"
+    },
+    {
+      "symbol": "VINE",
+      "name": "VINE",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.010272547184568903,
+      "exit_price": 0.009658465,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL stop \u22125% $VINE",
+      "closed_at": "2026-11-20T06:02:45.785807+00:00",
+      "closed_at_london": "20 Nov 2026, 6:02 GMT",
+      "opened_at": "2026-11-20T05:43:41.476841+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-20T00:15:43.478433+00:00",
-      "label": "20 Nov 2026, 0:15 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-20T00:16:23.361990+00:00",
       "label": "20 Nov 2026, 0:16 GMT",
@@ -111474,21 +111455,15 @@
       "label": "20 Nov 2026, 6:02 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-20T06:03:17.650540+00:00",
+      "label": "20 Nov 2026, 6:03 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-20T02:12:00.671031+00:00",
-      "london": "20 Nov 2026, 2:12 GMT",
-      "hhmm": "02:12",
-      "agent": "EXECUTOR",
-      "action": "SELL trail 2.5% $RUGGED",
-      "symbol": null,
-      "reason": "SELL trail 2.5% $RUGGED",
-      "line": "02:12 EXECUTOR: SELL trail 2.5% $RUGGED",
-      "tag": "EXECUTOR",
-      "message": "02:12 EXECUTOR: SELL trail 2.5% $RUGGED"
-    },
     {
       "ts": "2026-11-20T02:12:08.629080+00:00",
       "london": "20 Nov 2026, 2:12 GMT",
@@ -116276,6 +116251,18 @@
       "line": "05:59 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00",
       "tag": "LOGGER",
       "message": "05:59 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00"
+    },
+    {
+      "ts": "2026-11-20T06:02:45.785867+00:00",
+      "london": "20 Nov 2026, 6:02 GMT",
+      "hhmm": "06:02",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $VINE",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $VINE",
+      "line": "06:02 RISK: SELL stop \u22125% $VINE",
+      "tag": "RISK",
+      "message": "06:02 RISK: SELL stop \u22125% $VINE"
     }
   ],
   "agents": {
@@ -116348,8 +116335,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -116377,8 +116364,8 @@
     }
   },
   "ticks": 59885,
-  "last_updated": "2026-11-20T06:02:37.675208+00:00",
-  "last_updated_london": "20 Nov 2026, 6:02 GMT",
+  "last_updated": "2026-11-20T06:03:17.650426+00:00",
+  "last_updated_london": "20 Nov 2026, 6:03 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -318788,23 +318775,47 @@
       "pnl": null,
       "pnl_pct": null,
       "id": "f14456"
+    },
+    {
+      "ts": "2026-11-20T06:02:45.785807+00:00",
+      "london": "20 Nov 2026, 6:02 GMT",
+      "side": "sell",
+      "symbol": "VINE",
+      "name": "VINE",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.009658465,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f14457"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-20T06:02:37.675208+00:00",
-  "checked_at_london": "20 Nov 2026, 6:02 GMT",
+  "checked_at": "2026-11-20T06:03:17.650426+00:00",
+  "checked_at_london": "20 Nov 2026, 6:03 GMT",
   "near_misses": [
     {
       "symbol": "LOOSY",
       "mint": "HF2RBPrfNBk9TxggL2cYZFEKSgirzh5HKCngLENTpump",
       "link": "https://axiom.trade/meme/HF2RBPrfNBk9TxggL2cYZFEKSgirzh5HKCngLENTpump?chain=sol",
-      "reason": "5m volume $2,812 under $5k",
+      "reason": "5m volume $3,034 under $5k",
       "gates": 1,
-      "chg_m5": 6.62,
-      "vol_m5": 2812.0,
-      "score": 10.4
+      "chg_m5": 6.29,
+      "vol_m5": 3034.0,
+      "score": 10.62
+    },
+    {
+      "symbol": "apocry ",
+      "mint": "HVxXzEt87QszpC95kMKAfrHdboj4K1TVxYNMzwmbpump",
+      "link": "https://axiom.trade/meme/HVxXzEt87QszpC95kMKAfrHdboj4K1TVxYNMzwmbpump?chain=sol",
+      "reason": "buy/sell 275/476 under 1.05",
+      "gates": 1,
+      "chg_m5": 18.81,
+      "vol_m5": 19964.0,
+      "score": 5.07
     },
     {
       "symbol": "FIONA",
@@ -318815,16 +318826,6 @@
       "chg_m5": 2.875,
       "vol_m5": 20890.0,
       "score": 2.67
-    },
-    {
-      "symbol": "apocry ",
-      "mint": "HVxXzEt87QszpC95kMKAfrHdboj4K1TVxYNMzwmbpump",
-      "link": "https://axiom.trade/meme/HVxXzEt87QszpC95kMKAfrHdboj4K1TVxYNMzwmbpump?chain=sol",
-      "reason": "buy/sell 252/771 under 1.05",
-      "gates": 1,
-      "chg_m5": 10.31,
-      "vol_m5": 20199.0,
-      "score": 1.55
     },
     {
       "symbol": "pippin",
@@ -318847,14 +318848,14 @@
       "score": 0.16
     },
     {
-      "symbol": "OGTA",
-      "mint": "7bCiddGLe5aM8HE2pigT9jsqkmC1HSPxyXN6GkHEpump",
-      "link": "https://axiom.trade/meme/7bCiddGLe5aM8HE2pigT9jsqkmC1HSPxyXN6GkHEpump?chain=sol",
-      "reason": "5m -8.0% outside +1% to +40%",
+      "symbol": "VINE",
+      "mint": "6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump",
+      "link": "https://axiom.trade/meme/6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump?chain=sol",
+      "reason": "5m -2.0% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -8.04,
-      "vol_m5": 5918.0,
-      "score": -17.17
+      "chg_m5": -2.025,
+      "vol_m5": 17483.0,
+      "score": -3.34
     }
   ]
 }
