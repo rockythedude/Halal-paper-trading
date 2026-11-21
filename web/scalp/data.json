@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 69716,
-  "open_count": 0,
-  "last_updated_london": "21 Nov 2026, 9:35 GMT",
-  "last_updated": "2026-11-21T09:35:55.622155+00:00",
+  "open_count": 1,
+  "last_updated_london": "21 Nov 2026, 9:36 GMT",
+  "last_updated": "2026-11-21T09:36:35.612495+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "21 Nov 2026, 3:49 GMT",
-      "value": 0.0
-    },
     {
       "label": "21 Nov 2026, 3:49 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "21 Nov 2026, 9:35 GMT",
       "value": 0.0
+    },
+    {
+      "label": "21 Nov 2026, 9:36 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "21 Nov 2026, 9:36 GMT",
+      "hhmm": "09:36",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "09:36 EXECUTOR: BUY 10% $PUNANI @ 0.00314967 — 5m +5.6% vol $5,024 buys 763/sells 391",
+      "message": "09:36 EXECUTOR: BUY 10% $PUNANI @ 0.00314967 — 5m +5.6% vol $5,024 buys 763/sells 391",
+      "symbol": null,
+      "action": "BUY 10% $PUNANI @ 0.00314967 — 5m +5.6% vol $5,024 buys 763/sells 391"
+    },
     {
       "ts": "21 Nov 2026, 9:33 GMT",
       "hhmm": "09:33",
@@ -2451,16 +2461,6 @@
       "message": "08:32 RISK: SELL stop −5% $JENSEN",
       "symbol": null,
       "action": "SELL stop −5% $JENSEN"
-    },
-    {
-      "ts": "21 Nov 2026, 8:31 GMT",
-      "hhmm": "08:31",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "08:31 EXECUTOR: BUY 10% $RAMBO @ 0.00806412 — 5m +1.2% vol $154,374 buys 411/sells 185",
-      "message": "08:31 EXECUTOR: BUY 10% $RAMBO @ 0.00806412 — 5m +1.2% vol $154,374 buys 411/sells 185",
-      "symbol": null,
-      "action": "BUY 10% $RAMBO @ 0.00806412 — 5m +1.2% vol $154,374 buys 411/sells 185"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "55 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "36 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "55 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "36 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "0/6",
+      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2573,8 +2573,51 @@
       "open_positions": 0
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "PUNANI",
+      "name": "PUNANI",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.00314967,
+      "current_price": 0.003134,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.0029921864999999997,
+      "trail_activate": 0.0032756568,
+      "opened_at": "21 Nov 2026, 9:36 GMT",
+      "reason": "BUY 10% $PUNANI @ 0.00314967 — 5m +5.6% vol $5,024 buys 763/sells 391",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/2TngN4B7XaoGSKsYvttq5bFAdM4Z4xCSnuyRwGiFpump?chain=sol"
+    }
+  ],
   "fills": [
+    {
+      "id": "f16967",
+      "time": "21 Nov 2026, 9:36 GMT",
+      "ts": "2026-11-21T09:36:11.641317+00:00",
+      "side": "buy",
+      "symbol": "PUNANI",
+      "name": "PUNANI",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00314967,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f16966",
       "time": "21 Nov 2026, 9:33 GMT",
@@ -341900,8 +341943,8 @@
     "closed_trades": 8483,
     "win_rate": 0.5949546151125781,
     "realized_pnl": -100.0,
-    "unrealized_pnl": 0,
-    "fills": 16966
+    "unrealized_pnl": 0.0,
+    "fills": 16967
   },
   "ok": true,
   "totals_cumulative": {
@@ -342039,7 +342082,15 @@
     "Risk": "#FF4D4D",
     "Logger": "#22D3EE"
   },
-  "ticker": [],
+  "ticker": [
+    {
+      "symbol": "PUNANI",
+      "name": "PUNANI",
+      "price": 0.003134,
+      "change_pct": null,
+      "source": "dexscreener"
+    }
+  ],
   "desk": "axiom",
   "risk_rules": {
     "mode": "axiom",
@@ -342060,8 +342111,8 @@
     {
       "id": "main",
       "name": "Halal book",
-      "equity": 91.67,
-      "return_pct": -0.08332035000000004,
+      "equity": 91.8,
+      "return_pct": -0.08199861999999997,
       "closed_trades": 21,
       "win_rate": 0.14285714285714285,
       "realized_pnl": -7.04
@@ -342088,7 +342139,7 @@
       "id": "btc",
       "name": "BTC Scalper",
       "equity": 73.49,
-      "return_pct": -0.2650660000000001,
+      "return_pct": -0.26509694999999994,
       "closed_trades": 503,
       "win_rate": 0.3220675944333996,
       "realized_pnl": -26.41
@@ -342125,61 +342176,41 @@
       "symbol": "RAMBO",
       "mint": "KMifrkYmDdAKtVXAVBEPEQxJ7qP2iLgUcfZjUZipump",
       "link": "https://axiom.trade/meme/KMifrkYmDdAKtVXAVBEPEQxJ7qP2iLgUcfZjUZipump?chain=sol",
-      "reason": "buy/sell 169/202 under 1.05",
+      "reason": "buy/sell 174/210 under 1.05",
       "gates": 1,
-      "chg_m5": 17.52,
-      "vol_m5": 52548.0,
-      "score": 21.77
-    },
-    {
-      "symbol": "PUNANI",
-      "mint": "2TngN4B7XaoGSKsYvttq5bFAdM4Z4xCSnuyRwGiFpump",
-      "link": "https://axiom.trade/meme/2TngN4B7XaoGSKsYvttq5bFAdM4Z4xCSnuyRwGiFpump?chain=sol",
-      "reason": "5m volume $4,643 under $5k",
-      "gates": 1,
-      "chg_m5": 6.08,
-      "vol_m5": 4643.0,
-      "score": 10.42
-    },
-    {
-      "symbol": "HOGE",
-      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
-      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
-      "reason": "5m volume $301 under $5k",
-      "gates": 1,
-      "chg_m5": 2.05,
-      "vol_m5": 301.0,
-      "score": 4.12
+      "chg_m5": 17.78,
+      "vol_m5": 52985.0,
+      "score": 22.04
     },
     {
       "symbol": "MAYA",
       "mint": "FJKt1LxbWBpTRt9BaDEB6Wr2qL5LZzjFF5sx8rXnpump",
       "link": "https://axiom.trade/meme/FJKt1LxbWBpTRt9BaDEB6Wr2qL5LZzjFF5sx8rXnpump?chain=sol",
-      "reason": "5m volume $4,546 under $5k",
+      "reason": "5m volume $4,729 under $5k",
       "gates": 1,
-      "chg_m5": 2.16,
-      "vol_m5": 4546.0,
-      "score": 3.2
+      "chg_m5": 2.18,
+      "vol_m5": 4729.0,
+      "score": 3.18
     },
     {
-      "symbol": "FIONA",
-      "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
-      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "reason": "5m volume $3,482 under $5k · buy/sell 23/29 under 1.05",
+      "symbol": "JENSEN",
+      "mint": "DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump",
+      "link": "https://axiom.trade/meme/DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump?chain=sol",
+      "reason": "5m volume $3,432 under $5k · 5m +0.9% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 9.197,
-      "vol_m5": 3482.0,
-      "score": 9.83
+      "chg_m5": 0.87,
+      "vol_m5": 3432.0,
+      "score": 1.11
     },
     {
-      "symbol": "FLOAT",
-      "mint": "Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr",
-      "link": "https://axiom.trade/meme/Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr?chain=sol",
-      "reason": "5m volume $2,250 under $5k · buy/sell 2/3 under 1.05",
+      "symbol": "HOGE",
+      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
+      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
+      "reason": "5m volume $337 under $5k · 5m +0.1% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 5.078,
-      "vol_m5": 2250.0,
-      "score": 6.06
+      "chg_m5": 0.05,
+      "vol_m5": 337.0,
+      "score": 0.11
     }
   ],
   "helius_status": "",
@@ -342187,7 +342218,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-21T09:35:55.622155+00:00",
-  "checked_at_london": "21 Nov 2026, 9:35 GMT",
+  "checked_at": "2026-11-21T09:36:35.612495+00:00",
+  "checked_at_london": "21 Nov 2026, 9:36 GMT",
   "who_we_copy": null
 }
