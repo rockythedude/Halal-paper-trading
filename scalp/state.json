@@ -126832,12 +126832,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-21T01:48:25.007471+00:00",
-      "label": "21 Nov 2026, 1:48 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
-    {
       "ts": "2026-11-21T01:49:05.030055+00:00",
       "label": "21 Nov 2026, 1:49 GMT",
       "equity": 0.0,
@@ -129836,21 +129830,15 @@
       "label": "21 Nov 2026, 7:36 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-21T07:36:54.670215+00:00",
+      "label": "21 Nov 2026, 7:36 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-21T04:07:29.780513+00:00",
-      "london": "21 Nov 2026, 4:07 GMT",
-      "hhmm": "04:07",
-      "agent": "EXECUTOR",
-      "action": "SELL trail 2.5% $NIO",
-      "symbol": null,
-      "reason": "SELL trail 2.5% $NIO",
-      "line": "04:07 EXECUTOR: SELL trail 2.5% $NIO",
-      "tag": "EXECUTOR",
-      "message": "04:07 EXECUTOR: SELL trail 2.5% $NIO"
-    },
     {
       "ts": "2026-11-21T04:07:29.781084+00:00",
       "london": "21 Nov 2026, 4:07 GMT",
@@ -134638,6 +134626,18 @@
       "line": "07:36 RISK: SELL time stop 20m $PUNANI",
       "tag": "RISK",
       "message": "07:36 RISK: SELL time stop 20m $PUNANI"
+    },
+    {
+      "ts": "2026-11-21T07:36:54.670136+00:00",
+      "london": "21 Nov 2026, 7:36 GMT",
+      "hhmm": "07:36",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 1 open, equity $0.00",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 1 open, equity $0.00",
+      "line": "07:36 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00",
+      "tag": "LOGGER",
+      "message": "07:36 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00"
     }
   ],
   "agents": {
@@ -134738,8 +134738,8 @@
       "open_positions": 0
     }
   },
-  "ticks": 68991,
-  "last_updated": "2026-11-21T07:36:30.991469+00:00",
+  "ticks": 69020,
+  "last_updated": "2026-11-21T07:36:54.668741+00:00",
   "last_updated_london": "21 Nov 2026, 7:36 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -134761,7 +134761,7 @@
     "traded": 8454
   },
   "totals_cumulative": {
-    "scanned": 68991,
+    "scanned": 69020,
     "killed": 0,
     "traded": 8454
   },
@@ -371469,18 +371469,28 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-21T07:36:30.991469+00:00",
+  "checked_at": "2026-11-21T07:36:54.668741+00:00",
   "checked_at_london": "21 Nov 2026, 7:36 GMT",
   "near_misses": [
     {
       "symbol": "SI",
       "mint": "2GiS8L6jzveE7cQ61bjGN6wVn5MS9FcBjarSAMFppump",
       "link": "https://axiom.trade/meme/2GiS8L6jzveE7cQ61bjGN6wVn5MS9FcBjarSAMFppump?chain=sol",
-      "reason": "5m volume $2,426 under $5k",
+      "reason": "5m volume $2,241 under $5k",
       "gates": 1,
-      "chg_m5": 17.36,
-      "vol_m5": 2426.0,
-      "score": 12.32
+      "chg_m5": 14.5,
+      "vol_m5": 2241.0,
+      "score": 8.77
+    },
+    {
+      "symbol": "HUGH",
+      "mint": "Fpzcd2R1y2MPdezgMRigQuBx7aCPPn5sZBXpvtP3pump",
+      "link": "https://axiom.trade/meme/Fpzcd2R1y2MPdezgMRigQuBx7aCPPn5sZBXpvtP3pump?chain=sol",
+      "reason": "5m volume $104 under $5k",
+      "gates": 1,
+      "chg_m5": 2.19,
+      "vol_m5": 104.0,
+      "score": 4.29
     },
     {
       "symbol": "pippin",
@@ -371493,44 +371503,34 @@
       "score": 1.27
     },
     {
+      "symbol": "JENSEN",
+      "mint": "DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump",
+      "link": "https://axiom.trade/meme/DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump?chain=sol",
+      "reason": "5m -1.7% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -1.73,
+      "vol_m5": 5480.0,
+      "score": -1.9
+    },
+    {
       "symbol": "PUNANI",
       "mint": "2TngN4B7XaoGSKsYvttq5bFAdM4Z4xCSnuyRwGiFpump",
       "link": "https://axiom.trade/meme/2TngN4B7XaoGSKsYvttq5bFAdM4Z4xCSnuyRwGiFpump?chain=sol",
-      "reason": "5m -1.5% outside +1% to +40%",
+      "reason": "5m -2.0% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -1.46,
-      "vol_m5": 6015.0,
-      "score": -2.77
+      "chg_m5": -1.97,
+      "vol_m5": 5744.0,
+      "score": -3.96
     },
     {
       "symbol": "MAYA",
       "mint": "FJKt1LxbWBpTRt9BaDEB6Wr2qL5LZzjFF5sx8rXnpump",
       "link": "https://axiom.trade/meme/FJKt1LxbWBpTRt9BaDEB6Wr2qL5LZzjFF5sx8rXnpump?chain=sol",
-      "reason": "5m -3.7% outside +1% to +40%",
+      "reason": "5m -2.9% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -3.74,
-      "vol_m5": 8849.0,
-      "score": -8.44
-    },
-    {
-      "symbol": "HUGH",
-      "mint": "Fpzcd2R1y2MPdezgMRigQuBx7aCPPn5sZBXpvtP3pump",
-      "link": "https://axiom.trade/meme/Fpzcd2R1y2MPdezgMRigQuBx7aCPPn5sZBXpvtP3pump?chain=sol",
-      "reason": "5m volume $349 under $5k \u00b7 buy/sell 3/3 under 1.05",
-      "gates": 2,
-      "chg_m5": 6.75,
-      "vol_m5": 349.0,
-      "score": 14.78
-    },
-    {
-      "symbol": "Rings",
-      "mint": "65iH8k736QNhuUHm1tt8X7yJXpJ517HPPq8BrVdwring",
-      "link": "https://axiom.trade/meme/65iH8k736QNhuUHm1tt8X7yJXpJ517HPPq8BrVdwring?chain=sol",
-      "reason": "5m volume $434 under $5k \u00b7 5m +0.8% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.798,
-      "vol_m5": 434.0,
-      "score": 0.6
+      "chg_m5": -2.85,
+      "vol_m5": 8073.0,
+      "score": -5.75
     }
   ]
 }
