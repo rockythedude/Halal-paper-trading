@@ -123307,12 +123307,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-20T19:08:06.124347+00:00",
-      "label": "20 Nov 2026, 19:08 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
-    {
       "ts": "2026-11-20T19:08:46.177060+00:00",
       "label": "20 Nov 2026, 19:08 GMT",
       "equity": 0.0,
@@ -126311,21 +126305,15 @@
       "label": "21 Nov 2026, 0:57 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-21T00:57:41.010017+00:00",
+      "label": "21 Nov 2026, 0:57 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-20T21:45:44.826259+00:00",
-      "london": "20 Nov 2026, 21:45 GMT",
-      "hhmm": "21:45",
-      "agent": "EXECUTOR",
-      "action": "SELL trail 2.5% $Trader",
-      "symbol": null,
-      "reason": "SELL trail 2.5% $Trader",
-      "line": "21:45 EXECUTOR: SELL trail 2.5% $Trader",
-      "tag": "EXECUTOR",
-      "message": "21:45 EXECUTOR: SELL trail 2.5% $Trader"
-    },
     {
       "ts": "2026-11-20T21:45:44.826747+00:00",
       "london": "20 Nov 2026, 21:45 GMT",
@@ -131113,6 +131101,18 @@
       "line": "00:55 RISK: SELL stop \u22125% $PATRICK",
       "tag": "RISK",
       "message": "00:55 RISK: SELL stop \u22125% $PATRICK"
+    },
+    {
+      "ts": "2026-11-21T00:57:41.009928+00:00",
+      "london": "21 Nov 2026, 0:57 GMT",
+      "hhmm": "00:57",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 1 open, equity $0.00",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 1 open, equity $0.00",
+      "line": "00:57 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00",
+      "tag": "LOGGER",
+      "message": "00:57 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00"
     }
   ],
   "agents": {
@@ -131213,8 +131213,8 @@
       "open_positions": 0
     }
   },
-  "ticks": 66613,
-  "last_updated": "2026-11-21T00:57:17.136794+00:00",
+  "ticks": 66642,
+  "last_updated": "2026-11-21T00:57:41.008651+00:00",
   "last_updated_london": "21 Nov 2026, 0:57 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -131233,12 +131233,12 @@
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 8218
+    "traded": 8219
   },
   "totals_cumulative": {
-    "scanned": 66613,
+    "scanned": 66642,
     "killed": 0,
-    "traded": 8218
+    "traded": 8219
   },
   "paper_money": true,
   "fills": [
@@ -361364,9 +361364,19 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-21T00:57:17.136794+00:00",
+  "checked_at": "2026-11-21T00:57:41.008651+00:00",
   "checked_at_london": "21 Nov 2026, 0:57 GMT",
   "near_misses": [
+    {
+      "symbol": "LOOSY",
+      "mint": "HF2RBPrfNBk9TxggL2cYZFEKSgirzh5HKCngLENTpump",
+      "link": "https://axiom.trade/meme/HF2RBPrfNBk9TxggL2cYZFEKSgirzh5HKCngLENTpump?chain=sol",
+      "reason": "5m volume $2,474 under $5k",
+      "gates": 1,
+      "chg_m5": 3.47,
+      "vol_m5": 2474.0,
+      "score": 7.53
+    },
     {
       "symbol": "FLOAT",
       "mint": "Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr",
@@ -361401,31 +361411,21 @@
       "symbol": "JENSEN",
       "mint": "DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump",
       "link": "https://axiom.trade/meme/DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump?chain=sol",
-      "reason": "5m -3.5% outside +1% to +40%",
+      "reason": "5m -7.9% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -3.53,
-      "vol_m5": 18962.0,
-      "score": -1.55
+      "chg_m5": -7.93,
+      "vol_m5": 16581.0,
+      "score": -3.45
     },
     {
       "symbol": "BTC",
       "mint": "CUfphqswgDK3VP3FX7CiShVCTdGQneFusYRFViABpump",
       "link": "https://axiom.trade/meme/CUfphqswgDK3VP3FX7CiShVCTdGQneFusYRFViABpump?chain=sol",
-      "reason": "5m -14.4% outside +1% to +40%",
+      "reason": "5m -13.5% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -14.45,
-      "vol_m5": 5904.0,
-      "score": -28.82
-    },
-    {
-      "symbol": "NIO",
-      "mint": "7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump",
-      "link": "https://axiom.trade/meme/7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump?chain=sol",
-      "reason": "5m volume $1,678 under $5k \u00b7 5m +0.9% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.897,
-      "vol_m5": 1678.0,
-      "score": 2.83
+      "chg_m5": -13.52,
+      "vol_m5": 5870.0,
+      "score": -28.98
     }
   ]
 }
