@@ -3,7 +3,36 @@
   "target": 6000.0,
   "cash": 4.358534103767438e-07,
   "equity": 0.0,
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "RAMBO",
+      "name": "RAMBO",
+      "mint": "KMifrkYmDdAKtVXAVBEPEQxJ7qP2iLgUcfZjUZipump",
+      "pair": "Gz15vwSPY9KFYNkrMPkoKp2h9yygVBovoXJsGwSJcvFk",
+      "link": "https://axiom.trade/meme/KMifrkYmDdAKtVXAVBEPEQxJ7qP2iLgUcfZjUZipump?chain=sol",
+      "dex_url": "https://dexscreener.com/solana/gz15vwspy9kfynkrmpkokp2h9yygvbovoxjsgwsjcvfk",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "entry_price": 0.015637799999999997,
+      "raw_price": 0.01556,
+      "entry_fee": 0.0,
+      "cost_basis": 0.0,
+      "opened_at": "2026-11-21T08:13:35.330794+00:00",
+      "opened_at_london": "21 Nov 2026, 8:13 GMT",
+      "high_water": 0.015637799999999997,
+      "trail_armed": false,
+      "last_price": 0.01556,
+      "last_source": "dexscreener",
+      "reason": "BUY 10% $RAMBO @ 0.0156378 \u2014 5m +3.2% vol $43,702 buys 208/sells 91",
+      "hard_stop": 0.014855909999999996,
+      "take_profit": 0.016888823999999997,
+      "trail_activate": 0.016263312,
+      "market_value": 0.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319
+    }
+  ],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -126998,12 +127027,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-21T02:25:18.357145+00:00",
-      "label": "21 Nov 2026, 2:25 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
-    {
       "ts": "2026-11-21T02:26:27.194700+00:00",
       "label": "21 Nov 2026, 2:26 GMT",
       "equity": 0.0,
@@ -130002,21 +130025,15 @@
       "label": "21 Nov 2026, 8:13 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-21T08:13:59.293879+00:00",
+      "label": "21 Nov 2026, 8:13 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-21T04:22:11.864276+00:00",
-      "london": "21 Nov 2026, 4:22 GMT",
-      "hhmm": "04:22",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $BTC @ 0.000146931 \u2014 5m +34.3% vol $58,803 buys 1903/sells 918",
-      "symbol": null,
-      "reason": "BUY 10% $BTC @ 0.000146931 \u2014 5m +34.3% vol $58,803 buys 1903/sells 918",
-      "line": "04:22 EXECUTOR: BUY 10% $BTC @ 0.000146931 \u2014 5m +34.3% vol $58,803 buys 1903/sells 918",
-      "tag": "EXECUTOR",
-      "message": "04:22 EXECUTOR: BUY 10% $BTC @ 0.000146931 \u2014 5m +34.3% vol $58,803 buys 1903/sells 918"
-    },
     {
       "ts": "2026-11-21T04:22:27.707681+00:00",
       "london": "21 Nov 2026, 4:22 GMT",
@@ -134804,6 +134821,18 @@
       "line": "08:10 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.00",
       "tag": "LOGGER",
       "message": "08:10 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.00"
+    },
+    {
+      "ts": "2026-11-21T08:13:35.330846+00:00",
+      "london": "21 Nov 2026, 8:13 GMT",
+      "hhmm": "08:13",
+      "agent": "EXECUTOR",
+      "action": "BUY 10% $RAMBO @ 0.0156378 \u2014 5m +3.2% vol $43,702 buys 208/sells 91",
+      "symbol": null,
+      "reason": "BUY 10% $RAMBO @ 0.0156378 \u2014 5m +3.2% vol $43,702 buys 208/sells 91",
+      "line": "08:13 EXECUTOR: BUY 10% $RAMBO @ 0.0156378 \u2014 5m +3.2% vol $43,702 buys 208/sells 91",
+      "tag": "EXECUTOR",
+      "message": "08:13 EXECUTOR: BUY 10% $RAMBO @ 0.0156378 \u2014 5m +3.2% vol $43,702 buys 208/sells 91"
     }
   ],
   "agents": {
@@ -134812,8 +134841,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 20 pools",
-      "badge": "56 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal unreachable",
+      "badge": "37 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -134828,7 +134857,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "56 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "37 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -134876,8 +134905,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "0/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -134905,7 +134934,7 @@
     }
   },
   "ticks": 69223,
-  "last_updated": "2026-11-21T08:13:19.412745+00:00",
+  "last_updated": "2026-11-21T08:13:59.293756+00:00",
   "last_updated_london": "21 Nov 2026, 8:13 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -371980,73 +372009,87 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f16932"
+    },
+    {
+      "ts": "2026-11-21T08:13:35.330794+00:00",
+      "london": "21 Nov 2026, 8:13 GMT",
+      "side": "buy",
+      "symbol": "RAMBO",
+      "name": "RAMBO",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.015637799999999997,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "id": "f16933"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-21T08:13:19.412745+00:00",
+  "checked_at": "2026-11-21T08:13:59.293756+00:00",
   "checked_at_london": "21 Nov 2026, 8:13 GMT",
   "near_misses": [
-    {
-      "symbol": "ber",
-      "mint": "CqpUBhhSxHsXbq6AGPKnbxDpWgECUXAVy3BCrwhGpump",
-      "link": "https://axiom.trade/meme/CqpUBhhSxHsXbq6AGPKnbxDpWgECUXAVy3BCrwhGpump?chain=sol",
-      "reason": "5m volume $1,344 under $5k",
-      "gates": 1,
-      "chg_m5": 2.535,
-      "vol_m5": 1344.0,
-      "score": 20.88
-    },
-    {
-      "symbol": "mihao",
-      "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
-      "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
-      "reason": "5m volume $3,572 under $5k",
-      "gates": 1,
-      "chg_m5": 2.744,
-      "vol_m5": 3572.0,
-      "score": 4.52
-    },
-    {
-      "symbol": "CLAUDIA",
-      "mint": "2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM",
-      "link": "https://axiom.trade/meme/2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM?chain=sol",
-      "reason": "5m -1.0% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -1.0,
-      "vol_m5": 8339.0,
-      "score": -4.48
-    },
     {
       "symbol": "JENSEN",
       "mint": "DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump",
       "link": "https://axiom.trade/meme/DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump?chain=sol",
-      "reason": "5m -2.5% outside +1% to +40%",
+      "reason": "5m -6.0% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -2.48,
-      "vol_m5": 6770.0,
-      "score": -5.06
+      "chg_m5": -5.99,
+      "vol_m5": 6407.0,
+      "score": -11.72
     },
     {
-      "symbol": "Rings",
-      "mint": "65iH8k736QNhuUHm1tt8X7yJXpJ517HPPq8BrVdwring",
-      "link": "https://axiom.trade/meme/65iH8k736QNhuUHm1tt8X7yJXpJ517HPPq8BrVdwring?chain=sol",
-      "reason": "5m -0.8% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -0.82,
-      "vol_m5": 7445.0,
-      "score": -7.38
+      "symbol": "GATO",
+      "mint": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
+      "link": "https://axiom.trade/meme/HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump?chain=sol",
+      "reason": "5m volume $252 under $5k \u00b7 5m +0.1% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.1,
+      "vol_m5": 252.0,
+      "score": 0.1
     },
     {
-      "symbol": "RAMBO",
-      "mint": "KMifrkYmDdAKtVXAVBEPEQxJ7qP2iLgUcfZjUZipump",
-      "link": "https://axiom.trade/meme/KMifrkYmDdAKtVXAVBEPEQxJ7qP2iLgUcfZjUZipump?chain=sol",
-      "reason": "5m -3.2% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -3.18,
-      "vol_m5": 53833.0,
-      "score": -16.05
+      "symbol": "HOGE",
+      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
+      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
+      "reason": "5m volume $357 under $5k \u00b7 5m -0.3% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -0.32,
+      "vol_m5": 357.0,
+      "score": -0.23
+    },
+    {
+      "symbol": "BUCKME",
+      "mint": "DEgAkPNxz3dtMsesD2FDkNA2S6sch5YWfGUDT7R2pump",
+      "link": "https://axiom.trade/meme/DEgAkPNxz3dtMsesD2FDkNA2S6sch5YWfGUDT7R2pump?chain=sol",
+      "reason": "5m volume $2 under $5k \u00b7 5m -1.1% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -1.12,
+      "vol_m5": 2.0,
+      "score": -0.84
+    },
+    {
+      "symbol": "MAYA",
+      "mint": "FJKt1LxbWBpTRt9BaDEB6Wr2qL5LZzjFF5sx8rXnpump",
+      "link": "https://axiom.trade/meme/FJKt1LxbWBpTRt9BaDEB6Wr2qL5LZzjFF5sx8rXnpump?chain=sol",
+      "reason": "5m volume $3,507 under $5k \u00b7 5m -1.4% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -1.44,
+      "vol_m5": 3507.0,
+      "score": -1.18
+    },
+    {
+      "symbol": "PUNANI",
+      "mint": "2TngN4B7XaoGSKsYvttq5bFAdM4Z4xCSnuyRwGiFpump",
+      "link": "https://axiom.trade/meme/2TngN4B7XaoGSKsYvttq5bFAdM4Z4xCSnuyRwGiFpump?chain=sol",
+      "reason": "5m volume $3,791 under $5k \u00b7 5m -3.0% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -2.97,
+      "vol_m5": 3791.0,
+      "score": -3.72
     }
   ]
 }
