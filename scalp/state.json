@@ -3,7 +3,36 @@
   "target": 6000.0,
   "cash": 4.358534103767438e-07,
   "equity": 0.0,
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "HOUSE",
+      "name": "HOUSE",
+      "mint": "4Kfos2jUqUxwbDqNAJL16B4C99tdtaMSWZS5XmuSZr6Z",
+      "pair": "9wdkLguuAekWcQkFC6nYSgzRfmVSXgDBp5pcbFfLRXgk",
+      "link": "https://axiom.trade/meme/4Kfos2jUqUxwbDqNAJL16B4C99tdtaMSWZS5XmuSZr6Z?chain=sol",
+      "dex_url": "https://dexscreener.com/solana/9wdklguuaekwcqkfc6nysgzrfmvsxgdbp5pcbfflrxgk",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "entry_price": 0.00010431899999999999,
+      "raw_price": 0.0001038,
+      "entry_fee": 0.0,
+      "cost_basis": 0.0,
+      "opened_at": "2026-11-21T20:10:38.262717+00:00",
+      "opened_at_london": "21 Nov 2026, 20:10 GMT",
+      "high_water": 0.00010431899999999999,
+      "trail_armed": false,
+      "last_price": 0.0001038,
+      "last_source": "dexscreener",
+      "reason": "BUY 10% $HOUSE @ 0.000104319 \u2014 5m +18.0% vol $27,193 buys 466/sells 290",
+      "hard_stop": 9.910304999999998e-05,
+      "take_profit": 0.00011266452,
+      "trail_activate": 0.00010849175999999999,
+      "market_value": 0.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319
+    }
+  ],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -131828,12 +131857,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-21T09:23:18.181301+00:00",
-      "label": "21 Nov 2026, 9:23 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
-    {
       "ts": "2026-11-21T09:24:19.664855+00:00",
       "label": "21 Nov 2026, 9:24 GMT",
       "equity": 0.0,
@@ -134832,21 +134855,15 @@
       "label": "21 Nov 2026, 20:10 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-21T20:10:46.109565+00:00",
+      "label": "21 Nov 2026, 20:10 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-21T17:01:40.469569+00:00",
-      "london": "21 Nov 2026, 17:01 GMT",
-      "hhmm": "17:01",
-      "agent": "EXECUTOR",
-      "action": "SELL take profit +8% $Singularity",
-      "symbol": null,
-      "reason": "SELL take profit +8% $Singularity",
-      "line": "17:01 EXECUTOR: SELL take profit +8% $Singularity",
-      "tag": "EXECUTOR",
-      "message": "17:01 EXECUTOR: SELL take profit +8% $Singularity"
-    },
     {
       "ts": "2026-11-21T17:01:40.469928+00:00",
       "london": "21 Nov 2026, 17:01 GMT",
@@ -139634,6 +139651,18 @@
       "line": "20:10 RISK: SELL stop \u22125% $SHIT",
       "tag": "RISK",
       "message": "20:10 RISK: SELL stop \u22125% $SHIT"
+    },
+    {
+      "ts": "2026-11-21T20:10:38.262767+00:00",
+      "london": "21 Nov 2026, 20:10 GMT",
+      "hhmm": "20:10",
+      "agent": "EXECUTOR",
+      "action": "BUY 10% $HOUSE @ 0.000104319 \u2014 5m +18.0% vol $27,193 buys 466/sells 290",
+      "symbol": null,
+      "reason": "BUY 10% $HOUSE @ 0.000104319 \u2014 5m +18.0% vol $27,193 buys 466/sells 290",
+      "line": "20:10 EXECUTOR: BUY 10% $HOUSE @ 0.000104319 \u2014 5m +18.0% vol $27,193 buys 466/sells 290",
+      "tag": "EXECUTOR",
+      "message": "20:10 EXECUTOR: BUY 10% $HOUSE @ 0.000104319 \u2014 5m +18.0% vol $27,193 buys 466/sells 290"
     }
   ],
   "agents": {
@@ -139642,8 +139671,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 20 pools",
-      "badge": "57 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal unreachable",
+      "badge": "39 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -139658,7 +139687,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "57 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "39 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -139706,8 +139735,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "0/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -139735,7 +139764,7 @@
     }
   },
   "ticks": 71717,
-  "last_updated": "2026-11-21T20:10:06.259217+00:00",
+  "last_updated": "2026-11-21T20:10:46.109439+00:00",
   "last_updated_london": "21 Nov 2026, 20:10 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -385826,73 +385855,87 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f17576"
+    },
+    {
+      "ts": "2026-11-21T20:10:38.262717+00:00",
+      "london": "21 Nov 2026, 20:10 GMT",
+      "side": "buy",
+      "symbol": "HOUSE",
+      "name": "HOUSE",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.00010431899999999999,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "id": "f17577"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-21T20:10:06.259217+00:00",
+  "checked_at": "2026-11-21T20:10:46.109439+00:00",
   "checked_at_london": "21 Nov 2026, 20:10 GMT",
   "near_misses": [
     {
-      "symbol": "CLAUDIA",
-      "mint": "2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM",
-      "link": "https://axiom.trade/meme/2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM?chain=sol",
-      "reason": "buy/sell 124/218 under 1.05",
+      "symbol": "JENSEN",
+      "mint": "DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump",
+      "link": "https://axiom.trade/meme/DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump?chain=sol",
+      "reason": "5m volume $2,837 under $5k",
       "gates": 1,
-      "chg_m5": 5.036,
-      "vol_m5": 31671.0,
-      "score": 6.16
+      "chg_m5": 2.44,
+      "vol_m5": 2837.0,
+      "score": 3.03
     },
     {
       "symbol": "greg",
       "mint": "4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump",
       "link": "https://axiom.trade/meme/4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump?chain=sol",
-      "reason": "5m volume $155 under $5k",
+      "reason": "5m volume $138 under $5k",
       "gates": 1,
-      "chg_m5": 3.01,
-      "vol_m5": 155.0,
-      "score": 2.26
+      "chg_m5": 2.53,
+      "vol_m5": 138.0,
+      "score": 1.9
     },
     {
       "symbol": "PUNANI",
       "mint": "2TngN4B7XaoGSKsYvttq5bFAdM4Z4xCSnuyRwGiFpump",
       "link": "https://axiom.trade/meme/2TngN4B7XaoGSKsYvttq5bFAdM4Z4xCSnuyRwGiFpump?chain=sol",
-      "reason": "5m volume $4,746 under $5k",
+      "reason": "5m volume $4,274 under $5k",
       "gates": 1,
-      "chg_m5": 2.01,
-      "vol_m5": 4746.0,
-      "score": 1.93
-    },
-    {
-      "symbol": "FIONA",
-      "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
-      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "reason": "5m -2.3% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -2.335,
-      "vol_m5": 12082.0,
-      "score": -2.19
+      "chg_m5": 1.04,
+      "vol_m5": 4274.0,
+      "score": 0.9
     },
     {
       "symbol": "SHIT",
       "mint": "Fn95NtGXWPaJXc4N5y9rVkUq1NwZbjBNJzPVvNRLpump",
       "link": "https://axiom.trade/meme/Fn95NtGXWPaJXc4N5y9rVkUq1NwZbjBNJzPVvNRLpump?chain=sol",
-      "reason": "5m -3.5% outside +1% to +40%",
+      "reason": "5m -2.4% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -3.55,
-      "vol_m5": 15708.0,
-      "score": -7.69
+      "chg_m5": -2.39,
+      "vol_m5": 16740.0,
+      "score": -5.82
     },
     {
-      "symbol": "Singularity",
-      "mint": "7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump",
-      "link": "https://axiom.trade/meme/7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump?chain=sol",
-      "reason": "5m -12.1% outside +1% to +40%",
+      "symbol": "MAYA",
+      "mint": "FJKt1LxbWBpTRt9BaDEB6Wr2qL5LZzjFF5sx8rXnpump",
+      "link": "https://axiom.trade/meme/FJKt1LxbWBpTRt9BaDEB6Wr2qL5LZzjFF5sx8rXnpump?chain=sol",
+      "reason": "5m -52.4% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -12.143,
-      "vol_m5": 24734.0,
-      "score": -26.72
+      "chg_m5": -52.38,
+      "vol_m5": 20788.0,
+      "score": -383.54
+    },
+    {
+      "symbol": "HOGE",
+      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
+      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
+      "reason": "5m volume $3,153 under $5k \u00b7 buy/sell 7/17 under 1.05",
+      "gates": 2,
+      "chg_m5": 6.7,
+      "vol_m5": 3153.0,
+      "score": 5.4
     }
   ]
 }
