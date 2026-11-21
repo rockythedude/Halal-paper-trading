@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.5893881453154876,
-  "wins": 4932,
+  "win_rate": 0.5894862604540024,
+  "wins": 4934,
   "losses": 3436,
-  "closed_trades": 8368,
+  "closed_trades": 8370,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 68295,
-  "open_count": 4,
-  "last_updated_london": "21 Nov 2026, 5:35 GMT",
-  "last_updated": "2026-11-21T05:35:35.335691+00:00",
+  "open_count": 2,
+  "last_updated_london": "21 Nov 2026, 5:36 GMT",
+  "last_updated": "2026-11-21T05:36:41.621111+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "20 Nov 2026, 23:47 GMT",
-      "value": 0.0
-    },
     {
       "label": "20 Nov 2026, 23:47 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "21 Nov 2026, 5:35 GMT",
       "value": 0.0
+    },
+    {
+      "label": "21 Nov 2026, 5:36 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "21 Nov 2026, 5:36 GMT",
+      "hhmm": "05:36",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "05:36 RISK: SELL stop −5% $tittcoin",
+      "message": "05:36 RISK: SELL stop −5% $tittcoin",
+      "symbol": null,
+      "action": "SELL stop −5% $tittcoin"
+    },
+    {
+      "ts": "21 Nov 2026, 5:36 GMT",
+      "hhmm": "05:36",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "05:36 RISK: SELL time stop 20m $pippin",
+      "message": "05:36 RISK: SELL time stop 20m $pippin",
+      "symbol": null,
+      "action": "SELL time stop 20m $pippin"
+    },
     {
       "ts": "21 Nov 2026, 5:35 GMT",
       "hhmm": "05:35",
@@ -2441,26 +2461,6 @@
       "message": "05:20 EXECUTOR: BUY 10% $tittcoin @ 0.000191653 — 5m +3.9% vol $9,219 buys 863/sells 20",
       "symbol": null,
       "action": "BUY 10% $tittcoin @ 0.000191653 — 5m +3.9% vol $9,219 buys 863/sells 20"
-    },
-    {
-      "ts": "21 Nov 2026, 5:20 GMT",
-      "hhmm": "05:20",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "05:20 EXECUTOR: SELL take profit +8% $tittcoin",
-      "message": "05:20 EXECUTOR: SELL take profit +8% $tittcoin",
-      "symbol": null,
-      "action": "SELL take profit +8% $tittcoin"
-    },
-    {
-      "ts": "21 Nov 2026, 5:17 GMT",
-      "hhmm": "05:17",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "05:17 EXECUTOR: BUY 10% $tittcoin @ 0.000171051 — 5m +1.4% vol $14,141 buys 805/sells 35",
-      "message": "05:17 EXECUTOR: BUY 10% $tittcoin @ 0.000171051 — 5m +1.4% vol $14,141 buys 805/sells 35",
-      "symbol": null,
-      "action": "BUY 10% $tittcoin @ 0.000171051 — 5m +1.4% vol $14,141 buys 805/sells 35"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
-      "badge": "40 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
+      "badge": "77 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "40 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "77 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "4/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2575,28 +2575,6 @@
   ],
   "positions": [
     {
-      "symbol": "pippin",
-      "name": "pippin",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.018178092389270366,
-      "current_price": 0.01806,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.006496412645590421,
-      "hard_stop": 0.017269187769806845,
-      "trail_activate": 0.01890521608484118,
-      "opened_at": "21 Nov 2026, 5:15 GMT",
-      "reason": "BUY 10% $pippin @ 0.0181781 — 5m +1.2% vol $5,007 buys 37/sells 1",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump?chain=sol"
-    },
-    {
       "symbol": "GATO",
       "name": "GATO",
       "asset_class": "crypto",
@@ -2604,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.00375066,
-      "current_price": 0.00364,
+      "current_price": 0.0036035425985506734,
       "change_pct": null,
-      "price_source": "dexscreener",
+      "price_source": "geckoterminal",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.029504140604586837,
+      "unrealized_pct": -0.03922440355812751,
       "hard_stop": 0.0035631269999999997,
       "trail_activate": 0.0039006864,
       "opened_at": "21 Nov 2026, 5:22 GMT",
@@ -2626,11 +2604,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.000709731,
-      "current_price": 0.000716,
+      "current_price": 0.000705859892210594,
       "change_pct": null,
-      "price_source": "dexscreener",
+      "price_source": "geckoterminal",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.008832924023327138,
+      "unrealized_pct": -0.005454330992173073,
       "hard_stop": 0.00067424445,
       "trail_activate": 0.00073812024,
       "opened_at": "21 Nov 2026, 5:33 GMT",
@@ -2639,31 +2617,49 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol"
-    },
-    {
-      "symbol": "tittcoin",
-      "name": "tittcoin",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.00020140199999999997,
-      "current_price": 0.0002027,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.0064448217991879275,
-      "hard_stop": 0.00019133189999999997,
-      "trail_activate": 0.00020945807999999996,
-      "opened_at": "21 Nov 2026, 5:34 GMT",
-      "reason": "BUY 10% $tittcoin @ 0.000201402 — 5m +10.7% vol $5,317 buys 685/sells 9",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/7M7yAQmtvo9jJ6TgrMPEj5eXbxFiJCJjqWfQyMQrpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f16742",
+      "time": "21 Nov 2026, 5:36 GMT",
+      "ts": "2026-11-21T05:36:41.620540+00:00",
+      "side": "sell",
+      "symbol": "tittcoin",
+      "name": "tittcoin",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.000178901,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f16741",
+      "time": "21 Nov 2026, 5:36 GMT",
+      "ts": "2026-11-21T05:36:41.620445+00:00",
+      "side": "sell",
+      "symbol": "pippin",
+      "name": "pippin",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.017884563089912438,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f16740",
       "time": "21 Nov 2026, 5:34 GMT",
@@ -337466,11 +337462,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 8368,
-    "win_rate": 0.5893881453154876,
+    "closed_trades": 8370,
+    "win_rate": 0.5894862604540024,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 16740
+    "fills": 16742
   },
   "ok": true,
   "totals_cumulative": {
@@ -337610,32 +337606,18 @@
   },
   "ticker": [
     {
-      "symbol": "pippin",
-      "name": "pippin",
-      "price": 0.01806,
-      "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
       "symbol": "GATO",
       "name": "GATO",
-      "price": 0.00364,
+      "price": 0.0036035425985506734,
       "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     },
     {
       "symbol": "FIONA",
       "name": "FIONA",
-      "price": 0.000716,
+      "price": 0.000705859892210594,
       "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
-      "symbol": "tittcoin",
-      "name": "tittcoin",
-      "price": 0.0002027,
-      "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     }
   ],
   "desk": "axiom",
@@ -337705,8 +337687,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 8368,
-      "win_rate": 0.5893881453154876,
+      "closed_trades": 8370,
+      "win_rate": 0.5894862604540024,
       "realized_pnl": -100.0
     }
   ],
@@ -337723,11 +337705,31 @@
       "symbol": "MARS",
       "mint": "DbMPw1vSRtE93EK5Sqw23xHuDtkD569RpqANLvdqpump",
       "link": "https://axiom.trade/meme/DbMPw1vSRtE93EK5Sqw23xHuDtkD569RpqANLvdqpump?chain=sol",
-      "reason": "liquidity $22,523 under $25k",
+      "reason": "liquidity $21,799 under $25k",
       "gates": 1,
-      "chg_m5": 36.27,
-      "vol_m5": 17706.0,
-      "score": 32.27
+      "chg_m5": 21.73,
+      "vol_m5": 20780.0,
+      "score": 22.91
+    },
+    {
+      "symbol": "PUNANI",
+      "mint": "2TngN4B7XaoGSKsYvttq5bFAdM4Z4xCSnuyRwGiFpump",
+      "link": "https://axiom.trade/meme/2TngN4B7XaoGSKsYvttq5bFAdM4Z4xCSnuyRwGiFpump?chain=sol",
+      "reason": "buy/sell 600/770 under 1.05",
+      "gates": 1,
+      "chg_m5": 16.36,
+      "vol_m5": 71365.0,
+      "score": 19.16
+    },
+    {
+      "symbol": "JENSEN",
+      "mint": "DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump",
+      "link": "https://axiom.trade/meme/DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump?chain=sol",
+      "reason": "5m volume $3,133 under $5k",
+      "gates": 1,
+      "chg_m5": 7.25,
+      "vol_m5": 3133.0,
+      "score": 7.65
     },
     {
       "symbol": "LRS",
@@ -337737,47 +337739,27 @@
       "gates": 1,
       "chg_m5": 1.82,
       "vol_m5": 1.0,
-      "score": 2.47
+      "score": 2.56
     },
     {
-      "symbol": "JENSEN",
-      "mint": "DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump",
-      "link": "https://axiom.trade/meme/DkHsZ1kjd2Fua8sgKE6PhHhyCdXYscbDVN7mAfiGpump?chain=sol",
-      "reason": "5m volume $2,837 under $5k",
+      "symbol": "PATRICK",
+      "mint": "8mnJZnxaNLqVwkaWWGH7dKmoEzyYzGJx5pHaCp7spump",
+      "link": "https://axiom.trade/meme/8mnJZnxaNLqVwkaWWGH7dKmoEzyYzGJx5pHaCp7spump?chain=sol",
+      "reason": "5m volume $156 under $5k",
       "gates": 1,
-      "chg_m5": 1.52,
-      "vol_m5": 2837.0,
-      "score": 1.54
+      "chg_m5": 3.375,
+      "vol_m5": 156.0,
+      "score": 2.53
     },
     {
-      "symbol": "MAYA",
-      "mint": "FJKt1LxbWBpTRt9BaDEB6Wr2qL5LZzjFF5sx8rXnpump",
-      "link": "https://axiom.trade/meme/FJKt1LxbWBpTRt9BaDEB6Wr2qL5LZzjFF5sx8rXnpump?chain=sol",
-      "reason": "5m -17.1% outside +1% to +40%",
+      "symbol": "CBUCKS",
+      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
+      "reason": "5m volume $26 under $5k",
       "gates": 1,
-      "chg_m5": -17.1,
-      "vol_m5": 81178.0,
-      "score": -84.29
-    },
-    {
-      "symbol": "PUNANI",
-      "mint": "2TngN4B7XaoGSKsYvttq5bFAdM4Z4xCSnuyRwGiFpump",
-      "link": "https://axiom.trade/meme/2TngN4B7XaoGSKsYvttq5bFAdM4Z4xCSnuyRwGiFpump?chain=sol",
-      "reason": "buy/sell 598/796 under 1.05 · 5m +46.3% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 46.29,
-      "vol_m5": 83215.0,
-      "score": 60.45
-    },
-    {
-      "symbol": "CRASHOUT",
-      "mint": "B3y5kmGACtQG2aD6ApgQVaP2hJhDz9K1t3WUiX1Hpump",
-      "link": "https://axiom.trade/meme/B3y5kmGACtQG2aD6ApgQVaP2hJhDz9K1t3WUiX1Hpump?chain=sol",
-      "reason": "liquidity $0 under $25k · market cap $10,797 outside $100k–$100M",
-      "gates": 2,
-      "chg_m5": 6.24,
-      "vol_m5": 8541.0,
-      "score": 13.24
+      "chg_m5": 1.83,
+      "vol_m5": 26.0,
+      "score": 0.92
     }
   ],
   "helius_status": "",
@@ -337785,7 +337767,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-21T05:35:35.335691+00:00",
-  "checked_at_london": "21 Nov 2026, 5:35 GMT",
+  "checked_at": "2026-11-21T05:36:41.621111+00:00",
+  "checked_at_london": "21 Nov 2026, 5:36 GMT",
   "who_we_copy": null
 }
