@@ -31,34 +31,6 @@
       "market_value": 0.0,
       "unrealized_pnl": 0.0,
       "unrealized_pct": -0.006927515760370873
-    },
-    {
-      "symbol": "PushCoin",
-      "name": "PushCoin",
-      "mint": "3N6Mp8YQuVDfEtyuyJS72s4MRrgQuKY34gvYZD5Kpump",
-      "pair": "GZ6zUqpbwrCdFbL9asPyaHdmYk3fNpv1aM719rYLMYZF",
-      "link": "https://axiom.trade/meme/3N6Mp8YQuVDfEtyuyJS72s4MRrgQuKY34gvYZD5Kpump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/gz6zuqpbwrcdfbl9aspyahdmyk3fnpv1am719rylmyzf",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.0017306099999999998,
-      "raw_price": 0.001722,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-22T04:36:43.450878+00:00",
-      "opened_at_london": "22 Nov 2026, 4:36 GMT",
-      "high_water": 0.0017306099999999998,
-      "trail_armed": false,
-      "last_price": 0.001656,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $PushCoin @ 0.00173061 \u2014 5m +8.7% vol $9,903 buys 634/sells 551",
-      "hard_stop": 0.0016440794999999999,
-      "take_profit": 0.0018690587999999999,
-      "trail_activate": 0.0017998343999999999,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.04311196630089964
     }
   ],
   "closed_trades": [
@@ -138376,15 +138348,24 @@
       "closed_at": "2026-11-22T04:39:22.573126+00:00",
       "closed_at_london": "22 Nov 2026, 4:39 GMT",
       "opened_at": "2026-11-22T04:19:20.763732+00:00"
+    },
+    {
+      "symbol": "PushCoin",
+      "name": "PushCoin",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.0017306099999999998,
+      "exit_price": 0.00161389,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL stop \u22125% $PushCoin",
+      "closed_at": "2026-11-22T04:41:22.597799+00:00",
+      "closed_at_london": "22 Nov 2026, 4:41 GMT",
+      "opened_at": "2026-11-22T04:36:43.450878+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-21T22:53:38.644400+00:00",
-      "label": "21 Nov 2026, 22:53 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-21T22:54:18.457497+00:00",
       "label": "21 Nov 2026, 22:54 GMT",
@@ -141384,21 +141365,15 @@
       "label": "22 Nov 2026, 4:40 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-22T04:41:30.583320+00:00",
+      "label": "22 Nov 2026, 4:41 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-22T00:48:55.888730+00:00",
-      "london": "22 Nov 2026, 0:48 GMT",
-      "hhmm": "00:48",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $STREETS @ 0.000727821 \u2014 5m +3.4% vol $10,412 buys 729/sells 499",
-      "symbol": null,
-      "reason": "BUY 10% $STREETS @ 0.000727821 \u2014 5m +3.4% vol $10,412 buys 729/sells 499",
-      "line": "00:48 EXECUTOR: BUY 10% $STREETS @ 0.000727821 \u2014 5m +3.4% vol $10,412 buys 729/sells 499",
-      "tag": "EXECUTOR",
-      "message": "00:48 EXECUTOR: BUY 10% $STREETS @ 0.000727821 \u2014 5m +3.4% vol $10,412 buys 729/sells 499"
-    },
     {
       "ts": "2026-11-22T00:49:19.867558+00:00",
       "london": "22 Nov 2026, 0:49 GMT",
@@ -146186,6 +146161,18 @@
       "line": "04:39 RISK: SELL time stop 20m $pippin",
       "tag": "RISK",
       "message": "04:39 RISK: SELL time stop 20m $pippin"
+    },
+    {
+      "ts": "2026-11-22T04:41:22.597852+00:00",
+      "london": "22 Nov 2026, 4:41 GMT",
+      "hhmm": "04:41",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $PushCoin",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $PushCoin",
+      "line": "04:41 RISK: SELL stop \u22125% $PushCoin",
+      "tag": "RISK",
+      "message": "04:41 RISK: SELL stop \u22125% $PushCoin"
     }
   ],
   "agents": {
@@ -146258,8 +146245,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -146287,8 +146274,8 @@
     }
   },
   "ticks": 74762,
-  "last_updated": "2026-11-22T04:40:50.584575+00:00",
-  "last_updated_london": "22 Nov 2026, 4:40 GMT",
+  "last_updated": "2026-11-22T04:41:30.583192+00:00",
+  "last_updated_london": "22 Nov 2026, 4:41 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -404530,13 +404517,27 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f18444"
+    },
+    {
+      "ts": "2026-11-22T04:41:22.597799+00:00",
+      "london": "22 Nov 2026, 4:41 GMT",
+      "side": "sell",
+      "symbol": "PushCoin",
+      "name": "PushCoin",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.00161389,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f18445"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-22T04:40:50.584575+00:00",
-  "checked_at_london": "22 Nov 2026, 4:40 GMT",
+  "checked_at": "2026-11-22T04:41:30.583192+00:00",
+  "checked_at_london": "22 Nov 2026, 4:41 GMT",
   "near_misses": [
     {
       "symbol": "Rings",
@@ -404569,26 +404570,6 @@
       "score": 1.4
     },
     {
-      "symbol": "SBS",
-      "mint": "4mE8dPH1RTqQBT5EPim5Ubt2v2wXZ9zgEDDWmL1o1EYu",
-      "link": "https://axiom.trade/meme/4mE8dPH1RTqQBT5EPim5Ubt2v2wXZ9zgEDDWmL1o1EYu?chain=sol",
-      "reason": "5m volume $228 under $5k",
-      "gates": 1,
-      "chg_m5": 1.16,
-      "vol_m5": 228.0,
-      "score": 1.09
-    },
-    {
-      "symbol": "DESSA",
-      "mint": "npz2FhoufQ7pKqhGpaipYWacrAkidyW2yDpVWSvpump",
-      "link": "https://axiom.trade/meme/npz2FhoufQ7pKqhGpaipYWacrAkidyW2yDpVWSvpump?chain=sol",
-      "reason": "5m volume $2,469 under $5k",
-      "gates": 1,
-      "chg_m5": 1.33,
-      "vol_m5": 2469.0,
-      "score": 0.68
-    },
-    {
       "symbol": "greg",
       "mint": "4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump",
       "link": "https://axiom.trade/meme/4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump?chain=sol",
@@ -404597,6 +404578,26 @@
       "chg_m5": 1.313,
       "vol_m5": 221.0,
       "score": 0.49
+    },
+    {
+      "symbol": "SBS",
+      "mint": "4mE8dPH1RTqQBT5EPim5Ubt2v2wXZ9zgEDDWmL1o1EYu",
+      "link": "https://axiom.trade/meme/4mE8dPH1RTqQBT5EPim5Ubt2v2wXZ9zgEDDWmL1o1EYu?chain=sol",
+      "reason": "5m volume $267 under $5k \u00b7 5m +0.7% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.68,
+      "vol_m5": 267.0,
+      "score": 0.6
+    },
+    {
+      "symbol": "PUMP",
+      "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+      "link": "https://axiom.trade/meme/pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn?chain=sol",
+      "reason": "market cap $829,078,443 outside $100k\u2013$100M \u00b7 5m +0.1% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.113,
+      "vol_m5": 5582.0,
+      "score": 0.31
     }
   ]
 }
