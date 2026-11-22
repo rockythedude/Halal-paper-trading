@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 73689,
-  "open_count": 4,
+  "open_count": 5,
   "last_updated_london": "22 Nov 2026, 1:40 GMT",
-  "last_updated": "2026-11-22T01:40:07.658293+00:00",
+  "last_updated": "2026-11-22T01:40:47.735070+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "21 Nov 2026, 19:53 GMT",
-      "value": 0.0
-    },
     {
       "label": "21 Nov 2026, 19:54 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "22 Nov 2026, 1:40 GMT",
       "value": 0.0
+    },
+    {
+      "label": "22 Nov 2026, 1:40 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "22 Nov 2026, 1:40 GMT",
+      "hhmm": "01:40",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "01:40 EXECUTOR: BUY 10% $MAYA @ 0.000296676 — 5m +7.9% vol $5,546 buys 402/sells 268",
+      "message": "01:40 EXECUTOR: BUY 10% $MAYA @ 0.000296676 — 5m +7.9% vol $5,546 buys 402/sells 268",
+      "symbol": null,
+      "action": "BUY 10% $MAYA @ 0.000296676 — 5m +7.9% vol $5,546 buys 402/sells 268"
+    },
     {
       "ts": "22 Nov 2026, 1:39 GMT",
       "hhmm": "01:39",
@@ -2451,16 +2461,6 @@
       "message": "01:18 LOGGER: run complete — 29 polls, 6 open, equity $0.00",
       "symbol": null,
       "action": "run complete — 29 polls, 6 open, equity $0.00"
-    },
-    {
-      "ts": "22 Nov 2026, 1:18 GMT",
-      "hhmm": "01:18",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "01:18 EXECUTOR: BUY 10% $RIZZMAS3 @ 0.00026542 — 5m +38.2% vol $99,374 buys 1399/sells 1000",
-      "message": "01:18 EXECUTOR: BUY 10% $RIZZMAS3 @ 0.00026542 — 5m +38.2% vol $99,374 buys 1399/sells 1000",
-      "symbol": null,
-      "action": "BUY 10% $RIZZMAS3 @ 0.00026542 — 5m +38.2% vol $99,374 buys 1399/sells 1000"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "57 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "41 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "57 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "41 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "4/6",
+      "activity": "5 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "5/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.00928263606580768,
-      "current_price": 0.009254828806796499,
+      "current_price": 0.009236,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.0029956209436680092,
+      "unrealized_pct": -0.0050240110112109715,
       "hard_stop": 0.008818504262517296,
       "trail_activate": 0.009653941508439989,
       "opened_at": "22 Nov 2026, 1:22 GMT",
@@ -2604,11 +2604,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0038803049999999993,
-      "current_price": 0.003954166996412365,
+      "current_price": 0.003893,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.019035100697591067,
+      "unrealized_pct": 0.0032716500378193736,
       "hard_stop": 0.0036862897499999993,
       "trail_activate": 0.004035517199999999,
       "opened_at": "22 Nov 2026, 1:24 GMT",
@@ -2626,11 +2626,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.000543303,
-      "current_price": 0.0005422,
+      "current_price": 0.0005497,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.002030174690734299,
+      "unrealized_pct": 0.011774276968836928,
       "hard_stop": 0.0005161378499999999,
       "trail_activate": 0.00056503512,
       "opened_at": "22 Nov 2026, 1:37 GMT",
@@ -2648,11 +2648,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.00013115249999999997,
-      "current_price": 0.0001305,
+      "current_price": 0.0001381,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.004975124378109208,
+      "unrealized_pct": 0.052972684470368625,
       "hard_stop": 0.00012459487499999998,
       "trail_activate": 0.00013639859999999996,
       "opened_at": "22 Nov 2026, 1:39 GMT",
@@ -2661,9 +2661,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/BQcV4Ryfu9bZK8egAF89AhkojdJqAaDt4xTFwUQ2pump?chain=sol"
+    },
+    {
+      "symbol": "MAYA",
+      "name": "MAYA",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.000296676,
+      "current_price": 0.0002952,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.00497512437810943,
+      "hard_stop": 0.0002818422,
+      "trail_activate": 0.00030854304,
+      "opened_at": "22 Nov 2026, 1:40 GMT",
+      "reason": "BUY 10% $MAYA @ 0.000296676 — 5m +7.9% vol $5,546 buys 402/sells 268",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/FJKt1LxbWBpTRt9BaDEB6Wr2qL5LZzjFF5sx8rXnpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f18213",
+      "time": "22 Nov 2026, 1:40 GMT",
+      "ts": "2026-11-22T01:40:47.734985+00:00",
+      "side": "buy",
+      "symbol": "MAYA",
+      "name": "MAYA",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.000296676,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f18212",
       "time": "22 Nov 2026, 1:39 GMT",
@@ -366910,7 +366952,7 @@
     "win_rate": 0.6225834797891037,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 18212
+    "fills": 18213
   },
   "ok": true,
   "totals_cumulative": {
@@ -367052,28 +367094,35 @@
     {
       "symbol": "VINE",
       "name": "VINE",
-      "price": 0.009254828806796499,
+      "price": 0.009236,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "DCTY",
       "name": "DCTY",
-      "price": 0.003954166996412365,
+      "price": 0.003893,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "SHIT",
       "name": "SHIT",
-      "price": 0.0005422,
+      "price": 0.0005497,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
       "symbol": "RIZZMAS3",
       "name": "RIZZMAS3",
-      "price": 0.0001305,
+      "price": 0.0001381,
+      "change_pct": null,
+      "source": "dexscreener"
+    },
+    {
+      "symbol": "MAYA",
+      "name": "MAYA",
+      "price": 0.0002952,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -367099,7 +367148,7 @@
       "id": "main",
       "name": "Halal book",
       "equity": 91.38,
-      "return_pct": -0.08619382999999999,
+      "return_pct": -0.08620845000000003,
       "closed_trades": 21,
       "win_rate": 0.14285714285714285,
       "realized_pnl": -7.04
@@ -367116,8 +367165,8 @@
     {
       "id": "meme",
       "name": "Crypto + Meme",
-      "equity": 84.84,
-      "return_pct": -0.15159226000000003,
+      "equity": 84.99,
+      "return_pct": -0.1501424,
       "closed_trades": 65,
       "win_rate": 0.24615384615384617,
       "realized_pnl": -14.56
@@ -367160,64 +367209,34 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "MAYA",
-      "mint": "FJKt1LxbWBpTRt9BaDEB6Wr2qL5LZzjFF5sx8rXnpump",
-      "link": "https://axiom.trade/meme/FJKt1LxbWBpTRt9BaDEB6Wr2qL5LZzjFF5sx8rXnpump?chain=sol",
-      "reason": "5m volume $4,618 under $5k",
-      "gates": 1,
-      "chg_m5": 16.43,
-      "vol_m5": 4618.0,
-      "score": 7.75
-    },
-    {
       "symbol": "STREETS",
       "mint": "82mseLFauphc2yutbaDGgViahquJ1jGVLpyof99xpump",
       "link": "https://axiom.trade/meme/82mseLFauphc2yutbaDGgViahquJ1jGVLpyof99xpump?chain=sol",
-      "reason": "5m volume $1,838 under $5k",
+      "reason": "5m volume $2,307 under $5k",
       "gates": 1,
-      "chg_m5": 10.66,
-      "vol_m5": 1838.0,
-      "score": 6.16
-    },
-    {
-      "symbol": "FIONA",
-      "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
-      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "reason": "5m -1.5% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -1.536,
-      "vol_m5": 6378.0,
-      "score": -1.27
+      "chg_m5": 10.78,
+      "vol_m5": 2307.0,
+      "score": 5.47
     },
     {
       "symbol": "GRAUDIA",
       "mint": "B1oGtkaVAVZkdtWV7SXrHnFkcWC1Kd45sYpy6RYTpump",
       "link": "https://axiom.trade/meme/B1oGtkaVAVZkdtWV7SXrHnFkcWC1Kd45sYpy6RYTpump?chain=sol",
-      "reason": "liquidity $21,638 under $25k · 5m volume $2,548 under $5k",
+      "reason": "liquidity $23,618 under $25k · 5m volume $2,657 under $5k",
       "gates": 2,
-      "chg_m5": 9.59,
-      "vol_m5": 2548.0,
-      "score": 5.22
+      "chg_m5": 23.68,
+      "vol_m5": 2657.0,
+      "score": 15.84
     },
     {
-      "symbol": "ANSEM",
-      "mint": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
-      "link": "https://axiom.trade/meme/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump?chain=sol",
-      "reason": "5m volume $1,492 under $5k · 5m +0.2% outside +1% to +40%",
+      "symbol": "1",
+      "mint": "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump",
+      "link": "https://axiom.trade/meme/2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump?chain=sol",
+      "reason": "5m volume $61 under $5k · 5m -0.9% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 0.178,
-      "vol_m5": 1492.0,
-      "score": 1.4
-    },
-    {
-      "symbol": "greg",
-      "mint": "4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump",
-      "link": "https://axiom.trade/meme/4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump?chain=sol",
-      "reason": "5m volume $729 under $5k · buy/sell 9/9 under 1.05",
-      "gates": 2,
-      "chg_m5": 2.443,
-      "vol_m5": 729.0,
-      "score": 1.04
+      "chg_m5": -0.87,
+      "vol_m5": 61.0,
+      "score": -0.25
     }
   ],
   "helius_status": "",
@@ -367225,7 +367244,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-22T01:40:07.658293+00:00",
+  "checked_at": "2026-11-22T01:40:47.735070+00:00",
   "checked_at_london": "22 Nov 2026, 1:40 GMT",
   "who_we_copy": null
 }
