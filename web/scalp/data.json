@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.6381253291205898,
-  "wins": 6059,
+  "win_rate": 0.6381634372367313,
+  "wins": 6060,
   "losses": 3436,
-  "closed_trades": 9495,
+  "closed_trades": 9496,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 78358,
-  "open_count": 3,
+  "open_count": 2,
   "last_updated_london": "22 Nov 2026, 14:42 GMT",
-  "last_updated": "2026-11-22T14:42:07.455344+00:00",
+  "last_updated": "2026-11-22T14:42:47.476787+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "22 Nov 2026, 8:56 GMT",
-      "value": 0.0
-    },
     {
       "label": "22 Nov 2026, 8:57 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "22 Nov 2026, 14:42 GMT",
       "value": 0.0
+    },
+    {
+      "label": "22 Nov 2026, 14:42 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "22 Nov 2026, 14:42 GMT",
+      "hhmm": "14:42",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "14:42 RISK: SELL stop −5% $PushCoin",
+      "message": "14:42 RISK: SELL stop −5% $PushCoin",
+      "symbol": null,
+      "action": "SELL stop −5% $PushCoin"
+    },
     {
       "ts": "22 Nov 2026, 14:40 GMT",
       "hhmm": "14:40",
@@ -2451,16 +2461,6 @@
       "message": "14:19 LOGGER: run complete — 29 polls, 3 open, equity $0.00",
       "symbol": null,
       "action": "run complete — 29 polls, 3 open, equity $0.00"
-    },
-    {
-      "ts": "22 Nov 2026, 14:19 GMT",
-      "hhmm": "14:19",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "14:19 EXECUTOR: BUY 10% $PushCoin @ 0.00139695 — 5m +1.4% vol $7,299 buys 437/sells 301",
-      "message": "14:19 EXECUTOR: BUY 10% $PushCoin @ 0.00139695 — 5m +1.4% vol $7,299 buys 437/sells 301",
-      "symbol": null,
-      "action": "BUY 10% $PushCoin @ 0.00139695 — 5m +1.4% vol $7,299 buys 437/sells 301"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "57 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "40 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "57 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "40 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "3/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.009244964543114662,
-      "current_price": 0.009065845064697297,
+      "current_price": 0.009055,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.01937481507711858,
+      "unrealized_pct": -0.02054789309669558,
       "hard_stop": 0.008782716315958929,
       "trail_activate": 0.009614763124839248,
       "opened_at": "22 Nov 2026, 14:29 GMT",
@@ -2604,11 +2604,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.008946433192549261,
-      "current_price": 0.008890246424899939,
+      "current_price": 0.009076,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.006280354018193046,
+      "unrealized_pct": 0.014482509918997133,
       "hard_stop": 0.008499111532921797,
       "trail_activate": 0.009304290520251233,
       "opened_at": "22 Nov 2026, 14:30 GMT",
@@ -2617,31 +2617,29 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol"
-    },
-    {
-      "symbol": "PushCoin",
-      "name": "PushCoin",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.0016291049999999998,
-      "current_price": 0.001583,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.028300815478437436,
-      "hard_stop": 0.0015476497499999997,
-      "trail_activate": 0.0016942691999999998,
-      "opened_at": "22 Nov 2026, 14:32 GMT",
-      "reason": "BUY 10% $PushCoin @ 0.0016291 — 5m +4.1% vol $75,211 buys 789/sells 412",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/3N6Mp8YQuVDfEtyuyJS72s4MRrgQuKY34gvYZD5Kpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f18994",
+      "time": "22 Nov 2026, 14:42 GMT",
+      "ts": "2026-11-22T14:42:23.636687+00:00",
+      "side": "sell",
+      "symbol": "PushCoin",
+      "name": "PushCoin",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00151638,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f18993",
       "time": "22 Nov 2026, 14:40 GMT",
@@ -382504,11 +382502,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 9495,
-    "win_rate": 0.6381253291205898,
+    "closed_trades": 9496,
+    "win_rate": 0.6381634372367313,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 18993
+    "fills": 18994
   },
   "ok": true,
   "totals_cumulative": {
@@ -382650,21 +382648,14 @@
     {
       "symbol": "VINE",
       "name": "VINE",
-      "price": 0.009065845064697297,
+      "price": 0.009055,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "mihao",
       "name": "mihao",
-      "price": 0.008890246424899939,
-      "change_pct": null,
-      "source": "geckoterminal"
-    },
-    {
-      "symbol": "PushCoin",
-      "name": "PushCoin",
-      "price": 0.001583,
+      "price": 0.009076,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -382717,7 +382708,7 @@
       "id": "btc",
       "name": "BTC Scalper",
       "equity": 75.18,
-      "return_pct": -0.24820711000000004,
+      "return_pct": -0.24821664999999996,
       "closed_trades": 543,
       "win_rate": 0.3333333333333333,
       "realized_pnl": -24.71
@@ -382736,8 +382727,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 9495,
-      "win_rate": 0.6381253291205898,
+      "closed_trades": 9496,
+      "win_rate": 0.6381634372367313,
       "realized_pnl": -100.0
     }
   ],
@@ -382751,64 +382742,64 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "Max",
-      "mint": "5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump",
-      "link": "https://axiom.trade/meme/5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump?chain=sol",
-      "reason": "5m volume $56 under $5k",
+      "symbol": "GATO",
+      "mint": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
+      "link": "https://axiom.trade/meme/HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump?chain=sol",
+      "reason": "5m volume $338 under $5k",
       "gates": 1,
-      "chg_m5": 2.13,
-      "vol_m5": 56.0,
-      "score": 1.6
+      "chg_m5": 2.05,
+      "vol_m5": 338.0,
+      "score": 13.28
     },
     {
-      "symbol": "FIONA",
-      "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
-      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "reason": "5m volume $1,440 under $5k",
+      "symbol": "WASTED",
+      "mint": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
+      "link": "https://axiom.trade/meme/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump?chain=sol",
+      "reason": "5m volume $361 under $5k",
       "gates": 1,
-      "chg_m5": 3.477,
-      "vol_m5": 1440.0,
-      "score": 1.38
+      "chg_m5": 1.79,
+      "vol_m5": 361.0,
+      "score": 10.61
     },
     {
-      "symbol": "Singularity",
-      "mint": "7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump",
-      "link": "https://axiom.trade/meme/7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump?chain=sol",
-      "reason": "5m -2.7% outside +1% to +40%",
+      "symbol": "PushCoin",
+      "mint": "3N6Mp8YQuVDfEtyuyJS72s4MRrgQuKY34gvYZD5Kpump",
+      "link": "https://axiom.trade/meme/3N6Mp8YQuVDfEtyuyJS72s4MRrgQuKY34gvYZD5Kpump?chain=sol",
+      "reason": "5m -6.3% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -2.663,
-      "vol_m5": 9314.0,
-      "score": -2.99
+      "chg_m5": -6.34,
+      "vol_m5": 7079.0,
+      "score": -3.76
     },
     {
       "symbol": "BLOB",
       "mint": "8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump",
       "link": "https://axiom.trade/meme/8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump?chain=sol",
-      "reason": "5m -13.4% outside +1% to +40%",
+      "reason": "5m -12.1% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -13.44,
-      "vol_m5": 27285.0,
-      "score": -25.02
+      "chg_m5": -12.06,
+      "vol_m5": 26456.0,
+      "score": -32.24
     },
     {
       "symbol": "KYC",
       "mint": "47YCrfUmSQUF9vnPsPGSzrmTcxttdRAWejCMkhrrpump",
       "link": "https://axiom.trade/meme/47YCrfUmSQUF9vnPsPGSzrmTcxttdRAWejCMkhrrpump?chain=sol",
-      "reason": "liquidity $15,675 under $25k · market cap $51,892 outside $100k–$100M",
+      "reason": "liquidity $15,832 under $25k · market cap $52,776 outside $100k–$100M",
       "gates": 2,
-      "chg_m5": 13.75,
-      "vol_m5": 42097.0,
-      "score": 51.08
+      "chg_m5": 1.68,
+      "vol_m5": 33605.0,
+      "score": 6.84
     },
     {
-      "symbol": "GATO",
-      "mint": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
-      "link": "https://axiom.trade/meme/HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump?chain=sol",
-      "reason": "5m volume $160 under $5k · buy/sell 2/2 under 1.05",
+      "symbol": "CBUCKS",
+      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
+      "reason": "5m volume $130 under $5k · buy/sell 1/1 under 1.05",
       "gates": 2,
-      "chg_m5": 1.64,
-      "vol_m5": 160.0,
-      "score": 1.83
+      "chg_m5": 1.39,
+      "vol_m5": 130.0,
+      "score": 1.5
     }
   ],
   "helius_status": "",
@@ -382816,7 +382807,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-22T14:42:07.455344+00:00",
+  "checked_at": "2026-11-22T14:42:47.476787+00:00",
   "checked_at_london": "22 Nov 2026, 14:42 GMT",
   "who_we_copy": null
 }
