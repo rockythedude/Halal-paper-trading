@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 76183,
-  "open_count": 2,
+  "open_count": 4,
   "last_updated_london": "22 Nov 2026, 8:37 GMT",
-  "last_updated": "2026-11-22T08:37:13.638454+00:00",
+  "last_updated": "2026-11-22T08:37:53.705904+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "22 Nov 2026, 2:50 GMT",
-      "value": 0.0
-    },
     {
       "label": "22 Nov 2026, 2:50 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "22 Nov 2026, 8:37 GMT",
       "value": 0.0
+    },
+    {
+      "label": "22 Nov 2026, 8:37 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "22 Nov 2026, 8:37 GMT",
+      "hhmm": "08:37",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "08:37 EXECUTOR: BUY 10% $BLOB @ 0.0121303 — 5m +7.4% vol $34,326 buys 116/sells 79",
+      "message": "08:37 EXECUTOR: BUY 10% $BLOB @ 0.0121303 — 5m +7.4% vol $34,326 buys 116/sells 79",
+      "symbol": null,
+      "action": "BUY 10% $BLOB @ 0.0121303 — 5m +7.4% vol $34,326 buys 116/sells 79"
+    },
+    {
+      "ts": "22 Nov 2026, 8:37 GMT",
+      "hhmm": "08:37",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "08:37 EXECUTOR: BUY 10% $snowball @ 0.000338383 — 5m +4.0% vol $15,302 buys 136/sells 112",
+      "message": "08:37 EXECUTOR: BUY 10% $snowball @ 0.000338383 — 5m +4.0% vol $15,302 buys 136/sells 112",
+      "symbol": null,
+      "action": "BUY 10% $snowball @ 0.000338383 — 5m +4.0% vol $15,302 buys 136/sells 112"
+    },
     {
       "ts": "22 Nov 2026, 8:36 GMT",
       "hhmm": "08:36",
@@ -2441,26 +2461,6 @@
       "message": "08:11 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
       "symbol": null,
       "action": "run complete — 29 polls, 2 open, equity $0.00"
-    },
-    {
-      "ts": "22 Nov 2026, 8:11 GMT",
-      "hhmm": "08:11",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "08:11 EXECUTOR: BUY 10% $snowball @ 0.000317077 — 5m +1.2% vol $38,441 buys 555/sells 317",
-      "message": "08:11 EXECUTOR: BUY 10% $snowball @ 0.000317077 — 5m +1.2% vol $38,441 buys 555/sells 317",
-      "symbol": null,
-      "action": "BUY 10% $snowball @ 0.000317077 — 5m +1.2% vol $38,441 buys 555/sells 317"
-    },
-    {
-      "ts": "22 Nov 2026, 8:10 GMT",
-      "hhmm": "08:10",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "08:10 RISK: SELL stop −5% $PushCoin",
-      "message": "08:10 RISK: SELL stop −5% $PushCoin",
-      "symbol": null,
-      "action": "SELL stop −5% $PushCoin"
     }
   ],
   "agents": [
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "57 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "57 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "2/6",
+      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "4/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2617,9 +2617,93 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump?chain=sol"
+    },
+    {
+      "symbol": "snowball",
+      "name": "snowball",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.00033838349999999994,
+      "current_price": 0.0003367,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.00032146432499999993,
+      "trail_activate": 0.00035191883999999995,
+      "opened_at": "22 Nov 2026, 8:37 GMT",
+      "reason": "BUY 10% $snowball @ 0.000338383 — 5m +4.0% vol $15,302 buys 136/sells 112",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/3D7YQcnXi6RMjWxheiE8VLuGXJTtgQkmyugGYvzjpump?chain=sol"
+    },
+    {
+      "symbol": "BLOB",
+      "name": "BLOB",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.01213035,
+      "current_price": 0.01207,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.0115238325,
+      "trail_activate": 0.012615564000000001,
+      "opened_at": "22 Nov 2026, 8:37 GMT",
+      "reason": "BUY 10% $BLOB @ 0.0121303 — 5m +7.4% vol $34,326 buys 116/sells 79",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f18648",
+      "time": "22 Nov 2026, 8:37 GMT",
+      "ts": "2026-11-22T08:37:53.705802+00:00",
+      "side": "buy",
+      "symbol": "BLOB",
+      "name": "BLOB",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.01213035,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f18647",
+      "time": "22 Nov 2026, 8:37 GMT",
+      "ts": "2026-11-22T08:37:29.697316+00:00",
+      "side": "buy",
+      "symbol": "snowball",
+      "name": "snowball",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00033838349999999994,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f18646",
       "time": "22 Nov 2026, 8:36 GMT",
@@ -375546,7 +375630,7 @@
     "win_rate": 0.6314095687620682,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 18646
+    "fills": 18648
   },
   "ok": true,
   "totals_cumulative": {
@@ -375698,6 +375782,20 @@
       "price": 0.009221752125861658,
       "change_pct": null,
       "source": "geckoterminal"
+    },
+    {
+      "symbol": "snowball",
+      "name": "snowball",
+      "price": 0.0003367,
+      "change_pct": null,
+      "source": "dexscreener"
+    },
+    {
+      "symbol": "BLOB",
+      "name": "BLOB",
+      "price": 0.01207,
+      "change_pct": null,
+      "source": "dexscreener"
     }
   ],
   "desk": "axiom",
@@ -375747,8 +375845,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 74.88,
-      "return_pct": -0.25115517,
+      "equity": 74.9,
+      "return_pct": -0.25100893999999996,
       "closed_trades": 529,
       "win_rate": 0.32514177693761814,
       "realized_pnl": -25.1
@@ -375792,6 +375890,16 @@
       "score": 30.55
     },
     {
+      "symbol": "PushCoin",
+      "mint": "3N6Mp8YQuVDfEtyuyJS72s4MRrgQuKY34gvYZD5Kpump",
+      "link": "https://axiom.trade/meme/3N6Mp8YQuVDfEtyuyJS72s4MRrgQuKY34gvYZD5Kpump?chain=sol",
+      "reason": "5m volume $2,625 under $5k",
+      "gates": 1,
+      "chg_m5": 6.09,
+      "vol_m5": 2625.0,
+      "score": 3.33
+    },
+    {
       "symbol": "TROLL",
       "mint": "5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2",
       "link": "https://axiom.trade/meme/5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2?chain=sol",
@@ -375812,34 +375920,24 @@
       "score": 1.34
     },
     {
-      "symbol": "BLOB",
-      "mint": "8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump",
-      "link": "https://axiom.trade/meme/8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump?chain=sol",
-      "reason": "5m -1.4% outside +1% to +40%",
+      "symbol": "DESSA",
+      "mint": "npz2FhoufQ7pKqhGpaipYWacrAkidyW2yDpVWSvpump",
+      "link": "https://axiom.trade/meme/npz2FhoufQ7pKqhGpaipYWacrAkidyW2yDpVWSvpump?chain=sol",
+      "reason": "5m volume $1,086 under $5k",
       "gates": 1,
-      "chg_m5": -1.45,
-      "vol_m5": 30270.0,
-      "score": -2.17
+      "chg_m5": 1.54,
+      "vol_m5": 1086.0,
+      "score": 1.28
     },
     {
-      "symbol": "snowball",
-      "mint": "3D7YQcnXi6RMjWxheiE8VLuGXJTtgQkmyugGYvzjpump",
-      "link": "https://axiom.trade/meme/3D7YQcnXi6RMjWxheiE8VLuGXJTtgQkmyugGYvzjpump?chain=sol",
-      "reason": "5m -4.4% outside +1% to +40%",
+      "symbol": "greg",
+      "mint": "4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump",
+      "link": "https://axiom.trade/meme/4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump?chain=sol",
+      "reason": "5m volume $200 under $5k",
       "gates": 1,
-      "chg_m5": -4.44,
-      "vol_m5": 16133.0,
-      "score": -3.3
-    },
-    {
-      "symbol": "GIFTER",
-      "mint": "3K6EUFoAE8zngTFMfPavqcMFhDqYTRemoaXYAjNPpump",
-      "link": "https://axiom.trade/meme/3K6EUFoAE8zngTFMfPavqcMFhDqYTRemoaXYAjNPpump?chain=sol",
-      "reason": "liquidity $0 under $25k · market cap $14,750 outside $100k–$100M",
-      "gates": 2,
-      "chg_m5": 16.76,
-      "vol_m5": 12082.0,
-      "score": 99.62
+      "chg_m5": 1.19,
+      "vol_m5": 200.0,
+      "score": 0.89
     }
   ],
   "helius_status": "",
@@ -375847,7 +375945,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-22T08:37:13.638454+00:00",
+  "checked_at": "2026-11-22T08:37:53.705904+00:00",
   "checked_at_london": "22 Nov 2026, 8:37 GMT",
   "who_we_copy": null
 }
