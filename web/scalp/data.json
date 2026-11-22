@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 73718,
-  "open_count": 1,
+  "open_count": 3,
   "last_updated_london": "22 Nov 2026, 1:45 GMT",
-  "last_updated": "2026-11-22T01:45:02.541961+00:00",
+  "last_updated": "2026-11-22T01:45:42.550658+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "21 Nov 2026, 19:57 GMT",
-      "value": 0.0
-    },
     {
       "label": "21 Nov 2026, 19:58 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "22 Nov 2026, 1:45 GMT",
       "value": 0.0
+    },
+    {
+      "label": "22 Nov 2026, 1:45 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "22 Nov 2026, 1:45 GMT",
+      "hhmm": "01:45",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "01:45 EXECUTOR: BUY 10% $SHIT @ 0.000550438 — 5m +3.3% vol $10,934 buys 841/sells 44",
+      "message": "01:45 EXECUTOR: BUY 10% $SHIT @ 0.000550438 — 5m +3.3% vol $10,934 buys 841/sells 44",
+      "symbol": null,
+      "action": "BUY 10% $SHIT @ 0.000550438 — 5m +3.3% vol $10,934 buys 841/sells 44"
+    },
+    {
+      "ts": "22 Nov 2026, 1:45 GMT",
+      "hhmm": "01:45",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "01:45 EXECUTOR: BUY 10% $SBS @ 0.000186126 — 5m +11.6% vol $5,202 buys 43/sells 29",
+      "message": "01:45 EXECUTOR: BUY 10% $SBS @ 0.000186126 — 5m +11.6% vol $5,202 buys 43/sells 29",
+      "symbol": null,
+      "action": "BUY 10% $SBS @ 0.000186126 — 5m +11.6% vol $5,202 buys 43/sells 29"
+    },
     {
       "ts": "22 Nov 2026, 1:44 GMT",
       "hhmm": "01:44",
@@ -2441,26 +2461,6 @@
       "message": "01:24 EXECUTOR: SELL take profit +8% $DCTY",
       "symbol": null,
       "action": "SELL take profit +8% $DCTY"
-    },
-    {
-      "ts": "22 Nov 2026, 1:23 GMT",
-      "hhmm": "01:23",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "01:23 LOGGER: run complete — 29 polls, 5 open, equity $0.00",
-      "message": "01:23 LOGGER: run complete — 29 polls, 5 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 5 open, equity $0.00"
-    },
-    {
-      "ts": "22 Nov 2026, 1:22 GMT",
-      "hhmm": "01:22",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "01:22 EXECUTOR: BUY 10% $VINE @ 0.00928264 — 5m +2.1% vol $9,217 buys 27/sells 6",
-      "message": "01:22 EXECUTOR: BUY 10% $VINE @ 0.00928264 — 5m +2.1% vol $9,217 buys 27/sells 6",
-      "symbol": null,
-      "action": "BUY 10% $VINE @ 0.00928264 — 5m +2.1% vol $9,217 buys 27/sells 6"
     }
   ],
   "agents": [
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "57 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "57 pairs · 2 passed liquidity, age, and 5m momentum",
+      "badge": "2 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "1/6",
+      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "3/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2595,9 +2595,93 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol"
+    },
+    {
+      "symbol": "SBS",
+      "name": "SBS",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.00018612599999999997,
+      "current_price": 0.0001852,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.00017681969999999996,
+      "trail_activate": 0.00019357103999999997,
+      "opened_at": "22 Nov 2026, 1:45 GMT",
+      "reason": "BUY 10% $SBS @ 0.000186126 — 5m +11.6% vol $5,202 buys 43/sells 29",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/4mE8dPH1RTqQBT5EPim5Ubt2v2wXZ9zgEDDWmL1o1EYu?chain=sol"
+    },
+    {
+      "symbol": "SHIT",
+      "name": "SHIT",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.0005504384999999999,
+      "current_price": 0.0005477,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.0005229165749999999,
+      "trail_activate": 0.00057245604,
+      "opened_at": "22 Nov 2026, 1:45 GMT",
+      "reason": "BUY 10% $SHIT @ 0.000550438 — 5m +3.3% vol $10,934 buys 841/sells 44",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/Fn95NtGXWPaJXc4N5y9rVkUq1NwZbjBNJzPVvNRLpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f18225",
+      "time": "22 Nov 2026, 1:45 GMT",
+      "ts": "2026-11-22T01:45:42.550629+00:00",
+      "side": "buy",
+      "symbol": "SHIT",
+      "name": "SHIT",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0005504384999999999,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f18224",
+      "time": "22 Nov 2026, 1:45 GMT",
+      "ts": "2026-11-22T01:45:42.550539+00:00",
+      "side": "buy",
+      "symbol": "SBS",
+      "name": "SBS",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00018612599999999997,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f18223",
       "time": "22 Nov 2026, 1:44 GMT",
@@ -367064,7 +367148,7 @@
     "win_rate": 0.6228734496762156,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 18223
+    "fills": 18225
   },
   "ok": true,
   "totals_cumulative": {
@@ -367209,6 +367293,20 @@
       "price": 0.001861253355778635,
       "change_pct": null,
       "source": "geckoterminal"
+    },
+    {
+      "symbol": "SBS",
+      "name": "SBS",
+      "price": 0.0001852,
+      "change_pct": null,
+      "source": "dexscreener"
+    },
+    {
+      "symbol": "SHIT",
+      "name": "SHIT",
+      "price": 0.0005477,
+      "change_pct": null,
+      "source": "dexscreener"
     }
   ],
   "desk": "axiom",
@@ -367296,31 +367394,31 @@
       "symbol": "MANDY",
       "mint": "3JqV4LuKVqzCpWsDAsBnTLg2mKik22hLeyyPyfW3pump",
       "link": "https://axiom.trade/meme/3JqV4LuKVqzCpWsDAsBnTLg2mKik22hLeyyPyfW3pump?chain=sol",
-      "reason": "5m +97.6% outside +1% to +40%",
+      "reason": "5m +85.5% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 97.61,
-      "vol_m5": 85655.0,
-      "score": 878.49
-    },
-    {
-      "symbol": "SBS",
-      "mint": "4mE8dPH1RTqQBT5EPim5Ubt2v2wXZ9zgEDDWmL1o1EYu",
-      "link": "https://axiom.trade/meme/4mE8dPH1RTqQBT5EPim5Ubt2v2wXZ9zgEDDWmL1o1EYu?chain=sol",
-      "reason": "5m volume $3,029 under $5k",
-      "gates": 1,
-      "chg_m5": 25.3,
-      "vol_m5": 3029.0,
-      "score": 155.89
+      "chg_m5": 85.49,
+      "vol_m5": 100055.0,
+      "score": 769.41
     },
     {
       "symbol": "STREETS",
       "mint": "82mseLFauphc2yutbaDGgViahquJ1jGVLpyof99xpump",
       "link": "https://axiom.trade/meme/82mseLFauphc2yutbaDGgViahquJ1jGVLpyof99xpump?chain=sol",
-      "reason": "5m volume $2,063 under $5k",
+      "reason": "5m volume $1,815 under $5k",
       "gates": 1,
-      "chg_m5": 2.8,
-      "vol_m5": 2063.0,
-      "score": 3.39
+      "chg_m5": 7.5,
+      "vol_m5": 1815.0,
+      "score": 7.02
+    },
+    {
+      "symbol": "1",
+      "mint": "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump",
+      "link": "https://axiom.trade/meme/2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump?chain=sol",
+      "reason": "5m volume $583 under $5k",
+      "gates": 1,
+      "chg_m5": 4.03,
+      "vol_m5": 583.0,
+      "score": 2.64
     },
     {
       "symbol": "FLOAT",
@@ -367358,7 +367456,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-22T01:45:02.541961+00:00",
+  "checked_at": "2026-11-22T01:45:42.550658+00:00",
   "checked_at_london": "22 Nov 2026, 1:45 GMT",
   "who_we_copy": null
 }
