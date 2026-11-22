@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 80678,
-  "open_count": 0,
-  "last_updated_london": "22 Nov 2026, 21:10 GMT",
-  "last_updated": "2026-11-22T21:10:56.494596+00:00",
+  "open_count": 1,
+  "last_updated_london": "22 Nov 2026, 21:11 GMT",
+  "last_updated": "2026-11-22T21:11:36.547577+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "22 Nov 2026, 15:23 GMT",
-      "value": 0.0
-    },
     {
       "label": "22 Nov 2026, 15:24 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "22 Nov 2026, 21:10 GMT",
       "value": 0.0
+    },
+    {
+      "label": "22 Nov 2026, 21:11 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "22 Nov 2026, 21:11 GMT",
+      "hhmm": "21:11",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:11 EXECUTOR: BUY 10% $PushCoin @ 0.000169242 — 5m +7.2% vol $12,851 buys 1020/sells 170",
+      "message": "21:11 EXECUTOR: BUY 10% $PushCoin @ 0.000169242 — 5m +7.2% vol $12,851 buys 1020/sells 170",
+      "symbol": null,
+      "action": "BUY 10% $PushCoin @ 0.000169242 — 5m +7.2% vol $12,851 buys 1020/sells 170"
+    },
     {
       "ts": "22 Nov 2026, 21:07 GMT",
       "hhmm": "21:07",
@@ -2451,16 +2461,6 @@
       "message": "20:29 EXECUTOR: BUY 10% $FIONA @ 0.00120551 — 5m +2.0% vol $12,117 buys 148/sells 44",
       "symbol": null,
       "action": "BUY 10% $FIONA @ 0.00120551 — 5m +2.0% vol $12,117 buys 148/sells 44"
-    },
-    {
-      "ts": "22 Nov 2026, 20:27 GMT",
-      "hhmm": "20:27",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "20:27 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
-      "message": "20:27 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 1 open, equity $0.00"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "59 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "40 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "59 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "40 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "0/6",
+      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2573,8 +2573,51 @@
       "open_positions": 0
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "PushCoin",
+      "name": "PushCoin",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.00016924199999999998,
+      "current_price": 0.0001684,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.00016077989999999998,
+      "trail_activate": 0.00017601167999999997,
+      "opened_at": "22 Nov 2026, 21:11 GMT",
+      "reason": "BUY 10% $PushCoin @ 0.000169242 — 5m +7.2% vol $12,851 buys 1020/sells 170",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/3N6Mp8YQuVDfEtyuyJS72s4MRrgQuKY34gvYZD5Kpump?chain=sol"
+    }
+  ],
   "fills": [
+    {
+      "id": "f19425",
+      "time": "22 Nov 2026, 21:11 GMT",
+      "ts": "2026-11-22T21:11:28.500572+00:00",
+      "side": "buy",
+      "symbol": "PushCoin",
+      "name": "PushCoin",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00016924199999999998,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f19424",
       "time": "22 Nov 2026, 21:04 GMT",
@@ -391060,8 +391103,8 @@
     "closed_trades": 9712,
     "win_rate": 0.6462108731466227,
     "realized_pnl": -100.0,
-    "unrealized_pnl": 0,
-    "fills": 19424
+    "unrealized_pnl": 0.0,
+    "fills": 19425
   },
   "ok": true,
   "totals_cumulative": {
@@ -391199,7 +391242,15 @@
     "Risk": "#FF4D4D",
     "Logger": "#22D3EE"
   },
-  "ticker": [],
+  "ticker": [
+    {
+      "symbol": "PushCoin",
+      "name": "PushCoin",
+      "price": 0.0001684,
+      "change_pct": null,
+      "source": "dexscreener"
+    }
+  ],
   "desk": "axiom",
   "risk_rules": {
     "mode": "axiom",
@@ -391247,8 +391298,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 75.63,
-      "return_pct": -0.2436748,
+      "equity": 75.59,
+      "return_pct": -0.24411028,
       "closed_trades": 548,
       "win_rate": 0.3357664233576642,
       "realized_pnl": -24.56
@@ -391282,64 +391333,54 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
+      "symbol": "ASS",
+      "mint": "8U9611BhPXG8ubN77wkeN7Gs1ooAXQLy65KQDZr9pump",
+      "link": "https://axiom.trade/meme/8U9611BhPXG8ubN77wkeN7Gs1ooAXQLy65KQDZr9pump?chain=sol",
+      "reason": "liquidity $16,827 under $25k · market cap $42,372 outside $100k–$100M",
+      "gates": 2,
+      "chg_m5": 25.13,
+      "vol_m5": 9274.0,
+      "score": 16.26
+    },
+    {
+      "symbol": "Max",
+      "mint": "5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump",
+      "link": "https://axiom.trade/meme/5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump?chain=sol",
+      "reason": "5m volume $236 under $5k · 5m +0.9% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.88,
+      "vol_m5": 236.0,
+      "score": 0.69
+    },
+    {
+      "symbol": "CBUCKS",
+      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
+      "reason": "5m volume $18 under $5k · buy/sell 2/2 under 1.05",
+      "gates": 2,
+      "chg_m5": 1.76,
+      "vol_m5": 18.0,
+      "score": 0.44
+    },
+    {
       "symbol": "DESSA",
       "mint": "npz2FhoufQ7pKqhGpaipYWacrAkidyW2yDpVWSvpump",
       "link": "https://axiom.trade/meme/npz2FhoufQ7pKqhGpaipYWacrAkidyW2yDpVWSvpump?chain=sol",
-      "reason": "5m volume $612 under $5k",
-      "gates": 1,
-      "chg_m5": 1.09,
-      "vol_m5": 612.0,
-      "score": 1.33
-    },
-    {
-      "symbol": "mihao",
-      "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
-      "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
-      "reason": "5m -1.5% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -1.517,
-      "vol_m5": 6721.0,
-      "score": -9.89
-    },
-    {
-      "symbol": "PushCoin",
-      "mint": "3N6Mp8YQuVDfEtyuyJS72s4MRrgQuKY34gvYZD5Kpump",
-      "link": "https://axiom.trade/meme/3N6Mp8YQuVDfEtyuyJS72s4MRrgQuKY34gvYZD5Kpump?chain=sol",
-      "reason": "5m -18.0% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -17.98,
-      "vol_m5": 10883.0,
-      "score": -87.67
-    },
-    {
-      "symbol": "HOGE",
-      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
-      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
-      "reason": "5m volume $29 under $5k · 5m +0.9% outside +1% to +40%",
+      "reason": "5m volume $609 under $5k · 5m -0.4% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 0.9,
-      "vol_m5": 29.0,
-      "score": 0.68
+      "chg_m5": -0.44,
+      "vol_m5": 609.0,
+      "score": -0.28
     },
     {
-      "symbol": "ROCKET",
-      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
-      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
-      "reason": "5m volume $11 under $5k · buy/sell 117/121 under 1.05",
+      "symbol": "DIGS",
+      "mint": "9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump",
+      "link": "https://axiom.trade/meme/9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump?chain=sol",
+      "reason": "5m volume $2,823 under $5k · 5m -2.2% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 2.65,
-      "vol_m5": 11.0,
-      "score": 0.64
-    },
-    {
-      "symbol": "pippin",
-      "mint": "Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump",
-      "link": "https://axiom.trade/meme/Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump?chain=sol",
-      "reason": "5m volume $4,589 under $5k · 5m +0.1% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.051,
-      "vol_m5": 4589.0,
-      "score": 0.46
+      "chg_m5": -2.2,
+      "vol_m5": 2823.0,
+      "score": -2.54
     }
   ],
   "helius_status": "",
@@ -391347,7 +391388,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-22T21:10:56.494596+00:00",
-  "checked_at_london": "22 Nov 2026, 21:10 GMT",
+  "checked_at": "2026-11-22T21:11:36.547577+00:00",
+  "checked_at_london": "22 Nov 2026, 21:11 GMT",
   "who_we_copy": null
 }
