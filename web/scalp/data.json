@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 80446,
-  "open_count": 1,
-  "last_updated_london": "22 Nov 2026, 20:27 GMT",
-  "last_updated": "2026-11-22T20:27:56.923647+00:00",
+  "open_count": 2,
+  "last_updated_london": "22 Nov 2026, 20:29 GMT",
+  "last_updated": "2026-11-22T20:29:06.260336+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "22 Nov 2026, 14:41 GMT",
-      "value": 0.0
-    },
     {
       "label": "22 Nov 2026, 14:42 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "22 Nov 2026, 20:27 GMT",
       "value": 0.0
+    },
+    {
+      "label": "22 Nov 2026, 20:29 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "22 Nov 2026, 20:29 GMT",
+      "hhmm": "20:29",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "20:29 EXECUTOR: BUY 10% $FIONA @ 0.00120551 — 5m +2.0% vol $12,117 buys 148/sells 44",
+      "message": "20:29 EXECUTOR: BUY 10% $FIONA @ 0.00120551 — 5m +2.0% vol $12,117 buys 148/sells 44",
+      "symbol": null,
+      "action": "BUY 10% $FIONA @ 0.00120551 — 5m +2.0% vol $12,117 buys 148/sells 44"
+    },
     {
       "ts": "22 Nov 2026, 20:27 GMT",
       "hhmm": "20:27",
@@ -2451,16 +2461,6 @@
       "message": "19:56 RISK: SELL stop −5% $OpenIndex",
       "symbol": null,
       "action": "SELL stop −5% $OpenIndex"
-    },
-    {
-      "ts": "22 Nov 2026, 19:55 GMT",
-      "hhmm": "19:55",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "19:55 EXECUTOR: BUY 10% $OpenIndex @ 0.000431245 — 5m +1.0% vol $25,427 buys 260/sells 231",
-      "message": "19:55 EXECUTOR: BUY 10% $OpenIndex @ 0.000431245 — 5m +1.0% vol $25,427 buys 260/sells 231",
-      "symbol": null,
-      "action": "BUY 10% $OpenIndex @ 0.000431245 — 5m +1.0% vol $25,427 buys 260/sells 231"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "58 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
+      "badge": "78 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "58 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "78 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "1/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.009192607848834107,
-      "current_price": 0.009122751508996095,
+      "current_price": 0.009103114425595167,
       "change_pct": null,
       "price_source": "geckoterminal",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.007599186323048901,
+      "unrealized_pct": -0.009735368321002635,
       "hard_stop": 0.008732977456392402,
       "trail_activate": 0.009560312162787472,
       "opened_at": "22 Nov 2026, 20:10 GMT",
@@ -2595,9 +2595,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump?chain=sol"
+    },
+    {
+      "symbol": "FIONA",
+      "name": "FIONA",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.0012055057008924829,
+      "current_price": 0.001199508160092023,
+      "change_pct": null,
+      "price_source": "geckoterminal",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.0011452304158478587,
+      "trail_activate": 0.0012537259289281822,
+      "opened_at": "22 Nov 2026, 20:29 GMT",
+      "reason": "BUY 10% $FIONA @ 0.00120551 — 5m +2.0% vol $12,117 buys 148/sells 44",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f19394",
+      "time": "22 Nov 2026, 20:29 GMT",
+      "ts": "2026-11-22T20:29:06.260229+00:00",
+      "side": "buy",
+      "symbol": "FIONA",
+      "name": "FIONA",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0012055057008924829,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f19393",
       "time": "22 Nov 2026, 20:25 GMT",
@@ -390464,7 +390506,7 @@
     "win_rate": 0.6456270627062707,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 19393
+    "fills": 19394
   },
   "ok": true,
   "totals_cumulative": {
@@ -390606,7 +390648,14 @@
     {
       "symbol": "VINE",
       "name": "VINE",
-      "price": 0.009122751508996095,
+      "price": 0.009103114425595167,
+      "change_pct": null,
+      "source": "geckoterminal"
+    },
+    {
+      "symbol": "FIONA",
+      "name": "FIONA",
+      "price": 0.001199508160092023,
       "change_pct": null,
       "source": "geckoterminal"
     }
@@ -390693,64 +390742,64 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "GATO",
-      "mint": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
-      "link": "https://axiom.trade/meme/HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump?chain=sol",
-      "reason": "5m volume $1,152 under $5k",
+      "symbol": "DCTY",
+      "mint": "9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump",
+      "link": "https://axiom.trade/meme/9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump?chain=sol",
+      "reason": "5m volume $447 under $5k",
       "gates": 1,
-      "chg_m5": 2.01,
-      "vol_m5": 1152.0,
-      "score": 4.92
+      "chg_m5": 1.484,
+      "vol_m5": 447.0,
+      "score": 0.81
+    },
+    {
+      "symbol": "Singularity",
+      "mint": "7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump",
+      "link": "https://axiom.trade/meme/7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump?chain=sol",
+      "reason": "5m -4.7% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -4.703,
+      "vol_m5": 6450.0,
+      "score": -10.89
+    },
+    {
+      "symbol": "SIDOOR",
+      "mint": "zcRvzm7gAfYGde8gRwaSYxNryL47SjLVUQLAf1bdoor",
+      "link": "https://axiom.trade/meme/zcRvzm7gAfYGde8gRwaSYxNryL47SjLVUQLAf1bdoor?chain=sol",
+      "reason": "buy/sell 49/85 under 1.05 · 5m +81.9% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 81.901,
+      "vol_m5": 10955.0,
+      "score": 141.64
+    },
+    {
+      "symbol": "WASTED",
+      "mint": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
+      "link": "https://axiom.trade/meme/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump?chain=sol",
+      "reason": "5m volume $1,394 under $5k · buy/sell 16/24 under 1.05",
+      "gates": 2,
+      "chg_m5": 1.94,
+      "vol_m5": 1394.0,
+      "score": 1.25
     },
     {
       "symbol": "PushCoin",
       "mint": "3N6Mp8YQuVDfEtyuyJS72s4MRrgQuKY34gvYZD5Kpump",
       "link": "https://axiom.trade/meme/3N6Mp8YQuVDfEtyuyJS72s4MRrgQuKY34gvYZD5Kpump?chain=sol",
-      "reason": "5m volume $2,785 under $5k",
-      "gates": 1,
-      "chg_m5": 1.79,
-      "vol_m5": 2785.0,
-      "score": 1.88
+      "reason": "5m volume $2,954 under $5k · 5m +0.8% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.75,
+      "vol_m5": 2954.0,
+      "score": 0.85
     },
     {
-      "symbol": "CBUCKS",
-      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
-      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
-      "reason": "5m volume $10 under $5k",
-      "gates": 1,
-      "chg_m5": 1.81,
-      "vol_m5": 10.0,
-      "score": 1.36
-    },
-    {
-      "symbol": "DCTY",
-      "mint": "9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump",
-      "link": "https://axiom.trade/meme/9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump?chain=sol",
-      "reason": "5m volume $423 under $5k",
-      "gates": 1,
-      "chg_m5": 1.517,
-      "vol_m5": 423.0,
-      "score": 1.18
-    },
-    {
-      "symbol": "greg",
-      "mint": "4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump",
-      "link": "https://axiom.trade/meme/4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump?chain=sol",
-      "reason": "5m volume $356 under $5k",
-      "gates": 1,
-      "chg_m5": 1.055,
-      "vol_m5": 356.0,
+      "symbol": "FLOAT",
+      "mint": "Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr",
+      "link": "https://axiom.trade/meme/Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr?chain=sol",
+      "reason": "5m volume $962 under $5k · 5m +0.6% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.585,
+      "vol_m5": 962.0,
       "score": 0.44
-    },
-    {
-      "symbol": "FIONA",
-      "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
-      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "reason": "5m -3.4% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -3.383,
-      "vol_m5": 9764.0,
-      "score": -15.84
     }
   ],
   "helius_status": "",
@@ -390758,7 +390807,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-22T20:27:56.923647+00:00",
-  "checked_at_london": "22 Nov 2026, 20:27 GMT",
+  "checked_at": "2026-11-22T20:29:06.260336+00:00",
+  "checked_at_london": "22 Nov 2026, 20:29 GMT",
   "who_we_copy": null
 }
