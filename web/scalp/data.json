@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.6393029603191266,
-  "wins": 6090,
+  "win_rate": 0.6393786733837111,
+  "wins": 6092,
   "losses": 3436,
-  "closed_trades": 9526,
+  "closed_trades": 9528,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 78764,
-  "open_count": 4,
-  "last_updated_london": "22 Nov 2026, 15:50 GMT",
-  "last_updated": "2026-11-22T15:50:40.653636+00:00",
+  "ticks": 78793,
+  "open_count": 2,
+  "last_updated_london": "22 Nov 2026, 15:51 GMT",
+  "last_updated": "2026-11-22T15:51:04.601194+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 9528,
+  "traded": 9530,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 9528,
+    "traded": 9530,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "22 Nov 2026, 10:05 GMT",
-      "value": 0.0
-    },
     {
       "label": "22 Nov 2026, 10:05 GMT",
       "value": 0.0
@@ -2058,10 +2054,44 @@
     {
       "label": "22 Nov 2026, 15:50 GMT",
       "value": 0.0
+    },
+    {
+      "label": "22 Nov 2026, 15:51 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "22 Nov 2026, 15:51 GMT",
+      "hhmm": "15:51",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "15:51 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "message": "15:51 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 2 open, equity $0.00"
+    },
+    {
+      "ts": "22 Nov 2026, 15:50 GMT",
+      "hhmm": "15:50",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "15:50 EXECUTOR: SELL trail 2.5% $FIONA",
+      "message": "15:50 EXECUTOR: SELL trail 2.5% $FIONA",
+      "symbol": null,
+      "action": "SELL trail 2.5% $FIONA"
+    },
+    {
+      "ts": "22 Nov 2026, 15:50 GMT",
+      "hhmm": "15:50",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "15:50 RISK: SELL time stop 20m $pippin",
+      "message": "15:50 RISK: SELL time stop 20m $pippin",
+      "symbol": null,
+      "action": "SELL time stop 20m $pippin"
+    },
     {
       "ts": "22 Nov 2026, 15:47 GMT",
       "hhmm": "15:47",
@@ -2431,36 +2461,6 @@
       "message": "14:59 EXECUTOR: BUY 10% $PushCoin @ 0.0015678 — 5m +6.6% vol $7,953 buys 390/sells 306",
       "symbol": null,
       "action": "BUY 10% $PushCoin @ 0.0015678 — 5m +6.6% vol $7,953 buys 390/sells 306"
-    },
-    {
-      "ts": "22 Nov 2026, 14:59 GMT",
-      "hhmm": "14:59",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "14:59 EXECUTOR: SELL trail 2.5% $FIONA",
-      "message": "14:59 EXECUTOR: SELL trail 2.5% $FIONA",
-      "symbol": null,
-      "action": "SELL trail 2.5% $FIONA"
-    },
-    {
-      "ts": "22 Nov 2026, 14:58 GMT",
-      "hhmm": "14:58",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "14:58 EXECUTOR: BUY 10% $Singularity @ 0.0012286 — 5m +6.3% vol $12,356 buys 86/sells 55",
-      "message": "14:58 EXECUTOR: BUY 10% $Singularity @ 0.0012286 — 5m +6.3% vol $12,356 buys 86/sells 55",
-      "symbol": null,
-      "action": "BUY 10% $Singularity @ 0.0012286 — 5m +6.3% vol $12,356 buys 86/sells 55"
-    },
-    {
-      "ts": "22 Nov 2026, 14:57 GMT",
-      "hhmm": "14:57",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "14:57 LOGGER: run complete — 29 polls, 3 open, equity $0.00",
-      "message": "14:57 LOGGER: run complete — 29 polls, 3 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 3 open, equity $0.00"
     }
   ],
   "agents": [
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "4/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2574,50 +2574,6 @@
     }
   ],
   "positions": [
-    {
-      "symbol": "pippin",
-      "name": "pippin",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.01703877275940068,
-      "current_price": 0.01721704047189498,
-      "change_pct": null,
-      "price_source": "geckoterminal",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.010462473736317035,
-      "hard_stop": 0.016186834121430644,
-      "trail_activate": 0.017720323669776706,
-      "opened_at": "22 Nov 2026, 15:30 GMT",
-      "reason": "BUY 10% $pippin @ 0.0170388 — 5m +1.2% vol $5,811 buys 28/sells 3",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump?chain=sol"
-    },
-    {
-      "symbol": "FIONA",
-      "name": "FIONA",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.0015391271404995195,
-      "current_price": 0.001582143950787118,
-      "change_pct": null,
-      "price_source": "geckoterminal",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.027948834865999084,
-      "hard_stop": 0.0014621707834745435,
-      "trail_activate": 0.0016006922261195004,
-      "opened_at": "22 Nov 2026, 15:30 GMT",
-      "reason": "BUY 10% $FIONA @ 0.00153913 — 5m +2.9% vol $5,175 buys 108/sells 47",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol"
-    },
     {
       "symbol": "BLOB",
       "name": "BLOB",
@@ -2664,6 +2620,46 @@
     }
   ],
   "fills": [
+    {
+      "id": "f19058",
+      "time": "22 Nov 2026, 15:50 GMT",
+      "ts": "2026-11-22T15:50:57.164915+00:00",
+      "side": "sell",
+      "symbol": "FIONA",
+      "name": "FIONA",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0015569505778719101,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f19057",
+      "time": "22 Nov 2026, 15:50 GMT",
+      "ts": "2026-11-22T15:50:57.164826+00:00",
+      "side": "sell",
+      "symbol": "pippin",
+      "name": "pippin",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.017074061262046778,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f19056",
       "time": "22 Nov 2026, 15:47 GMT",
@@ -383786,17 +383782,17 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 9526,
-    "win_rate": 0.6393029603191266,
+    "closed_trades": 9528,
+    "win_rate": 0.6393786733837111,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 19056
+    "fills": 19058
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 78764,
+    "scanned": 78793,
     "killed": 0,
-    "traded": 9528
+    "traded": 9530
   },
   "events": [
     {
@@ -383930,20 +383926,6 @@
   },
   "ticker": [
     {
-      "symbol": "pippin",
-      "name": "pippin",
-      "price": 0.01721704047189498,
-      "change_pct": null,
-      "source": "geckoterminal"
-    },
-    {
-      "symbol": "FIONA",
-      "name": "FIONA",
-      "price": 0.001582143950787118,
-      "change_pct": null,
-      "source": "geckoterminal"
-    },
-    {
       "symbol": "BLOB",
       "name": "BLOB",
       "price": 0.0206,
@@ -384025,8 +384007,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 9526,
-      "win_rate": 0.6393029603191266,
+      "closed_trades": 9528,
+      "win_rate": 0.6393786733837111,
       "realized_pnl": -100.0
     }
   ],
@@ -384105,7 +384087,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-22T15:50:40.653636+00:00",
-  "checked_at_london": "22 Nov 2026, 15:50 GMT",
+  "checked_at": "2026-11-22T15:51:04.601194+00:00",
+  "checked_at_london": "22 Nov 2026, 15:51 GMT",
   "who_we_copy": null
 }
