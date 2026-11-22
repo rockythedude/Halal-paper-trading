@@ -31,34 +31,6 @@
       "market_value": 0.0,
       "unrealized_pnl": 0.0,
       "unrealized_pct": -0.021462562562827414
-    },
-    {
-      "symbol": "DESSA",
-      "name": "DESSA",
-      "mint": "npz2FhoufQ7pKqhGpaipYWacrAkidyW2yDpVWSvpump",
-      "pair": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
-      "link": "https://axiom.trade/meme/npz2FhoufQ7pKqhGpaipYWacrAkidyW2yDpVWSvpump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/dextcer4k9dwbxtmu8znvvwgevvmvhmb183pf2xxzwvh",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.001530615,
-      "raw_price": 0.001523,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-22T04:45:51.262096+00:00",
-      "opened_at_london": "22 Nov 2026, 4:45 GMT",
-      "high_water": 0.001530615,
-      "trail_armed": false,
-      "last_price": 0.001492,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $DESSA @ 0.00153061 \u2014 5m +14.0% vol $5,893 buys 21/sells 20",
-      "hard_stop": 0.0014540842499999999,
-      "take_profit": 0.0016530642,
-      "trail_activate": 0.0015918396,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.025228421255508282
     }
   ],
   "closed_trades": [
@@ -138391,15 +138363,24 @@
       "closed_at": "2026-11-22T04:41:22.597799+00:00",
       "closed_at_london": "22 Nov 2026, 4:41 GMT",
       "opened_at": "2026-11-22T04:36:43.450878+00:00"
+    },
+    {
+      "symbol": "DESSA",
+      "name": "DESSA",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.001530615,
+      "exit_price": 0.001439765,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL stop \u22125% $DESSA",
+      "closed_at": "2026-11-22T04:50:14.477820+00:00",
+      "closed_at_london": "22 Nov 2026, 4:50 GMT",
+      "opened_at": "2026-11-22T04:45:51.262096+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-21T23:02:15.758436+00:00",
-      "label": "21 Nov 2026, 23:02 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-21T23:03:21.872848+00:00",
       "label": "21 Nov 2026, 23:03 GMT",
@@ -141399,21 +141380,15 @@
       "label": "22 Nov 2026, 4:49 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-22T04:50:30.462820+00:00",
+      "label": "22 Nov 2026, 4:50 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-22T00:50:53.901734+00:00",
-      "london": "22 Nov 2026, 0:50 GMT",
-      "hhmm": "00:50",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $SHIT @ 0.000635663 \u2014 5m +2.6% vol $7,327 buys 896/sells 52",
-      "symbol": null,
-      "reason": "BUY 10% $SHIT @ 0.000635663 \u2014 5m +2.6% vol $7,327 buys 896/sells 52",
-      "line": "00:50 EXECUTOR: BUY 10% $SHIT @ 0.000635663 \u2014 5m +2.6% vol $7,327 buys 896/sells 52",
-      "tag": "EXECUTOR",
-      "message": "00:50 EXECUTOR: BUY 10% $SHIT @ 0.000635663 \u2014 5m +2.6% vol $7,327 buys 896/sells 52"
-    },
     {
       "ts": "2026-11-22T00:51:33.951273+00:00",
       "london": "22 Nov 2026, 0:51 GMT",
@@ -146201,6 +146176,18 @@
       "line": "04:47 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00",
       "tag": "LOGGER",
       "message": "04:47 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00"
+    },
+    {
+      "ts": "2026-11-22T04:50:14.477872+00:00",
+      "london": "22 Nov 2026, 4:50 GMT",
+      "hhmm": "04:50",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $DESSA",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $DESSA",
+      "line": "04:50 RISK: SELL stop \u22125% $DESSA",
+      "tag": "RISK",
+      "message": "04:50 RISK: SELL stop \u22125% $DESSA"
     }
   ],
   "agents": {
@@ -146273,8 +146260,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -146302,8 +146289,8 @@
     }
   },
   "ticks": 74820,
-  "last_updated": "2026-11-22T04:49:50.467729+00:00",
-  "last_updated_london": "22 Nov 2026, 4:49 GMT",
+  "last_updated": "2026-11-22T04:50:30.462705+00:00",
+  "last_updated_london": "22 Nov 2026, 4:50 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -404573,23 +404560,37 @@
       "pnl": null,
       "pnl_pct": null,
       "id": "f18446"
+    },
+    {
+      "ts": "2026-11-22T04:50:14.477820+00:00",
+      "london": "22 Nov 2026, 4:50 GMT",
+      "side": "sell",
+      "symbol": "DESSA",
+      "name": "DESSA",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.001439765,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f18447"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-22T04:49:50.467729+00:00",
-  "checked_at_london": "22 Nov 2026, 4:49 GMT",
+  "checked_at": "2026-11-22T04:50:30.462705+00:00",
+  "checked_at_london": "22 Nov 2026, 4:50 GMT",
   "near_misses": [
     {
       "symbol": "SHIT",
       "mint": "Fn95NtGXWPaJXc4N5y9rVkUq1NwZbjBNJzPVvNRLpump",
       "link": "https://axiom.trade/meme/Fn95NtGXWPaJXc4N5y9rVkUq1NwZbjBNJzPVvNRLpump?chain=sol",
-      "reason": "market cap $91,630 outside $100k\u2013$100M",
+      "reason": "market cap $87,936 outside $100k\u2013$100M",
       "gates": 1,
-      "chg_m5": 15.45,
-      "vol_m5": 14592.0,
-      "score": 34.64
+      "chg_m5": 10.79,
+      "vol_m5": 15393.0,
+      "score": 25.43
     },
     {
       "symbol": "CBUCKS",
@@ -404600,6 +404601,16 @@
       "chg_m5": 1.59,
       "vol_m5": 137.0,
       "score": 12.14
+    },
+    {
+      "symbol": "CATEMAS",
+      "mint": "kPqBsUZuogprbq15ZpACwDzbUHSAxTxbhRrxmrDpump",
+      "link": "https://axiom.trade/meme/kPqBsUZuogprbq15ZpACwDzbUHSAxTxbhRrxmrDpump?chain=sol",
+      "reason": "5m volume $4,122 under $5k",
+      "gates": 1,
+      "chg_m5": 9.81,
+      "vol_m5": 4122.0,
+      "score": 4.25
     },
     {
       "symbol": "Rings",
@@ -404622,24 +404633,14 @@
       "score": -2.25
     },
     {
-      "symbol": "CATEMAS",
-      "mint": "kPqBsUZuogprbq15ZpACwDzbUHSAxTxbhRrxmrDpump",
-      "link": "https://axiom.trade/meme/kPqBsUZuogprbq15ZpACwDzbUHSAxTxbhRrxmrDpump?chain=sol",
-      "reason": "5m -2.2% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -2.22,
-      "vol_m5": 8504.0,
-      "score": -2.39
-    },
-    {
       "symbol": "Snowball",
       "mint": "B7a7t2hRCfDWvWCXniiL2RXr1ViUNfQrQ4ATr79wpump",
       "link": "https://axiom.trade/meme/B7a7t2hRCfDWvWCXniiL2RXr1ViUNfQrQ4ATr79wpump?chain=sol",
-      "reason": "liquidity $18,014 under $25k \u00b7 market cap $69,512 outside $100k\u2013$100M",
+      "reason": "liquidity $18,473 under $25k \u00b7 market cap $72,876 outside $100k\u2013$100M",
       "gates": 2,
-      "chg_m5": 21.6,
-      "vol_m5": 38257.0,
-      "score": 51.34
+      "chg_m5": 27.48,
+      "vol_m5": 40354.0,
+      "score": 67.49
     }
   ]
 }
