@@ -5,34 +5,6 @@
   "equity": 0.0,
   "positions": [
     {
-      "symbol": "MINELIUS",
-      "name": "MINELIUS",
-      "mint": "E9rWKjVhHMxQkxfREr7Li8Yy46rVcWiWHoKVQAe9pump",
-      "pair": "7yJDP2VmgazVEa6usbXM61uSk5AT3J4dZFaJQvq2LnfZ",
-      "link": "https://axiom.trade/meme/E9rWKjVhHMxQkxfREr7Li8Yy46rVcWiWHoKVQAe9pump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/7yjdp2vmgazvea6usbxm61usk5at3j4dzfajqvq2lnfz",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.015567449999999998,
-      "raw_price": 0.01549,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-23T13:27:05.539758+00:00",
-      "opened_at_london": "23 Nov 2026, 13:27 GMT",
-      "high_water": 0.015567449999999998,
-      "trail_armed": false,
-      "last_price": 0.014823353473075803,
-      "last_source": "geckoterminal",
-      "reason": "BUY 10% $MINELIUS @ 0.0155674 \u2014 5m +6.2% vol $5,646 buys 322/sells 230",
-      "hard_stop": 0.014789077499999997,
-      "take_profit": 0.016812846,
-      "trail_activate": 0.016190147999999998,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.04779822815709667
-    },
-    {
       "symbol": "UCASH",
       "name": "UCASH",
       "mint": "7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump",
@@ -156031,15 +156003,24 @@
       "closed_at": "2026-11-23T13:31:03.843131+00:00",
       "closed_at_london": "23 Nov 2026, 13:31 GMT",
       "opened_at": "2026-11-23T13:25:45.645583+00:00"
+    },
+    {
+      "symbol": "MINELIUS",
+      "name": "MINELIUS",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.015567449999999998,
+      "exit_price": 0.0146464,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL stop \u22125% $MINELIUS",
+      "closed_at": "2026-11-23T13:32:47.877777+00:00",
+      "closed_at_london": "23 Nov 2026, 13:32 GMT",
+      "opened_at": "2026-11-23T13:27:05.539758+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-23T07:41:56.677408+00:00",
-      "label": "23 Nov 2026, 7:41 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-23T07:42:36.746117+00:00",
       "label": "23 Nov 2026, 7:42 GMT",
@@ -159039,21 +159020,15 @@
       "label": "23 Nov 2026, 13:32 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-23T13:33:19.713107+00:00",
+      "label": "23 Nov 2026, 13:33 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-23T08:22:42.458671+00:00",
-      "london": "23 Nov 2026, 8:22 GMT",
-      "hhmm": "08:22",
-      "agent": "EXECUTOR",
-      "action": "SELL trail 2.5% $MINELIUS",
-      "symbol": null,
-      "reason": "SELL trail 2.5% $MINELIUS",
-      "line": "08:22 EXECUTOR: SELL trail 2.5% $MINELIUS",
-      "tag": "EXECUTOR",
-      "message": "08:22 EXECUTOR: SELL trail 2.5% $MINELIUS"
-    },
     {
       "ts": "2026-11-23T08:25:06.375391+00:00",
       "london": "23 Nov 2026, 8:25 GMT",
@@ -163841,6 +163816,18 @@
       "line": "13:31 EXECUTOR: BUY 10% $UCASH @ 0.00139695 \u2014 5m +2.7% vol $33,427 buys 807/sells 452",
       "tag": "EXECUTOR",
       "message": "13:31 EXECUTOR: BUY 10% $UCASH @ 0.00139695 \u2014 5m +2.7% vol $33,427 buys 807/sells 452"
+    },
+    {
+      "ts": "2026-11-23T13:32:47.877829+00:00",
+      "london": "23 Nov 2026, 13:32 GMT",
+      "hhmm": "13:32",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $MINELIUS",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $MINELIUS",
+      "line": "13:32 RISK: SELL stop \u22125% $MINELIUS",
+      "tag": "RISK",
+      "message": "13:32 RISK: SELL stop \u22125% $MINELIUS"
     }
   ],
   "agents": {
@@ -163913,8 +163900,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -163942,8 +163929,8 @@
     }
   },
   "ticks": 86507,
-  "last_updated": "2026-11-23T13:32:39.900852+00:00",
-  "last_updated_london": "23 Nov 2026, 13:32 GMT",
+  "last_updated": "2026-11-23T13:33:19.713004+00:00",
+  "last_updated_london": "23 Nov 2026, 13:33 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -455141,23 +455128,37 @@
       "pnl": null,
       "pnl_pct": null,
       "id": "f20798"
+    },
+    {
+      "ts": "2026-11-23T13:32:47.877777+00:00",
+      "london": "23 Nov 2026, 13:32 GMT",
+      "side": "sell",
+      "symbol": "MINELIUS",
+      "name": "MINELIUS",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.0146464,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f20799"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-23T13:32:39.900852+00:00",
-  "checked_at_london": "23 Nov 2026, 13:32 GMT",
+  "checked_at": "2026-11-23T13:33:19.713004+00:00",
+  "checked_at_london": "23 Nov 2026, 13:33 GMT",
   "near_misses": [
     {
       "symbol": "PumpMeme",
       "mint": "93uamrbDerKbUh8MSjNF1wDtxYvEUD1CS9BcHn1apump",
       "link": "https://axiom.trade/meme/93uamrbDerKbUh8MSjNF1wDtxYvEUD1CS9BcHn1apump?chain=sol",
-      "reason": "5m volume $3,527 under $5k",
+      "reason": "5m volume $3,787 under $5k",
       "gates": 1,
-      "chg_m5": 5.12,
-      "vol_m5": 3527.0,
-      "score": 3.36
+      "chg_m5": 6.25,
+      "vol_m5": 3787.0,
+      "score": 4.2
     },
     {
       "symbol": "MCAT",
@@ -455190,16 +455191,6 @@
       "score": -21.14
     },
     {
-      "symbol": "Penguin",
-      "mint": "q4GNX1sK86V3GXR8r8xrfWV1JXserMD5ERz4NHbQ5gY",
-      "link": "https://axiom.trade/meme/q4GNX1sK86V3GXR8r8xrfWV1JXserMD5ERz4NHbQ5gY?chain=sol",
-      "reason": "liquidity $7,843 under $25k \u00b7 market cap $16,078 outside $100k\u2013$100M",
-      "gates": 2,
-      "chg_m5": 6.19,
-      "vol_m5": 7918.0,
-      "score": 10.84
-    },
-    {
       "symbol": "CATE",
       "mint": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
       "link": "https://axiom.trade/meme/Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump?chain=sol",
@@ -455208,6 +455199,16 @@
       "chg_m5": 0.0,
       "vol_m5": 96.0,
       "score": 0.0
+    },
+    {
+      "symbol": "SI",
+      "mint": "DEW9dSN6QpWyNthphCpMmAbZP1Q4cEKR9xQXAri98WDP",
+      "link": "https://axiom.trade/meme/DEW9dSN6QpWyNthphCpMmAbZP1Q4cEKR9xQXAri98WDP?chain=sol",
+      "reason": "5m volume $553 under $5k \u00b7 5m -0.2% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -0.18,
+      "vol_m5": 553.0,
+      "score": -0.14
     }
   ]
 }
