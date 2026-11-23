@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.6692018869741022,
-  "wins": 6951,
+  "win_rate": 0.6692655693521995,
+  "wins": 6953,
   "losses": 3436,
-  "closed_trades": 10387,
+  "closed_trades": 10389,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 86449,
-  "open_count": 4,
+  "ticks": 86478,
+  "open_count": 2,
   "last_updated_london": "23 Nov 2026, 13:24 GMT",
-  "last_updated": "2026-11-23T13:24:12.417591+00:00",
+  "last_updated": "2026-11-23T13:24:36.409689+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 10384,
+  "traded": 10391,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 10384,
+    "traded": 10391,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "23 Nov 2026, 7:33 GMT",
-      "value": 0.0
-    },
     {
       "label": "23 Nov 2026, 7:34 GMT",
       "value": 0.0
@@ -2058,10 +2054,44 @@
     {
       "label": "23 Nov 2026, 13:24 GMT",
       "value": 0.0
+    },
+    {
+      "label": "23 Nov 2026, 13:24 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "23 Nov 2026, 13:24 GMT",
+      "hhmm": "13:24",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "13:24 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "message": "13:24 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 2 open, equity $0.00"
+    },
+    {
+      "ts": "23 Nov 2026, 13:24 GMT",
+      "hhmm": "13:24",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "13:24 RISK: SELL stop −5% $FSDV15",
+      "message": "13:24 RISK: SELL stop −5% $FSDV15",
+      "symbol": null,
+      "action": "SELL stop −5% $FSDV15"
+    },
+    {
+      "ts": "23 Nov 2026, 13:24 GMT",
+      "hhmm": "13:24",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "13:24 EXECUTOR: SELL trail 2.5% $NOHR",
+      "message": "13:24 EXECUTOR: SELL trail 2.5% $NOHR",
+      "symbol": null,
+      "action": "SELL trail 2.5% $NOHR"
+    },
     {
       "ts": "23 Nov 2026, 13:23 GMT",
       "hhmm": "13:23",
@@ -2431,36 +2461,6 @@
       "message": "13:03 EXECUTOR: BUY 10% $NOHR @ 0.00089254 — 5m +5.3% vol $8,032 buys 40/sells 25",
       "symbol": null,
       "action": "BUY 10% $NOHR @ 0.00089254 — 5m +5.3% vol $8,032 buys 40/sells 25"
-    },
-    {
-      "ts": "23 Nov 2026, 13:02 GMT",
-      "hhmm": "13:02",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "13:02 EXECUTOR: BUY 10% $UCASH @ 0.00132057 — 5m +8.9% vol $12,852 buys 774/sells 238",
-      "message": "13:02 EXECUTOR: BUY 10% $UCASH @ 0.00132057 — 5m +8.9% vol $12,852 buys 774/sells 238",
-      "symbol": null,
-      "action": "BUY 10% $UCASH @ 0.00132057 — 5m +8.9% vol $12,852 buys 774/sells 238"
-    },
-    {
-      "ts": "23 Nov 2026, 13:02 GMT",
-      "hhmm": "13:02",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "13:02 EXECUTOR: SELL trail 2.5% $NOHR",
-      "message": "13:02 EXECUTOR: SELL trail 2.5% $NOHR",
-      "symbol": null,
-      "action": "SELL trail 2.5% $NOHR"
-    },
-    {
-      "ts": "23 Nov 2026, 13:02 GMT",
-      "hhmm": "13:02",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "13:02 EXECUTOR: SELL take profit +8% $UCASH",
-      "message": "13:02 EXECUTOR: SELL take profit +8% $UCASH",
-      "symbol": null,
-      "action": "SELL take profit +8% $UCASH"
     }
   ],
   "agents": [
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "4/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0007278209999999999,
-      "current_price": 0.0007387,
+      "current_price": 0.0007647,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.014947356561572311,
+      "unrealized_pct": 0.05067042583272552,
       "hard_stop": 0.0006914299499999999,
       "trail_activate": 0.0007569338399999999,
       "opened_at": "23 Nov 2026, 13:17 GMT",
@@ -2604,11 +2604,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.001263285,
-      "current_price": 0.001292,
+      "current_price": 0.001313,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.022730421084711683,
+      "unrealized_pct": 0.03935374836240424,
       "hard_stop": 0.00120012075,
       "trail_activate": 0.0013138164000000001,
       "opened_at": "23 Nov 2026, 13:21 GMT",
@@ -2617,53 +2617,49 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump?chain=sol"
-    },
-    {
-      "symbol": "NOHR",
-      "name": "NOHR",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.0007573679999999999,
-      "current_price": 0.000804,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.06157112526539299,
-      "hard_stop": 0.0007194995999999998,
-      "trail_activate": 0.0007876627199999999,
-      "opened_at": "23 Nov 2026, 13:23 GMT",
-      "reason": "BUY 10% $NOHR @ 0.000757368 — 5m +1.2% vol $12,245 buys 124/sells 98",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/Jd3NCawdFiDNWpLiTtsMqoeoBMjC1ZQMrMScRVzpump?chain=sol"
-    },
-    {
-      "symbol": "FSDV15",
-      "name": "FSDV15",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.0017768399999999998,
-      "current_price": 0.001743,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.019045046261903065,
-      "hard_stop": 0.0016879979999999998,
-      "trail_activate": 0.0018479135999999998,
-      "opened_at": "23 Nov 2026, 13:23 GMT",
-      "reason": "BUY 10% $FSDV15 @ 0.00177684 — 5m +25.6% vol $34,267 buys 873/sells 284",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/3BcJ4SSCfbxDMrWcUDucyCWxMjmy4M2ECCtvxu86pump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f20780",
+      "time": "23 Nov 2026, 13:24 GMT",
+      "ts": "2026-11-23T13:24:36.409446+00:00",
+      "side": "sell",
+      "symbol": "FSDV15",
+      "name": "FSDV15",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.001489515,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f20779",
+      "time": "23 Nov 2026, 13:24 GMT",
+      "ts": "2026-11-23T13:24:36.409371+00:00",
+      "side": "sell",
+      "symbol": "NOHR",
+      "name": "NOHR",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.000779881,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f20778",
       "time": "23 Nov 2026, 13:23 GMT",
@@ -418226,17 +418222,17 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 10387,
-    "win_rate": 0.6692018869741022,
+    "closed_trades": 10389,
+    "win_rate": 0.6692655693521995,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 20778
+    "fills": 20780
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 86449,
+    "scanned": 86478,
     "killed": 0,
-    "traded": 10384
+    "traded": 10391
   },
   "events": [
     {
@@ -418372,28 +418368,14 @@
     {
       "symbol": "COPIUM",
       "name": "COPIUM",
-      "price": 0.0007387,
+      "price": 0.0007647,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
       "symbol": "UCASH",
       "name": "UCASH",
-      "price": 0.001292,
-      "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
-      "symbol": "NOHR",
-      "name": "NOHR",
-      "price": 0.000804,
-      "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
-      "symbol": "FSDV15",
-      "name": "FSDV15",
-      "price": 0.001743,
+      "price": 0.001313,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -418465,8 +418447,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 10387,
-      "win_rate": 0.6692018869741022,
+      "closed_trades": 10389,
+      "win_rate": 0.6692655693521995,
       "realized_pnl": -100.0
     }
   ],
@@ -418483,31 +418465,61 @@
       "symbol": "HOGE",
       "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
       "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
-      "reason": "buy/sell 37/69 under 1.05",
+      "reason": "buy/sell 35/72 under 1.05",
       "gates": 1,
-      "chg_m5": 16.53,
-      "vol_m5": 12202.0,
-      "score": 26.59
+      "chg_m5": 13.17,
+      "vol_m5": 12852.0,
+      "score": 19.21
+    },
+    {
+      "symbol": "PumpMas",
+      "mint": "EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump",
+      "link": "https://axiom.trade/meme/EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump?chain=sol",
+      "reason": "5m volume $28 under $5k",
+      "gates": 1,
+      "chg_m5": 1.43,
+      "vol_m5": 28.0,
+      "score": 1.07
     },
     {
       "symbol": "MINELIUS",
       "mint": "E9rWKjVhHMxQkxfREr7Li8Yy46rVcWiWHoKVQAe9pump",
       "link": "https://axiom.trade/meme/E9rWKjVhHMxQkxfREr7Li8Yy46rVcWiWHoKVQAe9pump?chain=sol",
-      "reason": "5m volume $2,617 under $5k",
+      "reason": "5m volume $3,700 under $5k",
       "gates": 1,
-      "chg_m5": 1.61,
-      "vol_m5": 2617.0,
-      "score": 0.54
+      "chg_m5": 2.44,
+      "vol_m5": 3700.0,
+      "score": 0.82
+    },
+    {
+      "symbol": "NOHR",
+      "mint": "Jd3NCawdFiDNWpLiTtsMqoeoBMjC1ZQMrMScRVzpump",
+      "link": "https://axiom.trade/meme/Jd3NCawdFiDNWpLiTtsMqoeoBMjC1ZQMrMScRVzpump?chain=sol",
+      "reason": "5m -1.8% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -1.77,
+      "vol_m5": 16594.0,
+      "score": -4.18
+    },
+    {
+      "symbol": "FSDV15",
+      "mint": "3BcJ4SSCfbxDMrWcUDucyCWxMjmy4M2ECCtvxu86pump",
+      "link": "https://axiom.trade/meme/3BcJ4SSCfbxDMrWcUDucyCWxMjmy4M2ECCtvxu86pump?chain=sol",
+      "reason": "5m -0.6% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -0.56,
+      "vol_m5": 60151.0,
+      "score": -5.04
     },
     {
       "symbol": "PumpMeme",
       "mint": "93uamrbDerKbUh8MSjNF1wDtxYvEUD1CS9BcHn1apump",
       "link": "https://axiom.trade/meme/93uamrbDerKbUh8MSjNF1wDtxYvEUD1CS9BcHn1apump?chain=sol",
-      "reason": "5m -8.3% outside +1% to +40%",
+      "reason": "5m -10.6% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -8.32,
-      "vol_m5": 7173.0,
-      "score": -6.82
+      "chg_m5": -10.58,
+      "vol_m5": 7432.0,
+      "score": -9.19
     }
   ],
   "helius_status": "",
@@ -418515,7 +418527,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-23T13:24:12.417591+00:00",
+  "checked_at": "2026-11-23T13:24:36.409689+00:00",
   "checked_at_london": "23 Nov 2026, 13:24 GMT",
   "who_we_copy": null
 }
