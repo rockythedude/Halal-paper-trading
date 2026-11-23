@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.684104072814195,
-  "wins": 7441,
+  "win_rate": 0.6841621472561816,
+  "wins": 7443,
   "losses": 3436,
-  "closed_trades": 10877,
+  "closed_trades": 10879,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 89523,
-  "open_count": 2,
+  "open_count": 0,
   "last_updated_london": "23 Nov 2026, 22:03 GMT",
-  "last_updated": "2026-11-23T22:03:14.427547+00:00",
+  "last_updated": "2026-11-23T22:03:54.329151+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "23 Nov 2026, 16:11 GMT",
-      "value": 0.0
-    },
     {
       "label": "23 Nov 2026, 16:11 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "23 Nov 2026, 22:03 GMT",
       "value": 0.0
+    },
+    {
+      "label": "23 Nov 2026, 22:03 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "23 Nov 2026, 22:03 GMT",
+      "hhmm": "22:03",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "22:03 EXECUTOR: SELL take profit +8% $NVINU",
+      "message": "22:03 EXECUTOR: SELL take profit +8% $NVINU",
+      "symbol": null,
+      "action": "SELL take profit +8% $NVINU"
+    },
+    {
+      "ts": "23 Nov 2026, 22:03 GMT",
+      "hhmm": "22:03",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "22:03 RISK: SELL stop −5% $PONK",
+      "message": "22:03 RISK: SELL stop −5% $PONK",
+      "symbol": null,
+      "action": "SELL stop −5% $PONK"
+    },
     {
       "ts": "23 Nov 2026, 22:03 GMT",
       "hhmm": "22:03",
@@ -2441,26 +2461,6 @@
       "message": "21:42 EXECUTOR: BUY 10% $MINELIUS @ 0.000151051 — 5m +25.1% vol $5,270 buys 526/sells 322",
       "symbol": null,
       "action": "BUY 10% $MINELIUS @ 0.000151051 — 5m +25.1% vol $5,270 buys 526/sells 322"
-    },
-    {
-      "ts": "23 Nov 2026, 21:42 GMT",
-      "hhmm": "21:42",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "21:42 EXECUTOR: BUY 10% $FIONA @ 0.00266124 — 5m +1.4% vol $5,349 buys 44/sells 39",
-      "message": "21:42 EXECUTOR: BUY 10% $FIONA @ 0.00266124 — 5m +1.4% vol $5,349 buys 44/sells 39",
-      "symbol": null,
-      "action": "BUY 10% $FIONA @ 0.00266124 — 5m +1.4% vol $5,349 buys 44/sells 39"
-    },
-    {
-      "ts": "23 Nov 2026, 21:40 GMT",
-      "hhmm": "21:40",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "21:40 EXECUTOR: BUY 10% $PumpMeme @ 0.000431154 — 5m +2.3% vol $5,503 buys 773/sells 345",
-      "message": "21:40 EXECUTOR: BUY 10% $PumpMeme @ 0.000431154 — 5m +2.3% vol $5,503 buys 773/sells 345",
-      "symbol": null,
-      "action": "BUY 10% $PumpMeme @ 0.000431154 — 5m +2.3% vol $5,503 buys 773/sells 345"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
-      "badge": "76 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "39 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "76 pairs · 1 passed liquidity, age, and 5m momentum",
-      "badge": "1 passed",
+      "activity": "39 pairs · 0 passed liquidity, age, and 5m momentum",
+      "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "2/6",
+      "activity": "0 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "0/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2573,53 +2573,48 @@
       "open_positions": 0
     }
   ],
-  "positions": [
+  "positions": [],
+  "fills": [
     {
-      "symbol": "PONK",
-      "name": "PONK",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.00017557349999999998,
-      "current_price": 0.0001686,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.03971840852976083,
-      "hard_stop": 0.00016679482499999996,
-      "trail_activate": 0.00018259644,
-      "opened_at": "23 Nov 2026, 22:01 GMT",
-      "reason": "BUY 10% $PONK @ 0.000175573 — 5m +6.5% vol $21,723 buys 724/sells 125",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/62QTa8TvNAoUz62V93hgdBkwJfYWQLcQ8qVMA9UPpump?chain=sol"
-    },
-    {
+      "id": "f21758",
+      "time": "23 Nov 2026, 22:03 GMT",
+      "ts": "2026-11-23T22:03:30.408941+00:00",
+      "side": "sell",
       "symbol": "NVINU",
       "name": "NVINU",
       "asset_class": "crypto",
-      "agent": "MIRAX",
       "qty": 0.0,
       "qty_display": "0",
-      "entry_price": 0.00036340799999999996,
-      "current_price": 0.0003616,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.004975124378109319,
-      "hard_stop": 0.00034523759999999996,
-      "trail_activate": 0.00037794432,
-      "opened_at": "23 Nov 2026, 22:03 GMT",
-      "reason": "BUY 10% $NVINU @ 0.000363408 — 5m +3.5% vol $106,328 buys 1466/sells 473",
-      "score": null,
+      "price": 0.000408348,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
       "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/Gg4H3vNtAcWATHBJ4wWT1YPDdkYgBgARhaWUgMdnpump?chain=sol"
-    }
-  ],
-  "fills": [
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f21757",
+      "time": "23 Nov 2026, 22:03 GMT",
+      "ts": "2026-11-23T22:03:30.408855+00:00",
+      "side": "sell",
+      "symbol": "PONK",
+      "name": "PONK",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0001525335,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f21756",
       "time": "23 Nov 2026, 22:03 GMT",
@@ -437742,11 +437737,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 10877,
-    "win_rate": 0.684104072814195,
+    "closed_trades": 10879,
+    "win_rate": 0.6841621472561816,
     "realized_pnl": -100.0,
-    "unrealized_pnl": 0.0,
-    "fills": 21756
+    "unrealized_pnl": 0,
+    "fills": 21758
   },
   "ok": true,
   "totals_cumulative": {
@@ -437755,16 +437750,6 @@
     "traded": 10878
   },
   "events": [
-    {
-      "hhmm": "21:23",
-      "ts": "2026-11-23T21:23:45.233940+00:00",
-      "london": "23 Nov 2026, 21:23 GMT",
-      "agent": "EXECUTOR",
-      "action": "SELL take profit +8% $ChristmASS",
-      "symbol": "",
-      "reason": "SELL take profit +8% $ChristmASS",
-      "line": "21:23 EXECUTOR: SELL take profit +8% $ChristmASS"
-    },
     {
       "hhmm": "21:29",
       "ts": "2026-11-23T21:29:52.156640+00:00",
@@ -437874,6 +437859,16 @@
       "symbol": "",
       "reason": "SELL take profit +8% $PONK",
       "line": "21:59 EXECUTOR: SELL take profit +8% $PONK"
+    },
+    {
+      "hhmm": "22:03",
+      "ts": "2026-11-23T22:03:30.408958+00:00",
+      "london": "23 Nov 2026, 22:03 GMT",
+      "agent": "EXECUTOR",
+      "action": "SELL take profit +8% $NVINU",
+      "symbol": "",
+      "reason": "SELL take profit +8% $NVINU",
+      "line": "22:03 EXECUTOR: SELL take profit +8% $NVINU"
     }
   ],
   "role_colors": {
@@ -437884,22 +437879,7 @@
     "Risk": "#FF4D4D",
     "Logger": "#22D3EE"
   },
-  "ticker": [
-    {
-      "symbol": "PONK",
-      "name": "PONK",
-      "price": 0.0001686,
-      "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
-      "symbol": "NVINU",
-      "name": "NVINU",
-      "price": 0.0003616,
-      "change_pct": null,
-      "source": "dexscreener"
-    }
-  ],
+  "ticker": [],
   "desk": "axiom",
   "risk_rules": {
     "mode": "axiom",
@@ -437947,8 +437927,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 73.66,
-      "return_pct": -0.263442,
+      "equity": 73.65,
+      "return_pct": -0.26347410999999993,
       "closed_trades": 610,
       "win_rate": 0.34098360655737703,
       "realized_pnl": -26.19
@@ -437967,8 +437947,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 10877,
-      "win_rate": 0.684104072814195,
+      "closed_trades": 10879,
+      "win_rate": 0.6841621472561816,
       "realized_pnl": -100.0
     }
   ],
@@ -437982,64 +437962,64 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "Singularity",
-      "mint": "7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump",
-      "link": "https://axiom.trade/meme/7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump?chain=sol",
-      "reason": "5m volume $392 under $5k",
+      "symbol": "JENSEN",
+      "mint": "HKiMA2mKQHU2cjfZ4Kbmru5GBGCauSNqPtpu8cfmpump",
+      "link": "https://axiom.trade/meme/HKiMA2mKQHU2cjfZ4Kbmru5GBGCauSNqPtpu8cfmpump?chain=sol",
+      "reason": "5m volume $2,124 under $5k",
       "gates": 1,
-      "chg_m5": 3.786,
-      "vol_m5": 392.0,
-      "score": 3.13
+      "chg_m5": 7.86,
+      "vol_m5": 2124.0,
+      "score": 6.1
     },
     {
       "symbol": "FIONA",
       "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
       "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "reason": "buy/sell 54/72 under 1.05",
+      "reason": "buy/sell 51/71 under 1.05",
       "gates": 1,
-      "chg_m5": 1.27,
-      "vol_m5": 11687.0,
-      "score": 1.11
+      "chg_m5": 3.6,
+      "vol_m5": 10962.0,
+      "score": 2.83
     },
     {
-      "symbol": "UCASH",
-      "mint": "7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump",
-      "link": "https://axiom.trade/meme/7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump?chain=sol",
-      "reason": "5m +0.7% outside +1% to +40%",
+      "symbol": "NVINU",
+      "mint": "Gg4H3vNtAcWATHBJ4wWT1YPDdkYgBgARhaWUgMdnpump",
+      "link": "https://axiom.trade/meme/Gg4H3vNtAcWATHBJ4wWT1YPDdkYgBgARhaWUgMdnpump?chain=sol",
+      "reason": "5m -3.4% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 0.7,
-      "vol_m5": 9438.0,
-      "score": 0.86
+      "chg_m5": -3.37,
+      "vol_m5": 92222.0,
+      "score": -30.33
     },
     {
-      "symbol": "PRISM",
-      "mint": "BDYwuPra85uRW5cujyh8aPFUwBWC3mqRrr56rGYJsJQX",
-      "link": "https://axiom.trade/meme/BDYwuPra85uRW5cujyh8aPFUwBWC3mqRrr56rGYJsJQX?chain=sol",
-      "reason": "market cap $16,222 outside $100k–$100M · age 1m under 10m",
+      "symbol": "PONK",
+      "mint": "62QTa8TvNAoUz62V93hgdBkwJfYWQLcQ8qVMA9UPpump",
+      "link": "https://axiom.trade/meme/62QTa8TvNAoUz62V93hgdBkwJfYWQLcQ8qVMA9UPpump?chain=sol",
+      "reason": "5m -21.6% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -21.65,
+      "vol_m5": 18480.0,
+      "score": -176.04
+    },
+    {
+      "symbol": "ROCKET",
+      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
+      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
+      "reason": "5m volume $144 under $5k · buy/sell 65/63 under 1.05",
       "gates": 2,
-      "chg_m5": 5.198,
-      "vol_m5": 6979.0,
-      "score": 38.21
+      "chg_m5": 3.26,
+      "vol_m5": 144.0,
+      "score": 5.61
     },
     {
       "symbol": "HOGE",
       "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
       "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
-      "reason": "5m volume $1,476 under $5k · buy/sell 3/5 under 1.05",
+      "reason": "5m volume $180 under $5k · buy/sell 1/2 under 1.05",
       "gates": 2,
-      "chg_m5": 2.92,
-      "vol_m5": 1476.0,
-      "score": 1.1
-    },
-    {
-      "symbol": "JENSEN",
-      "mint": "HKiMA2mKQHU2cjfZ4Kbmru5GBGCauSNqPtpu8cfmpump",
-      "link": "https://axiom.trade/meme/HKiMA2mKQHU2cjfZ4Kbmru5GBGCauSNqPtpu8cfmpump?chain=sol",
-      "reason": "5m volume $2,656 under $5k · 5m +0.8% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.77,
-      "vol_m5": 2656.0,
-      "score": 0.73
+      "chg_m5": 1.17,
+      "vol_m5": 180.0,
+      "score": 0.15
     }
   ],
   "helius_status": "",
@@ -438047,7 +438027,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-23T22:03:14.427547+00:00",
+  "checked_at": "2026-11-23T22:03:54.329151+00:00",
   "checked_at_london": "23 Nov 2026, 22:03 GMT",
   "who_we_copy": null
 }
