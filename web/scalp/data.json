@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.6645514009567509,
-  "wins": 6807,
+  "win_rate": 0.6645841468176493,
+  "wins": 6808,
   "losses": 3436,
-  "closed_trades": 10243,
+  "closed_trades": 10244,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 84912,
-  "open_count": 2,
+  "open_count": 1,
   "last_updated_london": "23 Nov 2026, 9:02 GMT",
-  "last_updated": "2026-11-23T09:02:18.560252+00:00",
+  "last_updated": "2026-11-23T09:02:58.554853+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "23 Nov 2026, 3:12 GMT",
-      "value": 0.0
-    },
     {
       "label": "23 Nov 2026, 3:12 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "23 Nov 2026, 9:02 GMT",
       "value": 0.0
+    },
+    {
+      "label": "23 Nov 2026, 9:02 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "23 Nov 2026, 9:02 GMT",
+      "hhmm": "09:02",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "09:02 EXECUTOR: SELL trail 2.5% $UCASH",
+      "message": "09:02 EXECUTOR: SELL trail 2.5% $UCASH",
+      "symbol": null,
+      "action": "SELL trail 2.5% $UCASH"
+    },
     {
       "ts": "23 Nov 2026, 9:00 GMT",
       "hhmm": "09:00",
@@ -2451,16 +2461,6 @@
       "message": "08:18 EXECUTOR: BUY 10% $COPIUM @ 0.000615261 — 5m +4.1% vol $5,099 buys 121/sells 59",
       "symbol": null,
       "action": "BUY 10% $COPIUM @ 0.000615261 — 5m +4.1% vol $5,099 buys 121/sells 59"
-    },
-    {
-      "ts": "23 Nov 2026, 8:17 GMT",
-      "hhmm": "08:17",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "08:17 RISK: SELL stop −5% $SI",
-      "message": "08:17 RISK: SELL stop −5% $SI",
-      "symbol": null,
-      "action": "SELL stop −5% $SI"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "58 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "40 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "58 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "40 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.01677345,
-      "current_price": 0.01678,
+      "current_price": 0.01653,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.0003904980788091983,
+      "unrealized_pct": -0.014514008745964535,
       "hard_stop": 0.015934777499999997,
       "trail_activate": 0.017444387999999998,
       "opened_at": "23 Nov 2026, 8:58 GMT",
@@ -2595,31 +2595,29 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/E9rWKjVhHMxQkxfREr7Li8Yy46rVcWiWHoKVQAe9pump?chain=sol"
-    },
-    {
-      "symbol": "UCASH",
-      "name": "UCASH",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.000561795,
-      "current_price": 0.0005879,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.04646712768892569,
-      "hard_stop": 0.00053370525,
-      "trail_activate": 0.0005842668,
-      "opened_at": "23 Nov 2026, 9:00 GMT",
-      "reason": "BUY 10% $UCASH @ 0.000561795 — 5m +1.8% vol $16,746 buys 447/sells 100",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f20489",
+      "time": "23 Nov 2026, 9:02 GMT",
+      "ts": "2026-11-23T09:02:58.554433+00:00",
+      "side": "sell",
+      "symbol": "UCASH",
+      "name": "UCASH",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0005690405,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f20488",
       "time": "23 Nov 2026, 9:00 GMT",
@@ -412382,11 +412380,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 10243,
-    "win_rate": 0.6645514009567509,
+    "closed_trades": 10244,
+    "win_rate": 0.6645841468176493,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 20488
+    "fills": 20489
   },
   "ok": true,
   "totals_cumulative": {
@@ -412528,14 +412526,7 @@
     {
       "symbol": "MINELIUS",
       "name": "MINELIUS",
-      "price": 0.01678,
-      "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
-      "symbol": "UCASH",
-      "name": "UCASH",
-      "price": 0.0005879,
+      "price": 0.01653,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -412587,8 +412578,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 75.72,
-      "return_pct": -0.24275756999999998,
+      "equity": 75.74,
+      "return_pct": -0.24259028000000002,
       "closed_trades": 570,
       "win_rate": 0.3456140350877193,
       "realized_pnl": -24.4
@@ -412607,8 +412598,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 10243,
-      "win_rate": 0.6645514009567509,
+      "closed_trades": 10244,
+      "win_rate": 0.6645841468176493,
       "realized_pnl": -100.0
     }
   ],
@@ -412632,54 +412623,54 @@
       "score": 21.33
     },
     {
-      "symbol": "PumpMeme",
-      "mint": "93uamrbDerKbUh8MSjNF1wDtxYvEUD1CS9BcHn1apump",
-      "link": "https://axiom.trade/meme/93uamrbDerKbUh8MSjNF1wDtxYvEUD1CS9BcHn1apump?chain=sol",
-      "reason": "5m volume $3,018 under $5k",
-      "gates": 1,
-      "chg_m5": 7.33,
-      "vol_m5": 3018.0,
-      "score": 8.95
-    },
-    {
       "symbol": "GATO",
       "mint": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
       "link": "https://axiom.trade/meme/HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump?chain=sol",
-      "reason": "5m volume $105 under $5k",
+      "reason": "5m volume $748 under $5k",
       "gates": 1,
-      "chg_m5": 1.85,
-      "vol_m5": 105.0,
-      "score": 0.93
+      "chg_m5": 2.71,
+      "vol_m5": 748.0,
+      "score": 17.48
     },
     {
-      "symbol": "FSDV15",
-      "mint": "3BcJ4SSCfbxDMrWcUDucyCWxMjmy4M2ECCtvxu86pump",
-      "link": "https://axiom.trade/meme/3BcJ4SSCfbxDMrWcUDucyCWxMjmy4M2ECCtvxu86pump?chain=sol",
-      "reason": "5m volume $786 under $5k",
+      "symbol": "NOHR",
+      "mint": "Jd3NCawdFiDNWpLiTtsMqoeoBMjC1ZQMrMScRVzpump",
+      "link": "https://axiom.trade/meme/Jd3NCawdFiDNWpLiTtsMqoeoBMjC1ZQMrMScRVzpump?chain=sol",
+      "reason": "5m volume $2,466 under $5k",
       "gates": 1,
-      "chg_m5": 1.522,
-      "vol_m5": 786.0,
-      "score": 0.87
+      "chg_m5": 1.38,
+      "vol_m5": 2466.0,
+      "score": 0.78
     },
     {
-      "symbol": "WASTED",
-      "mint": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
-      "link": "https://axiom.trade/meme/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump?chain=sol",
-      "reason": "5m volume $1,346 under $5k · buy/sell 10/13 under 1.05",
-      "gates": 2,
-      "chg_m5": 4.52,
-      "vol_m5": 1346.0,
-      "score": 10.43
+      "symbol": "PumpMeme",
+      "mint": "93uamrbDerKbUh8MSjNF1wDtxYvEUD1CS9BcHn1apump",
+      "link": "https://axiom.trade/meme/93uamrbDerKbUh8MSjNF1wDtxYvEUD1CS9BcHn1apump?chain=sol",
+      "reason": "5m -2.5% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -2.52,
+      "vol_m5": 6363.0,
+      "score": -6.29
     },
     {
-      "symbol": "ROCKET",
-      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
-      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
-      "reason": "5m volume $553 under $5k · buy/sell 153/148 under 1.05",
+      "symbol": "UCASH",
+      "mint": "7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump",
+      "link": "https://axiom.trade/meme/7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump?chain=sol",
+      "reason": "5m -4.6% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -4.62,
+      "vol_m5": 10172.0,
+      "score": -10.88
+    },
+    {
+      "symbol": "MEO",
+      "mint": "DQMN4tYYwajKebQ6EKCWJpjhiN9Uby6wXF6vyMDkpump",
+      "link": "https://axiom.trade/meme/DQMN4tYYwajKebQ6EKCWJpjhiN9Uby6wXF6vyMDkpump?chain=sol",
+      "reason": "liquidity $0 under $25k · market cap $12,464 outside $100k–$100M",
       "gates": 2,
-      "chg_m5": 5.42,
-      "vol_m5": 553.0,
-      "score": 10.34
+      "chg_m5": 15.27,
+      "vol_m5": 7234.0,
+      "score": 51.41
     }
   ],
   "helius_status": "",
@@ -412687,7 +412678,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-23T09:02:18.560252+00:00",
+  "checked_at": "2026-11-23T09:02:58.554853+00:00",
   "checked_at_london": "23 Nov 2026, 9:02 GMT",
   "who_we_copy": null
 }
