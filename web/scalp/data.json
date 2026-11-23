@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.6862959919656715,
-  "wins": 7517,
+  "win_rate": 0.6863532633500684,
+  "wins": 7519,
   "losses": 3436,
-  "closed_trades": 10953,
+  "closed_trades": 10955,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 90132,
-  "open_count": 3,
+  "open_count": 2,
   "last_updated_london": "23 Nov 2026, 23:49 GMT",
-  "last_updated": "2026-11-23T23:49:13.200315+00:00",
+  "last_updated": "2026-11-23T23:49:53.126700+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "23 Nov 2026, 17:57 GMT",
-      "value": 0.0
-    },
     {
       "label": "23 Nov 2026, 17:57 GMT",
       "value": 0.0
@@ -2058,10 +2054,44 @@
     {
       "label": "23 Nov 2026, 23:49 GMT",
       "value": 0.0
+    },
+    {
+      "label": "23 Nov 2026, 23:49 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "23 Nov 2026, 23:49 GMT",
+      "hhmm": "23:49",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "23:49 EXECUTOR: BUY 10% $FIONA @ 0.00387729 — 5m +18.0% vol $158,424 buys 825/sells 695",
+      "message": "23:49 EXECUTOR: BUY 10% $FIONA @ 0.00387729 — 5m +18.0% vol $158,424 buys 825/sells 695",
+      "symbol": null,
+      "action": "BUY 10% $FIONA @ 0.00387729 — 5m +18.0% vol $158,424 buys 825/sells 695"
+    },
+    {
+      "ts": "23 Nov 2026, 23:49 GMT",
+      "hhmm": "23:49",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "23:49 RISK: SELL stop −5% $FIONA",
+      "message": "23:49 RISK: SELL stop −5% $FIONA",
+      "symbol": null,
+      "action": "SELL stop −5% $FIONA"
+    },
+    {
+      "ts": "23 Nov 2026, 23:49 GMT",
+      "hhmm": "23:49",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "23:49 RISK: SELL stop −5% $UCASH",
+      "message": "23:49 RISK: SELL stop −5% $UCASH",
+      "symbol": null,
+      "action": "SELL stop −5% $UCASH"
+    },
     {
       "ts": "23 Nov 2026, 23:49 GMT",
       "hhmm": "23:49",
@@ -2431,36 +2461,6 @@
       "message": "23:17 EXECUTOR: SELL trail 2.5% $JIMMY",
       "symbol": null,
       "action": "SELL trail 2.5% $JIMMY"
-    },
-    {
-      "ts": "23 Nov 2026, 23:16 GMT",
-      "hhmm": "23:16",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "23:16 LOGGER: run complete — 29 polls, 4 open, equity $0.00",
-      "message": "23:16 LOGGER: run complete — 29 polls, 4 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 4 open, equity $0.00"
-    },
-    {
-      "ts": "23 Nov 2026, 23:16 GMT",
-      "hhmm": "23:16",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "23:16 EXECUTOR: BUY 10% $JENSEN @ 0.000698977 — 5m +8.1% vol $5,082 buys 471/sells 281",
-      "message": "23:16 EXECUTOR: BUY 10% $JENSEN @ 0.000698977 — 5m +8.1% vol $5,082 buys 471/sells 281",
-      "symbol": null,
-      "action": "BUY 10% $JENSEN @ 0.000698977 — 5m +8.1% vol $5,082 buys 471/sells 281"
-    },
-    {
-      "ts": "23 Nov 2026, 23:15 GMT",
-      "hhmm": "23:15",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "23:15 EXECUTOR: BUY 10% $JIMMY @ 0.000407326 — 5m +24.3% vol $27,971 buys 348/sells 263",
-      "message": "23:15 EXECUTOR: BUY 10% $JIMMY @ 0.000407326 — 5m +24.3% vol $27,971 buys 348/sells 263",
-      "symbol": null,
-      "action": "BUY 10% $JIMMY @ 0.000407326 — 5m +24.3% vol $27,971 buys 348/sells 263"
     }
   ],
   "agents": [
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "54 pairs · 1 passed liquidity, age, and 5m momentum",
-      "badge": "1 passed",
+      "activity": "54 pairs · 0 passed liquidity, age, and 5m momentum",
+      "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "3/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2575,50 +2575,6 @@
   ],
   "positions": [
     {
-      "symbol": "UCASH",
-      "name": "UCASH",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.0013709572470465118,
-      "current_price": 0.0013068361802440424,
-      "change_pct": null,
-      "price_source": "geckoterminal",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.046771018527825836,
-      "hard_stop": 0.0013024093846941863,
-      "trail_activate": 0.0014257955369283723,
-      "opened_at": "23 Nov 2026, 23:37 GMT",
-      "reason": "BUY 10% $UCASH @ 0.00137096 — 5m +5.7% vol $5,321 buys 175/sells 41",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump?chain=sol"
-    },
-    {
-      "symbol": "FIONA",
-      "name": "FIONA",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.004224014999999999,
-      "current_price": 0.004203,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.004975124378109319,
-      "hard_stop": 0.004012814249999999,
-      "trail_activate": 0.0043929756,
-      "opened_at": "23 Nov 2026, 23:49 GMT",
-      "reason": "BUY 10% $FIONA @ 0.00422401 — 5m +26.0% vol $154,307 buys 769/sells 699",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol"
-    },
-    {
       "symbol": "JENPE",
       "name": "JENPE",
       "asset_class": "crypto",
@@ -2639,9 +2595,91 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/2kXxWxKJRNScZEL8vN2UKjbtpMArkXvEMbRgDnq4pump?chain=sol"
+    },
+    {
+      "symbol": "FIONA",
+      "name": "FIONA",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.0038772899999999994,
+      "current_price": 0.003858,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.0036834254999999995,
+      "trail_activate": 0.004032381599999999,
+      "opened_at": "23 Nov 2026, 23:49 GMT",
+      "reason": "BUY 10% $FIONA @ 0.00387729 — 5m +18.0% vol $158,424 buys 825/sells 695",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f21912",
+      "time": "23 Nov 2026, 23:49 GMT",
+      "ts": "2026-11-23T23:49:29.247456+00:00",
+      "side": "buy",
+      "symbol": "FIONA",
+      "name": "FIONA",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0038772899999999994,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f21911",
+      "time": "23 Nov 2026, 23:49 GMT",
+      "ts": "2026-11-23T23:49:29.247133+00:00",
+      "side": "sell",
+      "symbol": "FIONA",
+      "name": "FIONA",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00383871,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f21910",
+      "time": "23 Nov 2026, 23:49 GMT",
+      "ts": "2026-11-23T23:49:21.123872+00:00",
+      "side": "sell",
+      "symbol": "UCASH",
+      "name": "UCASH",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0012745950000000001,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f21909",
       "time": "23 Nov 2026, 23:49 GMT",
@@ -440824,11 +440862,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 10953,
-    "win_rate": 0.6862959919656715,
+    "closed_trades": 10955,
+    "win_rate": 0.6863532633500684,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 21909
+    "fills": 21912
   },
   "ok": true,
   "totals_cumulative": {
@@ -440968,23 +441006,16 @@
   },
   "ticker": [
     {
-      "symbol": "UCASH",
-      "name": "UCASH",
-      "price": 0.0013068361802440424,
-      "change_pct": null,
-      "source": "geckoterminal"
-    },
-    {
-      "symbol": "FIONA",
-      "name": "FIONA",
-      "price": 0.004203,
+      "symbol": "JENPE",
+      "name": "JENPE",
+      "price": 0.0001607,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
-      "symbol": "JENPE",
-      "name": "JENPE",
-      "price": 0.0001607,
+      "symbol": "FIONA",
+      "name": "FIONA",
+      "price": 0.003858,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -441009,8 +441040,8 @@
     {
       "id": "main",
       "name": "Halal book",
-      "equity": 93.27,
-      "return_pct": -0.06731012000000007,
+      "equity": 93.3,
+      "return_pct": -0.06701217999999998,
       "closed_trades": 28,
       "win_rate": 0.2857142857142857,
       "realized_pnl": -6.24
@@ -441027,8 +441058,8 @@
     {
       "id": "meme",
       "name": "Crypto + Meme",
-      "equity": 86.02,
-      "return_pct": -0.13976563999999997,
+      "equity": 85.99,
+      "return_pct": -0.14011236999999993,
       "closed_trades": 94,
       "win_rate": 0.3617021276595745,
       "realized_pnl": -13.45
@@ -441036,8 +441067,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 73.55,
-      "return_pct": -0.2644984100000001,
+      "equity": 73.59,
+      "return_pct": -0.26412623999999996,
       "closed_trades": 610,
       "win_rate": 0.34098360655737703,
       "realized_pnl": -26.19
@@ -441056,8 +441087,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 10953,
-      "win_rate": 0.6862959919656715,
+      "closed_trades": 10955,
+      "win_rate": 0.6863532633500684,
       "realized_pnl": -100.0
     }
   ],
@@ -441071,6 +441102,16 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
+      "symbol": "PumpMas",
+      "mint": "EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump",
+      "link": "https://axiom.trade/meme/EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump?chain=sol",
+      "reason": "5m volume $239 under $5k",
+      "gates": 1,
+      "chg_m5": 2.94,
+      "vol_m5": 239.0,
+      "score": 15.11
+    },
+    {
       "symbol": "Singularity",
       "mint": "7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump",
       "link": "https://axiom.trade/meme/7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump?chain=sol",
@@ -441081,14 +441122,14 @@
       "score": 8.66
     },
     {
-      "symbol": "PumpMas",
-      "mint": "EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump",
-      "link": "https://axiom.trade/meme/EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump?chain=sol",
-      "reason": "5m volume $238 under $5k",
+      "symbol": "COPIUM",
+      "mint": "BAKsQrynzwadyACDMsg3J5R8a4CTvj1u7kEYyjq7pump",
+      "link": "https://axiom.trade/meme/BAKsQrynzwadyACDMsg3J5R8a4CTvj1u7kEYyjq7pump?chain=sol",
+      "reason": "5m volume $3,530 under $5k",
       "gates": 1,
-      "chg_m5": 1.73,
-      "vol_m5": 238.0,
-      "score": 8.61
+      "chg_m5": 2.71,
+      "vol_m5": 3530.0,
+      "score": 4.22
     },
     {
       "symbol": "SIDOOR",
@@ -441099,16 +441140,6 @@
       "chg_m5": 2.137,
       "vol_m5": 216.0,
       "score": 3.69
-    },
-    {
-      "symbol": "COPIUM",
-      "mint": "BAKsQrynzwadyACDMsg3J5R8a4CTvj1u7kEYyjq7pump",
-      "link": "https://axiom.trade/meme/BAKsQrynzwadyACDMsg3J5R8a4CTvj1u7kEYyjq7pump?chain=sol",
-      "reason": "5m volume $4,372 under $5k",
-      "gates": 1,
-      "chg_m5": 1.7,
-      "vol_m5": 4372.0,
-      "score": 2.95
     },
     {
       "symbol": "DCTY",
@@ -441136,7 +441167,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-23T23:49:13.200315+00:00",
+  "checked_at": "2026-11-23T23:49:53.126700+00:00",
   "checked_at_london": "23 Nov 2026, 23:49 GMT",
   "who_we_copy": null
 }
