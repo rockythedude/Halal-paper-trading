@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 85666,
-  "open_count": 2,
+  "open_count": 3,
   "last_updated_london": "23 Nov 2026, 11:10 GMT",
-  "last_updated": "2026-11-23T11:10:11.660958+00:00",
+  "last_updated": "2026-11-23T11:10:51.631907+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "23 Nov 2026, 5:20 GMT",
-      "value": 0.0
-    },
     {
       "label": "23 Nov 2026, 5:21 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "23 Nov 2026, 11:10 GMT",
       "value": 0.0
+    },
+    {
+      "label": "23 Nov 2026, 11:10 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "23 Nov 2026, 11:10 GMT",
+      "hhmm": "11:10",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "11:10 EXECUTOR: BUY 10% $FSDV15 @ 0.00155875 — 5m +17.6% vol $6,050 buys 424/sells 144",
+      "message": "11:10 EXECUTOR: BUY 10% $FSDV15 @ 0.00155875 — 5m +17.6% vol $6,050 buys 424/sells 144",
+      "symbol": null,
+      "action": "BUY 10% $FSDV15 @ 0.00155875 — 5m +17.6% vol $6,050 buys 424/sells 144"
+    },
     {
       "ts": "23 Nov 2026, 11:07 GMT",
       "hhmm": "11:07",
@@ -2451,16 +2461,6 @@
       "message": "10:19 EXECUTOR: BUY 10% $FSDV15 @ 0.00415768 — 5m +13.4% vol $50,725 buys 1264/sells 371",
       "symbol": null,
       "action": "BUY 10% $FSDV15 @ 0.00415768 — 5m +13.4% vol $50,725 buys 1264/sells 371"
-    },
-    {
-      "ts": "23 Nov 2026, 10:19 GMT",
-      "hhmm": "10:19",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "10:19 EXECUTOR: SELL take profit +8% $FSDV15",
-      "message": "10:19 EXECUTOR: SELL take profit +8% $FSDV15",
-      "symbol": null,
-      "action": "SELL take profit +8% $FSDV15"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
-      "badge": "39 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
+      "badge": "56 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "39 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "56 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "2/6",
+      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "3/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0015152728330548632,
-      "current_price": 0.001498,
+      "current_price": 0.0014913870894829129,
       "change_pct": null,
-      "price_source": "dexscreener",
+      "price_source": "geckoterminal",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.011399157087796707,
+      "unrealized_pct": -0.015763328590664094,
       "hard_stop": 0.00143950919140212,
       "trail_activate": 0.0015758837463770577,
       "opened_at": "23 Nov 2026, 11:04 GMT",
@@ -2604,11 +2604,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.013607699999999999,
-      "current_price": 0.01313,
+      "current_price": 0.01316,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.03510512430462165,
+      "unrealized_pct": -0.03290049016365726,
       "hard_stop": 0.012927314999999998,
       "trail_activate": 0.014152007999999999,
       "opened_at": "23 Nov 2026, 11:05 GMT",
@@ -2617,9 +2617,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/E9rWKjVhHMxQkxfREr7Li8Yy46rVcWiWHoKVQAe9pump?chain=sol"
+    },
+    {
+      "symbol": "FSDV15",
+      "name": "FSDV15",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.001558755,
+      "current_price": 0.001551,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.00497512437810943,
+      "hard_stop": 0.00148081725,
+      "trail_activate": 0.0016211052000000001,
+      "opened_at": "23 Nov 2026, 11:10 GMT",
+      "reason": "BUY 10% $FSDV15 @ 0.00155875 — 5m +17.6% vol $6,050 buys 424/sells 144",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/3BcJ4SSCfbxDMrWcUDucyCWxMjmy4M2ECCtvxu86pump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f20607",
+      "time": "23 Nov 2026, 11:10 GMT",
+      "ts": "2026-11-23T11:10:27.630006+00:00",
+      "side": "buy",
+      "symbol": "FSDV15",
+      "name": "FSDV15",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.001558755,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f20606",
       "time": "23 Nov 2026, 11:05 GMT",
@@ -414746,7 +414788,7 @@
     "win_rate": 0.6664725296059018,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 20606
+    "fills": 20607
   },
   "ok": true,
   "totals_cumulative": {
@@ -414888,14 +414930,21 @@
     {
       "symbol": "FIONA",
       "name": "FIONA",
-      "price": 0.001498,
+      "price": 0.0014913870894829129,
       "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     },
     {
       "symbol": "MINELIUS",
       "name": "MINELIUS",
-      "price": 0.01313,
+      "price": 0.01316,
+      "change_pct": null,
+      "source": "dexscreener"
+    },
+    {
+      "symbol": "FSDV15",
+      "name": "FSDV15",
+      "price": 0.001551,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -414938,8 +414987,8 @@
     {
       "id": "meme",
       "name": "Crypto + Meme",
-      "equity": 86.64,
-      "return_pct": -0.13360325000000003,
+      "equity": 86.63,
+      "return_pct": -0.13366287,
       "closed_trades": 70,
       "win_rate": 0.3,
       "realized_pnl": -13.58
@@ -414982,64 +415031,64 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
+      "symbol": "COPIUM",
+      "mint": "BAKsQrynzwadyACDMsg3J5R8a4CTvj1u7kEYyjq7pump",
+      "link": "https://axiom.trade/meme/BAKsQrynzwadyACDMsg3J5R8a4CTvj1u7kEYyjq7pump?chain=sol",
+      "reason": "5m volume $3,763 under $5k",
+      "gates": 1,
+      "chg_m5": 5.42,
+      "vol_m5": 3763.0,
+      "score": 10.63
+    },
+    {
       "symbol": "HOLD",
       "mint": "9AiHB952pXVrHuct9m3RKWoWv4LG52p58FYjMvUkpump",
       "link": "https://axiom.trade/meme/9AiHB952pXVrHuct9m3RKWoWv4LG52p58FYjMvUkpump?chain=sol",
-      "reason": "liquidity $23,669 under $25k",
+      "reason": "liquidity $23,230 under $25k",
       "gates": 1,
-      "chg_m5": 21.85,
-      "vol_m5": 5770.0,
-      "score": 11.92
-    },
-    {
-      "symbol": "FSDV15",
-      "mint": "3BcJ4SSCfbxDMrWcUDucyCWxMjmy4M2ECCtvxu86pump",
-      "link": "https://axiom.trade/meme/3BcJ4SSCfbxDMrWcUDucyCWxMjmy4M2ECCtvxu86pump?chain=sol",
-      "reason": "5m volume $4,607 under $5k",
-      "gates": 1,
-      "chg_m5": 12.24,
-      "vol_m5": 4607.0,
-      "score": 9.18
+      "chg_m5": 17.23,
+      "vol_m5": 5848.0,
+      "score": 9.33
     },
     {
       "symbol": "NOHR",
       "mint": "Jd3NCawdFiDNWpLiTtsMqoeoBMjC1ZQMrMScRVzpump",
       "link": "https://axiom.trade/meme/Jd3NCawdFiDNWpLiTtsMqoeoBMjC1ZQMrMScRVzpump?chain=sol",
-      "reason": "5m volume $4,473 under $5k",
+      "reason": "5m volume $3,996 under $5k",
       "gates": 1,
-      "chg_m5": 4.29,
-      "vol_m5": 4473.0,
-      "score": 7.35
+      "chg_m5": 5.11,
+      "vol_m5": 3996.0,
+      "score": 7.76
     },
     {
       "symbol": "PumpMeme",
       "mint": "93uamrbDerKbUh8MSjNF1wDtxYvEUD1CS9BcHn1apump",
       "link": "https://axiom.trade/meme/93uamrbDerKbUh8MSjNF1wDtxYvEUD1CS9BcHn1apump?chain=sol",
-      "reason": "5m volume $3,620 under $5k",
+      "reason": "5m volume $3,491 under $5k",
       "gates": 1,
-      "chg_m5": 4.13,
-      "vol_m5": 3620.0,
-      "score": 4.73
+      "chg_m5": 5.72,
+      "vol_m5": 3491.0,
+      "score": 6.64
     },
     {
-      "symbol": "COPIUM",
-      "mint": "BAKsQrynzwadyACDMsg3J5R8a4CTvj1u7kEYyjq7pump",
-      "link": "https://axiom.trade/meme/BAKsQrynzwadyACDMsg3J5R8a4CTvj1u7kEYyjq7pump?chain=sol",
-      "reason": "5m volume $4,133 under $5k",
+      "symbol": "HOGE",
+      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
+      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
+      "reason": "5m volume $87 under $5k",
       "gates": 1,
-      "chg_m5": 1.74,
-      "vol_m5": 4133.0,
-      "score": 2.76
+      "chg_m5": 2.26,
+      "vol_m5": 87.0,
+      "score": 2.85
     },
     {
       "symbol": "UCASH",
       "mint": "7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump",
       "link": "https://axiom.trade/meme/7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump?chain=sol",
-      "reason": "5m -4.4% outside +1% to +40%",
+      "reason": "5m -4.5% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -4.39,
-      "vol_m5": 9962.0,
-      "score": -8.15
+      "chg_m5": -4.48,
+      "vol_m5": 8854.0,
+      "score": -7.43
     }
   ],
   "helius_status": "",
@@ -415047,7 +415096,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-23T11:10:11.660958+00:00",
+  "checked_at": "2026-11-23T11:10:51.631907+00:00",
   "checked_at_london": "23 Nov 2026, 11:10 GMT",
   "who_we_copy": null
 }
