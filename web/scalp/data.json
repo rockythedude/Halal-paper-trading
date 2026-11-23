@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.6694246680777372,
-  "wins": 6958,
+  "win_rate": 0.6694564694564694,
+  "wins": 6959,
   "losses": 3436,
-  "closed_trades": 10394,
+  "closed_trades": 10395,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 86478,
+  "ticks": 86507,
   "open_count": 4,
   "last_updated_london": "23 Nov 2026, 13:29 GMT",
-  "last_updated": "2026-11-23T13:29:05.505985+00:00",
+  "last_updated": "2026-11-23T13:29:29.484481+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 10391,
+  "traded": 10399,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 10391,
+    "traded": 10399,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "23 Nov 2026, 7:38 GMT",
-      "value": 0.0
-    },
     {
       "label": "23 Nov 2026, 7:39 GMT",
       "value": 0.0
@@ -2058,10 +2054,44 @@
     {
       "label": "23 Nov 2026, 13:29 GMT",
       "value": 0.0
+    },
+    {
+      "label": "23 Nov 2026, 13:29 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "23 Nov 2026, 13:29 GMT",
+      "hhmm": "13:29",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "13:29 LOGGER: run complete — 29 polls, 4 open, equity $0.00",
+      "message": "13:29 LOGGER: run complete — 29 polls, 4 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 4 open, equity $0.00"
+    },
+    {
+      "ts": "23 Nov 2026, 13:29 GMT",
+      "hhmm": "13:29",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "13:29 EXECUTOR: BUY 10% $FSDV15 @ 0.00125109 — 5m +9.6% vol $9,156 buys 471/sells 134",
+      "message": "13:29 EXECUTOR: BUY 10% $FSDV15 @ 0.00125109 — 5m +9.6% vol $9,156 buys 471/sells 134",
+      "symbol": null,
+      "action": "BUY 10% $FSDV15 @ 0.00125109 — 5m +9.6% vol $9,156 buys 471/sells 134"
+    },
+    {
+      "ts": "23 Nov 2026, 13:29 GMT",
+      "hhmm": "13:29",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "13:29 RISK: SELL stop −5% $FSDV15",
+      "message": "13:29 RISK: SELL stop −5% $FSDV15",
+      "symbol": null,
+      "action": "SELL stop −5% $FSDV15"
+    },
     {
       "ts": "23 Nov 2026, 13:29 GMT",
       "hhmm": "13:29",
@@ -2431,36 +2461,6 @@
       "message": "13:14 RISK: SELL stop −5% $NOHR",
       "symbol": null,
       "action": "SELL stop −5% $NOHR"
-    },
-    {
-      "ts": "23 Nov 2026, 13:14 GMT",
-      "hhmm": "13:14",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "13:14 EXECUTOR: BUY 10% $NOHR @ 0.001005 — 5m +9.5% vol $6,488 buys 28/sells 23",
-      "message": "13:14 EXECUTOR: BUY 10% $NOHR @ 0.001005 — 5m +9.5% vol $6,488 buys 28/sells 23",
-      "symbol": null,
-      "action": "BUY 10% $NOHR @ 0.001005 — 5m +9.5% vol $6,488 buys 28/sells 23"
-    },
-    {
-      "ts": "23 Nov 2026, 13:14 GMT",
-      "hhmm": "13:14",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "13:14 EXECUTOR: SELL take profit +8% $NOHR",
-      "message": "13:14 EXECUTOR: SELL take profit +8% $NOHR",
-      "symbol": null,
-      "action": "SELL take profit +8% $NOHR"
-    },
-    {
-      "ts": "23 Nov 2026, 13:12 GMT",
-      "hhmm": "13:12",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "13:12 EXECUTOR: BUY 10% $UCASH @ 0.00130147 — 5m +4.8% vol $21,655 buys 821/sells 331",
-      "message": "13:12 EXECUTOR: BUY 10% $UCASH @ 0.00130147 — 5m +4.8% vol $21,655 buys 821/sells 331",
-      "symbol": null,
-      "action": "BUY 10% $UCASH @ 0.00130147 — 5m +4.8% vol $21,655 buys 821/sells 331"
     }
   ],
   "agents": [
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "55 pairs · 2 passed liquidity, age, and 5m momentum",
-      "badge": "2 passed",
+      "activity": "55 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2664,6 +2664,46 @@
     }
   ],
   "fills": [
+    {
+      "id": "f20794",
+      "time": "23 Nov 2026, 13:29 GMT",
+      "ts": "2026-11-23T13:29:29.484385+00:00",
+      "side": "buy",
+      "symbol": "FSDV15",
+      "name": "FSDV15",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0012510892881816293,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f20793",
+      "time": "23 Nov 2026, 13:29 GMT",
+      "ts": "2026-11-23T13:29:21.458714+00:00",
+      "side": "sell",
+      "symbol": "FSDV15",
+      "name": "FSDV15",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00117012,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f20792",
       "time": "23 Nov 2026, 13:29 GMT",
@@ -418506,17 +418546,17 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 10394,
-    "win_rate": 0.6694246680777372,
+    "closed_trades": 10395,
+    "win_rate": 0.6694564694564694,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 20792
+    "fills": 20794
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 86478,
+    "scanned": 86507,
     "killed": 0,
-    "traded": 10391
+    "traded": 10399
   },
   "events": [
     {
@@ -418745,8 +418785,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 10394,
-      "win_rate": 0.6694246680777372,
+      "closed_trades": 10395,
+      "win_rate": 0.6694564694564694,
       "realized_pnl": -100.0
     }
   ],
@@ -418825,7 +418865,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-23T13:29:05.505985+00:00",
+  "checked_at": "2026-11-23T13:29:29.484481+00:00",
   "checked_at_london": "23 Nov 2026, 13:29 GMT",
   "who_we_copy": null
 }
