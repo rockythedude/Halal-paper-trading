@@ -3,36 +3,7 @@
   "target": 6000.0,
   "cash": 4.358534103767438e-07,
   "equity": 0.0,
-  "positions": [
-    {
-      "symbol": "pippin",
-      "name": "pippin",
-      "mint": "Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump",
-      "pair": "8WwcNqdZjCY5Pt7AkhupAFknV2txca9sq6YBkGzLbvdt",
-      "link": "https://axiom.trade/meme/Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump?chain=sol",
-      "dex_url": "https://www.geckoterminal.com/solana/pools/8WwcNqdZjCY5Pt7AkhupAFknV2txca9sq6YBkGzLbvdt",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.01812656985710109,
-      "raw_price": 0.018036387917513524,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-24T11:50:50.825435+00:00",
-      "opened_at_london": "24 Nov 2026, 11:50 GMT",
-      "high_water": 0.01812656985710109,
-      "trail_armed": false,
-      "last_price": 0.017760866488343185,
-      "last_source": "geckoterminal",
-      "reason": "BUY 10% $pippin @ 0.0181266 \u2014 5m +1.2% vol $5,161 buys 36/sells 9",
-      "hard_stop": 0.017220241364246033,
-      "take_profit": 0.01957669544566918,
-      "trail_activate": 0.018851632651385133,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.020174990174141483
-    }
-  ],
+  "positions": [],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -170508,15 +170479,24 @@
       "closed_at": "2026-11-24T12:09:34.955797+00:00",
       "closed_at_london": "24 Nov 2026, 12:09 GMT",
       "opened_at": "2026-11-24T11:47:54.875485+00:00"
+    },
+    {
+      "symbol": "pippin",
+      "name": "pippin",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.01812656985710109,
+      "exit_price": 0.01767206215590147,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL time stop 20m $pippin",
+      "closed_at": "2026-11-24T12:10:54.909845+00:00",
+      "closed_at_london": "24 Nov 2026, 12:10 GMT",
+      "opened_at": "2026-11-24T11:50:50.825435+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-24T06:19:30.989119+00:00",
-      "label": "24 Nov 2026, 6:19 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-24T06:20:10.989312+00:00",
       "label": "24 Nov 2026, 6:20 GMT",
@@ -173516,21 +173496,15 @@
       "label": "24 Nov 2026, 12:10 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-24T12:11:18.877312+00:00",
+      "label": "24 Nov 2026, 12:11 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-24T04:32:34.774189+00:00",
-      "london": "24 Nov 2026, 4:32 GMT",
-      "hhmm": "04:32",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $JIMMY @ 0.000454863 \u2014 5m +16.5% vol $8,163 buys 91/sells 77",
-      "symbol": null,
-      "reason": "BUY 10% $JIMMY @ 0.000454863 \u2014 5m +16.5% vol $8,163 buys 91/sells 77",
-      "line": "04:32 EXECUTOR: BUY 10% $JIMMY @ 0.000454863 \u2014 5m +16.5% vol $8,163 buys 91/sells 77",
-      "tag": "EXECUTOR",
-      "message": "04:32 EXECUTOR: BUY 10% $JIMMY @ 0.000454863 \u2014 5m +16.5% vol $8,163 buys 91/sells 77"
-    },
     {
       "ts": "2026-11-24T04:33:22.725914+00:00",
       "london": "24 Nov 2026, 4:33 GMT",
@@ -178318,6 +178292,18 @@
       "line": "12:09 EXECUTOR: SELL trail 2.5% $ANSEM",
       "tag": "EXECUTOR",
       "message": "12:09 EXECUTOR: SELL trail 2.5% $ANSEM"
+    },
+    {
+      "ts": "2026-11-24T12:10:54.909903+00:00",
+      "london": "24 Nov 2026, 12:10 GMT",
+      "hhmm": "12:10",
+      "agent": "RISK",
+      "action": "SELL time stop 20m $pippin",
+      "symbol": null,
+      "reason": "SELL time stop 20m $pippin",
+      "line": "12:10 RISK: SELL time stop 20m $pippin",
+      "tag": "RISK",
+      "message": "12:10 RISK: SELL time stop 20m $pippin"
     }
   ],
   "agents": {
@@ -178390,8 +178376,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "1/6",
+      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "0/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -178419,8 +178405,8 @@
     }
   },
   "ticks": 94511,
-  "last_updated": "2026-11-24T12:10:38.881582+00:00",
-  "last_updated_london": "24 Nov 2026, 12:10 GMT",
+  "last_updated": "2026-11-24T12:11:18.877174+00:00",
+  "last_updated_london": "24 Nov 2026, 12:11 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -496680,53 +496666,67 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f22731"
+    },
+    {
+      "ts": "2026-11-24T12:10:54.909845+00:00",
+      "london": "24 Nov 2026, 12:10 GMT",
+      "side": "sell",
+      "symbol": "pippin",
+      "name": "pippin",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.01767206215590147,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f22732"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-24T12:10:38.881582+00:00",
-  "checked_at_london": "24 Nov 2026, 12:10 GMT",
+  "checked_at": "2026-11-24T12:11:18.877174+00:00",
+  "checked_at_london": "24 Nov 2026, 12:11 GMT",
   "near_misses": [
     {
       "symbol": "JENSEN",
       "mint": "HKiMA2mKQHU2cjfZ4Kbmru5GBGCauSNqPtpu8cfmpump",
       "link": "https://axiom.trade/meme/HKiMA2mKQHU2cjfZ4Kbmru5GBGCauSNqPtpu8cfmpump?chain=sol",
-      "reason": "5m volume $1,410 under $5k",
+      "reason": "5m volume $1,937 under $5k",
       "gates": 1,
-      "chg_m5": 6.1,
-      "vol_m5": 1410.0,
-      "score": 7.11
+      "chg_m5": 8.239,
+      "vol_m5": 1937.0,
+      "score": 13.58
     },
     {
       "symbol": "DONJENSEN",
       "mint": "5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump",
       "link": "https://axiom.trade/meme/5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump?chain=sol",
-      "reason": "5m volume $3,142 under $5k",
+      "reason": "5m volume $3,375 under $5k",
       "gates": 1,
-      "chg_m5": 1.35,
-      "vol_m5": 3142.0,
-      "score": 1.22
+      "chg_m5": 1.62,
+      "vol_m5": 3375.0,
+      "score": 1.6
     },
     {
       "symbol": "ANSEM",
       "mint": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
       "link": "https://axiom.trade/meme/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump?chain=sol",
-      "reason": "5m -1.2% outside +1% to +40%",
+      "reason": "5m -1.1% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -1.181,
-      "vol_m5": 7788.0,
-      "score": -0.33
+      "chg_m5": -1.103,
+      "vol_m5": 7840.0,
+      "score": -0.34
     },
     {
       "symbol": "mihao",
       "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
       "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
-      "reason": "5m -1.9% outside +1% to +40%",
+      "reason": "5m -0.8% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -1.945,
-      "vol_m5": 17600.0,
-      "score": -2.82
+      "chg_m5": -0.763,
+      "vol_m5": 27447.0,
+      "score": -1.92
     },
     {
       "symbol": "DCTY",
@@ -496734,19 +496734,19 @@
       "link": "https://axiom.trade/meme/9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump?chain=sol",
       "reason": "5m -3.0% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -3.031,
-      "vol_m5": 6433.0,
-      "score": -22.23
+      "chg_m5": -3.041,
+      "vol_m5": 6483.0,
+      "score": -20.07
     },
     {
       "symbol": "DUVAL",
       "mint": "7fmD1p3jzva28EPP9bPqbDoxZGj5j398yJoE3EVypump",
       "link": "https://axiom.trade/meme/7fmD1p3jzva28EPP9bPqbDoxZGj5j398yJoE3EVypump?chain=sol",
-      "reason": "5m -18.0% outside +1% to +40%",
+      "reason": "5m -22.9% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -18.02,
-      "vol_m5": 41692.0,
-      "score": -32.64
+      "chg_m5": -22.94,
+      "vol_m5": 50301.0,
+      "score": -51.16
     }
   ]
 }
