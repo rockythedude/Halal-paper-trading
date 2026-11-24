@@ -3,36 +3,7 @@
   "target": 6000.0,
   "cash": 4.358534103767438e-07,
   "equity": 0.0,
-  "positions": [
-    {
-      "symbol": "NOHR",
-      "name": "NOHR",
-      "mint": "Jd3NCawdFiDNWpLiTtsMqoeoBMjC1ZQMrMScRVzpump",
-      "pair": "FBqXu5ezPbBv4vKTFD83QPerYGcotcvqzrtAbSXHQs2m",
-      "link": "https://axiom.trade/meme/Jd3NCawdFiDNWpLiTtsMqoeoBMjC1ZQMrMScRVzpump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/fbqxu5ezpbbv4vktfd83qperygcotcvqzrtabsxhqs2m",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.00382704,
-      "raw_price": 0.003808,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-24T08:14:00.796751+00:00",
-      "opened_at_london": "24 Nov 2026, 8:14 GMT",
-      "high_water": 0.00382704,
-      "trail_armed": false,
-      "last_price": 0.003649,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $NOHR @ 0.00382704 \u2014 5m +23.9% vol $50,157 buys 220/sells 81",
-      "hard_stop": 0.0036356879999999998,
-      "take_profit": 0.0041332032,
-      "trail_activate": 0.0039801216,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.04652159371211173
-    }
-  ],
+  "positions": [],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -169233,15 +169204,24 @@
       "closed_at": "2026-11-24T08:16:37.925300+00:00",
       "closed_at_london": "24 Nov 2026, 8:16 GMT",
       "opened_at": "2026-11-24T08:12:08.759879+00:00"
+    },
+    {
+      "symbol": "NOHR",
+      "name": "NOHR",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.00382704,
+      "exit_price": 0.003515335,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL stop \u22125% $NOHR",
+      "closed_at": "2026-11-24T08:21:30.862479+00:00",
+      "closed_at_london": "24 Nov 2026, 8:21 GMT",
+      "opened_at": "2026-11-24T08:14:00.796751+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-24T02:31:32.863229+00:00",
-      "label": "24 Nov 2026, 2:31 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-24T02:32:13.023195+00:00",
       "label": "24 Nov 2026, 2:32 GMT",
@@ -172241,21 +172221,15 @@
       "label": "24 Nov 2026, 8:21 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-24T08:21:46.800766+00:00",
+      "label": "24 Nov 2026, 8:21 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-24T02:49:30.542900+00:00",
-      "london": "24 Nov 2026, 2:49 GMT",
-      "hhmm": "02:49",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $JENSEN @ 0.000216678 \u2014 5m +34.8% vol $76,396 buys 643/sells 364",
-      "symbol": null,
-      "reason": "BUY 10% $JENSEN @ 0.000216678 \u2014 5m +34.8% vol $76,396 buys 643/sells 364",
-      "line": "02:49 EXECUTOR: BUY 10% $JENSEN @ 0.000216678 \u2014 5m +34.8% vol $76,396 buys 643/sells 364",
-      "tag": "EXECUTOR",
-      "message": "02:49 EXECUTOR: BUY 10% $JENSEN @ 0.000216678 \u2014 5m +34.8% vol $76,396 buys 643/sells 364"
-    },
     {
       "ts": "2026-11-24T02:49:30.542982+00:00",
       "london": "24 Nov 2026, 2:49 GMT",
@@ -177043,6 +177017,18 @@
       "line": "08:19 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00",
       "tag": "LOGGER",
       "message": "08:19 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00"
+    },
+    {
+      "ts": "2026-11-24T08:21:30.862530+00:00",
+      "london": "24 Nov 2026, 8:21 GMT",
+      "hhmm": "08:21",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $NOHR",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $NOHR",
+      "line": "08:21 RISK: SELL stop \u22125% $NOHR",
+      "tag": "RISK",
+      "message": "08:21 RISK: SELL stop \u22125% $NOHR"
     }
   ],
   "agents": {
@@ -177051,8 +177037,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 38 tokens \u00b7 GeckoTerminal 40 pools",
-      "badge": "74 pairs",
+      "activity": "DexScreener 38 tokens \u00b7 GeckoTerminal unreachable",
+      "badge": "38 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -177067,7 +177053,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "74 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "38 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -177115,8 +177101,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "1/6",
+      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "0/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -177144,7 +177130,7 @@
     }
   },
   "ticks": 93177,
-  "last_updated": "2026-11-24T08:21:06.920004+00:00",
+  "last_updated": "2026-11-24T08:21:46.800650+00:00",
   "last_updated_london": "24 Nov 2026, 8:21 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -493025,73 +493011,77 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f22561"
+    },
+    {
+      "ts": "2026-11-24T08:21:30.862479+00:00",
+      "london": "24 Nov 2026, 8:21 GMT",
+      "side": "sell",
+      "symbol": "NOHR",
+      "name": "NOHR",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.003515335,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f22562"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-24T08:21:06.920004+00:00",
+  "checked_at": "2026-11-24T08:21:46.800650+00:00",
   "checked_at_london": "24 Nov 2026, 8:21 GMT",
   "near_misses": [
-    {
-      "symbol": "Rings",
-      "mint": "65iH8k736QNhuUHm1tt8X7yJXpJ517HPPq8BrVdwring",
-      "link": "https://axiom.trade/meme/65iH8k736QNhuUHm1tt8X7yJXpJ517HPPq8BrVdwring?chain=sol",
-      "reason": "5m volume $1,170 under $5k",
-      "gates": 1,
-      "chg_m5": 1.532,
-      "vol_m5": 1170.0,
-      "score": 13.79
-    },
-    {
-      "symbol": "mihao",
-      "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
-      "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
-      "reason": "5m volume $2,665 under $5k",
-      "gates": 1,
-      "chg_m5": 1.463,
-      "vol_m5": 2665.0,
-      "score": 1.62
-    },
-    {
-      "symbol": "SIDOOR",
-      "mint": "zcRvzm7gAfYGde8gRwaSYxNryL47SjLVUQLAf1bdoor",
-      "link": "https://axiom.trade/meme/zcRvzm7gAfYGde8gRwaSYxNryL47SjLVUQLAf1bdoor?chain=sol",
-      "reason": "5m volume $111 under $5k",
-      "gates": 1,
-      "chg_m5": 1.206,
-      "vol_m5": 111.0,
-      "score": 0.9
-    },
     {
       "symbol": "UCASH",
       "mint": "7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump",
       "link": "https://axiom.trade/meme/7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump?chain=sol",
-      "reason": "5m -8.2% outside +1% to +40%",
+      "reason": "5m -0.0% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -8.17,
-      "vol_m5": 13254.0,
-      "score": -21.92
+      "chg_m5": -0.01,
+      "vol_m5": 7311.0,
+      "score": -0.02
     },
     {
-      "symbol": "FoolCoin",
-      "mint": "Ctpp5jeHvjE9poZrbh8ZpKHqwSqNMqZR115CqwBuCXXA",
-      "link": "https://axiom.trade/meme/Ctpp5jeHvjE9poZrbh8ZpKHqwSqNMqZR115CqwBuCXXA?chain=sol",
-      "reason": "market cap $15,177 outside $100k\u2013$100M \u00b7 age 1m under 10m",
-      "gates": 2,
-      "chg_m5": 12.881,
-      "vol_m5": 10250.0,
-      "score": 101.44
+      "symbol": "NOHR",
+      "mint": "Jd3NCawdFiDNWpLiTtsMqoeoBMjC1ZQMrMScRVzpump",
+      "link": "https://axiom.trade/meme/Jd3NCawdFiDNWpLiTtsMqoeoBMjC1ZQMrMScRVzpump?chain=sol",
+      "reason": "5m -6.5% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -6.46,
+      "vol_m5": 13357.0,
+      "score": -3.87
     },
     {
       "symbol": "Satoshi",
       "mint": "DXkCsXhXeh2xTfQ8Um8dicQcwseTfuHvDwriTcJLpump",
       "link": "https://axiom.trade/meme/DXkCsXhXeh2xTfQ8Um8dicQcwseTfuHvDwriTcJLpump?chain=sol",
-      "reason": "liquidity $22,851 under $25k \u00b7 market cap $98,730 outside $100k\u2013$100M",
+      "reason": "liquidity $23,673 under $25k \u00b7 5m +62.8% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 39.67,
-      "vol_m5": 18682.0,
-      "score": 23.24
+      "chg_m5": 62.8,
+      "vol_m5": 21468.0,
+      "score": 41.83
+    },
+    {
+      "symbol": "DONJENSEN",
+      "mint": "5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump",
+      "link": "https://axiom.trade/meme/5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump?chain=sol",
+      "reason": "buy/sell 461/521 under 1.05 \u00b7 5m -3.8% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -3.8,
+      "vol_m5": 6029.0,
+      "score": -4.02
+    },
+    {
+      "symbol": "JENSEN",
+      "mint": "HKiMA2mKQHU2cjfZ4Kbmru5GBGCauSNqPtpu8cfmpump",
+      "link": "https://axiom.trade/meme/HKiMA2mKQHU2cjfZ4Kbmru5GBGCauSNqPtpu8cfmpump?chain=sol",
+      "reason": "5m volume $1,319 under $5k \u00b7 5m -8.0% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -7.99,
+      "vol_m5": 1319.0,
+      "score": -8.79
     }
   ]
 }
