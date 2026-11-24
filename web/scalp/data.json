@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.6914511494252874,
-  "wins": 7700,
+  "win_rate": 0.6915065541389837,
+  "wins": 7702,
   "losses": 3436,
-  "closed_trades": 11136,
+  "closed_trades": 11138,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 91263,
-  "open_count": 3,
-  "last_updated_london": "24 Nov 2026, 2:59 GMT",
-  "last_updated": "2026-11-24T02:59:41.018754+00:00",
+  "open_count": 1,
+  "last_updated_london": "24 Nov 2026, 3:00 GMT",
+  "last_updated": "2026-11-24T03:00:20.995892+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "23 Nov 2026, 21:07 GMT",
-      "value": 0.0
-    },
     {
       "label": "23 Nov 2026, 21:08 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "24 Nov 2026, 2:59 GMT",
       "value": 0.0
+    },
+    {
+      "label": "24 Nov 2026, 3:00 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "24 Nov 2026, 3:00 GMT",
+      "hhmm": "03:00",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "03:00 RISK: SELL stop −5% $GROKIA",
+      "message": "03:00 RISK: SELL stop −5% $GROKIA",
+      "symbol": null,
+      "action": "SELL stop −5% $GROKIA"
+    },
+    {
+      "ts": "24 Nov 2026, 2:59 GMT",
+      "hhmm": "02:59",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "02:59 RISK: SELL stop −5% $DONJENSEN",
+      "message": "02:59 RISK: SELL stop −5% $DONJENSEN",
+      "symbol": null,
+      "action": "SELL stop −5% $DONJENSEN"
+    },
     {
       "ts": "24 Nov 2026, 2:59 GMT",
       "hhmm": "02:59",
@@ -2441,26 +2461,6 @@
       "message": "02:51 RISK: SELL stop −5% $JENSEN",
       "symbol": null,
       "action": "SELL stop −5% $JENSEN"
-    },
-    {
-      "ts": "24 Nov 2026, 2:51 GMT",
-      "hhmm": "02:51",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "02:51 EXECUTOR: SELL take profit +8% $GROKIA",
-      "message": "02:51 EXECUTOR: SELL take profit +8% $GROKIA",
-      "symbol": null,
-      "action": "SELL take profit +8% $GROKIA"
-    },
-    {
-      "ts": "24 Nov 2026, 2:50 GMT",
-      "hhmm": "02:50",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "02:50 EXECUTOR: BUY 10% $JENSEN @ 0.000252858 — 5m +28.1% vol $69,924 buys 572/sells 321",
-      "message": "02:50 EXECUTOR: BUY 10% $JENSEN @ 0.000252858 — 5m +28.1% vol $69,924 buys 572/sells 321",
-      "symbol": null,
-      "action": "BUY 10% $JENSEN @ 0.000252858 — 5m +28.1% vol $69,924 buys 572/sells 321"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "57 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "39 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "57 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "39 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "3/6",
+      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.001371448635705995,
-      "current_price": 0.0014024646724984315,
+      "current_price": 0.001409,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.02261552929138322,
+      "unrealized_pct": 0.027380802544365368,
       "hard_stop": 0.0013028762039206951,
       "trail_activate": 0.0014263065811342347,
       "opened_at": "24 Nov 2026, 2:49 GMT",
@@ -2595,53 +2595,49 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump?chain=sol"
-    },
-    {
-      "symbol": "DONJENSEN",
-      "name": "DONJENSEN",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.0008357579999999999,
-      "current_price": 0.0008407,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.00591319496792142,
-      "hard_stop": 0.0007939700999999999,
-      "trail_activate": 0.0008691883199999999,
-      "opened_at": "24 Nov 2026, 2:59 GMT",
-      "reason": "BUY 10% $DONJENSEN @ 0.000835758 — 5m +1.9% vol $80,152 buys 987/sells 679",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump?chain=sol"
-    },
-    {
-      "symbol": "GROKIA",
-      "name": "GROKIA",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.0012783599999999999,
-      "current_price": 0.001272,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.00497512437810943,
-      "hard_stop": 0.0012144419999999998,
-      "trail_activate": 0.0013294944,
-      "opened_at": "24 Nov 2026, 2:59 GMT",
-      "reason": "BUY 10% $GROKIA @ 0.00127836 — 5m +10.8% vol $101,001 buys 1209/sells 619",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/3cL47ohWa2HApLYKtqPsqkjaxJ6HLvT5Ri1KvWdXpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f22277",
+      "time": "24 Nov 2026, 3:00 GMT",
+      "ts": "2026-11-24T03:00:05.550591+00:00",
+      "side": "sell",
+      "symbol": "GROKIA",
+      "name": "GROKIA",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00106863,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f22276",
+      "time": "24 Nov 2026, 2:59 GMT",
+      "ts": "2026-11-24T02:59:57.001014+00:00",
+      "side": "sell",
+      "symbol": "DONJENSEN",
+      "name": "DONJENSEN",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0007005795000000001,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f22275",
       "time": "24 Nov 2026, 2:59 GMT",
@@ -448144,11 +448140,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 11136,
-    "win_rate": 0.6914511494252874,
+    "closed_trades": 11138,
+    "win_rate": 0.6915065541389837,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 22275
+    "fills": 22277
   },
   "ok": true,
   "totals_cumulative": {
@@ -448290,21 +448286,7 @@
     {
       "symbol": "UCASH",
       "name": "UCASH",
-      "price": 0.0014024646724984315,
-      "change_pct": null,
-      "source": "geckoterminal"
-    },
-    {
-      "symbol": "DONJENSEN",
-      "name": "DONJENSEN",
-      "price": 0.0008407,
-      "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
-      "symbol": "GROKIA",
-      "name": "GROKIA",
-      "price": 0.001272,
+      "price": 0.001409,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -448376,8 +448358,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 11136,
-      "win_rate": 0.6914511494252874,
+      "closed_trades": 11138,
+      "win_rate": 0.6915065541389837,
       "realized_pnl": -100.0
     }
   ],
@@ -448394,61 +448376,61 @@
       "symbol": "ROCKET",
       "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
       "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
-      "reason": "5m volume $136 under $5k",
+      "reason": "5m volume $278 under $5k",
       "gates": 1,
-      "chg_m5": 3.2,
-      "vol_m5": 136.0,
-      "score": 2.28
+      "chg_m5": 3.93,
+      "vol_m5": 278.0,
+      "score": 5.45
     },
     {
       "symbol": "Flatulence",
       "mint": "Gq2AuvpacDeruqVRCqyZqZJJbDgYDXYDGxWQgWXhpump",
       "link": "https://axiom.trade/meme/Gq2AuvpacDeruqVRCqyZqZJJbDgYDXYDGxWQgWXhpump?chain=sol",
-      "reason": "5m -6.2% outside +1% to +40%",
+      "reason": "5m -9.1% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -6.21,
-      "vol_m5": 27311.0,
-      "score": -6.5
+      "chg_m5": -9.13,
+      "vol_m5": 32179.0,
+      "score": -10.94
     },
     {
       "symbol": "FIONA",
       "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
       "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "reason": "5m -5.9% outside +1% to +40%",
+      "reason": "5m -6.0% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -5.894,
-      "vol_m5": 13206.0,
-      "score": -11.95
+      "chg_m5": -5.98,
+      "vol_m5": 13363.0,
+      "score": -12.51
+    },
+    {
+      "symbol": "GROKIA",
+      "mint": "3cL47ohWa2HApLYKtqPsqkjaxJ6HLvT5Ri1KvWdXpump",
+      "link": "https://axiom.trade/meme/3cL47ohWa2HApLYKtqPsqkjaxJ6HLvT5Ri1KvWdXpump?chain=sol",
+      "reason": "5m -6.4% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -6.43,
+      "vol_m5": 144520.0,
+      "score": -17.37
+    },
+    {
+      "symbol": "DONJENSEN",
+      "mint": "5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump",
+      "link": "https://axiom.trade/meme/5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump?chain=sol",
+      "reason": "5m -25.1% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -25.09,
+      "vol_m5": 71596.0,
+      "score": -59.17
     },
     {
       "symbol": "JENSEN",
       "mint": "9vLdkMGZ9jbKAZZKrxVzShEBuafLkjB7UgHfNh3xpump",
       "link": "https://axiom.trade/meme/9vLdkMGZ9jbKAZZKrxVzShEBuafLkjB7UgHfNh3xpump?chain=sol",
-      "reason": "5m -27.1% outside +1% to +40%",
+      "reason": "5m -44.3% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -27.15,
-      "vol_m5": 62685.0,
-      "score": -45.43
-    },
-    {
-      "symbol": "DCTY",
-      "mint": "9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump",
-      "link": "https://axiom.trade/meme/9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump?chain=sol",
-      "reason": "5m -11.9% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -11.912,
-      "vol_m5": 25239.0,
-      "score": -90.46
-    },
-    {
-      "symbol": "TURKEY",
-      "mint": "7C3b8kPY4RCDuA7WNT7Ge6a34CwX9h1DeyVFn2ajpump",
-      "link": "https://axiom.trade/meme/7C3b8kPY4RCDuA7WNT7Ge6a34CwX9h1DeyVFn2ajpump?chain=sol",
-      "reason": "liquidity $0 under $25k · market cap $11,589 outside $100k–$100M",
-      "gates": 2,
-      "chg_m5": 23.17,
-      "vol_m5": 6212.0,
-      "score": 20.37
+      "chg_m5": -44.31,
+      "vol_m5": 66750.0,
+      "score": -74.39
     }
   ],
   "helius_status": "",
@@ -448456,7 +448438,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-24T02:59:41.018754+00:00",
-  "checked_at_london": "24 Nov 2026, 2:59 GMT",
+  "checked_at": "2026-11-24T03:00:20.995892+00:00",
+  "checked_at_london": "24 Nov 2026, 3:00 GMT",
   "who_we_copy": null
 }
