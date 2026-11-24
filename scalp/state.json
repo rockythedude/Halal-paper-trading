@@ -175310,12 +175310,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-24T16:28:15.500845+00:00",
-      "label": "24 Nov 2026, 16:28 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
-    {
       "ts": "2026-11-24T16:28:55.476833+00:00",
       "label": "24 Nov 2026, 16:28 GMT",
       "equity": 0.0,
@@ -178314,21 +178308,15 @@
       "label": "24 Nov 2026, 22:22 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-24T22:23:01.258512+00:00",
+      "label": "24 Nov 2026, 22:23 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-24T17:26:03.423969+00:00",
-      "london": "24 Nov 2026, 17:26 GMT",
-      "hhmm": "17:26",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $Wanted @ 0.000367126 \u2014 5m +13.8% vol $6,533 buys 482/sells 241",
-      "symbol": null,
-      "reason": "BUY 10% $Wanted @ 0.000367126 \u2014 5m +13.8% vol $6,533 buys 482/sells 241",
-      "line": "17:26 EXECUTOR: BUY 10% $Wanted @ 0.000367126 \u2014 5m +13.8% vol $6,533 buys 482/sells 241",
-      "tag": "EXECUTOR",
-      "message": "17:26 EXECUTOR: BUY 10% $Wanted @ 0.000367126 \u2014 5m +13.8% vol $6,533 buys 482/sells 241"
-    },
     {
       "ts": "2026-11-24T17:30:09.715856+00:00",
       "london": "24 Nov 2026, 17:30 GMT",
@@ -183116,6 +183104,18 @@
       "line": "22:22 EXECUTOR: BUY 10% $JIMMY @ 0.00121074 \u2014 5m +8.9% vol $6,142 buys 60/sells 45",
       "tag": "EXECUTOR",
       "message": "22:22 EXECUTOR: BUY 10% $JIMMY @ 0.00121074 \u2014 5m +8.9% vol $6,142 buys 60/sells 45"
+    },
+    {
+      "ts": "2026-11-24T22:23:01.258395+00:00",
+      "london": "24 Nov 2026, 22:23 GMT",
+      "hhmm": "22:23",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 2 open, equity $0.00",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 2 open, equity $0.00",
+      "line": "22:23 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00",
+      "tag": "LOGGER",
+      "message": "22:23 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00"
     }
   ],
   "agents": {
@@ -183140,8 +183140,8 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "58 pairs \u00b7 1 passed liquidity, age, and 5m momentum",
-      "badge": "1 passed",
+      "activity": "58 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -183216,9 +183216,9 @@
       "open_positions": 0
     }
   },
-  "ticks": 98078,
-  "last_updated": "2026-11-24T22:22:37.270233+00:00",
-  "last_updated_london": "24 Nov 2026, 22:22 GMT",
+  "ticks": 98107,
+  "last_updated": "2026-11-24T22:23:01.256249+00:00",
+  "last_updated_london": "24 Nov 2026, 22:23 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -183236,12 +183236,12 @@
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 11683
+    "traded": 11685
   },
   "totals_cumulative": {
-    "scanned": 98078,
+    "scanned": 98107,
     "killed": 0,
-    "traded": 11683
+    "traded": 11685
   },
   "paper_money": true,
   "fills": [
@@ -510401,8 +510401,8 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-24T22:22:37.270233+00:00",
-  "checked_at_london": "24 Nov 2026, 22:22 GMT",
+  "checked_at": "2026-11-24T22:23:01.256249+00:00",
+  "checked_at_london": "24 Nov 2026, 22:23 GMT",
   "near_misses": [
     {
       "symbol": "MCAT",
@@ -510413,6 +510413,16 @@
       "chg_m5": 1.375,
       "vol_m5": 262.0,
       "score": 2.42
+    },
+    {
+      "symbol": "ROCKET",
+      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
+      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
+      "reason": "5m volume $275 under $5k",
+      "gates": 1,
+      "chg_m5": 1.31,
+      "vol_m5": 275.0,
+      "score": 1.52
     },
     {
       "symbol": "GROKIA",
@@ -510428,41 +510438,31 @@
       "symbol": "Squirrel",
       "mint": "CkwFr1G8EPLLJSnp84PmwjEDRG4yA7bGJvRxRTx5pump",
       "link": "https://axiom.trade/meme/CkwFr1G8EPLLJSnp84PmwjEDRG4yA7bGJvRxRTx5pump?chain=sol",
-      "reason": "5m -53.0% outside +1% to +40%",
+      "reason": "5m -65.6% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -53.05,
-      "vol_m5": 35702.0,
-      "score": -128.12
+      "chg_m5": -65.64,
+      "vol_m5": 38799.0,
+      "score": -171.28
     },
     {
-      "symbol": "DONJENSEN",
-      "mint": "5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump",
-      "link": "https://axiom.trade/meme/5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump?chain=sol",
-      "reason": "5m volume $2,453 under $5k \u00b7 buy/sell 591/586 under 1.05",
+      "symbol": "CLAUDIA",
+      "mint": "2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM",
+      "link": "https://axiom.trade/meme/2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM?chain=sol",
+      "reason": "5m volume $686 under $5k \u00b7 5m +0.4% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 3.75,
-      "vol_m5": 2453.0,
-      "score": 2.73
+      "chg_m5": 0.448,
+      "vol_m5": 686.0,
+      "score": 0.28
     },
     {
-      "symbol": "HOGE",
-      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
-      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
-      "reason": "5m volume $914 under $5k \u00b7 5m +0.9% outside +1% to +40%",
+      "symbol": "TROLL",
+      "mint": "5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2",
+      "link": "https://axiom.trade/meme/5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2?chain=sol",
+      "reason": "5m volume $335 under $5k \u00b7 5m +0.1% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 0.86,
-      "vol_m5": 914.0,
-      "score": 1.94
-    },
-    {
-      "symbol": "cateball",
-      "mint": "4npJ3avxnGhCzKbWQpLrQXAHsjWzKr4JqBsbu5Fspump",
-      "link": "https://axiom.trade/meme/4npJ3avxnGhCzKbWQpLrQXAHsjWzKr4JqBsbu5Fspump?chain=sol",
-      "reason": "5m volume $1,389 under $5k \u00b7 5m +0.8% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.79,
-      "vol_m5": 1389.0,
-      "score": 1.49
+      "chg_m5": 0.07,
+      "vol_m5": 335.0,
+      "score": 0.1
     }
   ]
 }
