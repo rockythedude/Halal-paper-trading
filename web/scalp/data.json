@@ -21,8 +21,8 @@
   },
   "ticks": 92626,
   "open_count": 1,
-  "last_updated_london": "24 Nov 2026, 6:48 GMT",
-  "last_updated": "2026-11-24T06:48:28.532999+00:00",
+  "last_updated_london": "24 Nov 2026, 6:49 GMT",
+  "last_updated": "2026-11-24T06:49:08.488046+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "24 Nov 2026, 0:59 GMT",
-      "value": 0.0
-    },
     {
       "label": "24 Nov 2026, 0:59 GMT",
       "value": 0.0
@@ -2058,6 +2054,10 @@
     {
       "label": "24 Nov 2026, 6:48 GMT",
       "value": 0.0
+    },
+    {
+      "label": "24 Nov 2026, 6:49 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 38 tokens · GeckoTerminal unreachable",
-      "badge": "39 pairs",
+      "activity": "DexScreener 38 tokens · GeckoTerminal 40 pools",
+      "badge": "77 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "39 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "77 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.004646967731748062,
-      "current_price": 0.004551,
+      "current_price": 0.004559094819537926,
       "change_pct": null,
-      "price_source": "dexscreener",
+      "price_source": "geckoterminal",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.020651688862053152,
+      "unrealized_pct": -0.018909731524449636,
       "hard_stop": 0.0044146193451606594,
       "trail_activate": 0.004832846441017985,
       "opened_at": "24 Nov 2026, 6:41 GMT",
@@ -452566,9 +452566,9 @@
     {
       "symbol": "FIONA",
       "name": "FIONA",
-      "price": 0.004551,
+      "price": 0.004559094819537926,
       "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     }
   ],
   "desk": "axiom",
@@ -452618,8 +452618,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 72.63,
-      "return_pct": -0.2737458100000001,
+      "equity": 72.59,
+      "return_pct": -0.27409214000000004,
       "closed_trades": 628,
       "win_rate": 0.34076433121019106,
       "realized_pnl": -27.21
@@ -452653,34 +452653,64 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
+      "symbol": "SI",
+      "mint": "DEW9dSN6QpWyNthphCpMmAbZP1Q4cEKR9xQXAri98WDP",
+      "link": "https://axiom.trade/meme/DEW9dSN6QpWyNthphCpMmAbZP1Q4cEKR9xQXAri98WDP?chain=sol",
+      "reason": "5m volume $150 under $5k",
+      "gates": 1,
+      "chg_m5": 3.826,
+      "vol_m5": 150.0,
+      "score": 22.96
+    },
+    {
+      "symbol": "TROLL",
+      "mint": "5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2",
+      "link": "https://axiom.trade/meme/5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2?chain=sol",
+      "reason": "5m -0.3% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -0.282,
+      "vol_m5": 12982.0,
+      "score": -2.54
+    },
+    {
+      "symbol": "Pingu",
+      "mint": "Ah9nJpnGBUHJRu3CoYz3A2nYsw1FFgKGEoDECKRYpaCg",
+      "link": "https://axiom.trade/meme/Ah9nJpnGBUHJRu3CoYz3A2nYsw1FFgKGEoDECKRYpaCg?chain=sol",
+      "reason": "market cap $14,436 outside $100k–$100M · age 1m under 10m",
+      "gates": 2,
+      "chg_m5": 6.889,
+      "vol_m5": 5709.0,
+      "score": 46.5
+    },
+    {
+      "symbol": "ROCKET",
+      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
+      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
+      "reason": "5m volume $577 under $5k · buy/sell 81/78 under 1.05",
+      "gates": 2,
+      "chg_m5": 2.57,
+      "vol_m5": 577.0,
+      "score": 7.8
+    },
+    {
+      "symbol": "TIMMY",
+      "mint": "5PjUUcKcjEg8ib5Rmc7kuhHKKKxRLRtHZVS8NfRBpump",
+      "link": "https://axiom.trade/meme/5PjUUcKcjEg8ib5Rmc7kuhHKKKxRLRtHZVS8NfRBpump?chain=sol",
+      "reason": "liquidity $0 under $25k · market cap $6,435 outside $100k–$100M",
+      "gates": 2,
+      "chg_m5": 5.49,
+      "vol_m5": 6896.0,
+      "score": 5.56
+    },
+    {
       "symbol": "DONJENSEN",
       "mint": "5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump",
       "link": "https://axiom.trade/meme/5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump?chain=sol",
-      "reason": "buy/sell 516/553 under 1.05",
-      "gates": 1,
-      "chg_m5": 1.17,
-      "vol_m5": 5085.0,
-      "score": 1.16
-    },
-    {
-      "symbol": "UCASH",
-      "mint": "7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump",
-      "link": "https://axiom.trade/meme/7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump?chain=sol",
-      "reason": "5m volume $4,237 under $5k · 5m -4.2% outside +1% to +40%",
+      "reason": "5m volume $4,913 under $5k · buy/sell 480/520 under 1.05",
       "gates": 2,
-      "chg_m5": -4.22,
-      "vol_m5": 4237.0,
-      "score": -11.66
-    },
-    {
-      "symbol": "JENSEN",
-      "mint": "HKiMA2mKQHU2cjfZ4Kbmru5GBGCauSNqPtpu8cfmpump",
-      "link": "https://axiom.trade/meme/HKiMA2mKQHU2cjfZ4Kbmru5GBGCauSNqPtpu8cfmpump?chain=sol",
-      "reason": "5m volume $2,979 under $5k · 5m -8.0% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": -7.99,
-      "vol_m5": 2979.0,
-      "score": -23.7
+      "chg_m5": 2.5,
+      "vol_m5": 4913.0,
+      "score": 2.33
     }
   ],
   "helius_status": "",
@@ -452688,7 +452718,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-24T06:48:28.532999+00:00",
-  "checked_at_london": "24 Nov 2026, 6:48 GMT",
+  "checked_at": "2026-11-24T06:49:08.488046+00:00",
+  "checked_at_london": "24 Nov 2026, 6:49 GMT",
   "who_we_copy": null
 }
