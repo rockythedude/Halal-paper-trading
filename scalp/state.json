@@ -5,34 +5,6 @@
   "equity": 0.0,
   "positions": [
     {
-      "symbol": "FIONA",
-      "name": "FIONA",
-      "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
-      "pair": "DjbLtX1HRGZZrJgJ7CwTX6SN3D7tBLiytkGwomBUwTVB",
-      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "dex_url": "https://www.geckoterminal.com/solana/pools/DjbLtX1HRGZZrJgJ7CwTX6SN3D7tBLiytkGwomBUwTVB",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.0035827308580008237,
-      "raw_price": 0.003564906326368979,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-24T10:10:32.688608+00:00",
-      "opened_at_london": "24 Nov 2026, 10:10 GMT",
-      "high_water": 0.0035827308580008237,
-      "trail_armed": false,
-      "last_price": 0.003418083023767304,
-      "last_source": "geckoterminal",
-      "reason": "BUY 10% $FIONA @ 0.00358273 \u2014 5m +5.5% vol $5,589 buys 61/sells 33",
-      "hard_stop": 0.0034035943151007825,
-      "take_profit": 0.00386934932664089,
-      "trail_activate": 0.0037260400923208566,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.04595595950665243
-    },
-    {
       "symbol": "JIMMY",
       "name": "JIMMY",
       "mint": "38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump",
@@ -170266,15 +170238,24 @@
       "closed_at": "2026-11-24T10:14:20.914710+00:00",
       "closed_at_london": "24 Nov 2026, 10:14 GMT",
       "opened_at": "2026-11-24T10:10:32.688514+00:00"
+    },
+    {
+      "symbol": "FIONA",
+      "name": "FIONA",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.0035827308580008237,
+      "exit_price": 0.00338499,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL stop \u22125% $FIONA",
+      "closed_at": "2026-11-24T10:16:13.151645+00:00",
+      "closed_at_london": "24 Nov 2026, 10:16 GMT",
+      "opened_at": "2026-11-24T10:10:32.688608+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-24T04:25:10.434757+00:00",
-      "label": "24 Nov 2026, 4:25 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-24T04:26:15.750709+00:00",
       "label": "24 Nov 2026, 4:26 GMT",
@@ -173274,21 +173255,15 @@
       "label": "24 Nov 2026, 10:15 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-24T10:16:20.962128+00:00",
+      "label": "24 Nov 2026, 10:16 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-24T03:48:19.942993+00:00",
-      "london": "24 Nov 2026, 3:48 GMT",
-      "hhmm": "03:48",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $CHIBI @ 0.0001206 \u2014 5m +18.4% vol $5,086 buys 75/sells 71",
-      "symbol": null,
-      "reason": "BUY 10% $CHIBI @ 0.0001206 \u2014 5m +18.4% vol $5,086 buys 75/sells 71",
-      "line": "03:48 EXECUTOR: BUY 10% $CHIBI @ 0.0001206 \u2014 5m +18.4% vol $5,086 buys 75/sells 71",
-      "tag": "EXECUTOR",
-      "message": "03:48 EXECUTOR: BUY 10% $CHIBI @ 0.0001206 \u2014 5m +18.4% vol $5,086 buys 75/sells 71"
-    },
     {
       "ts": "2026-11-24T03:48:43.994106+00:00",
       "london": "24 Nov 2026, 3:48 GMT",
@@ -178076,6 +178051,18 @@
       "line": "10:14 RISK: SELL stop \u22125% $mihao",
       "tag": "RISK",
       "message": "10:14 RISK: SELL stop \u22125% $mihao"
+    },
+    {
+      "ts": "2026-11-24T10:16:13.151688+00:00",
+      "london": "24 Nov 2026, 10:16 GMT",
+      "hhmm": "10:16",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $FIONA",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $FIONA",
+      "line": "10:16 RISK: SELL stop \u22125% $FIONA",
+      "tag": "RISK",
+      "message": "10:16 RISK: SELL stop \u22125% $FIONA"
     }
   ],
   "agents": {
@@ -178148,8 +178135,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -178177,8 +178164,8 @@
     }
   },
   "ticks": 93844,
-  "last_updated": "2026-11-24T10:15:40.915850+00:00",
-  "last_updated_london": "24 Nov 2026, 10:15 GMT",
+  "last_updated": "2026-11-24T10:16:20.962023+00:00",
+  "last_updated_london": "24 Nov 2026, 10:16 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -495948,23 +495935,37 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f22696"
+    },
+    {
+      "ts": "2026-11-24T10:16:13.151645+00:00",
+      "london": "24 Nov 2026, 10:16 GMT",
+      "side": "sell",
+      "symbol": "FIONA",
+      "name": "FIONA",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.00338499,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f22697"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-24T10:15:40.915850+00:00",
-  "checked_at_london": "24 Nov 2026, 10:15 GMT",
+  "checked_at": "2026-11-24T10:16:20.962023+00:00",
+  "checked_at_london": "24 Nov 2026, 10:16 GMT",
   "near_misses": [
     {
-      "symbol": "DONJENSEN",
-      "mint": "5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump",
-      "link": "https://axiom.trade/meme/5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump?chain=sol",
-      "reason": "buy/sell 381/481 under 1.05",
+      "symbol": "CLAUDIO",
+      "mint": "5St93zSNQvWxK22Cj5mJBXcjUNNB452h5uNmrttSpump",
+      "link": "https://axiom.trade/meme/5St93zSNQvWxK22Cj5mJBXcjUNNB452h5uNmrttSpump?chain=sol",
+      "reason": "5m volume $4,957 under $5k",
       "gates": 1,
-      "chg_m5": 5.26,
-      "vol_m5": 5528.0,
-      "score": 4.58
+      "chg_m5": 2.04,
+      "vol_m5": 4957.0,
+      "score": 11.18
     },
     {
       "symbol": "NVDA",
@@ -495975,6 +495976,16 @@
       "chg_m5": 0.922,
       "vol_m5": 14854.0,
       "score": 3.76
+    },
+    {
+      "symbol": "DONJENSEN",
+      "mint": "5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump",
+      "link": "https://axiom.trade/meme/5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump?chain=sol",
+      "reason": "buy/sell 382/485 under 1.05",
+      "gates": 1,
+      "chg_m5": 2.02,
+      "vol_m5": 7025.0,
+      "score": 2.17
     },
     {
       "symbol": "ANSEM",
@@ -496000,21 +496011,11 @@
       "symbol": "UCASH",
       "mint": "7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump",
       "link": "https://axiom.trade/meme/7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump?chain=sol",
-      "reason": "liquidity $21,475 under $25k \u00b7 market cap $64,813 outside $100k\u2013$100M",
+      "reason": "liquidity $21,509 under $25k \u00b7 market cap $65,066 outside $100k\u2013$100M",
       "gates": 2,
-      "chg_m5": 13.86,
-      "vol_m5": 5925.0,
-      "score": 18.9
-    },
-    {
-      "symbol": "Singularity",
-      "mint": "7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump",
-      "link": "https://axiom.trade/meme/7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump?chain=sol",
-      "reason": "5m volume $774 under $5k \u00b7 buy/sell 8/8 under 1.05",
-      "gates": 2,
-      "chg_m5": 2.254,
-      "vol_m5": 774.0,
-      "score": 1.51
+      "chg_m5": 14.3,
+      "vol_m5": 6828.0,
+      "score": 22.34
     }
   ]
 }
