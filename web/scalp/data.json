@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 96686,
-  "open_count": 0,
-  "last_updated_london": "24 Nov 2026, 18:24 GMT",
-  "last_updated": "2026-11-24T18:24:24.050062+00:00",
+  "open_count": 1,
+  "last_updated_london": "24 Nov 2026, 18:25 GMT",
+  "last_updated": "2026-11-24T18:25:04.380052+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "24 Nov 2026, 12:28 GMT",
-      "value": 0.0
-    },
     {
       "label": "24 Nov 2026, 12:29 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "24 Nov 2026, 18:24 GMT",
       "value": 0.0
+    },
+    {
+      "label": "24 Nov 2026, 18:25 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "24 Nov 2026, 18:24 GMT",
+      "hhmm": "18:24",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "18:24 EXECUTOR: BUY 10% $CHRISTMAS @ 0.000194266 — 5m +12.3% vol $14,278 buys 188/sells 133",
+      "message": "18:24 EXECUTOR: BUY 10% $CHRISTMAS @ 0.000194266 — 5m +12.3% vol $14,278 buys 188/sells 133",
+      "symbol": null,
+      "action": "BUY 10% $CHRISTMAS @ 0.000194266 — 5m +12.3% vol $14,278 buys 188/sells 133"
+    },
     {
       "ts": "24 Nov 2026, 18:24 GMT",
       "hhmm": "18:24",
@@ -2451,16 +2461,6 @@
       "message": "17:54 EXECUTOR: BUY 10% $Wanted @ 0.000350946 — 5m +10.1% vol $5,758 buys 126/sells 86",
       "symbol": null,
       "action": "BUY 10% $Wanted @ 0.000350946 — 5m +10.1% vol $5,758 buys 126/sells 86"
-    },
-    {
-      "ts": "24 Nov 2026, 17:54 GMT",
-      "hhmm": "17:54",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "17:54 EXECUTOR: SELL trail 2.5% $Wanted",
-      "message": "17:54 EXECUTOR: SELL trail 2.5% $Wanted",
-      "symbol": null,
-      "action": "SELL trail 2.5% $Wanted"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
-      "badge": "39 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
+      "badge": "57 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "39 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "57 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "0/6",
+      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2573,8 +2573,51 @@
       "open_positions": 0
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "CHRISTMAS",
+      "name": "CHRISTMAS",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.0001942665,
+      "current_price": 0.0001927,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.008063665119822483,
+      "hard_stop": 0.00018455317499999998,
+      "trail_activate": 0.00020203716,
+      "opened_at": "24 Nov 2026, 18:24 GMT",
+      "reason": "BUY 10% $CHRISTMAS @ 0.000194266 — 5m +12.3% vol $14,278 buys 188/sells 133",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/6jmhyHEy1rDyYHyRkr1rbVVQnckKpMYWh3zoX7zLpump?chain=sol"
+    }
+  ],
   "fills": [
+    {
+      "id": "f23083",
+      "time": "24 Nov 2026, 18:24 GMT",
+      "ts": "2026-11-24T18:24:32.060075+00:00",
+      "side": "buy",
+      "symbol": "CHRISTMAS",
+      "name": "CHRISTMAS",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0001942665,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f23082",
       "time": "24 Nov 2026, 18:24 GMT",
@@ -464220,8 +464263,8 @@
     "closed_trades": 11541,
     "win_rate": 0.7022788319902955,
     "realized_pnl": -100.0,
-    "unrealized_pnl": 0,
-    "fills": 23082
+    "unrealized_pnl": 0.0,
+    "fills": 23083
   },
   "ok": true,
   "totals_cumulative": {
@@ -464359,7 +464402,15 @@
     "Risk": "#FF4D4D",
     "Logger": "#22D3EE"
   },
-  "ticker": [],
+  "ticker": [
+    {
+      "symbol": "CHRISTMAS",
+      "name": "CHRISTMAS",
+      "price": 0.0001927,
+      "change_pct": null,
+      "source": "dexscreener"
+    }
+  ],
   "desk": "axiom",
   "risk_rules": {
     "mode": "axiom",
@@ -464407,8 +464458,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 71.55,
-      "return_pct": -0.28448662999999996,
+      "equity": 71.58,
+      "return_pct": -0.28419801000000006,
       "closed_trades": 657,
       "win_rate": 0.334855403348554,
       "realized_pnl": -28.45
@@ -464442,64 +464493,64 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
+      "symbol": "MCAT",
+      "mint": "BzPyyYCTmQNq2BcfQ4ANAvCYk54rnmQEXMFvFT8RhWMi",
+      "link": "https://axiom.trade/meme/BzPyyYCTmQNq2BcfQ4ANAvCYk54rnmQEXMFvFT8RhWMi?chain=sol",
+      "reason": "5m volume $1,368 under $5k",
+      "gates": 1,
+      "chg_m5": 6.525,
+      "vol_m5": 1368.0,
+      "score": 18.38
+    },
+    {
       "symbol": "Holders",
       "mint": "55RwtHpoNB81SgfiNvogeZTMfik2SfMGa5FaxKcXpump",
       "link": "https://axiom.trade/meme/55RwtHpoNB81SgfiNvogeZTMfik2SfMGa5FaxKcXpump?chain=sol",
-      "reason": "liquidity $24,648 under $25k",
+      "reason": "liquidity $24,567 under $25k",
       "gates": 1,
-      "chg_m5": 36.14,
-      "vol_m5": 21368.0,
-      "score": 25.12
+      "chg_m5": 21.57,
+      "vol_m5": 23516.0,
+      "score": 15.21
     },
     {
-      "symbol": "cateball",
-      "mint": "4npJ3avxnGhCzKbWQpLrQXAHsjWzKr4JqBsbu5Fspump",
-      "link": "https://axiom.trade/meme/4npJ3avxnGhCzKbWQpLrQXAHsjWzKr4JqBsbu5Fspump?chain=sol",
-      "reason": "5m volume $1,397 under $5k",
+      "symbol": "DUVAL",
+      "mint": "7fmD1p3jzva28EPP9bPqbDoxZGj5j398yJoE3EVypump",
+      "link": "https://axiom.trade/meme/7fmD1p3jzva28EPP9bPqbDoxZGj5j398yJoE3EVypump?chain=sol",
+      "reason": "5m volume $875 under $5k",
       "gates": 1,
-      "chg_m5": 2.66,
-      "vol_m5": 1397.0,
-      "score": 4.77
+      "chg_m5": 8.528,
+      "vol_m5": 875.0,
+      "score": 2.72
     },
     {
-      "symbol": "CHRISTMAS",
-      "mint": "6jmhyHEy1rDyYHyRkr1rbVVQnckKpMYWh3zoX7zLpump",
-      "link": "https://axiom.trade/meme/6jmhyHEy1rDyYHyRkr1rbVVQnckKpMYWh3zoX7zLpump?chain=sol",
-      "reason": "5m -0.7% outside +1% to +40%",
+      "symbol": "pippin",
+      "mint": "Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump",
+      "link": "https://axiom.trade/meme/Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump?chain=sol",
+      "reason": "5m -0.4% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -0.72,
-      "vol_m5": 16704.0,
-      "score": -0.26
+      "chg_m5": -0.368,
+      "vol_m5": 5872.0,
+      "score": -0.99
     },
     {
       "symbol": "FIONA",
       "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
       "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "reason": "5m -4.2% outside +1% to +40%",
+      "reason": "5m -1.2% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -4.25,
-      "vol_m5": 5508.0,
-      "score": -4.2
+      "chg_m5": -1.24,
+      "vol_m5": 5269.0,
+      "score": -1.1
     },
     {
-      "symbol": "ROCKET",
-      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
-      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
-      "reason": "5m volume $84 under $5k · 5m +0.2% outside +1% to +40%",
+      "symbol": "SANTIA",
+      "mint": "2YKce3apGESoWhqt4N7MGg5t4UEKgPPL4ArheEvPpump",
+      "link": "https://axiom.trade/meme/2YKce3apGESoWhqt4N7MGg5t4UEKgPPL4ArheEvPpump?chain=sol",
+      "reason": "liquidity $24,173 under $25k · 5m +323.0% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 0.25,
-      "vol_m5": 84.0,
-      "score": 0.18
-    },
-    {
-      "symbol": "Christmax",
-      "mint": "D7MyAD7k3AqJpg4uxjUcmL51EDHrEsJxkjUynsxcpump",
-      "link": "https://axiom.trade/meme/D7MyAD7k3AqJpg4uxjUcmL51EDHrEsJxkjUynsxcpump?chain=sol",
-      "reason": "5m volume $477 under $5k · buy/sell 4/456 under 1.05",
-      "gates": 2,
-      "chg_m5": 2.21,
-      "vol_m5": 477.0,
-      "score": 0.01
+      "chg_m5": 323.0,
+      "vol_m5": 17936.0,
+      "score": 1308.86
     }
   ],
   "helius_status": "",
@@ -464507,7 +464558,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-24T18:24:24.050062+00:00",
-  "checked_at_london": "24 Nov 2026, 18:24 GMT",
+  "checked_at": "2026-11-24T18:25:04.380052+00:00",
+  "checked_at_london": "24 Nov 2026, 18:25 GMT",
   "who_we_copy": null
 }
