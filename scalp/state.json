@@ -31,34 +31,6 @@
       "market_value": 0.0,
       "unrealized_pnl": 0.0,
       "unrealized_pct": -0.01188350372677871
-    },
-    {
-      "symbol": "CHRISTMAS",
-      "name": "CHRISTMAS",
-      "mint": "6jmhyHEy1rDyYHyRkr1rbVVQnckKpMYWh3zoX7zLpump",
-      "pair": "3UTNVf1p2hKghchPbePADbnoUtdfDAb1VPnuTbg4kMZ2",
-      "link": "https://axiom.trade/meme/6jmhyHEy1rDyYHyRkr1rbVVQnckKpMYWh3zoX7zLpump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/3utnvf1p2hkghchpbepadbnoutdfdab1vpnutbg4kmz2",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.00025818449999999996,
-      "raw_price": 0.0002569,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-24T18:08:30.253293+00:00",
-      "opened_at_london": "24 Nov 2026, 18:08 GMT",
-      "high_water": 0.0002746,
-      "trail_armed": true,
-      "last_price": 0.0002746,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $CHRISTMAS @ 0.000258184 \u2014 5m +20.3% vol $45,393 buys 508/sells 351",
-      "hard_stop": 0.00024527527499999997,
-      "take_profit": 0.00027883925999999996,
-      "trail_activate": 0.00026851188,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.06358050154056527
     }
   ],
   "closed_trades": [
@@ -173101,15 +173073,24 @@
       "closed_at": "2026-11-24T18:08:30.252969+00:00",
       "closed_at_london": "24 Nov 2026, 18:08 GMT",
       "opened_at": "2026-11-24T18:07:34.106566+00:00"
+    },
+    {
+      "symbol": "CHRISTMAS",
+      "name": "CHRISTMAS",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.00025818449999999996,
+      "exit_price": 0.00024705850000000004,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL trail 2.5% $CHRISTMAS",
+      "closed_at": "2026-11-24T18:09:35.160185+00:00",
+      "closed_at_london": "24 Nov 2026, 18:09 GMT",
+      "opened_at": "2026-11-24T18:08:30.253293+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-24T12:14:13.555817+00:00",
-      "label": "24 Nov 2026, 12:14 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-24T12:14:53.532614+00:00",
       "label": "24 Nov 2026, 12:14 GMT",
@@ -176109,21 +176090,15 @@
       "label": "24 Nov 2026, 18:09 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-24T18:10:06.664354+00:00",
+      "label": "24 Nov 2026, 18:10 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-24T12:20:24.722129+00:00",
-      "london": "24 Nov 2026, 12:20 GMT",
-      "hhmm": "12:20",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $DUVAL @ 0.00044833 \u2014 5m +26.9% vol $74,365 buys 715/sells 586",
-      "symbol": null,
-      "reason": "BUY 10% $DUVAL @ 0.00044833 \u2014 5m +26.9% vol $74,365 buys 715/sells 586",
-      "line": "12:20 EXECUTOR: BUY 10% $DUVAL @ 0.00044833 \u2014 5m +26.9% vol $74,365 buys 715/sells 586",
-      "tag": "EXECUTOR",
-      "message": "12:20 EXECUTOR: BUY 10% $DUVAL @ 0.00044833 \u2014 5m +26.9% vol $74,365 buys 715/sells 586"
-    },
     {
       "ts": "2026-11-24T12:21:36.603914+00:00",
       "london": "24 Nov 2026, 12:21 GMT",
@@ -180911,6 +180886,18 @@
       "line": "18:08 EXECUTOR: BUY 10% $CHRISTMAS @ 0.000258184 \u2014 5m +20.3% vol $45,393 buys 508/sells 351",
       "tag": "EXECUTOR",
       "message": "18:08 EXECUTOR: BUY 10% $CHRISTMAS @ 0.000258184 \u2014 5m +20.3% vol $45,393 buys 508/sells 351"
+    },
+    {
+      "ts": "2026-11-24T18:09:35.160234+00:00",
+      "london": "24 Nov 2026, 18:09 GMT",
+      "hhmm": "18:09",
+      "agent": "EXECUTOR",
+      "action": "SELL trail 2.5% $CHRISTMAS",
+      "symbol": null,
+      "reason": "SELL trail 2.5% $CHRISTMAS",
+      "line": "18:09 EXECUTOR: SELL trail 2.5% $CHRISTMAS",
+      "tag": "EXECUTOR",
+      "message": "18:09 EXECUTOR: SELL trail 2.5% $CHRISTMAS"
     }
   ],
   "agents": {
@@ -180983,8 +180970,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -181012,8 +180999,8 @@
     }
   },
   "ticks": 96599,
-  "last_updated": "2026-11-24T18:09:26.093101+00:00",
-  "last_updated_london": "24 Nov 2026, 18:09 GMT",
+  "last_updated": "2026-11-24T18:10:06.664210+00:00",
+  "last_updated_london": "24 Nov 2026, 18:10 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -504075,14 +504062,38 @@
       "pnl": null,
       "pnl_pct": null,
       "id": "f23074"
+    },
+    {
+      "ts": "2026-11-24T18:09:35.160185+00:00",
+      "london": "24 Nov 2026, 18:09 GMT",
+      "side": "sell",
+      "symbol": "CHRISTMAS",
+      "name": "CHRISTMAS",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.00024705850000000004,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f23075"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-24T18:09:26.093101+00:00",
-  "checked_at_london": "24 Nov 2026, 18:09 GMT",
+  "checked_at": "2026-11-24T18:10:06.664210+00:00",
+  "checked_at_london": "24 Nov 2026, 18:10 GMT",
   "near_misses": [
+    {
+      "symbol": "DONJENSEN",
+      "mint": "5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump",
+      "link": "https://axiom.trade/meme/5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump?chain=sol",
+      "reason": "5m volume $2,926 under $5k",
+      "gates": 1,
+      "chg_m5": 2.76,
+      "vol_m5": 2926.0,
+      "score": 3.54
+    },
     {
       "symbol": "Singularity",
       "mint": "7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump",
@@ -504094,24 +504105,14 @@
       "score": 2.6
     },
     {
-      "symbol": "DONJENSEN",
-      "mint": "5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump",
-      "link": "https://axiom.trade/meme/5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump?chain=sol",
-      "reason": "5m volume $2,932 under $5k",
-      "gates": 1,
-      "chg_m5": 2.03,
-      "vol_m5": 2932.0,
-      "score": 2.44
-    },
-    {
       "symbol": "ROCKET",
       "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
       "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
-      "reason": "5m volume $83 under $5k",
+      "reason": "5m volume $96 under $5k",
       "gates": 1,
-      "chg_m5": 2.59,
-      "vol_m5": 83.0,
-      "score": 1.94
+      "chg_m5": 2.68,
+      "vol_m5": 96.0,
+      "score": 2.36
     },
     {
       "symbol": "DUVAL",
@@ -504134,14 +504135,14 @@
       "score": 1.2
     },
     {
-      "symbol": "FLOAT",
-      "mint": "Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr",
-      "link": "https://axiom.trade/meme/Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr?chain=sol",
-      "reason": "5m volume $596 under $5k \u00b7 5m +0.3% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.34,
-      "vol_m5": 596.0,
-      "score": 2.94
+      "symbol": "CHRISTMAS",
+      "mint": "6jmhyHEy1rDyYHyRkr1rbVVQnckKpMYWh3zoX7zLpump",
+      "link": "https://axiom.trade/meme/6jmhyHEy1rDyYHyRkr1rbVVQnckKpMYWh3zoX7zLpump?chain=sol",
+      "reason": "5m -12.0% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -12.0,
+      "vol_m5": 44048.0,
+      "score": -12.85
     }
   ]
 }
