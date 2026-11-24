@@ -3,36 +3,7 @@
   "target": 6000.0,
   "cash": 4.358534103767438e-07,
   "equity": 0.0,
-  "positions": [
-    {
-      "symbol": "UCASH",
-      "name": "UCASH",
-      "mint": "7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump",
-      "pair": "4h7R5JzaQ6PgNjFuD12AeUQJRQYgwz2YhPSrA6sh1Rxt",
-      "link": "https://axiom.trade/meme/7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/4h7r5jzaq6pgnjfud12aeuqjrqygwz2yhpsra6sh1rxt",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.00017356349999999999,
-      "raw_price": 0.0001727,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-24T04:56:03.115366+00:00",
-      "opened_at_london": "24 Nov 2026, 4:56 GMT",
-      "high_water": 0.000184,
-      "trail_armed": true,
-      "last_price": 0.0001808,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $UCASH @ 0.000173563 \u2014 5m +14.1% vol $9,893 buys 377/sells 77",
-      "hard_stop": 0.00016488532499999998,
-      "take_profit": 0.00018744857999999998,
-      "trail_activate": 0.00018050603999999999,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.04169367407317792
-    }
-  ],
+  "positions": [],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -168378,15 +168349,24 @@
       "closed_at": "2026-11-24T04:56:03.114927+00:00",
       "closed_at_london": "24 Nov 2026, 4:56 GMT",
       "opened_at": "2026-11-24T04:53:16.956130+00:00"
+    },
+    {
+      "symbol": "UCASH",
+      "name": "UCASH",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.00017356349999999999,
+      "exit_price": 0.00017801468036953553,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL trail 2.5% $UCASH",
+      "closed_at": "2026-11-24T05:02:56.726036+00:00",
+      "closed_at_london": "24 Nov 2026, 5:02 GMT",
+      "opened_at": "2026-11-24T04:56:03.115366+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-23T23:11:11.911235+00:00",
-      "label": "23 Nov 2026, 23:11 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-23T23:12:29.684432+00:00",
       "label": "23 Nov 2026, 23:12 GMT",
@@ -171386,21 +171366,15 @@
       "label": "24 Nov 2026, 5:02 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-24T05:02:56.726564+00:00",
+      "label": "24 Nov 2026, 5:02 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-24T01:44:07.092217+00:00",
-      "london": "24 Nov 2026, 1:44 GMT",
-      "hhmm": "01:44",
-      "agent": "LOGGER",
-      "action": "run complete \u2014 29 polls, 2 open, equity $0.00",
-      "symbol": null,
-      "reason": "run complete \u2014 29 polls, 2 open, equity $0.00",
-      "line": "01:44 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00",
-      "tag": "LOGGER",
-      "message": "01:44 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00"
-    },
     {
       "ts": "2026-11-24T01:46:56.249394+00:00",
       "london": "24 Nov 2026, 1:46 GMT",
@@ -176188,6 +176162,18 @@
       "line": "04:59 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00",
       "tag": "LOGGER",
       "message": "04:59 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00"
+    },
+    {
+      "ts": "2026-11-24T05:02:56.726093+00:00",
+      "london": "24 Nov 2026, 5:02 GMT",
+      "hhmm": "05:02",
+      "agent": "EXECUTOR",
+      "action": "SELL trail 2.5% $UCASH",
+      "symbol": null,
+      "reason": "SELL trail 2.5% $UCASH",
+      "line": "05:02 EXECUTOR: SELL trail 2.5% $UCASH",
+      "tag": "EXECUTOR",
+      "message": "05:02 EXECUTOR: SELL trail 2.5% $UCASH"
     }
   ],
   "agents": {
@@ -176260,8 +176246,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "1/6",
+      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "0/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -176289,7 +176275,7 @@
     }
   },
   "ticks": 91988,
-  "last_updated": "2026-11-24T05:02:16.723576+00:00",
+  "last_updated": "2026-11-24T05:02:56.726471+00:00",
   "last_updated_london": "24 Nov 2026, 5:02 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -490574,53 +490560,77 @@
       "pnl": null,
       "pnl_pct": null,
       "id": "f22447"
+    },
+    {
+      "ts": "2026-11-24T05:02:56.726036+00:00",
+      "london": "24 Nov 2026, 5:02 GMT",
+      "side": "sell",
+      "symbol": "UCASH",
+      "name": "UCASH",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.00017801468036953553,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f22448"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-24T05:02:16.723576+00:00",
+  "checked_at": "2026-11-24T05:02:56.726471+00:00",
   "checked_at_london": "24 Nov 2026, 5:02 GMT",
   "near_misses": [
     {
       "symbol": "JIMMY",
       "mint": "38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump",
       "link": "https://axiom.trade/meme/38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump?chain=sol",
-      "reason": "5m volume $634 under $5k",
+      "reason": "5m volume $1,378 under $5k",
       "gates": 1,
-      "chg_m5": 3.97,
-      "vol_m5": 634.0,
-      "score": 2.98
+      "chg_m5": 8.033,
+      "vol_m5": 1378.0,
+      "score": 6.02
     },
     {
       "symbol": "FIONA",
       "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
       "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "reason": "5m -1.4% outside +1% to +40%",
+      "reason": "5m -2.0% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -1.398,
-      "vol_m5": 6714.0,
-      "score": -0.78
+      "chg_m5": -2.004,
+      "vol_m5": 11612.0,
+      "score": -2.06
     },
     {
       "symbol": "JENSEN",
       "mint": "HKiMA2mKQHU2cjfZ4Kbmru5GBGCauSNqPtpu8cfmpump",
       "link": "https://axiom.trade/meme/HKiMA2mKQHU2cjfZ4Kbmru5GBGCauSNqPtpu8cfmpump?chain=sol",
-      "reason": "5m -14.9% outside +1% to +40%",
+      "reason": "5m -17.2% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -14.88,
-      "vol_m5": 6173.0,
-      "score": -62.28
+      "chg_m5": -17.25,
+      "vol_m5": 5725.0,
+      "score": -71.9
     },
     {
-      "symbol": "DONJENSEN",
-      "mint": "5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump",
-      "link": "https://axiom.trade/meme/5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump?chain=sol",
-      "reason": "5m volume $4,291 under $5k \u00b7 buy/sell 392/512 under 1.05",
+      "symbol": "mihao",
+      "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
+      "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
+      "reason": "5m volume $1,516 under $5k \u00b7 5m +1.0% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 2.88,
-      "vol_m5": 4291.0,
-      "score": 1.19
+      "chg_m5": 0.955,
+      "vol_m5": 1516.0,
+      "score": 1.08
+    },
+    {
+      "symbol": "MCAT",
+      "mint": "BzPyyYCTmQNq2BcfQ4ANAvCYk54rnmQEXMFvFT8RhWMi",
+      "link": "https://axiom.trade/meme/BzPyyYCTmQNq2BcfQ4ANAvCYk54rnmQEXMFvFT8RhWMi?chain=sol",
+      "reason": "5m volume $198 under $5k \u00b7 buy/sell 2/3 under 1.05",
+      "gates": 2,
+      "chg_m5": 1.515,
+      "vol_m5": 198.0,
+      "score": 0.3
     },
     {
       "symbol": "CATE",
@@ -490631,16 +490641,6 @@
       "chg_m5": 0.06,
       "vol_m5": 949.0,
       "score": 0.23
-    },
-    {
-      "symbol": "SIDOOR",
-      "mint": "zcRvzm7gAfYGde8gRwaSYxNryL47SjLVUQLAf1bdoor",
-      "link": "https://axiom.trade/meme/zcRvzm7gAfYGde8gRwaSYxNryL47SjLVUQLAf1bdoor?chain=sol",
-      "reason": "5m volume $30 under $5k \u00b7 5m +0.2% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.151,
-      "vol_m5": 30.0,
-      "score": 0.12
     }
   ]
 }
