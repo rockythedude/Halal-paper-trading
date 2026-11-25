@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 101094,
+  "ticks": 101123,
   "open_count": 1,
-  "last_updated_london": "25 Nov 2026, 12:33 GMT",
-  "last_updated": "2026-11-25T12:33:58.228226+00:00",
+  "last_updated_london": "25 Nov 2026, 12:34 GMT",
+  "last_updated": "2026-11-25T12:34:22.139015+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "25 Nov 2026, 1:02 GMT",
-      "value": 0.0
-    },
     {
       "label": "25 Nov 2026, 1:02 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "25 Nov 2026, 12:33 GMT",
       "value": 0.0
+    },
+    {
+      "label": "25 Nov 2026, 12:34 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "25 Nov 2026, 12:34 GMT",
+      "hhmm": "12:34",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "12:34 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
+      "message": "12:34 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 1 open, equity $0.00"
+    },
     {
       "ts": "25 Nov 2026, 12:30 GMT",
       "hhmm": "12:30",
@@ -2451,16 +2461,6 @@
       "message": "11:29 EXECUTOR: SELL trail 2.5% $BASKET",
       "symbol": null,
       "action": "SELL trail 2.5% $BASKET"
-    },
-    {
-      "ts": "25 Nov 2026, 11:28 GMT",
-      "hhmm": "11:28",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "11:28 EXECUTOR: BUY 10% $BASKET @ 0.00199773 — 5m +6.7% vol $5,803 buys 48/sells 25",
-      "message": "11:28 EXECUTOR: BUY 10% $BASKET @ 0.00199773 — 5m +6.7% vol $5,803 buys 48/sells 25",
-      "symbol": null,
-      "action": "BUY 10% $BASKET @ 0.00199773 — 5m +6.7% vol $5,803 buys 48/sells 25"
     }
   ],
   "agents": [
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.00160288038328343,
-      "current_price": 0.0016,
+      "current_price": 0.001605,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.0017970045135430324,
+      "unrealized_pct": 0.001322379847352062,
       "hard_stop": 0.0015227363641192584,
       "trail_activate": 0.0016669955986147672,
       "opened_at": "25 Nov 2026, 12:25 GMT",
@@ -486028,7 +486028,7 @@
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 101094,
+    "scanned": 101123,
     "killed": 0,
     "traded": 12086
   },
@@ -486166,7 +486166,7 @@
     {
       "symbol": "BASKET",
       "name": "BASKET",
-      "price": 0.0016,
+      "price": 0.001605,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -486253,24 +486253,34 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "Pompom",
-      "mint": "5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump",
-      "link": "https://axiom.trade/meme/5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump?chain=sol",
-      "reason": "5m -17.2% outside +1% to +40%",
+      "symbol": "CBUCKS",
+      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
+      "reason": "5m volume $115 under $5k",
       "gates": 1,
-      "chg_m5": -17.16,
-      "vol_m5": 28064.0,
-      "score": -18.42
+      "chg_m5": 1.72,
+      "vol_m5": 115.0,
+      "score": 1.29
     },
     {
       "symbol": "ROCKET",
       "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
       "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
-      "reason": "5m volume $184 under $5k · 5m +0.1% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.06,
-      "vol_m5": 184.0,
-      "score": 0.03
+      "reason": "5m volume $158 under $5k",
+      "gates": 1,
+      "chg_m5": 2.37,
+      "vol_m5": 158.0,
+      "score": 1.1
+    },
+    {
+      "symbol": "Pompom",
+      "mint": "5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump",
+      "link": "https://axiom.trade/meme/5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump?chain=sol",
+      "reason": "5m -20.3% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -20.31,
+      "vol_m5": 23376.0,
+      "score": -20.48
     }
   ],
   "helius_status": "",
@@ -486278,7 +486288,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-25T12:33:58.228226+00:00",
-  "checked_at_london": "25 Nov 2026, 12:33 GMT",
+  "checked_at": "2026-11-25T12:34:22.139015+00:00",
+  "checked_at_london": "25 Nov 2026, 12:34 GMT",
   "who_we_copy": null
 }
