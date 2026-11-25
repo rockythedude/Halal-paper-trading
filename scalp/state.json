@@ -3,7 +3,36 @@
   "target": 6000.0,
   "cash": 4.358534103767438e-07,
   "equity": 0.0,
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "Pnut",
+      "name": "Pnut",
+      "mint": "9bgy4dVrPqa7HozGvBRV5Qy1ccbDdYHHMyzKrJjqpump",
+      "pair": "EXxmL1AvgnzBwLxuqcR8BYxQHua1jPtpLzCpeMZA8M3J",
+      "link": "https://axiom.trade/meme/9bgy4dVrPqa7HozGvBRV5Qy1ccbDdYHHMyzKrJjqpump?chain=sol",
+      "dex_url": "https://dexscreener.com/solana/exxml1avgnzbwlxuqcr8byxqhua1jptplzcpemza8m3j",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "entry_price": 0.000152559,
+      "raw_price": 0.0001518,
+      "entry_fee": 0.0,
+      "cost_basis": 0.0,
+      "opened_at": "2026-11-25T21:08:33.945106+00:00",
+      "opened_at_london": "25 Nov 2026, 21:08 GMT",
+      "high_water": 0.0001609,
+      "trail_armed": true,
+      "last_price": 0.0001609,
+      "last_source": "dexscreener",
+      "reason": "BUY 10% $Pnut @ 0.000152559 \u2014 5m +39.2% vol $108,521 buys 1237/sells 1141",
+      "hard_stop": 0.00014493105,
+      "take_profit": 0.00016476372,
+      "trail_activate": 0.00015866136000000002,
+      "market_value": 0.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": 0.054673929430580914
+    }
+  ],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -182828,12 +182857,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-25T10:59:43.522759+00:00",
-      "label": "25 Nov 2026, 10:59 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
-    {
       "ts": "2026-11-25T11:00:23.537369+00:00",
       "label": "25 Nov 2026, 11:00 GMT",
       "equity": 0.0,
@@ -185832,21 +185855,15 @@
       "label": "25 Nov 2026, 21:08 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-25T21:09:05.950719+00:00",
+      "label": "25 Nov 2026, 21:09 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-25T04:31:39.779320+00:00",
-      "london": "25 Nov 2026, 4:31 GMT",
-      "hhmm": "04:31",
-      "agent": "EXECUTOR",
-      "action": "SELL take profit +8% $YUMA",
-      "symbol": null,
-      "reason": "SELL take profit +8% $YUMA",
-      "line": "04:31 EXECUTOR: SELL take profit +8% $YUMA",
-      "tag": "EXECUTOR",
-      "message": "04:31 EXECUTOR: SELL take profit +8% $YUMA"
-    },
     {
       "ts": "2026-11-25T04:31:39.779625+00:00",
       "london": "25 Nov 2026, 4:31 GMT",
@@ -190634,6 +190651,18 @@
       "line": "21:07 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.00",
       "tag": "LOGGER",
       "message": "21:07 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.00"
+    },
+    {
+      "ts": "2026-11-25T21:08:33.945148+00:00",
+      "london": "25 Nov 2026, 21:08 GMT",
+      "hhmm": "21:08",
+      "agent": "EXECUTOR",
+      "action": "BUY 10% $Pnut @ 0.000152559 \u2014 5m +39.2% vol $108,521 buys 1237/sells 1141",
+      "symbol": null,
+      "reason": "BUY 10% $Pnut @ 0.000152559 \u2014 5m +39.2% vol $108,521 buys 1237/sells 1141",
+      "line": "21:08 EXECUTOR: BUY 10% $Pnut @ 0.000152559 \u2014 5m +39.2% vol $108,521 buys 1237/sells 1141",
+      "tag": "EXECUTOR",
+      "message": "21:08 EXECUTOR: BUY 10% $Pnut @ 0.000152559 \u2014 5m +39.2% vol $108,521 buys 1237/sells 1141"
     }
   ],
   "agents": {
@@ -190642,8 +190671,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 40 pools",
-      "badge": "75 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 20 pools",
+      "badge": "57 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -190658,7 +190687,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "75 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "57 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -190706,8 +190735,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "0/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -190735,8 +190764,8 @@
     }
   },
   "ticks": 102631,
-  "last_updated": "2026-11-25T21:08:26.057689+00:00",
-  "last_updated_london": "25 Nov 2026, 21:08 GMT",
+  "last_updated": "2026-11-25T21:09:05.950634+00:00",
+  "last_updated_london": "25 Nov 2026, 21:09 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -532026,23 +532055,47 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f24376"
+    },
+    {
+      "ts": "2026-11-25T21:08:33.945106+00:00",
+      "london": "25 Nov 2026, 21:08 GMT",
+      "side": "buy",
+      "symbol": "Pnut",
+      "name": "Pnut",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.000152559,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "id": "f24377"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-25T21:08:26.057689+00:00",
-  "checked_at_london": "25 Nov 2026, 21:08 GMT",
+  "checked_at": "2026-11-25T21:09:05.950634+00:00",
+  "checked_at_london": "25 Nov 2026, 21:09 GMT",
   "near_misses": [
     {
-      "symbol": "Pnut",
-      "mint": "9bgy4dVrPqa7HozGvBRV5Qy1ccbDdYHHMyzKrJjqpump",
-      "link": "https://axiom.trade/meme/9bgy4dVrPqa7HozGvBRV5Qy1ccbDdYHHMyzKrJjqpump?chain=sol",
-      "reason": "5m +135.0% outside +1% to +40%",
+      "symbol": "POMBAO",
+      "mint": "AGyQW6inE99G3Js63ooQWzAeEeBRu8718zjiSKPBpump",
+      "link": "https://axiom.trade/meme/AGyQW6inE99G3Js63ooQWzAeEeBRu8718zjiSKPBpump?chain=sol",
+      "reason": "liquidity $23,145 under $25k",
       "gates": 1,
-      "chg_m5": 135.0,
-      "vol_m5": 130181.0,
-      "score": 270.63
+      "chg_m5": 17.19,
+      "vol_m5": 12049.0,
+      "score": 36.74
+    },
+    {
+      "symbol": "4CHAN",
+      "mint": "DVdWuNK8ncn79B6z8nCiwcNAiwyFcmBPfChgxJGTpump",
+      "link": "https://axiom.trade/meme/DVdWuNK8ncn79B6z8nCiwcNAiwyFcmBPfChgxJGTpump?chain=sol",
+      "reason": "5m volume $1,028 under $5k",
+      "gates": 1,
+      "chg_m5": 2.84,
+      "vol_m5": 1028.0,
+      "score": 1.49
     },
     {
       "symbol": "HOGE",
@@ -532055,44 +532108,34 @@
       "score": 1.06
     },
     {
-      "symbol": "4CHAN",
-      "mint": "DVdWuNK8ncn79B6z8nCiwcNAiwyFcmBPfChgxJGTpump",
-      "link": "https://axiom.trade/meme/DVdWuNK8ncn79B6z8nCiwcNAiwyFcmBPfChgxJGTpump?chain=sol",
-      "reason": "5m volume $1,008 under $5k",
-      "gates": 1,
-      "chg_m5": 1.883,
-      "vol_m5": 1008.0,
-      "score": 1.06
-    },
-    {
       "symbol": "BASKET",
       "mint": "3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f",
       "link": "https://axiom.trade/meme/3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f?chain=sol",
-      "reason": "5m -5.2% outside +1% to +40%",
+      "reason": "5m -9.2% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -5.227,
-      "vol_m5": 8940.0,
-      "score": -8.86
+      "chg_m5": -9.153,
+      "vol_m5": 9799.0,
+      "score": -16.48
     },
     {
       "symbol": "Pompom",
       "mint": "5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump",
       "link": "https://axiom.trade/meme/5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump?chain=sol",
-      "reason": "5m -16.0% outside +1% to +40%",
+      "reason": "5m -12.9% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -16.03,
-      "vol_m5": 20127.0,
-      "score": -56.44
+      "chg_m5": -12.854,
+      "vol_m5": 18563.0,
+      "score": -45.15
     },
     {
       "symbol": "ANSEM",
       "mint": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
       "link": "https://axiom.trade/meme/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump?chain=sol",
-      "reason": "5m volume $4,351 under $5k \u00b7 buy/sell 5/5 under 1.05",
+      "reason": "5m volume $4,351 under $5k \u00b7 buy/sell 5/6 under 1.05",
       "gates": 2,
-      "chg_m5": 1.204,
+      "chg_m5": 1.177,
       "vol_m5": 4351.0,
-      "score": 1.5
+      "score": 1.22
     }
   ]
 }
