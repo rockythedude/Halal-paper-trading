@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.7215107797049765,
-  "wins": 8902,
+  "win_rate": 0.7215559157212318,
+  "wins": 8904,
   "losses": 3436,
-  "closed_trades": 12338,
+  "closed_trades": 12340,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 103588,
-  "open_count": 5,
+  "open_count": 3,
   "last_updated_london": "25 Nov 2026, 23:54 GMT",
-  "last_updated": "2026-11-25T23:54:05.335730+00:00",
+  "last_updated": "2026-11-25T23:54:45.414519+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "25 Nov 2026, 13:45 GMT",
-      "value": 0.0
-    },
     {
       "label": "25 Nov 2026, 13:46 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "25 Nov 2026, 23:54 GMT",
       "value": 0.0
+    },
+    {
+      "label": "25 Nov 2026, 23:54 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "25 Nov 2026, 23:54 GMT",
+      "hhmm": "23:54",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "23:54 EXECUTOR: SELL trail 2.5% $BASKET",
+      "message": "23:54 EXECUTOR: SELL trail 2.5% $BASKET",
+      "symbol": null,
+      "action": "SELL trail 2.5% $BASKET"
+    },
+    {
+      "ts": "25 Nov 2026, 23:54 GMT",
+      "hhmm": "23:54",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "23:54 RISK: SELL stop −5% $Pompom",
+      "message": "23:54 RISK: SELL stop −5% $Pompom",
+      "symbol": null,
+      "action": "SELL stop −5% $Pompom"
+    },
     {
       "ts": "25 Nov 2026, 23:52 GMT",
       "hhmm": "23:52",
@@ -2441,26 +2461,6 @@
       "message": "23:25 LOGGER: run complete — 29 polls, 5 open, equity $0.00",
       "symbol": null,
       "action": "run complete — 29 polls, 5 open, equity $0.00"
-    },
-    {
-      "ts": "25 Nov 2026, 23:25 GMT",
-      "hhmm": "23:25",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "23:25 EXECUTOR: SELL trail 2.5% $BASKET",
-      "message": "23:25 EXECUTOR: SELL trail 2.5% $BASKET",
-      "symbol": null,
-      "action": "SELL trail 2.5% $BASKET"
-    },
-    {
-      "ts": "25 Nov 2026, 23:24 GMT",
-      "hhmm": "23:24",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "23:24 EXECUTOR: BUY 10% $JIMMY @ 0.000736805 — 5m +6.1% vol $5,955 buys 55/sells 29",
-      "message": "23:24 EXECUTOR: BUY 10% $JIMMY @ 0.000736805 — 5m +6.1% vol $5,955 buys 55/sells 29",
-      "symbol": null,
-      "action": "BUY 10% $JIMMY @ 0.000736805 — 5m +6.1% vol $5,955 buys 55/sells 29"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "56 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "40 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "56 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "40 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "5 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "5/6",
+      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "3/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2575,28 +2575,6 @@
   ],
   "positions": [
     {
-      "symbol": "Pompom",
-      "name": "Pompom",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.0001976835,
-      "current_price": 0.00019412264812484434,
-      "change_pct": null,
-      "price_source": "geckoterminal",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.018012893717258338,
-      "hard_stop": 0.00018779932499999997,
-      "trail_activate": 0.00020559084,
-      "opened_at": "25 Nov 2026, 23:46 GMT",
-      "reason": "BUY 10% $Pompom @ 0.000197683 — 5m +3.9% vol $5,020 buys 68/sells 34",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump?chain=sol"
-    },
-    {
       "symbol": "FIONA",
       "name": "FIONA",
       "asset_class": "crypto",
@@ -2604,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0020190449999999997,
-      "current_price": 0.002064,
+      "current_price": 0.002036,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.022265476995312117,
+      "unrealized_pct": 0.008397534477934121,
       "hard_stop": 0.0019180927499999995,
       "trail_activate": 0.0020998068,
       "opened_at": "25 Nov 2026, 23:47 GMT",
@@ -2626,11 +2604,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.00028250549999999996,
-      "current_price": 0.0002758,
+      "current_price": 0.00028,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.023735821072510044,
+      "unrealized_pct": -0.008868853880720895,
       "hard_stop": 0.00026838022499999994,
       "trail_activate": 0.00029380571999999995,
       "opened_at": "25 Nov 2026, 23:51 GMT",
@@ -2641,28 +2619,6 @@
       "link": "https://axiom.trade/meme/BQTG5qcyt3YpU1nJ37RAsTwd4fJa3cZXKAp9WjMETQu6?chain=sol"
     },
     {
-      "symbol": "BASKET",
-      "name": "BASKET",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.000841348832177863,
-      "current_price": 0.0008686422466378609,
-      "change_pct": null,
-      "price_source": "geckoterminal",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.03244006934596677,
-      "hard_stop": 0.0007992813905689698,
-      "trail_activate": 0.0008750027854649775,
-      "opened_at": "25 Nov 2026, 23:52 GMT",
-      "reason": "BUY 10% $BASKET @ 0.000841349 — 5m +3.6% vol $5,181 buys 35/sells 29",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f?chain=sol"
-    },
-    {
       "symbol": "NORFEATH",
       "name": "NORFEATH",
       "asset_class": "crypto",
@@ -2670,11 +2626,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0005493329999999999,
-      "current_price": 0.0005675,
+      "current_price": 0.0005833,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.033071015212994714,
+      "unrealized_pct": 0.06183316858808796,
       "hard_stop": 0.00052186635,
       "trail_activate": 0.00057130632,
       "opened_at": "25 Nov 2026, 23:52 GMT",
@@ -2686,6 +2642,46 @@
     }
   ],
   "fills": [
+    {
+      "id": "f24683",
+      "time": "25 Nov 2026, 23:54 GMT",
+      "ts": "2026-11-25T23:54:45.414156+00:00",
+      "side": "sell",
+      "symbol": "BASKET",
+      "name": "BASKET",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0008510235000000001,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f24682",
+      "time": "25 Nov 2026, 23:54 GMT",
+      "ts": "2026-11-25T23:54:45.414065+00:00",
+      "side": "sell",
+      "symbol": "Pompom",
+      "name": "Pompom",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0001859655,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f24681",
       "time": "25 Nov 2026, 23:52 GMT",
@@ -496308,11 +496304,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 12338,
-    "win_rate": 0.7215107797049765,
+    "closed_trades": 12340,
+    "win_rate": 0.7215559157212318,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 24681
+    "fills": 24683
   },
   "ok": true,
   "totals_cumulative": {
@@ -496452,37 +496448,23 @@
   },
   "ticker": [
     {
-      "symbol": "Pompom",
-      "name": "Pompom",
-      "price": 0.00019412264812484434,
-      "change_pct": null,
-      "source": "geckoterminal"
-    },
-    {
       "symbol": "FIONA",
       "name": "FIONA",
-      "price": 0.002064,
+      "price": 0.002036,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
       "symbol": "PVE",
       "name": "PVE",
-      "price": 0.0002758,
+      "price": 0.00028,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
-      "symbol": "BASKET",
-      "name": "BASKET",
-      "price": 0.0008686422466378609,
-      "change_pct": null,
-      "source": "geckoterminal"
-    },
-    {
       "symbol": "NORFEATH",
       "name": "NORFEATH",
-      "price": 0.0005675,
+      "price": 0.0005833,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -496534,8 +496516,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 69.7,
-      "return_pct": -0.30299035,
+      "equity": 69.69,
+      "return_pct": -0.30310736000000005,
       "closed_trades": 693,
       "win_rate": 0.33044733044733043,
       "realized_pnl": -30.46
@@ -496554,8 +496536,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 12338,
-      "win_rate": 0.7215107797049765,
+      "closed_trades": 12340,
+      "win_rate": 0.7215559157212318,
       "realized_pnl": -100.0
     }
   ],
@@ -496569,64 +496551,64 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "4CHAN",
-      "mint": "DVdWuNK8ncn79B6z8nCiwcNAiwyFcmBPfChgxJGTpump",
-      "link": "https://axiom.trade/meme/DVdWuNK8ncn79B6z8nCiwcNAiwyFcmBPfChgxJGTpump?chain=sol",
-      "reason": "5m volume $1,313 under $5k",
+      "symbol": "AMD",
+      "mint": "2ndz2hhsxDFgU1sQHi8Qjro7KRrTPgen1NJdUtNDpump",
+      "link": "https://axiom.trade/meme/2ndz2hhsxDFgU1sQHi8Qjro7KRrTPgen1NJdUtNDpump?chain=sol",
+      "reason": "5m +80.4% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 7.681,
-      "vol_m5": 1313.0,
-      "score": 5.38
+      "chg_m5": 80.36,
+      "vol_m5": 90266.0,
+      "score": 422.65
     },
     {
-      "symbol": "three",
-      "mint": "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
-      "link": "https://axiom.trade/meme/FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump?chain=sol",
-      "reason": "5m volume $259 under $5k",
+      "symbol": "BASKET",
+      "mint": "3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f",
+      "link": "https://axiom.trade/meme/3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f?chain=sol",
+      "reason": "buy/sell 80/77 under 1.05",
       "gates": 1,
-      "chg_m5": 1.39,
-      "vol_m5": 259.0,
-      "score": 4.78
+      "chg_m5": 3.31,
+      "vol_m5": 10396.0,
+      "score": 5.79
+    },
+    {
+      "symbol": "Copyinu",
+      "mint": "GRXSoGBqmTkS78Rrvm8QyBJH9XMe8562eZojzHj2pump",
+      "link": "https://axiom.trade/meme/GRXSoGBqmTkS78Rrvm8QyBJH9XMe8562eZojzHj2pump?chain=sol",
+      "reason": "liquidity $16,678 under $25k · market cap $43,218 outside $100k–$100M",
+      "gates": 2,
+      "chg_m5": 3.9,
+      "vol_m5": 11502.0,
+      "score": 8.24
     },
     {
       "symbol": "BRUH",
       "mint": "PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump",
       "link": "https://axiom.trade/meme/PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump?chain=sol",
-      "reason": "5m volume $1,457 under $5k",
-      "gates": 1,
-      "chg_m5": 2.02,
-      "vol_m5": 1457.0,
-      "score": 3.42
-    },
-    {
-      "symbol": "AMD",
-      "mint": "2ndz2hhsxDFgU1sQHi8Qjro7KRrTPgen1NJdUtNDpump",
-      "link": "https://axiom.trade/meme/2ndz2hhsxDFgU1sQHi8Qjro7KRrTPgen1NJdUtNDpump?chain=sol",
-      "reason": "5m -4.2% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -4.23,
-      "vol_m5": 113656.0,
-      "score": -32.45
-    },
-    {
-      "symbol": "PUMP",
-      "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
-      "link": "https://axiom.trade/meme/pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn?chain=sol",
-      "reason": "market cap $910,371,604 outside $100k–$100M · 5m +0.6% outside +1% to +40%",
+      "reason": "5m volume $1,419 under $5k · buy/sell 5/6 under 1.05",
       "gates": 2,
-      "chg_m5": 0.556,
-      "vol_m5": 23930.0,
-      "score": 2.48
+      "chg_m5": 1.92,
+      "vol_m5": 1419.0,
+      "score": 1.8
     },
     {
-      "symbol": "CATE",
-      "mint": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
-      "link": "https://axiom.trade/meme/Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump?chain=sol",
-      "reason": "5m volume $626 under $5k · 5m +0.3% outside +1% to +40%",
+      "symbol": "Pompom",
+      "mint": "5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump",
+      "link": "https://axiom.trade/meme/5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump?chain=sol",
+      "reason": "5m volume $1,994 under $5k · 5m -1.0% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 0.313,
-      "vol_m5": 626.0,
-      "score": 0.43
+      "chg_m5": -0.97,
+      "vol_m5": 1994.0,
+      "score": -0.47
+    },
+    {
+      "symbol": "three",
+      "mint": "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
+      "link": "https://axiom.trade/meme/FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump?chain=sol",
+      "reason": "5m volume $61 under $5k · 5m -1.8% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -1.77,
+      "vol_m5": 61.0,
+      "score": -1.45
     }
   ],
   "helius_status": "",
@@ -496634,7 +496616,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-25T23:54:05.335730+00:00",
+  "checked_at": "2026-11-25T23:54:45.414519+00:00",
   "checked_at_london": "25 Nov 2026, 23:54 GMT",
   "who_we_copy": null
 }
