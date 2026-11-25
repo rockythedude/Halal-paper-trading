@@ -182809,15 +182809,24 @@
       "closed_at": "2026-11-25T21:06:12.575180+00:00",
       "closed_at_london": "25 Nov 2026, 21:06 GMT",
       "opened_at": "2026-11-25T21:03:32.623419+00:00"
+    },
+    {
+      "symbol": "Pompom",
+      "name": "Pompom",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.0003388898298164511,
+      "exit_price": 0.0002980025,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL stop \u22125% $Pompom",
+      "closed_at": "2026-11-25T21:06:36.571953+00:00",
+      "closed_at_london": "25 Nov 2026, 21:06 GMT",
+      "opened_at": "2026-11-25T21:06:20.614466+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-25T10:57:43.520900+00:00",
-      "label": "25 Nov 2026, 10:57 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-25T10:58:23.529146+00:00",
       "label": "25 Nov 2026, 10:58 GMT",
@@ -185817,33 +185826,15 @@
       "label": "25 Nov 2026, 21:06 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-25T21:06:52.580717+00:00",
+      "label": "25 Nov 2026, 21:06 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-25T04:29:39.770844+00:00",
-      "london": "25 Nov 2026, 4:29 GMT",
-      "hhmm": "04:29",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $YUMA @ 0.000141705 \u2014 5m +35.0% vol $13,447 buys 129/sells 71",
-      "symbol": null,
-      "reason": "BUY 10% $YUMA @ 0.000141705 \u2014 5m +35.0% vol $13,447 buys 129/sells 71",
-      "line": "04:29 EXECUTOR: BUY 10% $YUMA @ 0.000141705 \u2014 5m +35.0% vol $13,447 buys 129/sells 71",
-      "tag": "EXECUTOR",
-      "message": "04:29 EXECUTOR: BUY 10% $YUMA @ 0.000141705 \u2014 5m +35.0% vol $13,447 buys 129/sells 71"
-    },
-    {
-      "ts": "2026-11-25T04:30:11.798421+00:00",
-      "london": "25 Nov 2026, 4:30 GMT",
-      "hhmm": "04:30",
-      "agent": "RISK",
-      "action": "SELL stop \u22125% $YUMA",
-      "symbol": null,
-      "reason": "SELL stop \u22125% $YUMA",
-      "line": "04:30 RISK: SELL stop \u22125% $YUMA",
-      "tag": "RISK",
-      "message": "04:30 RISK: SELL stop \u22125% $YUMA"
-    },
     {
       "ts": "2026-11-25T04:30:43.769537+00:00",
       "london": "25 Nov 2026, 4:30 GMT",
@@ -190619,6 +190610,30 @@
       "line": "21:06 RISK: SELL stop \u22125% $Pompom",
       "tag": "RISK",
       "message": "21:06 RISK: SELL stop \u22125% $Pompom"
+    },
+    {
+      "ts": "2026-11-25T21:06:20.614512+00:00",
+      "london": "25 Nov 2026, 21:06 GMT",
+      "hhmm": "21:06",
+      "agent": "EXECUTOR",
+      "action": "BUY 10% $Pompom @ 0.00033889 \u2014 5m +5.8% vol $13,420 buys 176/sells 128",
+      "symbol": null,
+      "reason": "BUY 10% $Pompom @ 0.00033889 \u2014 5m +5.8% vol $13,420 buys 176/sells 128",
+      "line": "21:06 EXECUTOR: BUY 10% $Pompom @ 0.00033889 \u2014 5m +5.8% vol $13,420 buys 176/sells 128",
+      "tag": "EXECUTOR",
+      "message": "21:06 EXECUTOR: BUY 10% $Pompom @ 0.00033889 \u2014 5m +5.8% vol $13,420 buys 176/sells 128"
+    },
+    {
+      "ts": "2026-11-25T21:06:36.572004+00:00",
+      "london": "25 Nov 2026, 21:06 GMT",
+      "hhmm": "21:06",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $Pompom",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $Pompom",
+      "line": "21:06 RISK: SELL stop \u22125% $Pompom",
+      "tag": "RISK",
+      "message": "21:06 RISK: SELL stop \u22125% $Pompom"
     }
   ],
   "agents": {
@@ -190627,8 +190642,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal unreachable",
-      "badge": "40 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 20 pools",
+      "badge": "57 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -190643,7 +190658,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "40 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "57 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -190720,7 +190735,7 @@
     }
   },
   "ticks": 102602,
-  "last_updated": "2026-11-25T21:06:12.575500+00:00",
+  "last_updated": "2026-11-25T21:06:52.580612+00:00",
   "last_updated_london": "25 Nov 2026, 21:06 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -531983,73 +531998,101 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f24374"
+    },
+    {
+      "ts": "2026-11-25T21:06:20.614466+00:00",
+      "london": "25 Nov 2026, 21:06 GMT",
+      "side": "buy",
+      "symbol": "Pompom",
+      "name": "Pompom",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.0003388898298164511,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "id": "f24375"
+    },
+    {
+      "ts": "2026-11-25T21:06:36.571953+00:00",
+      "london": "25 Nov 2026, 21:06 GMT",
+      "side": "sell",
+      "symbol": "Pompom",
+      "name": "Pompom",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.0002980025,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f24376"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-25T21:06:12.575500+00:00",
+  "checked_at": "2026-11-25T21:06:52.580612+00:00",
   "checked_at_london": "25 Nov 2026, 21:06 GMT",
   "near_misses": [
     {
       "symbol": "Pnut",
       "mint": "9bgy4dVrPqa7HozGvBRV5Qy1ccbDdYHHMyzKrJjqpump",
       "link": "https://axiom.trade/meme/9bgy4dVrPqa7HozGvBRV5Qy1ccbDdYHHMyzKrJjqpump?chain=sol",
-      "reason": "5m +61.7% outside +1% to +40%",
+      "reason": "5m +110.0% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 61.69,
-      "vol_m5": 121057.0,
-      "score": 121.81
+      "chg_m5": 110.0,
+      "vol_m5": 127019.0,
+      "score": 221.71
     },
     {
-      "symbol": "HOGE",
-      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
-      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
-      "reason": "5m volume $139 under $5k",
+      "symbol": "ANSEM",
+      "mint": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+      "link": "https://axiom.trade/meme/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump?chain=sol",
+      "reason": "5m volume $3,140 under $5k",
       "gates": 1,
-      "chg_m5": 2.3,
-      "vol_m5": 139.0,
-      "score": 0.86
+      "chg_m5": 1.558,
+      "vol_m5": 3140.0,
+      "score": 2.17
     },
     {
       "symbol": "Pompom",
       "mint": "5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump",
       "link": "https://axiom.trade/meme/5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump?chain=sol",
-      "reason": "5m -0.4% outside +1% to +40%",
+      "reason": "5m -12.8% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -0.43,
-      "vol_m5": 11943.0,
-      "score": -0.67
+      "chg_m5": -12.837,
+      "vol_m5": 13271.0,
+      "score": -41.04
     },
     {
       "symbol": "UBI",
       "mint": "hCM8Mga76sK983j3Gvui427SakSGYnG1tDi4Tsipump",
       "link": "https://axiom.trade/meme/hCM8Mga76sK983j3Gvui427SakSGYnG1tDi4Tsipump?chain=sol",
-      "reason": "liquidity $17,650 under $25k \u00b7 market cap $46,551 outside $100k\u2013$100M",
+      "reason": "liquidity $17,409 under $25k \u00b7 market cap $45,393 outside $100k\u2013$100M",
       "gates": 2,
-      "chg_m5": 9.88,
-      "vol_m5": 14556.0,
-      "score": 13.32
+      "chg_m5": 3.14,
+      "vol_m5": 12216.0,
+      "score": 3.22
     },
     {
-      "symbol": "Santa",
-      "mint": "CcpN5RXTEjbRqbtuHoxyiMZorzsghbfpeyYQjSvTgS27",
-      "link": "https://axiom.trade/meme/CcpN5RXTEjbRqbtuHoxyiMZorzsghbfpeyYQjSvTgS27?chain=sol",
-      "reason": "5m volume $2,047 under $5k \u00b7 buy/sell 12/14 under 1.05",
+      "symbol": "BRUH",
+      "mint": "PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump",
+      "link": "https://axiom.trade/meme/PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump?chain=sol",
+      "reason": "5m volume $707 under $5k \u00b7 5m +0.6% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 1.07,
-      "vol_m5": 2047.0,
-      "score": 0.83
+      "chg_m5": 0.64,
+      "vol_m5": 707.0,
+      "score": 1.18
     },
     {
-      "symbol": "CBUCKS",
-      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
-      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
-      "reason": "5m volume $136 under $5k \u00b7 buy/sell 2/5 under 1.05",
+      "symbol": "VINE",
+      "mint": "6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump",
+      "link": "https://axiom.trade/meme/6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump?chain=sol",
+      "reason": "5m volume $754 under $5k \u00b7 5m +0.5% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 1.48,
-      "vol_m5": 136.0,
-      "score": 0.15
+      "chg_m5": 0.513,
+      "vol_m5": 754.0,
+      "score": 0.26
     }
   ]
 }
