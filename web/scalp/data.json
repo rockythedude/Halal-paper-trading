@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 102515,
-  "open_count": 1,
+  "ticks": 102544,
+  "open_count": 2,
   "last_updated_london": "25 Nov 2026, 20:52 GMT",
-  "last_updated": "2026-11-25T20:52:08.525931+00:00",
+  "last_updated": "2026-11-25T20:52:32.440702+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 12173,
+  "traded": 12177,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 12173,
+    "traded": 12177,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "25 Nov 2026, 10:43 GMT",
-      "value": 0.0
-    },
     {
       "label": "25 Nov 2026, 10:44 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "25 Nov 2026, 20:52 GMT",
       "value": 0.0
+    },
+    {
+      "label": "25 Nov 2026, 20:52 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "25 Nov 2026, 20:52 GMT",
+      "hhmm": "20:52",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "20:52 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "message": "20:52 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 2 open, equity $0.00"
+    },
+    {
+      "ts": "25 Nov 2026, 20:52 GMT",
+      "hhmm": "20:52",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "20:52 EXECUTOR: BUY 10% $POMBAO @ 0.000143413 — 5m +8.8% vol $18,088 buys 300/sells 48",
+      "message": "20:52 EXECUTOR: BUY 10% $POMBAO @ 0.000143413 — 5m +8.8% vol $18,088 buys 300/sells 48",
+      "symbol": null,
+      "action": "BUY 10% $POMBAO @ 0.000143413 — 5m +8.8% vol $18,088 buys 300/sells 48"
+    },
     {
       "ts": "25 Nov 2026, 20:50 GMT",
       "hhmm": "20:50",
@@ -2441,26 +2461,6 @@
       "message": "20:30 EXECUTOR: SELL trail 2.5% $Pompom",
       "symbol": null,
       "action": "SELL trail 2.5% $Pompom"
-    },
-    {
-      "ts": "25 Nov 2026, 20:30 GMT",
-      "hhmm": "20:30",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "20:30 RISK: SELL time stop 20m $JIMMY",
-      "message": "20:30 RISK: SELL time stop 20m $JIMMY",
-      "symbol": null,
-      "action": "SELL time stop 20m $JIMMY"
-    },
-    {
-      "ts": "25 Nov 2026, 20:30 GMT",
-      "hhmm": "20:30",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "20:30 RISK: SELL time stop 20m $ANSEM",
-      "message": "20:30 RISK: SELL time stop 20m $ANSEM",
-      "symbol": null,
-      "action": "SELL time stop 20m $ANSEM"
     }
   ],
   "agents": [
@@ -2471,7 +2471,7 @@
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
       "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "61 pairs",
+      "badge": "57 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "61 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "57 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "1/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.009479600699296724,
-      "current_price": 0.009391,
+      "current_price": 0.00941921930779644,
       "change_pct": null,
-      "price_source": "dexscreener",
+      "price_source": "geckoterminal",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.009346459002571361,
+      "unrealized_pct": -0.006369613385167505,
       "hard_stop": 0.009005620664331887,
       "trail_activate": 0.009858784727268593,
       "opened_at": "25 Nov 2026, 20:35 GMT",
@@ -2595,9 +2595,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump?chain=sol"
+    },
+    {
+      "symbol": "POMBAO",
+      "name": "POMBAO",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.00014341349999999998,
+      "current_price": 0.0001427,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.00013624282499999997,
+      "trail_activate": 0.00014915004,
+      "opened_at": "25 Nov 2026, 20:52 GMT",
+      "reason": "BUY 10% $POMBAO @ 0.000143413 — 5m +8.8% vol $18,088 buys 300/sells 48",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/AGyQW6inE99G3Js63ooQWzAeEeBRu8718zjiSKPBpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f24352",
+      "time": "25 Nov 2026, 20:52 GMT",
+      "ts": "2026-11-25T20:52:16.508016+00:00",
+      "side": "buy",
+      "symbol": "POMBAO",
+      "name": "POMBAO",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00014341349999999998,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f24351",
       "time": "25 Nov 2026, 20:50 GMT",
@@ -489624,13 +489666,13 @@
     "win_rate": 0.717782340862423,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 24351
+    "fills": 24352
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 102515,
+    "scanned": 102544,
     "killed": 0,
-    "traded": 12173
+    "traded": 12177
   },
   "events": [
     {
@@ -489766,7 +489808,14 @@
     {
       "symbol": "VINE",
       "name": "VINE",
-      "price": 0.009391,
+      "price": 0.00941921930779644,
+      "change_pct": null,
+      "source": "geckoterminal"
+    },
+    {
+      "symbol": "POMBAO",
+      "name": "POMBAO",
+      "price": 0.0001427,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -489873,44 +489922,44 @@
       "score": 9.85
     },
     {
-      "symbol": "Pompom",
-      "mint": "5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump",
-      "link": "https://axiom.trade/meme/5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump?chain=sol",
-      "reason": "5m -4.6% outside +1% to +40%",
+      "symbol": "4CHAN",
+      "mint": "DVdWuNK8ncn79B6z8nCiwcNAiwyFcmBPfChgxJGTpump",
+      "link": "https://axiom.trade/meme/DVdWuNK8ncn79B6z8nCiwcNAiwyFcmBPfChgxJGTpump?chain=sol",
+      "reason": "5m volume $4,691 under $5k",
       "gates": 1,
-      "chg_m5": -4.59,
-      "vol_m5": 6955.0,
-      "score": -5.54
+      "chg_m5": 3.396,
+      "vol_m5": 4691.0,
+      "score": 6.55
     },
     {
-      "symbol": "Pompompurin",
-      "mint": "H2iscCQ4RiZ5ufu3UTBS2VDrVqbNY8gN7eVSSASBpump",
-      "link": "https://axiom.trade/meme/H2iscCQ4RiZ5ufu3UTBS2VDrVqbNY8gN7eVSSASBpump?chain=sol",
-      "reason": "5m -49.6% outside +1% to +40%",
+      "symbol": "BASKET",
+      "mint": "3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f",
+      "link": "https://axiom.trade/meme/3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f?chain=sol",
+      "reason": "5m -6.3% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -49.59,
-      "vol_m5": 22438.0,
-      "score": -62.62
+      "chg_m5": -6.301,
+      "vol_m5": 7372.0,
+      "score": -13.16
+    },
+    {
+      "symbol": "JIMMY",
+      "mint": "38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump",
+      "link": "https://axiom.trade/meme/38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump?chain=sol",
+      "reason": "5m -19.5% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -19.486,
+      "vol_m5": 53986.0,
+      "score": -143.38
     },
     {
       "symbol": "Pnut",
       "mint": "9bgy4dVrPqa7HozGvBRV5Qy1ccbDdYHHMyzKrJjqpump",
       "link": "https://axiom.trade/meme/9bgy4dVrPqa7HozGvBRV5Qy1ccbDdYHHMyzKrJjqpump?chain=sol",
-      "reason": "age 9m under 10m · 5m +123.0% outside +1% to +40%",
+      "reason": "age 10m under 10m · 5m +148.0% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 123.0,
-      "vol_m5": 212768.0,
-      "score": 437.39
-    },
-    {
-      "symbol": "DESSA",
-      "mint": "npz2FhoufQ7pKqhGpaipYWacrAkidyW2yDpVWSvpump",
-      "link": "https://axiom.trade/meme/npz2FhoufQ7pKqhGpaipYWacrAkidyW2yDpVWSvpump?chain=sol",
-      "reason": "5m volume $345 under $5k · buy/sell 5/14 under 1.05",
-      "gates": 2,
-      "chg_m5": 1.64,
-      "vol_m5": 345.0,
-      "score": 0.67
+      "chg_m5": 148.0,
+      "vol_m5": 248246.0,
+      "score": 515.94
     }
   ],
   "helius_status": "",
@@ -489918,7 +489967,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-25T20:52:08.525931+00:00",
+  "checked_at": "2026-11-25T20:52:32.440702+00:00",
   "checked_at_london": "25 Nov 2026, 20:52 GMT",
   "who_we_copy": null
 }
