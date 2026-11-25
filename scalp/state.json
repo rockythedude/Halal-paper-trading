@@ -31,34 +31,6 @@
       "market_value": 0.0,
       "unrealized_pnl": 0.0,
       "unrealized_pct": -0.032644504201820856
-    },
-    {
-      "symbol": "GROKIA",
-      "name": "GROKIA",
-      "mint": "3cL47ohWa2HApLYKtqPsqkjaxJ6HLvT5Ri1KvWdXpump",
-      "pair": "CpfB8pTVj8Uzu55nKj6sX4KmV6zVe7J2t3C22mLgCVGg",
-      "link": "https://axiom.trade/meme/3cL47ohWa2HApLYKtqPsqkjaxJ6HLvT5Ri1KvWdXpump?chain=sol",
-      "dex_url": "https://www.geckoterminal.com/solana/pools/CpfB8pTVj8Uzu55nKj6sX4KmV6zVe7J2t3C22mLgCVGg",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.002587429995043898,
-      "raw_price": 0.0025745572089989036,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-25T00:04:18.269003+00:00",
-      "opened_at_london": "25 Nov 2026, 0:04 GMT",
-      "high_water": 0.00267,
-      "trail_armed": false,
-      "last_price": 0.002502126638368614,
-      "last_source": "geckoterminal",
-      "reason": "BUY 10% $GROKIA @ 0.00258743 \u2014 5m +8.5% vol $9,315 buys 294/sells 204",
-      "hard_stop": 0.002458058495291703,
-      "take_profit": 0.00279442439464741,
-      "trail_activate": 0.002690927194845654,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.03296837280184528
     }
   ],
   "closed_trades": [
@@ -176881,15 +176853,24 @@
       "closed_at": "2026-11-25T00:11:54.502212+00:00",
       "closed_at_london": "25 Nov 2026, 0:11 GMT",
       "opened_at": "2026-11-25T00:10:23.398791+00:00"
+    },
+    {
+      "symbol": "GROKIA",
+      "name": "GROKIA",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.002587429995043898,
+      "exit_price": 0.00234621,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL stop \u22125% $GROKIA",
+      "closed_at": "2026-11-25T00:13:46.366989+00:00",
+      "closed_at_london": "25 Nov 2026, 0:13 GMT",
+      "opened_at": "2026-11-25T00:04:18.269003+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-24T18:20:18.430400+00:00",
-      "label": "24 Nov 2026, 18:20 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-24T18:21:44.134847+00:00",
       "label": "24 Nov 2026, 18:21 GMT",
@@ -179889,21 +179870,15 @@
       "label": "25 Nov 2026, 0:13 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-25T00:13:54.374990+00:00",
+      "label": "25 Nov 2026, 0:13 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-24T19:40:38.870753+00:00",
-      "london": "24 Nov 2026, 19:40 GMT",
-      "hhmm": "19:40",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $ANSEM @ 0.0219382 \u2014 5m +1.2% vol $7,210 buys 53/sells 23",
-      "symbol": null,
-      "reason": "BUY 10% $ANSEM @ 0.0219382 \u2014 5m +1.2% vol $7,210 buys 53/sells 23",
-      "line": "19:40 EXECUTOR: BUY 10% $ANSEM @ 0.0219382 \u2014 5m +1.2% vol $7,210 buys 53/sells 23",
-      "tag": "EXECUTOR",
-      "message": "19:40 EXECUTOR: BUY 10% $ANSEM @ 0.0219382 \u2014 5m +1.2% vol $7,210 buys 53/sells 23"
-    },
     {
       "ts": "2026-11-24T19:40:38.872712+00:00",
       "london": "24 Nov 2026, 19:40 GMT",
@@ -184691,6 +184666,18 @@
       "line": "00:11 RISK: SELL stop \u22125% $4CHAN",
       "tag": "RISK",
       "message": "00:11 RISK: SELL stop \u22125% $4CHAN"
+    },
+    {
+      "ts": "2026-11-25T00:13:46.367040+00:00",
+      "london": "25 Nov 2026, 0:13 GMT",
+      "hhmm": "00:13",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $GROKIA",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $GROKIA",
+      "line": "00:13 RISK: SELL stop \u22125% $GROKIA",
+      "tag": "RISK",
+      "message": "00:13 RISK: SELL stop \u22125% $GROKIA"
     }
   ],
   "agents": {
@@ -184763,8 +184750,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -184792,7 +184779,7 @@
     }
   },
   "ticks": 98745,
-  "last_updated": "2026-11-25T00:13:14.337087+00:00",
+  "last_updated": "2026-11-25T00:13:54.374903+00:00",
   "last_updated_london": "25 Nov 2026, 0:13 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -514911,12 +514898,26 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f23578"
+    },
+    {
+      "ts": "2026-11-25T00:13:46.366989+00:00",
+      "london": "25 Nov 2026, 0:13 GMT",
+      "side": "sell",
+      "symbol": "GROKIA",
+      "name": "GROKIA",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.00234621,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f23579"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-25T00:13:14.337087+00:00",
+  "checked_at": "2026-11-25T00:13:54.374903+00:00",
   "checked_at_london": "25 Nov 2026, 0:13 GMT",
   "near_misses": [
     {
@@ -514943,11 +514944,11 @@
       "symbol": "Jimmies",
       "mint": "GisWWjhwrSud4aFGSHvTMt85Ky14sY7LeBFCpfoFpump",
       "link": "https://axiom.trade/meme/GisWWjhwrSud4aFGSHvTMt85Ky14sY7LeBFCpfoFpump?chain=sol",
-      "reason": "5m volume $4,381 under $5k",
+      "reason": "5m volume $4,095 under $5k",
       "gates": 1,
-      "chg_m5": 5.59,
-      "vol_m5": 4381.0,
-      "score": 4.19
+      "chg_m5": 4.96,
+      "vol_m5": 4095.0,
+      "score": 3.72
     },
     {
       "symbol": "DCTY",
@@ -514973,11 +514974,11 @@
       "symbol": "DONJENSEN",
       "mint": "5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump",
       "link": "https://axiom.trade/meme/5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump?chain=sol",
-      "reason": "5m volume $2,228 under $5k",
+      "reason": "5m volume $874 under $5k",
       "gates": 1,
-      "chg_m5": 2.99,
-      "vol_m5": 2228.0,
-      "score": 1.87
+      "chg_m5": 1.304,
+      "vol_m5": 874.0,
+      "score": 0.98
     }
   ]
 }
