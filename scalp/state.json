@@ -3,7 +3,36 @@
   "target": 6000.0,
   "cash": 4.358534103767438e-07,
   "equity": 0.0,
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "CINU",
+      "name": "CINU",
+      "mint": "CvXQ9qEriGgTbMWyF8L1U7oqn9ev8A49N1dzNE8cpump",
+      "pair": "YAuaVEoVUE4y2KPFNQht11c5jgwoyYiDqaZeagVgyG4",
+      "link": "https://axiom.trade/meme/CvXQ9qEriGgTbMWyF8L1U7oqn9ev8A49N1dzNE8cpump?chain=sol",
+      "dex_url": "https://dexscreener.com/solana/yauaveovue4y2kpfnqht11c5jgwoyyidqazeagvgyg4",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "entry_price": 0.000136077,
+      "raw_price": 0.0001354,
+      "entry_fee": 0.0,
+      "cost_basis": 0.0,
+      "opened_at": "2026-11-26T23:42:49.857772+00:00",
+      "opened_at_london": "26 Nov 2026, 23:42 GMT",
+      "high_water": 0.0001418,
+      "trail_armed": true,
+      "last_price": 0.0001418,
+      "last_source": "dexscreener",
+      "reason": "BUY 10% $CINU @ 0.000136077 \u2014 5m +7.5% vol $5,629 buys 39/sells 37",
+      "hard_stop": 0.00012927314999999998,
+      "take_profit": 0.00014696316,
+      "trail_activate": 0.00014152008,
+      "market_value": 0.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": 0.04205707062912922
+    }
+  ],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -196583,12 +196612,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-26T17:54:51.834353+00:00",
-      "label": "26 Nov 2026, 17:54 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
-    {
       "ts": "2026-11-26T17:55:31.732203+00:00",
       "label": "26 Nov 2026, 17:55 GMT",
       "equity": 0.0,
@@ -199587,21 +199610,15 @@
       "label": "26 Nov 2026, 23:42 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-26T23:43:13.877129+00:00",
+      "label": "26 Nov 2026, 23:43 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-26T18:17:56.923409+00:00",
-      "london": "26 Nov 2026, 18:17 GMT",
-      "hhmm": "18:17",
-      "agent": "LOGGER",
-      "action": "run complete \u2014 29 polls, 1 open, equity $0.00",
-      "symbol": null,
-      "reason": "run complete \u2014 29 polls, 1 open, equity $0.00",
-      "line": "18:17 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00",
-      "tag": "LOGGER",
-      "message": "18:17 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00"
-    },
     {
       "ts": "2026-11-26T18:19:09.434431+00:00",
       "london": "26 Nov 2026, 18:19 GMT",
@@ -204389,6 +204406,18 @@
       "line": "23:41 RISK: SELL stop \u22125% $CINU",
       "tag": "RISK",
       "message": "23:41 RISK: SELL stop \u22125% $CINU"
+    },
+    {
+      "ts": "2026-11-26T23:42:49.857816+00:00",
+      "london": "26 Nov 2026, 23:42 GMT",
+      "hhmm": "23:42",
+      "agent": "EXECUTOR",
+      "action": "BUY 10% $CINU @ 0.000136077 \u2014 5m +7.5% vol $5,629 buys 39/sells 37",
+      "symbol": null,
+      "reason": "BUY 10% $CINU @ 0.000136077 \u2014 5m +7.5% vol $5,629 buys 39/sells 37",
+      "line": "23:42 EXECUTOR: BUY 10% $CINU @ 0.000136077 \u2014 5m +7.5% vol $5,629 buys 39/sells 37",
+      "tag": "EXECUTOR",
+      "message": "23:42 EXECUTOR: BUY 10% $CINU @ 0.000136077 \u2014 5m +7.5% vol $5,629 buys 39/sells 37"
     }
   ],
   "agents": {
@@ -204397,8 +204426,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal unreachable",
-      "badge": "40 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 20 pools",
+      "badge": "59 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -204413,7 +204442,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "40 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "59 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -204461,8 +204490,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "0/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -204490,8 +204519,8 @@
     }
   },
   "ticks": 112025,
-  "last_updated": "2026-11-26T23:42:33.852652+00:00",
-  "last_updated_london": "26 Nov 2026, 23:42 GMT",
+  "last_updated": "2026-11-26T23:43:13.877011+00:00",
+  "last_updated_london": "26 Nov 2026, 23:43 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -571457,53 +571486,87 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f26210"
+    },
+    {
+      "ts": "2026-11-26T23:42:49.857772+00:00",
+      "london": "26 Nov 2026, 23:42 GMT",
+      "side": "buy",
+      "symbol": "CINU",
+      "name": "CINU",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.000136077,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "id": "f26211"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-26T23:42:33.852652+00:00",
-  "checked_at_london": "26 Nov 2026, 23:42 GMT",
+  "checked_at": "2026-11-26T23:43:13.877011+00:00",
+  "checked_at_london": "26 Nov 2026, 23:43 GMT",
   "near_misses": [
     {
-      "symbol": "JIMMY",
-      "mint": "38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump",
-      "link": "https://axiom.trade/meme/38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump?chain=sol",
-      "reason": "buy/sell 47/69 under 1.05",
+      "symbol": "ROCKET",
+      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
+      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
+      "reason": "5m volume $48 under $5k",
       "gates": 1,
-      "chg_m5": 9.17,
-      "vol_m5": 7386.0,
-      "score": 12.5
+      "chg_m5": 2.44,
+      "vol_m5": 48.0,
+      "score": 0.82
     },
     {
-      "symbol": "CINU",
-      "mint": "CvXQ9qEriGgTbMWyF8L1U7oqn9ev8A49N1dzNE8cpump",
-      "link": "https://axiom.trade/meme/CvXQ9qEriGgTbMWyF8L1U7oqn9ev8A49N1dzNE8cpump?chain=sol",
-      "reason": "buy/sell 40/40 under 1.05",
+      "symbol": "Snowball",
+      "mint": "9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump",
+      "link": "https://axiom.trade/meme/9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump?chain=sol",
+      "reason": "5m volume $866 under $5k",
       "gates": 1,
-      "chg_m5": 1.93,
-      "vol_m5": 5937.0,
-      "score": 3.13
+      "chg_m5": 1.749,
+      "vol_m5": 866.0,
+      "score": 0.53
     },
     {
       "symbol": "COIN",
       "mint": "8n7mSQ8KUqP17AQii1bmWR1wdRhtKe5fDW7yiuLqpump",
       "link": "https://axiom.trade/meme/8n7mSQ8KUqP17AQii1bmWR1wdRhtKe5fDW7yiuLqpump?chain=sol",
-      "reason": "liquidity $13,116 under $25k \u00b7 market cap $37,309 outside $100k\u2013$100M",
+      "reason": "liquidity $12,823 under $25k \u00b7 market cap $35,778 outside $100k\u2013$100M",
       "gates": 2,
-      "chg_m5": 28.27,
-      "vol_m5": 6695.0,
-      "score": 10.38
+      "chg_m5": 23.01,
+      "vol_m5": 7035.0,
+      "score": 8.18
     },
     {
-      "symbol": "ROCKET",
-      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
-      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
-      "reason": "5m volume $46 under $5k \u00b7 5m -0.1% outside +1% to +40%",
+      "symbol": "PUMPCHAN",
+      "mint": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
+      "link": "https://axiom.trade/meme/Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump?chain=sol",
+      "reason": "5m volume $3,036 under $5k \u00b7 5m +0.8% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": -0.1,
-      "vol_m5": 46.0,
-      "score": -0.03
+      "chg_m5": 0.808,
+      "vol_m5": 3036.0,
+      "score": 3.23
+    },
+    {
+      "symbol": "JIMMY",
+      "mint": "38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump",
+      "link": "https://axiom.trade/meme/38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump?chain=sol",
+      "reason": "5m volume $3,201 under $5k \u00b7 buy/sell 12/32 under 1.05",
+      "gates": 2,
+      "chg_m5": 4.43,
+      "vol_m5": 3201.0,
+      "score": 1.56
+    },
+    {
+      "symbol": "CATE",
+      "mint": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
+      "link": "https://axiom.trade/meme/Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump?chain=sol",
+      "reason": "5m volume $1,085 under $5k \u00b7 5m +0.1% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.078,
+      "vol_m5": 1085.0,
+      "score": 0.03
     }
   ]
 }
