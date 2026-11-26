@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 106776,
+  "ticks": 106805,
   "open_count": 2,
   "last_updated_london": "26 Nov 2026, 8:54 GMT",
-  "last_updated": "2026-11-26T08:54:27.722020+00:00",
+  "last_updated": "2026-11-26T08:54:51.712767+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "26 Nov 2026, 3:03 GMT",
-      "value": 0.0
-    },
     {
       "label": "26 Nov 2026, 3:04 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "26 Nov 2026, 8:54 GMT",
       "value": 0.0
+    },
+    {
+      "label": "26 Nov 2026, 8:54 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "26 Nov 2026, 8:54 GMT",
+      "hhmm": "08:54",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "08:54 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "message": "08:54 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 2 open, equity $0.00"
+    },
     {
       "ts": "26 Nov 2026, 8:49 GMT",
       "hhmm": "08:49",
@@ -2451,16 +2461,6 @@
       "message": "08:15 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
       "symbol": null,
       "action": "run complete — 29 polls, 1 open, equity $0.00"
-    },
-    {
-      "ts": "26 Nov 2026, 8:15 GMT",
-      "hhmm": "08:15",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "08:15 EXECUTOR: BUY 10% $NORFEATH @ 0.000600689 — 5m +6.2% vol $34,948 buys 553/sells 356",
-      "message": "08:15 EXECUTOR: BUY 10% $NORFEATH @ 0.000600689 — 5m +6.2% vol $34,948 buys 553/sells 356",
-      "symbol": null,
-      "action": "BUY 10% $NORFEATH @ 0.000600689 — 5m +6.2% vol $34,948 buys 553/sells 356"
     }
   ],
   "agents": [
@@ -2604,11 +2604,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.005191829999999999,
-      "current_price": 0.00518,
+      "current_price": 0.005261,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.002278579999730135,
+      "unrealized_pct": 0.01332285533232036,
       "hard_stop": 0.004932238499999998,
       "trail_activate": 0.005399503199999999,
       "opened_at": "26 Nov 2026, 8:48 GMT",
@@ -508350,7 +508350,7 @@
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 106776,
+    "scanned": 106805,
     "killed": 0,
     "traded": 12644
   },
@@ -508495,7 +508495,7 @@
     {
       "symbol": "PUMPCHAN",
       "name": "PUMPCHAN",
-      "price": 0.00518,
+      "price": 0.005261,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -508592,6 +508592,16 @@
       "score": 4.14
     },
     {
+      "symbol": "NORFEATH",
+      "mint": "3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump",
+      "link": "https://axiom.trade/meme/3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump?chain=sol",
+      "reason": "5m volume $3,869 under $5k",
+      "gates": 1,
+      "chg_m5": 2.41,
+      "vol_m5": 3869.0,
+      "score": 1.57
+    },
+    {
       "symbol": "CBUCKS",
       "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
       "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
@@ -508602,24 +508612,14 @@
       "score": 1.19
     },
     {
-      "symbol": "NORFEATH",
-      "mint": "3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump",
-      "link": "https://axiom.trade/meme/3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump?chain=sol",
-      "reason": "5m volume $3,496 under $5k",
-      "gates": 1,
-      "chg_m5": 1.05,
-      "vol_m5": 3496.0,
-      "score": 0.65
-    },
-    {
       "symbol": "Grodia",
       "mint": "6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump",
       "link": "https://axiom.trade/meme/6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump?chain=sol",
-      "reason": "5m -18.7% outside +1% to +40%",
+      "reason": "5m -17.5% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -18.71,
-      "vol_m5": 8141.0,
-      "score": -31.39
+      "chg_m5": -17.48,
+      "vol_m5": 8491.0,
+      "score": -30.11
     },
     {
       "symbol": "BLOCKSIDE",
@@ -508647,7 +508647,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-26T08:54:27.722020+00:00",
+  "checked_at": "2026-11-26T08:54:51.712767+00:00",
   "checked_at_london": "26 Nov 2026, 8:54 GMT",
   "who_we_copy": null
 }
