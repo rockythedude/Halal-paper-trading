@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.7354481059439483,
-  "wins": 9552,
+  "win_rate": 0.7354888375673595,
+  "wins": 9554,
   "losses": 3436,
-  "closed_trades": 12988,
+  "closed_trades": 12990,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 110749,
-  "open_count": 1,
+  "open_count": 0,
   "last_updated_london": "26 Nov 2026, 20:07 GMT",
-  "last_updated": "2026-11-26T20:07:02.931935+00:00",
+  "last_updated": "2026-11-26T20:07:42.957465+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "26 Nov 2026, 14:15 GMT",
-      "value": 0.0
-    },
     {
       "label": "26 Nov 2026, 14:15 GMT",
       "value": 0.0
@@ -2058,10 +2054,44 @@
     {
       "label": "26 Nov 2026, 20:07 GMT",
       "value": 0.0
+    },
+    {
+      "label": "26 Nov 2026, 20:07 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "26 Nov 2026, 20:07 GMT",
+      "hhmm": "20:07",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "20:07 RISK: SELL stop −5% $Dogeball",
+      "message": "20:07 RISK: SELL stop −5% $Dogeball",
+      "symbol": null,
+      "action": "SELL stop −5% $Dogeball"
+    },
+    {
+      "ts": "26 Nov 2026, 20:07 GMT",
+      "hhmm": "20:07",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "20:07 EXECUTOR: BUY 10% $Dogeball @ 0.000837466 — 5m +13.1% vol $86,514 buys 1159/sells 549",
+      "message": "20:07 EXECUTOR: BUY 10% $Dogeball @ 0.000837466 — 5m +13.1% vol $86,514 buys 1159/sells 549",
+      "symbol": null,
+      "action": "BUY 10% $Dogeball @ 0.000837466 — 5m +13.1% vol $86,514 buys 1159/sells 549"
+    },
+    {
+      "ts": "26 Nov 2026, 20:07 GMT",
+      "hhmm": "20:07",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "20:07 EXECUTOR: SELL take profit +8% $Dogeball",
+      "message": "20:07 EXECUTOR: SELL take profit +8% $Dogeball",
+      "symbol": null,
+      "action": "SELL take profit +8% $Dogeball"
+    },
     {
       "ts": "26 Nov 2026, 20:06 GMT",
       "hhmm": "20:06",
@@ -2431,36 +2461,6 @@
       "message": "19:43 EXECUTOR: BUY 10% $George @ 0.000585412 — 5m +38.4% vol $90,262 buys 1610/sells 505",
       "symbol": null,
       "action": "BUY 10% $George @ 0.000585412 — 5m +38.4% vol $90,262 buys 1610/sells 505"
-    },
-    {
-      "ts": "26 Nov 2026, 19:41 GMT",
-      "hhmm": "19:41",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "19:41 EXECUTOR: SELL take profit +8% $1T",
-      "message": "19:41 EXECUTOR: SELL take profit +8% $1T",
-      "symbol": null,
-      "action": "SELL take profit +8% $1T"
-    },
-    {
-      "ts": "26 Nov 2026, 19:40 GMT",
-      "hhmm": "19:40",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "19:40 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
-      "message": "19:40 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 2 open, equity $0.00"
-    },
-    {
-      "ts": "26 Nov 2026, 19:39 GMT",
-      "hhmm": "19:39",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "19:39 EXECUTOR: BUY 10% $mihao @ 0.0065442 — 5m +10.9% vol $20,110 buys 95/sells 90",
-      "message": "19:39 EXECUTOR: BUY 10% $mihao @ 0.0065442 — 5m +10.9% vol $20,110 buys 95/sells 90",
-      "symbol": null,
-      "action": "BUY 10% $mihao @ 0.0065442 — 5m +10.9% vol $20,110 buys 95/sells 90"
     }
   ],
   "agents": [
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "1/6",
+      "activity": "0 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "0/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2573,31 +2573,68 @@
       "open_positions": 0
     }
   ],
-  "positions": [
+  "positions": [],
+  "fills": [
     {
+      "id": "f25980",
+      "time": "26 Nov 2026, 20:07 GMT",
+      "ts": "2026-11-26T20:07:42.956920+00:00",
+      "side": "sell",
       "symbol": "Dogeball",
       "name": "Dogeball",
       "asset_class": "crypto",
-      "agent": "MIRAX",
       "qty": 0.0,
       "qty_display": "0",
-      "entry_price": 0.0007168665,
-      "current_price": 0.0007133,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.004975124378109319,
-      "hard_stop": 0.000681023175,
-      "trail_activate": 0.00074554116,
-      "opened_at": "26 Nov 2026, 20:06 GMT",
-      "reason": "BUY 10% $Dogeball @ 0.000716866 — 5m +21.1% vol $90,477 buys 1209/sells 563",
-      "score": null,
+      "price": 0.0006238649999999999,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
       "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/EMhHvdxs3L1T38pV1yNe9JXF6KfkxFTShNLaxL7rpump?chain=sol"
-    }
-  ],
-  "fills": [
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f25979",
+      "time": "26 Nov 2026, 20:07 GMT",
+      "ts": "2026-11-26T20:07:10.924940+00:00",
+      "side": "buy",
+      "symbol": "Dogeball",
+      "name": "Dogeball",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0008374665,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f25978",
+      "time": "26 Nov 2026, 20:07 GMT",
+      "ts": "2026-11-26T20:07:10.924539+00:00",
+      "side": "sell",
+      "symbol": "Dogeball",
+      "name": "Dogeball",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0008291335000000001,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f25977",
       "time": "26 Nov 2026, 20:06 GMT",
@@ -522140,11 +522177,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 12988,
-    "win_rate": 0.7354481059439483,
+    "closed_trades": 12990,
+    "win_rate": 0.7354888375673595,
     "realized_pnl": -100.0,
-    "unrealized_pnl": 0.0,
-    "fills": 25977
+    "unrealized_pnl": 0,
+    "fills": 25980
   },
   "ok": true,
   "totals_cumulative": {
@@ -522153,16 +522190,6 @@
     "traded": 12988
   },
   "events": [
-    {
-      "hhmm": "18:24",
-      "ts": "2026-11-26T18:24:42.369220+00:00",
-      "london": "26 Nov 2026, 18:24 GMT",
-      "agent": "EXECUTOR",
-      "action": "SELL take profit +8% $JANTA",
-      "symbol": "",
-      "reason": "SELL take profit +8% $JANTA",
-      "line": "18:24 EXECUTOR: SELL take profit +8% $JANTA"
-    },
     {
       "hhmm": "18:27",
       "ts": "2026-11-26T18:27:22.441126+00:00",
@@ -522272,6 +522299,16 @@
       "symbol": "",
       "reason": "SELL take profit +8% $George",
       "line": "20:04 EXECUTOR: SELL take profit +8% $George"
+    },
+    {
+      "hhmm": "20:07",
+      "ts": "2026-11-26T20:07:10.924604+00:00",
+      "london": "26 Nov 2026, 20:07 GMT",
+      "agent": "EXECUTOR",
+      "action": "SELL take profit +8% $Dogeball",
+      "symbol": "",
+      "reason": "SELL take profit +8% $Dogeball",
+      "line": "20:07 EXECUTOR: SELL take profit +8% $Dogeball"
     }
   ],
   "role_colors": {
@@ -522282,15 +522319,7 @@
     "Risk": "#FF4D4D",
     "Logger": "#22D3EE"
   },
-  "ticker": [
-    {
-      "symbol": "Dogeball",
-      "name": "Dogeball",
-      "price": 0.0007133,
-      "change_pct": null,
-      "source": "dexscreener"
-    }
-  ],
+  "ticker": [],
   "desk": "axiom",
   "risk_rules": {
     "mode": "axiom",
@@ -522338,8 +522367,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 69.12,
-      "return_pct": -0.30876802,
+      "equity": 69.15,
+      "return_pct": -0.30853660000000005,
       "closed_trades": 722,
       "win_rate": 0.3407202216066482,
       "realized_pnl": -30.9
@@ -522358,8 +522387,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 12988,
-      "win_rate": 0.7354481059439483,
+      "closed_trades": 12990,
+      "win_rate": 0.7354888375673595,
       "realized_pnl": -100.0
     }
   ],
@@ -522372,16 +522401,6 @@
   "watchlist": [],
   "wallet_scoreboard": [],
   "near_misses": [
-    {
-      "symbol": "George",
-      "mint": "FvitVJ528ZCyuy695DoqEGy816rFVafbZ2MSgMw3pump",
-      "link": "https://axiom.trade/meme/FvitVJ528ZCyuy695DoqEGy816rFVafbZ2MSgMw3pump?chain=sol",
-      "reason": "5m +97.5% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": 97.49,
-      "vol_m5": 34125.0,
-      "score": 215.5
-    },
     {
       "symbol": "BASKET",
       "mint": "3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f",
@@ -522403,14 +522422,34 @@
       "score": -0.83
     },
     {
+      "symbol": "Dogeball",
+      "mint": "EMhHvdxs3L1T38pV1yNe9JXF6KfkxFTShNLaxL7rpump",
+      "link": "https://axiom.trade/meme/EMhHvdxs3L1T38pV1yNe9JXF6KfkxFTShNLaxL7rpump?chain=sol",
+      "reason": "5m -24.1% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -24.14,
+      "vol_m5": 77588.0,
+      "score": -159.18
+    },
+    {
+      "symbol": "Santa",
+      "mint": "CcpN5RXTEjbRqbtuHoxyiMZorzsghbfpeyYQjSvTgS27",
+      "link": "https://axiom.trade/meme/CcpN5RXTEjbRqbtuHoxyiMZorzsghbfpeyYQjSvTgS27?chain=sol",
+      "reason": "liquidity $24,852 under $25k · 5m volume $1,145 under $5k",
+      "gates": 2,
+      "chg_m5": 2.86,
+      "vol_m5": 1145.0,
+      "score": 25.74
+    },
+    {
       "symbol": "BRUH",
       "mint": "PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump",
       "link": "https://axiom.trade/meme/PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump?chain=sol",
-      "reason": "5m volume $1,666 under $5k · buy/sell 6/6 under 1.05",
+      "reason": "5m volume $1,486 under $5k · 5m +0.8% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 1.04,
-      "vol_m5": 1666.0,
-      "score": 1.16
+      "chg_m5": 0.78,
+      "vol_m5": 1486.0,
+      "score": 1.93
     },
     {
       "symbol": "ANSEM",
@@ -522421,16 +522460,6 @@
       "chg_m5": 0.356,
       "vol_m5": 1156.0,
       "score": 0.99
-    },
-    {
-      "symbol": "JIMMY",
-      "mint": "38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump",
-      "link": "https://axiom.trade/meme/38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump?chain=sol",
-      "reason": "5m volume $1,825 under $5k · buy/sell 16/25 under 1.05",
-      "gates": 2,
-      "chg_m5": 1.55,
-      "vol_m5": 1825.0,
-      "score": 0.67
     }
   ],
   "helius_status": "",
@@ -522438,7 +522467,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-26T20:07:02.931935+00:00",
+  "checked_at": "2026-11-26T20:07:42.957465+00:00",
   "checked_at_london": "26 Nov 2026, 20:07 GMT",
   "who_we_copy": null
 }
