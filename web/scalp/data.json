@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.7232603092783505,
-  "wins": 8980,
+  "win_rate": 0.7233048800128845,
+  "wins": 8982,
   "losses": 3436,
-  "closed_trades": 12416,
+  "closed_trades": 12418,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 104197,
-  "open_count": 4,
-  "last_updated_london": "26 Nov 2026, 1:33 GMT",
-  "last_updated": "2026-11-26T01:33:34.127538+00:00",
+  "open_count": 3,
+  "last_updated_london": "26 Nov 2026, 1:34 GMT",
+  "last_updated": "2026-11-26T01:34:14.020330+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "25 Nov 2026, 15:27 GMT",
-      "value": 0.0
-    },
     {
       "label": "25 Nov 2026, 15:28 GMT",
       "value": 0.0
@@ -2058,10 +2054,44 @@
     {
       "label": "26 Nov 2026, 1:33 GMT",
       "value": 0.0
+    },
+    {
+      "label": "26 Nov 2026, 1:34 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "26 Nov 2026, 1:34 GMT",
+      "hhmm": "01:34",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "01:34 EXECUTOR: BUY 10% $Grodia @ 0.00203814 — 5m +9.1% vol $71,526 buys 973/sells 481",
+      "message": "01:34 EXECUTOR: BUY 10% $Grodia @ 0.00203814 — 5m +9.1% vol $71,526 buys 973/sells 481",
+      "symbol": null,
+      "action": "BUY 10% $Grodia @ 0.00203814 — 5m +9.1% vol $71,526 buys 973/sells 481"
+    },
+    {
+      "ts": "26 Nov 2026, 1:34 GMT",
+      "hhmm": "01:34",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "01:34 RISK: SELL stop −5% $Grodia",
+      "message": "01:34 RISK: SELL stop −5% $Grodia",
+      "symbol": null,
+      "action": "SELL stop −5% $Grodia"
+    },
+    {
+      "ts": "26 Nov 2026, 1:34 GMT",
+      "hhmm": "01:34",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "01:34 EXECUTOR: SELL trail 2.5% $BRUH",
+      "message": "01:34 EXECUTOR: SELL trail 2.5% $BRUH",
+      "symbol": null,
+      "action": "SELL trail 2.5% $BRUH"
+    },
     {
       "ts": "26 Nov 2026, 1:33 GMT",
       "hhmm": "01:33",
@@ -2431,36 +2461,6 @@
       "message": "01:14 EXECUTOR: BUY 10% $BRUH @ 0.00770131 — 5m +6.8% vol $7,097 buys 25/sells 13",
       "symbol": null,
       "action": "BUY 10% $BRUH @ 0.00770131 — 5m +6.8% vol $7,097 buys 25/sells 13"
-    },
-    {
-      "ts": "26 Nov 2026, 1:14 GMT",
-      "hhmm": "01:14",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "01:14 EXECUTOR: BUY 10% $MONEY @ 0.00086028 — 5m +20.2% vol $92,682 buys 1250/sells 924",
-      "message": "01:14 EXECUTOR: BUY 10% $MONEY @ 0.00086028 — 5m +20.2% vol $92,682 buys 1250/sells 924",
-      "symbol": null,
-      "action": "BUY 10% $MONEY @ 0.00086028 — 5m +20.2% vol $92,682 buys 1250/sells 924"
-    },
-    {
-      "ts": "26 Nov 2026, 1:14 GMT",
-      "hhmm": "01:14",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "01:14 RISK: SELL stop −5% $Zero",
-      "message": "01:14 RISK: SELL stop −5% $Zero",
-      "symbol": null,
-      "action": "SELL stop −5% $Zero"
-    },
-    {
-      "ts": "26 Nov 2026, 1:13 GMT",
-      "hhmm": "01:13",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "01:13 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
-      "message": "01:13 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 1 open, equity $0.00"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 40 pools",
-      "badge": "75 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
+      "badge": "55 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "75 pairs · 2 passed liquidity, age, and 5m momentum",
-      "badge": "2 passed",
+      "activity": "55 pairs · 0 passed liquidity, age, and 5m momentum",
+      "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "4 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "4/6",
+      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "3/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2575,28 +2575,6 @@
   ],
   "positions": [
     {
-      "symbol": "BRUH",
-      "name": "BRUH",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.0077013149999999985,
-      "current_price": 0.008117,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.05397584698197666,
-      "hard_stop": 0.0073162492499999985,
-      "trail_activate": 0.0080093676,
-      "opened_at": "26 Nov 2026, 1:14 GMT",
-      "reason": "BUY 10% $BRUH @ 0.00770131 — 5m +6.8% vol $7,097 buys 25/sells 13",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump?chain=sol"
-    },
-    {
       "symbol": "NORFEATH",
       "name": "NORFEATH",
       "asset_class": "crypto",
@@ -2604,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0005397854999999999,
-      "current_price": 0.0005247,
+      "current_price": 0.0005398,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.02794721236491149,
+      "unrealized_pct": 2.686252224282093e-05,
       "hard_stop": 0.0005127962249999999,
       "trail_activate": 0.0005613769199999999,
       "opened_at": "26 Nov 2026, 1:32 GMT",
@@ -2626,11 +2604,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0010773599999999999,
-      "current_price": 0.001072,
+      "current_price": 0.001067,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.004975124378109319,
+      "unrealized_pct": -0.00961609861142032,
       "hard_stop": 0.0010234919999999998,
       "trail_activate": 0.0011204543999999998,
       "opened_at": "26 Nov 2026, 1:33 GMT",
@@ -2647,16 +2625,16 @@
       "agent": "MIRAX",
       "qty": 0.0,
       "qty_display": "0",
-      "entry_price": 0.0022712999999999995,
-      "current_price": 0.00226,
+      "entry_price": 0.0020381399999999995,
+      "current_price": 0.002028,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
       "unrealized_pct": -0.004975124378109319,
-      "hard_stop": 0.0021577349999999996,
-      "trail_activate": 0.0023621519999999997,
-      "opened_at": "26 Nov 2026, 1:33 GMT",
-      "reason": "BUY 10% $Grodia @ 0.0022713 — 5m +21.6% vol $59,961 buys 845/sells 428",
+      "hard_stop": 0.0019362329999999994,
+      "trail_activate": 0.0021196655999999995,
+      "opened_at": "26 Nov 2026, 1:34 GMT",
+      "reason": "BUY 10% $Grodia @ 0.00203814 — 5m +9.1% vol $71,526 buys 973/sells 481",
       "score": null,
       "tag": "",
       "venue": "",
@@ -2664,6 +2642,66 @@
     }
   ],
   "fills": [
+    {
+      "id": "f24839",
+      "time": "26 Nov 2026, 1:34 GMT",
+      "ts": "2026-11-26T01:34:06.055981+00:00",
+      "side": "buy",
+      "symbol": "Grodia",
+      "name": "Grodia",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0020381399999999995,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f24838",
+      "time": "26 Nov 2026, 1:34 GMT",
+      "ts": "2026-11-26T01:34:06.055558+00:00",
+      "side": "sell",
+      "symbol": "Grodia",
+      "name": "Grodia",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00201786,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f24837",
+      "time": "26 Nov 2026, 1:34 GMT",
+      "ts": "2026-11-26T01:34:06.055436+00:00",
+      "side": "sell",
+      "symbol": "BRUH",
+      "name": "BRUH",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.008026664999999999,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f24836",
       "time": "26 Nov 2026, 1:33 GMT",
@@ -499386,11 +499424,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 12416,
-    "win_rate": 0.7232603092783505,
+    "closed_trades": 12418,
+    "win_rate": 0.7233048800128845,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 24836
+    "fills": 24839
   },
   "ok": true,
   "totals_cumulative": {
@@ -499530,30 +499568,23 @@
   },
   "ticker": [
     {
-      "symbol": "BRUH",
-      "name": "BRUH",
-      "price": 0.008117,
-      "change_pct": null,
-      "source": "dexscreener"
-    },
-    {
       "symbol": "NORFEATH",
       "name": "NORFEATH",
-      "price": 0.0005247,
+      "price": 0.0005398,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
       "symbol": "UHI",
       "name": "UHI",
-      "price": 0.001072,
+      "price": 0.001067,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
       "symbol": "Grodia",
       "name": "Grodia",
-      "price": 0.00226,
+      "price": 0.002028,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -499605,8 +499636,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 69.91,
-      "return_pct": -0.30087680000000006,
+      "equity": 69.9,
+      "return_pct": -0.30095035,
       "closed_trades": 699,
       "win_rate": 0.33476394849785407,
       "realized_pnl": -30.05
@@ -499625,8 +499656,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 12416,
-      "win_rate": 0.7232603092783505,
+      "closed_trades": 12418,
+      "win_rate": 0.7233048800128845,
       "realized_pnl": -100.0
     }
   ],
@@ -499640,24 +499671,34 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "three",
-      "mint": "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
-      "link": "https://axiom.trade/meme/FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump?chain=sol",
-      "reason": "5m volume $53 under $5k",
+      "symbol": "Pompom",
+      "mint": "5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump",
+      "link": "https://axiom.trade/meme/5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump?chain=sol",
+      "reason": "5m volume $1,153 under $5k",
       "gates": 1,
-      "chg_m5": 1.79,
-      "vol_m5": 53.0,
-      "score": 1.34
+      "chg_m5": 2.42,
+      "vol_m5": 1153.0,
+      "score": 1.43
+    },
+    {
+      "symbol": "BRUH",
+      "mint": "PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump",
+      "link": "https://axiom.trade/meme/PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump?chain=sol",
+      "reason": "5m -2.6% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -2.6,
+      "vol_m5": 7803.0,
+      "score": -6.53
     },
     {
       "symbol": "TAXMAN",
       "mint": "BAijHvUiHCoCxApyYAUnz5g6LnizZXVYoHwdMarqTWtw",
       "link": "https://axiom.trade/meme/BAijHvUiHCoCxApyYAUnz5g6LnizZXVYoHwdMarqTWtw?chain=sol",
-      "reason": "liquidity $17,358 under $25k · market cap $56,387 outside $100k–$100M",
+      "reason": "liquidity $16,930 under $25k · market cap $53,507 outside $100k–$100M",
       "gates": 2,
-      "chg_m5": 34.42,
-      "vol_m5": 6614.0,
-      "score": 208.33
+      "chg_m5": 27.56,
+      "vol_m5": 6925.0,
+      "score": 158.9
     },
     {
       "symbol": "4CHAN",
@@ -499688,16 +499729,6 @@
       "chg_m5": 0.104,
       "vol_m5": 67.0,
       "score": 0.08
-    },
-    {
-      "symbol": "ANSEM",
-      "mint": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
-      "link": "https://axiom.trade/meme/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump?chain=sol",
-      "reason": "5m volume $77 under $5k · 5m +0.0% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.02,
-      "vol_m5": 77.0,
-      "score": 0.01
     }
   ],
   "helius_status": "",
@@ -499705,7 +499736,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-26T01:33:34.127538+00:00",
-  "checked_at_london": "26 Nov 2026, 1:33 GMT",
+  "checked_at": "2026-11-26T01:34:14.020330+00:00",
+  "checked_at_london": "26 Nov 2026, 1:34 GMT",
   "who_we_copy": null
 }
