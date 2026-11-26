@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 111242,
-  "open_count": 1,
+  "open_count": 2,
   "last_updated_london": "26 Nov 2026, 21:31 GMT",
-  "last_updated": "2026-11-26T21:31:05.530354+00:00",
+  "last_updated": "2026-11-26T21:31:45.609225+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "26 Nov 2026, 15:40 GMT",
-      "value": 0.0
-    },
     {
       "label": "26 Nov 2026, 15:41 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "26 Nov 2026, 21:31 GMT",
       "value": 0.0
+    },
+    {
+      "label": "26 Nov 2026, 21:31 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "26 Nov 2026, 21:31 GMT",
+      "hhmm": "21:31",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:31 EXECUTOR: BUY 10% $Cateball @ 0.00140097 — 5m +15.2% vol $111,884 buys 1241/sells 413",
+      "message": "21:31 EXECUTOR: BUY 10% $Cateball @ 0.00140097 — 5m +15.2% vol $111,884 buys 1241/sells 413",
+      "symbol": null,
+      "action": "BUY 10% $Cateball @ 0.00140097 — 5m +15.2% vol $111,884 buys 1241/sells 413"
+    },
     {
       "ts": "26 Nov 2026, 21:30 GMT",
       "hhmm": "21:30",
@@ -2451,16 +2461,6 @@
       "message": "21:13 EXECUTOR: BUY 10% $Hoppy @ 0.000619482 — 5m +4.7% vol $39,526 buys 1297/sells 269",
       "symbol": null,
       "action": "BUY 10% $Hoppy @ 0.000619482 — 5m +4.7% vol $39,526 buys 1297/sells 269"
-    },
-    {
-      "ts": "26 Nov 2026, 21:13 GMT",
-      "hhmm": "21:13",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "21:13 RISK: SELL stop −5% $Elonmas",
-      "message": "21:13 RISK: SELL stop −5% $Elonmas",
-      "symbol": null,
-      "action": "SELL stop −5% $Elonmas"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "58 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "40 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "58 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "40 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "1/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.017642135928013808,
-      "current_price": 0.017350068322568326,
+      "current_price": 0.01731,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.01655511592458092,
+      "unrealized_pct": -0.018826287778817785,
       "hard_stop": 0.016760029131613115,
       "trail_activate": 0.01834782136513436,
       "opened_at": "26 Nov 2026, 21:19 GMT",
@@ -2595,9 +2595,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump?chain=sol"
+    },
+    {
+      "symbol": "Cateball",
+      "name": "Cateball",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.0014009699999999999,
+      "current_price": 0.001394,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.0013309214999999998,
+      "trail_activate": 0.0014570088,
+      "opened_at": "26 Nov 2026, 21:31 GMT",
+      "reason": "BUY 10% $Cateball @ 0.00140097 — 5m +15.2% vol $111,884 buys 1241/sells 413",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/Bb38n8AVLMh9amo8qtjLvqE8nPtfs8GEsyzg1pC6pump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f26110",
+      "time": "26 Nov 2026, 21:31 GMT",
+      "ts": "2026-11-26T21:31:21.585087+00:00",
+      "side": "buy",
+      "symbol": "Cateball",
+      "name": "Cateball",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0014009699999999999,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f26109",
       "time": "26 Nov 2026, 21:30 GMT",
@@ -524784,7 +524826,7 @@
     "win_rate": 0.7367856595679485,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 26109
+    "fills": 26110
   },
   "ok": true,
   "totals_cumulative": {
@@ -524926,9 +524968,16 @@
     {
       "symbol": "CATE",
       "name": "CATE",
-      "price": 0.017350068322568326,
+      "price": 0.01731,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
+    },
+    {
+      "symbol": "Cateball",
+      "name": "Cateball",
+      "price": 0.001394,
+      "change_pct": null,
+      "source": "dexscreener"
     }
   ],
   "desk": "axiom",
@@ -524952,7 +525001,7 @@
       "id": "main",
       "name": "Halal book",
       "equity": 94.77,
-      "return_pct": -0.05228987000000004,
+      "return_pct": -0.052316589999999934,
       "closed_trades": 36,
       "win_rate": 0.3333333333333333,
       "realized_pnl": -6.76
@@ -524969,8 +525018,8 @@
     {
       "id": "meme",
       "name": "Crypto + Meme",
-      "equity": 84.91,
-      "return_pct": -0.15085553000000004,
+      "equity": 84.87,
+      "return_pct": -0.15131563,
       "closed_trades": 115,
       "win_rate": 0.3826086956521739,
       "realized_pnl": -15.71
@@ -524978,8 +525027,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 69.3,
-      "return_pct": -0.3069531999999999,
+      "equity": 69.33,
+      "return_pct": -0.30670108,
       "closed_trades": 722,
       "win_rate": 0.3407202216066482,
       "realized_pnl": -30.9
@@ -525013,64 +525062,44 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "FIONA",
-      "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
-      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "reason": "5m volume $1,832 under $5k",
-      "gates": 1,
-      "chg_m5": 2.023,
-      "vol_m5": 1832.0,
-      "score": 1.89
-    },
-    {
       "symbol": "Hoppy",
       "mint": "CFX1gH7CKYwqYXrfDkS2MUxJcEhs8PT63DyRA1chpump",
       "link": "https://axiom.trade/meme/CFX1gH7CKYwqYXrfDkS2MUxJcEhs8PT63DyRA1chpump?chain=sol",
-      "reason": "5m -12.0% outside +1% to +40%",
+      "reason": "5m -14.8% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -11.97,
-      "vol_m5": 158688.0,
-      "score": -61.89
+      "chg_m5": -14.78,
+      "vol_m5": 122554.0,
+      "score": -63.89
     },
     {
-      "symbol": "Cateball",
-      "mint": "Bb38n8AVLMh9amo8qtjLvqE8nPtfs8GEsyzg1pC6pump",
-      "link": "https://axiom.trade/meme/Bb38n8AVLMh9amo8qtjLvqE8nPtfs8GEsyzg1pC6pump?chain=sol",
-      "reason": "5m -14.6% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -14.55,
-      "vol_m5": 125186.0,
-      "score": -120.81
-    },
-    {
-      "symbol": "Santa",
-      "mint": "CcpN5RXTEjbRqbtuHoxyiMZorzsghbfpeyYQjSvTgS27",
-      "link": "https://axiom.trade/meme/CcpN5RXTEjbRqbtuHoxyiMZorzsghbfpeyYQjSvTgS27?chain=sol",
-      "reason": "liquidity $23,792 under $25k · 5m volume $54 under $5k",
+      "symbol": "JIMMY",
+      "mint": "38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump",
+      "link": "https://axiom.trade/meme/38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump?chain=sol",
+      "reason": "5m volume $3,123 under $5k · 5m +0.5% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 1.31,
-      "vol_m5": 54.0,
-      "score": 1.62
+      "chg_m5": 0.45,
+      "vol_m5": 3123.0,
+      "score": 0.67
     },
     {
-      "symbol": "BASKET",
-      "mint": "3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f",
-      "link": "https://axiom.trade/meme/3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f?chain=sol",
-      "reason": "5m volume $736 under $5k · buy/sell 8/9 under 1.05",
+      "symbol": "RKC",
+      "mint": "7HgfXftRBBqsYtAEYcqjGLQrNJLL6Tww9ek4rE3Apump",
+      "link": "https://axiom.trade/meme/7HgfXftRBBqsYtAEYcqjGLQrNJLL6Tww9ek4rE3Apump?chain=sol",
+      "reason": "5m volume $15 under $5k · 5m -0.7% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 1.05,
-      "vol_m5": 736.0,
-      "score": 0.38
+      "chg_m5": -0.68,
+      "vol_m5": 15.0,
+      "score": -0.51
     },
     {
-      "symbol": "CBUCKS",
-      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
-      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
-      "reason": "5m volume $77 under $5k · 5m +0.6% outside +1% to +40%",
+      "symbol": "Elonmas",
+      "mint": "ChYn9ZpCUzrwd8rcpUtr7K7iKgDWUfJijM4xwxBCpump",
+      "link": "https://axiom.trade/meme/ChYn9ZpCUzrwd8rcpUtr7K7iKgDWUfJijM4xwxBCpump?chain=sol",
+      "reason": "liquidity $22,167 under $25k · 5m -5.1% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 0.64,
-      "vol_m5": 77.0,
-      "score": 0.32
+      "chg_m5": -5.14,
+      "vol_m5": 8798.0,
+      "score": -4.16
     }
   ],
   "helius_status": "",
@@ -525078,7 +525107,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-26T21:31:05.530354+00:00",
+  "checked_at": "2026-11-26T21:31:45.609225+00:00",
   "checked_at_london": "26 Nov 2026, 21:31 GMT",
   "who_we_copy": null
 }
