@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.7375095492742552,
-  "wins": 9654,
+  "win_rate": 0.7375296004888855,
+  "wins": 9655,
   "losses": 3436,
-  "closed_trades": 13090,
+  "closed_trades": 13091,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 111590,
-  "open_count": 1,
+  "ticks": 111619,
+  "open_count": 0,
   "last_updated_london": "26 Nov 2026, 22:30 GMT",
-  "last_updated": "2026-11-26T22:30:19.824929+00:00",
+  "last_updated": "2026-11-26T22:30:43.852291+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 13090,
+  "traded": 13091,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 13090,
+    "traded": 13091,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "26 Nov 2026, 16:41 GMT",
-      "value": 0.0
-    },
     {
       "label": "26 Nov 2026, 16:42 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "26 Nov 2026, 22:30 GMT",
       "value": 0.0
+    },
+    {
+      "label": "26 Nov 2026, 22:30 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "26 Nov 2026, 22:30 GMT",
+      "hhmm": "22:30",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "22:30 LOGGER: run complete — 29 polls, 0 open, equity $0.00",
+      "message": "22:30 LOGGER: run complete — 29 polls, 0 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 0 open, equity $0.00"
+    },
+    {
+      "ts": "26 Nov 2026, 22:30 GMT",
+      "hhmm": "22:30",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "22:30 EXECUTOR: SELL trail 2.5% $Cateball",
+      "message": "22:30 EXECUTOR: SELL trail 2.5% $Cateball",
+      "symbol": null,
+      "action": "SELL trail 2.5% $Cateball"
+    },
     {
       "ts": "26 Nov 2026, 22:26 GMT",
       "hhmm": "22:26",
@@ -2441,26 +2461,6 @@
       "message": "21:54 EXECUTOR: BUY 10% $Cateball @ 0.00102309 — 5m +1.2% vol $11,240 buys 727/sells 306",
       "symbol": null,
       "action": "BUY 10% $Cateball @ 0.00102309 — 5m +1.2% vol $11,240 buys 727/sells 306"
-    },
-    {
-      "ts": "26 Nov 2026, 21:53 GMT",
-      "hhmm": "21:53",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "21:53 RISK: SELL stop −5% $Snowball",
-      "message": "21:53 RISK: SELL stop −5% $Snowball",
-      "symbol": null,
-      "action": "SELL stop −5% $Snowball"
-    },
-    {
-      "ts": "26 Nov 2026, 21:52 GMT",
-      "hhmm": "21:52",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "21:52 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
-      "message": "21:52 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 1 open, equity $0.00"
     }
   ],
   "agents": [
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "1/6",
+      "activity": "0 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "0/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2573,31 +2573,28 @@
       "open_positions": 0
     }
   ],
-  "positions": [
+  "positions": [],
+  "fills": [
     {
+      "id": "f26182",
+      "time": "26 Nov 2026, 22:30 GMT",
+      "ts": "2026-11-26T22:30:43.852037+00:00",
+      "side": "sell",
       "symbol": "Cateball",
       "name": "Cateball",
       "asset_class": "crypto",
-      "agent": "MIRAX",
       "qty": 0.0,
       "qty_display": "0",
-      "entry_price": 0.0005908395,
-      "current_price": 0.0006289,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.06441766334173682,
-      "hard_stop": 0.000561297525,
-      "trail_activate": 0.0006144730799999999,
-      "opened_at": "26 Nov 2026, 22:26 GMT",
-      "reason": "BUY 10% $Cateball @ 0.000590839 — 5m +21.6% vol $8,000 buys 874/sells 221",
-      "score": null,
+      "price": 0.0005628715,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
       "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/Bb38n8AVLMh9amo8qtjLvqE8nPtfs8GEsyzg1pC6pump?chain=sol"
-    }
-  ],
-  "fills": [
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f26181",
       "time": "26 Nov 2026, 22:26 GMT",
@@ -526220,17 +526217,17 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 13090,
-    "win_rate": 0.7375095492742552,
+    "closed_trades": 13091,
+    "win_rate": 0.7375296004888855,
     "realized_pnl": -100.0,
-    "unrealized_pnl": 0.0,
-    "fills": 26181
+    "unrealized_pnl": 0,
+    "fills": 26182
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 111590,
+    "scanned": 111619,
     "killed": 0,
-    "traded": 13090
+    "traded": 13091
   },
   "events": [
     {
@@ -526362,15 +526359,7 @@
     "Risk": "#FF4D4D",
     "Logger": "#22D3EE"
   },
-  "ticker": [
-    {
-      "symbol": "Cateball",
-      "name": "Cateball",
-      "price": 0.0006289,
-      "change_pct": null,
-      "source": "dexscreener"
-    }
-  ],
+  "ticker": [],
   "desk": "axiom",
   "risk_rules": {
     "mode": "axiom",
@@ -526438,8 +526427,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 13090,
-      "win_rate": 0.7375095492742552,
+      "closed_trades": 13091,
+      "win_rate": 0.7375296004888855,
       "realized_pnl": -100.0
     }
   ],
@@ -526453,34 +526442,34 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
+      "symbol": "Cateball",
+      "mint": "Bb38n8AVLMh9amo8qtjLvqE8nPtfs8GEsyzg1pC6pump",
+      "link": "https://axiom.trade/meme/Bb38n8AVLMh9amo8qtjLvqE8nPtfs8GEsyzg1pC6pump?chain=sol",
+      "reason": "5m -2.6% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -2.6,
+      "vol_m5": 7681.0,
+      "score": -1.51
+    },
+    {
       "symbol": "BRUH",
       "mint": "PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump",
       "link": "https://axiom.trade/meme/PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump?chain=sol",
-      "reason": "5m volume $3,125 under $5k",
-      "gates": 1,
-      "chg_m5": 1.21,
-      "vol_m5": 3125.0,
-      "score": 2.17
-    },
-    {
-      "symbol": "CBUCKS",
-      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
-      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
-      "reason": "5m volume $2,180 under $5k · buy/sell 3/9 under 1.05",
+      "reason": "5m volume $2,202 under $5k · 5m +0.3% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 2.84,
-      "vol_m5": 2180.0,
-      "score": 2.66
+      "chg_m5": 0.26,
+      "vol_m5": 2202.0,
+      "score": 0.5
     },
     {
       "symbol": "JIMMY",
       "mint": "38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump",
       "link": "https://axiom.trade/meme/38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump?chain=sol",
-      "reason": "5m volume $4,962 under $5k · 5m -2.1% outside +1% to +40%",
+      "reason": "5m volume $3,893 under $5k · 5m -3.6% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": -2.12,
-      "vol_m5": 4962.0,
-      "score": -3.46
+      "chg_m5": -3.6,
+      "vol_m5": 3893.0,
+      "score": -3.71
     }
   ],
   "helius_status": "",
@@ -526488,7 +526477,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-26T22:30:19.824929+00:00",
+  "checked_at": "2026-11-26T22:30:43.852291+00:00",
   "checked_at_london": "26 Nov 2026, 22:30 GMT",
   "who_we_copy": null
 }
