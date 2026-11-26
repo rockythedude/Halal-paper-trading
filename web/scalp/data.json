@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 104891,
+  "ticks": 104920,
   "open_count": 2,
-  "last_updated_london": "26 Nov 2026, 3:34 GMT",
-  "last_updated": "2026-11-26T03:34:57.818893+00:00",
+  "last_updated_london": "26 Nov 2026, 3:35 GMT",
+  "last_updated": "2026-11-26T03:35:21.851994+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "25 Nov 2026, 21:44 GMT",
-      "value": 0.0
-    },
     {
       "label": "25 Nov 2026, 21:44 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "26 Nov 2026, 3:34 GMT",
       "value": 0.0
+    },
+    {
+      "label": "26 Nov 2026, 3:35 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "26 Nov 2026, 3:35 GMT",
+      "hhmm": "03:35",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "03:35 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "message": "03:35 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 2 open, equity $0.00"
+    },
     {
       "ts": "26 Nov 2026, 3:33 GMT",
       "hhmm": "03:33",
@@ -2451,16 +2461,6 @@
       "message": "03:10 RISK: SELL stop −5% $NORFEATH",
       "symbol": null,
       "action": "SELL stop −5% $NORFEATH"
-    },
-    {
-      "ts": "26 Nov 2026, 3:09 GMT",
-      "hhmm": "03:09",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "03:09 EXECUTOR: BUY 10% $NORFEATH @ 0.000784 — 5m +2.1% vol $30,740 buys 603/sells 393",
-      "message": "03:09 EXECUTOR: BUY 10% $NORFEATH @ 0.000784 — 5m +2.1% vol $30,740 buys 603/sells 393",
-      "symbol": null,
-      "action": "BUY 10% $NORFEATH @ 0.000784 — 5m +2.1% vol $30,740 buys 603/sells 393"
     }
   ],
   "agents": [
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.009587275563904445,
-      "current_price": 0.009248,
+      "current_price": 0.009249,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.03538811017196575,
+      "unrealized_pct": -0.035283805253082834,
       "hard_stop": 0.009107911785709223,
       "trail_activate": 0.009970766586460624,
       "opened_at": "26 Nov 2026, 3:18 GMT",
@@ -2604,11 +2604,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0020069849999999998,
-      "current_price": 0.001954,
+      "current_price": 0.001956,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.02640029696285706,
+      "unrealized_pct": -0.025403777307752673,
       "hard_stop": 0.0019066357499999997,
       "trail_activate": 0.0020872644,
       "opened_at": "26 Nov 2026, 3:28 GMT",
@@ -503590,7 +503590,7 @@
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 104891,
+    "scanned": 104920,
     "killed": 0,
     "traded": 12525
   },
@@ -503728,14 +503728,14 @@
     {
       "symbol": "VINE",
       "name": "VINE",
-      "price": 0.009248,
+      "price": 0.009249,
       "change_pct": null,
       "source": "dexscreener"
     },
     {
       "symbol": "FIONA",
       "name": "FIONA",
-      "price": 0.001954,
+      "price": 0.001956,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -503822,64 +503822,54 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
+      "symbol": "NORFEATH",
+      "mint": "3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump",
+      "link": "https://axiom.trade/meme/3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump?chain=sol",
+      "reason": "5m volume $3,655 under $5k",
+      "gates": 1,
+      "chg_m5": 1.19,
+      "vol_m5": 3655.0,
+      "score": 0.78
+    },
+    {
       "symbol": "PUMPCHAN",
       "mint": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
       "link": "https://axiom.trade/meme/Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump?chain=sol",
-      "reason": "5m volume $4,735 under $5k",
+      "reason": "5m -2.0% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": 2.4,
-      "vol_m5": 4735.0,
-      "score": 3.61
+      "chg_m5": -1.97,
+      "vol_m5": 5040.0,
+      "score": -3.1
     },
     {
       "symbol": "Grodia",
       "mint": "6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump",
       "link": "https://axiom.trade/meme/6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump?chain=sol",
-      "reason": "5m -3.7% outside +1% to +40%",
+      "reason": "5m -6.5% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -3.66,
-      "vol_m5": 5478.0,
-      "score": -7.1
+      "chg_m5": -6.51,
+      "vol_m5": 5669.0,
+      "score": -13.14
     },
     {
-      "symbol": "coin",
-      "mint": "CMmfK9KFjFRPgAEkixMpchNnA5zTz7xYdQkSSc8Upump",
-      "link": "https://axiom.trade/meme/CMmfK9KFjFRPgAEkixMpchNnA5zTz7xYdQkSSc8Upump?chain=sol",
-      "reason": "liquidity $23,505 under $25k · 5m +71.6% outside +1% to +40%",
+      "symbol": "ROCKET",
+      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
+      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
+      "reason": "5m volume $7 under $5k · buy/sell 77/76 under 1.05",
       "gates": 2,
-      "chg_m5": 71.56,
-      "vol_m5": 64075.0,
-      "score": 249.71
+      "chg_m5": 2.55,
+      "vol_m5": 7.0,
+      "score": 0.65
     },
     {
-      "symbol": "Harlod",
-      "mint": "CathB8zpiGRsBpiRCnGkER3tZk77Jozho183yKfspump",
-      "link": "https://axiom.trade/meme/CathB8zpiGRsBpiRCnGkER3tZk77Jozho183yKfspump?chain=sol",
-      "reason": "liquidity $0 under $25k · market cap $20,692 outside $100k–$100M",
+      "symbol": "UHI",
+      "mint": "Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump",
+      "link": "https://axiom.trade/meme/Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump?chain=sol",
+      "reason": "5m volume $4,198 under $5k · 5m -5.6% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 29.72,
-      "vol_m5": 13297.0,
-      "score": 117.27
-    },
-    {
-      "symbol": "HOGE",
-      "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
-      "link": "https://axiom.trade/meme/FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump?chain=sol",
-      "reason": "5m volume $1,090 under $5k · buy/sell 3/22 under 1.05",
-      "gates": 2,
-      "chg_m5": 2.31,
-      "vol_m5": 1090.0,
-      "score": 0.3
-    },
-    {
-      "symbol": "NORFEATH",
-      "mint": "3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump",
-      "link": "https://axiom.trade/meme/3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump?chain=sol",
-      "reason": "5m volume $3,392 under $5k · 5m -1.4% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": -1.43,
-      "vol_m5": 3392.0,
-      "score": -0.81
+      "chg_m5": -5.56,
+      "vol_m5": 4198.0,
+      "score": -11.56
     }
   ],
   "helius_status": "",
@@ -503887,7 +503877,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-26T03:34:57.818893+00:00",
-  "checked_at_london": "26 Nov 2026, 3:34 GMT",
+  "checked_at": "2026-11-26T03:35:21.851994+00:00",
+  "checked_at_london": "26 Nov 2026, 3:35 GMT",
   "who_we_copy": null
 }
