@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 111155,
-  "open_count": 0,
+  "open_count": 2,
   "last_updated_london": "26 Nov 2026, 21:17 GMT",
-  "last_updated": "2026-11-26T21:17:11.851366+00:00",
+  "last_updated": "2026-11-26T21:17:51.896727+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "26 Nov 2026, 15:26 GMT",
-      "value": 0.0
-    },
     {
       "label": "26 Nov 2026, 15:27 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "26 Nov 2026, 21:17 GMT",
       "value": 0.0
+    },
+    {
+      "label": "26 Nov 2026, 21:17 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "26 Nov 2026, 21:17 GMT",
+      "hhmm": "21:17",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:17 EXECUTOR: BUY 10% $Hoppy @ 0.000797065 — 5m +13.2% vol $48,286 buys 1284/sells 254",
+      "message": "21:17 EXECUTOR: BUY 10% $Hoppy @ 0.000797065 — 5m +13.2% vol $48,286 buys 1284/sells 254",
+      "symbol": null,
+      "action": "BUY 10% $Hoppy @ 0.000797065 — 5m +13.2% vol $48,286 buys 1284/sells 254"
+    },
+    {
+      "ts": "26 Nov 2026, 21:17 GMT",
+      "hhmm": "21:17",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "21:17 EXECUTOR: BUY 10% $ZINU @ 0.000199593 — 5m +15.4% vol $44,351 buys 810/sells 149",
+      "message": "21:17 EXECUTOR: BUY 10% $ZINU @ 0.000199593 — 5m +15.4% vol $44,351 buys 810/sells 149",
+      "symbol": null,
+      "action": "BUY 10% $ZINU @ 0.000199593 — 5m +15.4% vol $44,351 buys 810/sells 149"
+    },
     {
       "ts": "26 Nov 2026, 21:16 GMT",
       "hhmm": "21:16",
@@ -2441,26 +2461,6 @@
       "message": "21:03 EXECUTOR: BUY 10% $Elonmas @ 0.00026934 — 5m +11.7% vol $8,518 buys 628/sells 61",
       "symbol": null,
       "action": "BUY 10% $Elonmas @ 0.00026934 — 5m +11.7% vol $8,518 buys 628/sells 61"
-    },
-    {
-      "ts": "26 Nov 2026, 21:03 GMT",
-      "hhmm": "21:03",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "21:03 RISK: SELL stop −5% $Elonmas",
-      "message": "21:03 RISK: SELL stop −5% $Elonmas",
-      "symbol": null,
-      "action": "SELL stop −5% $Elonmas"
-    },
-    {
-      "ts": "26 Nov 2026, 21:02 GMT",
-      "hhmm": "21:02",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "21:02 EXECUTOR: BUY 10% $Elonmas @ 0.000288334 — 5m +19.5% vol $7,006 buys 563/sells 56",
-      "message": "21:02 EXECUTOR: BUY 10% $Elonmas @ 0.000288334 — 5m +19.5% vol $7,006 buys 563/sells 56",
-      "symbol": null,
-      "action": "BUY 10% $Elonmas @ 0.000288334 — 5m +19.5% vol $7,006 buys 563/sells 56"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
-      "badge": "38 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
+      "badge": "58 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "38 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "58 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "0/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2573,8 +2573,93 @@
       "open_positions": 0
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "ZINU",
+      "name": "ZINU",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.00019959299999999997,
+      "current_price": 0.0001986,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.00018961334999999997,
+      "trail_activate": 0.00020757671999999998,
+      "opened_at": "26 Nov 2026, 21:17 GMT",
+      "reason": "BUY 10% $ZINU @ 0.000199593 — 5m +15.4% vol $44,351 buys 810/sells 149",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/9SVj5ZTAL41tqswVNwT1TT9yv3oSHYMYv8zqoHtPpump?chain=sol"
+    },
+    {
+      "symbol": "Hoppy",
+      "name": "Hoppy",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.0007970655,
+      "current_price": 0.0007931,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.0007572122249999999,
+      "trail_activate": 0.00082894812,
+      "opened_at": "26 Nov 2026, 21:17 GMT",
+      "reason": "BUY 10% $Hoppy @ 0.000797065 — 5m +13.2% vol $48,286 buys 1284/sells 254",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/CFX1gH7CKYwqYXrfDkS2MUxJcEhs8PT63DyRA1chpump?chain=sol"
+    }
+  ],
   "fills": [
+    {
+      "id": "f26082",
+      "time": "26 Nov 2026, 21:17 GMT",
+      "ts": "2026-11-26T21:17:27.872421+00:00",
+      "side": "buy",
+      "symbol": "Hoppy",
+      "name": "Hoppy",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0007970655,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f26081",
+      "time": "26 Nov 2026, 21:17 GMT",
+      "ts": "2026-11-26T21:17:27.872331+00:00",
+      "side": "buy",
+      "symbol": "ZINU",
+      "name": "ZINU",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00019959299999999997,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f26080",
       "time": "26 Nov 2026, 21:16 GMT",
@@ -524180,8 +524265,8 @@
     "closed_trades": 13040,
     "win_rate": 0.7365030674846625,
     "realized_pnl": -100.0,
-    "unrealized_pnl": 0,
-    "fills": 26080
+    "unrealized_pnl": 0.0,
+    "fills": 26082
   },
   "ok": true,
   "totals_cumulative": {
@@ -524319,7 +524404,22 @@
     "Risk": "#FF4D4D",
     "Logger": "#22D3EE"
   },
-  "ticker": [],
+  "ticker": [
+    {
+      "symbol": "ZINU",
+      "name": "ZINU",
+      "price": 0.0001986,
+      "change_pct": null,
+      "source": "dexscreener"
+    },
+    {
+      "symbol": "Hoppy",
+      "name": "Hoppy",
+      "price": 0.0007931,
+      "change_pct": null,
+      "source": "dexscreener"
+    }
+  ],
   "desk": "axiom",
   "risk_rules": {
     "mode": "axiom",
@@ -524367,8 +524467,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 69.21,
-      "return_pct": -0.30792866,
+      "equity": 69.19,
+      "return_pct": -0.30807652,
       "closed_trades": 722,
       "win_rate": 0.3407202216066482,
       "realized_pnl": -30.9
@@ -524402,64 +524502,64 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "Hoppy",
-      "mint": "CFX1gH7CKYwqYXrfDkS2MUxJcEhs8PT63DyRA1chpump",
-      "link": "https://axiom.trade/meme/CFX1gH7CKYwqYXrfDkS2MUxJcEhs8PT63DyRA1chpump?chain=sol",
-      "reason": "5m +41.6% outside +1% to +40%",
+      "symbol": "ROCKET",
+      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
+      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
+      "reason": "5m volume $187 under $5k",
       "gates": 1,
-      "chg_m5": 41.62,
-      "vol_m5": 48421.0,
-      "score": 121.89
+      "chg_m5": 2.57,
+      "vol_m5": 187.0,
+      "score": 3.09
     },
     {
-      "symbol": "RKC",
-      "mint": "7HgfXftRBBqsYtAEYcqjGLQrNJLL6Tww9ek4rE3Apump",
-      "link": "https://axiom.trade/meme/7HgfXftRBBqsYtAEYcqjGLQrNJLL6Tww9ek4rE3Apump?chain=sol",
-      "reason": "5m volume $1,234 under $5k",
+      "symbol": "Zero",
+      "mint": "DTSkmo3sCCKLCh91dJLiWCpwcKtK3yDBZMqZGSV1pump",
+      "link": "https://axiom.trade/meme/DTSkmo3sCCKLCh91dJLiWCpwcKtK3yDBZMqZGSV1pump?chain=sol",
+      "reason": "5m volume $637 under $5k",
       "gates": 1,
-      "chg_m5": 2.91,
-      "vol_m5": 1234.0,
-      "score": 13.1
+      "chg_m5": 6.081,
+      "vol_m5": 637.0,
+      "score": 2.54
     },
     {
       "symbol": "BRUH",
       "mint": "PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump",
       "link": "https://axiom.trade/meme/PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump?chain=sol",
-      "reason": "5m volume $1,314 under $5k",
+      "reason": "5m volume $1,481 under $5k",
       "gates": 1,
-      "chg_m5": 2.47,
-      "vol_m5": 1314.0,
-      "score": 5.34
+      "chg_m5": 1.22,
+      "vol_m5": 1481.0,
+      "score": 1.64
     },
     {
-      "symbol": "Elonmas",
-      "mint": "ChYn9ZpCUzrwd8rcpUtr7K7iKgDWUfJijM4xwxBCpump",
-      "link": "https://axiom.trade/meme/ChYn9ZpCUzrwd8rcpUtr7K7iKgDWUfJijM4xwxBCpump?chain=sol",
-      "reason": "5m -26.0% outside +1% to +40%",
+      "symbol": "CATE",
+      "mint": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
+      "link": "https://axiom.trade/meme/Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump?chain=sol",
+      "reason": "5m +0.2% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -25.99,
-      "vol_m5": 11207.0,
-      "score": -46.4
+      "chg_m5": 0.183,
+      "vol_m5": 20831.0,
+      "score": 1.04
     },
     {
-      "symbol": "ZINU",
-      "mint": "9SVj5ZTAL41tqswVNwT1TT9yv3oSHYMYv8zqoHtPpump",
-      "link": "https://axiom.trade/meme/9SVj5ZTAL41tqswVNwT1TT9yv3oSHYMYv8zqoHtPpump?chain=sol",
-      "reason": "5m -20.8% outside +1% to +40%",
+      "symbol": "FIONA",
+      "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
+      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
+      "reason": "5m volume $1,035 under $5k",
       "gates": 1,
-      "chg_m5": -20.83,
-      "vol_m5": 41759.0,
-      "score": -109.53
+      "chg_m5": 1.625,
+      "vol_m5": 1035.0,
+      "score": 0.89
     },
     {
-      "symbol": "Santa",
-      "mint": "CcpN5RXTEjbRqbtuHoxyiMZorzsghbfpeyYQjSvTgS27",
-      "link": "https://axiom.trade/meme/CcpN5RXTEjbRqbtuHoxyiMZorzsghbfpeyYQjSvTgS27?chain=sol",
-      "reason": "liquidity $23,805 under $25k · 5m volume $110 under $5k",
-      "gates": 2,
-      "chg_m5": 1.82,
-      "vol_m5": 110.0,
-      "score": 4.04
+      "symbol": "CBUCKS",
+      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
+      "reason": "5m volume $11 under $5k",
+      "gates": 1,
+      "chg_m5": 1.48,
+      "vol_m5": 11.0,
+      "score": 0.55
     }
   ],
   "helius_status": "",
@@ -524467,7 +524567,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-26T21:17:11.851366+00:00",
+  "checked_at": "2026-11-26T21:17:51.896727+00:00",
   "checked_at_london": "26 Nov 2026, 21:17 GMT",
   "who_we_copy": null
 }
