@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.7400514449992435,
-  "wins": 9782,
+  "win_rate": 0.7400711097662456,
+  "wins": 9783,
   "losses": 3436,
-  "closed_trades": 13218,
+  "closed_trades": 13219,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -21,8 +21,8 @@
   },
   "ticks": 113127,
   "open_count": 2,
-  "last_updated_london": "27 Nov 2026, 2:47 GMT",
-  "last_updated": "2026-11-27T02:47:54.411163+00:00",
+  "last_updated_london": "27 Nov 2026, 2:48 GMT",
+  "last_updated": "2026-11-27T02:48:34.441185+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "26 Nov 2026, 21:00 GMT",
-      "value": 0.0
-    },
     {
       "label": "26 Nov 2026, 21:00 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "27 Nov 2026, 2:47 GMT",
       "value": 0.0
+    },
+    {
+      "label": "27 Nov 2026, 2:48 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "27 Nov 2026, 2:48 GMT",
+      "hhmm": "02:48",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "02:48 EXECUTOR: BUY 10% $SpaceXCoin @ 0.000268737 — 5m +16.4% vol $61,489 buys 916/sells 212",
+      "message": "02:48 EXECUTOR: BUY 10% $SpaceXCoin @ 0.000268737 — 5m +16.4% vol $61,489 buys 916/sells 212",
+      "symbol": null,
+      "action": "BUY 10% $SpaceXCoin @ 0.000268737 — 5m +16.4% vol $61,489 buys 916/sells 212"
+    },
+    {
+      "ts": "27 Nov 2026, 2:48 GMT",
+      "hhmm": "02:48",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "02:48 RISK: SELL stop −5% $SpaceXCoin",
+      "message": "02:48 RISK: SELL stop −5% $SpaceXCoin",
+      "symbol": null,
+      "action": "SELL stop −5% $SpaceXCoin"
+    },
     {
       "ts": "27 Nov 2026, 2:47 GMT",
       "hhmm": "02:47",
@@ -2441,26 +2461,6 @@
       "message": "02:27 RISK: SELL stop −5% $Santaball",
       "symbol": null,
       "action": "SELL stop −5% $Santaball"
-    },
-    {
-      "ts": "27 Nov 2026, 2:24 GMT",
-      "hhmm": "02:24",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "02:24 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
-      "message": "02:24 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 2 open, equity $0.00"
-    },
-    {
-      "ts": "27 Nov 2026, 2:24 GMT",
-      "hhmm": "02:24",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "02:24 EXECUTOR: BUY 10% $Santaball @ 0.000817668 — 5m +4.3% vol $26,923 buys 1075/sells 334",
-      "message": "02:24 EXECUTOR: BUY 10% $Santaball @ 0.000817668 — 5m +4.3% vol $26,923 buys 1075/sells 334",
-      "symbol": null,
-      "action": "BUY 10% $Santaball @ 0.000817668 — 5m +4.3% vol $26,923 buys 1075/sells 334"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "58 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
+      "badge": "41 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "58 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "41 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.01872599541433547,
-      "current_price": 0.018474824439957502,
+      "current_price": 0.01849,
       "change_pct": null,
-      "price_source": "geckoterminal",
+      "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.013412957165720996,
+      "unrealized_pct": -0.01260255645234265,
       "hard_stop": 0.017789695643618698,
       "trail_activate": 0.01947503523090889,
       "opened_at": "27 Nov 2026, 2:36 GMT",
@@ -2603,16 +2603,16 @@
       "agent": "MIRAX",
       "qty": 0.0,
       "qty_display": "0",
-      "entry_price": 0.000310344,
-      "current_price": 0.0003088,
+      "entry_price": 0.00026873699999999996,
+      "current_price": 0.0002674,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
       "unrealized_pct": -0.004975124378109319,
-      "hard_stop": 0.0002948268,
-      "trail_activate": 0.00032275776,
-      "opened_at": "27 Nov 2026, 2:47 GMT",
-      "reason": "BUY 10% $SpaceXCoin @ 0.000310344 — 5m +34.5% vol $54,385 buys 819/sells 189",
+      "hard_stop": 0.00025530014999999997,
+      "trail_activate": 0.00027948647999999994,
+      "opened_at": "27 Nov 2026, 2:48 GMT",
+      "reason": "BUY 10% $SpaceXCoin @ 0.000268737 — 5m +16.4% vol $61,489 buys 916/sells 212",
       "score": null,
       "tag": "",
       "venue": "",
@@ -2620,6 +2620,46 @@
     }
   ],
   "fills": [
+    {
+      "id": "f26440",
+      "time": "27 Nov 2026, 2:48 GMT",
+      "ts": "2026-11-27T02:48:10.468186+00:00",
+      "side": "buy",
+      "symbol": "SpaceXCoin",
+      "name": "SpaceXCoin",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00026873699999999996,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f26439",
+      "time": "27 Nov 2026, 2:48 GMT",
+      "ts": "2026-11-27T02:48:10.467857+00:00",
+      "side": "sell",
+      "symbol": "SpaceXCoin",
+      "name": "SpaceXCoin",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.000266063,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f26438",
       "time": "27 Nov 2026, 2:47 GMT",
@@ -531382,11 +531422,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 13218,
-    "win_rate": 0.7400514449992435,
+    "closed_trades": 13219,
+    "win_rate": 0.7400711097662456,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 26438
+    "fills": 26440
   },
   "ok": true,
   "totals_cumulative": {
@@ -531528,14 +531568,14 @@
     {
       "symbol": "CATE",
       "name": "CATE",
-      "price": 0.018474824439957502,
+      "price": 0.01849,
       "change_pct": null,
-      "source": "geckoterminal"
+      "source": "dexscreener"
     },
     {
       "symbol": "SpaceXCoin",
       "name": "SpaceXCoin",
-      "price": 0.0003088,
+      "price": 0.0002674,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -531578,8 +531618,8 @@
     {
       "id": "meme",
       "name": "Crypto + Meme",
-      "equity": 85.72,
-      "return_pct": -0.14275706,
+      "equity": 85.55,
+      "return_pct": -0.14452411999999995,
       "closed_trades": 116,
       "win_rate": 0.3879310344827586,
       "realized_pnl": -15.6
@@ -531587,8 +531627,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 69.5,
-      "return_pct": -0.30495118000000004,
+      "equity": 69.51,
+      "return_pct": -0.30491399,
       "closed_trades": 731,
       "win_rate": 0.34610123119015046,
       "realized_pnl": -30.39
@@ -531607,8 +531647,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 13218,
-      "win_rate": 0.7400514449992435,
+      "closed_trades": 13219,
+      "win_rate": 0.7400711097662456,
       "realized_pnl": -100.0
     }
   ],
@@ -531625,61 +531665,61 @@
       "symbol": "Snowball",
       "mint": "9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump",
       "link": "https://axiom.trade/meme/9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump?chain=sol",
-      "reason": "buy/sell 105/120 under 1.05",
+      "reason": "buy/sell 116/136 under 1.05",
       "gates": 1,
-      "chg_m5": 8.87,
-      "vol_m5": 11134.0,
-      "score": 16.08
-    },
-    {
-      "symbol": "FIONA",
-      "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
-      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
-      "reason": "5m volume $945 under $5k",
-      "gates": 1,
-      "chg_m5": 1.008,
-      "vol_m5": 945.0,
-      "score": 0.76
-    },
-    {
-      "symbol": "Santaball",
-      "mint": "4obGGXRMVyqpWZr12UzyaBdNkgdYwz2GiY8enmd2pump",
-      "link": "https://axiom.trade/meme/4obGGXRMVyqpWZr12UzyaBdNkgdYwz2GiY8enmd2pump?chain=sol",
-      "reason": "5m -4.9% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -4.89,
-      "vol_m5": 13672.0,
-      "score": -3.67
+      "chg_m5": 8.64,
+      "vol_m5": 12351.0,
+      "score": 16.63
     },
     {
       "symbol": "DragonRiders",
       "mint": "5xrT8y2KU2YwzipwCMNxxTc8KAGQd4wjtGTc2WyJJCMh",
       "link": "https://axiom.trade/meme/5xrT8y2KU2YwzipwCMNxxTc8KAGQd4wjtGTc2WyJJCMh?chain=sol",
-      "reason": "5m -8.3% outside +1% to +40%",
+      "reason": "5m -1.3% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -8.32,
-      "vol_m5": 22849.0,
-      "score": -10.62
+      "chg_m5": -1.27,
+      "vol_m5": 25479.0,
+      "score": -1.89
+    },
+    {
+      "symbol": "Santaball",
+      "mint": "4obGGXRMVyqpWZr12UzyaBdNkgdYwz2GiY8enmd2pump",
+      "link": "https://axiom.trade/meme/4obGGXRMVyqpWZr12UzyaBdNkgdYwz2GiY8enmd2pump?chain=sol",
+      "reason": "5m -6.1% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -6.09,
+      "vol_m5": 14979.0,
+      "score": -4.57
     },
     {
       "symbol": "Santa",
       "mint": "CcpN5RXTEjbRqbtuHoxyiMZorzsghbfpeyYQjSvTgS27",
       "link": "https://axiom.trade/meme/CcpN5RXTEjbRqbtuHoxyiMZorzsghbfpeyYQjSvTgS27?chain=sol",
-      "reason": "liquidity $24,814 under $25k · 5m volume $208 under $5k",
+      "reason": "liquidity $24,864 under $25k · 5m volume $233 under $5k",
       "gates": 2,
-      "chg_m5": 3.38,
-      "vol_m5": 208.0,
-      "score": 30.42
+      "chg_m5": 3.79,
+      "vol_m5": 233.0,
+      "score": 34.11
     },
     {
       "symbol": "530A",
       "mint": "7Ttmp4xBtErMzxpR6AhuzJjDf7u3YGJtWm5ibPsqpump",
       "link": "https://axiom.trade/meme/7Ttmp4xBtErMzxpR6AhuzJjDf7u3YGJtWm5ibPsqpump?chain=sol",
-      "reason": "liquidity $19,611 under $25k · market cap $76,133 outside $100k–$100M",
+      "reason": "liquidity $18,944 under $25k · market cap $71,184 outside $100k–$100M",
       "gates": 2,
-      "chg_m5": 16.34,
-      "vol_m5": 17659.0,
-      "score": 15.05
+      "chg_m5": 8.78,
+      "vol_m5": 18258.0,
+      "score": 8.17
+    },
+    {
+      "symbol": "steppa",
+      "mint": "6StXSU7RvsbuwNG2gPw7nmu2UTVM3ZD2aewHA7fMpump",
+      "link": "https://axiom.trade/meme/6StXSU7RvsbuwNG2gPw7nmu2UTVM3ZD2aewHA7fMpump?chain=sol",
+      "reason": "liquidity $12,768 under $25k · market cap $36,503 outside $100k–$100M",
+      "gates": 2,
+      "chg_m5": 6.38,
+      "vol_m5": 7577.0,
+      "score": 3.13
     }
   ],
   "helius_status": "",
@@ -531687,7 +531727,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-27T02:47:54.411163+00:00",
-  "checked_at_london": "27 Nov 2026, 2:47 GMT",
+  "checked_at": "2026-11-27T02:48:34.441185+00:00",
+  "checked_at_london": "27 Nov 2026, 2:48 GMT",
   "who_we_copy": null
 }
