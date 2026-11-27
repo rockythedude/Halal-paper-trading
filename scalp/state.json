@@ -3,7 +3,36 @@
   "target": 6000.0,
   "cash": 4.358534103767438e-07,
   "equity": 0.0,
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "VOLALITY",
+      "name": "VOLALITY",
+      "mint": "4tPsVjDAqgDjb5TzGazEDMvM2GK2xDvCG2LxpX8opump",
+      "pair": "7bt3ov8SSMXBsB36Uj1BCC1SnkRtavu7w516orx52NwX",
+      "link": "https://axiom.trade/meme/4tPsVjDAqgDjb5TzGazEDMvM2GK2xDvCG2LxpX8opump?chain=sol",
+      "dex_url": "https://dexscreener.com/solana/7bt3ov8ssmxbsb36uj1bcc1snkrtavu7w516orx52nwx",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "entry_price": 0.0001466295,
+      "raw_price": 0.0001459,
+      "entry_fee": 0.0,
+      "cost_basis": 0.0,
+      "opened_at": "2026-11-27T05:30:46.041760+00:00",
+      "opened_at_london": "27 Nov 2026, 5:30 GMT",
+      "high_water": 0.0001466295,
+      "trail_armed": false,
+      "last_price": 0.0001459,
+      "last_source": "dexscreener",
+      "reason": "BUY 10% $VOLALITY @ 0.000146629 \u2014 5m +9.7% vol $28,764 buys 173/sells 82",
+      "hard_stop": 0.00013929802499999997,
+      "take_profit": 0.00015835986,
+      "trail_activate": 0.00015249468,
+      "market_value": 0.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.00497512437810943
+    }
+  ],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -199883,12 +199912,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-26T23:40:33.850296+00:00",
-      "label": "26 Nov 2026, 23:40 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
-    {
       "ts": "2026-11-26T23:41:13.872862+00:00",
       "label": "26 Nov 2026, 23:41 GMT",
       "equity": 0.0,
@@ -202887,21 +202910,15 @@
       "label": "27 Nov 2026, 5:30 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-27T05:30:54.031114+00:00",
+      "label": "27 Nov 2026, 5:30 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-27T00:52:14.327923+00:00",
-      "london": "27 Nov 2026, 0:52 GMT",
-      "hhmm": "00:52",
-      "agent": "LOGGER",
-      "action": "run complete \u2014 29 polls, 1 open, equity $0.00",
-      "symbol": null,
-      "reason": "run complete \u2014 29 polls, 1 open, equity $0.00",
-      "line": "00:52 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00",
-      "tag": "LOGGER",
-      "message": "00:52 LOGGER: run complete \u2014 29 polls, 1 open, equity $0.00"
-    },
     {
       "ts": "2026-11-27T00:53:19.152358+00:00",
       "london": "27 Nov 2026, 0:53 GMT",
@@ -207689,6 +207706,18 @@
       "line": "05:29 RISK: SELL stop \u22125% $VOLALITY",
       "tag": "RISK",
       "message": "05:29 RISK: SELL stop \u22125% $VOLALITY"
+    },
+    {
+      "ts": "2026-11-27T05:30:46.041804+00:00",
+      "london": "27 Nov 2026, 5:30 GMT",
+      "hhmm": "05:30",
+      "agent": "EXECUTOR",
+      "action": "BUY 10% $VOLALITY @ 0.000146629 \u2014 5m +9.7% vol $28,764 buys 173/sells 82",
+      "symbol": null,
+      "reason": "BUY 10% $VOLALITY @ 0.000146629 \u2014 5m +9.7% vol $28,764 buys 173/sells 82",
+      "line": "05:30 EXECUTOR: BUY 10% $VOLALITY @ 0.000146629 \u2014 5m +9.7% vol $28,764 buys 173/sells 82",
+      "tag": "EXECUTOR",
+      "message": "05:30 EXECUTOR: BUY 10% $VOLALITY @ 0.000146629 \u2014 5m +9.7% vol $28,764 buys 173/sells 82"
     }
   ],
   "agents": {
@@ -207698,7 +207727,7 @@
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
       "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 20 pools",
-      "badge": "58 pairs",
+      "badge": "57 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -207713,7 +207742,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "58 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "57 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -207761,8 +207790,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "0/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -207790,7 +207819,7 @@
     }
   },
   "ticks": 114084,
-  "last_updated": "2026-11-27T05:30:14.057405+00:00",
+  "last_updated": "2026-11-27T05:30:54.031002+00:00",
   "last_updated_london": "27 Nov 2026, 5:30 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -580917,12 +580946,26 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f26650"
+    },
+    {
+      "ts": "2026-11-27T05:30:46.041760+00:00",
+      "london": "27 Nov 2026, 5:30 GMT",
+      "side": "buy",
+      "symbol": "VOLALITY",
+      "name": "VOLALITY",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.0001466295,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "id": "f26651"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-27T05:30:14.057405+00:00",
+  "checked_at": "2026-11-27T05:30:54.031002+00:00",
   "checked_at_london": "27 Nov 2026, 5:30 GMT",
   "near_misses": [
     {
@@ -580936,54 +580979,54 @@
       "score": 4.69
     },
     {
+      "symbol": "JIMMY",
+      "mint": "38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump",
+      "link": "https://axiom.trade/meme/38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump?chain=sol",
+      "reason": "5m volume $905 under $5k",
+      "gates": 1,
+      "chg_m5": 2.442,
+      "vol_m5": 905.0,
+      "score": 1.35
+    },
+    {
       "symbol": "CATE",
       "mint": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
       "link": "https://axiom.trade/meme/Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump?chain=sol",
-      "reason": "5m -1.0% outside +1% to +40%",
+      "reason": "5m -0.8% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -1.0,
-      "vol_m5": 6378.0,
-      "score": -3.0
-    },
-    {
-      "symbol": "VOLALITY",
-      "mint": "4tPsVjDAqgDjb5TzGazEDMvM2GK2xDvCG2LxpX8opump",
-      "link": "https://axiom.trade/meme/4tPsVjDAqgDjb5TzGazEDMvM2GK2xDvCG2LxpX8opump?chain=sol",
-      "reason": "5m -2.1% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -2.07,
-      "vol_m5": 28553.0,
-      "score": -4.87
+      "chg_m5": -0.806,
+      "vol_m5": 8472.0,
+      "score": -3.12
     },
     {
       "symbol": "mihao",
       "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
       "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
-      "reason": "5m volume $2,280 under $5k \u00b7 5m +0.6% outside +1% to +40%",
+      "reason": "5m volume $4,380 under $5k \u00b7 5m +1.0% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 0.616,
-      "vol_m5": 2280.0,
-      "score": 2.85
+      "chg_m5": 0.989,
+      "vol_m5": 4380.0,
+      "score": 7.87
     },
     {
       "symbol": "Snowball",
       "mint": "9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump",
       "link": "https://axiom.trade/meme/9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump?chain=sol",
-      "reason": "5m volume $2,915 under $5k \u00b7 buy/sell 49/49 under 1.05",
+      "reason": "5m volume $3,013 under $5k \u00b7 buy/sell 54/54 under 1.05",
       "gates": 2,
-      "chg_m5": 3.12,
-      "vol_m5": 2915.0,
-      "score": 2.53
+      "chg_m5": 5.562,
+      "vol_m5": 3013.0,
+      "score": 4.48
     },
     {
-      "symbol": "ANSEM",
-      "mint": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
-      "link": "https://axiom.trade/meme/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump?chain=sol",
-      "reason": "5m volume $965 under $5k \u00b7 5m +0.5% outside +1% to +40%",
+      "symbol": "PUMP",
+      "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+      "link": "https://axiom.trade/meme/pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn?chain=sol",
+      "reason": "market cap $943,136,206 outside $100k\u2013$100M \u00b7 5m +0.7% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 0.47,
-      "vol_m5": 965.0,
-      "score": 1.17
+      "chg_m5": 0.656,
+      "vol_m5": 7588.0,
+      "score": 2.87
     }
   ]
 }
