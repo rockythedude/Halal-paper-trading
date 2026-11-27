@@ -200558,12 +200558,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-27T02:57:16.670351+00:00",
-      "label": "27 Nov 2026, 2:57 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
-    {
       "ts": "2026-11-27T02:57:56.668650+00:00",
       "label": "27 Nov 2026, 2:57 GMT",
       "equity": 0.0,
@@ -203562,21 +203556,15 @@
       "label": "27 Nov 2026, 8:47 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-27T08:47:34.717324+00:00",
+      "label": "27 Nov 2026, 8:47 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-27T02:38:33.330183+00:00",
-      "london": "27 Nov 2026, 2:38 GMT",
-      "hhmm": "02:38",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $Santaball @ 0.000827718 \u2014 5m +19.0% vol $16,355 buys 865/sells 259",
-      "symbol": null,
-      "reason": "BUY 10% $Santaball @ 0.000827718 \u2014 5m +19.0% vol $16,355 buys 865/sells 259",
-      "line": "02:38 EXECUTOR: BUY 10% $Santaball @ 0.000827718 \u2014 5m +19.0% vol $16,355 buys 865/sells 259",
-      "tag": "EXECUTOR",
-      "message": "02:38 EXECUTOR: BUY 10% $Santaball @ 0.000827718 \u2014 5m +19.0% vol $16,355 buys 865/sells 259"
-    },
     {
       "ts": "2026-11-27T02:39:05.213844+00:00",
       "london": "27 Nov 2026, 2:39 GMT",
@@ -208364,6 +208352,18 @@
       "line": "08:44 RISK: SELL stop \u22125% $Snowball",
       "tag": "RISK",
       "message": "08:44 RISK: SELL stop \u22125% $Snowball"
+    },
+    {
+      "ts": "2026-11-27T08:47:34.717228+00:00",
+      "london": "27 Nov 2026, 8:47 GMT",
+      "hhmm": "08:47",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 0 open, equity $0.00",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 0 open, equity $0.00",
+      "line": "08:47 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.00",
+      "tag": "LOGGER",
+      "message": "08:47 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.00"
     }
   ],
   "agents": {
@@ -208464,8 +208464,8 @@
       "open_positions": 0
     }
   },
-  "ticks": 115244,
-  "last_updated": "2026-11-27T08:47:10.731082+00:00",
+  "ticks": 115273,
+  "last_updated": "2026-11-27T08:47:34.714690+00:00",
   "last_updated_london": "27 Nov 2026, 8:47 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -208487,7 +208487,7 @@
     "traded": 13370
   },
   "totals_cumulative": {
-    "scanned": 115244,
+    "scanned": 115273,
     "killed": 0,
     "traded": 13370
   },
@@ -582857,28 +582857,38 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-27T08:47:10.731082+00:00",
+  "checked_at": "2026-11-27T08:47:34.714690+00:00",
   "checked_at_london": "27 Nov 2026, 8:47 GMT",
   "near_misses": [
     {
       "symbol": "BRUH",
       "mint": "PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump",
       "link": "https://axiom.trade/meme/PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump?chain=sol",
-      "reason": "5m volume $800 under $5k",
+      "reason": "5m volume $890 under $5k",
       "gates": 1,
-      "chg_m5": 2.08,
-      "vol_m5": 800.0,
-      "score": 4.69
+      "chg_m5": 2.17,
+      "vol_m5": 890.0,
+      "score": 5.4
+    },
+    {
+      "symbol": "ROCKET",
+      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
+      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
+      "reason": "5m volume $40 under $5k",
+      "gates": 1,
+      "chg_m5": 2.51,
+      "vol_m5": 40.0,
+      "score": 1.95
     },
     {
       "symbol": "Snowball",
       "mint": "9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump",
       "link": "https://axiom.trade/meme/9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump?chain=sol",
-      "reason": "5m -2.8% outside +1% to +40%",
+      "reason": "5m -4.2% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -2.77,
-      "vol_m5": 9553.0,
-      "score": -3.46
+      "chg_m5": -4.25,
+      "vol_m5": 9966.0,
+      "score": -5.5
     },
     {
       "symbol": "WW",
@@ -582889,16 +582899,6 @@
       "chg_m5": 3.59,
       "vol_m5": 194.0,
       "score": 2.11
-    },
-    {
-      "symbol": "ROCKET",
-      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
-      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
-      "reason": "5m volume $36 under $5k \u00b7 5m -0.0% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": -0.03,
-      "vol_m5": 36.0,
-      "score": -0.02
     }
   ]
 }
