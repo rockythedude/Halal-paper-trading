@@ -21,8 +21,8 @@
   },
   "ticks": 119971,
   "open_count": 2,
-  "last_updated_london": "27 Nov 2026, 22:06 GMT",
-  "last_updated": "2026-11-27T22:06:23.842494+00:00",
+  "last_updated_london": "27 Nov 2026, 22:07 GMT",
+  "last_updated": "2026-11-27T22:07:03.662353+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "27 Nov 2026, 16:16 GMT",
-      "value": 0.0
-    },
     {
       "label": "27 Nov 2026, 16:17 GMT",
       "value": 0.0
@@ -2058,6 +2054,10 @@
     {
       "label": "27 Nov 2026, 22:06 GMT",
       "value": 0.0
+    },
+    {
+      "label": "27 Nov 2026, 22:07 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
-      "badge": "39 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
+      "badge": "57 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "39 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "57 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2582,11 +2582,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0014225702384467415,
-      "current_price": 0.001407,
+      "current_price": 0.0014092028276736304,
       "change_pct": null,
-      "price_source": "dexscreener",
+      "price_source": "geckoterminal",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.010945145642679899,
+      "unrealized_pct": -0.009396661347074509,
       "hard_stop": 0.0013514417265244043,
       "trail_activate": 0.001479473047984611,
       "opened_at": "27 Nov 2026, 22:05 GMT",
@@ -2604,11 +2604,11 @@
       "qty": 0.0,
       "qty_display": "0",
       "entry_price": 0.0017215649999999998,
-      "current_price": 0.001673,
+      "current_price": 0.001671,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.028209797480780452,
+      "unrealized_pct": -0.029371531135914064,
       "hard_stop": 0.0016354867499999996,
       "trail_activate": 0.0017904275999999998,
       "opened_at": "27 Nov 2026, 22:05 GMT",
@@ -554408,14 +554408,14 @@
     {
       "symbol": "FIONA",
       "name": "FIONA",
-      "price": 0.001407,
+      "price": 0.0014092028276736304,
       "change_pct": null,
-      "source": "dexscreener"
+      "source": "geckoterminal"
     },
     {
       "symbol": "MAYA",
       "name": "MAYA",
-      "price": 0.001673,
+      "price": 0.001671,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -554467,8 +554467,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 68.5,
-      "return_pct": -0.31497041,
+      "equity": 68.51,
+      "return_pct": -0.31492906000000004,
       "closed_trades": 758,
       "win_rate": 0.34300791556728233,
       "realized_pnl": -31.47
@@ -554512,14 +554512,24 @@
       "score": 21.98
     },
     {
+      "symbol": "baton",
+      "mint": "Hg5Ja55T5wESq4vyFoiVCMeHXtGyVA69X2UHq8hgpump",
+      "link": "https://axiom.trade/meme/Hg5Ja55T5wESq4vyFoiVCMeHXtGyVA69X2UHq8hgpump?chain=sol",
+      "reason": "5m volume $1,319 under $5k",
+      "gates": 1,
+      "chg_m5": 1.055,
+      "vol_m5": 1319.0,
+      "score": 8.47
+    },
+    {
       "symbol": "ROCKET",
       "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
       "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
-      "reason": "5m volume $629 under $5k",
+      "reason": "5m volume $635 under $5k",
       "gates": 1,
-      "chg_m5": 2.8,
-      "vol_m5": 629.0,
-      "score": 7.04
+      "chg_m5": 2.81,
+      "vol_m5": 635.0,
+      "score": 6.96
     },
     {
       "symbol": "CINU",
@@ -554532,34 +554542,24 @@
       "score": 1.67
     },
     {
-      "symbol": "PumpMas",
-      "mint": "EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump",
-      "link": "https://axiom.trade/meme/EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump?chain=sol",
-      "reason": "5m volume $1,745 under $5k · buy/sell 5/7 under 1.05",
-      "gates": 2,
-      "chg_m5": 7.56,
-      "vol_m5": 1745.0,
-      "score": 16.2
+      "symbol": "Snowball",
+      "mint": "9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump",
+      "link": "https://axiom.trade/meme/9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump?chain=sol",
+      "reason": "5m -0.2% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -0.207,
+      "vol_m5": 6224.0,
+      "score": -0.7
     },
     {
-      "symbol": "Rizzmas",
-      "mint": "85cQsFgbi8mBZxiPppbpPXuV7j1hA8tBwhjF4gKW6mHg",
-      "link": "https://axiom.trade/meme/85cQsFgbi8mBZxiPppbpPXuV7j1hA8tBwhjF4gKW6mHg?chain=sol",
-      "reason": "5m volume $7 under $5k · no 5m change",
-      "gates": 2,
-      "chg_m5": null,
-      "vol_m5": 7.0,
-      "score": 0.0
-    },
-    {
-      "symbol": "three",
-      "mint": "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
-      "link": "https://axiom.trade/meme/FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump?chain=sol",
-      "reason": "5m volume $695 under $5k · 5m -2.0% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": -2.04,
-      "vol_m5": 695.0,
-      "score": -5.25
+      "symbol": "PUMPCHAN",
+      "mint": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
+      "link": "https://axiom.trade/meme/Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump?chain=sol",
+      "reason": "5m -1.9% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -1.87,
+      "vol_m5": 8796.0,
+      "score": -4.5
     }
   ],
   "helius_status": "",
@@ -554567,7 +554567,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-27T22:06:23.842494+00:00",
-  "checked_at_london": "27 Nov 2026, 22:06 GMT",
+  "checked_at": "2026-11-27T22:07:03.662353+00:00",
+  "checked_at_london": "27 Nov 2026, 22:07 GMT",
   "who_we_copy": null
 }
