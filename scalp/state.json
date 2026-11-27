@@ -205283,12 +205283,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-27T13:25:32.612657+00:00",
-      "label": "27 Nov 2026, 13:25 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
-    {
       "ts": "2026-11-27T13:26:12.610649+00:00",
       "label": "27 Nov 2026, 13:26 GMT",
       "equity": 0.0,
@@ -208287,21 +208281,15 @@
       "label": "27 Nov 2026, 19:16 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-27T19:16:49.079191+00:00",
+      "label": "27 Nov 2026, 19:16 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-27T16:41:39.585518+00:00",
-      "london": "27 Nov 2026, 16:41 GMT",
-      "hhmm": "16:41",
-      "agent": "RISK",
-      "action": "SELL stop \u22125% $KITT",
-      "symbol": null,
-      "reason": "SELL stop \u22125% $KITT",
-      "line": "16:41 RISK: SELL stop \u22125% $KITT",
-      "tag": "RISK",
-      "message": "16:41 RISK: SELL stop \u22125% $KITT"
-    },
     {
       "ts": "2026-11-27T16:41:39.585826+00:00",
       "london": "27 Nov 2026, 16:41 GMT",
@@ -213089,6 +213077,18 @@
       "line": "19:14 RISK: SELL stop \u22125% $VICAT",
       "tag": "RISK",
       "message": "19:14 RISK: SELL stop \u22125% $VICAT"
+    },
+    {
+      "ts": "2026-11-27T19:16:49.079074+00:00",
+      "london": "27 Nov 2026, 19:16 GMT",
+      "hhmm": "19:16",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 0 open, equity $0.00",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 0 open, equity $0.00",
+      "line": "19:16 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.00",
+      "tag": "LOGGER",
+      "message": "19:16 LOGGER: run complete \u2014 29 polls, 0 open, equity $0.00"
     }
   ],
   "agents": {
@@ -213097,8 +213097,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal unreachable",
-      "badge": "39 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 20 pools",
+      "badge": "58 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -213113,7 +213113,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "39 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "58 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -213189,8 +213189,8 @@
       "open_positions": 0
     }
   },
-  "ticks": 118956,
-  "last_updated": "2026-11-27T19:16:24.962310+00:00",
+  "ticks": 118985,
+  "last_updated": "2026-11-27T19:16:49.076657+00:00",
   "last_updated_london": "27 Nov 2026, 19:16 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -213209,12 +213209,12 @@
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 13684
+    "traded": 13685
   },
   "totals_cumulative": {
-    "scanned": 118956,
+    "scanned": 118985,
     "killed": 0,
-    "traded": 13684
+    "traded": 13685
   },
   "paper_money": true,
   "fills": [
@@ -596402,58 +596402,68 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-27T19:16:24.962310+00:00",
+  "checked_at": "2026-11-27T19:16:49.076657+00:00",
   "checked_at_london": "27 Nov 2026, 19:16 GMT",
   "near_misses": [
-    {
-      "symbol": "PumpMas",
-      "mint": "EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump",
-      "link": "https://axiom.trade/meme/EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump?chain=sol",
-      "reason": "5m volume $14 under $5k",
-      "gates": 1,
-      "chg_m5": 2.32,
-      "vol_m5": 14.0,
-      "score": 1.74
-    },
     {
       "symbol": "VICAT",
       "mint": "4WZLGbAp6oEPxFbDcsfADCo1AgYZkfiteQhtM5iwpump",
       "link": "https://axiom.trade/meme/4WZLGbAp6oEPxFbDcsfADCo1AgYZkfiteQhtM5iwpump?chain=sol",
-      "reason": "5m -14.1% outside +1% to +40%",
+      "reason": "5m -15.8% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -14.07,
-      "vol_m5": 19597.0,
-      "score": -29.36
+      "chg_m5": -15.75,
+      "vol_m5": 20633.0,
+      "score": -35.24
     },
     {
       "symbol": "FARM",
       "mint": "2dynAjPBnkqzjUwozgn8pDRkCf7k7CDJkLfcf4rupump",
       "link": "https://axiom.trade/meme/2dynAjPBnkqzjUwozgn8pDRkCf7k7CDJkLfcf4rupump?chain=sol",
-      "reason": "liquidity $15,031 under $25k \u00b7 market cap $46,970 outside $100k\u2013$100M",
+      "reason": "liquidity $16,065 under $25k \u00b7 market cap $53,290 outside $100k\u2013$100M",
       "gates": 2,
-      "chg_m5": 24.47,
-      "vol_m5": 40598.0,
-      "score": 109.47
+      "chg_m5": 34.71,
+      "vol_m5": 34503.0,
+      "score": 149.26
     },
     {
-      "symbol": "Rizzmas",
-      "mint": "85cQsFgbi8mBZxiPppbpPXuV7j1hA8tBwhjF4gKW6mHg",
-      "link": "https://axiom.trade/meme/85cQsFgbi8mBZxiPppbpPXuV7j1hA8tBwhjF4gKW6mHg?chain=sol",
-      "reason": "5m volume $348 under $5k \u00b7 5m -0.0% outside +1% to +40%",
+      "symbol": "ROCKET",
+      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
+      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
+      "reason": "5m volume $14 under $5k \u00b7 buy/sell 122/119 under 1.05",
       "gates": 2,
-      "chg_m5": -0.04,
-      "vol_m5": 348.0,
-      "score": -0.11
+      "chg_m5": 2.54,
+      "vol_m5": 14.0,
+      "score": 0.65
     },
     {
-      "symbol": "Fireball",
-      "mint": "B9wbjDJ4FbHMsZmoXAkJSTAwuePaJUKbySvnK5zApump",
-      "link": "https://axiom.trade/meme/B9wbjDJ4FbHMsZmoXAkJSTAwuePaJUKbySvnK5zApump?chain=sol",
-      "reason": "5m volume $3,587 under $5k \u00b7 5m -4.6% outside +1% to +40%",
+      "symbol": "CINU",
+      "mint": "CvXQ9qEriGgTbMWyF8L1U7oqn9ev8A49N1dzNE8cpump",
+      "link": "https://axiom.trade/meme/CvXQ9qEriGgTbMWyF8L1U7oqn9ev8A49N1dzNE8cpump?chain=sol",
+      "reason": "5m volume $56 under $5k \u00b7 5m +0.8% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": -4.63,
-      "vol_m5": 3587.0,
-      "score": -11.4
+      "chg_m5": 0.85,
+      "vol_m5": 56.0,
+      "score": 0.64
+    },
+    {
+      "symbol": "PUMP",
+      "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+      "link": "https://axiom.trade/meme/pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn?chain=sol",
+      "reason": "market cap $920,288,070 outside $100k\u2013$100M \u00b7 5m +0.2% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.181,
+      "vol_m5": 6982.0,
+      "score": 0.62
+    },
+    {
+      "symbol": "BASKET",
+      "mint": "3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f",
+      "link": "https://axiom.trade/meme/3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f?chain=sol",
+      "reason": "5m volume $393 under $5k \u00b7 buy/sell 3/4 under 1.05",
+      "gates": 2,
+      "chg_m5": 1.001,
+      "vol_m5": 393.0,
+      "score": 0.6
     }
   ]
 }
