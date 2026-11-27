@@ -5,34 +5,6 @@
   "equity": 0.0,
   "positions": [
     {
-      "symbol": "CBUCKS",
-      "name": "CBUCKS",
-      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
-      "pair": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB",
-      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/b4cp45pgifvm5faxfh6aev8qz3eunqnqgbw7kuc7mhnb",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.007425944999999999,
-      "raw_price": 0.007389,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-27T11:12:58.451791+00:00",
-      "opened_at_london": "27 Nov 2026, 11:12 GMT",
-      "high_water": 0.007525,
-      "trail_armed": false,
-      "last_price": 0.007516,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $CBUCKS @ 0.00742594 \u2014 5m +1.5% vol $6,508 buys 19/sells 6",
-      "hard_stop": 0.0070546477499999986,
-      "take_profit": 0.008020020599999999,
-      "trail_activate": 0.007722982799999999,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.012127076082572907
-    },
-    {
       "symbol": "PUMPCHAN",
       "name": "PUMPCHAN",
       "mint": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
@@ -200821,15 +200793,24 @@
       "closed_at": "2026-11-27T11:31:13.539354+00:00",
       "closed_at_london": "27 Nov 2026, 11:31 GMT",
       "opened_at": "2026-11-27T11:11:06.496608+00:00"
+    },
+    {
+      "symbol": "CBUCKS",
+      "name": "CBUCKS",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.007425944999999999,
+      "exit_price": 0.00747842,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL time stop 20m $CBUCKS",
+      "closed_at": "2026-11-27T11:33:05.476137+00:00",
+      "closed_at_london": "27 Nov 2026, 11:33 GMT",
+      "opened_at": "2026-11-27T11:12:58.451791+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-27T05:42:17.332285+00:00",
-      "label": "27 Nov 2026, 5:42 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-27T05:42:57.261867+00:00",
       "label": "27 Nov 2026, 5:42 GMT",
@@ -203829,21 +203810,15 @@
       "label": "27 Nov 2026, 11:32 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-27T11:33:29.487561+00:00",
+      "label": "27 Nov 2026, 11:33 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-27T02:58:28.707617+00:00",
-      "london": "27 Nov 2026, 2:58 GMT",
-      "hhmm": "02:58",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $SpaceXCoin @ 0.000327831 \u2014 5m +18.5% vol $41,840 buys 973/sells 121",
-      "symbol": null,
-      "reason": "BUY 10% $SpaceXCoin @ 0.000327831 \u2014 5m +18.5% vol $41,840 buys 973/sells 121",
-      "line": "02:58 EXECUTOR: BUY 10% $SpaceXCoin @ 0.000327831 \u2014 5m +18.5% vol $41,840 buys 973/sells 121",
-      "tag": "EXECUTOR",
-      "message": "02:58 EXECUTOR: BUY 10% $SpaceXCoin @ 0.000327831 \u2014 5m +18.5% vol $41,840 buys 973/sells 121"
-    },
     {
       "ts": "2026-11-27T02:59:32.712983+00:00",
       "london": "27 Nov 2026, 2:59 GMT",
@@ -208631,6 +208606,18 @@
       "line": "11:31 RISK: SELL stop \u22125% $KAI",
       "tag": "RISK",
       "message": "11:31 RISK: SELL stop \u22125% $KAI"
+    },
+    {
+      "ts": "2026-11-27T11:33:05.476209+00:00",
+      "london": "27 Nov 2026, 11:33 GMT",
+      "hhmm": "11:33",
+      "agent": "RISK",
+      "action": "SELL time stop 20m $CBUCKS",
+      "symbol": null,
+      "reason": "SELL time stop 20m $CBUCKS",
+      "line": "11:33 RISK: SELL time stop 20m $CBUCKS",
+      "tag": "RISK",
+      "message": "11:33 RISK: SELL time stop 20m $CBUCKS"
     }
   ],
   "agents": {
@@ -208703,8 +208690,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -208732,8 +208719,8 @@
     }
   },
   "ticks": 116230,
-  "last_updated": "2026-11-27T11:32:49.476270+00:00",
-  "last_updated_london": "27 Nov 2026, 11:32 GMT",
+  "last_updated": "2026-11-27T11:33:29.487461+00:00",
+  "last_updated_london": "27 Nov 2026, 11:33 GMT",
   "screening_method": "",
   "stock_note": "",
   "crypto_note": "",
@@ -583539,13 +583526,27 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f26770"
+    },
+    {
+      "ts": "2026-11-27T11:33:05.476137+00:00",
+      "london": "27 Nov 2026, 11:33 GMT",
+      "side": "sell",
+      "symbol": "CBUCKS",
+      "name": "CBUCKS",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.00747842,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f26771"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-27T11:32:49.476270+00:00",
-  "checked_at_london": "27 Nov 2026, 11:32 GMT",
+  "checked_at": "2026-11-27T11:33:29.487461+00:00",
+  "checked_at_london": "27 Nov 2026, 11:33 GMT",
   "near_misses": [
     {
       "symbol": "PumpMas",
@@ -583571,11 +583572,11 @@
       "symbol": "VAULT",
       "mint": "4tqzkSWA9tiWYhzYpSt81We3cVNkrEbkD1tzjFDZpump",
       "link": "https://axiom.trade/meme/4tqzkSWA9tiWYhzYpSt81We3cVNkrEbkD1tzjFDZpump?chain=sol",
-      "reason": "liquidity $17,181 under $25k \u00b7 market cap $64,614 outside $100k\u2013$100M",
+      "reason": "liquidity $17,446 under $25k \u00b7 market cap $66,296 outside $100k\u2013$100M",
       "gates": 2,
-      "chg_m5": 12.11,
-      "vol_m5": 11451.0,
-      "score": 36.8
+      "chg_m5": 15.03,
+      "vol_m5": 14668.0,
+      "score": 54.64
     },
     {
       "symbol": "JIMMY",
