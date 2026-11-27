@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.7487385740402194,
-  "wins": 10239,
+  "win_rate": 0.7487569464755777,
+  "wins": 10240,
   "losses": 3436,
-  "closed_trades": 13675,
+  "closed_trades": 13676,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 118811,
-  "open_count": 2,
+  "ticks": 118840,
+  "open_count": 1,
   "last_updated_london": "27 Nov 2026, 18:52 GMT",
-  "last_updated": "2026-11-27T18:52:02.806736+00:00",
+  "last_updated": "2026-11-27T18:52:26.849568+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 13675,
+  "traded": 13677,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 13675,
+    "traded": 13677,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "27 Nov 2026, 13:01 GMT",
-      "value": 0.0
-    },
     {
       "label": "27 Nov 2026, 13:01 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "27 Nov 2026, 18:52 GMT",
       "value": 0.0
+    },
+    {
+      "label": "27 Nov 2026, 18:52 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "27 Nov 2026, 18:52 GMT",
+      "hhmm": "18:52",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "18:52 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
+      "message": "18:52 LOGGER: run complete — 29 polls, 1 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 1 open, equity $0.00"
+    },
+    {
+      "ts": "27 Nov 2026, 18:52 GMT",
+      "hhmm": "18:52",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "18:52 RISK: SELL stop −5% $VICAT",
+      "message": "18:52 RISK: SELL stop −5% $VICAT",
+      "symbol": null,
+      "action": "SELL stop −5% $VICAT"
+    },
     {
       "ts": "27 Nov 2026, 18:48 GMT",
       "hhmm": "18:48",
@@ -2441,26 +2461,6 @@
       "message": "18:24 EXECUTOR: BUY 10% $MEMECARD @ 0.000467425 — 5m +8.4% vol $14,829 buys 417/sells 177",
       "symbol": null,
       "action": "BUY 10% $MEMECARD @ 0.000467425 — 5m +8.4% vol $14,829 buys 417/sells 177"
-    },
-    {
-      "ts": "27 Nov 2026, 18:24 GMT",
-      "hhmm": "18:24",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "18:24 EXECUTOR: BUY 10% $TOGO @ 0.000408733 — 5m +21.6% vol $36,912 buys 1490/sells 424",
-      "message": "18:24 EXECUTOR: BUY 10% $TOGO @ 0.000408733 — 5m +21.6% vol $36,912 buys 1490/sells 424",
-      "symbol": null,
-      "action": "BUY 10% $TOGO @ 0.000408733 — 5m +21.6% vol $36,912 buys 1490/sells 424"
-    },
-    {
-      "ts": "27 Nov 2026, 18:23 GMT",
-      "hhmm": "18:23",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "18:23 LOGGER: run complete — 29 polls, 0 open, equity $0.00",
-      "message": "18:23 LOGGER: run complete — 29 polls, 0 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 0 open, equity $0.00"
     }
   ],
   "agents": [
@@ -2471,7 +2471,7 @@
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
       "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
-      "badge": "58 pairs",
+      "badge": "59 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,7 +2488,7 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "58 pairs · 0 passed liquidity, age, and 5m momentum",
+      "activity": "59 pairs · 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2595,31 +2595,29 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/63jDWWFwp25ChLvsofbVRMprRbhiXuWoWVxrwFfypump?chain=sol"
-    },
-    {
-      "symbol": "VICAT",
-      "name": "VICAT",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "qty_display": "0",
-      "entry_price": 0.0001617045,
-      "current_price": 0.0001639,
-      "change_pct": null,
-      "price_source": "dexscreener",
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.013577235018196854,
-      "hard_stop": 0.00015361927499999998,
-      "trail_activate": 0.00016817267999999998,
-      "opened_at": "27 Nov 2026, 18:48 GMT",
-      "reason": "BUY 10% $VICAT @ 0.000161704 — 5m +11.0% vol $5,851 buys 699/sells 70",
-      "score": null,
-      "tag": "",
-      "venue": "",
-      "link": "https://axiom.trade/meme/4WZLGbAp6oEPxFbDcsfADCo1AgYZkfiteQhtM5iwpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f27353",
+      "time": "27 Nov 2026, 18:52 GMT",
+      "ts": "2026-11-27T18:52:18.829591+00:00",
+      "side": "sell",
+      "symbol": "VICAT",
+      "name": "VICAT",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0001485535,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f27352",
       "time": "27 Nov 2026, 18:48 GMT",
@@ -549662,17 +549660,17 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 13675,
-    "win_rate": 0.7487385740402194,
+    "closed_trades": 13676,
+    "win_rate": 0.7487569464755777,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 27352
+    "fills": 27353
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 118811,
+    "scanned": 118840,
     "killed": 0,
-    "traded": 13675
+    "traded": 13677
   },
   "events": [
     {
@@ -549811,13 +549809,6 @@
       "price": 0.00025271470595360256,
       "change_pct": null,
       "source": "geckoterminal"
-    },
-    {
-      "symbol": "VICAT",
-      "name": "VICAT",
-      "price": 0.0001639,
-      "change_pct": null,
-      "source": "dexscreener"
     }
   ],
   "desk": "axiom",
@@ -549887,8 +549878,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 13675,
-      "win_rate": 0.7487385740402194,
+      "closed_trades": 13676,
+      "win_rate": 0.7487569464755777,
       "realized_pnl": -100.0
     }
   ],
@@ -549922,6 +549913,16 @@
       "score": 5.87
     },
     {
+      "symbol": "VICAT",
+      "mint": "4WZLGbAp6oEPxFbDcsfADCo1AgYZkfiteQhtM5iwpump",
+      "link": "https://axiom.trade/meme/4WZLGbAp6oEPxFbDcsfADCo1AgYZkfiteQhtM5iwpump?chain=sol",
+      "reason": "5m -1.5% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -1.53,
+      "vol_m5": 6600.0,
+      "score": -1.15
+    },
+    {
       "symbol": "mihao",
       "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
       "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
@@ -549935,31 +549936,21 @@
       "symbol": "enu",
       "mint": "9msLfYfXBrSbrApCZAPuPMCNmPqNtEL1VPKh1AEYpump",
       "link": "https://axiom.trade/meme/9msLfYfXBrSbrApCZAPuPMCNmPqNtEL1VPKh1AEYpump?chain=sol",
-      "reason": "5m -12.4% outside +1% to +40%",
+      "reason": "5m -10.3% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -12.45,
-      "vol_m5": 11292.0,
-      "score": -72.75
+      "chg_m5": -10.34,
+      "vol_m5": 11811.0,
+      "score": -65.32
     },
     {
-      "symbol": "BASKET",
-      "mint": "3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f",
-      "link": "https://axiom.trade/meme/3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f?chain=sol",
-      "reason": "5m volume $827 under $5k · buy/sell 3/5 under 1.05",
+      "symbol": "Oscar",
+      "mint": "CyrgrZVubmhyr13eQNiSi1WBwSGidLmvVoHA91phpump",
+      "link": "https://axiom.trade/meme/CyrgrZVubmhyr13eQNiSi1WBwSGidLmvVoHA91phpump?chain=sol",
+      "reason": "liquidity $0 under $25k · market cap $14,202 outside $100k–$100M",
       "gates": 2,
-      "chg_m5": 2.746,
-      "vol_m5": 827.0,
-      "score": 2.27
-    },
-    {
-      "symbol": "Fireball",
-      "mint": "B9wbjDJ4FbHMsZmoXAkJSTAwuePaJUKbySvnK5zApump",
-      "link": "https://axiom.trade/meme/B9wbjDJ4FbHMsZmoXAkJSTAwuePaJUKbySvnK5zApump?chain=sol",
-      "reason": "5m volume $4,324 under $5k · 5m +0.4% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.4,
-      "vol_m5": 4324.0,
-      "score": 1.14
+      "chg_m5": 3.13,
+      "vol_m5": 6088.0,
+      "score": 4.82
     }
   ],
   "helius_status": "",
@@ -549967,7 +549958,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-27T18:52:02.806736+00:00",
+  "checked_at": "2026-11-27T18:52:26.849568+00:00",
   "checked_at_london": "27 Nov 2026, 18:52 GMT",
   "who_we_copy": null
 }
