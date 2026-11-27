@@ -31,34 +31,6 @@
       "market_value": 0.0,
       "unrealized_pnl": 0.0,
       "unrealized_pct": -0.008610164587696256
-    },
-    {
-      "symbol": "VAULT",
-      "name": "VAULT",
-      "mint": "4tqzkSWA9tiWYhzYpSt81We3cVNkrEbkD1tzjFDZpump",
-      "pair": "GKoXmesnHAitjcfWhESsrGub2uq2CtpPGunhT6XcrVw",
-      "link": "https://axiom.trade/meme/4tqzkSWA9tiWYhzYpSt81We3cVNkrEbkD1tzjFDZpump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/gkoxmesnhaitjcfwhessrgub2uq2ctppgunht6xcrvw",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.00013909199999999998,
-      "raw_price": 0.0001384,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-27T12:33:26.376654+00:00",
-      "opened_at_london": "27 Nov 2026, 12:33 GMT",
-      "high_water": 0.0001429,
-      "trail_armed": false,
-      "last_price": 0.0001349,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $VAULT @ 0.000139092 \u2014 5m +17.1% vol $11,318 buys 234/sells 192",
-      "hard_stop": 0.00013213739999999997,
-      "take_profit": 0.00015021936,
-      "trail_activate": 0.00014465567999999998,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": -0.030138325712477876
     }
   ],
   "closed_trades": [
@@ -200971,15 +200943,24 @@
       "closed_at": "2026-11-27T12:33:26.376272+00:00",
       "closed_at_london": "27 Nov 2026, 12:33 GMT",
       "opened_at": "2026-11-27T12:32:14.373081+00:00"
+    },
+    {
+      "symbol": "VAULT",
+      "name": "VAULT",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.00013909199999999998,
+      "exit_price": 0.000121788,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL stop \u22125% $VAULT",
+      "closed_at": "2026-11-27T12:36:32.319930+00:00",
+      "closed_at_london": "27 Nov 2026, 12:36 GMT",
+      "opened_at": "2026-11-27T12:33:26.376654+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-27T06:44:52.587870+00:00",
-      "label": "27 Nov 2026, 6:44 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-27T06:46:02.309497+00:00",
       "label": "27 Nov 2026, 6:46 GMT",
@@ -203979,21 +203960,15 @@
       "label": "27 Nov 2026, 12:36 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-27T12:36:56.342590+00:00",
+      "label": "27 Nov 2026, 12:36 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-27T03:15:29.915227+00:00",
-      "london": "27 Nov 2026, 3:15 GMT",
-      "hhmm": "03:15",
-      "agent": "EXECUTOR",
-      "action": "SELL take profit +8% $Snowball",
-      "symbol": null,
-      "reason": "SELL take profit +8% $Snowball",
-      "line": "03:15 EXECUTOR: SELL take profit +8% $Snowball",
-      "tag": "EXECUTOR",
-      "message": "03:15 EXECUTOR: SELL take profit +8% $Snowball"
-    },
     {
       "ts": "2026-11-27T03:15:29.915787+00:00",
       "london": "27 Nov 2026, 3:15 GMT",
@@ -208781,6 +208756,18 @@
       "line": "12:33 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00",
       "tag": "LOGGER",
       "message": "12:33 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00"
+    },
+    {
+      "ts": "2026-11-27T12:36:32.319990+00:00",
+      "london": "27 Nov 2026, 12:36 GMT",
+      "hhmm": "12:36",
+      "agent": "RISK",
+      "action": "SELL stop \u22125% $VAULT",
+      "symbol": null,
+      "reason": "SELL stop \u22125% $VAULT",
+      "line": "12:36 RISK: SELL stop \u22125% $VAULT",
+      "tag": "RISK",
+      "message": "12:36 RISK: SELL stop \u22125% $VAULT"
     }
   ],
   "agents": {
@@ -208853,8 +208840,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -208882,7 +208869,7 @@
     }
   },
   "ticks": 116607,
-  "last_updated": "2026-11-27T12:36:16.288894+00:00",
+  "last_updated": "2026-11-27T12:36:56.342495+00:00",
   "last_updated_london": "27 Nov 2026, 12:36 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -583969,12 +583956,26 @@
       "pnl": null,
       "pnl_pct": null,
       "id": "f26790"
+    },
+    {
+      "ts": "2026-11-27T12:36:32.319930+00:00",
+      "london": "27 Nov 2026, 12:36 GMT",
+      "side": "sell",
+      "symbol": "VAULT",
+      "name": "VAULT",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.000121788,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f26791"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-27T12:36:16.288894+00:00",
+  "checked_at": "2026-11-27T12:36:56.342495+00:00",
   "checked_at_london": "27 Nov 2026, 12:36 GMT",
   "near_misses": [
     {
@@ -583988,24 +583989,24 @@
       "score": 12.9
     },
     {
-      "symbol": "CBUCKS",
-      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
-      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
-      "reason": "5m volume $1,069 under $5k",
+      "symbol": "PumpMas",
+      "mint": "EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump",
+      "link": "https://axiom.trade/meme/EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump?chain=sol",
+      "reason": "5m volume $3 under $5k",
       "gates": 1,
-      "chg_m5": 1.69,
-      "vol_m5": 1069.0,
-      "score": 6.15
+      "chg_m5": 2.32,
+      "vol_m5": 3.0,
+      "score": 1.74
     },
     {
       "symbol": "ChokingCat",
       "mint": "ExpdNM5YykDnGTmyxCH5B3s7mdWi1cEreDvK6ic8pump",
       "link": "https://axiom.trade/meme/ExpdNM5YykDnGTmyxCH5B3s7mdWi1cEreDvK6ic8pump?chain=sol",
-      "reason": "liquidity $21,318 under $25k \u00b7 market cap $87,954 outside $100k\u2013$100M",
+      "reason": "liquidity $19,833 under $25k \u00b7 market cap $76,894 outside $100k\u2013$100M",
       "gates": 2,
-      "chg_m5": 14.28,
-      "vol_m5": 19357.0,
-      "score": 46.33
+      "chg_m5": 12.08,
+      "vol_m5": 20959.0,
+      "score": 38.39
     },
     {
       "symbol": "duk",
@@ -584018,6 +584019,16 @@
       "score": 4.24
     },
     {
+      "symbol": "BRUH",
+      "mint": "PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump",
+      "link": "https://axiom.trade/meme/PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump?chain=sol",
+      "reason": "5m volume $616 under $5k \u00b7 5m +1.0% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.96,
+      "vol_m5": 616.0,
+      "score": 1.35
+    },
+    {
       "symbol": "PUMPCHAN",
       "mint": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
       "link": "https://axiom.trade/meme/Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump?chain=sol",
@@ -584026,16 +584037,6 @@
       "chg_m5": 1.38,
       "vol_m5": 3294.0,
       "score": 0.65
-    },
-    {
-      "symbol": "CATE",
-      "mint": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
-      "link": "https://axiom.trade/meme/Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump?chain=sol",
-      "reason": "5m volume $429 under $5k \u00b7 5m +0.7% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.664,
-      "vol_m5": 429.0,
-      "score": 0.46
     }
   ]
 }
