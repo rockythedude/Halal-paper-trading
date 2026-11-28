@@ -8,10 +8,10 @@
   "profit": -100.0,
   "goal_pct": -0.016666666666666666,
   "progress": 0.0,
-  "win_rate": 0.7531786509589828,
-  "wins": 10485,
+  "win_rate": 0.7531963798304842,
+  "wins": 10486,
   "losses": 3436,
-  "closed_trades": 13921,
+  "closed_trades": 13922,
   "biggest_win": 3.06,
   "biggest_trade": {
     "symbol": "BALLS",
@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 122088,
-  "open_count": 2,
-  "last_updated_london": "28 Nov 2026, 4:04 GMT",
-  "last_updated": "2026-11-28T04:04:26.164473+00:00",
+  "open_count": 3,
+  "last_updated_london": "28 Nov 2026, 4:05 GMT",
+  "last_updated": "2026-11-28T04:05:06.076370+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "27 Nov 2026, 22:14 GMT",
-      "value": 0.0
-    },
     {
       "label": "27 Nov 2026, 22:14 GMT",
       "value": 0.0
@@ -2058,10 +2054,44 @@
     {
       "label": "28 Nov 2026, 4:04 GMT",
       "value": 0.0
+    },
+    {
+      "label": "28 Nov 2026, 4:05 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "28 Nov 2026, 4:04 GMT",
+      "hhmm": "04:04",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "04:04 EXECUTOR: BUY 10% $BTCBALLS @ 0.000382603 — 5m +5.4% vol $16,611 buys 685/sells 268",
+      "message": "04:04 EXECUTOR: BUY 10% $BTCBALLS @ 0.000382603 — 5m +5.4% vol $16,611 buys 685/sells 268",
+      "symbol": null,
+      "action": "BUY 10% $BTCBALLS @ 0.000382603 — 5m +5.4% vol $16,611 buys 685/sells 268"
+    },
+    {
+      "ts": "28 Nov 2026, 4:04 GMT",
+      "hhmm": "04:04",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "04:04 EXECUTOR: BUY 10% $PRISMEICE @ 0.000173965 — 5m +23.5% vol $26,183 buys 282/sells 227",
+      "message": "04:04 EXECUTOR: BUY 10% $PRISMEICE @ 0.000173965 — 5m +23.5% vol $26,183 buys 282/sells 227",
+      "symbol": null,
+      "action": "BUY 10% $PRISMEICE @ 0.000173965 — 5m +23.5% vol $26,183 buys 282/sells 227"
+    },
+    {
+      "ts": "28 Nov 2026, 4:04 GMT",
+      "hhmm": "04:04",
+      "tag": "RISK",
+      "agent": "RISK",
+      "line": "04:04 RISK: SELL stop −5% $BTCBALLS",
+      "message": "04:04 RISK: SELL stop −5% $BTCBALLS",
+      "symbol": null,
+      "action": "SELL stop −5% $BTCBALLS"
+    },
     {
       "ts": "28 Nov 2026, 4:03 GMT",
       "hhmm": "04:03",
@@ -2431,36 +2461,6 @@
       "message": "03:33 EXECUTOR: BUY 10% $MoonBoy @ 0.000575103 — 5m +5.9% vol $6,371 buys 57/sells 41",
       "symbol": null,
       "action": "BUY 10% $MoonBoy @ 0.000575103 — 5m +5.9% vol $6,371 buys 57/sells 41"
-    },
-    {
-      "ts": "28 Nov 2026, 3:33 GMT",
-      "hhmm": "03:33",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "03:33 RISK: SELL stop −5% $MoonBoy",
-      "message": "03:33 RISK: SELL stop −5% $MoonBoy",
-      "symbol": null,
-      "action": "SELL stop −5% $MoonBoy"
-    },
-    {
-      "ts": "28 Nov 2026, 3:32 GMT",
-      "hhmm": "03:32",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "03:32 RISK: SELL stop −5% $BTCBALLS",
-      "message": "03:32 RISK: SELL stop −5% $BTCBALLS",
-      "symbol": null,
-      "action": "SELL stop −5% $BTCBALLS"
-    },
-    {
-      "ts": "28 Nov 2026, 3:32 GMT",
-      "hhmm": "03:32",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "03:32 EXECUTOR: BUY 10% $Fireball @ 0.000390543 — 5m +2.4% vol $8,620 buys 111/sells 88",
-      "message": "03:32 EXECUTOR: BUY 10% $Fireball @ 0.000390543 — 5m +2.4% vol $8,620 buys 111/sells 88",
-      "symbol": null,
-      "action": "BUY 10% $Fireball @ 0.000390543 — 5m +2.4% vol $8,620 buys 111/sells 88"
     }
   ],
   "agents": [
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "2/6",
+      "activity": "3 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "3/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2597,22 +2597,44 @@
       "link": "https://axiom.trade/meme/GXjSWDoMQkDEbhon9ALxz8chUUsVKg3x8V3NajjDpump?chain=sol"
     },
     {
+      "symbol": "PRISMEICE",
+      "name": "PRISMEICE",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.0001739655,
+      "current_price": 0.0001731,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.00497512437810943,
+      "hard_stop": 0.000165267225,
+      "trail_activate": 0.00018092412,
+      "opened_at": "28 Nov 2026, 4:04 GMT",
+      "reason": "BUY 10% $PRISMEICE @ 0.000173965 — 5m +23.5% vol $26,183 buys 282/sells 227",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/8N6WF11pLUUeUu8b1HbnDJHTzyL4bbr8YRdPS6Znpump?chain=sol"
+    },
+    {
       "symbol": "BTCBALLS",
       "name": "BTCBALLS",
       "asset_class": "crypto",
       "agent": "MIRAX",
       "qty": 0.0,
       "qty_display": "0",
-      "entry_price": 0.00041476349999999997,
-      "current_price": 0.0004213,
+      "entry_price": 0.0003826034999999999,
+      "current_price": 0.0003807,
       "change_pct": null,
       "price_source": "dexscreener",
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.015759583473473615,
-      "hard_stop": 0.00039402532499999994,
-      "trail_activate": 0.00043135404,
-      "opened_at": "28 Nov 2026, 4:03 GMT",
-      "reason": "BUY 10% $BTCBALLS @ 0.000414763 — 5m +26.7% vol $24,040 buys 554/sells 252",
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.0003634733249999999,
+      "trail_activate": 0.0003979076399999999,
+      "opened_at": "28 Nov 2026, 4:04 GMT",
+      "reason": "BUY 10% $BTCBALLS @ 0.000382603 — 5m +5.4% vol $16,611 buys 685/sells 268",
       "score": null,
       "tag": "",
       "venue": "",
@@ -2620,6 +2642,66 @@
     }
   ],
   "fills": [
+    {
+      "id": "f27847",
+      "time": "28 Nov 2026, 4:04 GMT",
+      "ts": "2026-11-28T04:04:58.183727+00:00",
+      "side": "buy",
+      "symbol": "BTCBALLS",
+      "name": "BTCBALLS",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0003826034999999999,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f27846",
+      "time": "28 Nov 2026, 4:04 GMT",
+      "ts": "2026-11-28T04:04:58.183658+00:00",
+      "side": "buy",
+      "symbol": "PRISMEICE",
+      "name": "PRISMEICE",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0001739655,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
+    {
+      "id": "f27845",
+      "time": "28 Nov 2026, 4:04 GMT",
+      "ts": "2026-11-28T04:04:58.183241+00:00",
+      "side": "sell",
+      "symbol": "BTCBALLS",
+      "name": "BTCBALLS",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.0003787965,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f27844",
       "time": "28 Nov 2026, 4:03 GMT",
@@ -559502,11 +559584,11 @@
     }
   ],
   "history_summary": {
-    "closed_trades": 13921,
-    "win_rate": 0.7531786509589828,
+    "closed_trades": 13922,
+    "win_rate": 0.7531963798304842,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 27844
+    "fills": 27847
   },
   "ok": true,
   "totals_cumulative": {
@@ -559653,9 +559735,16 @@
       "source": "geckoterminal"
     },
     {
+      "symbol": "PRISMEICE",
+      "name": "PRISMEICE",
+      "price": 0.0001731,
+      "change_pct": null,
+      "source": "dexscreener"
+    },
+    {
       "symbol": "BTCBALLS",
       "name": "BTCBALLS",
-      "price": 0.0004213,
+      "price": 0.0003807,
       "change_pct": null,
       "source": "dexscreener"
     }
@@ -559707,8 +559796,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 68.54,
-      "return_pct": -0.31461307000000005,
+      "equity": 68.53,
+      "return_pct": -0.31466764999999997,
       "closed_trades": 762,
       "win_rate": 0.3464566929133858,
       "realized_pnl": -31.44
@@ -559727,8 +559816,8 @@
       "name": "Axiom scalper",
       "equity": 0.0,
       "return_pct": -1.0,
-      "closed_trades": 13921,
-      "win_rate": 0.7531786509589828,
+      "closed_trades": 13922,
+      "win_rate": 0.7531963798304842,
       "realized_pnl": -100.0
     }
   ],
@@ -559742,14 +559831,14 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "PRISMEICE",
-      "mint": "8N6WF11pLUUeUu8b1HbnDJHTzyL4bbr8YRdPS6Znpump",
-      "link": "https://axiom.trade/meme/8N6WF11pLUUeUu8b1HbnDJHTzyL4bbr8YRdPS6Znpump?chain=sol",
-      "reason": "5m +45.8% outside +1% to +40%",
+      "symbol": "three",
+      "mint": "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
+      "link": "https://axiom.trade/meme/FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump?chain=sol",
+      "reason": "5m volume $6 under $5k",
       "gates": 1,
-      "chg_m5": 45.84,
-      "vol_m5": 27587.0,
-      "score": 126.71
+      "chg_m5": 2.09,
+      "vol_m5": 6.0,
+      "score": 1.57
     },
     {
       "symbol": "FLIP",
@@ -559762,34 +559851,34 @@
       "score": 3.03
     },
     {
-      "symbol": "ROCKET",
-      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
-      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
-      "reason": "5m volume $34 under $5k · buy/sell 143/139 under 1.05",
+      "symbol": "PumpMas",
+      "mint": "EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump",
+      "link": "https://axiom.trade/meme/EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump?chain=sol",
+      "reason": "5m volume $168 under $5k · 5m +0.9% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 2.53,
-      "vol_m5": 34.0,
-      "score": 1.66
+      "chg_m5": 0.95,
+      "vol_m5": 168.0,
+      "score": 0.72
     },
     {
       "symbol": "Snowball",
       "mint": "9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump",
       "link": "https://axiom.trade/meme/9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump?chain=sol",
-      "reason": "5m volume $629 under $5k · 5m +0.7% outside +1% to +40%",
+      "reason": "5m volume $700 under $5k · 5m +0.5% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 0.73,
-      "vol_m5": 629.0,
-      "score": 0.75
+      "chg_m5": 0.52,
+      "vol_m5": 700.0,
+      "score": 0.53
     },
     {
-      "symbol": "three",
-      "mint": "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
-      "link": "https://axiom.trade/meme/FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump?chain=sol",
-      "reason": "5m volume $6 under $5k · 5m +0.1% outside +1% to +40%",
+      "symbol": "JOB",
+      "mint": "9Pq7aLAbhDG2tTnS22cm6kuysZVcZpLFE368HWuypump",
+      "link": "https://axiom.trade/meme/9Pq7aLAbhDG2tTnS22cm6kuysZVcZpLFE368HWuypump?chain=sol",
+      "reason": "5m volume $2,003 under $5k · 5m +0.1% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 0.1,
-      "vol_m5": 6.0,
-      "score": 0.08
+      "chg_m5": 0.09,
+      "vol_m5": 2003.0,
+      "score": 0.11
     },
     {
       "symbol": "CATE",
@@ -559807,7 +559896,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-28T04:04:26.164473+00:00",
-  "checked_at_london": "28 Nov 2026, 4:04 GMT",
+  "checked_at": "2026-11-28T04:05:06.076370+00:00",
+  "checked_at_london": "28 Nov 2026, 4:05 GMT",
   "who_we_copy": null
 }
