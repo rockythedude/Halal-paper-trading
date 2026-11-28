@@ -3,7 +3,36 @@
   "target": 6000.0,
   "cash": 4.358534103767438e-07,
   "equity": 0.0,
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "BRUH",
+      "name": "BRUH",
+      "mint": "PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump",
+      "pair": "EhPzeSdXTyMvWZ1iy5NT3LrNjY1xbC1KGqSpL1kqNYiv",
+      "link": "https://axiom.trade/meme/PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump?chain=sol",
+      "dex_url": "https://dexscreener.com/solana/ehpzesdxtymvwz1iy5nt3lrnjy1xbc1kgqspl1kqnyiv",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "entry_price": 0.007669154999999999,
+      "raw_price": 0.007631,
+      "entry_fee": 0.0,
+      "cost_basis": 0.0,
+      "opened_at": "2026-11-28T14:47:22.735007+00:00",
+      "opened_at_london": "28 Nov 2026, 14:47 GMT",
+      "high_water": 0.007669154999999999,
+      "trail_armed": false,
+      "last_price": 0.007598,
+      "last_source": "dexscreener",
+      "reason": "BUY 10% $BRUH @ 0.00766915 \u2014 5m +2.9% vol $5,753 buys 25/sells 22",
+      "hard_stop": 0.007285697249999999,
+      "take_profit": 0.008282687399999999,
+      "trail_activate": 0.0079759212,
+      "market_value": 0.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.009278075615892334
+    }
+  ],
   "closed_trades": [
     {
       "symbol": "NOBUSHIBA",
@@ -212438,12 +212467,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-28T08:58:41.981793+00:00",
-      "label": "28 Nov 2026, 8:58 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
-    {
       "ts": "2026-11-28T08:59:48.939737+00:00",
       "label": "28 Nov 2026, 8:59 GMT",
       "equity": 0.0,
@@ -215442,21 +215465,15 @@
       "label": "28 Nov 2026, 14:47 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-28T14:47:46.762349+00:00",
+      "label": "28 Nov 2026, 14:47 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-28T06:56:32.958613+00:00",
-      "london": "28 Nov 2026, 6:56 GMT",
-      "hhmm": "06:56",
-      "agent": "RISK",
-      "action": "SELL stop \u22125% $SPSC",
-      "symbol": null,
-      "reason": "SELL stop \u22125% $SPSC",
-      "line": "06:56 RISK: SELL stop \u22125% $SPSC",
-      "tag": "RISK",
-      "message": "06:56 RISK: SELL stop \u22125% $SPSC"
-    },
     {
       "ts": "2026-11-28T06:56:32.958965+00:00",
       "london": "28 Nov 2026, 6:56 GMT",
@@ -220244,6 +220261,18 @@
       "line": "14:45 EXECUTOR: SELL trail 2.5% $Zhaki",
       "tag": "EXECUTOR",
       "message": "14:45 EXECUTOR: SELL trail 2.5% $Zhaki"
+    },
+    {
+      "ts": "2026-11-28T14:47:22.735054+00:00",
+      "london": "28 Nov 2026, 14:47 GMT",
+      "hhmm": "14:47",
+      "agent": "EXECUTOR",
+      "action": "BUY 10% $BRUH @ 0.00766915 \u2014 5m +2.9% vol $5,753 buys 25/sells 22",
+      "symbol": null,
+      "reason": "BUY 10% $BRUH @ 0.00766915 \u2014 5m +2.9% vol $5,753 buys 25/sells 22",
+      "line": "14:47 EXECUTOR: BUY 10% $BRUH @ 0.00766915 \u2014 5m +2.9% vol $5,753 buys 25/sells 22",
+      "tag": "EXECUTOR",
+      "message": "14:47 EXECUTOR: BUY 10% $BRUH @ 0.00766915 \u2014 5m +2.9% vol $5,753 buys 25/sells 22"
     }
   ],
   "agents": {
@@ -220252,8 +220281,8 @@
       "role": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal 20 pools",
-      "badge": "56 pairs",
+      "activity": "DexScreener 40 tokens \u00b7 GeckoTerminal unreachable",
+      "badge": "40 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -220268,7 +220297,7 @@
       "role": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "56 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
+      "activity": "40 pairs \u00b7 0 passed liquidity, age, and 5m momentum",
       "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
@@ -220316,8 +220345,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "0/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -220345,7 +220374,7 @@
     }
   },
   "ticks": 125916,
-  "last_updated": "2026-11-28T14:47:06.769977+00:00",
+  "last_updated": "2026-11-28T14:47:46.762230+00:00",
   "last_updated_london": "28 Nov 2026, 14:47 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -616908,73 +616937,87 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f28324"
+    },
+    {
+      "ts": "2026-11-28T14:47:22.735007+00:00",
+      "london": "28 Nov 2026, 14:47 GMT",
+      "side": "buy",
+      "symbol": "BRUH",
+      "name": "BRUH",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.007669154999999999,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "id": "f28325"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-28T14:47:06.769977+00:00",
+  "checked_at": "2026-11-28T14:47:46.762230+00:00",
   "checked_at_london": "28 Nov 2026, 14:47 GMT",
   "near_misses": [
     {
       "symbol": "ROCKET",
       "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
       "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
-      "reason": "5m volume $326 under $5k",
+      "reason": "5m volume $68 under $5k",
       "gates": 1,
-      "chg_m5": 4.03,
-      "vol_m5": 326.0,
-      "score": 12.73
+      "chg_m5": 2.74,
+      "vol_m5": 68.0,
+      "score": 2.05
     },
     {
       "symbol": "BITCOINU",
       "mint": "ATbAsdCwrhhVg23DRnWpjqx6kx7ivoK5o8ysNmu1pump",
       "link": "https://axiom.trade/meme/ATbAsdCwrhhVg23DRnWpjqx6kx7ivoK5o8ysNmu1pump?chain=sol",
-      "reason": "5m volume $3,606 under $5k",
+      "reason": "5m volume $3,760 under $5k",
       "gates": 1,
-      "chg_m5": 2.49,
-      "vol_m5": 3606.0,
-      "score": 2.24
+      "chg_m5": 1.81,
+      "vol_m5": 3760.0,
+      "score": 1.71
     },
     {
-      "symbol": "Split",
-      "mint": "HAP9FcXubD88SjRHMY1kr5iukpRZgeMAgCBam3Vtpump",
-      "link": "https://axiom.trade/meme/HAP9FcXubD88SjRHMY1kr5iukpRZgeMAgCBam3Vtpump?chain=sol",
-      "reason": "5m volume $218 under $5k",
-      "gates": 1,
-      "chg_m5": 2.025,
-      "vol_m5": 218.0,
-      "score": 1.39
-    },
-    {
-      "symbol": "MoonBoy",
-      "mint": "GXjSWDoMQkDEbhon9ALxz8chUUsVKg3x8V3NajjDpump",
-      "link": "https://axiom.trade/meme/GXjSWDoMQkDEbhon9ALxz8chUUsVKg3x8V3NajjDpump?chain=sol",
-      "reason": "5m volume $946 under $5k",
-      "gates": 1,
-      "chg_m5": 3.285,
-      "vol_m5": 946.0,
-      "score": 1.03
-    },
-    {
-      "symbol": "Snowball",
-      "mint": "9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump",
-      "link": "https://axiom.trade/meme/9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump?chain=sol",
-      "reason": "5m volume $189 under $5k",
-      "gates": 1,
-      "chg_m5": 1.878,
-      "vol_m5": 189.0,
-      "score": 0.66
-    },
-    {
-      "symbol": "John",
-      "mint": "EvN4RDyoqUTpCcrvz5QTAdHVqypgxV4MCR77Bfnjpump",
-      "link": "https://axiom.trade/meme/EvN4RDyoqUTpCcrvz5QTAdHVqypgxV4MCR77Bfnjpump?chain=sol",
-      "reason": "liquidity $19,768 under $25k \u00b7 market cap $81,038 outside $100k\u2013$100M",
+      "symbol": "Mona",
+      "mint": "pCH6bfSwqFimDVtnYe59otToqHP1TTyhWwzfC4pYMRa",
+      "link": "https://axiom.trade/meme/pCH6bfSwqFimDVtnYe59otToqHP1TTyhWwzfC4pYMRa?chain=sol",
+      "reason": "liquidity $17,158 under $25k \u00b7 market cap $59,019 outside $100k\u2013$100M",
       "gates": 2,
-      "chg_m5": 3.48,
-      "vol_m5": 7284.0,
-      "score": 1.09
+      "chg_m5": 5.99,
+      "vol_m5": 29314.0,
+      "score": 12.13
+    },
+    {
+      "symbol": "$XMAS",
+      "mint": "7ACq9bgHPCT33TWC6yaxLX5CfNQBbFachy9xKD7Spump",
+      "link": "https://axiom.trade/meme/7ACq9bgHPCT33TWC6yaxLX5CfNQBbFachy9xKD7Spump?chain=sol",
+      "reason": "liquidity $23,256 under $25k \u00b7 5m volume $131 under $5k",
+      "gates": 2,
+      "chg_m5": 1.09,
+      "vol_m5": 131.0,
+      "score": 1.69
+    },
+    {
+      "symbol": "JOB",
+      "mint": "9Pq7aLAbhDG2tTnS22cm6kuysZVcZpLFE368HWuypump",
+      "link": "https://axiom.trade/meme/9Pq7aLAbhDG2tTnS22cm6kuysZVcZpLFE368HWuypump?chain=sol",
+      "reason": "5m volume $955 under $5k \u00b7 5m +0.9% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": 0.86,
+      "vol_m5": 955.0,
+      "score": 0.91
+    },
+    {
+      "symbol": "CBUCKS",
+      "mint": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+      "link": "https://axiom.trade/meme/DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump?chain=sol",
+      "reason": "5m volume $73 under $5k \u00b7 5m -1.4% outside +1% to +40%",
+      "gates": 2,
+      "chg_m5": -1.4,
+      "vol_m5": 73.0,
+      "score": -2.08
     }
   ]
 }
