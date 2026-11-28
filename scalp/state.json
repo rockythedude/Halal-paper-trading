@@ -5,34 +5,6 @@
   "equity": 0.0,
   "positions": [
     {
-      "symbol": "BITCOINU",
-      "name": "BITCOINU",
-      "mint": "ATbAsdCwrhhVg23DRnWpjqx6kx7ivoK5o8ysNmu1pump",
-      "pair": "G57CFXEDFWpUSMyURZZsjYCKZykXrmU6CSxFZaoJGoT7",
-      "link": "https://axiom.trade/meme/ATbAsdCwrhhVg23DRnWpjqx6kx7ivoK5o8ysNmu1pump?chain=sol",
-      "dex_url": "https://dexscreener.com/solana/g57cfxedfwpusmyurzzsjyckzykxrmu6csxfzaojgot7",
-      "asset_class": "crypto",
-      "agent": "MIRAX",
-      "qty": 0.0,
-      "entry_price": 0.00115173,
-      "raw_price": 0.001146,
-      "entry_fee": 0.0,
-      "cost_basis": 0.0,
-      "opened_at": "2026-11-28T12:39:07.105108+00:00",
-      "opened_at_london": "28 Nov 2026, 12:39 GMT",
-      "high_water": 0.001225,
-      "trail_armed": true,
-      "last_price": 0.001218,
-      "last_source": "dexscreener",
-      "reason": "BUY 10% $BITCOINU @ 0.00115173 \u2014 5m +1.3% vol $5,345 buys 713/sells 581",
-      "hard_stop": 0.0010941434999999998,
-      "take_profit": 0.0012438683999999999,
-      "trail_activate": 0.0011977992,
-      "market_value": 0.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.05753952749342295
-    },
-    {
       "symbol": "PUMPCHAN",
       "name": "PUMPCHAN",
       "mint": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
@@ -212146,15 +212118,24 @@
       "closed_at": "2026-11-28T12:45:48.126919+00:00",
       "closed_at_london": "28 Nov 2026, 12:45 GMT",
       "opened_at": "2026-11-28T12:40:19.049477+00:00"
+    },
+    {
+      "symbol": "BITCOINU",
+      "name": "BITCOINU",
+      "asset_class": "crypto",
+      "side": "sell",
+      "qty": 0.0,
+      "entry_price": 0.00115173,
+      "exit_price": 0.001177085,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "reason": "SELL trail 2.5% $BITCOINU",
+      "closed_at": "2026-11-28T12:46:11.589050+00:00",
+      "closed_at_london": "28 Nov 2026, 12:46 GMT",
+      "opened_at": "2026-11-28T12:39:07.105108+00:00"
     }
   ],
   "equity_curve": [
-    {
-      "ts": "2026-11-28T06:57:55.232047+00:00",
-      "label": "28 Nov 2026, 6:57 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
     {
       "ts": "2026-11-28T06:58:35.168244+00:00",
       "label": "28 Nov 2026, 6:58 GMT",
@@ -215154,21 +215135,15 @@
       "label": "28 Nov 2026, 12:46 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-28T12:46:43.499878+00:00",
+      "label": "28 Nov 2026, 12:46 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-28T05:35:28.852002+00:00",
-      "london": "28 Nov 2026, 5:35 GMT",
-      "hhmm": "05:35",
-      "agent": "EXECUTOR",
-      "action": "BUY 10% $BITCOINU @ 0.00135976 \u2014 5m +22.8% vol $27,311 buys 859/sells 418",
-      "symbol": null,
-      "reason": "BUY 10% $BITCOINU @ 0.00135976 \u2014 5m +22.8% vol $27,311 buys 859/sells 418",
-      "line": "05:35 EXECUTOR: BUY 10% $BITCOINU @ 0.00135976 \u2014 5m +22.8% vol $27,311 buys 859/sells 418",
-      "tag": "EXECUTOR",
-      "message": "05:35 EXECUTOR: BUY 10% $BITCOINU @ 0.00135976 \u2014 5m +22.8% vol $27,311 buys 859/sells 418"
-    },
     {
       "ts": "2026-11-28T05:36:24.849923+00:00",
       "london": "28 Nov 2026, 5:36 GMT",
@@ -219956,6 +219931,18 @@
       "line": "12:45 RISK: SELL stop \u22125% $MoonBoy",
       "tag": "RISK",
       "message": "12:45 RISK: SELL stop \u22125% $MoonBoy"
+    },
+    {
+      "ts": "2026-11-28T12:46:11.589106+00:00",
+      "london": "28 Nov 2026, 12:46 GMT",
+      "hhmm": "12:46",
+      "agent": "EXECUTOR",
+      "action": "SELL trail 2.5% $BITCOINU",
+      "symbol": null,
+      "reason": "SELL trail 2.5% $BITCOINU",
+      "line": "12:46 EXECUTOR: SELL trail 2.5% $BITCOINU",
+      "tag": "EXECUTOR",
+      "message": "12:46 EXECUTOR: SELL trail 2.5% $BITCOINU"
     }
   ],
   "agents": {
@@ -220028,8 +220015,8 @@
       "role": "Risk",
       "blurb": "Fast mode. Hard stop at \u22122%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "2 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
-      "badge": "2/6",
+      "activity": "1 open \u00b7 TP +8% \u00b7 stop \u22125% \u00b7 trail 2.5% after +4% \u00b7 time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -220057,7 +220044,7 @@
     }
   },
   "ticks": 125191,
-  "last_updated": "2026-11-28T12:46:03.576633+00:00",
+  "last_updated": "2026-11-28T12:46:43.499740+00:00",
   "last_updated_london": "28 Nov 2026, 12:46 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -616004,14 +615991,38 @@
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "id": "f28280"
+    },
+    {
+      "ts": "2026-11-28T12:46:11.589050+00:00",
+      "london": "28 Nov 2026, 12:46 GMT",
+      "side": "sell",
+      "symbol": "BITCOINU",
+      "name": "BITCOINU",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "price": 0.001177085,
+      "value": 0.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "id": "f28281"
     }
   ],
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-28T12:46:03.576633+00:00",
+  "checked_at": "2026-11-28T12:46:43.499740+00:00",
   "checked_at_london": "28 Nov 2026, 12:46 GMT",
   "near_misses": [
+    {
+      "symbol": "BITCOINU",
+      "mint": "ATbAsdCwrhhVg23DRnWpjqx6kx7ivoK5o8ysNmu1pump",
+      "link": "https://axiom.trade/meme/ATbAsdCwrhhVg23DRnWpjqx6kx7ivoK5o8ysNmu1pump?chain=sol",
+      "reason": "5m volume $3,678 under $5k",
+      "gates": 1,
+      "chg_m5": 2.93,
+      "vol_m5": 3678.0,
+      "score": 3.04
+    },
     {
       "symbol": "mihao",
       "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
@@ -616023,14 +616034,14 @@
       "score": 2.78
     },
     {
-      "symbol": "FlipFlop",
-      "mint": "8yUDvFWAHXBXSdgcRJZ7cWtFb1DZ1dwaQeYhb7kEpump",
-      "link": "https://axiom.trade/meme/8yUDvFWAHXBXSdgcRJZ7cWtFb1DZ1dwaQeYhb7kEpump?chain=sol",
-      "reason": "liquidity $19,235 under $25k \u00b7 market cap $77,060 outside $100k\u2013$100M",
-      "gates": 2,
-      "chg_m5": 12.43,
-      "vol_m5": 34769.0,
-      "score": 31.32
+      "symbol": "Snowball",
+      "mint": "9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump",
+      "link": "https://axiom.trade/meme/9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump?chain=sol",
+      "reason": "5m volume $465 under $5k",
+      "gates": 1,
+      "chg_m5": 3.67,
+      "vol_m5": 465.0,
+      "score": 1.33
     },
     {
       "symbol": "Zhaki",
@@ -616043,6 +616054,16 @@
       "score": 3.04
     },
     {
+      "symbol": "ROCKET",
+      "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
+      "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
+      "reason": "5m volume $63 under $5k \u00b7 buy/sell 144/139 under 1.05",
+      "gates": 2,
+      "chg_m5": 2.45,
+      "vol_m5": 63.0,
+      "score": 2.76
+    },
+    {
       "symbol": "Rizzmas",
       "mint": "85cQsFgbi8mBZxiPppbpPXuV7j1hA8tBwhjF4gKW6mHg",
       "link": "https://axiom.trade/meme/85cQsFgbi8mBZxiPppbpPXuV7j1hA8tBwhjF4gKW6mHg?chain=sol",
@@ -616051,26 +616072,6 @@
       "chg_m5": 0.37,
       "vol_m5": 16.0,
       "score": 0.68
-    },
-    {
-      "symbol": "Snowball",
-      "mint": "9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump",
-      "link": "https://axiom.trade/meme/9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump?chain=sol",
-      "reason": "5m volume $460 under $5k \u00b7 buy/sell 11/13 under 1.05",
-      "gates": 2,
-      "chg_m5": 2.74,
-      "vol_m5": 460.0,
-      "score": 0.58
-    },
-    {
-      "symbol": "PumpMas",
-      "mint": "EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump",
-      "link": "https://axiom.trade/meme/EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump?chain=sol",
-      "reason": "5m volume $5 under $5k \u00b7 5m +0.0% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.03,
-      "vol_m5": 5.0,
-      "score": 0.02
     }
   ]
 }
