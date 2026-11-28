@@ -48,9 +48,9 @@
       "cost_basis": 0.0,
       "opened_at": "2026-11-28T13:49:44.627476+00:00",
       "opened_at_london": "28 Nov 2026, 13:49 GMT",
-      "high_water": 0.007678,
-      "trail_armed": false,
-      "last_price": 0.007678,
+      "high_water": 0.007689,
+      "trail_armed": true,
+      "last_price": 0.007689,
       "last_source": "dexscreener",
       "reason": "BUY 10% $BRUH @ 0.00738876 \u2014 5m +5.6% vol $27,192 buys 68/sells 55",
       "hard_stop": 0.007019321999999999,
@@ -58,7 +58,7 @@
       "trail_activate": 0.0076843104,
       "market_value": 0.0,
       "unrealized_pnl": 0.0,
-      "unrealized_pct": 0.03914594600447163
+      "unrealized_pct": 0.040634693778117015
     }
   ],
   "closed_trades": [
@@ -212330,12 +212330,6 @@
   ],
   "equity_curve": [
     {
-      "ts": "2026-11-28T08:07:27.777652+00:00",
-      "label": "28 Nov 2026, 8:07 GMT",
-      "equity": 0.0,
-      "cash": 0.0
-    },
-    {
       "ts": "2026-11-28T08:08:07.751275+00:00",
       "label": "28 Nov 2026, 8:08 GMT",
       "equity": 0.0,
@@ -215334,21 +215328,15 @@
       "label": "28 Nov 2026, 13:55 GMT",
       "equity": 0.0,
       "cash": 0.0
+    },
+    {
+      "ts": "2026-11-28T13:55:52.702684+00:00",
+      "label": "28 Nov 2026, 13:55 GMT",
+      "equity": 0.0,
+      "cash": 0.0
     }
   ],
   "activity": [
-    {
-      "ts": "2026-11-28T06:17:50.085570+00:00",
-      "london": "28 Nov 2026, 6:17 GMT",
-      "hhmm": "06:17",
-      "agent": "LOGGER",
-      "action": "run complete \u2014 29 polls, 2 open, equity $0.00",
-      "symbol": null,
-      "reason": "run complete \u2014 29 polls, 2 open, equity $0.00",
-      "line": "06:17 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00",
-      "tag": "LOGGER",
-      "message": "06:17 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00"
-    },
     {
       "ts": "2026-11-28T06:19:25.627574+00:00",
       "london": "28 Nov 2026, 6:19 GMT",
@@ -220136,6 +220124,18 @@
       "line": "13:53 RISK: SELL stop \u22125% $MoonBoy",
       "tag": "RISK",
       "message": "13:53 RISK: SELL stop \u22125% $MoonBoy"
+    },
+    {
+      "ts": "2026-11-28T13:55:52.702564+00:00",
+      "london": "28 Nov 2026, 13:55 GMT",
+      "hhmm": "13:55",
+      "agent": "LOGGER",
+      "action": "run complete \u2014 29 polls, 2 open, equity $0.00",
+      "symbol": null,
+      "reason": "run complete \u2014 29 polls, 2 open, equity $0.00",
+      "line": "13:55 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00",
+      "tag": "LOGGER",
+      "message": "13:55 LOGGER: run complete \u2014 29 polls, 2 open, equity $0.00"
     }
   ],
   "agents": {
@@ -220236,8 +220236,8 @@
       "open_positions": 0
     }
   },
-  "ticks": 125597,
-  "last_updated": "2026-11-28T13:55:28.805026+00:00",
+  "ticks": 125626,
+  "last_updated": "2026-11-28T13:55:52.699171+00:00",
   "last_updated_london": "28 Nov 2026, 13:55 GMT",
   "screening_method": "",
   "stock_note": "",
@@ -220259,7 +220259,7 @@
     "traded": 14153
   },
   "totals_cumulative": {
-    "scanned": 125597,
+    "scanned": 125626,
     "killed": 0,
     "traded": 14153
   },
@@ -616525,9 +616525,19 @@
   "desk": "axiom",
   "sandbox_note": "Not halal-screened, speculative, paper only.",
   "signal_mode": "axiom",
-  "checked_at": "2026-11-28T13:55:28.805026+00:00",
+  "checked_at": "2026-11-28T13:55:52.699171+00:00",
   "checked_at_london": "28 Nov 2026, 13:55 GMT",
   "near_misses": [
+    {
+      "symbol": "BITCOINU",
+      "mint": "ATbAsdCwrhhVg23DRnWpjqx6kx7ivoK5o8ysNmu1pump",
+      "link": "https://axiom.trade/meme/ATbAsdCwrhhVg23DRnWpjqx6kx7ivoK5o8ysNmu1pump?chain=sol",
+      "reason": "5m volume $3,645 under $5k",
+      "gates": 1,
+      "chg_m5": 3.15,
+      "vol_m5": 3645.0,
+      "score": 3.08
+    },
     {
       "symbol": "PUMPCHAN",
       "mint": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
@@ -616552,31 +616562,21 @@
       "symbol": "John",
       "mint": "EvN4RDyoqUTpCcrvz5QTAdHVqypgxV4MCR77Bfnjpump",
       "link": "https://axiom.trade/meme/EvN4RDyoqUTpCcrvz5QTAdHVqypgxV4MCR77Bfnjpump?chain=sol",
-      "reason": "liquidity $13,887 under $25k \u00b7 market cap $44,920 outside $100k\u2013$100M",
+      "reason": "liquidity $14,092 under $25k \u00b7 market cap $46,137 outside $100k\u2013$100M",
       "gates": 2,
-      "chg_m5": 21.34,
-      "vol_m5": 30284.0,
-      "score": 91.85
+      "chg_m5": 21.19,
+      "vol_m5": 25720.0,
+      "score": 95.01
     },
     {
       "symbol": "ROCKET",
       "mint": "6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump",
       "link": "https://axiom.trade/meme/6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump?chain=sol",
-      "reason": "5m volume $28 under $5k \u00b7 buy/sell 173/168 under 1.05",
+      "reason": "5m volume $20 under $5k \u00b7 buy/sell 150/143 under 1.05",
       "gates": 2,
-      "chg_m5": 2.55,
-      "vol_m5": 28.0,
-      "score": 2.5
-    },
-    {
-      "symbol": "BITCOINU",
-      "mint": "ATbAsdCwrhhVg23DRnWpjqx6kx7ivoK5o8ysNmu1pump",
-      "link": "https://axiom.trade/meme/ATbAsdCwrhhVg23DRnWpjqx6kx7ivoK5o8ysNmu1pump?chain=sol",
-      "reason": "5m volume $3,897 under $5k \u00b7 5m +0.9% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.87,
-      "vol_m5": 3897.0,
-      "score": 0.92
+      "chg_m5": 2.58,
+      "vol_m5": 20.0,
+      "score": 1.91
     },
     {
       "symbol": "Snowball",
