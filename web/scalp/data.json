@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 121392,
-  "open_count": 1,
-  "last_updated_london": "28 Nov 2026, 2:06 GMT",
-  "last_updated": "2026-11-28T02:06:38.006333+00:00",
+  "open_count": 2,
+  "last_updated_london": "28 Nov 2026, 2:07 GMT",
+  "last_updated": "2026-11-28T02:07:18.012231+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "27 Nov 2026, 20:17 GMT",
-      "value": 0.0
-    },
     {
       "label": "27 Nov 2026, 20:18 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "28 Nov 2026, 2:06 GMT",
       "value": 0.0
+    },
+    {
+      "label": "28 Nov 2026, 2:07 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "28 Nov 2026, 2:07 GMT",
+      "hhmm": "02:07",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "02:07 EXECUTOR: BUY 10% $MANDY @ 0.000142509 — 5m +37.6% vol $44,086 buys 704/sells 483",
+      "message": "02:07 EXECUTOR: BUY 10% $MANDY @ 0.000142509 — 5m +37.6% vol $44,086 buys 704/sells 483",
+      "symbol": null,
+      "action": "BUY 10% $MANDY @ 0.000142509 — 5m +37.6% vol $44,086 buys 704/sells 483"
+    },
     {
       "ts": "28 Nov 2026, 2:05 GMT",
       "hhmm": "02:05",
@@ -2451,16 +2461,6 @@
       "message": "01:13 EXECUTOR: BUY 10% $Memeball @ 0.000694254 — 5m +33.4% vol $9,778 buys 1381/sells 280",
       "symbol": null,
       "action": "BUY 10% $Memeball @ 0.000694254 — 5m +33.4% vol $9,778 buys 1381/sells 280"
-    },
-    {
-      "ts": "28 Nov 2026, 1:13 GMT",
-      "hhmm": "01:13",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "01:13 EXECUTOR: SELL take profit +8% $Memeball",
-      "message": "01:13 EXECUTOR: SELL take profit +8% $Memeball",
-      "symbol": null,
-      "action": "SELL take profit +8% $Memeball"
     }
   ],
   "agents": [
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "1/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2595,9 +2595,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/B9wbjDJ4FbHMsZmoXAkJSTAwuePaJUKbySvnK5zApump?chain=sol"
+    },
+    {
+      "symbol": "MANDY",
+      "name": "MANDY",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.000142509,
+      "current_price": 0.0001418,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.00497512437810943,
+      "hard_stop": 0.00013538354999999999,
+      "trail_activate": 0.00014820936,
+      "opened_at": "28 Nov 2026, 2:07 GMT",
+      "reason": "BUY 10% $MANDY @ 0.000142509 — 5m +37.6% vol $44,086 buys 704/sells 483",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/4HdH4EKBKCVaPD9f4TxdGhcWyhm259qKa7JHSGhMpump?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f27758",
+      "time": "28 Nov 2026, 2:07 GMT",
+      "ts": "2026-11-28T02:07:02.102193+00:00",
+      "side": "buy",
+      "symbol": "MANDY",
+      "name": "MANDY",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.000142509,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f27757",
       "time": "28 Nov 2026, 2:05 GMT",
@@ -557744,7 +557786,7 @@
     "win_rate": 0.7524138924917135,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 27757
+    "fills": 27758
   },
   "ok": true,
   "totals_cumulative": {
@@ -557889,6 +557931,13 @@
       "price": 0.0005019,
       "change_pct": null,
       "source": "dexscreener"
+    },
+    {
+      "symbol": "MANDY",
+      "name": "MANDY",
+      "price": 0.0001418,
+      "change_pct": null,
+      "source": "dexscreener"
     }
   ],
   "desk": "axiom",
@@ -557938,8 +557987,8 @@
     {
       "id": "btc",
       "name": "BTC Scalper",
-      "equity": 68.76,
-      "return_pct": -0.31236284,
+      "equity": 68.77,
+      "return_pct": -0.31233509,
       "closed_trades": 758,
       "win_rate": 0.34300791556728233,
       "realized_pnl": -31.47
@@ -557973,16 +558022,6 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "MANDY",
-      "mint": "4HdH4EKBKCVaPD9f4TxdGhcWyhm259qKa7JHSGhMpump",
-      "link": "https://axiom.trade/meme/4HdH4EKBKCVaPD9f4TxdGhcWyhm259qKa7JHSGhMpump?chain=sol",
-      "reason": "5m +47.0% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": 46.97,
-      "vol_m5": 41530.0,
-      "score": 120.07
-    },
-    {
       "symbol": "MoonBoy",
       "mint": "GXjSWDoMQkDEbhon9ALxz8chUUsVKg3x8V3NajjDpump",
       "link": "https://axiom.trade/meme/GXjSWDoMQkDEbhon9ALxz8chUUsVKg3x8V3NajjDpump?chain=sol",
@@ -557993,24 +558032,24 @@
       "score": 6.97
     },
     {
+      "symbol": "three",
+      "mint": "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
+      "link": "https://axiom.trade/meme/FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump?chain=sol",
+      "reason": "5m volume $558 under $5k",
+      "gates": 1,
+      "chg_m5": 1.93,
+      "vol_m5": 558.0,
+      "score": 3.5
+    },
+    {
       "symbol": "JOB",
       "mint": "9Pq7aLAbhDG2tTnS22cm6kuysZVcZpLFE368HWuypump",
       "link": "https://axiom.trade/meme/9Pq7aLAbhDG2tTnS22cm6kuysZVcZpLFE368HWuypump?chain=sol",
-      "reason": "5m volume $2,065 under $5k",
+      "reason": "5m volume $1,770 under $5k",
       "gates": 1,
-      "chg_m5": 2.32,
-      "vol_m5": 2065.0,
-      "score": 4.2
-    },
-    {
-      "symbol": "PumpMas",
-      "mint": "EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump",
-      "link": "https://axiom.trade/meme/EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump?chain=sol",
-      "reason": "5m volume $156 under $5k",
-      "gates": 1,
-      "chg_m5": 3.29,
-      "vol_m5": 156.0,
-      "score": 4.15
+      "chg_m5": 2.01,
+      "vol_m5": 1770.0,
+      "score": 2.71
     },
     {
       "symbol": "mihao",
@@ -558021,6 +558060,16 @@
       "chg_m5": 1.165,
       "vol_m5": 800.0,
       "score": 2.22
+    },
+    {
+      "symbol": "enu",
+      "mint": "9msLfYfXBrSbrApCZAPuPMCNmPqNtEL1VPKh1AEYpump",
+      "link": "https://axiom.trade/meme/9msLfYfXBrSbrApCZAPuPMCNmPqNtEL1VPKh1AEYpump?chain=sol",
+      "reason": "5m volume $245 under $5k",
+      "gates": 1,
+      "chg_m5": 1.34,
+      "vol_m5": 245.0,
+      "score": 1.96
     },
     {
       "symbol": "SPCX",
@@ -558038,7 +558087,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-28T02:06:38.006333+00:00",
-  "checked_at_london": "28 Nov 2026, 2:06 GMT",
+  "checked_at": "2026-11-28T02:07:18.012231+00:00",
+  "checked_at_london": "28 Nov 2026, 2:07 GMT",
   "who_we_copy": null
 }
