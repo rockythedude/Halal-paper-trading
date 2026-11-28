@@ -19,10 +19,10 @@
     "pnl": 3.06,
     "pnl_pct": 0.3587647096277832
   },
-  "ticks": 120841,
-  "open_count": 1,
+  "ticks": 120870,
+  "open_count": 2,
   "last_updated_london": "28 Nov 2026, 0:34 GMT",
-  "last_updated": "2026-11-28T00:34:30.221218+00:00",
+  "last_updated": "2026-11-28T00:34:54.176224+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -33,12 +33,12 @@
   "data_sources": [],
   "scanned": 29,
   "killed": 0,
-  "traded": 13842,
+  "traded": 13845,
   "why_they_died": [],
   "totals": {
     "scanned": 29,
     "killed": 0,
-    "traded": 13842,
+    "traded": 13845,
     "filter_killed": 0,
     "analyst_killed": 0,
     "passed_filter": 0,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "27 Nov 2026, 18:45 GMT",
-      "value": 0.0
-    },
     {
       "label": "27 Nov 2026, 18:45 GMT",
       "value": 0.0
@@ -2058,10 +2054,34 @@
     {
       "label": "28 Nov 2026, 0:34 GMT",
       "value": 0.0
+    },
+    {
+      "label": "28 Nov 2026, 0:34 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "28 Nov 2026, 0:34 GMT",
+      "hhmm": "00:34",
+      "tag": "LOGGER",
+      "agent": "LOGGER",
+      "line": "00:34 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "message": "00:34 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
+      "symbol": null,
+      "action": "run complete — 29 polls, 2 open, equity $0.00"
+    },
+    {
+      "ts": "28 Nov 2026, 0:34 GMT",
+      "hhmm": "00:34",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "00:34 EXECUTOR: BUY 10% $STEADY @ 0.000219793 — 5m +8.8% vol $47,413 buys 507/sells 374",
+      "message": "00:34 EXECUTOR: BUY 10% $STEADY @ 0.000219793 — 5m +8.8% vol $47,413 buys 507/sells 374",
+      "symbol": null,
+      "action": "BUY 10% $STEADY @ 0.000219793 — 5m +8.8% vol $47,413 buys 507/sells 374"
+    },
     {
       "ts": "28 Nov 2026, 0:34 GMT",
       "hhmm": "00:34",
@@ -2441,26 +2461,6 @@
       "message": "00:03 RISK: SELL stop −5% $Fireball",
       "symbol": null,
       "action": "SELL stop −5% $Fireball"
-    },
-    {
-      "ts": "28 Nov 2026, 0:02 GMT",
-      "hhmm": "00:02",
-      "tag": "RISK",
-      "agent": "RISK",
-      "line": "00:02 RISK: SELL time stop 20m $JOB",
-      "message": "00:02 RISK: SELL time stop 20m $JOB",
-      "symbol": null,
-      "action": "SELL time stop 20m $JOB"
-    },
-    {
-      "ts": "28 Nov 2026, 0:00 GMT",
-      "hhmm": "00:00",
-      "tag": "LOGGER",
-      "agent": "LOGGER",
-      "line": "00:00 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
-      "message": "00:00 LOGGER: run complete — 29 polls, 2 open, equity $0.00",
-      "symbol": null,
-      "action": "run complete — 29 polls, 2 open, equity $0.00"
     }
   ],
   "agents": [
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "58 pairs · 1 passed liquidity, age, and 5m momentum",
-      "badge": "1 passed",
+      "activity": "58 pairs · 0 passed liquidity, age, and 5m momentum",
+      "badge": "0 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "1/6",
+      "activity": "2 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "2/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2595,9 +2595,51 @@
       "tag": "",
       "venue": "",
       "link": "https://axiom.trade/meme/B9wbjDJ4FbHMsZmoXAkJSTAwuePaJUKbySvnK5zApump?chain=sol"
+    },
+    {
+      "symbol": "STEADY",
+      "name": "STEADY",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.00021979349999999998,
+      "current_price": 0.0002187,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.00020880382499999998,
+      "trail_activate": 0.00022858524,
+      "opened_at": "28 Nov 2026, 0:34 GMT",
+      "reason": "BUY 10% $STEADY @ 0.000219793 — 5m +8.8% vol $47,413 buys 507/sells 374",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/AvvXpCVph4PtJ5urfhetPkdZYh8o4uW7CawUA2MK8hFT?chain=sol"
     }
   ],
   "fills": [
+    {
+      "id": "f27688",
+      "time": "28 Nov 2026, 0:34 GMT",
+      "ts": "2026-11-28T00:34:38.366206+00:00",
+      "side": "buy",
+      "symbol": "STEADY",
+      "name": "STEADY",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.00021979349999999998,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f27687",
       "time": "28 Nov 2026, 0:34 GMT",
@@ -556344,13 +556386,13 @@
     "win_rate": 0.7517879072455392,
     "realized_pnl": -100.0,
     "unrealized_pnl": 0.0,
-    "fills": 27687
+    "fills": 27688
   },
   "ok": true,
   "totals_cumulative": {
-    "scanned": 120841,
+    "scanned": 120870,
     "killed": 0,
-    "traded": 13842
+    "traded": 13845
   },
   "events": [
     {
@@ -556489,6 +556531,13 @@
       "price": 0.000581,
       "change_pct": null,
       "source": "dexscreener"
+    },
+    {
+      "symbol": "STEADY",
+      "name": "STEADY",
+      "price": 0.0002187,
+      "change_pct": null,
+      "source": "dexscreener"
     }
   ],
   "desk": "axiom",
@@ -556573,6 +556622,16 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
+      "symbol": "JIMMY",
+      "mint": "38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump",
+      "link": "https://axiom.trade/meme/38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump?chain=sol",
+      "reason": "buy/sell 52/60 under 1.05",
+      "gates": 1,
+      "chg_m5": 6.595,
+      "vol_m5": 6827.0,
+      "score": 9.95
+    },
+    {
       "symbol": "three",
       "mint": "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
       "link": "https://axiom.trade/meme/FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump?chain=sol",
@@ -556583,54 +556642,44 @@
       "score": 3.63
     },
     {
+      "symbol": "FIONA",
+      "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
+      "link": "https://axiom.trade/meme/B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump?chain=sol",
+      "reason": "5m volume $1,450 under $5k",
+      "gates": 1,
+      "chg_m5": 2.333,
+      "vol_m5": 1450.0,
+      "score": 3.61
+    },
+    {
+      "symbol": "SPCX",
+      "mint": "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb",
+      "link": "https://axiom.trade/meme/SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb?chain=sol",
+      "reason": "5m -0.5% outside +1% to +40%",
+      "gates": 1,
+      "chg_m5": -0.547,
+      "vol_m5": 6763.0,
+      "score": -1.1
+    },
+    {
       "symbol": "Snowball",
       "mint": "9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump",
       "link": "https://axiom.trade/meme/9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump?chain=sol",
-      "reason": "5m -2.8% outside +1% to +40%",
+      "reason": "5m -3.0% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -2.778,
-      "vol_m5": 5096.0,
-      "score": -6.03
-    },
-    {
-      "symbol": "STEADY",
-      "mint": "AvvXpCVph4PtJ5urfhetPkdZYh8o4uW7CawUA2MK8hFT",
-      "link": "https://axiom.trade/meme/AvvXpCVph4PtJ5urfhetPkdZYh8o4uW7CawUA2MK8hFT?chain=sol",
-      "reason": "5m -6.0% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -5.96,
-      "vol_m5": 76707.0,
-      "score": -11.61
-    },
-    {
-      "symbol": "JIMMY",
-      "mint": "38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump",
-      "link": "https://axiom.trade/meme/38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump?chain=sol",
-      "reason": "5m volume $3,294 under $5k · buy/sell 20/43 under 1.05",
-      "gates": 2,
-      "chg_m5": 8.221,
-      "vol_m5": 3294.0,
-      "score": 3.47
+      "chg_m5": -3.005,
+      "vol_m5": 7827.0,
+      "score": -10.94
     },
     {
       "symbol": "CATE",
       "mint": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
       "link": "https://axiom.trade/meme/Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump?chain=sol",
-      "reason": "5m volume $1,841 under $5k · 5m +0.4% outside +1% to +40%",
+      "reason": "5m volume $2,843 under $5k · 5m +0.2% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": 0.404,
-      "vol_m5": 1841.0,
-      "score": 0.98
-    },
-    {
-      "symbol": "mihao",
-      "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
-      "link": "https://axiom.trade/meme/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump?chain=sol",
-      "reason": "5m volume $341 under $5k · 5m +0.7% outside +1% to +40%",
-      "gates": 2,
-      "chg_m5": 0.707,
-      "vol_m5": 341.0,
-      "score": 0.63
+      "chg_m5": 0.248,
+      "vol_m5": 2843.0,
+      "score": 0.89
     }
   ],
   "helius_status": "",
@@ -556638,7 +556687,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-28T00:34:30.221218+00:00",
+  "checked_at": "2026-11-28T00:34:54.176224+00:00",
   "checked_at_london": "28 Nov 2026, 0:34 GMT",
   "who_we_copy": null
 }
