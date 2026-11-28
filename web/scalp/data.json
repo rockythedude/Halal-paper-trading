@@ -20,9 +20,9 @@
     "pnl_pct": 0.3587647096277832
   },
   "ticks": 123799,
-  "open_count": 0,
-  "last_updated_london": "28 Nov 2026, 8:51 GMT",
-  "last_updated": "2026-11-28T08:51:24.329048+00:00",
+  "open_count": 1,
+  "last_updated_london": "28 Nov 2026, 8:52 GMT",
+  "last_updated": "2026-11-28T08:52:04.387484+00:00",
   "session_status": "open",
   "session_asof_ny": "12 Nov 2026, 10:56 EST",
   "session_open": true,
@@ -55,10 +55,6 @@
     "killed": 0
   },
   "equity_curve": [
-    {
-      "label": "28 Nov 2026, 3:01 GMT",
-      "value": 0.0
-    },
     {
       "label": "28 Nov 2026, 3:02 GMT",
       "value": 0.0
@@ -2058,10 +2054,24 @@
     {
       "label": "28 Nov 2026, 8:51 GMT",
       "value": 0.0
+    },
+    {
+      "label": "28 Nov 2026, 8:52 GMT",
+      "value": 0.0
     }
   ],
   "annotations": [],
   "activity": [
+    {
+      "ts": "28 Nov 2026, 8:52 GMT",
+      "hhmm": "08:52",
+      "tag": "EXECUTOR",
+      "agent": "EXECUTOR",
+      "line": "08:52 EXECUTOR: BUY 10% $WLFI @ 0.000283209 — 5m +2.7% vol $5,802 buys 123/sells 67",
+      "message": "08:52 EXECUTOR: BUY 10% $WLFI @ 0.000283209 — 5m +2.7% vol $5,802 buys 123/sells 67",
+      "symbol": null,
+      "action": "BUY 10% $WLFI @ 0.000283209 — 5m +2.7% vol $5,802 buys 123/sells 67"
+    },
     {
       "ts": "28 Nov 2026, 8:48 GMT",
       "hhmm": "08:48",
@@ -2451,16 +2461,6 @@
       "message": "08:11 RISK: SELL stop −5% $USD1",
       "symbol": null,
       "action": "SELL stop −5% $USD1"
-    },
-    {
-      "ts": "28 Nov 2026, 8:11 GMT",
-      "hhmm": "08:11",
-      "tag": "EXECUTOR",
-      "agent": "EXECUTOR",
-      "line": "08:11 EXECUTOR: SELL trail 2.5% $BITCOINU",
-      "message": "08:11 EXECUTOR: SELL trail 2.5% $BITCOINU",
-      "symbol": null,
-      "action": "SELL trail 2.5% $BITCOINU"
     }
   ],
   "agents": [
@@ -2470,8 +2470,8 @@
       "strategy": "Scout",
       "blurb": "Scans the stock and crypto universe before any filters run.",
       "color": "#2EC4B6",
-      "activity": "DexScreener 40 tokens · GeckoTerminal unreachable",
-      "badge": "40 pairs",
+      "activity": "DexScreener 40 tokens · GeckoTerminal 20 pools",
+      "badge": "58 pairs",
       "badge_label": "feed",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2488,8 +2488,8 @@
       "strategy": "Filter",
       "blurb": "Kills names that fail hard Shariah, sector, debt, liquidity or token-type rules.",
       "color": "#F5A623",
-      "activity": "40 pairs · 0 passed liquidity, age, and 5m momentum",
-      "badge": "0 passed",
+      "activity": "58 pairs · 1 passed liquidity, age, and 5m momentum",
+      "badge": "1 passed",
       "badge_label": "filter",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2542,8 +2542,8 @@
       "strategy": "Risk",
       "blurb": "Fast mode. Hard stop at −2%, trail arms at +3% and sells 1% off the peak, take profit at +5%.",
       "color": "#A78BFA",
-      "activity": "0 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
-      "badge": "0/6",
+      "activity": "1 open · TP +8% · stop −5% · trail 2.5% after +4% · time stop 20m",
+      "badge": "1/6",
       "badge_label": "risk",
       "realized_pnl": 0.0,
       "unrealized_pnl": 0.0,
@@ -2573,8 +2573,51 @@
       "open_positions": 0
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "WLFI",
+      "name": "WLFI",
+      "asset_class": "crypto",
+      "agent": "MIRAX",
+      "qty": 0.0,
+      "qty_display": "0",
+      "entry_price": 0.000283209,
+      "current_price": 0.0002818,
+      "change_pct": null,
+      "price_source": "dexscreener",
+      "unrealized_pnl": 0.0,
+      "unrealized_pct": -0.004975124378109319,
+      "hard_stop": 0.00026904854999999995,
+      "trail_activate": 0.00029453736,
+      "opened_at": "28 Nov 2026, 8:52 GMT",
+      "reason": "BUY 10% $WLFI @ 0.000283209 — 5m +2.7% vol $5,802 buys 123/sells 67",
+      "score": null,
+      "tag": "",
+      "venue": "",
+      "link": "https://axiom.trade/meme/HmGQsYJyeiWrV6jABUY2Cb3bEmVxwk6LzVxCchsCpump?chain=sol"
+    }
+  ],
   "fills": [
+    {
+      "id": "f28155",
+      "time": "28 Nov 2026, 8:52 GMT",
+      "ts": "2026-11-28T08:52:04.387381+00:00",
+      "side": "buy",
+      "symbol": "WLFI",
+      "name": "WLFI",
+      "asset_class": "crypto",
+      "qty": 0.0,
+      "qty_display": "0",
+      "price": 0.000283209,
+      "value": 0.0,
+      "pnl": null,
+      "pnl_pct": null,
+      "tag": "",
+      "delay_s": null,
+      "notify_lag_s": null,
+      "fetch_s": null,
+      "quote_s": null
+    },
     {
       "id": "f28154",
       "time": "28 Nov 2026, 8:48 GMT",
@@ -565660,8 +565703,8 @@
     "closed_trades": 14077,
     "win_rate": 0.7559139021098246,
     "realized_pnl": -100.0,
-    "unrealized_pnl": 0,
-    "fills": 28154
+    "unrealized_pnl": 0.0,
+    "fills": 28155
   },
   "ok": true,
   "totals_cumulative": {
@@ -565799,7 +565842,15 @@
     "Risk": "#FF4D4D",
     "Logger": "#22D3EE"
   },
-  "ticker": [],
+  "ticker": [
+    {
+      "symbol": "WLFI",
+      "name": "WLFI",
+      "price": 0.0002818,
+      "change_pct": null,
+      "source": "dexscreener"
+    }
+  ],
   "desk": "axiom",
   "risk_rules": {
     "mode": "axiom",
@@ -565820,8 +565871,8 @@
     {
       "id": "main",
       "name": "Halal book",
-      "equity": 94.44,
-      "return_pct": -0.05555466999999993,
+      "equity": 94.46,
+      "return_pct": -0.055435820000000004,
       "closed_trades": 42,
       "win_rate": 0.42857142857142855,
       "realized_pnl": -5.49
@@ -565838,8 +565889,8 @@
     {
       "id": "meme",
       "name": "Crypto + Meme",
-      "equity": 83.66,
-      "return_pct": -0.16341301000000003,
+      "equity": 83.71,
+      "return_pct": -0.16290600999999996,
       "closed_trades": 126,
       "win_rate": 0.42063492063492064,
       "realized_pnl": -14.97
@@ -565882,64 +565933,64 @@
   "wallet_scoreboard": [],
   "near_misses": [
     {
-      "symbol": "FINGART",
-      "mint": "WZVWLfThgm14NN8HRDoyiEeXVvdUDMzGMHUS3VLpump",
-      "link": "https://axiom.trade/meme/WZVWLfThgm14NN8HRDoyiEeXVvdUDMzGMHUS3VLpump?chain=sol",
-      "reason": "liquidity $23,338 under $25k",
-      "gates": 1,
-      "chg_m5": 24.01,
-      "vol_m5": 12254.0,
-      "score": 83.43
-    },
-    {
       "symbol": "BITCOINU",
       "mint": "ATbAsdCwrhhVg23DRnWpjqx6kx7ivoK5o8ysNmu1pump",
       "link": "https://axiom.trade/meme/ATbAsdCwrhhVg23DRnWpjqx6kx7ivoK5o8ysNmu1pump?chain=sol",
-      "reason": "5m -5.0% outside +1% to +40%",
+      "reason": "5m -2.1% outside +1% to +40%",
       "gates": 1,
-      "chg_m5": -4.95,
-      "vol_m5": 7715.0,
-      "score": -3.97
+      "chg_m5": -2.1,
+      "vol_m5": 6649.0,
+      "score": -1.59
     },
     {
-      "symbol": "WLFI",
-      "mint": "HmGQsYJyeiWrV6jABUY2Cb3bEmVxwk6LzVxCchsCpump",
-      "link": "https://axiom.trade/meme/HmGQsYJyeiWrV6jABUY2Cb3bEmVxwk6LzVxCchsCpump?chain=sol",
-      "reason": "5m -6.0% outside +1% to +40%",
-      "gates": 1,
-      "chg_m5": -5.95,
-      "vol_m5": 6229.0,
-      "score": -5.39
+      "symbol": "DEXDATA",
+      "mint": "63jDWWFwp25ChLvsofbVRMprRbhiXuWoWVxrwFfypump",
+      "link": "https://axiom.trade/meme/63jDWWFwp25ChLvsofbVRMprRbhiXuWoWVxrwFfypump?chain=sol",
+      "reason": "5m volume $766 under $5k · buy/sell 15/17 under 1.05",
+      "gates": 2,
+      "chg_m5": 6.725,
+      "vol_m5": 766.0,
+      "score": 17.22
     },
     {
       "symbol": "Fireball",
       "mint": "B9wbjDJ4FbHMsZmoXAkJSTAwuePaJUKbySvnK5zApump",
       "link": "https://axiom.trade/meme/B9wbjDJ4FbHMsZmoXAkJSTAwuePaJUKbySvnK5zApump?chain=sol",
-      "reason": "5m volume $4,309 under $5k · buy/sell 61/91 under 1.05",
+      "reason": "5m volume $3,728 under $5k · buy/sell 56/80 under 1.05",
       "gates": 2,
-      "chg_m5": 5.32,
-      "vol_m5": 4309.0,
-      "score": 3.54
+      "chg_m5": 3.56,
+      "vol_m5": 3728.0,
+      "score": 2.16
     },
     {
-      "symbol": "SPSC",
-      "mint": "EjdrRG2si1FQ3Bme5g6WSYNHJDrsKUrbGB4Z5xaopump",
-      "link": "https://axiom.trade/meme/EjdrRG2si1FQ3Bme5g6WSYNHJDrsKUrbGB4Z5xaopump?chain=sol",
-      "reason": "5m volume $2,605 under $5k · 5m -9.2% outside +1% to +40%",
+      "symbol": "TRUMP",
+      "mint": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+      "link": "https://axiom.trade/meme/6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN?chain=sol",
+      "reason": "market cap $227,144,366 outside $100k–$100M · 5m +0.7% outside +1% to +40%",
       "gates": 2,
-      "chg_m5": -9.2,
-      "vol_m5": 2605.0,
-      "score": -2.89
+      "chg_m5": 0.729,
+      "vol_m5": 8612.0,
+      "score": 1.19
     },
     {
-      "symbol": "Snowball",
-      "mint": "9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump",
-      "link": "https://axiom.trade/meme/9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump?chain=sol",
-      "reason": "5m volume $2,843 under $5k · 5m -5.7% outside +1% to +40%",
+      "symbol": "MoonBoy",
+      "mint": "GXjSWDoMQkDEbhon9ALxz8chUUsVKg3x8V3NajjDpump",
+      "link": "https://axiom.trade/meme/GXjSWDoMQkDEbhon9ALxz8chUUsVKg3x8V3NajjDpump?chain=sol",
+      "reason": "5m volume $1,046 under $5k · buy/sell 8/11 under 1.05",
       "gates": 2,
-      "chg_m5": -5.68,
-      "vol_m5": 2843.0,
-      "score": -9.88
+      "chg_m5": 2.179,
+      "vol_m5": 1046.0,
+      "score": 1.16
+    },
+    {
+      "symbol": "PUMPCHAN",
+      "mint": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
+      "link": "https://axiom.trade/meme/Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump?chain=sol",
+      "reason": "5m volume $3,862 under $5k · buy/sell 17/26 under 1.05",
+      "gates": 2,
+      "chg_m5": 1.158,
+      "vol_m5": 3862.0,
+      "score": 0.61
     }
   ],
   "helius_status": "",
@@ -565947,7 +565998,7 @@
   "last_copy_delay_s": null,
   "last_event_at": "",
   "last_event_london": "",
-  "checked_at": "2026-11-28T08:51:24.329048+00:00",
-  "checked_at_london": "28 Nov 2026, 8:51 GMT",
+  "checked_at": "2026-11-28T08:52:04.387484+00:00",
+  "checked_at_london": "28 Nov 2026, 8:52 GMT",
   "who_we_copy": null
 }
